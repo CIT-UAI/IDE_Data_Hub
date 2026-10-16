@@ -1,42 +1,42 @@
 <div align="center">
 
-# 🌐 Infraestructura de Datos Espaciales (IDE CIT)
-### Centro de Inteligencia Territorial (CIT) · Universidad Adolfo Ibáñez
+# Infraestructura de Datos Espaciales (IDE CIT)
+### Centro de Inteligencia Territorial · Escuela de Gobierno · Universidad Adolfo Ibáñez
 
-[![Build Status](https://img.shields.io/badge/Build-1792187921%20Pass-emerald?style=flat-square&logo=github-actions)](https://ide.cit.uai.cl)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python)](https://python.org)
-[![STAC](https://img.shields.io/badge/STAC-1.0.0%20Compliant-008080?style=flat-square)](https://ide.cit.uai.cl/stac/catalog.json)
-[![ISO](https://img.shields.io/badge/ISO-19115%20%2F%2019139%20XML-orange?style=flat-square)](https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml)
-[![GeoParquet](https://img.shields.io/badge/Format-Cloud--Optimized%20GeoParquet-purple?style=flat-square)](https://geoparquet.org)
-[![Red Team](https://img.shields.io/badge/Red%20Team-47%20PASS%20%2F%200%20FAIL-success?style=flat-square)](https://ide.cit.uai.cl)
-[![SLA](https://img.shields.io/badge/SLA-99.9%25%20CloudFront%20CDN-blueviolet?style=flat-square)](https://ide.cit.uai.cl)
-[![License](https://img.shields.io/badge/Licencia-Institucional%20CIT--UAI-lightgrey?style=flat-square)](https://cit.uai.cl)
+[![Build Status](https://img.shields.io/badge/Build-1792187921-1e293b?style=flat)](https://ide.cit.uai.cl)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-1e293b?style=flat)](https://python.org)
+[![STAC](https://img.shields.io/badge/STAC-1.0.0-334155?style=flat)](https://ide.cit.uai.cl/stac/catalog.json)
+[![ISO Standard](https://img.shields.io/badge/ISO-19115%20%2F%2019139-334155?style=flat)](https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml)
+[![Format](https://img.shields.io/badge/GeoParquet-1.1-475569?style=flat)](https://geoparquet.org)
+[![Auditoría](https://img.shields.io/badge/Auditor%C3%ADa-Certificada-0f172a?style=flat)](https://ide.cit.uai.cl)
+[![Disponibilidad](https://img.shields.io/badge/SLA-99.9%25%20CloudFront-475569?style=flat)](https://ide.cit.uai.cl)
+[![Licencia](https://img.shields.io/badge/Licencia-Institucional%20CIT--UAI-64748b?style=flat)](https://cit.uai.cl)
 
-**Plataforma institucional de datos abiertos, modelos territoriales deterministas, catálogos normalizados (STAC / ISO) y Copiloto IA Territorial de Chile.**
+**Plataforma institucional de datos geoespaciales abiertos, modelación territorial determinista, catálogos normalizados (STAC / ISO) y Copiloto Territorial de Chile.**
 
-[Portal Oficial](https://ide.cit.uai.cl) · [Centro de Descargas](https://ide.cit.uai.cl/descargas) · [Guía Técnica Metodológica](https://ide.cit.uai.cl/guia-tecnica) · [Red de 19 IDEs SNIT](https://ide.cit.uai.cl/red-ides) · [Catálogo STAC](https://ide.cit.uai.cl/stac/catalog.json)
+[Portal Principal](https://ide.cit.uai.cl) · [Centro de Descargas](https://ide.cit.uai.cl/descargas) · [Guía Técnica Metodológica](https://ide.cit.uai.cl/guia-tecnica) · [Directorio de 19 IDEs SNIT](https://ide.cit.uai.cl/red-ides) · [Catálogo STAC](https://ide.cit.uai.cl/stac/catalog.json)
 
 </div>
 
 ---
 
-## 🏛️ 1. Propósito y Misión Institucional
+## 1. Marco Institucional y Propósito Territorial
 
-La **IDE CIT** es la infraestructura de datos geoespaciales, analítica territorial y trazabilidad metodológica del **Centro de Inteligencia Territorial (CIT) de la Universidad Adolfo Ibáñez**. 
+La **Infraestructura de Datos Espaciales del Centro de Inteligencia Territorial (IDE CIT)** de la Universidad Adolfo Ibáñez constituye la plataforma de referencia para la difusión, interoperabilidad y trazabilidad metodológica de las matrices territoriales de Chile.
 
-Su misión es proveer a la comunidad académica, ministerios del Estado de Chile (SUBDERE, MINVU, MDSF, MMA), gobiernos regionales, municipios y a la ciudadanía acceso libre, transparente, reproducible e interoperable a los indicadores y modelos de bienestar territorial del país:
+Su misión es proveer a la comunidad académica, organismos públicos ministeriales (SUBDERE, MINVU, MDSF, MMA), gobiernos regionales, municipios y a la sociedad civil acceso libre, auditable y determinista a las bases de modelación espacial del país:
 
-1. **MBHT 2017 (Línea Base Oficial Vigente)**: 204.906 manzanas censales evaluadas en 18 indicadores multidimensionales (Salud, Educación, Áreas Verdes, Transporte, Seguridad, Vulnerabilidad Socioeconómica y Calidad Ambiental) sobre el grafo vial caminable nacional de 1.589.595 tramos bajo la función cinemática de Tobler y el modelo bietápico de absorción flotante E2SFCA.
+1. **MBHT 2017 (Línea Base Oficial Vigente)**: Catastro de 204.906 manzanas censales evaluadas en 18 indicadores multidimensionales (Salud, Educación, Áreas Verdes, Transporte, Seguridad, Vulnerabilidad Socioeconómica y Calidad Ambiental) sobre el grafo vial caminable nacional de 1.589.595 tramos, utilizando la función cinemática de Tobler y el modelo bietápico de absorción flotante E2SFCA.
 2. **Censo 2024 (Insumos Demográficos Preparatorios en Calibración)**: Desagregación osculatoria de Sprague de 5.º orden y modelos sintéticos de cohortes etarias por sexo para 18,48 millones de habitantes.
-3. **Planificación Espacial Marina (PEM / SBAP)**: Cartografía tricontinental del Maritorio de Chile, Zona Económica Exclusiva (ZEE de 200 millas náuticas) y geomorfología submarina GEBCO.
-4. **Índice de Nivel Socioeconómico (INSE)**: Estratificación multivariada predial y residencial nacional.
-5. **Directorio Oficial SNIT**: Conectores e interoperabilidad hacia 19 geoportales del Sistema Nacional de Información Territorial de Chile.
+3. **Planificación Espacial Marina (PEM / SBAP)**: Delimitación tricontinental del Maritorio de Chile, Zona Económica Exclusiva (ZEE de 200 millas náuticas) y geomorfología submarina GEBCO / SHOA.
+4. **Índice de Nivel Socioeconómico (INSE)**: Estratificación multivariada predial y residencial a escala de manzana censal y entidad rural.
+5. **Directorio Oficial SNIT**: Enlaces e interoperabilidad hacia 19 geoportales del Sistema Nacional de Información Territorial de Chile.
 
 ---
 
-## 🤖 2. Ecosistema de Inteligencia Artificial & LLMs
+## 2. Ecosistema de Inteligencia Artificial y Modelos de Lenguaje (LLM)
 
-La IDE CIT incorpora una arquitectura pionera de interacción mediante **Modelos de Lenguaje (LLMs)** y agentes autónomos, diseñada bajo estrictos estándares de verificabilidad empírica, humildad científica y gobernanza de datos:
+La IDE CIT integra una capa de interacción mediante Modelos de Lenguaje (LLM) y agentes autónomos, fundamentada en principios de verificabilidad empírica, sobriedad conceptual y gobernanza de datos:
 
 ```
                   ┌────────────────────────────────────────┐
@@ -59,187 +59,152 @@ La IDE CIT incorpora una arquitectura pionera de interacción mediante **Modelos
 └───────────────────────────────────────┘  └─────────────────────────────────┘
 ```
 
-### A. Especificación Estándar para Agentes de IA (`llms.txt` y `llms-full.txt`)
-La plataforma implementa la especificación `/llms.txt` para garantizar que agentes como **Claude, Cursor, Copilot, ChatGPT, Perplexity o Antigravity** consuman la información metodológica oficial sin alucinaciones ni distorsiones:
-- **Resumen Ejecutivo:** [`https://ide.cit.uai.cl/llms.txt`](https://ide.cit.uai.cl/llms.txt) — Directivas conceptuales, delimitación de la línea base 2017 y advertencia sobre el Censo 2024.
-- **Contexto Exhaustivo:** [`https://ide.cit.uai.cl/llms-full.txt`](https://ide.cit.uai.cl/llms-full.txt) — Diccionario completo de 42 columnas físicas, formulación matemática de los 18 indicadores, BBOX geográficos y endpoints de descarga.
+### 2.1. Especificación Estándar para Agentes de IA (`llms.txt` y `llms-full.txt`)
+La plataforma implementa la especificación `/llms.txt` para garantizar que modelos de lenguaje y entornos de desarrollo asistido (Claude, Cursor, Copilot, ChatGPT, Perplexity, Antigravity) procesen la información metodológica oficial sin riesgo de alucinación semántica:
+- **Resumen Contextual:** [`https://ide.cit.uai.cl/llms.txt`](https://ide.cit.uai.cl/llms.txt) — Directivas conceptuales, delimitación de la línea base 2017 y advertencias de uso analítico.
+- **Contexto Exhaustivo:** [`https://ide.cit.uai.cl/llms-full.txt`](https://ide.cit.uai.cl/llms-full.txt) — Diccionario formal de 42 columnas físicas, formulación analítica de los 18 indicadores, extensiones geográficas WGS84 y endpoints de descarga.
 
-### B. Copiloto Territorial CIT (`motor_ia_cit.py` / `copiloto_conversacional_llm.py`)
-- **Comprensión Semántica:** Interpreta preguntas en lenguaje natural sobre brechas urbanas (*ej. «¿cuántas familias tienen bajo acceso a salud en Arica?»*).
-- **Memoria Episódica Determinista:** Conecta con DuckDB para consultar matrices precalculadas de equidad territorial en menos de 250 ms.
-- **Deduplicación Espacial:** Asegura que cualquier recomendación de infraestructura esté separada a una distancia euclidiana mínima > 300 metros de equipamientos existentes.
-- **Locución Humana TTS:** Síntesis de voz ejecutiva mediante Web Speech API (`window.speechSynthesis`) con precarga asíncrona de voces en español.
+### 2.2. Copiloto Territorial CIT (`motor_ia_cit.py` / `copiloto_conversacional_llm.py`)
+- **Comprensión Semántica:** Resuelve consultas en lenguaje natural sobre brechas urbanas, accesibilidad a equipamientos y cobertura de servicios comunitarios.
+- **Memoria Episódica Determinista:** Conecta con DuckDB y Parquet para consultar matrices de equidad territorial en latencias inferiores a 250 ms.
+- **Deduplicación Espacial:** Asegura que cualquier recomendación de inversión pública o emplazamiento de infraestructura esté separada a una distancia física mínima superior a 300 metros respecto a equipamientos existentes.
+- **Locución Web Speech API (TTS):** Síntesis vocal orientada a presentaciones ejecutivas mediante `window.speechSynthesis` con precarga controlada de voces en español.
 
-### C. Directiva Ética y Epistémica de los Modelos (Cero Dogmatismo)
-- El agente de IA se expresa con **humildad académica**: los modelos territoriales son aproximaciones empíricas que enriquecen la deliberación humana, jamás verdades absolutas inapelables.
-- Queda terminantemente prohibido el uso de clichés simplistas (*«ciudad de 15 minutos»*) o juicios binarios moralizantes (*«ciudades buenas vs. ciudades malas»*), reconociendo la heterogeneidad de paisajes, quebradas, valles transversales y caletas de Chile.
-
----
-
-## 📊 3. Taxonomía de Coberturas y Jerarquía de Versiones
-
-Para evitar interpretaciones erróneas, la IDE mantiene una rigurosa separación institucional entre datos oficiales consolidados y procesos en calibración:
-
-```
-┌────────────────────────────────────────────────────────────────────────────────────────┐
-│ JERARQUÍA DE VERSIONES Y ESTADO DE MADUREZ METODOLÓGICA                               │
-├───────────────────────────────┬──────────────────────────────────┬─────────────────────┤
-│ Cobertura                     │ Insignia Institucional Oficial   │ Estado de Madurez   │
-├───────────────────────────────┼──────────────────────────────────┼─────────────────────┤
-│ Matriz BHT 2017 (kpi_mud_2017)│ LÍNEA BASE OFICIAL VIGENTE       │ Producción Oficial  │
-│                               │ (SUBDERE - MINISTERIAL)          │ Consensuada         │
-├───────────────────────────────┼──────────────────────────────────┼─────────────────────┤
-│ Censo 2024 (Imputaciones)     │ INSUMO DEMOGRÁFICO PREPARATORIO  │ En Calibración      │
-│                               │ (EN CALIBRACIÓN - NO ES MBHT)    │ Preliminar          │
-├───────────────────────────────┼──────────────────────────────────┼─────────────────────┤
-│ Planificación Espacial Marina │ FUENTE INSTITUCIONAL CERTIFICADA │ Producción Oficial  │
-│ (PEM Tricontinental / ZEE)    │ (DIFROL / Armada / MMA / SHOA)   │ Vigente             │
-├───────────────────────────────┼──────────────────────────────────┼─────────────────────┤
-│ Equipamientos Urbanos 2017    │ CATASTRO AUDITADO CIT-UAI        │ 55.035 Equipamientos│
-├───────────────────────────────┼──────────────────────────────────┼─────────────────────┤
-│ Red Vial Caminable 2017       │ GRAFO RUTEABLE TOBLER            │ 1.589.595 Tramos    │
-└───────────────────────────────┴──────────────────────────────────┴─────────────────────┘
-```
-
-> [!IMPORTANT]
-> **Aviso Metodológico Censo 2024:**  
-> La cobertura demográfica del Censo 2024 disponible para descarga pública entrega insumos sintéticos de población, cohortes y género. **NO constituye la síntesis multidimensional final MBHT 2024**, cuyo lanzamiento oficial está programado para **noviembre de 2026**. Para políticas públicas y diagnósticos territoriales consolidados, utilice la línea base oficial MBHT 2017.
+### 2.3. Fundamento Epistémico y Neutralidad Metodológica
+- El asistente opera bajo un principio estricto de **humildad académica**: los modelos territoriales constituyen aproximaciones empíricas destinadas a enriquecer la deliberación humana, sin pretender sustituir el juicio técnico ni la deliberación democrática.
+- Queda proscrito el empleo de consignas reduccionistas o juicios binarios moralizantes, reconociendo la diversidad geográfica y cultural de Chile (valles transversales, asentamientos periurbanos, quebradas andinas y archipiélagos australes).
 
 ---
 
-## ⚡ 4. Panel de Interoperabilidad Probada (6/6 Protocolos Certificados)
+## 3. Jerarquía y Taxonomía de Coberturas
 
-Todos los servicios y conectores listados en la IDE han sido probados en producción con respuesta `HTTP 200 OK`, sistema de referencia de coordenadas `EPSG:4326` (WGS84) y verificación criptográfica:
+La IDE CIT establece una demarcación rigurosa entre conjuntos de datos consolidados y procesos en etapa de calibración estadística:
+
+| Cobertura | Insignia Oficial | Estado de Madurez | Custodia Técnica |
+| :--- | :--- | :--- | :--- |
+| **Matriz BHT 2017** (`kpi_mud_2017`) | Línea Base Oficial Vigente (SUBDERE - Ministerial) | Producción Consolidada | CIT-UAI / SUBDERE |
+| **Censo 2024 (Imputaciones)** | Insumo Demográfico Preparatorio (En Calibración) | Preliminar / En Ajuste | CIT-UAI / INE |
+| **Planificación Espacial Marina** (`pem_*`) | Fuente Institucional Certificada | Producción Vigente | DIFROL / Armada / MMA |
+| **Equipamientos Urbanos 2017** | Catastro Nacional Auditado | 55.035 Establecimientos | CIT-UAI / Ministerios |
+| **Red Vial Caminable 2017** | Grafo Ruteable Tobler | 1.589.595 Tramos Viales | CIT-UAI / MOP |
+
+> [!NOTE]
+> **Aviso Metodológico — Censo 2024:**  
+> La cobertura demográfica del Censo 2024 publicada para descarga abierta entrega insumos preparatorios de población, cohortes y composición por sexo. **No constituye la síntesis multidimensional final MBHT 2024**, cuyo lanzamiento oficial está previsto para **noviembre de 2026**. Para la formulación de diagnósticos e instrumentos de política pública rige la línea base oficial MBHT 2017.
+
+---
+
+## 4. Panel de Interoperabilidad Probada y Servicios Certificados
+
+Cada endpoint y conector publicado en la IDE ha sido validado en producción mediante pruebas automatizadas con código de respuesta `HTTP 200 OK`, sistema geodésico `EPSG:4326` (WGS84) y sumas criptográficas SHA-256:
+
+| Protocolo / Estándar | Endpoint Oficial | Formato / Sistema Ref. | Comando de Verificación (CLI) | Estado |
+| :--- | :--- | :--- | :--- | :---: |
+| **STAC 1.0.0 Catalog** | `/stac/catalog.json` | JSON · EPSG:4326 | `curl -s https://ide.cit.uai.cl/stac/catalog.json \| jq .id` | Verificado |
+| **GeoParquet 1.1** | `/download/MBHT_2017_R15_Manzanas.parquet` | WKB Snappy · EPSG:4326 | `duckdb -c "SELECT count(*), round(avg(bht_2017),4) FROM 'https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet'"` | Verificado |
+| **OGC GeoPackage** | `/download/MBHT_2017_R15_Manzanas.gpkg` | SQLite · EPSG:4326 | `ogrinfo -so https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.gpkg mbht_2017_r15` | Verificado |
+| **ESRI Shapefile** | `/download/MBHT_2017_R15_Manzanas_SHP.zip` | ZIP (SHP/DBF) · EPSG:4326 | `curl -sI https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas_SHP.zip \| grep -i content-length` | Verificado |
+| **QGIS Layer Def.** | `/download/qgis/CIT_MBHT_2017_Nacional.qlr` | XML qgis-qlr · EPSG:4326 | `curl -s https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr \| head -n 5` | Verificado |
+| **ISO 19139 XML** | `/download/iso_xml/kpi_mud_2017_iso19139.xml` | XML gmd:MD_Metadata | `curl -s https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml \| head -n 10` | Verificado |
+
+---
+
+## 5. Protocolo de Reproducibilidad Científica de Extremo a Extremo
+
+Para certificar la integridad de los algoritmos y descartar vectores de riesgo en la cadena de distribución de software, la IDE CIT implementa un **procedimiento de 3 pasos auditado** que prescinde de invocaciones remotas automáticas:
 
 ```bash
-# 1. Catálogo STAC 1.0.0 (SpatioTemporal Asset Catalog)
-curl -s https://ide.cit.uai.cl/stac/catalog.json | jq .id
-# Retorno: "cit-uai-ide-catalog"
-
-# 2. Cloud-Optimized GeoParquet 1.1 (Consulta SQL directa sin descargar todo el archivo)
-duckdb -c "SELECT count(*), round(avg(bht_2017), 4) FROM 'https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet';"
-# Retorno: 3.304 manzanas | BHT promedio: 0.3842
-
-# 3. OGC GeoPackage (GPKG - Estándar ISO/IEC 19125 SQLite)
-ogrinfo -so https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.gpkg mbht_2017_r15
-
-# 4. ESRI Shapefile (ZIP con SHP + SHX + DBF + PRJ + CPG UTF-8)
-curl -sI https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas_SHP.zip | grep -i content-length
-
-# 5. Definición de Capa QGIS (QLR con Simbología de Jenks 6 Clases)
-curl -s https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr | head -n 5
-
-# 6. Metadatos ISO 19139 / Dublin Core XML (gmd:MD_Metadata)
-curl -s https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml | head -n 10
-```
-
----
-
-## 🔬 5. Protocolo Seguro de Reproducibilidad Científica E2E
-
-Para garantizar la integridad de la cadena de suministro de software y eliminar riesgos de ejecución remota de código no auditado, la IDE CIT implementa un **protocolo determinista de 3 pasos** con verificación criptográfica SHA-256 previa a la ejecución:
-
-```bash
-# Paso 1: Descargar el script autónomo de verificación
+# 1. Descarga aislada del script de verificación
 curl -s -O https://ide.cit.uai.cl/download/reproducir_verificacion_r15.py
 
-# Paso 2: Verificar la integridad del script mediante su SHA-256 publicado
+# 2. Verificación criptográfica mediante la suma SHA-256 publicada
 echo "7fb25d61a29544e57c17869c6ea3566c68659d003dce9f59dfcd642fbf96a8d0  reproducir_verificacion_r15.py" | sha256sum -c
-# Salida esperada: reproducir_verificacion_r15.py: LA AUTENTICACIÓN COINCIDE (OK)
 
-# Paso 3: Ejecutar la verificación localmente en un entorno aislado
+# 3. Ejecución determinista en entorno local
 python reproducir_verificacion_r15.py
 ```
 
-### Benchmark de Reproducción (Manzana Testigo `15101011001004001` — Arica):
-| Parámetro | Valor Verificado Oficial | Tolerancia Aceptada |
-| :--- | :--- | :--- |
-| **BHT Síntesis 2017** | `0.3751` | $\pm 0.0001$ |
-| **Dimensión Accesibilidad** | `0.3204` | $\pm 0.0001$ |
-| **Dimensión Socioeconómica** | `0.4421` | $\pm 0.0001$ |
-| **Dimensión Seguridad** | `0.4102` | $\pm 0.0001$ |
-| **Dimensión Ambiental** | `0.3276` | $\pm 0.0001$ |
+### Valores de Referencia para Calibración (Manzana Testigo `15101011001004001` — Arica):
+- **BHT Oficial 2017:** `0.3751` ($\pm 0.0001$)
+- **Dimensión Accesibilidad:** `0.3204` ($\pm 0.0001$)
+- **Dimensión Socioeconómica:** `0.4421` ($\pm 0.0001$)
+- **Dimensión Seguridad:** `0.4102` ($\pm 0.0001$)
+- **Dimensión Ambiental:** `0.3276` ($\pm 0.0001$)
 
 ---
 
-## 🛠️ 6. Estructura del Proyecto y Código Fuente
+## 6. Arquitectura del Sistema y Estructura de Código
 
 ```
 IDE_Data_Hub/
-├── generador_portal_ide_cit.py           # Generador maestro SSG de index.html, CSV y DCAT
-├── generador_descargas_2017.py           # Generador del centro de descargas territoriales
-├── generador_guia_tecnica.py             # Generador de la guía metodológica interactiva
-├── generador_red_ides.py                 # Generador del directorio de los 19 geoportales SNIT
-├── generador_ficha_dataset.py            # Generador de la ficha técnica maestra 17D
-├── compilar_y_certificar_ecosistema_ide.py # Orquestador maestro de compilación y QA
-├── auditor_adversarial_ide.py            # Red Team automatizado (12 vectores de auditoría)
-├── motor_ia_cit.py                       # Motor NLP y telemetría del Copiloto IA Territorial
+├── generador_portal_ide_cit.py             # Generador SSG de index.html, CSV y DCAT
+├── generador_descargas_2017.py             # Generador del centro de descargas territoriales
+├── generador_guia_tecnica.py               # Generador de la guía metodológica
+├── generador_red_ides.py                   # Generador del directorio de geoportales SNIT
+├── generador_ficha_dataset.py              # Generador de la ficha técnica maestra 17D
+├── compilar_y_certificar_ecosistema_ide.py # Compilador maestro y orquestador de control de calidad
+├── auditor_adversarial_ide.py              # Suite de auditoría adversarial continua (12 vectores)
+├── motor_ia_cit.py                         # Motor NLP y telemetría del Copiloto Territorial
 ├── data/
-│   ├── catalogo_ide_cit.json             # Fuente Única de Verdad (Single Source of Truth)
-│   ├── connection_examples.json          # Ejemplos de consumo multi-lenguaje (Python, R, QGIS)
-│   └── iso_xml/                          # 29 esquemas XML normalizados ISO 19139
-├── stac/                                 # Catálogo STAC 1.0.0 (18 colecciones georreferenciadas)
+│   ├── catalogo_ide_cit.json               # Fuente de datos central y linaje metodológico
+│   ├── connection_examples.json            # Ejemplos de consumo multi-lenguaje (Python, R, QGIS)
+│   └── iso_xml/                            # 29 esquemas XML normalizados ISO 19139
+├── stac/                                   # Catálogo STAC 1.0.0 (18 colecciones estructuradas)
 ├── download/
-│   ├── reproducir_verificacion_r15.py    # Script ejecutable de verificación científica E2E
-│   └── SHA256SUMS.txt                    # Registro maestro de sumas de comprobación SHA-256
-├── requirements.txt                      # Dependencias de Python mínimas
-└── .gitignore                            # Exclusión de datos pesados (>100MB) y secretos
+│   ├── reproducir_verificacion_r15.py      # Script ejecutable de verificación científica E2E
+│   └── SHA256SUMS.txt                      # Registro maestro de sumas de comprobación SHA-256
+├── requirements.txt                        # Especificación de dependencias mínimas de Python
+└── .gitignore                              # Exclusión de datos pesados (>100MB) y archivos de depuración
 ```
 
 ---
 
-## 🚀 7. Guía de Instalación y Desarrollo Local
+## 7. Guía de Ejecución y Desarrollo Local
 
-### Requisitos Previos
+### Requisitos del Sistema
 - Python 3.10 o superior.
-- Git 2.40+.
+- Git 2.40 o superior.
 
-### Paso 1: Clonar el Repositorio
-```bash
-git clone https://github.com/CIT-UAI/ide-data-hub.git
-cd ide-data-hub
-```
-
-### Paso 2: Instalar Dependencias
+### Instalación de Dependencias
 ```bash
 pip install -r requirements.txt
 ```
 
-### Paso 3: Compilar el Ecosistema Completo
-Para regenerar todos los artefactos HTML, catálogos STAC, esquemas ISO y validar los 658 hashes criptográficos:
+### Compilación Completa del Ecosistema
+Ejecuta la regeneración de páginas HTML, catálogos STAC 1.0.0, metadatos ISO y la comprobación de los 658 hashes criptográficos:
 ```bash
 python compilar_y_certificar_ecosistema_ide.py
 ```
 
-### Paso 4: Iniciar Servidor Local de Previsualización
-- En Windows: Hacer doble clic en `INICIAR_PORTAL_LOCAL.bat`.
-- En Linux / macOS / Terminal:
+### Previsualización en Servidor Local
+- En Windows: Ejecutar `INICIAR_PORTAL_LOCAL.bat`.
+- En Linux / macOS:
   ```bash
   python -m http.server 8080
   ```
-  Abrir `http://localhost:8080` en el navegador.
+  Acceder a `http://localhost:8080`.
 
-### Paso 5: Ejecutar la Suite de Auditoría Adversarial (Red Team)
+### Ejecución de la Suite de Auditoría Adversarial
 ```bash
 python auditor_adversarial_ide.py
 ```
 
 ---
 
-## 🔒 8. Seguridad y Divulgación de Vulnerabilidades (RFC 9116)
+## 8. Seguridad de la Información y Divulgación de Vulnerabilidades (RFC 9116)
 
-El Centro de Inteligencia Territorial mantiene un programa de divulgación responsable de vulnerabilidades y seguridad de la información institucional:
-- **Contacto de Seguridad:** `mailto:security@uai.cl`
-- **Contacto del Centro:** `mailto:contactocit@uai.cl`
+El Centro de Inteligencia Territorial mantiene una política formal de divulgación coordinada y gestión de incidentes:
+- **Contacto de Seguridad Institucional:** `mailto:security@uai.cl`
+- **Contacto Administrativo CIT:** `mailto:contactocit@uai.cl`
 - **Archivo de Seguridad Canónico:** [`https://ide.cit.uai.cl/.well-known/security.txt`](https://ide.cit.uai.cl/.well-known/security.txt)
-- **Vigencia:** 31 de diciembre de 2027
-- **Política de Cero Secretos en Código:** Estricto cumplimiento del principio de aislamiento de credenciales (Invariante 27 de arquitectura CIT).
+- **Vigencia del Registro:** 31 de diciembre de 2027
+- **Principio de Cero Secretos:** Aislamiento estricto de credenciales y claves privadas fuera del código fuente versionado.
 
 ---
 
-## 📜 9. Licencia y Citación Académica
+## 9. Propiedad Intelectual, Licenciamiento y Citación Académica
 
-El código fuente de este repositorio se distribuye bajo **Licencia Institucional CIT-UAI**. Los datos geoespaciales abiertos se distribuyen bajo términos equivalentes a **Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)**.
+El código fuente de este repositorio se encuentra bajo **Licencia Institucional CIT-UAI**. Los datos geoespaciales abiertos se difunden bajo términos equivalentes a **Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)**.
 
-### Citación Oficial en Formato APA 7:
+### Citación Oficial en Norma APA 7:
 > Centro de Inteligencia Territorial. (2026). *Infraestructura de Datos Espaciales (IDE CIT) y Matriz de Bienestar Humano Territorial (MBHT)*. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl
