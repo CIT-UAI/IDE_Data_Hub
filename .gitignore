@@ -1,6 +1,31 @@
 # Git Ignore para IDE Data Hub — Centro de Inteligencia Territorial (CIT-UAI)
 
-# 1. Archivos compilados de distribución y cachés
+# 1. Scripts operacionales del sistema y ejecutables batch (SEGURIDAD Y CONTROL)
+*.bat
+*.cmd
+*.ps1
+
+# 2. Scripts de infraestructura interna, despliegue cloud y telemetría privada (SEGURIDAD)
+sincronizar_y_publicar_online.py
+desplegador_ide_produccion.py
+desplegar_colector_telemetria.py
+configurar_apigw_telemetria.py
+update_lambda.py
+activar_subdominio_uai.py
+verificar_produccion_online.py
+verify_fixes.py
+conversacion_con_agente.py
+auditar_y_reentrenar_agente.py
+analizar_consultas_y_aprendizaje.py
+test_chips_and_suggestions.py
+test_copilot_preguntas.py
+actualizar_catalogo_coberturas_nuevas.py
+actualizar_catalogo_pem.py
+actualizar_metadatos_archivos_catalogo.py
+auditar_index.py
+verificador_servicios_tiles.py
+
+# 3. Archivos compilados de distribución y cachés
 dist/
 build/
 __pycache__/
@@ -9,14 +34,14 @@ __pycache__/
 *.so
 .pytest_cache/
 
-# 2. Entornos virtuales y dependencias
+# 4. Entornos virtuales y dependencias
 .venv/
 venv/
 env/
 ENV/
 node_modules/
 
-# 3. Datos masivos descargables (> 100 MB límite estricto de GitHub)
+# 5. Datos masivos descargables (> 100 MB límite estricto de GitHub)
 # Los datos espaciales masivos se distribuyen vía AWS S3 / CloudFront (https://ide.cit.uai.cl/download/)
 download/*.parquet
 download/*.gpkg
@@ -29,13 +54,13 @@ download/*.tar.gz
 *.parquet
 *.gpkg
 
-# Excepciones: conservar scripts de verificación y conectores livianos en download/
+# Excepciones de descarga: conservar scripts de verificación y conectores livianos en download/
 !download/reproducir_verificacion_r15.py
 !download/SHA256SUMS.txt
 !download/qgis/
 !download/iso_xml/
 
-# 4. Carpetas y scripts de depuración local temporal
+# 6. Carpetas y scripts de depuración local temporal
 scratch/
 scratch_*.py
 test_runs/
@@ -43,7 +68,7 @@ test_masivo/
 repositorio_mbht2024_metodologia/
 *.log
 
-# 5. Secretos y credenciales de entorno (Invariante 27)
+# 7. Secretos y credenciales de entorno (Invariante 27)
 .env
 .env.*
 !.env.example
@@ -52,7 +77,7 @@ credentials.json
 *.key
 *.id_rsa
 
-# 6. Archivos del sistema operativo y editores
+# 8. Archivos del sistema operativo y editores
 .DS_Store
 Thumbs.db
 desktop.ini

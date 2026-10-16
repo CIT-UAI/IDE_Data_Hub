@@ -177,12 +177,10 @@ python compilar_y_certificar_ecosistema_ide.py
 ```
 
 ### Previsualización en Servidor Local
-- En Windows: Ejecutar `INICIAR_PORTAL_LOCAL.bat`.
-- En Linux / macOS:
-  ```bash
-  python -m http.server 8080
-  ```
-  Acceder a `http://localhost:8080`.
+```bash
+python -m http.server 8080
+```
+Acceder a `http://localhost:8080` en el navegador web.
 
 ### Ejecución de la Suite de Auditoría Adversarial
 ```bash
