@@ -1,0 +1,88 @@
+{
+  "stac_version": "1.0.0",
+  "type": "Collection",
+  "id": "pem-biodiversidad-especies",
+  "title": "Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)",
+  "description": "Consolidado nacional de ocurrencias biológicas y biodiversidad marina de Chile, integrando 4.529.201 observaciones georreferenciadas desde las campañas científicas del Instituto de Fomento Pesquero (IFOP) y la Infraestructura Mundial de Información en Biodiversidad (GBIF). Abarca taxonomía completa (reino, filo, clase, orden, familia, género, especie y nombre científico), profundidad de colecta y año de observación. Diseñado para fundamentar la Planificación marina conforme a las directrices de pesca responsable de la FAO y respaldar la creación, monitoreo y fiscalización de la red del Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley N° 21.600).",
+  "license": "CC-BY-4.0",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -115.0,
+          -58.0,
+          -66.0,
+          -18.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2017-01-01T00:00:00Z",
+          "2026-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "summaries": {
+    "version": [
+      "v1.0.3"
+    ],
+    "status": [
+      "Conjunto de datos oficial vigente"
+    ],
+    "matriz": [
+      "pem"
+    ],
+    "escala": [
+      "Puntual georreferenciada masiva (4.529.201 registros de biodiversidad)"
+    ],
+    "physical_columns": [
+      12
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "self",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/pem_biodiversidad_especies.json"
+    }
+  ],
+  "assets": {
+    "geoparquet": {
+      "title": "GeoParquet — Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet"
+    },
+    "csv": {
+      "title": "Tabla CSV — Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)",
+      "type": "text/csv",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.csv"
+    },
+    "metadata_iso19139": {
+      "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "href": "https://ide.cit.uai.cl/download/iso_xml/pem_biodiversidad_especies_iso19139.xml"
+    }
+  }
+}

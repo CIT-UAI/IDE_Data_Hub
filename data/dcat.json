@@ -1,0 +1,595 @@
+{
+  "@context": {
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "locn": "http://www.w3.org/ns/locn#"
+  },
+  "@id": "https://ide.cit.uai.cl/data/dcat.json",
+  "@type": "dcat:Catalog",
+  "dct:title": "IDE CIT — Infraestructura de Datos Espaciales",
+  "dct:description": "Plataforma académica y de ciencia abierta para la consulta, interoperabilidad y descarga de coberturas y modelos territoriales del Centro de Inteligencia Territorial de la Universidad Adolfo Ibáñez.",
+  "dct:publisher": {
+    "@type": "foaf:Organization",
+    "foaf:name": "Centro de Inteligencia Territorial (CIT-UAI)",
+    "foaf:mbox": "contactocit@uai.cl"
+  },
+  "dcat:dataset": [
+    {
+      "@type": "dcat:Dataset",
+      "dct:identifier": "CIT-UAI::kpi_mud_2017::2026",
+      "dct:title": "MBHT 2017 — Línea base oficial",
+      "dct:description": "Línea base nacional oficial de la Matriz de Bienestar Humano Territorial Integral evaluada sobre 204.906 manzanas censales del Censo 2017 en las 16 regiones de Chile. Sintetiza 18 indicadores elementales distribuidos en 4 macro-dimensiones del bienestar (bajo el Axioma de Neutralidad Elemental W(D) = n_D / 18): 1) Macro-dimensión de Accesibilidad (dim_acc, peso 6/18 = 33,33%), que integra los 6 indicadores de acceso peatonal efectivo E2SFCA + Tobler a salud (isal), educación (ise), áreas verdes (iav), deporte (idep), cultura (icul) y servicios públicos (iser); 2) Macro-dimensión Socioeconómica (dim_soc, peso 6/18 = 33,33%); 3) Macro-dimensión de Seguridad (dim_seg, peso 4/18 = 22,22%); y 4) Macro-dimensión Ambiental (dim_amb, peso 2/18 = 11,11%). El archivo físico contiene el esquema completo de 42 columnas físicas (identificadores, demografía censal, índice sintético bht, las 4 macro-dimensiones, los 6 sub-indicadores peatonales con sus valores pre-escalamiento, tipología Jenks tob y geometría WKB).",
+      "dct:issued": "2017-04-19",
+      "dct:modified": "2026-10-15",
+      "owl:versionInfo": "1.0.3",
+      "dcat:theme": "mbht",
+      "dcat:spatialResolutionInMeters": 100,
+      "locn:geometry": "[-75.64, -55.98, -66.86, -17.5]",
+      "dcat:distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "MBHT 2017 — Línea base oficial (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 252572936,
+          "spdx:checksum": "4a123b83ea1cefa18661c25ea40b9c3fc2a319cf6a45abbbd72a2cb30c069f2a"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "MBHT 2017 — Línea base oficial (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.gpkg",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 360656896,
+          "spdx:checksum": "3db07960a5d2ac94d4443c5ba59a3715655db8aabf040e01993180c316e1d230"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "MBHT 2017 — Línea base oficial (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas_SHP.zip",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 214822331,
+          "spdx:checksum": "9899f31ae5aa104b40e9c4bbfd4030eb1b8e2b3fb431544b1d103fc720f8cb32"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "MBHT 2017 — Línea base oficial (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.csv",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 100911556,
+          "spdx:checksum": "ebea6ee15f32639345b0f7ce1b3211f808d17b55b3b7d7283d180c48721d5cf5"
+        }
+      ]
+    },
+    {
+      "@type": "dcat:Dataset",
+      "dct:identifier": "CIT-UAI::pem_maritorio_nacional::2026",
+      "dct:title": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
+      "dct:description": "Delimitación vectorial oficial del Maritorio chileno bajo una perspectiva tricontinental y de soberanía oceánica integral (Chile continental, insular y Territorio Antártico Chileno). Articula la Planificación marina nacional conforme a las directrices de ordenamiento y pesca sustentable de la FAO y el marco de conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP). Comprende las líneas de base, Aguas Interiores, Mar Territorial (12 millas náuticas), Zona Contigua (24 mn), Zona Económica Exclusiva (200 mn) y plataforma continental, consolidando más de 3,5 millones de kilómetros cuadrados de océano nacional.",
+      "dct:issued": "2024-12-31",
+      "dct:modified": "2026-10-15",
+      "owl:versionInfo": "1.0.3",
+      "dcat:theme": "pem",
+      "dcat:spatialResolutionInMeters": 100,
+      "locn:geometry": "[-131.0, -90.0, -50.0, -17.5]",
+      "dcat:distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.parquet",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 103187755,
+          "spdx:checksum": "05e07fbbb054b09f878e169c4656e8da2f27c8666a5b46fac655a1e28dbe448d"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.gpkg",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 163622912,
+          "spdx:checksum": "6a636d5af9e4ac81f714b5a848da70d8e5c06ed17ce17bda85eccc061ced945a"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental_SHP.zip",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 79974812,
+          "spdx:checksum": "1a4f859bd720eb94c32beda991239311583e9c7fe834630843ce5fac63c833ab"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.csv",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 46249,
+          "spdx:checksum": "d7809b26100bb3e16dc0936b71dcc1688b48eb5e1cbfe2778b671087a98c88f2"
+        }
+      ]
+    },
+    {
+      "@type": "dcat:Dataset",
+      "dct:identifier": "CIT-UAI::pem_geomorfologia_gebco::2026",
+      "dct:title": "Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+      "dct:description": "Zonificación geomorfológica del lecho y fondo submarino nacional categorizada conforme al estándar internacional GEBCO (General Bathymetric Chart of the Oceans / IHO). Insumo estructural para la Planificación marina nacional bajo directrices de la FAO y los criterios de zonificación y protección del Servicio de Biodiversidad y Áreas Protegidas (SBAP). Delimita las grandes provincias fisiográficas oceánicas: Fosa de Atacama/Perú-Chile, plataforma continental, talud continental, fosas abisales, dorsales oceánicas (Dorsal de Chile, Cordillera de Nazca, Cordillera de Salas y Gómez) y llanuras abisales.",
+      "dct:issued": "2024-12-31",
+      "dct:modified": "2026-10-15",
+      "owl:versionInfo": "1.0.3",
+      "dcat:theme": "pem",
+      "dcat:spatialResolutionInMeters": 100,
+      "locn:geometry": "[-120.0, -58.0, -66.0, -18.0]",
+      "dcat:distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.parquet",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 1212254,
+          "spdx:checksum": "7c7589083d61163cf66218e7ccdae1b3eb88e7d3a0569752d2f62addb810959d"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.gpkg",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 2678784,
+          "spdx:checksum": "8901177e440c61e57be3ad125555c7054526ccb02b0ef3dc8d69ce229ebb6098"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO_SHP.zip",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 1154099,
+          "spdx:checksum": "1946a13918e6c015d518f6602d9af61b0a01f08de9c2b305c4256fd4f07bfb73"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.csv",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 2189,
+          "spdx:checksum": "04100c3d2dea97217195f15f8eda582b7c10cf5bf09e1c77bdccc3b47b70d086"
+        }
+      ]
+    },
+    {
+      "@type": "dcat:Dataset",
+      "dct:identifier": "CIT-UAI::pem_montes_submarinos::2026",
+      "dct:title": "Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+      "dct:description": "Catastro geomorfológico y toponímico de 2.234 cimas, guyots, cañones y relieves destacados del lecho oceánico de Chile, con toponimia oficial estandarizada por el Subcomité de Nombres de Formas del Relieve Submarino (SCUFN - GEBCO/OHI) y el SHOA. Identifica estructuras orográficas submarinas que constituyen hábitats bentónicos de alto valor ecológico y áreas prioritarias para la evaluación de Ecosistemas Marinos Vulnerables (VME) bajo directrices de la FAO y el marco de zonificación y conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley N° 21.600), como las cordilleras de Nazca, Desventuradas y Salas y Gómez.",
+      "dct:issued": "2024-12-31",
+      "dct:modified": "2026-10-15",
+      "owl:versionInfo": "1.0.3",
+      "dcat:theme": "pem",
+      "dcat:spatialResolutionInMeters": 100,
+      "locn:geometry": "[-115.0, -56.0, -68.0, -18.5]",
+      "dcat:distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.parquet",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 61134,
+          "spdx:checksum": "b73487f4dff3bb8383d1053eaf4529ac406db2f27753031892eff1f08c05e3b1"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.gpkg",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 430080,
+          "spdx:checksum": "edad21804ccb36cafb6eef6470619f774533287858a3c18ed0ae3770b9d7d879"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia_SHP.zip",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 54878,
+          "spdx:checksum": "5093aba933c90efa89cce37825bd763bcf916b84f8552bd5e0c8a4db303bb3cb"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.csv",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 211745,
+          "spdx:checksum": "a2284ce762b7394a003ac1dd3973ce9538d963b2f6da9e4a82ce850c8cabc5cc"
+        }
+      ]
+    },
+    {
+      "@type": "dcat:Dataset",
+      "dct:identifier": "CIT-UAI::pem_cuencas_oceanicas::2026",
+      "dct:title": "Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+      "dct:description": "Delimitación espacial morfométrica de 53.726 cuencas y subcuencas oceanográficas submarinas del lecho del Pacífico Suroriental chileno. Modela el drenaje de sedimentos submarinos, cañones tributarios y circulación de fondo, permitiendo caracterizar la conectividad ecológica y apoyar la Planificación marina sustentable bajo directrices de la FAO y las metas de conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP).",
+      "dct:issued": "2024-12-31",
+      "dct:modified": "2026-10-15",
+      "owl:versionInfo": "1.0.3",
+      "dcat:theme": "pem",
+      "dcat:spatialResolutionInMeters": 100,
+      "locn:geometry": "[-118.0, -56.0, -68.0, -18.0]",
+      "dcat:distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.parquet",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 5079409,
+          "spdx:checksum": "19014b45d7c620e8bc737abcefe5bf7786439d67af619bd34f3d6fc62f52bbff"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.gpkg",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 21479424,
+          "spdx:checksum": "7696d59ed8b7b16c8368350f7d253ced624c34609f6908eacad8d4ec98752c3f"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas_SHP.zip",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 3333641,
+          "spdx:checksum": "8d74c34eefde832d22eb3fdaf7e86c733cb86c5efa21ab4b8871399aaf257894"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP) (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.csv",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 1467002,
+          "spdx:checksum": "ccb779cddeeb4b6416d1207d496f28f49891525831a8654f076380570deea41a"
+        }
+      ]
+    },
+    {
+      "@type": "dcat:Dataset",
+      "dct:identifier": "CIT-UAI::pem_biodiversidad_especies::2026",
+      "dct:title": "Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)",
+      "dct:description": "Consolidado nacional de ocurrencias biológicas y biodiversidad marina de Chile, integrando 4.529.201 observaciones georreferenciadas desde las campañas científicas del Instituto de Fomento Pesquero (IFOP) y la Infraestructura Mundial de Información en Biodiversidad (GBIF). Abarca taxonomía completa (reino, filo, clase, orden, familia, género, especie y nombre científico), profundidad de colecta y año de observación. Diseñado para fundamentar la Planificación marina conforme a las directrices de pesca responsable de la FAO y respaldar la creación, monitoreo y fiscalización de la red del Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley N° 21.600).",
+      "dct:issued": "2024-12-31",
+      "dct:modified": "2026-10-15",
+      "owl:versionInfo": "1.0.3",
+      "dcat:theme": "pem",
+      "dcat:spatialResolutionInMeters": 100,
+      "locn:geometry": "[-115.0, -58.0, -66.0, -18.0]",
+      "dcat:distribution": []
+    },
+    {
+      "@type": "dcat:Dataset",
+      "dct:identifier": "CIT-UAI::censo_imputaciones_2024::2026",
+      "dct:title": "Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+      "dct:description": "Modelo demográfico sintético y desagregación multivariada determinística del Censo 2024 (18,48 millones de personas, 7,66 millones de viviendas y 6,62 millones de hogares) a escala de 254.395 manzanas urbanas y entidades rurales para las 16 regiones de Chile. Desarrollado por el CIT-UAI mediante interpolación osculatriz de Sprague y programación entera de mayor residuo para modelación espacial de accesibilidad y demanda de equipamientos, respetando irrestrictamente el secreto estadístico (Ley N° 17.374, Art. 29).",
+      "dct:issued": "2024-12-31",
+      "dct:modified": "2026-10-15",
+      "owl:versionInfo": "1.0.3",
+      "dcat:theme": "censo",
+      "dcat:spatialResolutionInMeters": 100,
+      "locn:geometry": "[-75.64, -55.98, -66.86, -17.5]",
+      "dcat:distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Censo 2024 — Imputaciones demográficas por cohortes y sexo (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 300547507,
+          "spdx:checksum": "864126f757d362213f018ac8b4d584fbc8de1cd42655a8a70cd6fc0f7c95b7cc"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Censo 2024 — Imputaciones demográficas por cohortes y sexo (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.gpkg",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 426635264,
+          "spdx:checksum": "48a8b5d454107ec24b91c2b3cab0256e08855ba13ae55b3718b29806d6a0ceab"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Censo 2024 — Imputaciones demográficas por cohortes y sexo (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional_SHP.zip",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 239654071,
+          "spdx:checksum": "dbcbbf1f9fa536ea672edb4f5ce664212338b918978fbd99cabc38a38fea456b"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Censo 2024 — Imputaciones demográficas por cohortes y sexo (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.csv",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 56300717,
+          "spdx:checksum": "382436192861e465f853379445e49bd5d8054edf5cf135aeb3570869a5847e81"
+        }
+      ]
+    },
+    {
+      "@type": "dcat:Dataset",
+      "dct:identifier": "CIT-UAI::inse_socioeconomico::2026",
+      "dct:title": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+      "dct:description": "Estratificación socioeconómica y patrimonial continua y por quintiles (Q1 a Q5, y S/P sin población) calibrada a nivel nacional para 254.395 manzanas censales en las 16 regiones de Chile. Integra la caracterización socioeconómica de los hogares (capital humano y ocupación CIUO) con la valoración patrimonial inmobiliaria de suelo según Áreas Homogéneas del SII (Ley 17.235) y Valor Guía de Terreno (VGT en UF/m² y $/m²).",
+      "dct:issued": "2024-12-31",
+      "dct:modified": "2026-10-15",
+      "owl:versionInfo": "1.0.3",
+      "dcat:theme": "inse",
+      "dcat:spatialResolutionInMeters": 100,
+      "locn:geometry": "[-75.64, -55.98, -66.86, -17.5]",
+      "dcat:distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024 (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 295995644,
+          "spdx:checksum": "148b716ac5356bdcba4bb578c4a5db824eaa6eeaa253fadcefffb5a7f96c6b1f"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024 (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.gpkg",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 487309312,
+          "spdx:checksum": "f86cab40317e5f405879bcb58dd600805bc4ec31293714ab1d45c218ec805de9"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024 (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024_SHP.zip",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 232586385,
+          "spdx:checksum": "4626a5ce30d47fdddf066f26620d65948fa983cc7075bfea4545612cfe7e1bb9"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024 (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.csv",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 29972846,
+          "spdx:checksum": "d438bf5f535a202736b2b887240130a5286c4d9a7a068d2f6ddea85a0533d047"
+        }
+      ]
+    },
+    {
+      "@type": "dcat:Dataset",
+      "dct:identifier": "CIT-UAI::sii_areas_homogeneas::2026",
+      "dct:title": "Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+      "dct:description": "Catastro espacial completo de 14.157 Áreas Homogéneas definido por el Servicio de Impuestos Internos (SII) bajo la Ley N° 17.235 sobre Impuesto Territorial. Delimita zonas territoriales con características urbanísticas, topográficas, de accesibilidad a servicios y valor unitario de terreno homogéneas para los procesos de reavalúo de bienes raíces en todo Chile. Proporciona el Valor Guía de Terreno (VGT en UF/m² y $/m²), coeficiente guía y clasificación comunal para análisis de plusvalía, dinámica inmobiliaria y tributación territorial.",
+      "dct:issued": "2024-12-31",
+      "dct:modified": "2026-10-15",
+      "owl:versionInfo": "1.0.3",
+      "dcat:theme": "sii",
+      "dcat:spatialResolutionInMeters": 100,
+      "locn:geometry": "[-75.64, -55.98, -66.86, -17.5]",
+      "dcat:distribution": []
+    },
+    {
+      "@type": "dcat:Dataset",
+      "dct:identifier": "CIT-UAI::equipamientos_2017::2026",
+      "dct:title": "Equipamientos urbanos y servicios esenciales 2017",
+      "dct:description": "Catastro oficial de equipamientos y servicios urbanos esenciales utilizado para la modelación de accesibilidad peatonal en la Matriz de Bienestar Humano Territorial (MBHT 2017). Documenta de forma trazable los tres niveles del embudo de depuración nacional: 202.275 registros administrativos brutos iniciales, 113.231 unidades en el catastro maestro ruteable consolidado en 6 dimensiones —Áreas Verdes (54.962), Deportes (26.629), Educación (17.129), Salud (5.824), Servicios Públicos (4.914) y Cultura (3.773)— y 55.035 equipamientos públicos de libre acceso y gratuidad publicados en los paquetes regionales y nacionales de la línea base abierta MBHT 2017.",
+      "dct:issued": "2017-04-19",
+      "dct:modified": "2026-10-15",
+      "owl:versionInfo": "1.0.3",
+      "dcat:theme": "mbht",
+      "dcat:spatialResolutionInMeters": 100,
+      "locn:geometry": "[-75.64, -55.98, -66.86, -17.5]",
+      "dcat:distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Equipamientos urbanos y servicios esenciales 2017 (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 8589840,
+          "spdx:checksum": "ab79a066c0e175840a0215626c8f10a91c61920d8c89285433592b4f423d0a97"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Equipamientos urbanos y servicios esenciales 2017 (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.gpkg",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 23638016,
+          "spdx:checksum": "93803a289f8d7832a6d9dda2f40f84d3892d28351af4e088dac8b75e1e6c3123"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Equipamientos urbanos y servicios esenciales 2017 (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado_SHP.zip",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 4188174,
+          "spdx:checksum": "61cb37aa09f72914cede9f7029e9852a0e7cd0a54b8d541ef33bfb23cdf3a48a"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Equipamientos urbanos y servicios esenciales 2017 (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.csv",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 11734366,
+          "spdx:checksum": "3d295db619e72300aceb5d527a220810c799660ca3c99a5e66b167ea98fc9835"
+        }
+      ]
+    },
+    {
+      "@type": "dcat:Dataset",
+      "dct:identifier": "CIT-UAI::red_vial_ejes_2017::2026",
+      "dct:title": "Red vial urbana caminable y tiempos Tobler 2017",
+      "dct:description": "Red vial oficial caminable y grafo topológico peatonal integrado por 1.589.595 tramos viales calibrados con tiempos de fricción y decaimiento espacial de Tobler para las 16 regiones de Chile. Permite calcular isocronas peatonales y matrices de costo temporal entre las 204.906 manzanas censales y los equipamientos esenciales para la modelación de accesibilidad urbana de la línea base MBHT 2017.",
+      "dct:issued": "2017-04-19",
+      "dct:modified": "2026-10-15",
+      "owl:versionInfo": "1.0.3",
+      "dcat:theme": "mbht",
+      "dcat:spatialResolutionInMeters": 100,
+      "locn:geometry": "[-75.64, -55.98, -66.86, -17.5]",
+      "dcat:distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Red vial urbana caminable y tiempos Tobler 2017 (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 225592155,
+          "spdx:checksum": "85c872e5eb1fb00ca95eb4c3a0248993566b74c53ecbbe42692653657adb8452"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Red vial urbana caminable y tiempos Tobler 2017 (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.gpkg",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 500346880,
+          "spdx:checksum": "19d5e8cee3a3ee0910fa777a9aac89850c8a897afc3aa6e002a86a879a44dd07"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Red vial urbana caminable y tiempos Tobler 2017 (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional_SHP.zip",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 224455797,
+          "spdx:checksum": "758e3b639c9375e9988fc2e0c6e7c756a31f8afff7d147b628c565cc7beae289"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Red vial urbana caminable y tiempos Tobler 2017 (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.csv",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 106161078,
+          "spdx:checksum": "fc0d54d0a92d86aa181fd5ac6ebe4e0b1a1f59417d461dc50a7aff0f8e69ebb2"
+        }
+      ]
+    },
+    {
+      "@type": "dcat:Dataset",
+      "dct:identifier": "CIT-UAI::educacion_inicial_2024::2026",
+      "dct:title": "Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
+      "dct:description": "Catastro maestro nacional unificado de establecimientos de educación inicial (jardines infantiles y salas cuna) para las 16 regiones de Chile. Integra tanto la oferta pública (JUNJI, Integra, VTF, SLEP y Municipal) como la oferta privada particular subvencionada y particular pagada, detallando capacidad y matrícula por nivel formativo (Sala Cuna Menor/Mayor, Nivel Medio Menor/Mayor, Prekínder NT1 y Kínder NT2). Insumo base para la evaluación de cobertura y accesibilidad peatonal infantil en la MBHT.",
+      "dct:issued": "2024-12-31",
+      "dct:modified": "2026-10-15",
+      "owl:versionInfo": "1.0.3",
+      "dcat:theme": "mbht",
+      "dcat:spatialResolutionInMeters": 100,
+      "locn:geometry": "[-109.43, -54.94, -67.6, -18.25]",
+      "dcat:distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Educación inicial — Catastro nacional de jardines infantiles y salas cuna (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 365383,
+          "spdx:checksum": "223cfafbcc4f76949127e109c0a4673e40d4bf4019840e1b0a1d0fcc6918e711"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Educación inicial — Catastro nacional de jardines infantiles y salas cuna (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.gpkg",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 2965504,
+          "spdx:checksum": "3b4af733b0440ed398f19834ab7c1cedbd84b3475cf29f460e6f14e79786fbbd"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Educación inicial — Catastro nacional de jardines infantiles y salas cuna (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024_SHP.zip",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 386413,
+          "spdx:checksum": "7074d332597226a2b18d2b0462f38f7e10f5b731636c5b81b815b56837f2244c"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Educación inicial — Catastro nacional de jardines infantiles y salas cuna (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.csv",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 2489732,
+          "spdx:checksum": "730e93c76b0070e8c02fe7e0eb9290f763c8b03867e997a1fcd1ea7885b8e29f"
+        }
+      ]
+    },
+    {
+      "@type": "dcat:Dataset",
+      "dct:identifier": "CIT-UAI::huella_edificaciones_2024::2026",
+      "dct:title": "Huella de edificaciones urbanas — Presencia construida nacional",
+      "dct:description": "Catastro vectorial de huella construida y morfología del entorno edificado para 341.962 polígonos urbanos a nivel nacional. Identifica la superficie en metros cuadrados, nivel de confianza algorítmica y años de presencia de las estructuras urbanas, permitiendo modelar la densidad predial, compacidad morfológica y dinámicas de densificación en ciudades chilenas.",
+      "dct:issued": "2024-10-10",
+      "dct:modified": "2026-10-15",
+      "owl:versionInfo": "1.0.3",
+      "dcat:theme": "mbht",
+      "dcat:spatialResolutionInMeters": 100,
+      "locn:geometry": "[-75.64, -55.98, -66.86, -17.5]",
+      "dcat:distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Huella de edificaciones urbanas — Presencia construida nacional (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 38964900,
+          "spdx:checksum": "1fcecc1ded9e0f17261b88c3f8025d975d6fa75911b5e13ea969279b51cdf991"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Huella de edificaciones urbanas — Presencia construida nacional (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.gpkg",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 96378880,
+          "spdx:checksum": "3ad4330ce2edf44952636009101bc16d2e74d54e0575a58d4d8e6cf475b0312a"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Huella de edificaciones urbanas — Presencia construida nacional (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024_SHP.zip",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 18106961,
+          "spdx:checksum": "2c4212891c52f0eb9e5bf8f2714c83c6c252e8bb04a956c321749e52ef6d701f"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "Huella de edificaciones urbanas — Presencia construida nacional (GeoParquet)",
+          "dcat:accessURL": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.csv",
+          "dct:format": "GeoParquet",
+          "dcat:mediaType": "application/vnd.apache.parquet",
+          "dcat:byteSize": 28438098,
+          "spdx:checksum": "9a3f816b66223cb399ae1becedcd75017ac8914f0155eaf60ca0750922723a16"
+        }
+      ]
+    }
+  ]
+}

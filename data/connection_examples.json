@@ -1,0 +1,1131 @@
+{
+  "metadata": {
+    "title": "IDE CIT — Ejemplos de Conexión y Snippets para Agentes de IA y Software SIG",
+    "institution": "Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez",
+    "url_portal": "https://ide.cit.uai.cl",
+    "license": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+    "updated": "2026-10-08",
+    "version": "2026.1",
+    "total_layers": 13
+  },
+  "connections": [
+    {
+      "layer_id": "kpi_mud_2017",
+      "title": "MBHT 2017 — Línea base oficial",
+      "category": "MBHT",
+      "dimension": "tierra",
+      "crs": "EPSG:4326 (WGS 84)",
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "endpoints": {
+        "parquet_https": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet",
+        "gpkg_https": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.gpkg",
+        "tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json",
+        "mvt_pbf": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/{z}/{x}/{y}.pbf",
+        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "stac_item": "https://ide.cit.uai.cl/stac/kpi_mud_2017.json"
+      },
+      "data_dictionary": [
+        {
+          "name": "id_manzcit",
+          "type": "String",
+          "description": "Identificador único censal oficial de la manzana (16 dígitos INE/CIT). Clave primaria nacional."
+        },
+        {
+          "name": "cod_reg",
+          "type": "Integer",
+          "description": "Código numérico de la región político-administrativa (1 a 16)"
+        },
+        {
+          "name": "cod_prov",
+          "type": "Integer",
+          "description": "Código numérico de la provincia"
+        },
+        {
+          "name": "cod_com",
+          "type": "Integer",
+          "description": "Código numérico único de la comuna (CUT oficial SUBDERE)"
+        },
+        {
+          "name": "tob",
+          "type": "String",
+          "description": "Categorización territorial por Tipología de Oportunidad de Bienestar (Jenks ckmeans: Alto, Medio Alto, Medio, Medio Bajo, Bajo)"
+        },
+        {
+          "name": "manz_en",
+          "type": "String",
+          "description": "Código censal numérico de manzana/entidad asignado por el Instituto Nacional de Estadísticas (Censo 2017)"
+        },
+        {
+          "name": "personas",
+          "type": "Double",
+          "description": "Población residente total censada en la manzana (17.482.699 habitantes a nivel nacional)"
+        },
+        {
+          "name": "area",
+          "type": "Double",
+          "description": "Superficie planimétrica de la manzana censal en metros cuadrados (m²)"
+        },
+        {
+          "name": "hog_n",
+          "type": "Double",
+          "description": "Número total de hogares censados en la unidad censal"
+        },
+        {
+          "name": "total_v",
+          "type": "Double",
+          "description": "Total de viviendas censadas en la unidad territorial"
+        },
+        {
+          "name": "bht",
+          "type": "Double",
+          "description": "Índice sintético global de Bienestar Humano Territorial normalizado [0.00 - 1.00] (media nacional: 0,6171; RM: 0,5918)"
+        },
+        {
+          "name": "bht_bruto",
+          "type": "Double",
+          "description": "Puntaje bruto del índice BHT previo a la estandarización min-max"
+        },
+        {
+          "name": "dim_acc",
+          "type": "Double",
+          "description": "Macro-dimensión 1: Accesibilidad a equipamientos esenciales (peso 6/18 = 33,33%; sintetiza isal, ise, iav, idep, icul, iser)"
+        },
+        {
+          "name": "dim_acc_bruto",
+          "type": "Double",
+          "description": "Puntaje bruto acumulado de la macro-dimensión de accesibilidad"
+        },
+        {
+          "name": "iav",
+          "type": "Double",
+          "description": "Sub-indicador de accesibilidad peatonal a Áreas Verdes y parques públicos mantenidos (peso elemental 1/18)"
+        },
+        {
+          "name": "iav_pre",
+          "type": "Double",
+          "description": "Puntaje de accesibilidad a áreas verdes previo a la normalización logística"
+        },
+        {
+          "name": "icul",
+          "type": "Double",
+          "description": "Sub-indicador de accesibilidad peatonal a Cultura (bibliotecas, museos, teatros, centros culturales; peso elemental 1/18)"
+        },
+        {
+          "name": "icul_pre",
+          "type": "Double",
+          "description": "Puntaje de accesibilidad a cultura previo a la normalización logística"
+        },
+        {
+          "name": "idep",
+          "type": "Double",
+          "description": "Sub-indicador de accesibilidad peatonal a Deportes (gimnasios, multicanchas, centros deportivos; peso elemental 1/18)"
+        },
+        {
+          "name": "idep_pre",
+          "type": "Double",
+          "description": "Puntaje de accesibilidad a deporte previo a la normalización logística"
+        },
+        {
+          "name": "isal",
+          "type": "Double",
+          "description": "Sub-indicador de accesibilidad peatonal a Salud primaria (CESFAM ≥ 300 m², CECOSF, postas, SAPU/SAR; peso elemental 1/18)"
+        },
+        {
+          "name": "isal_pre",
+          "type": "Double",
+          "description": "Puntaje de accesibilidad a salud previo a la normalización logística"
+        },
+        {
+          "name": "iser",
+          "type": "Double",
+          "description": "Sub-indicador de accesibilidad peatonal a Servicios Públicos y trámites cívicos (Registro Civil, comisarías, bancos; peso elemental 1/18)"
+        },
+        {
+          "name": "iser_pre",
+          "type": "Double",
+          "description": "Puntaje de accesibilidad a servicios cívicos previo a la normalización logística"
+        },
+        {
+          "name": "ise",
+          "type": "Double",
+          "description": "Sub-indicador de accesibilidad peatonal a Educación (jardines infantiles, escuelas básicas, liceos; peso elemental 1/18)"
+        },
+        {
+          "name": "ise_pre",
+          "type": "Double",
+          "description": "Puntaje de accesibilidad a educación previo a la normalización logística"
+        },
+        {
+          "name": "dim_amb",
+          "type": "Double",
+          "description": "Macro-dimensión 4: Calidad ambiental y entorno biofísico (peso 2/18 = 11,11%)"
+        },
+        {
+          "name": "dim_amb_bruto",
+          "type": "Double",
+          "description": "Puntaje bruto acumulado de la macro-dimensión ambiental"
+        },
+        {
+          "name": "dim_soc",
+          "type": "Double",
+          "description": "Macro-dimensión 2: Condición socioeconómica, educacional y habitacional (peso 6/18 = 33,33%)"
+        },
+        {
+          "name": "dim_soc_bruto",
+          "type": "Double",
+          "description": "Puntaje bruto acumulado de la macro-dimensión socioeconómica"
+        },
+        {
+          "name": "dim_seg",
+          "type": "Double",
+          "description": "Macro-dimensión 3: Seguridad pública y prevención del delito en entorno urbano (peso 4/18 = 22,22%)"
+        },
+        {
+          "name": "dim_seg_bruto",
+          "type": "Double",
+          "description": "Puntaje bruto acumulado de la macro-dimensión de seguridad pública"
+        },
+        {
+          "name": "e0a3",
+          "type": "Double",
+          "description": "Población infantil censal de 0 a 3 años de edad residente en la manzana"
+        },
+        {
+          "name": "e7a10",
+          "type": "Double",
+          "description": "Población infantil censal de 7 a 10 años de edad residente en la manzana"
+        },
+        {
+          "name": "e4a5",
+          "type": "Double",
+          "description": "Población preescolar censal de 4 a 5 años de edad residente en la manzana"
+        },
+        {
+          "name": "e6a13",
+          "type": "Double",
+          "description": "Población escolar primaria censal de 6 a 13 años de edad residente en la manzana"
+        },
+        {
+          "name": "e14a18",
+          "type": "Double",
+          "description": "Población escolar secundaria censal de 14 a 18 años de edad residente en la manzana"
+        },
+        {
+          "name": "e4a18",
+          "type": "Double",
+          "description": "Población total en edad formativa escolar de 4 a 18 años residente en la manzana"
+        },
+        {
+          "name": "e15a24",
+          "type": "Double",
+          "description": "Población juvenil censal de 15 a 24 años de edad residente en la manzana"
+        },
+        {
+          "name": "e19a30",
+          "type": "Double",
+          "description": "Población adulta joven censal de 19 a 30 años de edad residente en la manzana"
+        },
+        {
+          "name": "geometry",
+          "type": "Binary",
+          "description": "Geometría poligonal censal estandarizada en formato WKB (WGS 84 / EPSG:4326)"
+        },
+        {
+          "name": "comuna",
+          "type": "String",
+          "description": "Nombre oficial de la comuna conforme a la División Político-Administrativa SUBDERE"
+        }
+      ],
+      "code_examples": {
+        "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet')",
+        "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de MBHT 2017 — Línea base oficial')",
+        "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json",
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet"
+      }
+    },
+    {
+      "layer_id": "pem_maritorio_nacional",
+      "title": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
+      "category": "PEM",
+      "dimension": "mar",
+      "crs": "EPSG:4326 (WGS 84)",
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "endpoints": {
+        "parquet_https": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.parquet",
+        "gpkg_https": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.gpkg",
+        "tilejson": "https://engine.matrizbht.cl/tiles/pem_maritorio_nacional/index.json",
+        "mvt_pbf": "https://engine.matrizbht.cl/tiles/pem_maritorio_nacional/{z}/{x}/{y}.pbf",
+        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "stac_item": "https://ide.cit.uai.cl/stac/pem_maritorio_nacional.json"
+      },
+      "data_dictionary": [
+        {
+          "name": "OBJECTID",
+          "type": "Integer",
+          "description": "Identificador secuencial del polígono marítimo"
+        },
+        {
+          "name": "perimetro_km",
+          "type": "Float",
+          "description": "Perímetro geodésico del polígono marítimo en kilómetros (km)"
+        },
+        {
+          "name": "area_km2",
+          "type": "Float",
+          "description": "Área superficial geodésica del polígono en kilómetros cuadrados (km²)"
+        },
+        {
+          "name": "ambito",
+          "type": "String",
+          "description": "Ámbito geográfico tricontinental (Continental, Insular, Antártico)"
+        },
+        {
+          "name": "fuente",
+          "type": "String",
+          "description": "Institución técnica de custodia y delimitación"
+        }
+      ],
+      "code_examples": {
+        "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.parquet')",
+        "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)')",
+        "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/pem_maritorio_nacional/index.json",
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.parquet"
+      }
+    },
+    {
+      "layer_id": "pem_geomorfologia_gebco",
+      "title": "Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+      "category": "PEM",
+      "dimension": "mar",
+      "crs": "EPSG:4326 (WGS 84)",
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "endpoints": {
+        "parquet_https": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.parquet",
+        "gpkg_https": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.gpkg",
+        "tilejson": "https://engine.matrizbht.cl/tiles/pem_geomorfologia_gebco/index.json",
+        "mvt_pbf": "https://engine.matrizbht.cl/tiles/pem_geomorfologia_gebco/{z}/{x}/{y}.pbf",
+        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "stac_item": "https://ide.cit.uai.cl/stac/pem_geomorfologia_gebco.json"
+      },
+      "data_dictionary": [
+        {
+          "name": "unidad_geomorfologica",
+          "type": "String",
+          "description": "Tipo de unidad morfológica submarina (plataforma, talud, fosa, dorsal, etc.)"
+        },
+        {
+          "name": "superficie_km2",
+          "type": "Float",
+          "description": "Superficie de la macro-unidad en kilómetros cuadrados"
+        },
+        {
+          "name": "ano_fuente",
+          "type": "String",
+          "description": "Año de publicación del modelo geomorfológico GEBCO"
+        }
+      ],
+      "code_examples": {
+        "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.parquet')",
+        "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)')",
+        "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/pem_geomorfologia_gebco/index.json",
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.parquet"
+      }
+    },
+    {
+      "layer_id": "pem_montes_submarinos",
+      "title": "Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+      "category": "PEM",
+      "dimension": "mar",
+      "crs": "EPSG:4326 (WGS 84)",
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "endpoints": {
+        "parquet_https": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.parquet",
+        "gpkg_https": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.gpkg",
+        "tilejson": "https://engine.matrizbht.cl/tiles/pem_montes_submarinos/index.json",
+        "mvt_pbf": "https://engine.matrizbht.cl/tiles/pem_montes_submarinos/{z}/{x}/{y}.pbf",
+        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "stac_item": "https://ide.cit.uai.cl/stac/pem_montes_submarinos.json"
+      },
+      "data_dictionary": [
+        {
+          "name": "nombre_monte",
+          "type": "String",
+          "description": "Nombre o toponimia oficial del monte submarino (fuente: SCUFN / IHO / SHOA)"
+        },
+        {
+          "name": "catalogo_categoria",
+          "type": "String",
+          "description": "Categoría morfoestructural (Guyot, Seamount, Ridge, Trench, Hill, Canyon) según estándar SCUFN"
+        },
+        {
+          "name": "elevacion_submarina_m",
+          "type": "Float",
+          "description": "Cota batimétrica o elevación sobre el lecho marino en metros (fuente: GEBCO / SHOA)"
+        },
+        {
+          "name": "interes_ecologico_vme",
+          "type": "String",
+          "description": "Relevancia como hábitat bentónico y potencial Ecosistema Marino Vulnerable (criterios FAO / SBAP)"
+        },
+        {
+          "name": "marco_conservacion",
+          "type": "String",
+          "description": "Estatus de protección o área marina protegida vinculada bajo Ley 21.600 (SBAP)"
+        }
+      ],
+      "code_examples": {
+        "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.parquet')",
+        "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)')",
+        "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/pem_montes_submarinos/index.json",
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.parquet"
+      }
+    },
+    {
+      "layer_id": "pem_cuencas_oceanicas",
+      "title": "Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+      "category": "PEM",
+      "dimension": "mar",
+      "crs": "EPSG:4326 (WGS 84)",
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "endpoints": {
+        "parquet_https": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.parquet",
+        "gpkg_https": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.gpkg",
+        "tilejson": "https://engine.matrizbht.cl/tiles/pem_cuencas_oceanicas/index.json",
+        "mvt_pbf": "https://engine.matrizbht.cl/tiles/pem_cuencas_oceanicas/{z}/{x}/{y}.pbf",
+        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "stac_item": "https://ide.cit.uai.cl/stac/pem_cuencas_oceanicas.json"
+      },
+      "data_dictionary": [
+        {
+          "name": "id_cuenca",
+          "type": "Integer",
+          "description": "Identificador único de la cuenca oceanográfica submarina"
+        },
+        {
+          "name": "codigo_cuenca",
+          "type": "Integer",
+          "description": "Código morfométrico de drenaje abisal"
+        },
+        {
+          "name": "perimetro_km",
+          "type": "Float",
+          "description": "Perímetro geodésico de la cuenca oceanográfica en kilómetros (km)"
+        },
+        {
+          "name": "area_km2",
+          "type": "Float",
+          "description": "Área superficial geodésica de la cuenca en kilómetros cuadrados (km²)"
+        }
+      ],
+      "code_examples": {
+        "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.parquet')",
+        "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)')",
+        "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/pem_cuencas_oceanicas/index.json",
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.parquet"
+      }
+    },
+    {
+      "layer_id": "pem_biodiversidad_especies",
+      "title": "Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)",
+      "category": "PEM",
+      "dimension": "mar",
+      "crs": "EPSG:4326 (WGS 84)",
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "endpoints": {
+        "parquet_https": "download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet",
+        "gpkg_https": null,
+        "tilejson": "https://engine.matrizbht.cl/tiles/pem_biodiversidad_especies/index.json",
+        "mvt_pbf": "https://engine.matrizbht.cl/tiles/pem_biodiversidad_especies/{z}/{x}/{y}.pbf",
+        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "stac_item": "https://ide.cit.uai.cl/stac/pem_biodiversidad_especies.json"
+      },
+      "data_dictionary": [
+        {
+          "name": "id_gbif",
+          "type": "String",
+          "description": "Identificador universal único del espécimen o avistamiento (GBIF ID)"
+        },
+        {
+          "name": "reino",
+          "type": "String",
+          "description": "Reino taxonómico (Animalia, Plantae, Chromista, Fungi, etc.)"
+        },
+        {
+          "name": "filo",
+          "type": "String",
+          "description": "Filo o división biológica"
+        },
+        {
+          "name": "clase",
+          "type": "String",
+          "description": "Clase taxonómica"
+        },
+        {
+          "name": "orden",
+          "type": "String",
+          "description": "Orden taxonómico"
+        },
+        {
+          "name": "familia",
+          "type": "String",
+          "description": "Familia biológica"
+        },
+        {
+          "name": "genero",
+          "type": "String",
+          "description": "Género taxonómico"
+        },
+        {
+          "name": "especie",
+          "type": "String",
+          "description": "Epíteto específico de la especie"
+        },
+        {
+          "name": "nombre_cientifico",
+          "type": "String",
+          "description": "Nombre científico completo del taxón"
+        },
+        {
+          "name": "profundidad_m",
+          "type": "Float",
+          "description": "Profundidad marina de muestreo en metros"
+        },
+        {
+          "name": "ano_registro",
+          "type": "Integer",
+          "description": "Año de colecta u observación del espécimen"
+        },
+        {
+          "name": "codigo_pais",
+          "type": "String",
+          "description": "Código ISO del país jurisdiccional (CL)"
+        }
+      ],
+      "code_examples": {
+        "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet')",
+        "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)')",
+        "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/pem_biodiversidad_especies/index.json",
+        "curl_head": "curl -I download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet"
+      }
+    },
+    {
+      "layer_id": "censo_imputaciones_2024",
+      "title": "Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+      "category": "CENSO",
+      "dimension": "tierra",
+      "crs": "EPSG:4326 (WGS 84)",
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "endpoints": {
+        "parquet_https": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet",
+        "gpkg_https": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.gpkg",
+        "tilejson": "https://engine.matrizbht.cl/tiles/censo_imputaciones_2024/index.json",
+        "mvt_pbf": "https://engine.matrizbht.cl/tiles/censo_imputaciones_2024/{z}/{x}/{y}.pbf",
+        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "stac_item": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
+      },
+      "data_dictionary": [
+        {
+          "name": "ID_MANZCIT",
+          "type": "String",
+          "description": "Código censal único de la manzana (16 dígitos)"
+        },
+        {
+          "name": "COD_REG",
+          "type": "Integer",
+          "description": "Código numérico de la región"
+        },
+        {
+          "name": "REGION",
+          "type": "String",
+          "description": "Nombre oficial de la región"
+        },
+        {
+          "name": "COD_PROV",
+          "type": "Integer",
+          "description": "Código de la provincia"
+        },
+        {
+          "name": "PROVINCIA",
+          "type": "String",
+          "description": "Nombre de la provincia"
+        },
+        {
+          "name": "COD_COM",
+          "type": "Integer",
+          "description": "Código único de la comuna (CUT)"
+        },
+        {
+          "name": "COMUNA",
+          "type": "String",
+          "description": "Nombre de la comuna"
+        },
+        {
+          "name": "CATEGORIA",
+          "type": "String",
+          "description": "Categoría territorial censal (Urbana / Rural)"
+        },
+        {
+          "name": "AREA_C",
+          "type": "Float",
+          "description": "Superficie de la manzana (m²)"
+        },
+        {
+          "name": "POBLACION_2024",
+          "type": "Float",
+          "description": "Total de población residente censal estimada (Censo 2024)"
+        },
+        {
+          "name": "HOMBRES",
+          "type": "Float",
+          "description": "Total de población masculina"
+        },
+        {
+          "name": "MUJERES",
+          "type": "Float",
+          "description": "Total de población femenina"
+        },
+        {
+          "name": "P_HOMBRES",
+          "type": "Float",
+          "description": "Porcentaje de hombres sobre el total comunal/manzana"
+        },
+        {
+          "name": "P_MUJERES",
+          "type": "Float",
+          "description": "Porcentaje de mujeres sobre el total comunal/manzana"
+        },
+        {
+          "name": "E0_5",
+          "type": "Float",
+          "description": "Población de primera infancia (0 a 5 años) graduada por Sprague"
+        },
+        {
+          "name": "E6_13",
+          "type": "Float",
+          "description": "Población escolar básica (6 a 13 años)"
+        },
+        {
+          "name": "E14_17",
+          "type": "Float",
+          "description": "Población escolar media (14 a 17 años)"
+        },
+        {
+          "name": "E18_24",
+          "type": "Float",
+          "description": "Población juvenil (18 a 24 años)"
+        },
+        {
+          "name": "E25_44",
+          "type": "Float",
+          "description": "Población adulta joven (25 a 44 años)"
+        },
+        {
+          "name": "E45_59",
+          "type": "Float",
+          "description": "Población adulta intermedia (45 a 59 años)"
+        },
+        {
+          "name": "E60M",
+          "type": "Float",
+          "description": "Población adulta mayor (60 años y más)"
+        },
+        {
+          "name": "E65AMAS",
+          "type": "Float",
+          "description": "Población adulta mayor (65 años y más)"
+        },
+        {
+          "name": "IND_ENVEJ",
+          "type": "Float",
+          "description": "Índice de envejecimiento demográfico (pob 60+ / pob 0-14 * 100)"
+        },
+        {
+          "name": "METODO_ESTIMACION",
+          "type": "String",
+          "description": "Metodología demográfica sintética: Graduación de Sprague 5.º orden + Mayor Residuo (CIT-UAI)"
+        },
+        {
+          "name": "CONTROL_MARGINAL",
+          "type": "String",
+          "description": "Verificación de cuadratura: Suma manzana = Población total censal observada INE 2024"
+        }
+      ],
+      "code_examples": {
+        "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet')",
+        "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Censo 2024 — Imputaciones demográficas por cohortes y sexo')",
+        "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/censo_imputaciones_2024/index.json",
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet"
+      }
+    },
+    {
+      "layer_id": "inse_socioeconomico",
+      "title": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+      "category": "INSE",
+      "dimension": "tierra",
+      "crs": "EPSG:4326 (WGS 84)",
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "endpoints": {
+        "parquet_https": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet",
+        "gpkg_https": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.gpkg",
+        "tilejson": "https://engine.matrizbht.cl/tiles/inse_socioeconomico/index.json",
+        "mvt_pbf": "https://engine.matrizbht.cl/tiles/inse_socioeconomico/{z}/{x}/{y}.pbf",
+        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "stac_item": "https://ide.cit.uai.cl/stac/inse_socioeconomico.json"
+      },
+      "data_dictionary": [
+        {
+          "name": "MANZ_CIT",
+          "type": "String",
+          "description": "Código censal único de la manzana (16 dígitos)"
+        },
+        {
+          "name": "COD_REG",
+          "type": "String",
+          "description": "Código oficial de la región"
+        },
+        {
+          "name": "COD_COM",
+          "type": "String",
+          "description": "Código único de la comuna (CUT)"
+        },
+        {
+          "name": "COMUNA",
+          "type": "String",
+          "description": "Nombre oficial de la comuna"
+        },
+        {
+          "name": "POBLACION",
+          "type": "Float",
+          "description": "Población residente censal habitual"
+        },
+        {
+          "name": "INSE_OFIC",
+          "type": "Float",
+          "description": "Puntaje de Nivel Socioeconómico Oficial [0.0 - 100.0]"
+        },
+        {
+          "name": "Q_INSE_OFI",
+          "type": "String",
+          "description": "Estratificación por quintiles oficial (Q1 a Q5, o S/P sin población)"
+        },
+        {
+          "name": "GSE_OFIC",
+          "type": "String",
+          "description": "Grupo Socioeconómico Oficial (ABC1, C2, C3, D, E, S/P)"
+        },
+        {
+          "name": "INSE_PURO",
+          "type": "Float",
+          "description": "Puntaje de Nivel Socioeconómico modelo econométrico base"
+        },
+        {
+          "name": "Q_INSE_PUR",
+          "type": "String",
+          "description": "Quintil modelo econométrico base"
+        },
+        {
+          "name": "GSE_PURO",
+          "type": "String",
+          "description": "Grupo Socioeconómico modelo econométrico base"
+        },
+        {
+          "name": "ES_CAMPAM",
+          "type": "String",
+          "description": "Indicador si la manzana corresponde a asentamiento precario / campamento (V/F)"
+        },
+        {
+          "name": "COD_AH",
+          "type": "String",
+          "description": "Código de Área Homogénea del SII asignada (Ley 17.235)"
+        },
+        {
+          "name": "VGT_UF",
+          "type": "Float",
+          "description": "Valor Guía de Terreno asignado en UF/m²"
+        },
+        {
+          "name": "VGT_M2",
+          "type": "Float",
+          "description": "Valor Guía de Terreno asignado en $/m²"
+        }
+      ],
+      "code_examples": {
+        "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet')",
+        "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024')",
+        "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/inse_socioeconomico/index.json",
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet"
+      }
+    },
+    {
+      "layer_id": "sii_areas_homogeneas",
+      "title": "Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+      "category": "SII",
+      "dimension": "tierra",
+      "crs": "EPSG:4326 (WGS 84)",
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "endpoints": {
+        "parquet_https": "download/SII_Areas_Homogeneas_Nacional.parquet",
+        "gpkg_https": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.gpkg",
+        "tilejson": "https://engine.matrizbht.cl/tiles/sii_areas_homogeneas/index.json",
+        "mvt_pbf": "https://engine.matrizbht.cl/tiles/sii_areas_homogeneas/{z}/{x}/{y}.pbf",
+        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "stac_item": "https://ide.cit.uai.cl/stac/sii_areas_homogeneas.json"
+      },
+      "data_dictionary": [
+        {
+          "name": "id_ah",
+          "type": "String",
+          "description": "Código identificador de área homogénea SII (Comuna + Sector + Código)"
+        },
+        {
+          "name": "comuna",
+          "type": "String",
+          "description": "Nombre oficial de la comuna"
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "description": "Código regional (ej: R13)"
+        },
+        {
+          "name": "tipo_suelo",
+          "type": "String",
+          "description": "Destino o tipología (Urbano / Extensión Urbana / Rural)"
+        },
+        {
+          "name": "vgt_uf_m2",
+          "type": "Float",
+          "description": "Valor guía de terreno en unidades de fomento por metro cuadrado (UF/m²)"
+        },
+        {
+          "name": "vgt_pesos_m2",
+          "type": "Float",
+          "description": "Valor guía de terreno en pesos chilenos por metro cuadrado ($/m²)"
+        },
+        {
+          "name": "coeficiente_guia",
+          "type": "Float",
+          "description": "Factor o coeficiente guía de ajuste de avalúo"
+        },
+        {
+          "name": "area_ha",
+          "type": "Float",
+          "description": "Superficie del polígono en hectáreas"
+        }
+      ],
+      "code_examples": {
+        "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('download/SII_Areas_Homogeneas_Nacional.parquet')",
+        "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'download/SII_Areas_Homogeneas_Nacional.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos')",
+        "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'download/SII_Areas_Homogeneas_Nacional.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/sii_areas_homogeneas/index.json",
+        "curl_head": "curl -I download/SII_Areas_Homogeneas_Nacional.parquet"
+      }
+    },
+    {
+      "layer_id": "equipamientos_2017",
+      "title": "Equipamientos urbanos y servicios esenciales 2017",
+      "category": "MBHT",
+      "dimension": "tierra",
+      "crs": "EPSG:4326 (WGS 84)",
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "endpoints": {
+        "parquet_https": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet",
+        "gpkg_https": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.gpkg",
+        "tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json",
+        "mvt_pbf": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/{z}/{x}/{y}.pbf",
+        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "stac_item": "https://ide.cit.uai.cl/stac/equipamientos_2017.json"
+      },
+      "data_dictionary": [
+        {
+          "name": "indicador",
+          "type": "String",
+          "description": "Código de dimensión urbana (ISAL, ISE, IAV, IDEP, ICUL, ISER)"
+        },
+        {
+          "name": "nombre",
+          "type": "String",
+          "description": "Nombre del establecimiento o recinto"
+        },
+        {
+          "name": "cod_reg",
+          "type": "Integer",
+          "description": "Código regional oficial"
+        },
+        {
+          "name": "cod_com",
+          "type": "Integer",
+          "description": "Código comunal único (CUT)"
+        },
+        {
+          "name": "comuna",
+          "type": "String",
+          "description": "Nombre de la comuna"
+        },
+        {
+          "name": "categoria",
+          "type": "String",
+          "description": "Categoría o tipología del equipamiento"
+        },
+        {
+          "name": "direccion",
+          "type": "String",
+          "description": "Dirección postal georreferenciada"
+        },
+        {
+          "name": "tipo_estab",
+          "type": "String",
+          "description": "Tipo de establecimiento"
+        },
+        {
+          "name": "depe",
+          "type": "String",
+          "description": "Dependencia administrativa (Pública, Privada, Subvencionada)"
+        }
+      ],
+      "code_examples": {
+        "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet')",
+        "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Equipamientos urbanos y servicios esenciales 2017')",
+        "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json",
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet"
+      }
+    },
+    {
+      "layer_id": "red_vial_ejes_2017",
+      "title": "Red vial urbana caminable y tiempos Tobler 2017",
+      "category": "MBHT",
+      "dimension": "tierra",
+      "crs": "EPSG:4326 (WGS 84)",
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "endpoints": {
+        "parquet_https": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet",
+        "gpkg_https": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.gpkg",
+        "tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json",
+        "mvt_pbf": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/{z}/{x}/{y}.pbf",
+        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "stac_item": "https://ide.cit.uai.cl/stac/red_vial_ejes_2017.json"
+      },
+      "data_dictionary": [
+        {
+          "name": "NOMBRE_VIA",
+          "type": "String",
+          "description": "Nombre oficial de la vía o pasaje"
+        },
+        {
+          "name": "CLASE_COMU",
+          "type": "String",
+          "description": "Jerarquía vial comunal (Avenida, Calle, Pasaje, Camino)"
+        },
+        {
+          "name": "CLASE_URBA",
+          "type": "String",
+          "description": "Clasificación funcional urbana"
+        },
+        {
+          "name": "LARGO",
+          "type": "Float",
+          "description": "Longitud métrica del segmento en metros"
+        },
+        {
+          "name": "T_TOBLER",
+          "type": "Float",
+          "description": "Tiempo de viaje peatonal en segundos con decaimiento Tobler"
+        },
+        {
+          "name": "COD_REG",
+          "type": "String",
+          "description": "Código regional (ej: R13)"
+        },
+        {
+          "name": "NOM_COM",
+          "type": "String",
+          "description": "Nombre de la comuna"
+        }
+      ],
+      "code_examples": {
+        "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet')",
+        "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Red vial urbana caminable y tiempos Tobler 2017')",
+        "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json",
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet"
+      }
+    },
+    {
+      "layer_id": "educacion_inicial_2024",
+      "title": "Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
+      "category": "MBHT",
+      "dimension": "tierra",
+      "crs": "EPSG:4326 (WGS 84)",
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "endpoints": {
+        "parquet_https": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
+        "gpkg_https": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.gpkg",
+        "tilejson": "https://engine.matrizbht.cl/tiles/educacion_inicial_2024/index.json",
+        "mvt_pbf": "https://engine.matrizbht.cl/tiles/educacion_inicial_2024/{z}/{x}/{y}.pbf",
+        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "stac_item": "https://ide.cit.uai.cl/stac/educacion_inicial_2024.json"
+      },
+      "data_dictionary": [
+        {
+          "name": "id_mbht",
+          "type": "String",
+          "description": "Identificador único MBHT del equipamiento"
+        },
+        {
+          "name": "rbd",
+          "type": "String",
+          "description": "Rol Base de Datos oficial MINEDUC"
+        },
+        {
+          "name": "nombre_establecimiento",
+          "type": "String",
+          "description": "Nombre oficial del jardín infantil o sala cuna"
+        },
+        {
+          "name": "dependencia_macro",
+          "type": "String",
+          "description": "Dependencia administrativa macro (Pública / Privada)"
+        },
+        {
+          "name": "dependencia_especifica",
+          "type": "String",
+          "description": "Dependencia específica (JUNJI, Integra, VTF, Particular Pagado, etc.)"
+        },
+        {
+          "name": "tipo_establecimiento",
+          "type": "String",
+          "description": "Tipología (Jardín Infantil con Sala Cuna, Solo Jardín, Solo Sala Cuna)"
+        },
+        {
+          "name": "tiene_sala_cuna",
+          "type": "Integer",
+          "description": "Indicador binario de oferta de sala cuna (0/1)"
+        },
+        {
+          "name": "tiene_nivel_medio",
+          "type": "Integer",
+          "description": "Indicador binario de oferta de nivel medio menor/mayor (0/1)"
+        },
+        {
+          "name": "mat_sc_total",
+          "type": "Integer",
+          "description": "Total matrícula efectiva en sala cuna"
+        },
+        {
+          "name": "mat_med_total",
+          "type": "Integer",
+          "description": "Total matrícula efectiva en nivel medio"
+        },
+        {
+          "name": "mat_total_parvularia",
+          "type": "Integer",
+          "description": "Total general de matrícula parvularia"
+        },
+        {
+          "name": "comuna_nom",
+          "type": "String",
+          "description": "Nombre de la comuna"
+        },
+        {
+          "name": "region_nom",
+          "type": "String",
+          "description": "Nombre de la región"
+        },
+        {
+          "name": "latitud",
+          "type": "Float",
+          "description": "Latitud geográfica (EPSG:4326)"
+        },
+        {
+          "name": "longitud",
+          "type": "Float",
+          "description": "Longitud geográfica (EPSG:4326)"
+        }
+      ],
+      "code_examples": {
+        "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet')",
+        "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Educación inicial — Catastro nacional de jardines infantiles y salas cuna')",
+        "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/educacion_inicial_2024/index.json",
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet"
+      }
+    },
+    {
+      "layer_id": "huella_edificaciones_2024",
+      "title": "Huella de edificaciones urbanas — Presencia construida nacional",
+      "category": "MBHT",
+      "dimension": "tierra",
+      "crs": "EPSG:4326 (WGS 84)",
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "endpoints": {
+        "parquet_https": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet",
+        "gpkg_https": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.gpkg",
+        "tilejson": "https://engine.matrizbht.cl/tiles/huella_edificaciones_2024/index.json",
+        "mvt_pbf": "https://engine.matrizbht.cl/tiles/huella_edificaciones_2024/{z}/{x}/{y}.pbf",
+        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "stac_item": "https://ide.cit.uai.cl/stac/huella_edificaciones_2024.json"
+      },
+      "data_dictionary": [
+        {
+          "name": "latitude",
+          "type": "Float",
+          "description": "Latitud centroidal de la edificación (EPSG:4326)"
+        },
+        {
+          "name": "longitude",
+          "type": "Float",
+          "description": "Longitud centroidal de la edificación (EPSG:4326)"
+        },
+        {
+          "name": "area_in_me",
+          "type": "Float",
+          "description": "Área de la huella construida en metros cuadrados (m²)"
+        },
+        {
+          "name": "confidence",
+          "type": "Float",
+          "description": "Nivel de confianza de la detección algorítmica [0.0 - 1.0]"
+        },
+        {
+          "name": "full_plus_",
+          "type": "String",
+          "description": "Código Plus Code Open Location de localización espacial"
+        },
+        {
+          "name": "years",
+          "type": "String",
+          "description": "Años de detección comprobada de presencia construida"
+        }
+      ],
+      "code_examples": {
+        "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet')",
+        "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Huella de edificaciones urbanas — Presencia construida nacional')",
+        "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/huella_edificaciones_2024/index.json",
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet"
+      }
+    }
+  ]
+}

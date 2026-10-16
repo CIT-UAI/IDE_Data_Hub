@@ -1,0 +1,24 @@
+<svg width="420" height="64" viewBox="0 0 420 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bloque 1: Isotipo y Texto UAI Oficial -->
+  <g transform="translate(10, 14)">
+    <!-- Isotipo rectangular institucional UAI -->
+    <rect x="0" y="0" width="34" height="34" rx="3" fill="#003865" stroke="#FFFFFF" stroke-width="1.2"/>
+    <!-- UAI Monograma blanco -->
+    <path d="M7 9V24H12V9H7ZM15 9V24H20V19H23V24H27V9H15ZM20 12H23V16H20V12Z" fill="#FFFFFF"/>
+    
+    <!-- Texto Universidad Adolfo Ibáñez -->
+    <text x="42" y="15" font-family="'Roboto', sans-serif" font-size="9" font-weight="900" fill="#FFFFFF" letter-spacing="0.5">UNIVERSIDAD</text>
+    <text x="42" y="27" font-family="'Roboto', sans-serif" font-size="9" font-weight="900" fill="#FFFFFF" letter-spacing="0.5">ADOLFO IBAÑEZ</text>
+  </g>
+
+  <!-- Línea divisoria vertical institucional -->
+  <line x1="175" y1="12" x2="175" y2="52" stroke="#475569" stroke-width="1.2"/>
+
+  <!-- Bloque 2: Centro de Inteligencia Territorial & IDE CIT -->
+  <g transform="translate(188, 14)">
+    <text x="0" y="11" font-family="'Roboto', sans-serif" font-size="7.8" font-weight="600" fill="#CBD5E1" letter-spacing="0.4">CENTRO DE INTELIGENCIA TERRITORIAL</text>
+    <text x="0" y="25" font-family="'Roboto', sans-serif" font-size="11" font-weight="900" fill="#FFFFFF" letter-spacing="0.6">IDE CIT</text>
+    <text x="50" y="25" font-family="'Roboto', sans-serif" font-size="8" font-weight="700" fill="#FFCC00" letter-spacing="0.5">· DATOS ESPACIALES</text>
+    <text x="0" y="35" font-family="'Roboto', sans-serif" font-size="6.8" font-weight="400" fill="#94A3B8" letter-spacing="0.3">Plataforma Nacional de Información Geoespacial</text>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ide.cit.uai.cl/sitemap.xml
+# AI Agent Directives & Context Specification
+# Orientation: https://ide.cit.uai.cl/llms.txt
+# Exhaustive Dataset Specification: https://ide.cit.uai.cl/llms-full.txt
+# STAC 1.0.0 Catalog: https://ide.cit.uai.cl/stac/catalog.json
+# Open Catalog API (JSON): https://ide.cit.uai.cl/catalogo.json
+# W3C DCAT-AP Metadata: https://ide.cit.uai.cl/dcat.json
+# Canonical Reference Authority: https://matrizbht.cl
+# Government Platform Authority: https://plataformabht.subdere.gov.cl

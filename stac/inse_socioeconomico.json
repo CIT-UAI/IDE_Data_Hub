@@ -1,0 +1,106 @@
+{
+  "stac_version": "1.0.0",
+  "type": "Collection",
+  "id": "inse-socioeconomico",
+  "title": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+  "description": "Estratificación socioeconómica y patrimonial continua y por quintiles (Q1 a Q5, y S/P sin población) calibrada a nivel nacional para 254.395 manzanas censales en las 16 regiones de Chile. Integra la caracterización socioeconómica de los hogares (capital humano y ocupación CIUO) con la valoración patrimonial inmobiliaria de suelo según Áreas Homogéneas del SII (Ley 17.235) y Valor Guía de Terreno (VGT en UF/m² y $/m²).",
+  "license": "CC-BY-4.0",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -75.64,
+          -55.98,
+          -66.86,
+          -17.5
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2017-01-01T00:00:00Z",
+          "2026-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "summaries": {
+    "version": [
+      "v1.0.3"
+    ],
+    "status": [
+      "Conjunto de datos oficial vigente"
+    ],
+    "matriz": [
+      "inse"
+    ],
+    "escala": [
+      "Manzanas censales y entidades rurales"
+    ],
+    "physical_columns": [
+      15
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "self",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/inse_socioeconomico.json"
+    }
+  ],
+  "assets": {
+    "geoparquet": {
+      "title": "GeoParquet — Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet",
+      "file:size": 295995644,
+      "file:checksum": "148b716ac5356bdcba4bb578c4a5db824eaa6eeaa253fadcefffb5a7f96c6b1f"
+    },
+    "geopackage": {
+      "title": "OGC GeoPackage — Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+      "type": "application/geopackage+sqlite3",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.gpkg"
+    },
+    "shapefile": {
+      "title": "Shapefile (.zip) — Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+      "type": "application/zip",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024_SHP.zip"
+    },
+    "csv": {
+      "title": "Tabla CSV — Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+      "type": "text/csv",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.csv"
+    },
+    "metadata_iso19139": {
+      "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "href": "https://ide.cit.uai.cl/download/iso_xml/inse_socioeconomico_iso19139.xml"
+    }
+  }
+}

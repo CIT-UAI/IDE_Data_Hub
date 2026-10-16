@@ -1,0 +1,13 @@
+# Dependencias del Entorno IDE CIT (CIT-UAI)
+# Infraestructura de Datos Espaciales y Compilación de Catálogos
+
+# Procesamiento y Auditoría HTML5 / XML
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# Inspección y Validación de Datos Geoespaciales
+pyarrow>=14.0.0
+duckdb>=0.10.0
+
+# Sincronización Cloud-Native (Opcional para despliegue AWS)
+boto3>=1.34.0

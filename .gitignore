@@ -1,0 +1,62 @@
+# Git Ignore para IDE Data Hub — Centro de Inteligencia Territorial (CIT-UAI)
+
+# 1. Archivos compilados de distribución y cachés
+dist/
+build/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# 2. Entornos virtuales y dependencias
+.venv/
+venv/
+env/
+ENV/
+node_modules/
+
+# 3. Datos masivos descargables (> 100 MB límite estricto de GitHub)
+# Los datos espaciales masivos se distribuyen vía AWS S3 / CloudFront (https://ide.cit.uai.cl/download/)
+download/*.parquet
+download/*.gpkg
+download/*.csv
+download/*.zip
+download/*.shp
+download/*.dbf
+download/*.shx
+download/*.tar.gz
+*.parquet
+*.gpkg
+
+# Excepciones: conservar scripts de verificación y conectores livianos en download/
+!download/reproducir_verificacion_r15.py
+!download/SHA256SUMS.txt
+!download/qgis/
+!download/iso_xml/
+
+# 4. Carpetas y scripts de depuración local temporal
+scratch/
+scratch_*.py
+test_runs/
+test_masivo/
+repositorio_mbht2024_metodologia/
+*.log
+
+# 5. Secretos y credenciales de entorno (Invariante 27)
+.env
+.env.*
+!.env.example
+credentials.json
+*.pem
+*.key
+*.id_rsa
+
+# 6. Archivos del sistema operativo y editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo

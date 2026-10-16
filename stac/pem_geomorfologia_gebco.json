@@ -1,0 +1,106 @@
+{
+  "stac_version": "1.0.0",
+  "type": "Collection",
+  "id": "pem-geomorfologia-gebco",
+  "title": "Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+  "description": "Zonificación geomorfológica del lecho y fondo submarino nacional categorizada conforme al estándar internacional GEBCO (General Bathymetric Chart of the Oceans / IHO). Insumo estructural para la Planificación marina nacional bajo directrices de la FAO y los criterios de zonificación y protección del Servicio de Biodiversidad y Áreas Protegidas (SBAP). Delimita las grandes provincias fisiográficas oceánicas: Fosa de Atacama/Perú-Chile, plataforma continental, talud continental, fosas abisales, dorsales oceánicas (Dorsal de Chile, Cordillera de Nazca, Cordillera de Salas y Gómez) y llanuras abisales.",
+  "license": "CC-BY-4.0",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -120.0,
+          -58.0,
+          -66.0,
+          -18.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2017-01-01T00:00:00Z",
+          "2026-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "summaries": {
+    "version": [
+      "v1.0.3"
+    ],
+    "status": [
+      "Conjunto de datos oficial vigente"
+    ],
+    "matriz": [
+      "pem"
+    ],
+    "escala": [
+      "Polígonos de macro-unidades fisiográficas de fondo marino (11 macro-unidades)"
+    ],
+    "physical_columns": [
+      3
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "self",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/pem_geomorfologia_gebco.json"
+    }
+  ],
+  "assets": {
+    "geoparquet": {
+      "title": "GeoParquet — Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.parquet",
+      "file:size": 1212254,
+      "file:checksum": "7c7589083d61163cf66218e7ccdae1b3eb88e7d3a0569752d2f62addb810959d"
+    },
+    "geopackage": {
+      "title": "OGC GeoPackage — Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+      "type": "application/geopackage+sqlite3",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.gpkg"
+    },
+    "shapefile": {
+      "title": "Shapefile (.zip) — Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+      "type": "application/zip",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO_SHP.zip"
+    },
+    "csv": {
+      "title": "Tabla CSV — Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+      "type": "text/csv",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.csv"
+    },
+    "metadata_iso19139": {
+      "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "href": "https://ide.cit.uai.cl/download/iso_xml/pem_geomorfologia_gebco_iso19139.xml"
+    }
+  }
+}

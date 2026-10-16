@@ -1,0 +1,106 @@
+{
+  "stac_version": "1.0.0",
+  "type": "Collection",
+  "id": "red-vial-ejes-2017",
+  "title": "Red vial urbana caminable y tiempos Tobler 2017",
+  "description": "Red vial oficial caminable y grafo topológico peatonal integrado por 1.589.595 tramos viales calibrados con tiempos de fricción y decaimiento espacial de Tobler para las 16 regiones de Chile. Permite calcular isocronas peatonales y matrices de costo temporal entre las 204.906 manzanas censales y los equipamientos esenciales para la modelación de accesibilidad urbana de la línea base MBHT 2017.",
+  "license": "CC-BY-4.0",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -75.64,
+          -55.98,
+          -66.86,
+          -17.5
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2017-01-01T00:00:00Z",
+          "2026-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "summaries": {
+    "version": [
+      "v1.0.3"
+    ],
+    "status": [
+      "Conjunto de datos oficial vigente"
+    ],
+    "matriz": [
+      "mbht"
+    ],
+    "escala": [
+      "Lineal segmentada (1.589.595 tramos viales peatonales ruteables)"
+    ],
+    "physical_columns": [
+      7
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "self",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/red_vial_ejes_2017.json"
+    }
+  ],
+  "assets": {
+    "geoparquet": {
+      "title": "GeoParquet — Red vial urbana caminable y tiempos Tobler 2017",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet",
+      "file:size": 225592155,
+      "file:checksum": "85c872e5eb1fb00ca95eb4c3a0248993566b74c53ecbbe42692653657adb8452"
+    },
+    "geopackage": {
+      "title": "OGC GeoPackage — Red vial urbana caminable y tiempos Tobler 2017",
+      "type": "application/geopackage+sqlite3",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.gpkg"
+    },
+    "shapefile": {
+      "title": "Shapefile (.zip) — Red vial urbana caminable y tiempos Tobler 2017",
+      "type": "application/zip",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional_SHP.zip"
+    },
+    "csv": {
+      "title": "Tabla CSV — Red vial urbana caminable y tiempos Tobler 2017",
+      "type": "text/csv",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.csv"
+    },
+    "metadata_iso19139": {
+      "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Red vial urbana caminable y tiempos Tobler 2017",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "href": "https://ide.cit.uai.cl/download/iso_xml/red_vial_ejes_2017_iso19139.xml"
+    }
+  }
+}

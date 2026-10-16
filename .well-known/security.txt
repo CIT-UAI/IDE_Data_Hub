@@ -1,0 +1,9 @@
+# RFC 9116 — Security Contact & Vulnerability Disclosure
+# Infraestructura de Datos Espaciales (IDE CIT) — Universidad Adolfo Ibáñez
+Contact: mailto:security@uai.cl
+Contact: https://ide.cit.uai.cl/guia-tecnica
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: es, en
+Canonical: https://ide.cit.uai.cl/.well-known/security.txt
+Policy: https://ide.cit.uai.cl/guia-tecnica
+Acknowledgments: https://ide.cit.uai.cl/guia-tecnica

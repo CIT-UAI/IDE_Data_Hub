@@ -1,0 +1,104 @@
+{
+  "stac_version": "1.0.0",
+  "type": "Collection",
+  "id": "sii-areas-homogeneas",
+  "title": "Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+  "description": "Catastro espacial completo de 14.157 Áreas Homogéneas definido por el Servicio de Impuestos Internos (SII) bajo la Ley N° 17.235 sobre Impuesto Territorial. Delimita zonas territoriales con características urbanísticas, topográficas, de accesibilidad a servicios y valor unitario de terreno homogéneas para los procesos de reavalúo de bienes raíces en todo Chile. Proporciona el Valor Guía de Terreno (VGT en UF/m² y $/m²), coeficiente guía y clasificación comunal para análisis de plusvalía, dinámica inmobiliaria y tributación territorial.",
+  "license": "CC-BY-4.0",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -75.64,
+          -55.98,
+          -66.86,
+          -17.5
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2017-01-01T00:00:00Z",
+          "2026-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "summaries": {
+    "version": [
+      "v1.0.3"
+    ],
+    "status": [
+      "Conjunto de datos oficial vigente"
+    ],
+    "matriz": [
+      "sii"
+    ],
+    "escala": [
+      "Polígonos de áreas homogéneas (catastro nacional)"
+    ],
+    "physical_columns": [
+      8
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "self",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/sii_areas_homogeneas.json"
+    }
+  ],
+  "assets": {
+    "geoparquet": {
+      "title": "GeoParquet — Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.parquet"
+    },
+    "geopackage": {
+      "title": "OGC GeoPackage — Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+      "type": "application/geopackage+sqlite3",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.gpkg"
+    },
+    "shapefile": {
+      "title": "Shapefile (.zip) — Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+      "type": "application/zip",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional_SHP.zip"
+    },
+    "csv": {
+      "title": "Tabla CSV — Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+      "type": "text/csv",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.csv"
+    },
+    "metadata_iso19139": {
+      "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "href": "https://ide.cit.uai.cl/download/iso_xml/sii_areas_homogeneas_iso19139.xml"
+    }
+  }
+}

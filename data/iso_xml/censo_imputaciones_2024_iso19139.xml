@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd">
+  <gmd:fileIdentifier>
+    <gco:CharacterString>CIT-UAI::censo_imputaciones_2024::2026</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language>
+    <gco:CharacterString>spa</gco:CharacterString>
+  </gmd:language>
+  <gmd:characterSet>
+    <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</gmd:MD_CharacterSetCode>
+  </gmd:characterSet>
+  <gmd:contact>
+    <gmd:CI_ResponsibleParty>
+      <gmd:organisationName>
+        <gco:CharacterString>Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez</gco:CharacterString>
+      </gmd:organisationName>
+      <gmd:contactInfo>
+        <gmd:CI_Address>
+          <gmd:electronicMailAddress>
+            <gco:CharacterString>contactocit@uai.cl</gco:CharacterString>
+          </gmd:electronicMailAddress>
+        </gmd:CI_Address>
+      </gmd:contactInfo>
+      <gmd:role>
+        <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</gmd:CI_RoleCode>
+      </gmd:role>
+    </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp>
+    <gco:DateTime>2026-10-16T21:55:14Z</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName>
+    <gco:CharacterString>ISO 19115-1:2014 / Perfil Chileno SNIT</gco:CharacterString>
+  </gmd:metadataStandardName>
+  <gmd:identificationInfo>
+    <gmd:MD_DataIdentification>
+      <gmd:citation>
+        <gmd:CI_Citation>
+          <gmd:title>
+            <gco:CharacterString>Censo 2024 — Imputaciones demográficas por cohortes y sexo</gco:CharacterString>
+          </gmd:title>
+        </gmd:CI_Citation>
+      </gmd:citation>
+      <gmd:abstract>
+        <gco:CharacterString>Modelo demográfico sintético y desagregación multivariada determinística del Censo 2024 (18,48 millones de personas, 7,66 millones de viviendas y 6,62 millones de hogares) a escala de 254.395 manzanas urbanas y entidades rurales para las 16 regiones de Chile. Desarrollado por el CIT-UAI mediante interpolación osculatriz de Sprague y programación entera de mayor residuo para modelación espacial de accesibilidad y demanda de equipamientos, respetando irrestrictamente el secreto estadístico (Ley N° 17.374, Art. 29).</gco:CharacterString>
+      </gmd:abstract>
+      <gmd:purpose>
+        <gco:CharacterString>Linaje de cálculo: Graduación osculatoria de Sprague de 5.º orden sobre grupos quinquenales Censo 2024 combinada con programación entera por algoritmo de mayor residuo (Largest Remainder Method). Especificación técnica del modelo sintético: 1) Restricciones aplicadas: Preservación estricta de totales marginales (la suma de edades y sexo en cada manzana coincide exactamente con la población total censal de la manzana; la suma comunal iguala los tabulados oficiales INE); 2) Información de control: Tabulados oficiales INE Censo 2024 a nivel comunal/distrital, recuentos de viviendas/hogares por manzana y perfiles de ponderación CASEN; 3) Variables imputadas: Desglose continuo de edades simples (0 a 100+ años) y 42 cohortes por sexo; 4) Incertidumbre y advertencia metodológica: Modelo sintético calibrado para análisis territorial (RMSE &lt; 1.2%), advirtiendo expresamente que no constituye microdatos nominales ni registros administrativos individuales observados.</gco:CharacterString>
+      </gmd:purpose>
+      <gmd:extent>
+        <gmd:EX_Extent>
+          <gmd:geographicElement>
+            <gmd:EX_GeographicBoundingBox>
+              <gmd:westBoundLongitude>
+                <gco:Decimal>-75.64</gco:Decimal>
+              </gmd:westBoundLongitude>
+              <gmd:eastBoundLongitude>
+                <gco:Decimal>-66.86</gco:Decimal>
+              </gmd:eastBoundLongitude>
+              <gmd:southBoundLatitude>
+                <gco:Decimal>-55.98</gco:Decimal>
+              </gmd:southBoundLatitude>
+              <gmd:northBoundLatitude>
+                <gco:Decimal>-17.5</gco:Decimal>
+              </gmd:northBoundLatitude>
+            </gmd:EX_GeographicBoundingBox>
+          </gmd:geographicElement>
+        </gmd:EX_Extent>
+      </gmd:extent>
+    </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo>
+    <gmd:MD_Distribution>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://ide.cit.uai.cl/tiles/censo_imputaciones_2024/{z}/{x}/{y}.pbf</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>OGC:MVT</gco:CharacterString>
+              </gmd:protocol>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>download/Censo_Imputaciones_2024_Nacional.parquet</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>HTTP:GEOPARQUET</gco:CharacterString>
+              </gmd:protocol>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+    </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+</gmd:MD_Metadata>

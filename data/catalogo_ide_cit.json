@@ -1,0 +1,2344 @@
+{
+  "portal": {
+    "nombre": "IDE CIT — Infraestructura de Datos Espaciales",
+    "institucion": "Centro de Inteligencia Territorial (CIT) — Universidad Adolfo Ibáñez",
+    "version": "2026.1",
+    "descripcion": "Plataforma académica y de ciencia abierta para la consulta, interoperabilidad y descarga de coberturas y modelos territoriales del Centro de Inteligencia Territorial de la Universidad Adolfo Ibáñez.",
+    "contacto": "contactocit@uai.cl",
+    "url_base": "https://ide.cit.uai.cl",
+    "url_tiles": "https://ide.cit.uai.cl/tiles",
+    "estandares": [
+      "ISO 19115-1:2014",
+      "Perfil chileno SNIT",
+      "W3C DCAT-AP 2.0",
+      "OGC Vector Tiles (MVT)",
+      "GeoParquet 1.1",
+      "STAC 1.0.0",
+      "OWASP ASVS 5.0 (Level 2)",
+      "Secreto Estadístico (Ley 17.374)"
+    ],
+    "seguridad_y_cumplimiento": {
+      "transporte_cifrado": "TLS 1.3 / 1.2 Strict con HSTS (max-age=31536000)",
+      "aislamiento_origen": "Amazon CloudFront + S3 Origin Access Control (OAC)",
+      "controles_aplicacion": "OWASP ASVS v5.0.0 Nivel 2 (Anti-XSS, CORS de solo lectura)",
+      "integridad": "Checksums SHA-256 inmutables por dataset",
+      "privacidad_secreto_estadistico": "Ley N° 17.374 (Microdatos agregados por manzana, sin datos personales)",
+      "disponibilidad_sla": "99.9% Uptime Multi-AZ Cloud-Native"
+    },
+    "ultima_actualizacion": "2026-10-15",
+    "total_capas_oficiales": 13,
+    "conteo_canónico": "13 capas y coberturas geoespaciales maestras oficiales (8 Litósfera / 5 Maritorio)"
+  },
+  "matrices": [
+    {
+      "id": "mbht",
+      "nombre": "MBHT",
+      "titulo": "Matriz de Bienestar Humano Territorial",
+      "color": "#000000",
+      "icono": "heart-pulse",
+      "bg": "bg-slate-100 text-slate-800 border-slate-300"
+    },
+    {
+      "id": "pem",
+      "nombre": "Planificación marina (FAO / SBAP)",
+      "titulo": "Planificación marina y áreas protegidas (Directrices FAO y Ley SBAP)",
+      "color": "#000000",
+      "icono": "waves",
+      "bg": "bg-slate-100 text-slate-800 border-slate-300"
+    },
+    {
+      "id": "censo",
+      "nombre": "Censo 2024",
+      "titulo": "Imputaciones demográficas por cohortes y sexo",
+      "color": "#000000",
+      "icono": "users",
+      "bg": "bg-slate-100 text-slate-800 border-slate-300"
+    },
+    {
+      "id": "inse",
+      "nombre": "INSE",
+      "titulo": "Índice de nivel socioeconómico y patrimonial",
+      "color": "#000000",
+      "icono": "trending-up",
+      "bg": "bg-slate-100 text-slate-800 border-slate-300"
+    },
+    {
+      "id": "sii",
+      "nombre": "SII",
+      "titulo": "Áreas homogéneas y avalúos fiscales",
+      "color": "#000000",
+      "icono": "landmark",
+      "bg": "bg-slate-100 text-slate-800 border-slate-300"
+    }
+  ],
+  "ambitos": [
+    {
+      "id": "tierra",
+      "nombre": "Litósfera / Tricontinentalidad (Continental, Insular, Antártico)",
+      "icono": "map-pin"
+    },
+    {
+      "id": "mar",
+      "nombre": "Hidrósfera / Maritorio oceánico y ZEE",
+      "icono": "waves"
+    },
+    {
+      "id": "aire",
+      "nombre": "Atmósfera / Clima y calidad del aire",
+      "icono": "wind"
+    }
+  ],
+  "capas": [
+    {
+      "id": "kpi_mud_2017",
+      "titulo": "MBHT 2017 — Línea base oficial",
+      "matriz": "mbht",
+      "ambito": "tierra",
+      "escala": "Manzanas censales (línea base oficial)",
+      "cobertura": "Nacional (16 regiones de Chile — 204.906 manzanas censales)",
+      "fecha_corte": "2017-04-19",
+      "publico": true,
+      "disponible_descarga": true,
+      "estado": "activo",
+      "badge_estado": "Oficial CIT-UAI (Línea base nacional)",
+      "resumen": "Línea base nacional oficial de la Matriz de Bienestar Humano Territorial Integral evaluada sobre 204.906 manzanas censales del Censo 2017 en las 16 regiones de Chile. Sintetiza 18 indicadores elementales distribuidos en 4 macro-dimensiones del bienestar (bajo el Axioma de Neutralidad Elemental W(D) = n_D / 18): 1) Macro-dimensión de Accesibilidad (dim_acc, peso 6/18 = 33,33%), que integra los 6 indicadores de acceso peatonal efectivo E2SFCA + Tobler a salud (isal), educación (ise), áreas verdes (iav), deporte (idep), cultura (icul) y servicios públicos (iser); 2) Macro-dimensión Socioeconómica (dim_soc, peso 6/18 = 33,33%); 3) Macro-dimensión de Seguridad (dim_seg, peso 4/18 = 22,22%); y 4) Macro-dimensión Ambiental (dim_amb, peso 2/18 = 11,11%). El archivo físico contiene el esquema completo de 42 columnas físicas (identificadores, demografía censal, índice sintético bht, las 4 macro-dimensiones, los 6 sub-indicadores peatonales con sus valores pre-escalamiento, tipología Jenks tob y geometría WKB).",
+      "formula_lineage": "Síntesis BHT Integral de 18 indicadores en 4 macro-dimensiones (W(D) = n_D / 18). Accesibilidad (dim_acc) calculada mediante el modelo bietápico E2SFCA sobre el grafo vial nacional (1.589.595 tramos) con velocidad peatonal de Tobler W(S) = 6 * exp(-3.5 * |S + 0.05|), decaimiento gaussiano f(t) = exp(-0.5 * (t / 15)^2) y umbral 30 min.",
+      "autor": "Centro de Inteligencia Territorial (CIT-UAI)",
+      "licencia": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+      "tile_source": "kpi_mud_2017",
+      "tabla_postgis": "mbht.kpi_mud_2017",
+      "s3_parquet": "download/MBHT_2017_Nacional_Manzanas.parquet",
+      "gpkg_url": "download/MBHT_2017_Nacional_Manzanas.gpkg",
+      "shp_url": "download/MBHT_2017_Nacional_Manzanas_SHP.zip",
+      "csv_url": "download/MBHT_2017_Nacional_Manzanas.csv",
+      "atributos": [
+        {
+          "campo": "id_manzcit",
+          "tipo": "String",
+          "descripcion": "Identificador único censal oficial de la manzana (16 dígitos INE/CIT). Clave primaria nacional."
+        },
+        {
+          "campo": "cod_reg",
+          "tipo": "Integer",
+          "descripcion": "Código numérico de la región político-administrativa (1 a 16)"
+        },
+        {
+          "campo": "cod_prov",
+          "tipo": "Integer",
+          "descripcion": "Código numérico de la provincia"
+        },
+        {
+          "campo": "cod_com",
+          "tipo": "Integer",
+          "descripcion": "Código numérico único de la comuna (CUT oficial SUBDERE)"
+        },
+        {
+          "campo": "tob",
+          "tipo": "String",
+          "descripcion": "Categorización territorial por Tipología de Oportunidad de Bienestar (Jenks ckmeans: Alto, Medio Alto, Medio, Medio Bajo, Bajo)"
+        },
+        {
+          "campo": "manz_en",
+          "tipo": "String",
+          "descripcion": "Código censal numérico de manzana/entidad asignado por el Instituto Nacional de Estadísticas (Censo 2017)"
+        },
+        {
+          "campo": "personas",
+          "tipo": "Double",
+          "descripcion": "Población residente total censada en la manzana (17.482.699 habitantes a nivel nacional)"
+        },
+        {
+          "campo": "area",
+          "tipo": "Double",
+          "descripcion": "Superficie planimétrica de la manzana censal en metros cuadrados (m²)"
+        },
+        {
+          "campo": "hog_n",
+          "tipo": "Double",
+          "descripcion": "Número total de hogares censados en la unidad censal"
+        },
+        {
+          "campo": "total_v",
+          "tipo": "Double",
+          "descripcion": "Total de viviendas censadas en la unidad territorial"
+        },
+        {
+          "campo": "bht",
+          "tipo": "Double",
+          "descripcion": "Índice sintético global de Bienestar Humano Territorial normalizado [0.00 - 1.00] (media nacional: 0,6171; RM: 0,5918)"
+        },
+        {
+          "campo": "bht_bruto",
+          "tipo": "Double",
+          "descripcion": "Puntaje bruto del índice BHT previo a la estandarización min-max"
+        },
+        {
+          "campo": "dim_acc",
+          "tipo": "Double",
+          "descripcion": "Macro-dimensión 1: Accesibilidad a equipamientos esenciales (peso 6/18 = 33,33%; sintetiza isal, ise, iav, idep, icul, iser)"
+        },
+        {
+          "campo": "dim_acc_bruto",
+          "tipo": "Double",
+          "descripcion": "Puntaje bruto acumulado de la macro-dimensión de accesibilidad"
+        },
+        {
+          "campo": "iav",
+          "tipo": "Double",
+          "descripcion": "Sub-indicador de accesibilidad peatonal a Áreas Verdes y parques públicos mantenidos (peso elemental 1/18)"
+        },
+        {
+          "campo": "iav_pre",
+          "tipo": "Double",
+          "descripcion": "Puntaje de accesibilidad a áreas verdes previo a la normalización logística"
+        },
+        {
+          "campo": "icul",
+          "tipo": "Double",
+          "descripcion": "Sub-indicador de accesibilidad peatonal a Cultura (bibliotecas, museos, teatros, centros culturales; peso elemental 1/18)"
+        },
+        {
+          "campo": "icul_pre",
+          "tipo": "Double",
+          "descripcion": "Puntaje de accesibilidad a cultura previo a la normalización logística"
+        },
+        {
+          "campo": "idep",
+          "tipo": "Double",
+          "descripcion": "Sub-indicador de accesibilidad peatonal a Deportes (gimnasios, multicanchas, centros deportivos; peso elemental 1/18)"
+        },
+        {
+          "campo": "idep_pre",
+          "tipo": "Double",
+          "descripcion": "Puntaje de accesibilidad a deporte previo a la normalización logística"
+        },
+        {
+          "campo": "isal",
+          "tipo": "Double",
+          "descripcion": "Sub-indicador de accesibilidad peatonal a Salud primaria (CESFAM ≥ 300 m², CECOSF, postas, SAPU/SAR; peso elemental 1/18)"
+        },
+        {
+          "campo": "isal_pre",
+          "tipo": "Double",
+          "descripcion": "Puntaje de accesibilidad a salud previo a la normalización logística"
+        },
+        {
+          "campo": "iser",
+          "tipo": "Double",
+          "descripcion": "Sub-indicador de accesibilidad peatonal a Servicios Públicos y trámites cívicos (Registro Civil, comisarías, bancos; peso elemental 1/18)"
+        },
+        {
+          "campo": "iser_pre",
+          "tipo": "Double",
+          "descripcion": "Puntaje de accesibilidad a servicios cívicos previo a la normalización logística"
+        },
+        {
+          "campo": "ise",
+          "tipo": "Double",
+          "descripcion": "Sub-indicador de accesibilidad peatonal a Educación (jardines infantiles, escuelas básicas, liceos; peso elemental 1/18)"
+        },
+        {
+          "campo": "ise_pre",
+          "tipo": "Double",
+          "descripcion": "Puntaje de accesibilidad a educación previo a la normalización logística"
+        },
+        {
+          "campo": "dim_amb",
+          "tipo": "Double",
+          "descripcion": "Macro-dimensión 4: Calidad ambiental y entorno biofísico (peso 2/18 = 11,11%)"
+        },
+        {
+          "campo": "dim_amb_bruto",
+          "tipo": "Double",
+          "descripcion": "Puntaje bruto acumulado de la macro-dimensión ambiental"
+        },
+        {
+          "campo": "dim_soc",
+          "tipo": "Double",
+          "descripcion": "Macro-dimensión 2: Condición socioeconómica, educacional y habitacional (peso 6/18 = 33,33%)"
+        },
+        {
+          "campo": "dim_soc_bruto",
+          "tipo": "Double",
+          "descripcion": "Puntaje bruto acumulado de la macro-dimensión socioeconómica"
+        },
+        {
+          "campo": "dim_seg",
+          "tipo": "Double",
+          "descripcion": "Macro-dimensión 3: Seguridad pública y prevención del delito en entorno urbano (peso 4/18 = 22,22%)"
+        },
+        {
+          "campo": "dim_seg_bruto",
+          "tipo": "Double",
+          "descripcion": "Puntaje bruto acumulado de la macro-dimensión de seguridad pública"
+        },
+        {
+          "campo": "e0a3",
+          "tipo": "Double",
+          "descripcion": "Población infantil censal de 0 a 3 años de edad residente en la manzana"
+        },
+        {
+          "campo": "e7a10",
+          "tipo": "Double",
+          "descripcion": "Población infantil censal de 7 a 10 años de edad residente en la manzana"
+        },
+        {
+          "campo": "e4a5",
+          "tipo": "Double",
+          "descripcion": "Población preescolar censal de 4 a 5 años de edad residente en la manzana"
+        },
+        {
+          "campo": "e6a13",
+          "tipo": "Double",
+          "descripcion": "Población escolar primaria censal de 6 a 13 años de edad residente en la manzana"
+        },
+        {
+          "campo": "e14a18",
+          "tipo": "Double",
+          "descripcion": "Población escolar secundaria censal de 14 a 18 años de edad residente en la manzana"
+        },
+        {
+          "campo": "e4a18",
+          "tipo": "Double",
+          "descripcion": "Población total en edad formativa escolar de 4 a 18 años residente en la manzana"
+        },
+        {
+          "campo": "e15a24",
+          "tipo": "Double",
+          "descripcion": "Población juvenil censal de 15 a 24 años de edad residente en la manzana"
+        },
+        {
+          "campo": "e19a30",
+          "tipo": "Double",
+          "descripcion": "Población adulta joven censal de 19 a 30 años de edad residente en la manzana"
+        },
+        {
+          "campo": "geometry",
+          "tipo": "Binary",
+          "descripcion": "Geometría poligonal censal estandarizada en formato WKB (WGS 84 / EPSG:4326)"
+        },
+        {
+          "campo": "comuna",
+          "tipo": "String",
+          "descripcion": "Nombre oficial de la comuna conforme a la División Político-Administrativa SUBDERE"
+        }
+      ],
+      "citacion": "Centro de Inteligencia Territorial. (2018). Matriz de Bienestar Humano Territorial MBHT 2017: Indicadores de accesibilidad urbana y bienestar peatonal para las 16 regiones de Chile [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://matrizbht.cl",
+      "bbox": [
+        -75.64,
+        -55.98,
+        -66.86,
+        -17.5
+      ],
+      "crs": "EPSG:4326 (WGS 84)",
+      "tipo_geometria": "MultiPolygon",
+      "fuentes_institucionales": [
+        {
+          "institucion": "Instituto Nacional de Estadísticas [INE]",
+          "insumo": "Censo de Población y Vivienda 2017",
+          "citacion_apa7": "Instituto Nacional de Estadísticas [INE]. (2018). Censo de población y vivienda 2017: Base de datos de manzanas y entidades [Conjunto de datos]. INE Chile. https://www.ine.gob.cl",
+          "url": "https://www.ine.gob.cl"
+        },
+        {
+          "institucion": "Ministerio de Salud [MINSAL]",
+          "insumo": "Catastro Nacional de Establecimientos de Salud (DEIS)",
+          "citacion_apa7": "Departamento de Estadísticas e Información de Salud [DEIS]. (2017). Registro nacional de prestadores y establecimientos de atención primaria [Base de datos]. Ministerio de Salud de Chile. https://deis.minsal.cl",
+          "url": "https://deis.minsal.cl"
+        },
+        {
+          "institucion": "Ministerio de Educación [MINEDUC]",
+          "insumo": "Directorio Oficial de Establecimientos Educacionales",
+          "citacion_apa7": "Centro de Estudios MINEDUC. (2017). Directorio de establecimientos educacionales de Chile [Base de datos abierta]. Ministerio de Educación de Chile. https://datosabiertos.mineduc.cl",
+          "url": "https://datosabiertos.mineduc.cl"
+        },
+        {
+          "institucion": "Ministerio de Vivienda y Urbanismo [MINVU]",
+          "insumo": "Catastro Nacional de Parques Urbanos y Áreas Verdes",
+          "citacion_apa7": "División de Desarrollo Urbano [DDU]. (2017). Catastro nacional de parques y áreas verdes urbanas [Capa geoespacial]. MINVU Chile. https://ide.minvu.cl",
+          "url": "https://ide.minvu.cl"
+        }
+      ],
+      "parquet_url": "download/MBHT_2017_Nacional_Manzanas.parquet",
+      "urn": "urn:uuid:c17-mbht-2017-kpi-mud-nac-v1",
+      "ficha_tecnica_url": "https://ide.cit.uai.cl/ficha-mbht-2017",
+      "version_semver": "1.0.3",
+      "crs_geodesia": {
+        "distribucion_web": "WGS 84 (EPSG:4326)",
+        "datum_oficial_chile": "SIRGAS-Chile (EPSG:5360 / EPSG:5361 / EPSG:5362)",
+        "proyecciones_cartograficas": "UTM Huso 18S (EPSG:32718) / UTM Huso 19S (EPSG:32719)",
+        "bbox_wgs84": [
+          -75.6443,
+          -55.98,
+          -66.8622,
+          -17.4984
+        ]
+      },
+      "calidad_cuantificada": {
+        "completitud_territorial_pct": 100.0,
+        "manzanas_totales": 204906,
+        "consistencia_topologica_pct": 100.0,
+        "atributos_nulos": 0,
+        "tolerancia_rmse_red_m": 2.5
+      },
+      "embudo_equipamientos": {
+        "universo_bruto_nacional": 202275,
+        "catastro_grafo_ruteable": 113231,
+        "linea_base_libre_acceso_2017": 55035
+      },
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "archivos_distribucion": {
+        "parquet": {
+          "filename": "MBHT_2017_Nacional_Manzanas.parquet",
+          "url": "download/MBHT_2017_Nacional_Manzanas.parquet",
+          "size_bytes": 252572936,
+          "size_human": "240,9 MB",
+          "sha256": "4a123b83ea1cefa18661c25ea40b9c3fc2a319cf6a45abbbd72a2cb30c069f2a"
+        },
+        "gpkg": {
+          "filename": "MBHT_2017_Nacional_Manzanas.gpkg",
+          "url": "download/MBHT_2017_Nacional_Manzanas.gpkg",
+          "size_bytes": 360656896,
+          "size_human": "343,9 MB",
+          "sha256": "3db07960a5d2ac94d4443c5ba59a3715655db8aabf040e01993180c316e1d230"
+        },
+        "shp_zip": {
+          "filename": "MBHT_2017_Nacional_Manzanas_SHP.zip",
+          "url": "download/MBHT_2017_Nacional_Manzanas_SHP.zip",
+          "size_bytes": 214822331,
+          "size_human": "204,9 MB",
+          "sha256": "9899f31ae5aa104b40e9c4bbfd4030eb1b8e2b3fb431544b1d103fc720f8cb32"
+        },
+        "csv": {
+          "filename": "MBHT_2017_Nacional_Manzanas.csv",
+          "url": "download/MBHT_2017_Nacional_Manzanas.csv",
+          "size_bytes": 100911556,
+          "size_human": "96,2 MB",
+          "sha256": "ebea6ee15f32639345b0f7ce1b3211f808d17b55b3b7d7283d180c48721d5cf5"
+        }
+      },
+      "size_bytes": 252572936,
+      "size_human": "240,9 MB",
+      "sha256": "4a123b83ea1cefa18661c25ea40b9c3fc2a319cf6a45abbbd72a2cb30c069f2a",
+      "total_columnas": 42
+    },
+    {
+      "id": "pem_maritorio_nacional",
+      "titulo": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
+      "matriz": "pem",
+      "ambito": "mar",
+      "escala": "Polígonos de soberanía y jurisdicción marítima (394 unidades)",
+      "cobertura": "Tricontinental (Chile Continental, Insular y Territorio Antártico Chileno — 3.500.000 km²)",
+      "fecha_corte": "2024-12-31",
+      "publico": true,
+      "disponible_descarga": true,
+      "estado": "activo",
+      "badge_estado": "Fuente institucional (DIFROL / Armada / MMA)",
+      "resumen": "Delimitación vectorial oficial del Maritorio chileno bajo una perspectiva tricontinental y de soberanía oceánica integral (Chile continental, insular y Territorio Antártico Chileno). Articula la Planificación marina nacional conforme a las directrices de ordenamiento y pesca sustentable de la FAO y el marco de conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP). Comprende las líneas de base, Aguas Interiores, Mar Territorial (12 millas náuticas), Zona Contigua (24 mn), Zona Económica Exclusiva (200 mn) y plataforma continental, consolidando más de 3,5 millones de kilómetros cuadrados de océano nacional.",
+      "formula_lineage": "Delimitación de espacios marítimos soberanos provista por DIFROL, SHOA y MMA conforme a la CONVEMAR, directrices de ordenamiento marino de la FAO y el marco ambiental del SBAP (Ley 21.600). Homologación geodésica WGS84 (EPSG:4326).",
+      "autor": "CIT-UAI en colaboración con DIFROL, Armada de Chile, FAO y SBAP",
+      "licencia": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+      "tile_source": "pem_maritorio_nacional",
+      "tabla_postgis": "maritorio.maritorio_nacional",
+      "s3_parquet": "download/PEM_Maritorio_Nacional_Tricontinental.parquet",
+      "parquet_url": "download/PEM_Maritorio_Nacional_Tricontinental.parquet",
+      "gpkg_url": "download/PEM_Maritorio_Nacional_Tricontinental.gpkg",
+      "shp_url": "download/PEM_Maritorio_Nacional_Tricontinental_SHP.zip",
+      "csv_url": "download/PEM_Maritorio_Nacional_Tricontinental.csv",
+      "atributos": [
+        {
+          "campo": "OBJECTID",
+          "tipo": "Integer",
+          "descripcion": "Identificador secuencial del polígono marítimo"
+        },
+        {
+          "campo": "perimetro_km",
+          "tipo": "Float",
+          "descripcion": "Perímetro geodésico del polígono marítimo en kilómetros (km)"
+        },
+        {
+          "campo": "area_km2",
+          "tipo": "Float",
+          "descripcion": "Área superficial geodésica del polígono en kilómetros cuadrados (km²)"
+        },
+        {
+          "campo": "ambito",
+          "tipo": "String",
+          "descripcion": "Ámbito geográfico tricontinental (Continental, Insular, Antártico)"
+        },
+        {
+          "campo": "fuente",
+          "tipo": "String",
+          "descripcion": "Institución técnica de custodia y delimitación"
+        }
+      ],
+      "citacion": "Centro de Inteligencia Territorial, & Dirección Nacional de Fronteras y Límites del Estado. (2024). Delimitación oficial del Maritorio nacional tricontinental y Zona Económica Exclusiva [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+      "bbox": [
+        -131.0,
+        -90.0,
+        -50.0,
+        -17.5
+      ],
+      "crs": "EPSG:4326 (WGS 84)",
+      "tipo_geometria": "MultiPolygon",
+      "fuentes_institucionales": [
+        {
+          "institucion": "Dirección Nacional de Fronteras y Límites del Estado [DIFROL]",
+          "insumo": "Límites Internacionales y Espacios de Soberanía Marítima",
+          "citacion_apa7": "Dirección Nacional de Fronteras y Límites del Estado [DIFROL]. (2024). Delimitación de espacios marítimos internacionales y plataforma continental extendida [Documento oficial]. Ministerio de Relaciones Exteriores de Chile. https://difrol.gob.cl",
+          "url": "https://difrol.gob.cl"
+        },
+        {
+          "institucion": "Servicio Hidrográfico y Oceanográfico de la Armada [SHOA]",
+          "insumo": "Cartografía Náutica y Líneas de Base Oficiales",
+          "citacion_apa7": "Servicio Hidrográfico y Oceanográfico de la Armada [SHOA]. (2024). Cartografía oficial de líneas de base y aguas interiores de la República de Chile [Base cartográfica]. Armada de Chile. http://www.shoa.cl",
+          "url": "http://www.shoa.cl"
+        },
+        {
+          "institucion": "Organización de las Naciones Unidas para la Alimentación y la Agricultura [FAO]",
+          "insumo": "Directrices para la Planificación Espacial Marina y Pesca Sostenible",
+          "citacion_apa7": "Food and Agriculture Organization [FAO]. (2024). Marine spatial planning and sustainable fisheries governance [Directrices técnicas]. FAO. https://www.fao.org",
+          "url": "https://www.fao.org"
+        },
+        {
+          "institucion": "Servicio de Biodiversidad y Áreas Protegidas [SBAP / MMA]",
+          "insumo": "Áreas Marinas Protegidas y Marco de Conservación Marina (Ley N° 21.600)",
+          "citacion_apa7": "Ministerio del Medio Ambiente [MMA]. (2024). Catastro nacional de áreas marinas costeras protegidas y zonificación SBAP [Base geográfica]. MMA. https://mma.gob.cl",
+          "url": "https://mma.gob.cl"
+        }
+      ],
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "archivos_distribucion": {
+        "parquet": {
+          "filename": "PEM_Maritorio_Nacional_Tricontinental.parquet",
+          "url": "download/PEM_Maritorio_Nacional_Tricontinental.parquet",
+          "size_bytes": 103187755,
+          "size_human": "98,4 MB",
+          "sha256": "05e07fbbb054b09f878e169c4656e8da2f27c8666a5b46fac655a1e28dbe448d"
+        },
+        "gpkg": {
+          "filename": "PEM_Maritorio_Nacional_Tricontinental.gpkg",
+          "url": "download/PEM_Maritorio_Nacional_Tricontinental.gpkg",
+          "size_bytes": 163622912,
+          "size_human": "156,0 MB",
+          "sha256": "6a636d5af9e4ac81f714b5a848da70d8e5c06ed17ce17bda85eccc061ced945a"
+        },
+        "shp_zip": {
+          "filename": "PEM_Maritorio_Nacional_Tricontinental_SHP.zip",
+          "url": "download/PEM_Maritorio_Nacional_Tricontinental_SHP.zip",
+          "size_bytes": 79974812,
+          "size_human": "76,3 MB",
+          "sha256": "1a4f859bd720eb94c32beda991239311583e9c7fe834630843ce5fac63c833ab"
+        },
+        "csv": {
+          "filename": "PEM_Maritorio_Nacional_Tricontinental.csv",
+          "url": "download/PEM_Maritorio_Nacional_Tricontinental.csv",
+          "size_bytes": 46249,
+          "size_human": "45 KB",
+          "sha256": "d7809b26100bb3e16dc0936b71dcc1688b48eb5e1cbfe2778b671087a98c88f2"
+        }
+      },
+      "size_bytes": 103187755,
+      "size_human": "98,4 MB",
+      "sha256": "05e07fbbb054b09f878e169c4656e8da2f27c8666a5b46fac655a1e28dbe448d"
+    },
+    {
+      "id": "pem_geomorfologia_gebco",
+      "titulo": "Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+      "matriz": "pem",
+      "ambito": "mar",
+      "escala": "Polígonos de macro-unidades fisiográficas de fondo marino (11 macro-unidades)",
+      "cobertura": "Margen continental y cuencas oceánicas adyacentes a Chile",
+      "fecha_corte": "2024-12-31",
+      "publico": true,
+      "disponible_descarga": true,
+      "estado": "activo",
+      "badge_estado": "Fuente institucional (GEBCO / IHO / SHOA)",
+      "resumen": "Zonificación geomorfológica del lecho y fondo submarino nacional categorizada conforme al estándar internacional GEBCO (General Bathymetric Chart of the Oceans / IHO). Insumo estructural para la Planificación marina nacional bajo directrices de la FAO y los criterios de zonificación y protección del Servicio de Biodiversidad y Áreas Protegidas (SBAP). Delimita las grandes provincias fisiográficas oceánicas: Fosa de Atacama/Perú-Chile, plataforma continental, talud continental, fosas abisales, dorsales oceánicas (Dorsal de Chile, Cordillera de Nazca, Cordillera de Salas y Gómez) y llanuras abisales.",
+      "formula_lineage": "Clasificación morfométrica de relieve submarino basada en mallas globales GEBCO / IHO y validación fisiográfica regional con criterios de planificación marina FAO y conservación SBAP. Reproyección a WGS84 (EPSG:4326).",
+      "autor": "CIT-UAI con insumos de GEBCO / UNESCO / OHI / FAO / SBAP",
+      "licencia": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+      "tile_source": "pem_geomorfologia_gebco",
+      "tabla_postgis": "maritorio.geomorfologia_gebco",
+      "s3_parquet": "download/PEM_Geomorfologia_Submarina_GEBCO.parquet",
+      "parquet_url": "download/PEM_Geomorfologia_Submarina_GEBCO.parquet",
+      "gpkg_url": "download/PEM_Geomorfologia_Submarina_GEBCO.gpkg",
+      "shp_url": "download/PEM_Geomorfologia_Submarina_GEBCO_SHP.zip",
+      "csv_url": "download/PEM_Geomorfologia_Submarina_GEBCO.csv",
+      "atributos": [
+        {
+          "campo": "unidad_geomorfologica",
+          "tipo": "String",
+          "descripcion": "Tipo de unidad morfológica submarina (plataforma, talud, fosa, dorsal, etc.)"
+        },
+        {
+          "campo": "superficie_km2",
+          "tipo": "Float",
+          "descripcion": "Superficie de la macro-unidad en kilómetros cuadrados"
+        },
+        {
+          "campo": "ano_fuente",
+          "tipo": "String",
+          "descripcion": "Año de publicación del modelo geomorfológico GEBCO"
+        }
+      ],
+      "citacion": "General Bathymetric Chart of the Oceans [GEBCO], & Centro de Inteligencia Territorial. (2024). Geomorfología y provincias fisiográficas de los fondos oceánicos de Chile [Conjunto de datos geoespaciales]. IHO / Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+      "bbox": [
+        -120.0,
+        -58.0,
+        -66.0,
+        -18.0
+      ],
+      "crs": "EPSG:4326 (WGS 84)",
+      "tipo_geometria": "MultiPolygon",
+      "fuentes_institucionales": [
+        {
+          "institucion": "General Bathymetric Chart of the Oceans [GEBCO]",
+          "insumo": "Global Undersea Feature and Geomorphology Grid",
+          "citacion_apa7": "GEBCO Compilation Group. (2024). GEBCO Grid: Global bathymetric and undersea terrain models [Conjunto de datos espaciales]. British Oceanographic Data Centre. https://www.gebco.net",
+          "url": "https://www.gebco.net"
+        },
+        {
+          "institucion": "Organización Hidrográfica Internacional [IHO]",
+          "insumo": "Estándar de Nomenclatura y Formas del Fondo Oceánico",
+          "citacion_apa7": "International Hydrographic Organization [IHO]. (2024). Standardization of undersea feature names: Guidelines and bathymetric gazetteer [Publicación B-6]. IHO. https://iho.int",
+          "url": "https://iho.int"
+        },
+        {
+          "institucion": "Organización de las Naciones Unidas para la Alimentación y la Agricultura [FAO]",
+          "insumo": "Criterios Fisiográficos para la Planificación Espacial Marina y Pesca",
+          "citacion_apa7": "Food and Agriculture Organization [FAO]. (2024). Bathymetric and geomorphological criteria for marine zoning [Guía de aplicación]. FAO. https://www.fao.org",
+          "url": "https://www.fao.org"
+        },
+        {
+          "institucion": "Servicio de Biodiversidad y Áreas Protegidas [SBAP / MMA]",
+          "insumo": "Zonificación de Fondos y Hábitats Bentónicos Marinos (Ley 21.600)",
+          "citacion_apa7": "Ministerio del Medio Ambiente [MMA]. (2024). Delimitación de hábitats bentónicos y geomorfología de conservación SBAP. MMA. https://mma.gob.cl",
+          "url": "https://mma.gob.cl"
+        }
+      ],
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "archivos_distribucion": {
+        "parquet": {
+          "filename": "PEM_Geomorfologia_Submarina_GEBCO.parquet",
+          "url": "download/PEM_Geomorfologia_Submarina_GEBCO.parquet",
+          "size_bytes": 1212254,
+          "size_human": "1,2 MB",
+          "sha256": "7c7589083d61163cf66218e7ccdae1b3eb88e7d3a0569752d2f62addb810959d"
+        },
+        "gpkg": {
+          "filename": "PEM_Geomorfologia_Submarina_GEBCO.gpkg",
+          "url": "download/PEM_Geomorfologia_Submarina_GEBCO.gpkg",
+          "size_bytes": 2678784,
+          "size_human": "2,6 MB",
+          "sha256": "8901177e440c61e57be3ad125555c7054526ccb02b0ef3dc8d69ce229ebb6098"
+        },
+        "shp_zip": {
+          "filename": "PEM_Geomorfologia_Submarina_GEBCO_SHP.zip",
+          "url": "download/PEM_Geomorfologia_Submarina_GEBCO_SHP.zip",
+          "size_bytes": 1154099,
+          "size_human": "1,1 MB",
+          "sha256": "1946a13918e6c015d518f6602d9af61b0a01f08de9c2b305c4256fd4f07bfb73"
+        },
+        "csv": {
+          "filename": "PEM_Geomorfologia_Submarina_GEBCO.csv",
+          "url": "download/PEM_Geomorfologia_Submarina_GEBCO.csv",
+          "size_bytes": 2189,
+          "size_human": "2 KB",
+          "sha256": "04100c3d2dea97217195f15f8eda582b7c10cf5bf09e1c77bdccc3b47b70d086"
+        }
+      },
+      "size_bytes": 1212254,
+      "size_human": "1,2 MB",
+      "sha256": "7c7589083d61163cf66218e7ccdae1b3eb88e7d3a0569752d2f62addb810959d"
+    },
+    {
+      "id": "pem_montes_submarinos",
+      "titulo": "Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+      "matriz": "pem",
+      "ambito": "mar",
+      "escala": "Puntual 3D con elevación y toponimia (2.234 cumbres submarinas catalogadas)",
+      "cobertura": "Cordilleras submarinas y dorsales del Mar Chileno y ZEE",
+      "fecha_corte": "2024-12-31",
+      "publico": true,
+      "disponible_descarga": true,
+      "estado": "activo",
+      "badge_estado": "Fuente institucional (SCUFN / SHOA / FAO)",
+      "resumen": "Catastro geomorfológico y toponímico de 2.234 cimas, guyots, cañones y relieves destacados del lecho oceánico de Chile, con toponimia oficial estandarizada por el Subcomité de Nombres de Formas del Relieve Submarino (SCUFN - GEBCO/OHI) y el SHOA. Identifica estructuras orográficas submarinas que constituyen hábitats bentónicos de alto valor ecológico y áreas prioritarias para la evaluación de Ecosistemas Marinos Vulnerables (VME) bajo directrices de la FAO y el marco de zonificación y conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley N° 21.600), como las cordilleras de Nazca, Desventuradas y Salas y Gómez.",
+      "formula_lineage": "Nomenclatura y toponimia oficial SCUFN (Sub-Committee on Undersea Feature Names) de GEBCO/IHO combinada con modelos digitales batimétricos (GEBCO/SHOA). Los atributos geomorfológicos derivan de mediciones batimétricas directas, mientras que los atributos de estatus ecológico y potencial de conservación se alinean con las directrices técnicas de la FAO para pesquerías de aguas profundas y la zonificación de biodiversidad marina bajo la Ley SBAP (Ley 21.600).",
+      "autor": "CIT-UAI en base a SCUFN / GEBCO / SHOA / FAO / SBAP",
+      "licencia": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+      "tile_source": "pem_montes_submarinos",
+      "tabla_postgis": "maritorio.montes_submarinos",
+      "s3_parquet": "download/PEM_Montes_Submarinos_Toponimia.parquet",
+      "parquet_url": "download/PEM_Montes_Submarinos_Toponimia.parquet",
+      "gpkg_url": "download/PEM_Montes_Submarinos_Toponimia.gpkg",
+      "shp_url": "download/PEM_Montes_Submarinos_Toponimia_SHP.zip",
+      "csv_url": "download/PEM_Montes_Submarinos_Toponimia.csv",
+      "atributos": [
+        {
+          "campo": "nombre_monte",
+          "tipo": "String",
+          "descripcion": "Nombre o toponimia oficial del monte submarino (fuente: SCUFN / IHO / SHOA)"
+        },
+        {
+          "campo": "catalogo_categoria",
+          "tipo": "String",
+          "descripcion": "Categoría morfoestructural (Guyot, Seamount, Ridge, Trench, Hill, Canyon) según estándar SCUFN"
+        },
+        {
+          "campo": "elevacion_submarina_m",
+          "tipo": "Float",
+          "descripcion": "Cota batimétrica o elevación sobre el lecho marino en metros (fuente: GEBCO / SHOA)"
+        },
+        {
+          "campo": "interes_ecologico_vme",
+          "tipo": "String",
+          "descripcion": "Relevancia como hábitat bentónico y potencial Ecosistema Marino Vulnerable (criterios FAO / SBAP)"
+        },
+        {
+          "campo": "marco_conservacion",
+          "tipo": "String",
+          "descripcion": "Estatus de protección o área marina protegida vinculada bajo Ley 21.600 (SBAP)"
+        }
+      ],
+      "citacion": "Sub-Committee on Undersea Feature Names [SCUFN], & Centro de Inteligencia Territorial. (2024). Catastro de montes submarinos y toponimia del relieve oceánico chileno [Conjunto de datos geoespaciales]. IHO / GEBCO / Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+      "bbox": [
+        -115.0,
+        -56.0,
+        -68.0,
+        -18.5
+      ],
+      "crs": "EPSG:4326 (WGS 84)",
+      "tipo_geometria": "Point",
+      "fuentes_institucionales": [
+        {
+          "institucion": "Sub-Committee on Undersea Feature Names [SCUFN / IHO]",
+          "insumo": "Gazetteer of Undersea Feature Names",
+          "citacion_apa7": "IHO-IOC GEBCO Sub-Committee on Undersea Feature Names [SCUFN]. (2024). IHO-IOC GEBCO gazetteer of undersea feature names [Base de datos toponímica]. NOAA NCEI. https://www.gebco.net/data_and_products/undersea_feature_names/",
+          "url": "https://www.gebco.net"
+        },
+        {
+          "institucion": "Organización de las Naciones Unidas para la Alimentación y la Agricultura [FAO]",
+          "insumo": "Directrices para la Gestión de Pesquerías de Aguas Profundas y Ecosistemas Marinos Vulnerables (VME)",
+          "citacion_apa7": "Food and Agriculture Organization [FAO]. (2024). International guidelines for the management of deep-sea fisheries in the high seas [Guía VME]. FAO. https://www.fao.org",
+          "url": "https://www.fao.org"
+        },
+        {
+          "institucion": "Servicio de Biodiversidad y Áreas Protegidas [SBAP / MMA]",
+          "insumo": "Catastro de Montes Submarinos y Áreas de Protección Marina",
+          "citacion_apa7": "Ministerio del Medio Ambiente [MMA]. (2024). Red de áreas marinas protegidas y protección de montes submarinos bajo Ley SBAP. MMA. https://mma.gob.cl",
+          "url": "https://mma.gob.cl"
+        }
+      ],
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "archivos_distribucion": {
+        "parquet": {
+          "filename": "PEM_Montes_Submarinos_Toponimia.parquet",
+          "url": "download/PEM_Montes_Submarinos_Toponimia.parquet",
+          "size_bytes": 61134,
+          "size_human": "60 KB",
+          "sha256": "b73487f4dff3bb8383d1053eaf4529ac406db2f27753031892eff1f08c05e3b1"
+        },
+        "gpkg": {
+          "filename": "PEM_Montes_Submarinos_Toponimia.gpkg",
+          "url": "download/PEM_Montes_Submarinos_Toponimia.gpkg",
+          "size_bytes": 430080,
+          "size_human": "420 KB",
+          "sha256": "edad21804ccb36cafb6eef6470619f774533287858a3c18ed0ae3770b9d7d879"
+        },
+        "shp_zip": {
+          "filename": "PEM_Montes_Submarinos_Toponimia_SHP.zip",
+          "url": "download/PEM_Montes_Submarinos_Toponimia_SHP.zip",
+          "size_bytes": 54878,
+          "size_human": "54 KB",
+          "sha256": "5093aba933c90efa89cce37825bd763bcf916b84f8552bd5e0c8a4db303bb3cb"
+        },
+        "csv": {
+          "filename": "PEM_Montes_Submarinos_Toponimia.csv",
+          "url": "download/PEM_Montes_Submarinos_Toponimia.csv",
+          "size_bytes": 211745,
+          "size_human": "207 KB",
+          "sha256": "a2284ce762b7394a003ac1dd3973ce9538d963b2f6da9e4a82ce850c8cabc5cc"
+        }
+      },
+      "size_bytes": 61134,
+      "size_human": "60 KB",
+      "sha256": "b73487f4dff3bb8383d1053eaf4529ac406db2f27753031892eff1f08c05e3b1"
+    },
+    {
+      "id": "pem_cuencas_oceanicas",
+      "titulo": "Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+      "matriz": "pem",
+      "ambito": "mar",
+      "escala": "Polígonos de delimitación morfométrica de cuencas de fondo (53.726 unidades)",
+      "cobertura": "Lecho del Pacífico Suroriental y cuencas marinas de Chile",
+      "fecha_corte": "2024-12-31",
+      "publico": true,
+      "disponible_descarga": true,
+      "estado": "activo",
+      "badge_estado": "Oficial CIT-UAI (Modelo oceánico)",
+      "resumen": "Delimitación espacial morfométrica de 53.726 cuencas y subcuencas oceanográficas submarinas del lecho del Pacífico Suroriental chileno. Modela el drenaje de sedimentos submarinos, cañones tributarios y circulación de fondo, permitiendo caracterizar la conectividad ecológica y apoyar la Planificación marina sustentable bajo directrices de la FAO y las metas de conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP).",
+      "formula_lineage": "Extracción hidrológica/oceanográfica algorítmica sobre modelos digitales batimétricos globales, calibración de conectividad marina FAO y corrección topológica WGS84 (EPSG:4326).",
+      "autor": "Centro de Inteligencia Territorial (CIT-UAI) en concordancia con FAO y SBAP",
+      "licencia": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+      "tile_source": "pem_cuencas_oceanicas",
+      "tabla_postgis": "maritorio.cuencas_oceanicas",
+      "s3_parquet": "download/PEM_Cuencas_Oceanicas_Submarinas.parquet",
+      "parquet_url": "download/PEM_Cuencas_Oceanicas_Submarinas.parquet",
+      "gpkg_url": "download/PEM_Cuencas_Oceanicas_Submarinas.gpkg",
+      "shp_url": "download/PEM_Cuencas_Oceanicas_Submarinas_SHP.zip",
+      "csv_url": "download/PEM_Cuencas_Oceanicas_Submarinas.csv",
+      "atributos": [
+        {
+          "campo": "id_cuenca",
+          "tipo": "Integer",
+          "descripcion": "Identificador único de la cuenca oceanográfica submarina"
+        },
+        {
+          "campo": "codigo_cuenca",
+          "tipo": "Integer",
+          "descripcion": "Código morfométrico de drenaje abisal"
+        },
+        {
+          "campo": "perimetro_km",
+          "tipo": "Float",
+          "descripcion": "Perímetro geodésico de la cuenca oceanográfica en kilómetros (km)"
+        },
+        {
+          "campo": "area_km2",
+          "tipo": "Float",
+          "descripcion": "Área superficial geodésica de la cuenca en kilómetros cuadrados (km²)"
+        }
+      ],
+      "citacion": "Centro de Inteligencia Territorial. (2024). Modelo morfométrico de cuencas oceanográficas y lecho abisal del Pacífico Suroriental chileno [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+      "bbox": [
+        -118.0,
+        -56.0,
+        -68.0,
+        -18.0
+      ],
+      "crs": "EPSG:4326 (WGS 84)",
+      "tipo_geometria": "MultiPolygon",
+      "fuentes_institucionales": [
+        {
+          "institucion": "Centro de Inteligencia Territorial [CIT-UAI]",
+          "insumo": "Modelo Morfométrico Abisal y Drenaje Submarino",
+          "citacion_apa7": "Centro de Inteligencia Territorial [CIT-UAI]. (2024). Modelación de cuencas oceanográficas profundas de la ZEE chilena [Modelo digital y base geoespacial]. Universidad Adolfo Ibáñez. https://matrizbht.cl",
+          "url": "https://matrizbht.cl"
+        },
+        {
+          "institucion": "Organización de las Naciones Unidas para la Alimentación y la Agricultura [FAO]",
+          "insumo": "Enfoque Ecosistémico para el Manejo de Cuencas y Espacios Marinos",
+          "citacion_apa7": "Food and Agriculture Organization [FAO]. (2024). Ecosystem approach to marine fisheries and oceanic basin management [Guía técnica]. FAO. https://www.fao.org",
+          "url": "https://www.fao.org"
+        },
+        {
+          "institucion": "Servicio de Biodiversidad y Áreas Protegidas [SBAP / MMA]",
+          "insumo": "Redes de Conectividad Ecológica de Cuencas Marinas (Ley 21.600)",
+          "citacion_apa7": "Ministerio del Medio Ambiente [MMA]. (2024). Criterios de conectividad biológica y cuencas marinas en el marco SBAP. MMA. https://mma.gob.cl",
+          "url": "https://mma.gob.cl"
+        }
+      ],
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "archivos_distribucion": {
+        "parquet": {
+          "filename": "PEM_Cuencas_Oceanicas_Submarinas.parquet",
+          "url": "download/PEM_Cuencas_Oceanicas_Submarinas.parquet",
+          "size_bytes": 5079409,
+          "size_human": "4,8 MB",
+          "sha256": "19014b45d7c620e8bc737abcefe5bf7786439d67af619bd34f3d6fc62f52bbff"
+        },
+        "gpkg": {
+          "filename": "PEM_Cuencas_Oceanicas_Submarinas.gpkg",
+          "url": "download/PEM_Cuencas_Oceanicas_Submarinas.gpkg",
+          "size_bytes": 21479424,
+          "size_human": "20,5 MB",
+          "sha256": "7696d59ed8b7b16c8368350f7d253ced624c34609f6908eacad8d4ec98752c3f"
+        },
+        "shp_zip": {
+          "filename": "PEM_Cuencas_Oceanicas_Submarinas_SHP.zip",
+          "url": "download/PEM_Cuencas_Oceanicas_Submarinas_SHP.zip",
+          "size_bytes": 3333641,
+          "size_human": "3,2 MB",
+          "sha256": "8d74c34eefde832d22eb3fdaf7e86c733cb86c5efa21ab4b8871399aaf257894"
+        },
+        "csv": {
+          "filename": "PEM_Cuencas_Oceanicas_Submarinas.csv",
+          "url": "download/PEM_Cuencas_Oceanicas_Submarinas.csv",
+          "size_bytes": 1467002,
+          "size_human": "1,4 MB",
+          "sha256": "ccb779cddeeb4b6416d1207d496f28f49891525831a8654f076380570deea41a"
+        }
+      },
+      "size_bytes": 5079409,
+      "size_human": "4,8 MB",
+      "sha256": "19014b45d7c620e8bc737abcefe5bf7786439d67af619bd34f3d6fc62f52bbff"
+    },
+    {
+      "id": "pem_biodiversidad_especies",
+      "titulo": "Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)",
+      "matriz": "pem",
+      "ambito": "mar",
+      "escala": "Puntual georreferenciada masiva (4.529.201 registros de biodiversidad)",
+      "cobertura": "Ecosistemas marinos y costeros de Chile (Reinos Animalia, Plantae, Chromista, etc.)",
+      "fecha_corte": "2024-12-31",
+      "publico": true,
+      "disponible_descarga": true,
+      "estado": "activo",
+      "badge_estado": "Fuente institucional (IFOP / GBIF / MMA)",
+      "resumen": "Consolidado nacional de ocurrencias biológicas y biodiversidad marina de Chile, integrando 4.529.201 observaciones georreferenciadas desde las campañas científicas del Instituto de Fomento Pesquero (IFOP) y la Infraestructura Mundial de Información en Biodiversidad (GBIF). Abarca taxonomía completa (reino, filo, clase, orden, familia, género, especie y nombre científico), profundidad de colecta y año de observación. Diseñado para fundamentar la Planificación marina conforme a las directrices de pesca responsable de la FAO y respaldar la creación, monitoreo y fiscalización de la red del Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley N° 21.600).",
+      "formula_lineage": "Estandarización taxonómica Darwin Core sobre registros de prospecciones de investigación pesquera de IFOP y nodos GBIF en aguas jurisdiccionales chilenas, armonizados con directrices FAO y marcos de conservación SBAP. Optimizado en GeoParquet 1.1 columnar comprimido.",
+      "autor": "CIT-UAI con datos de IFOP / GBIF / MMA / FAO / SBAP",
+      "licencia": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+      "tile_source": "pem_biodiversidad_especies",
+      "tabla_postgis": "maritorio.biodiversidad_especies",
+      "s3_parquet": "download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet",
+      "parquet_url": "download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet",
+      "gpkg_url": null,
+      "shp_url": null,
+      "csv_url": "download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.csv",
+      "atributos": [
+        {
+          "campo": "id_gbif",
+          "tipo": "String",
+          "descripcion": "Identificador universal único del espécimen o avistamiento (GBIF ID)"
+        },
+        {
+          "campo": "reino",
+          "tipo": "String",
+          "descripcion": "Reino taxonómico (Animalia, Plantae, Chromista, Fungi, etc.)"
+        },
+        {
+          "campo": "filo",
+          "tipo": "String",
+          "descripcion": "Filo o división biológica"
+        },
+        {
+          "campo": "clase",
+          "tipo": "String",
+          "descripcion": "Clase taxonómica"
+        },
+        {
+          "campo": "orden",
+          "tipo": "String",
+          "descripcion": "Orden taxonómico"
+        },
+        {
+          "campo": "familia",
+          "tipo": "String",
+          "descripcion": "Familia biológica"
+        },
+        {
+          "campo": "genero",
+          "tipo": "String",
+          "descripcion": "Género taxonómico"
+        },
+        {
+          "campo": "especie",
+          "tipo": "String",
+          "descripcion": "Epíteto específico de la especie"
+        },
+        {
+          "campo": "nombre_cientifico",
+          "tipo": "String",
+          "descripcion": "Nombre científico completo del taxón"
+        },
+        {
+          "campo": "profundidad_m",
+          "tipo": "Float",
+          "descripcion": "Profundidad marina de muestreo en metros"
+        },
+        {
+          "campo": "ano_registro",
+          "tipo": "Integer",
+          "descripcion": "Año de colecta u observación del espécimen"
+        },
+        {
+          "campo": "codigo_pais",
+          "tipo": "String",
+          "descripcion": "Código ISO del país jurisdiccional (CL)"
+        }
+      ],
+      "citacion": "Instituto de Fomento Pesquero [IFOP], Global Biodiversity Information Facility [GBIF], & Centro de Inteligencia Territorial. (2024). Catastro nacional de biodiversidad y ocurrencias de especies marinas de Chile [Conjunto de datos geoespaciales]. IFOP / GBIF / Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+      "bbox": [
+        -115.0,
+        -58.0,
+        -66.0,
+        -18.0
+      ],
+      "crs": "EPSG:4326 (WGS 84)",
+      "tipo_geometria": "Point",
+      "fuentes_institucionales": [
+        {
+          "institucion": "Instituto de Fomento Pesquero [IFOP]",
+          "insumo": "Cruceros Científicos y Catastro de Recursos Pesqueros y Bentónicos",
+          "citacion_apa7": "Instituto de Fomento Pesquero [IFOP]. (2024). Catálogo de cruceros oceanográficos e investigación biológica pesquera en Chile [Conjunto de datos biológicos]. IFOP. https://www.ifop.cl",
+          "url": "https://www.ifop.cl"
+        },
+        {
+          "institucion": "Global Biodiversity Information Facility [GBIF]",
+          "insumo": "Ocurrencias Georreferenciadas de Fauna y Flora Marina",
+          "citacion_apa7": "GBIF.org. (2024). GBIF Occurrence Download: Marine taxa of the Chilean Exclusive Economic Zone [Conjunto de datos abiertos]. GBIF. https://doi.org/10.15468/dl.marine_cl",
+          "url": "https://www.gbif.org"
+        },
+        {
+          "institucion": "Organización de las Naciones Unidas para la Alimentación y la Agricultura [FAO]",
+          "insumo": "Directrices para la Sostenibilidad de los Recursos Pesqueros y Marinos",
+          "citacion_apa7": "Food and Agriculture Organization [FAO]. (2024). Code of conduct for responsible fisheries and biodiversity conservation [Documento normativo]. FAO. https://www.fao.org",
+          "url": "https://www.fao.org"
+        },
+        {
+          "institucion": "Servicio de Biodiversidad y Áreas Protegidas [SBAP / MMA]",
+          "insumo": "Inventario de Especies Marinas Protegidas y Áreas Costeras SBAP (Ley 21.600)",
+          "citacion_apa7": "Ministerio del Medio Ambiente [MMA]. (2024). Catastro nacional de especies amenazadas y áreas marinas protegidas bajo SBAP. MMA. https://mma.gob.cl",
+          "url": "https://mma.gob.cl"
+        }
+      ],
+      "version": "1.0.3",
+      "updated": "2026-10-15"
+    },
+    {
+      "id": "censo_imputaciones_2024",
+      "titulo": "Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+      "matriz": "censo",
+      "ambito": "tierra",
+      "escala": "Manzanas censales y entidades rurales",
+      "cobertura": "Nacional (16 regiones de Chile — 254.395 manzanas censales)",
+      "fecha_corte": "2024-12-31",
+      "publico": true,
+      "disponible_descarga": true,
+      "estado": "activo",
+      "badge_estado": "Oficial CIT-UAI (Modelo demográfico sintético)",
+      "resumen": "Modelo demográfico sintético y desagregación multivariada determinística del Censo 2024 (18,48 millones de personas, 7,66 millones de viviendas y 6,62 millones de hogares) a escala de 254.395 manzanas urbanas y entidades rurales para las 16 regiones de Chile. Desarrollado por el CIT-UAI mediante interpolación osculatriz de Sprague y programación entera de mayor residuo para modelación espacial de accesibilidad y demanda de equipamientos, respetando irrestrictamente el secreto estadístico (Ley N° 17.374, Art. 29).",
+      "formula_lineage": "Graduación osculatoria de Sprague de 5.º orden sobre grupos quinquenales Censo 2024 combinada con programación entera por algoritmo de mayor residuo (Largest Remainder Method). Especificación técnica del modelo sintético: 1) Restricciones aplicadas: Preservación estricta de totales marginales (la suma de edades y sexo en cada manzana coincide exactamente con la población total censal de la manzana; la suma comunal iguala los tabulados oficiales INE); 2) Información de control: Tabulados oficiales INE Censo 2024 a nivel comunal/distrital, recuentos de viviendas/hogares por manzana y perfiles de ponderación CASEN; 3) Variables imputadas: Desglose continuo de edades simples (0 a 100+ años) y 42 cohortes por sexo; 4) Incertidumbre y advertencia metodológica: Modelo sintético calibrado para análisis territorial (RMSE < 1.2%), advirtiendo expresamente que no constituye microdatos nominales ni registros administrativos individuales observados.",
+      "autor": "Centro de Inteligencia Territorial (CIT-UAI) · Escuela de Gobierno",
+      "licencia": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+      "tile_source": "censo_imputaciones_2024",
+      "tabla_postgis": "censo.imputaciones_etarias_2024",
+      "s3_parquet": "download/Censo_Imputaciones_2024_Nacional.parquet",
+      "gpkg_url": "download/Censo_Imputaciones_2024_Nacional.gpkg",
+      "shp_url": "download/Censo_Imputaciones_2024_Nacional_SHP.zip",
+      "csv_url": "download/Censo_Imputaciones_2024_Nacional.csv",
+      "atributos": [
+        {
+          "campo": "ID_MANZCIT",
+          "tipo": "String",
+          "descripcion": "Código censal único de la manzana (16 dígitos)"
+        },
+        {
+          "campo": "COD_REG",
+          "tipo": "Integer",
+          "descripcion": "Código numérico de la región"
+        },
+        {
+          "campo": "REGION",
+          "tipo": "String",
+          "descripcion": "Nombre oficial de la región"
+        },
+        {
+          "campo": "COD_PROV",
+          "tipo": "Integer",
+          "descripcion": "Código de la provincia"
+        },
+        {
+          "campo": "PROVINCIA",
+          "tipo": "String",
+          "descripcion": "Nombre de la provincia"
+        },
+        {
+          "campo": "COD_COM",
+          "tipo": "Integer",
+          "descripcion": "Código único de la comuna (CUT)"
+        },
+        {
+          "campo": "COMUNA",
+          "tipo": "String",
+          "descripcion": "Nombre de la comuna"
+        },
+        {
+          "campo": "CATEGORIA",
+          "tipo": "String",
+          "descripcion": "Categoría territorial censal (Urbana / Rural)"
+        },
+        {
+          "campo": "AREA_C",
+          "tipo": "Float",
+          "descripcion": "Superficie de la manzana (m²)"
+        },
+        {
+          "campo": "POBLACION_2024",
+          "tipo": "Float",
+          "descripcion": "Total de población residente censal estimada (Censo 2024)"
+        },
+        {
+          "campo": "HOMBRES",
+          "tipo": "Float",
+          "descripcion": "Total de población masculina"
+        },
+        {
+          "campo": "MUJERES",
+          "tipo": "Float",
+          "descripcion": "Total de población femenina"
+        },
+        {
+          "campo": "P_HOMBRES",
+          "tipo": "Float",
+          "descripcion": "Porcentaje de hombres sobre el total comunal/manzana"
+        },
+        {
+          "campo": "P_MUJERES",
+          "tipo": "Float",
+          "descripcion": "Porcentaje de mujeres sobre el total comunal/manzana"
+        },
+        {
+          "campo": "E0_5",
+          "tipo": "Float",
+          "descripcion": "Población de primera infancia (0 a 5 años) graduada por Sprague"
+        },
+        {
+          "campo": "E6_13",
+          "tipo": "Float",
+          "descripcion": "Población escolar básica (6 a 13 años)"
+        },
+        {
+          "campo": "E14_17",
+          "tipo": "Float",
+          "descripcion": "Población escolar media (14 a 17 años)"
+        },
+        {
+          "campo": "E18_24",
+          "tipo": "Float",
+          "descripcion": "Población juvenil (18 a 24 años)"
+        },
+        {
+          "campo": "E25_44",
+          "tipo": "Float",
+          "descripcion": "Población adulta joven (25 a 44 años)"
+        },
+        {
+          "campo": "E45_59",
+          "tipo": "Float",
+          "descripcion": "Población adulta intermedia (45 a 59 años)"
+        },
+        {
+          "campo": "E60M",
+          "tipo": "Float",
+          "descripcion": "Población adulta mayor (60 años y más)"
+        },
+        {
+          "campo": "E65AMAS",
+          "tipo": "Float",
+          "descripcion": "Población adulta mayor (65 años y más)"
+        },
+        {
+          "campo": "IND_ENVEJ",
+          "tipo": "Float",
+          "descripcion": "Índice de envejecimiento demográfico (pob 60+ / pob 0-14 * 100)"
+        },
+        {
+          "campo": "METODO_ESTIMACION",
+          "tipo": "String",
+          "descripcion": "Metodología demográfica sintética: Graduación de Sprague 5.º orden + Mayor Residuo (CIT-UAI)"
+        },
+        {
+          "campo": "CONTROL_MARGINAL",
+          "tipo": "String",
+          "descripcion": "Verificación de cuadratura: Suma manzana = Población total censal observada INE 2024"
+        }
+      ],
+      "citacion": "Centro de Inteligencia Territorial. (2024). Modelo de imputación demográfica multivariada y desagregación etaria por sexo a escala de manzanas y entidades rurales para Chile (Censo 2024) [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+      "bbox": [
+        -75.64,
+        -55.98,
+        -66.86,
+        -17.5
+      ],
+      "crs": "EPSG:4326 (WGS 84)",
+      "tipo_geometria": "MultiPolygon",
+      "fuentes_institucionales": [
+        {
+          "institucion": "Instituto Nacional de Estadísticas [INE]",
+          "insumo": "Microdatos y Cartografía Censal Digital Censo de Población y Vivienda 2024",
+          "citacion_apa7": "Instituto Nacional de Estadísticas [INE]. (2024). Microdatos del Censo de Población y Vivienda 2024: Base de personas, viviendas y hogares [Conjunto de datos censales]. INE. https://www.ine.gob.cl",
+          "url": "https://www.ine.gob.cl"
+        },
+        {
+          "institucion": "Centro de Inteligencia Territorial [CIT-UAI]",
+          "insumo": "Algoritmo de Imputación Demográfica y Graduación de Sprague",
+          "citacion_apa7": "Centro de Inteligencia Territorial [CIT-UAI]. (2024). Motor de imputación demográfica multivariada y resolución determinística censal [Código y algoritmo]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+          "url": "https://ide.cit.uai.cl"
+        },
+        {
+          "institucion": "Subsecretaría de Desarrollo Regional y Administrativo [SUBDERE]",
+          "insumo": "División Político-Administrativa y Cartografía Comunal",
+          "citacion_apa7": "Subsecretaría de Desarrollo Regional y Administrativo [SUBDERE]. (2024). División político-administrativa de Chile y catastro de límites comunales [Base de datos cartográfica]. SUBDERE. https://www.subdere.gov.cl",
+          "url": "https://www.subdere.gov.cl"
+        }
+      ],
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "archivos_distribucion": {
+        "parquet": {
+          "filename": "Censo_Imputaciones_2024_Nacional.parquet",
+          "url": "download/Censo_Imputaciones_2024_Nacional.parquet",
+          "size_bytes": 300547507,
+          "size_human": "286,6 MB",
+          "sha256": "864126f757d362213f018ac8b4d584fbc8de1cd42655a8a70cd6fc0f7c95b7cc"
+        },
+        "gpkg": {
+          "filename": "Censo_Imputaciones_2024_Nacional.gpkg",
+          "url": "download/Censo_Imputaciones_2024_Nacional.gpkg",
+          "size_bytes": 426635264,
+          "size_human": "406,9 MB",
+          "sha256": "48a8b5d454107ec24b91c2b3cab0256e08855ba13ae55b3718b29806d6a0ceab"
+        },
+        "shp_zip": {
+          "filename": "Censo_Imputaciones_2024_Nacional_SHP.zip",
+          "url": "download/Censo_Imputaciones_2024_Nacional_SHP.zip",
+          "size_bytes": 239654071,
+          "size_human": "228,6 MB",
+          "sha256": "dbcbbf1f9fa536ea672edb4f5ce664212338b918978fbd99cabc38a38fea456b"
+        },
+        "csv": {
+          "filename": "Censo_Imputaciones_2024_Nacional.csv",
+          "url": "download/Censo_Imputaciones_2024_Nacional.csv",
+          "size_bytes": 56300717,
+          "size_human": "53,7 MB",
+          "sha256": "382436192861e465f853379445e49bd5d8054edf5cf135aeb3570869a5847e81"
+        }
+      },
+      "size_bytes": 300547507,
+      "size_human": "286,6 MB",
+      "sha256": "864126f757d362213f018ac8b4d584fbc8de1cd42655a8a70cd6fc0f7c95b7cc"
+    },
+    {
+      "id": "inse_socioeconomico",
+      "titulo": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+      "matriz": "inse",
+      "ambito": "tierra",
+      "escala": "Manzanas censales y entidades rurales",
+      "cobertura": "Nacional (16 regiones de Chile — 254.395 manzanas censales)",
+      "fecha_corte": "2024-12-31",
+      "publico": true,
+      "disponible_descarga": true,
+      "estado": "activo",
+      "badge_estado": "Oficial CIT-UAI",
+      "resumen": "Estratificación socioeconómica y patrimonial continua y por quintiles (Q1 a Q5, y S/P sin población) calibrada a nivel nacional para 254.395 manzanas censales en las 16 regiones de Chile. Integra la caracterización socioeconómica de los hogares (capital humano y ocupación CIUO) con la valoración patrimonial inmobiliaria de suelo según Áreas Homogéneas del SII (Ley 17.235) y Valor Guía de Terreno (VGT en UF/m² y $/m²).",
+      "formula_lineage": "Calibración econométrica multivariada del Índice de Nivel Socioeconómico a escala de manzana: INSE = f(Capital Humano, Inserción Ocupacional, Valor Guía de Terreno SII). Estratificación por quintiles poblacionales Q1 a Q5 y categorización GSE.",
+      "autor": "Centro de Inteligencia Territorial (CIT-UAI) · Investigador Responsable: John Treimun Ríos",
+      "licencia": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+      "tile_source": "inse_socioeconomico",
+      "tabla_postgis": "inse.estratificacion_nacional_2024",
+      "s3_parquet": "download/INSE_Socioeconomico_Nacional_2024.parquet",
+      "gpkg_url": "download/INSE_Socioeconomico_Nacional_2024.gpkg",
+      "shp_url": "download/INSE_Socioeconomico_Nacional_2024_SHP.zip",
+      "csv_url": "download/INSE_Socioeconomico_Nacional_2024.csv",
+      "atributos": [
+        {
+          "campo": "MANZ_CIT",
+          "tipo": "String",
+          "descripcion": "Código censal único de la manzana (16 dígitos)"
+        },
+        {
+          "campo": "COD_REG",
+          "tipo": "String",
+          "descripcion": "Código oficial de la región"
+        },
+        {
+          "campo": "COD_COM",
+          "tipo": "String",
+          "descripcion": "Código único de la comuna (CUT)"
+        },
+        {
+          "campo": "COMUNA",
+          "tipo": "String",
+          "descripcion": "Nombre oficial de la comuna"
+        },
+        {
+          "campo": "POBLACION",
+          "tipo": "Float",
+          "descripcion": "Población residente censal habitual"
+        },
+        {
+          "campo": "INSE_OFIC",
+          "tipo": "Float",
+          "descripcion": "Puntaje de Nivel Socioeconómico Oficial [0.0 - 100.0]"
+        },
+        {
+          "campo": "Q_INSE_OFI",
+          "tipo": "String",
+          "descripcion": "Estratificación por quintiles oficial (Q1 a Q5, o S/P sin población)"
+        },
+        {
+          "campo": "GSE_OFIC",
+          "tipo": "String",
+          "descripcion": "Grupo Socioeconómico Oficial (ABC1, C2, C3, D, E, S/P)"
+        },
+        {
+          "campo": "INSE_PURO",
+          "tipo": "Float",
+          "descripcion": "Puntaje de Nivel Socioeconómico modelo econométrico base"
+        },
+        {
+          "campo": "Q_INSE_PUR",
+          "tipo": "String",
+          "descripcion": "Quintil modelo econométrico base"
+        },
+        {
+          "campo": "GSE_PURO",
+          "tipo": "String",
+          "descripcion": "Grupo Socioeconómico modelo econométrico base"
+        },
+        {
+          "campo": "ES_CAMPAM",
+          "tipo": "String",
+          "descripcion": "Indicador si la manzana corresponde a asentamiento precario / campamento (V/F)"
+        },
+        {
+          "campo": "COD_AH",
+          "tipo": "String",
+          "descripcion": "Código de Área Homogénea del SII asignada (Ley 17.235)"
+        },
+        {
+          "campo": "VGT_UF",
+          "tipo": "Float",
+          "descripcion": "Valor Guía de Terreno asignado en UF/m²"
+        },
+        {
+          "campo": "VGT_M2",
+          "tipo": "Float",
+          "descripcion": "Valor Guía de Terreno asignado en $/m²"
+        }
+      ],
+      "citacion": "Centro de Inteligencia Territorial. (2024). Índice de Nivel Socioeconómico (INSE): Estratificación socio-espacial y patrimonial nacional a nivel de manzanas y entidades rurales de Chile [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+      "bbox": [
+        -75.64,
+        -55.98,
+        -66.86,
+        -17.5
+      ],
+      "crs": "EPSG:4326 (WGS 84)",
+      "tipo_geometria": "MultiPolygon",
+      "fuentes_institucionales": [
+        {
+          "institucion": "Instituto Nacional de Estadísticas [INE]",
+          "insumo": "Censo de Población y Vivienda 2024 (Variables de Educación, Ocupación y TICs)",
+          "citacion_apa7": "Instituto Nacional de Estadísticas [INE]. (2024). Censo de población y vivienda 2024: Base de datos nacional de personas y hogares [Conjunto de datos censales]. INE. https://www.ine.gob.cl",
+          "url": "https://www.ine.gob.cl"
+        },
+        {
+          "institucion": "Servicio de Impuestos Internos [SII]",
+          "insumo": "Catastro Nacional de Áreas Homogéneas y Avalúos Fiscales (Ley 17.235)",
+          "citacion_apa7": "Servicio de Impuestos Internos [SII]. (2024). Catastro de áreas homogéneas y valores unitarios de terreno para avalúos fiscales [Base de datos]. SII. https://www.sii.cl",
+          "url": "https://www.sii.cl"
+        },
+        {
+          "institucion": "Centro de Inteligencia Territorial [CIT-UAI]",
+          "insumo": "Motor de Estratificación Socio-Espacial y Patrimonial INSE 2024",
+          "citacion_apa7": "Centro de Inteligencia Territorial [CIT-UAI]. (2024). Motor econométrico de estratificación socio-espacial y patrimonial INSE 2024 [Algoritmo y base de datos]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+          "url": "https://ide.cit.uai.cl"
+        }
+      ],
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "archivos_distribucion": {
+        "parquet": {
+          "filename": "INSE_Socioeconomico_Nacional_2024.parquet",
+          "url": "download/INSE_Socioeconomico_Nacional_2024.parquet",
+          "size_bytes": 295995644,
+          "size_human": "282,3 MB",
+          "sha256": "148b716ac5356bdcba4bb578c4a5db824eaa6eeaa253fadcefffb5a7f96c6b1f"
+        },
+        "gpkg": {
+          "filename": "INSE_Socioeconomico_Nacional_2024.gpkg",
+          "url": "download/INSE_Socioeconomico_Nacional_2024.gpkg",
+          "size_bytes": 487309312,
+          "size_human": "464,7 MB",
+          "sha256": "f86cab40317e5f405879bcb58dd600805bc4ec31293714ab1d45c218ec805de9"
+        },
+        "shp_zip": {
+          "filename": "INSE_Socioeconomico_Nacional_2024_SHP.zip",
+          "url": "download/INSE_Socioeconomico_Nacional_2024_SHP.zip",
+          "size_bytes": 232586385,
+          "size_human": "221,8 MB",
+          "sha256": "4626a5ce30d47fdddf066f26620d65948fa983cc7075bfea4545612cfe7e1bb9"
+        },
+        "csv": {
+          "filename": "INSE_Socioeconomico_Nacional_2024.csv",
+          "url": "download/INSE_Socioeconomico_Nacional_2024.csv",
+          "size_bytes": 29972846,
+          "size_human": "28,6 MB",
+          "sha256": "d438bf5f535a202736b2b887240130a5286c4d9a7a068d2f6ddea85a0533d047"
+        }
+      },
+      "size_bytes": 295995644,
+      "size_human": "282,3 MB",
+      "sha256": "148b716ac5356bdcba4bb578c4a5db824eaa6eeaa253fadcefffb5a7f96c6b1f"
+    },
+    {
+      "id": "sii_areas_homogeneas",
+      "titulo": "Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+      "matriz": "sii",
+      "ambito": "tierra",
+      "escala": "Polígonos de áreas homogéneas (catastro nacional)",
+      "cobertura": "Nacional (14.157 polígonos de suelo urbano y rural en todas las comunas catastradas)",
+      "fecha_corte": "2024-12-31",
+      "publico": true,
+      "disponible_descarga": true,
+      "estado": "activo",
+      "badge_estado": "Fuente institucional (SII)",
+      "resumen": "Catastro espacial completo de 14.157 Áreas Homogéneas definido por el Servicio de Impuestos Internos (SII) bajo la Ley N° 17.235 sobre Impuesto Territorial. Delimita zonas territoriales con características urbanísticas, topográficas, de accesibilidad a servicios y valor unitario de terreno homogéneas para los procesos de reavalúo de bienes raíces en todo Chile. Proporciona el Valor Guía de Terreno (VGT en UF/m² y $/m²), coeficiente guía y clasificación comunal para análisis de plusvalía, dinámica inmobiliaria y tributación territorial.",
+      "formula_lineage": "Delimitación poligonal y parametrización de Valor Guía de Terreno (VGT) por resoluciones exentas de reavalúo del SII conforme a la Ley 17.235. Homologación topológica y georreferenciación en WGS84 por CIT-UAI.",
+      "autor": "Servicio de Impuestos Internos (SII) / CIT-UAI",
+      "licencia": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+      "tile_source": "sii_areas_homogeneas",
+      "tabla_postgis": "sii.areas_homogeneas_nacional",
+      "s3_parquet": "download/SII_Areas_Homogeneas_Nacional.parquet",
+      "parquet_url": "download/SII_Areas_Homogeneas_Nacional.parquet",
+      "gpkg_url": "download/SII_Areas_Homogeneas_Nacional.gpkg",
+      "shp_url": "download/SII_Areas_Homogeneas_Nacional_SHP.zip",
+      "csv_url": "download/SII_Areas_Homogeneas_Nacional.csv",
+      "atributos": [
+        {
+          "campo": "id_ah",
+          "tipo": "String",
+          "descripcion": "Código identificador de área homogénea SII (Comuna + Sector + Código)"
+        },
+        {
+          "campo": "comuna",
+          "tipo": "String",
+          "descripcion": "Nombre oficial de la comuna"
+        },
+        {
+          "campo": "region",
+          "tipo": "String",
+          "descripcion": "Código regional (ej: R13)"
+        },
+        {
+          "campo": "tipo_suelo",
+          "tipo": "String",
+          "descripcion": "Destino o tipología (Urbano / Extensión Urbana / Rural)"
+        },
+        {
+          "campo": "vgt_uf_m2",
+          "tipo": "Float",
+          "descripcion": "Valor guía de terreno en unidades de fomento por metro cuadrado (UF/m²)"
+        },
+        {
+          "campo": "vgt_pesos_m2",
+          "tipo": "Float",
+          "descripcion": "Valor guía de terreno en pesos chilenos por metro cuadrado ($/m²)"
+        },
+        {
+          "campo": "coeficiente_guia",
+          "tipo": "Float",
+          "descripcion": "Factor o coeficiente guía de ajuste de avalúo"
+        },
+        {
+          "campo": "area_ha",
+          "tipo": "Float",
+          "descripcion": "Superficie del polígono en hectáreas"
+        }
+      ],
+      "citacion": "Servicio de Impuestos Internos, & Centro de Inteligencia Territorial. (2024). Catastro nacional de áreas homogéneas y valores guía de terreno para avalúos fiscales de Chile (Ley 17.235) [Conjunto de datos geoespaciales]. SII / Universidad Adolfo Ibáñez. https://www.sii.cl",
+      "bbox": [
+        -75.64,
+        -55.98,
+        -66.86,
+        -17.5
+      ],
+      "crs": "EPSG:4326 (WGS 84)",
+      "tipo_geometria": "MultiPolygon",
+      "fuentes_institucionales": [
+        {
+          "institucion": "Servicio de Impuestos Internos [SII]",
+          "insumo": "Departamento de Avaluaciones y Catastro de Bienes Raíces (Ley 17.235)",
+          "citacion_apa7": "Servicio de Impuestos Internos [SII]. (2024). Catastro nacional de bienes raíces, áreas homogéneas y tablas de valores de terreno [Base de datos oficial]. SII. https://www.sii.cl",
+          "url": "https://www.sii.cl"
+        },
+        {
+          "institucion": "Centro de Inteligencia Territorial [CIT-UAI]",
+          "insumo": "Normalización Espacial y Homologación Topológica Nacional",
+          "citacion_apa7": "Centro de Inteligencia Territorial [CIT-UAI]. (2024). Georreferenciación y validación topológica del catastro nacional de áreas homogéneas del SII [Base de datos cartográfica]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+          "url": "https://ide.cit.uai.cl"
+        }
+      ],
+      "version": "1.0.3",
+      "updated": "2026-10-15"
+    },
+    {
+      "id": "equipamientos_2017",
+      "titulo": "Equipamientos urbanos y servicios esenciales 2017",
+      "matriz": "mbht",
+      "ambito": "tierra",
+      "escala": "Puntual y poligonal georreferenciada (55.035 línea base abierta / 113.231 catastro maestro ruteable)",
+      "cobertura": "Nacional (16 regiones de Chile — 55.035 equipamientos de libre acceso en línea base MBHT 2017; 113.231 en catastro consolidado)",
+      "fecha_corte": "2017-04-19",
+      "publico": true,
+      "disponible_descarga": true,
+      "estado": "activo",
+      "badge_estado": "Oficial CIT-UAI (Catastro auditado)",
+      "resumen": "Catastro oficial de equipamientos y servicios urbanos esenciales utilizado para la modelación de accesibilidad peatonal en la Matriz de Bienestar Humano Territorial (MBHT 2017). Documenta de forma trazable los tres niveles del embudo de depuración nacional: 202.275 registros administrativos brutos iniciales, 113.231 unidades en el catastro maestro ruteable consolidado en 6 dimensiones —Áreas Verdes (54.962), Deportes (26.629), Educación (17.129), Salud (5.824), Servicios Públicos (4.914) y Cultura (3.773)— y 55.035 equipamientos públicos de libre acceso y gratuidad publicados en los paquetes regionales y nacionales de la línea base abierta MBHT 2017.",
+      "formula_lineage": "Catastro georreferenciado de oferta urbana provisto por SUBDERE, MINEDUC, MINSAL, MINVU, IND y Registro Civil. Homologación de coordenadas a WGS84 (EPSG:4326) con validación topológica y deduplicación espacial.",
+      "autor": "Centro de Inteligencia Territorial (CIT-UAI)",
+      "licencia": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+      "tile_source": "kpi_mud_2017",
+      "tabla_postgis": "mud.insumos",
+      "s3_parquet": "download/Equipamientos_2017_Nacional_Consolidado.parquet",
+      "parquet_url": "download/Equipamientos_2017_Nacional_Consolidado.parquet",
+      "gpkg_url": "download/Equipamientos_2017_Nacional_Consolidado.gpkg",
+      "shp_url": "download/Equipamientos_2017_Nacional_Consolidado_SHP.zip",
+      "csv_url": "download/Equipamientos_2017_Nacional_Consolidado.csv",
+      "atributos": [
+        {
+          "campo": "indicador",
+          "tipo": "String",
+          "descripcion": "Código de dimensión urbana (ISAL, ISE, IAV, IDEP, ICUL, ISER)"
+        },
+        {
+          "campo": "nombre",
+          "tipo": "String",
+          "descripcion": "Nombre del establecimiento o recinto"
+        },
+        {
+          "campo": "cod_reg",
+          "tipo": "Integer",
+          "descripcion": "Código regional oficial"
+        },
+        {
+          "campo": "cod_com",
+          "tipo": "Integer",
+          "descripcion": "Código comunal único (CUT)"
+        },
+        {
+          "campo": "comuna",
+          "tipo": "String",
+          "descripcion": "Nombre de la comuna"
+        },
+        {
+          "campo": "categoria",
+          "tipo": "String",
+          "descripcion": "Categoría o tipología del equipamiento"
+        },
+        {
+          "campo": "direccion",
+          "tipo": "String",
+          "descripcion": "Dirección postal georreferenciada"
+        },
+        {
+          "campo": "tipo_estab",
+          "tipo": "String",
+          "descripcion": "Tipo de establecimiento"
+        },
+        {
+          "campo": "depe",
+          "tipo": "String",
+          "descripcion": "Dependencia administrativa (Pública, Privada, Subvencionada)"
+        }
+      ],
+      "citacion": "Centro de Inteligencia Territorial. (2017). Catastro nacional de equipamientos y servicios urbanos esenciales MBHT 2017 [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+      "bbox": [
+        -75.64,
+        -55.98,
+        -66.86,
+        -17.5
+      ],
+      "crs": "EPSG:4326 (WGS 84)",
+      "tipo_geometria": "Point / Polygon",
+      "fuentes_institucionales": [
+        {
+          "institucion": "Subsecretaría de Desarrollo Regional y Administrativo [SUBDERE]",
+          "insumo": "Catastro Comunal de Infraestructura Básica",
+          "citacion_apa7": "Subsecretaría de Desarrollo Regional y Administrativo [SUBDERE]. (2017). Catastro nacional de infraestructura comunal y equipamiento cívico [Base de datos]. SUBDERE. https://www.subdere.gov.cl",
+          "url": "https://www.subdere.gov.cl"
+        },
+        {
+          "institucion": "Ministerio de Educación [MINEDUC]",
+          "insumo": "Directorio Oficial de Establecimientos Educacionales",
+          "citacion_apa7": "Ministerio de Educación [MINEDUC]. (2017). Directorio oficial y georreferenciación de establecimientos educacionales de Chile [Conjunto de datos]. MINEDUC. https://datos.mineduc.cl",
+          "url": "https://datos.mineduc.cl"
+        },
+        {
+          "institucion": "Ministerio de Salud [MINSAL]",
+          "insumo": "Registro Nacional de Prestadores y Establecimientos de Salud (DEIS)",
+          "citacion_apa7": "Departamento de Estadísticas e Información de Salud [DEIS]. (2017). Registro nacional de prestadores y establecimientos de la red asistencial de salud [Base de datos]. Ministerio de Salud de Chile. https://deis.minsal.cl",
+          "url": "https://deis.minsal.cl"
+        }
+      ],
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "archivos_distribucion": {
+        "parquet": {
+          "filename": "Equipamientos_2017_Nacional_Consolidado.parquet",
+          "url": "download/Equipamientos_2017_Nacional_Consolidado.parquet",
+          "size_bytes": 8589840,
+          "size_human": "8,2 MB",
+          "sha256": "ab79a066c0e175840a0215626c8f10a91c61920d8c89285433592b4f423d0a97"
+        },
+        "gpkg": {
+          "filename": "Equipamientos_2017_Nacional_Consolidado.gpkg",
+          "url": "download/Equipamientos_2017_Nacional_Consolidado.gpkg",
+          "size_bytes": 23638016,
+          "size_human": "22,5 MB",
+          "sha256": "93803a289f8d7832a6d9dda2f40f84d3892d28351af4e088dac8b75e1e6c3123"
+        },
+        "shp_zip": {
+          "filename": "Equipamientos_2017_Nacional_Consolidado_SHP.zip",
+          "url": "download/Equipamientos_2017_Nacional_Consolidado_SHP.zip",
+          "size_bytes": 4188174,
+          "size_human": "4,0 MB",
+          "sha256": "61cb37aa09f72914cede9f7029e9852a0e7cd0a54b8d541ef33bfb23cdf3a48a"
+        },
+        "csv": {
+          "filename": "Equipamientos_2017_Nacional_Consolidado.csv",
+          "url": "download/Equipamientos_2017_Nacional_Consolidado.csv",
+          "size_bytes": 11734366,
+          "size_human": "11,2 MB",
+          "sha256": "3d295db619e72300aceb5d527a220810c799660ca3c99a5e66b167ea98fc9835"
+        }
+      },
+      "size_bytes": 8589840,
+      "size_human": "8,2 MB",
+      "sha256": "ab79a066c0e175840a0215626c8f10a91c61920d8c89285433592b4f423d0a97"
+    },
+    {
+      "id": "red_vial_ejes_2017",
+      "titulo": "Red vial urbana caminable y tiempos Tobler 2017",
+      "matriz": "mbht",
+      "ambito": "tierra",
+      "escala": "Lineal segmentada (1.589.595 tramos viales peatonales ruteables)",
+      "cobertura": "Nacional (16 regiones de Chile — 1.589.595 tramos viales caminables)",
+      "fecha_corte": "2017-04-19",
+      "publico": true,
+      "disponible_descarga": true,
+      "estado": "activo",
+      "badge_estado": "Oficial CIT-UAI (Grafo ruteable)",
+      "resumen": "Red vial oficial caminable y grafo topológico peatonal integrado por 1.589.595 tramos viales calibrados con tiempos de fricción y decaimiento espacial de Tobler para las 16 regiones de Chile. Permite calcular isocronas peatonales y matrices de costo temporal entre las 204.906 manzanas censales y los equipamientos esenciales para la modelación de accesibilidad urbana de la línea base MBHT 2017.",
+      "formula_lineage": "Grafo vial caminable consolidado a partir de la red vial INE/MINVU, corregido topológicamente (snapping y split en intersecciones) con velocidad peatonal calibrada según pendiente superficial (ecuación de caminata de Tobler W = 6 * exp(-3.5 * |S + 0.05|)).",
+      "autor": "Centro de Inteligencia Territorial (CIT-UAI)",
+      "licencia": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+      "tile_source": "kpi_mud_2017",
+      "tabla_postgis": "vial.red_vial_2017",
+      "s3_parquet": "download/Red_Vial_Ejes_2017_Nacional.parquet",
+      "parquet_url": "download/Red_Vial_Ejes_2017_Nacional.parquet",
+      "gpkg_url": "download/Red_Vial_Ejes_2017_Nacional.gpkg",
+      "shp_url": "download/Red_Vial_Ejes_2017_Nacional_SHP.zip",
+      "csv_url": "download/Red_Vial_Ejes_2017_Nacional.csv",
+      "atributos": [
+        {
+          "campo": "NOMBRE_VIA",
+          "tipo": "String",
+          "descripcion": "Nombre oficial de la vía o pasaje"
+        },
+        {
+          "campo": "CLASE_COMU",
+          "tipo": "String",
+          "descripcion": "Jerarquía vial comunal (Avenida, Calle, Pasaje, Camino)"
+        },
+        {
+          "campo": "CLASE_URBA",
+          "tipo": "String",
+          "descripcion": "Clasificación funcional urbana"
+        },
+        {
+          "campo": "LARGO",
+          "tipo": "Float",
+          "descripcion": "Longitud métrica del segmento en metros"
+        },
+        {
+          "campo": "T_TOBLER",
+          "tipo": "Float",
+          "descripcion": "Tiempo de viaje peatonal en segundos con decaimiento Tobler"
+        },
+        {
+          "campo": "COD_REG",
+          "tipo": "String",
+          "descripcion": "Código regional (ej: R13)"
+        },
+        {
+          "campo": "NOM_COM",
+          "tipo": "String",
+          "descripcion": "Nombre de la comuna"
+        }
+      ],
+      "citacion": "Centro de Inteligencia Territorial. (2017). Red vial nacional caminable y grafo topológico de accesibilidad urbana Tobler [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+      "bbox": [
+        -75.64,
+        -55.98,
+        -66.86,
+        -17.5
+      ],
+      "crs": "EPSG:4326 (WGS 84)",
+      "tipo_geometria": "LineString",
+      "fuentes_institucionales": [
+        {
+          "institucion": "Ministerio de Vivienda y Urbanismo [MINVU]",
+          "insumo": "Red Vial Urbana Caminable y Ejes de Calles",
+          "citacion_apa7": "Ministerio de Vivienda y Urbanismo [MINVU]. (2017). Catastro nacional de ejes viales y vialidad urbana de Chile [Conjunto de datos vectoriales]. MINVU. https://www.minvu.gob.cl",
+          "url": "https://www.minvu.gob.cl"
+        },
+        {
+          "institucion": "Instituto Nacional de Estadísticas [INE]",
+          "insumo": "Cartografía Censal de Ejes Viales Urbanos",
+          "citacion_apa7": "Instituto Nacional de Estadísticas [INE]. (2017). Cartografía censal digital de ejes viales y manzanas de Chile [Conjunto de datos geoespaciales]. INE. https://www.ine.gob.cl",
+          "url": "https://www.ine.gob.cl"
+        }
+      ],
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "archivos_distribucion": {
+        "parquet": {
+          "filename": "Red_Vial_Ejes_2017_Nacional.parquet",
+          "url": "download/Red_Vial_Ejes_2017_Nacional.parquet",
+          "size_bytes": 225592155,
+          "size_human": "215,1 MB",
+          "sha256": "85c872e5eb1fb00ca95eb4c3a0248993566b74c53ecbbe42692653657adb8452"
+        },
+        "gpkg": {
+          "filename": "Red_Vial_Ejes_2017_Nacional.gpkg",
+          "url": "download/Red_Vial_Ejes_2017_Nacional.gpkg",
+          "size_bytes": 500346880,
+          "size_human": "477,2 MB",
+          "sha256": "19d5e8cee3a3ee0910fa777a9aac89850c8a897afc3aa6e002a86a879a44dd07"
+        },
+        "shp_zip": {
+          "filename": "Red_Vial_Ejes_2017_Nacional_SHP.zip",
+          "url": "download/Red_Vial_Ejes_2017_Nacional_SHP.zip",
+          "size_bytes": 224455797,
+          "size_human": "214,1 MB",
+          "sha256": "758e3b639c9375e9988fc2e0c6e7c756a31f8afff7d147b628c565cc7beae289"
+        },
+        "csv": {
+          "filename": "Red_Vial_Ejes_2017_Nacional.csv",
+          "url": "download/Red_Vial_Ejes_2017_Nacional.csv",
+          "size_bytes": 106161078,
+          "size_human": "101,2 MB",
+          "sha256": "fc0d54d0a92d86aa181fd5ac6ebe4e0b1a1f59417d461dc50a7aff0f8e69ebb2"
+        }
+      },
+      "size_bytes": 225592155,
+      "size_human": "215,1 MB",
+      "sha256": "85c872e5eb1fb00ca95eb4c3a0248993566b74c53ecbbe42692653657adb8452"
+    },
+    {
+      "id": "educacion_inicial_2024",
+      "titulo": "Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
+      "matriz": "mbht",
+      "ambito": "tierra",
+      "escala": "Equipamientos georreferenciados (Puntos WGS 84)",
+      "cobertura": "Nacional (16 regiones de Chile — 3.886 establecimientos)",
+      "fecha_corte": "2024-12-31",
+      "publico": true,
+      "disponible_descarga": true,
+      "estado": "activo",
+      "badge_estado": "Oficial CIT-UAI",
+      "resumen": "Catastro maestro nacional unificado de establecimientos de educación inicial (jardines infantiles y salas cuna) para las 16 regiones de Chile. Integra tanto la oferta pública (JUNJI, Integra, VTF, SLEP y Municipal) como la oferta privada particular subvencionada y particular pagada, detallando capacidad y matrícula por nivel formativo (Sala Cuna Menor/Mayor, Nivel Medio Menor/Mayor, Prekínder NT1 y Kínder NT2). Insumo base para la evaluación de cobertura y accesibilidad peatonal infantil en la MBHT.",
+      "formula_lineage": "Georreferenciación multiproveedor validada por verificación espacial comunal y cruce con Directorio Oficial MINEDUC / Subsecretaría de Educación Parvularia (SdEP). Normalización taxonómica de dependencia institucional y desagregación de matrícula.",
+      "autor": "Centro de Inteligencia Territorial (CIT-UAI)",
+      "licencia": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+      "tile_source": "educacion_inicial_2024",
+      "tabla_postgis": "equipamientos.educacion_inicial_2024",
+      "s3_parquet": "download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
+      "gpkg_url": "download/Educacion_Inicial_Jardines_SalasCuna_2024.gpkg",
+      "shp_url": "download/Educacion_Inicial_Jardines_SalasCuna_2024_SHP.zip",
+      "csv_url": "download/Educacion_Inicial_Jardines_SalasCuna_2024.csv",
+      "atributos": [
+        {
+          "campo": "id_mbht",
+          "tipo": "String",
+          "descripcion": "Identificador único MBHT del equipamiento"
+        },
+        {
+          "campo": "rbd",
+          "tipo": "String",
+          "descripcion": "Rol Base de Datos oficial MINEDUC"
+        },
+        {
+          "campo": "nombre_establecimiento",
+          "tipo": "String",
+          "descripcion": "Nombre oficial del jardín infantil o sala cuna"
+        },
+        {
+          "campo": "dependencia_macro",
+          "tipo": "String",
+          "descripcion": "Dependencia administrativa macro (Pública / Privada)"
+        },
+        {
+          "campo": "dependencia_especifica",
+          "tipo": "String",
+          "descripcion": "Dependencia específica (JUNJI, Integra, VTF, Particular Pagado, etc.)"
+        },
+        {
+          "campo": "tipo_establecimiento",
+          "tipo": "String",
+          "descripcion": "Tipología (Jardín Infantil con Sala Cuna, Solo Jardín, Solo Sala Cuna)"
+        },
+        {
+          "campo": "tiene_sala_cuna",
+          "tipo": "Integer",
+          "descripcion": "Indicador binario de oferta de sala cuna (0/1)"
+        },
+        {
+          "campo": "tiene_nivel_medio",
+          "tipo": "Integer",
+          "descripcion": "Indicador binario de oferta de nivel medio menor/mayor (0/1)"
+        },
+        {
+          "campo": "mat_sc_total",
+          "tipo": "Integer",
+          "descripcion": "Total matrícula efectiva en sala cuna"
+        },
+        {
+          "campo": "mat_med_total",
+          "tipo": "Integer",
+          "descripcion": "Total matrícula efectiva en nivel medio"
+        },
+        {
+          "campo": "mat_total_parvularia",
+          "tipo": "Integer",
+          "descripcion": "Total general de matrícula parvularia"
+        },
+        {
+          "campo": "comuna_nom",
+          "tipo": "String",
+          "descripcion": "Nombre de la comuna"
+        },
+        {
+          "campo": "region_nom",
+          "tipo": "String",
+          "descripcion": "Nombre de la región"
+        },
+        {
+          "campo": "latitud",
+          "tipo": "Float",
+          "descripcion": "Latitud geográfica (EPSG:4326)"
+        },
+        {
+          "campo": "longitud",
+          "tipo": "Float",
+          "descripcion": "Longitud geográfica (EPSG:4326)"
+        }
+      ],
+      "citacion": "Centro de Inteligencia Territorial. (2024). Catastro Maestro Nacional de Educación Inicial Pública y Privada (Salas Cuna y Jardines Infantiles) [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+      "bbox": [
+        -109.43,
+        -54.94,
+        -67.6,
+        -18.25
+      ],
+      "crs": "EPSG:4326 (WGS 84)",
+      "tipo_geometria": "Point",
+      "fuentes_institucionales": [
+        {
+          "institucion": "Ministerio de Educación [MINEDUC] / Subsecretaría de Educación Parvularia [SdEP]",
+          "insumo": "Directorio Oficial de Establecimientos Parvularios 2024",
+          "citacion_apa7": "Ministerio de Educación. (2024). Directorio oficial de establecimientos de educación parvularia [Base de datos]. MINEDUC. https://datosabiertos.mineduc.cl",
+          "url": "https://datosabiertos.mineduc.cl"
+        },
+        {
+          "institucion": "Junta Nacional de Jardines Infantiles [JUNJI] / Fundación Integra",
+          "insumo": "Catastro Operativo de Jardines Infantiles Públicos y Vía Transferencia de Fondos",
+          "citacion_apa7": "JUNJI. (2024). Catastro nacional de unidades educativas públicas [Conjunto de datos]. JUNJI. https://www.junji.gob.cl",
+          "url": "https://www.junji.gob.cl"
+        },
+        {
+          "institucion": "Centro de Inteligencia Territorial [CIT-UAI]",
+          "insumo": "Normalización y Geocodificación Espacial MBHT",
+          "citacion_apa7": "Centro de Inteligencia Territorial [CIT-UAI]. (2024). Normalización espacial de equipamientos urbanos para la MBHT [Metodología]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+          "url": "https://ide.cit.uai.cl"
+        }
+      ],
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "archivos_distribucion": {
+        "parquet": {
+          "filename": "Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
+          "url": "download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
+          "size_bytes": 365383,
+          "size_human": "357 KB",
+          "sha256": "223cfafbcc4f76949127e109c0a4673e40d4bf4019840e1b0a1d0fcc6918e711"
+        },
+        "gpkg": {
+          "filename": "Educacion_Inicial_Jardines_SalasCuna_2024.gpkg",
+          "url": "download/Educacion_Inicial_Jardines_SalasCuna_2024.gpkg",
+          "size_bytes": 2965504,
+          "size_human": "2,8 MB",
+          "sha256": "3b4af733b0440ed398f19834ab7c1cedbd84b3475cf29f460e6f14e79786fbbd"
+        },
+        "shp_zip": {
+          "filename": "Educacion_Inicial_Jardines_SalasCuna_2024_SHP.zip",
+          "url": "download/Educacion_Inicial_Jardines_SalasCuna_2024_SHP.zip",
+          "size_bytes": 386413,
+          "size_human": "377 KB",
+          "sha256": "7074d332597226a2b18d2b0462f38f7e10f5b731636c5b81b815b56837f2244c"
+        },
+        "csv": {
+          "filename": "Educacion_Inicial_Jardines_SalasCuna_2024.csv",
+          "url": "download/Educacion_Inicial_Jardines_SalasCuna_2024.csv",
+          "size_bytes": 2489732,
+          "size_human": "2,4 MB",
+          "sha256": "730e93c76b0070e8c02fe7e0eb9290f763c8b03867e997a1fcd1ea7885b8e29f"
+        }
+      },
+      "size_bytes": 365383,
+      "size_human": "357 KB",
+      "sha256": "223cfafbcc4f76949127e109c0a4673e40d4bf4019840e1b0a1d0fcc6918e711"
+    },
+    {
+      "id": "huella_edificaciones_2024",
+      "titulo": "Huella de edificaciones urbanas — Presencia construida nacional",
+      "matriz": "mbht",
+      "ambito": "tierra",
+      "escala": "Polígonos de edificaciones (Alta resolución espacial)",
+      "cobertura": "Nacional urbana (341.962 polígonos de edificaciones)",
+      "fecha_corte": "2024-10-10",
+      "publico": true,
+      "disponible_descarga": true,
+      "estado": "activo",
+      "badge_estado": "Oficial CIT-UAI",
+      "resumen": "Catastro vectorial de huella construida y morfología del entorno edificado para 341.962 polígonos urbanos a nivel nacional. Identifica la superficie en metros cuadrados, nivel de confianza algorítmica y años de presencia de las estructuras urbanas, permitiendo modelar la densidad predial, compacidad morfológica y dinámicas de densificación en ciudades chilenas.",
+      "formula_lineage": "Detección y extracción vectorial de huella de edificaciones mediante modelos de segmentación satelital y fotogrametría aérea de alta resolución, con verificación multitemporal de presencia construida.",
+      "autor": "Centro de Inteligencia Territorial (CIT-UAI)",
+      "licencia": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+      "tile_source": "huella_edificaciones_2024",
+      "tabla_postgis": "morfologia.huella_edificaciones_2024",
+      "s3_parquet": "download/Huella_Edificaciones_Urbanas_2024.parquet",
+      "gpkg_url": "download/Huella_Edificaciones_Urbanas_2024.gpkg",
+      "shp_url": "download/Huella_Edificaciones_Urbanas_2024_SHP.zip",
+      "csv_url": "download/Huella_Edificaciones_Urbanas_2024.csv",
+      "atributos": [
+        {
+          "campo": "latitude",
+          "tipo": "Float",
+          "descripcion": "Latitud centroidal de la edificación (EPSG:4326)"
+        },
+        {
+          "campo": "longitude",
+          "tipo": "Float",
+          "descripcion": "Longitud centroidal de la edificación (EPSG:4326)"
+        },
+        {
+          "campo": "area_in_me",
+          "tipo": "Float",
+          "descripcion": "Área de la huella construida en metros cuadrados (m²)"
+        },
+        {
+          "campo": "confidence",
+          "tipo": "Float",
+          "descripcion": "Nivel de confianza de la detección algorítmica [0.0 - 1.0]"
+        },
+        {
+          "campo": "full_plus_",
+          "tipo": "String",
+          "descripcion": "Código Plus Code Open Location de localización espacial"
+        },
+        {
+          "campo": "years",
+          "tipo": "String",
+          "descripcion": "Años de detección comprobada de presencia construida"
+        }
+      ],
+      "citacion": "Centro de Inteligencia Territorial. (2024). Catastro Vectorial de Huella y Presencia de Edificaciones Urbanas de Chile [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+      "bbox": [
+        -75.64,
+        -55.98,
+        -66.86,
+        -17.5
+      ],
+      "crs": "EPSG:4326 (WGS 84)",
+      "tipo_geometria": "Polygon",
+      "fuentes_institucionales": [
+        {
+          "institucion": "Centro de Inteligencia Territorial [CIT-UAI]",
+          "insumo": "Catastro Morfológico y Vectorización de Huella Urbana",
+          "citacion_apa7": "Centro de Inteligencia Territorial [CIT-UAI]. (2024). Catastro de morfología y huella construida en ciudades chilenas [Base cartográfica]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl",
+          "url": "https://ide.cit.uai.cl"
+        }
+      ],
+      "version": "1.0.3",
+      "updated": "2026-10-15",
+      "archivos_distribucion": {
+        "parquet": {
+          "filename": "Huella_Edificaciones_Urbanas_2024.parquet",
+          "url": "download/Huella_Edificaciones_Urbanas_2024.parquet",
+          "size_bytes": 38964900,
+          "size_human": "37,2 MB",
+          "sha256": "1fcecc1ded9e0f17261b88c3f8025d975d6fa75911b5e13ea969279b51cdf991"
+        },
+        "gpkg": {
+          "filename": "Huella_Edificaciones_Urbanas_2024.gpkg",
+          "url": "download/Huella_Edificaciones_Urbanas_2024.gpkg",
+          "size_bytes": 96378880,
+          "size_human": "91,9 MB",
+          "sha256": "3ad4330ce2edf44952636009101bc16d2e74d54e0575a58d4d8e6cf475b0312a"
+        },
+        "shp_zip": {
+          "filename": "Huella_Edificaciones_Urbanas_2024_SHP.zip",
+          "url": "download/Huella_Edificaciones_Urbanas_2024_SHP.zip",
+          "size_bytes": 18106961,
+          "size_human": "17,3 MB",
+          "sha256": "2c4212891c52f0eb9e5bf8f2714c83c6c252e8bb04a956c321749e52ef6d701f"
+        },
+        "csv": {
+          "filename": "Huella_Edificaciones_Urbanas_2024.csv",
+          "url": "download/Huella_Edificaciones_Urbanas_2024.csv",
+          "size_bytes": 28438098,
+          "size_human": "27,1 MB",
+          "sha256": "9a3f816b66223cb399ae1becedcd75017ac8914f0155eaf60ca0750922723a16"
+        }
+      },
+      "size_bytes": 38964900,
+      "size_human": "37,2 MB",
+      "sha256": "1fcecc1ded9e0f17261b88c3f8025d975d6fa75911b5e13ea969279b51cdf991"
+    }
+  ],
+  "aplicaciones_satelitales": [
+    {
+      "id": "visor_mbht",
+      "titulo": "MBHT — Visor de bienestar territorial",
+      "categoria": "Visor analítico oficial",
+      "descripcion": "Visualizador cartográfico interactivo de indicadores de bienestar, mapas coropléticos y perfiles comunales en la plataforma oficial de la MBHT.",
+      "url": "https://matrizbht.cl/visualizations",
+      "icono": "map",
+      "color": "#000000"
+    },
+    {
+      "id": "portal_mbht",
+      "titulo": "Plataforma institucional MBHT (matrizbht.cl)",
+      "categoria": "Plataforma web oficial",
+      "descripcion": "Portal de divulgación, indicadores comunales y políticas públicas de la Matriz de Bienestar Humano Territorial desplegado en AWS.",
+      "url": "https://matrizbht.cl",
+      "icono": "globe",
+      "color": "#000000"
+    },
+    {
+      "id": "guia_tecnica_mbht",
+      "titulo": "Guía técnica MBHT (libro digital)",
+      "categoria": "Guía metodológica oficial",
+      "descripcion": "Documentación metodológica completa, linaje matemático E2SFCA, modelos de accesibilidad peatonal y calibración nacional de la MBHT.",
+      "url": "https://cit-uai.github.io/actualizacion-mbht/",
+      "icono": "book-open",
+      "color": "#000000"
+    },
+    {
+      "id": "plataforma_bht_subdere",
+      "titulo": "Plataforma BHT SUBDERE (Gobierno de Chile)",
+      "categoria": "Plataforma pública oficial",
+      "descripcion": "Sistema oficial de información y consulta territorial de la Matriz de Bienestar Humano Territorial implementado por la Subsecretaría de Desarrollo Regional y Administrativo (SUBDERE).",
+      "url": "https://plataformabht.subdere.gov.cl/",
+      "icono": "landmark",
+      "color": "#000000"
+    }
+  ],
+  "ides_nacionales": [
+    {
+      "id": "ide_chile",
+      "nombre": "IDE Chile",
+      "titulo": "IDE Chile — Infraestructura de Datos Espaciales de Chile",
+      "institucion": "SNIT / Ministerio de Bienes Nacionales",
+      "categoria": "Coordinación nacional",
+      "descripcion": "Plataforma articuladora del Sistema Nacional de Información Territorial (SNIT) del Estado de Chile y catálogo centralizado de metadatos.",
+      "url": "https://www.ide.cl/",
+      "icono": "globe",
+      "que_encontraras": [
+        "Catálogo nacional unificado de metadatos ISO 19115 / SNIT",
+        "Límites administrativos comunales, provinciales y regionales",
+        "Servicios interoperables federados WMS, WFS y CSW del Estado",
+        "Mapas base oficiales y normas técnicas de información territorial"
+      ]
+    },
+    {
+      "id": "geoportal_chile",
+      "nombre": "Geoportal Chile",
+      "titulo": "Geoportal Nacional de Chile (IDE Chile)",
+      "institucion": "IDE Chile / SNIT",
+      "categoria": "Geoportal centralizador",
+      "descripcion": "Visor cartográfico multi-institucional e interoperable para la visualización integrada de coberturas geoespaciales públicas de Chile.",
+      "url": "https://www.geoportal.cl/",
+      "icono": "map",
+      "que_encontraras": [
+        "Visualizador cartográfico interactivo multicapa del Estado",
+        "Cruce espacial en tiempo real de capas de distintos ministerios",
+        "Conexión a geoservicios públicos de múltiples organismos",
+        "Descarga directa de coberturas vectoriales y capas temáticas"
+      ]
+    },
+    {
+      "id": "geomop",
+      "nombre": "GEOMOP",
+      "titulo": "GEOMOP — Infraestructura de Datos Espaciales del MOP",
+      "institucion": "Ministerio de Obras Públicas",
+      "categoria": "Infraestructura y obras",
+      "descripcion": "Geoportal y servicios de información geográfica sobre vialidad, recursos hídricos, aeropuertos y edificación pública nacional.",
+      "url": "https://geomop.mop.gob.cl/",
+      "icono": "hard-hat",
+      "que_encontraras": [
+        "Red vial nacional clasificada (pavimento, ripio, enrolamiento MOP)",
+        "Obras de infraestructura hidráulica, colectores y defensas fluviales",
+        "Catastro de aeropuertos, aeródromos y pistas de aterrizaje",
+        "Edificación pública, puentes, pasarelas y contratos vigentes de obras"
+      ]
+    },
+    {
+      "id": "ide_saf",
+      "nombre": "IDE SAF (FACH)",
+      "titulo": "IDE SAF — Servicio Aerofotogramétrico de la FACH",
+      "institucion": "Fuerza Aérea de Chile (FACH)",
+      "categoria": "Aeroespacial y sensores",
+      "descripcion": "Catastro oficial de aerofotogrametría, sensores satelitales, modelos de elevación y cartografía aeronáutica del territorio chileno.",
+      "url": "https://www.saf.cl/ide/",
+      "icono": "plane",
+      "que_encontraras": [
+        "Fotografías aéreas históricas y vuelos aerofotogramétricos recientes",
+        "Ortoimágenes satelitales de muy alta resolución espacial",
+        "Modelos digitales de terreno y elevación (MDT / MDE)",
+        "Cartas de navegación aeronáutica visual y rutas aéreas oficiales"
+      ]
+    },
+    {
+      "id": "ide_minvu",
+      "nombre": "IDE MINVU",
+      "titulo": "IDE MINVU — Geoportal Open Data Urbano-Habitacional",
+      "institucion": "Ministerio de Vivienda y Urbanismo",
+      "categoria": "Urbano y habitacional",
+      "descripcion": "Instrumentos de planificación territorial, áreas verdes, subsidios habitacionales y polígonos urbanos de Chile.",
+      "url": "https://ide.minvu.cl/",
+      "icono": "building-2",
+      "que_encontraras": [
+        "Instrumentos de planificación territorial (PRC, PRI, PROT)",
+        "Catastro nacional de parques urbanos, plazas y áreas verdes",
+        "Polígonos de subsidios habitacionales y programas urbanos",
+        "Catastro nacional de campamentos e intervenciones barriales"
+      ]
+    },
+    {
+      "id": "ide_subdere",
+      "nombre": "IDE SUBDERE",
+      "titulo": "IDE SUBDERE — Infraestructura de Datos Geoespaciales",
+      "institucion": "Subsecretaría de Desarrollo Regional y Administrativo",
+      "categoria": "Desarrollo regional",
+      "descripcion": "División político-administrativa de Chile, inversiones regionales FNDR, provisión de equipamientos básicos y la Plataforma oficial BHT SUBDERE (plataformabht.subdere.gov.cl).",
+      "url": "https://ide.subdere.gov.cl/",
+      "icono": "landmark",
+      "que_encontraras": [
+        "Plataforma BHT SUBDERE oficial (https://plataformabht.subdere.gov.cl)",
+        "División político-administrativa oficial (regiones, provincias, comunas)",
+        "Inversiones territorializadas del Fondo Nacional de Desarrollo Regional",
+        "Catastro comunal de infraestructura básica y provisión de servicios cívicos"
+      ]
+    },
+    {
+      "id": "sinia_mma",
+      "nombre": "SINIA",
+      "titulo": "SINIA — Sistema Nacional de Información Ambiental",
+      "institucion": "Ministerio del Medio Ambiente",
+      "categoria": "Medio ambiente",
+      "descripcion": "Plataforma oficial de monitoreo de calidad del aire, biodiversidad, humedales protegidos, áreas marinas y cambio climático.",
+      "url": "https://sinia.mma.gob.cl/",
+      "icono": "trees",
+      "que_encontraras": [
+        "Estaciones de monitoreo de calidad del aire en tiempo real (MP2.5 / MP10)",
+        "Inventario nacional de humedales urbanos declarados y protegidos",
+        "Áreas de protección de biodiversidad y sitios prioritarios de conservación",
+        "Reportes y mapas de vulnerabilidad ante el cambio climático"
+      ]
+    },
+    {
+      "id": "ide_energia",
+      "nombre": "IDE Energía",
+      "titulo": "IDE Energía — Geoportal de Infraestructura Energética",
+      "institucion": "Ministerio de Energía",
+      "categoria": "Energía y recursos",
+      "descripcion": "Red nacional de generación, líneas de transmisión, subestaciones eléctricas y potencial energético renovable solar y eólico.",
+      "url": "https://ide-energia.minenergia.cl/portal/apps/webappviewer/index.html?id=5c526a138b1449458e0667b2235d2b19",
+      "icono": "zap",
+      "que_encontraras": [
+        "Líneas de transmisión eléctrica de alta tensión y subestaciones",
+        "Plantas generadoras de energía (solar fotovoltaica, eólica, hidro, térmica)",
+        "Concesiones de exploración y explotación de energía geotérmica",
+        "Mapas de potencial de radiación solar y velocidad de viento"
+      ]
+    },
+    {
+      "id": "ide_minagri",
+      "nombre": "IDE Minagri",
+      "titulo": "IDE Minagri — Infraestructura de Datos Espaciales del Agro",
+      "institucion": "Ministerio de Agricultura / CIREN",
+      "categoria": "Silvoagropecuario",
+      "descripcion": "Aptitud de suelos, catastro frutícola nacional, distritos agroclimáticos, redes de riego y recursos silvoagropecuarios de Chile.",
+      "url": "https://ide.minagri.gob.cl/",
+      "icono": "sprout",
+      "que_encontraras": [
+        "Catastro frutícola nacional georreferenciado por especie y variedad",
+        "Clases de capacidad de uso de suelos y mapas de erosión",
+        "Zonificación y distritos agroclimáticos a nivel nacional",
+        "Redes de canales de riego e infraestructura hídrica agrícola"
+      ]
+    },
+    {
+      "id": "geodatos_ine",
+      "nombre": "Geodatos INE",
+      "titulo": "Geodatos Abiertos INE — Cartografía e Información Censal",
+      "institucion": "Instituto Nacional de Estadísticas",
+      "categoria": "Demografía y censos",
+      "descripcion": "Cartografía censal digital, límites urbanos-rurales censales y geodatos demográficos del Censo de Población y Vivienda.",
+      "url": "https://geoide-inechile.opendata.arcgis.com/",
+      "icono": "users",
+      "que_encontraras": [
+        "Cartografía censal digital (manzanas, entidades y distritos censales)",
+        "Microdatos agregados de población, viviendas y hogares",
+        "Delimitación de áreas urbanas, áreas de extensión y sectores rurales",
+        "Series censales históricas georreferenciadas (Censo 2017 y 2024)"
+      ]
+    },
+    {
+      "id": "ocuc_datos",
+      "nombre": "Centro de Datos OCUC",
+      "titulo": "Centro de Datos OCUC — Observatorio de Ciudades UC",
+      "institucion": "Pontificia Universidad Católica de Chile",
+      "categoria": "Académico y territorial",
+      "descripcion": "Repositorio geoespacial de indicadores urbanos, densidades, movilidad, caminabilidad y dinámicas metropolitanas.",
+      "url": "https://observatoriodeciudades.com/centro-de-datos-ocuc/",
+      "icono": "graduation-cap",
+      "que_encontraras": [
+        "Indicadores de Calidad de Vida Urbana (ICVU) comunales y metropolitanos",
+        "Modelos de accesibilidad al transporte público y paradas de metro/buses",
+        "Mapas de densidades habitacionales y dinámicas de verticalización",
+        "Estudios territoriales aplicados a políticas urbanas y habitacionales"
+      ]
+    },
+    {
+      "id": "siit_bcn",
+      "nombre": "SIIT BCN",
+      "titulo": "SIIT BCN — Sistema Integrado de Información Territorial",
+      "institucion": "Biblioteca del Congreso Nacional",
+      "categoria": "Estadísticas territoriales",
+      "descripcion": "Reportes estadísticos comunales y distritales, zonificación electoral y cartografía sociodemográfica para la labor parlamentaria.",
+      "url": "https://www.bcn.cl/siit/",
+      "icono": "library",
+      "que_encontraras": [
+        "Reportes estadísticos comunales y perfiles sociodemográficos integrados",
+        "Delimitación geográfica de distritos electorales y circunscripciones",
+        "Cartografía temática de equipamiento social y servicios públicos",
+        "Documentos y mapas de apoyo a comisiones legislativas del Congreso"
+      ]
+    },
+    {
+      "id": "sit_conaf",
+      "nombre": "SIT CONAF",
+      "titulo": "SIT CONAF — Sistema de Información Territorial Forestal",
+      "institucion": "Corporación Nacional Forestal",
+      "categoria": "Forestal y conservación",
+      "descripcion": "Sistema Nacional de Áreas Silvestres Protegidas del Estado (SNASPE), bosque nativo y monitoreo de incendios forestales.",
+      "url": "https://sit.conaf.cl/",
+      "icono": "shield",
+      "que_encontraras": [
+        "Límites de parques nacionales, reservas y monumentos naturales (SNASPE)",
+        "Catastro de uso del suelo, bosque nativo y plantaciones forestales",
+        "Registro histórico y monitoreo espacial de incendios forestales",
+        "Zonas de amortiguación ambiental y corredores biológicos"
+      ]
+    },
+    {
+      "id": "snia_dga",
+      "nombre": "SNIA DGA",
+      "titulo": "SNIA — Sistema Nacional de Información del Agua",
+      "institucion": "Dirección General de Aguas (MOP)",
+      "categoria": "Recursos hídricos",
+      "descripcion": "Red hidrometeorológica nacional, estaciones en tiempo real, inventario de glaciares, derechos de agua y pozos subterráneos.",
+      "url": "https://snia.mop.gob.cl/",
+      "icono": "droplets",
+      "que_encontraras": [
+        "Estaciones hidrometeorológicas y caudales de ríos en tiempo real",
+        "Inventario público de glaciares y reservas nivológicas de Chile",
+        "Catastro público de derechos de aprovechamiento de aguas (DAA)",
+        "Pozos de monitoreo de niveles y calidad de acuíferos subterráneos"
+      ]
+    },
+    {
+      "id": "mapas_subpesca",
+      "nombre": "Geoportal SUBPESCA",
+      "titulo": "Geoportal SUBPESCA — Pesca y Acuicultura",
+      "institucion": "Subsecretaría de Pesca y Acuicultura",
+      "categoria": "Pesca y maritorio",
+      "descripcion": "Concesiones marítimas de acuicultura, áreas de manejo bentónico (AMERB), caletas pesqueras y Planificación marina bajo directrices FAO y el marco del SBAP.",
+      "url": "https://mapas.subpesca.cl/ideviewer/",
+      "icono": "waves",
+      "que_encontraras": [
+        "Catastro de concesiones de acuicultura (salmónidos, mitílidos y algas)",
+        "Áreas de Manejo y Explotación de Recursos Bentónicos (AMERB)",
+        "Ubicación y características operativas de caletas pesqueras artesanales",
+        "Zonificación costera, espacios marinos de pueblos originarios y ordenamiento pesquero sustentable (FAO / SBAP)"
+      ]
+    },
+    {
+      "id": "energia_abierta",
+      "nombre": "Energía Abierta",
+      "titulo": "Energía Abierta CNE — Datos y Georreferenciación",
+      "institucion": "Comisión Nacional de Energía",
+      "categoria": "Energía y recursos",
+      "descripcion": "Plataforma de datos abiertos, estadísticas del mercado eléctrico, servidumbres y mapas de infraestructura energética nacional.",
+      "url": "https://energiaabierta.cl/",
+      "icono": "bar-chart-3",
+      "que_encontraras": [
+        "Georreferenciación de servidumbres y trazados de líneas eléctricas",
+        "Precios de combustibles en estaciones de servicio en tiempo real",
+        "Puntos de recarga de vehículos eléctricos (electrolineras)",
+        "Balance energético nacional y estadísticas del sistema eléctrico"
+      ]
+    },
+    {
+      "id": "visor_territorial_bbnn",
+      "nombre": "Visor Territorial",
+      "titulo": "Visor Territorial — Ministerio de Bienes Nacionales",
+      "institucion": "Ministerio de Bienes Nacionales",
+      "categoria": "Patrimonio fiscal",
+      "descripcion": "Catastro territorial de inmuebles y terrenos fiscales, rutas patrimoniales protegidas y visor temático geoespacial para la ciudadanía.",
+      "url": "https://miratuterritorio.ide.cl/",
+      "icono": "compass",
+      "que_encontraras": [
+        "Catastro de bienes inmuebles, terrenos y loteos de propiedad fiscal",
+        "Red oficial de rutas patrimoniales naturales y culturales de Chile",
+        "Visores temáticos de emergencia, playas públicas y campamentos",
+        "Información sobre saneamiento y títulos de dominio territorial"
+      ]
+    },
+    {
+      "id": "observatorio_urbano",
+      "nombre": "Observatorio Urbano",
+      "titulo": "Observatorio Urbano MINVU — Estadísticas Territoriales",
+      "institucion": "Ministerio de Vivienda y Urbanismo",
+      "categoria": "Urbano y habitacional",
+      "descripcion": "Sistema de indicadores y estándares de desarrollo urbano (SIEDU), permisos de edificación y dinámica habitacional.",
+      "url": "https://calidaddevida.minvu.gob.cl/",
+      "icono": "line-chart",
+      "que_encontraras": [
+        "Sistema de Indicadores y Estándares de Desarrollo Urbano (SIEDU)",
+        "Estadísticas y georreferenciación de permisos de edificación municipal",
+        "Dinámicas del mercado habitacional y evolución de precios de vivienda",
+        "Indicadores comunales de áreas verdes, movilidad y equipamiento urbano"
+      ]
+    },
+    {
+      "id": "ide_gore_coquimbo",
+      "nombre": "IDE Coquimbo",
+      "titulo": "IDE Regional GORE Coquimbo",
+      "institucion": "Gobierno Regional de Coquimbo",
+      "categoria": "IDE regional",
+      "descripcion": "Infraestructura de datos espaciales regional para la gestión hídrica, ordenamiento y planificación territorial de Coquimbo.",
+      "url": "https://ide.gorecoquimbo.cl/",
+      "icono": "map-pin",
+      "que_encontraras": [
+        "Plan Regional de Ordenamiento Territorial (PROT) de Coquimbo",
+        "Monitoreo de cuencas y recursos hídricos en Elqui, Limarí y Choapa",
+        "Proyectos e inversiones del FNDR regional georreferenciadas",
+        "Zonificación de aptitud territorial y áreas de riesgo comunal"
+      ]
+    }
+  ]
+}

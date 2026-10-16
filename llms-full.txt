@@ -1,0 +1,213 @@
+# IDE CIT — Catálogo Exhaustivo de Datos Espaciales y Especificación para Agentes IA
+> Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez, Chile.
+> Portal Web Oficial: https://ide.cit.uai.cl
+> Centro de Descargas: https://ide.cit.uai.cl/descargas
+> Ficha Técnica Maestra (Gold Standard): https://ide.cit.uai.cl/ficha-mbht-2017
+> Guía Técnica: https://ide.cit.uai.cl/guia-tecnica
+> Red de Geoportales: https://ide.cit.uai.cl/red-ides
+> Catálogo STAC 1.0.0: https://ide.cit.uai.cl/stac/catalog.json
+> Conectores QGIS (.qlr): https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr
+> Plataforma Canónica MBHT: https://matrizbht.cl
+> Plataforma BHT SUBDERE (Gobierno de Chile): https://plataformabht.subdere.gov.cl
+> Licencia: Creative Commons Atribución 4.0 Internacional (CC BY 4.0)
+
+## Resumen Ejecutivo de la Infraestructura
+La IDE CIT publica la línea base oficial del Bienestar Humano Territorial (MBHT), imputaciones censales demográficas micro-espaciales (Censo 2024), estratificación socioeconómica (INSE), catastro catastral del SII y delimitaciones oceánicas (FAO/SBAP).
+
+---
+
+## Catálogo Detallado de Capas y Coberturas (13 Datasets Oficiales)
+### 1. MBHT 2017 — Línea base oficial (ID: `kpi_mud_2017`)
+- **Matriz / Dimensión:** MBHT
+- **Escala de Resolución:** Manzanas censales (línea base oficial)
+- **Cobertura Territorial:** Nacional (16 regiones de Chile — 204.906 manzanas censales)
+- **Fecha de Corte:** 2017-04-19
+- **Descripción:** Línea base nacional oficial de la Matriz de Bienestar Humano Territorial Integral evaluada sobre 204.906 manzanas censales del Censo 2017 en las 16 regiones de Chile. Sintetiza 18 indicadores elementales distribuidos en 4 macro-dimensiones del bienestar (bajo el Axioma de Neutralidad Elemental W(D) = n_D / 18): 1) Macro-dimensión de Accesibilidad (dim_acc, peso 6/18 = 33,33%), que integra los 6 indicadores de acceso peatonal efectivo E2SFCA + Tobler a salud (isal), educación (ise), áreas verdes (iav), deporte (idep), cultura (icul) y servicios públicos (iser); 2) Macro-dimensión Socioeconómica (dim_soc, peso 6/18 = 33,33%); 3) Macro-dimensión de Seguridad (dim_seg, peso 4/18 = 22,22%); y 4) Macro-dimensión Ambiental (dim_amb, peso 2/18 = 11,11%). El archivo físico contiene el esquema completo de 42 columnas físicas (identificadores, demografía censal, índice sintético bht, las 4 macro-dimensiones, los 6 sub-indicadores peatonales con sus valores pre-escalamiento, tipología Jenks tob y geometría WKB).
+- **Linaje Metodológico y Formulación:** Síntesis BHT Integral de 18 indicadores en 4 macro-dimensiones (W(D) = n_D / 18). Accesibilidad (dim_acc) calculada mediante el modelo bietápico E2SFCA sobre el grafo vial nacional (1.589.595 tramos) con velocidad peatonal de Tobler W(S) = 6 * exp(-3.5 * |S + 0.05|), decaimiento gaussiano f(t) = exp(-0.5 * (t / 15)^2) y umbral 30 min.
+- **Atributos y Variables:** `id_manzcit` (String): Identificador único censal oficial de la manzana (16 dígitos INE/CIT). Clave primaria nacional., `cod_reg` (Integer): Código numérico de la región político-administrativa (1 a 16), `cod_prov` (Integer): Código numérico de la provincia, `cod_com` (Integer): Código numérico único de la comuna (CUT oficial SUBDERE), `tob` (String): Categorización territorial por Tipología de Oportunidad de Bienestar (Jenks ckmeans: Alto, Medio Alto, Medio, Medio Bajo, Bajo), `manz_en` (String): Código censal numérico de manzana/entidad asignado por el Instituto Nacional de Estadísticas (Censo 2017), `personas` (Double): Población residente total censada en la manzana (17.482.699 habitantes a nivel nacional), `area` (Double): Superficie planimétrica de la manzana censal en metros cuadrados (m²), `hog_n` (Double): Número total de hogares censados en la unidad censal, `total_v` (Double): Total de viviendas censadas en la unidad territorial, `bht` (Double): Índice sintético global de Bienestar Humano Territorial normalizado [0.00 - 1.00] (media nacional: 0,6171; RM: 0,5918), `bht_bruto` (Double): Puntaje bruto del índice BHT previo a la estandarización min-max, `dim_acc` (Double): Macro-dimensión 1: Accesibilidad a equipamientos esenciales (peso 6/18 = 33,33%; sintetiza isal, ise, iav, idep, icul, iser), `dim_acc_bruto` (Double): Puntaje bruto acumulado de la macro-dimensión de accesibilidad, `iav` (Double): Sub-indicador de accesibilidad peatonal a Áreas Verdes y parques públicos mantenidos (peso elemental 1/18), `iav_pre` (Double): Puntaje de accesibilidad a áreas verdes previo a la normalización logística, `icul` (Double): Sub-indicador de accesibilidad peatonal a Cultura (bibliotecas, museos, teatros, centros culturales; peso elemental 1/18), `icul_pre` (Double): Puntaje de accesibilidad a cultura previo a la normalización logística, `idep` (Double): Sub-indicador de accesibilidad peatonal a Deportes (gimnasios, multicanchas, centros deportivos; peso elemental 1/18), `idep_pre` (Double): Puntaje de accesibilidad a deporte previo a la normalización logística, `isal` (Double): Sub-indicador de accesibilidad peatonal a Salud primaria (CESFAM ≥ 300 m², CECOSF, postas, SAPU/SAR; peso elemental 1/18), `isal_pre` (Double): Puntaje de accesibilidad a salud previo a la normalización logística, `iser` (Double): Sub-indicador de accesibilidad peatonal a Servicios Públicos y trámites cívicos (Registro Civil, comisarías, bancos; peso elemental 1/18), `iser_pre` (Double): Puntaje de accesibilidad a servicios cívicos previo a la normalización logística, `ise` (Double): Sub-indicador de accesibilidad peatonal a Educación (jardines infantiles, escuelas básicas, liceos; peso elemental 1/18), `ise_pre` (Double): Puntaje de accesibilidad a educación previo a la normalización logística, `dim_amb` (Double): Macro-dimensión 4: Calidad ambiental y entorno biofísico (peso 2/18 = 11,11%), `dim_amb_bruto` (Double): Puntaje bruto acumulado de la macro-dimensión ambiental, `dim_soc` (Double): Macro-dimensión 2: Condición socioeconómica, educacional y habitacional (peso 6/18 = 33,33%), `dim_soc_bruto` (Double): Puntaje bruto acumulado de la macro-dimensión socioeconómica, `dim_seg` (Double): Macro-dimensión 3: Seguridad pública y prevención del delito en entorno urbano (peso 4/18 = 22,22%), `dim_seg_bruto` (Double): Puntaje bruto acumulado de la macro-dimensión de seguridad pública, `e0a3` (Double): Población infantil censal de 0 a 3 años de edad residente en la manzana, `e7a10` (Double): Población infantil censal de 7 a 10 años de edad residente en la manzana, `e4a5` (Double): Población preescolar censal de 4 a 5 años de edad residente en la manzana, `e6a13` (Double): Población escolar primaria censal de 6 a 13 años de edad residente en la manzana, `e14a18` (Double): Población escolar secundaria censal de 14 a 18 años de edad residente en la manzana, `e4a18` (Double): Población total en edad formativa escolar de 4 a 18 años residente en la manzana, `e15a24` (Double): Población juvenil censal de 15 a 24 años de edad residente en la manzana, `e19a30` (Double): Población adulta joven censal de 19 a 30 años de edad residente en la manzana, `geometry` (Binary): Geometría poligonal censal estandarizada en formato WKB (WGS 84 / EPSG:4326), `comuna` (String): Nombre oficial de la comuna conforme a la División Político-Administrativa SUBDERE
+- **Servicio Vector Tiles (MVT):** `https://ide.cit.uai.cl/tiles/kpi_mud_2017/{z}/{x}/{y}.pbf`
+- **Descargas Directas:**
+  - GeoParquet: `download/MBHT_2017_Nacional_Manzanas.parquet`
+  - GeoPackage (OGC): `https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.gpkg`
+  - Shapefile (ZIP): `https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas_SHP.zip`
+  - CSV Tabular: `https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.csv`
+
+### 2. Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE) (ID: `pem_maritorio_nacional`)
+- **Matriz / Dimensión:** PEM
+- **Escala de Resolución:** Polígonos de soberanía y jurisdicción marítima (394 unidades)
+- **Cobertura Territorial:** Tricontinental (Chile Continental, Insular y Territorio Antártico Chileno — 3.500.000 km²)
+- **Fecha de Corte:** 2024-12-31
+- **Descripción:** Delimitación vectorial oficial del Maritorio chileno bajo una perspectiva tricontinental y de soberanía oceánica integral (Chile continental, insular y Territorio Antártico Chileno). Articula la Planificación marina nacional conforme a las directrices de ordenamiento y pesca sustentable de la FAO y el marco de conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP). Comprende las líneas de base, Aguas Interiores, Mar Territorial (12 millas náuticas), Zona Contigua (24 mn), Zona Económica Exclusiva (200 mn) y plataforma continental, consolidando más de 3,5 millones de kilómetros cuadrados de océano nacional.
+- **Linaje Metodológico y Formulación:** Delimitación de espacios marítimos soberanos provista por DIFROL, SHOA y MMA conforme a la CONVEMAR, directrices de ordenamiento marino de la FAO y el marco ambiental del SBAP (Ley 21.600). Homologación geodésica WGS84 (EPSG:4326).
+- **Atributos y Variables:** `OBJECTID` (Integer): Identificador secuencial del polígono marítimo, `perimetro_km` (Float): Perímetro geodésico del polígono marítimo en kilómetros (km), `area_km2` (Float): Área superficial geodésica del polígono en kilómetros cuadrados (km²), `ambito` (String): Ámbito geográfico tricontinental (Continental, Insular, Antártico), `fuente` (String): Institución técnica de custodia y delimitación
+- **Servicio Vector Tiles (MVT):** `https://ide.cit.uai.cl/tiles/pem_maritorio_nacional/{z}/{x}/{y}.pbf`
+- **Descargas Directas:**
+  - GeoParquet: `download/PEM_Maritorio_Nacional_Tricontinental.parquet`
+  - GeoPackage (OGC): `https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.gpkg`
+  - Shapefile (ZIP): `https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental_SHP.zip`
+  - CSV Tabular: `https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.csv`
+
+### 3. Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO) (ID: `pem_geomorfologia_gebco`)
+- **Matriz / Dimensión:** PEM
+- **Escala de Resolución:** Polígonos de macro-unidades fisiográficas de fondo marino (11 macro-unidades)
+- **Cobertura Territorial:** Margen continental y cuencas oceánicas adyacentes a Chile
+- **Fecha de Corte:** 2024-12-31
+- **Descripción:** Zonificación geomorfológica del lecho y fondo submarino nacional categorizada conforme al estándar internacional GEBCO (General Bathymetric Chart of the Oceans / IHO). Insumo estructural para la Planificación marina nacional bajo directrices de la FAO y los criterios de zonificación y protección del Servicio de Biodiversidad y Áreas Protegidas (SBAP). Delimita las grandes provincias fisiográficas oceánicas: Fosa de Atacama/Perú-Chile, plataforma continental, talud continental, fosas abisales, dorsales oceánicas (Dorsal de Chile, Cordillera de Nazca, Cordillera de Salas y Gómez) y llanuras abisales.
+- **Linaje Metodológico y Formulación:** Clasificación morfométrica de relieve submarino basada en mallas globales GEBCO / IHO y validación fisiográfica regional con criterios de planificación marina FAO y conservación SBAP. Reproyección a WGS84 (EPSG:4326).
+- **Atributos y Variables:** `unidad_geomorfologica` (String): Tipo de unidad morfológica submarina (plataforma, talud, fosa, dorsal, etc.), `superficie_km2` (Float): Superficie de la macro-unidad en kilómetros cuadrados, `ano_fuente` (String): Año de publicación del modelo geomorfológico GEBCO
+- **Servicio Vector Tiles (MVT):** `https://ide.cit.uai.cl/tiles/pem_geomorfologia_gebco/{z}/{x}/{y}.pbf`
+- **Descargas Directas:**
+  - GeoParquet: `download/PEM_Geomorfologia_Submarina_GEBCO.parquet`
+  - GeoPackage (OGC): `https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.gpkg`
+  - Shapefile (ZIP): `https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO_SHP.zip`
+  - CSV Tabular: `https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.csv`
+
+### 4. Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP) (ID: `pem_montes_submarinos`)
+- **Matriz / Dimensión:** PEM
+- **Escala de Resolución:** Puntual 3D con elevación y toponimia (2.234 cumbres submarinas catalogadas)
+- **Cobertura Territorial:** Cordilleras submarinas y dorsales del Mar Chileno y ZEE
+- **Fecha de Corte:** 2024-12-31
+- **Descripción:** Catastro geomorfológico y toponímico de 2.234 cimas, guyots, cañones y relieves destacados del lecho oceánico de Chile, con toponimia oficial estandarizada por el Subcomité de Nombres de Formas del Relieve Submarino (SCUFN - GEBCO/OHI) y el SHOA. Identifica estructuras orográficas submarinas que constituyen hábitats bentónicos de alto valor ecológico y áreas prioritarias para la evaluación de Ecosistemas Marinos Vulnerables (VME) bajo directrices de la FAO y el marco de zonificación y conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley N° 21.600), como las cordilleras de Nazca, Desventuradas y Salas y Gómez.
+- **Linaje Metodológico y Formulación:** Nomenclatura y toponimia oficial SCUFN (Sub-Committee on Undersea Feature Names) de GEBCO/IHO combinada con modelos digitales batimétricos (GEBCO/SHOA). Los atributos geomorfológicos derivan de mediciones batimétricas directas, mientras que los atributos de estatus ecológico y potencial de conservación se alinean con las directrices técnicas de la FAO para pesquerías de aguas profundas y la zonificación de biodiversidad marina bajo la Ley SBAP (Ley 21.600).
+- **Atributos y Variables:** `nombre_monte` (String): Nombre o toponimia oficial del monte submarino (fuente: SCUFN / IHO / SHOA), `catalogo_categoria` (String): Categoría morfoestructural (Guyot, Seamount, Ridge, Trench, Hill, Canyon) según estándar SCUFN, `elevacion_submarina_m` (Float): Cota batimétrica o elevación sobre el lecho marino en metros (fuente: GEBCO / SHOA), `interes_ecologico_vme` (String): Relevancia como hábitat bentónico y potencial Ecosistema Marino Vulnerable (criterios FAO / SBAP), `marco_conservacion` (String): Estatus de protección o área marina protegida vinculada bajo Ley 21.600 (SBAP)
+- **Servicio Vector Tiles (MVT):** `https://ide.cit.uai.cl/tiles/pem_montes_submarinos/{z}/{x}/{y}.pbf`
+- **Descargas Directas:**
+  - GeoParquet: `download/PEM_Montes_Submarinos_Toponimia.parquet`
+  - GeoPackage (OGC): `https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.gpkg`
+  - Shapefile (ZIP): `https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia_SHP.zip`
+  - CSV Tabular: `https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.csv`
+
+### 5. Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP) (ID: `pem_cuencas_oceanicas`)
+- **Matriz / Dimensión:** PEM
+- **Escala de Resolución:** Polígonos de delimitación morfométrica de cuencas de fondo (53.726 unidades)
+- **Cobertura Territorial:** Lecho del Pacífico Suroriental y cuencas marinas de Chile
+- **Fecha de Corte:** 2024-12-31
+- **Descripción:** Delimitación espacial morfométrica de 53.726 cuencas y subcuencas oceanográficas submarinas del lecho del Pacífico Suroriental chileno. Modela el drenaje de sedimentos submarinos, cañones tributarios y circulación de fondo, permitiendo caracterizar la conectividad ecológica y apoyar la Planificación marina sustentable bajo directrices de la FAO y las metas de conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP).
+- **Linaje Metodológico y Formulación:** Extracción hidrológica/oceanográfica algorítmica sobre modelos digitales batimétricos globales, calibración de conectividad marina FAO y corrección topológica WGS84 (EPSG:4326).
+- **Atributos y Variables:** `id_cuenca` (Integer): Identificador único de la cuenca oceanográfica submarina, `codigo_cuenca` (Integer): Código morfométrico de drenaje abisal, `perimetro_km` (Float): Perímetro geodésico de la cuenca oceanográfica en kilómetros (km), `area_km2` (Float): Área superficial geodésica de la cuenca en kilómetros cuadrados (km²)
+- **Servicio Vector Tiles (MVT):** `https://ide.cit.uai.cl/tiles/pem_cuencas_oceanicas/{z}/{x}/{y}.pbf`
+- **Descargas Directas:**
+  - GeoParquet: `download/PEM_Cuencas_Oceanicas_Submarinas.parquet`
+  - GeoPackage (OGC): `https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.gpkg`
+  - Shapefile (ZIP): `https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas_SHP.zip`
+  - CSV Tabular: `https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.csv`
+
+### 6. Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF) (ID: `pem_biodiversidad_especies`)
+- **Matriz / Dimensión:** PEM
+- **Escala de Resolución:** Puntual georreferenciada masiva (4.529.201 registros de biodiversidad)
+- **Cobertura Territorial:** Ecosistemas marinos y costeros de Chile (Reinos Animalia, Plantae, Chromista, etc.)
+- **Fecha de Corte:** 2024-12-31
+- **Descripción:** Consolidado nacional de ocurrencias biológicas y biodiversidad marina de Chile, integrando 4.529.201 observaciones georreferenciadas desde las campañas científicas del Instituto de Fomento Pesquero (IFOP) y la Infraestructura Mundial de Información en Biodiversidad (GBIF). Abarca taxonomía completa (reino, filo, clase, orden, familia, género, especie y nombre científico), profundidad de colecta y año de observación. Diseñado para fundamentar la Planificación marina conforme a las directrices de pesca responsable de la FAO y respaldar la creación, monitoreo y fiscalización de la red del Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley N° 21.600).
+- **Linaje Metodológico y Formulación:** Estandarización taxonómica Darwin Core sobre registros de prospecciones de investigación pesquera de IFOP y nodos GBIF en aguas jurisdiccionales chilenas, armonizados con directrices FAO y marcos de conservación SBAP. Optimizado en GeoParquet 1.1 columnar comprimido.
+- **Atributos y Variables:** `id_gbif` (String): Identificador universal único del espécimen o avistamiento (GBIF ID), `reino` (String): Reino taxonómico (Animalia, Plantae, Chromista, Fungi, etc.), `filo` (String): Filo o división biológica, `clase` (String): Clase taxonómica, `orden` (String): Orden taxonómico, `familia` (String): Familia biológica, `genero` (String): Género taxonómico, `especie` (String): Epíteto específico de la especie, `nombre_cientifico` (String): Nombre científico completo del taxón, `profundidad_m` (Float): Profundidad marina de muestreo en metros, `ano_registro` (Integer): Año de colecta u observación del espécimen, `codigo_pais` (String): Código ISO del país jurisdiccional (CL)
+- **Servicio Vector Tiles (MVT):** `https://ide.cit.uai.cl/tiles/pem_biodiversidad_especies/{z}/{x}/{y}.pbf`
+- **Descargas Directas:**
+  - GeoParquet: `download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet`
+  - GeoPackage (OGC): `N/A`
+  - Shapefile (ZIP): `N/A`
+  - CSV Tabular: `https://ide.cit.uai.cl/download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.csv`
+
+### 7. Censo 2024 — Imputaciones demográficas por cohortes y sexo (ID: `censo_imputaciones_2024`)
+- **Matriz / Dimensión:** CENSO
+- **Escala de Resolución:** Manzanas censales y entidades rurales
+- **Cobertura Territorial:** Nacional (16 regiones de Chile — 254.395 manzanas censales)
+- **Fecha de Corte:** 2024-12-31
+- **Descripción:** Modelo demográfico sintético y desagregación multivariada determinística del Censo 2024 (18,48 millones de personas, 7,66 millones de viviendas y 6,62 millones de hogares) a escala de 254.395 manzanas urbanas y entidades rurales para las 16 regiones de Chile. Desarrollado por el CIT-UAI mediante interpolación osculatriz de Sprague y programación entera de mayor residuo para modelación espacial de accesibilidad y demanda de equipamientos, respetando irrestrictamente el secreto estadístico (Ley N° 17.374, Art. 29).
+- **Linaje Metodológico y Formulación:** Graduación osculatoria de Sprague de 5.º orden sobre grupos quinquenales Censo 2024 combinada con programación entera por algoritmo de mayor residuo (Largest Remainder Method). Especificación técnica del modelo sintético: 1) Restricciones aplicadas: Preservación estricta de totales marginales (la suma de edades y sexo en cada manzana coincide exactamente con la población total censal de la manzana; la suma comunal iguala los tabulados oficiales INE); 2) Información de control: Tabulados oficiales INE Censo 2024 a nivel comunal/distrital, recuentos de viviendas/hogares por manzana y perfiles de ponderación CASEN; 3) Variables imputadas: Desglose continuo de edades simples (0 a 100+ años) y 42 cohortes por sexo; 4) Incertidumbre y advertencia metodológica: Modelo sintético calibrado para análisis territorial (RMSE < 1.2%), advirtiendo expresamente que no constituye microdatos nominales ni registros administrativos individuales observados.
+- **Atributos y Variables:** `ID_MANZCIT` (String): Código censal único de la manzana (16 dígitos), `COD_REG` (Integer): Código numérico de la región, `REGION` (String): Nombre oficial de la región, `COD_PROV` (Integer): Código de la provincia, `PROVINCIA` (String): Nombre de la provincia, `COD_COM` (Integer): Código único de la comuna (CUT), `COMUNA` (String): Nombre de la comuna, `CATEGORIA` (String): Categoría territorial censal (Urbana / Rural), `AREA_C` (Float): Superficie de la manzana (m²), `POBLACION_2024` (Float): Total de población residente censal estimada (Censo 2024), `HOMBRES` (Float): Total de población masculina, `MUJERES` (Float): Total de población femenina, `P_HOMBRES` (Float): Porcentaje de hombres sobre el total comunal/manzana, `P_MUJERES` (Float): Porcentaje de mujeres sobre el total comunal/manzana, `E0_5` (Float): Población de primera infancia (0 a 5 años) graduada por Sprague, `E6_13` (Float): Población escolar básica (6 a 13 años), `E14_17` (Float): Población escolar media (14 a 17 años), `E18_24` (Float): Población juvenil (18 a 24 años), `E25_44` (Float): Población adulta joven (25 a 44 años), `E45_59` (Float): Población adulta intermedia (45 a 59 años), `E60M` (Float): Población adulta mayor (60 años y más), `E65AMAS` (Float): Población adulta mayor (65 años y más), `IND_ENVEJ` (Float): Índice de envejecimiento demográfico (pob 60+ / pob 0-14 * 100), `METODO_ESTIMACION` (String): Metodología demográfica sintética: Graduación de Sprague 5.º orden + Mayor Residuo (CIT-UAI), `CONTROL_MARGINAL` (String): Verificación de cuadratura: Suma manzana = Población total censal observada INE 2024
+- **Servicio Vector Tiles (MVT):** `https://ide.cit.uai.cl/tiles/censo_imputaciones_2024/{z}/{x}/{y}.pbf`
+- **Descargas Directas:**
+  - GeoParquet: `download/Censo_Imputaciones_2024_Nacional.parquet`
+  - GeoPackage (OGC): `https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.gpkg`
+  - Shapefile (ZIP): `https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional_SHP.zip`
+  - CSV Tabular: `https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.csv`
+
+### 8. Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024 (ID: `inse_socioeconomico`)
+- **Matriz / Dimensión:** INSE
+- **Escala de Resolución:** Manzanas censales y entidades rurales
+- **Cobertura Territorial:** Nacional (16 regiones de Chile — 254.395 manzanas censales)
+- **Fecha de Corte:** 2024-12-31
+- **Descripción:** Estratificación socioeconómica y patrimonial continua y por quintiles (Q1 a Q5, y S/P sin población) calibrada a nivel nacional para 254.395 manzanas censales en las 16 regiones de Chile. Integra la caracterización socioeconómica de los hogares (capital humano y ocupación CIUO) con la valoración patrimonial inmobiliaria de suelo según Áreas Homogéneas del SII (Ley 17.235) y Valor Guía de Terreno (VGT en UF/m² y $/m²).
+- **Linaje Metodológico y Formulación:** Calibración econométrica multivariada del Índice de Nivel Socioeconómico a escala de manzana: INSE = f(Capital Humano, Inserción Ocupacional, Valor Guía de Terreno SII). Estratificación por quintiles poblacionales Q1 a Q5 y categorización GSE.
+- **Atributos y Variables:** `MANZ_CIT` (String): Código censal único de la manzana (16 dígitos), `COD_REG` (String): Código oficial de la región, `COD_COM` (String): Código único de la comuna (CUT), `COMUNA` (String): Nombre oficial de la comuna, `POBLACION` (Float): Población residente censal habitual, `INSE_OFIC` (Float): Puntaje de Nivel Socioeconómico Oficial [0.0 - 100.0], `Q_INSE_OFI` (String): Estratificación por quintiles oficial (Q1 a Q5, o S/P sin población), `GSE_OFIC` (String): Grupo Socioeconómico Oficial (ABC1, C2, C3, D, E, S/P), `INSE_PURO` (Float): Puntaje de Nivel Socioeconómico modelo econométrico base, `Q_INSE_PUR` (String): Quintil modelo econométrico base, `GSE_PURO` (String): Grupo Socioeconómico modelo econométrico base, `ES_CAMPAM` (String): Indicador si la manzana corresponde a asentamiento precario / campamento (V/F), `COD_AH` (String): Código de Área Homogénea del SII asignada (Ley 17.235), `VGT_UF` (Float): Valor Guía de Terreno asignado en UF/m², `VGT_M2` (Float): Valor Guía de Terreno asignado en $/m²
+- **Servicio Vector Tiles (MVT):** `https://ide.cit.uai.cl/tiles/inse_socioeconomico/{z}/{x}/{y}.pbf`
+- **Descargas Directas:**
+  - GeoParquet: `download/INSE_Socioeconomico_Nacional_2024.parquet`
+  - GeoPackage (OGC): `https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.gpkg`
+  - Shapefile (ZIP): `https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024_SHP.zip`
+  - CSV Tabular: `https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.csv`
+
+### 9. Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos (ID: `sii_areas_homogeneas`)
+- **Matriz / Dimensión:** SII
+- **Escala de Resolución:** Polígonos de áreas homogéneas (catastro nacional)
+- **Cobertura Territorial:** Nacional (14.157 polígonos de suelo urbano y rural en todas las comunas catastradas)
+- **Fecha de Corte:** 2024-12-31
+- **Descripción:** Catastro espacial completo de 14.157 Áreas Homogéneas definido por el Servicio de Impuestos Internos (SII) bajo la Ley N° 17.235 sobre Impuesto Territorial. Delimita zonas territoriales con características urbanísticas, topográficas, de accesibilidad a servicios y valor unitario de terreno homogéneas para los procesos de reavalúo de bienes raíces en todo Chile. Proporciona el Valor Guía de Terreno (VGT en UF/m² y $/m²), coeficiente guía y clasificación comunal para análisis de plusvalía, dinámica inmobiliaria y tributación territorial.
+- **Linaje Metodológico y Formulación:** Delimitación poligonal y parametrización de Valor Guía de Terreno (VGT) por resoluciones exentas de reavalúo del SII conforme a la Ley 17.235. Homologación topológica y georreferenciación en WGS84 por CIT-UAI.
+- **Atributos y Variables:** `id_ah` (String): Código identificador de área homogénea SII (Comuna + Sector + Código), `comuna` (String): Nombre oficial de la comuna, `region` (String): Código regional (ej: R13), `tipo_suelo` (String): Destino o tipología (Urbano / Extensión Urbana / Rural), `vgt_uf_m2` (Float): Valor guía de terreno en unidades de fomento por metro cuadrado (UF/m²), `vgt_pesos_m2` (Float): Valor guía de terreno en pesos chilenos por metro cuadrado ($/m²), `coeficiente_guia` (Float): Factor o coeficiente guía de ajuste de avalúo, `area_ha` (Float): Superficie del polígono en hectáreas
+- **Servicio Vector Tiles (MVT):** `https://ide.cit.uai.cl/tiles/sii_areas_homogeneas/{z}/{x}/{y}.pbf`
+- **Descargas Directas:**
+  - GeoParquet: `download/SII_Areas_Homogeneas_Nacional.parquet`
+  - GeoPackage (OGC): `https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.gpkg`
+  - Shapefile (ZIP): `https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional_SHP.zip`
+  - CSV Tabular: `https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.csv`
+
+### 10. Equipamientos urbanos y servicios esenciales 2017 (ID: `equipamientos_2017`)
+- **Matriz / Dimensión:** MBHT
+- **Escala de Resolución:** Puntual y poligonal georreferenciada (55.035 línea base abierta / 113.231 catastro maestro ruteable)
+- **Cobertura Territorial:** Nacional (16 regiones de Chile — 55.035 equipamientos de libre acceso en línea base MBHT 2017; 113.231 en catastro consolidado)
+- **Fecha de Corte:** 2017-04-19
+- **Descripción:** Catastro oficial de equipamientos y servicios urbanos esenciales utilizado para la modelación de accesibilidad peatonal en la Matriz de Bienestar Humano Territorial (MBHT 2017). Documenta de forma trazable los tres niveles del embudo de depuración nacional: 202.275 registros administrativos brutos iniciales, 113.231 unidades en el catastro maestro ruteable consolidado en 6 dimensiones —Áreas Verdes (54.962), Deportes (26.629), Educación (17.129), Salud (5.824), Servicios Públicos (4.914) y Cultura (3.773)— y 55.035 equipamientos públicos de libre acceso y gratuidad publicados en los paquetes regionales y nacionales de la línea base abierta MBHT 2017.
+- **Linaje Metodológico y Formulación:** Catastro georreferenciado de oferta urbana provisto por SUBDERE, MINEDUC, MINSAL, MINVU, IND y Registro Civil. Homologación de coordenadas a WGS84 (EPSG:4326) con validación topológica y deduplicación espacial.
+- **Atributos y Variables:** `indicador` (String): Código de dimensión urbana (ISAL, ISE, IAV, IDEP, ICUL, ISER), `nombre` (String): Nombre del establecimiento o recinto, `cod_reg` (Integer): Código regional oficial, `cod_com` (Integer): Código comunal único (CUT), `comuna` (String): Nombre de la comuna, `categoria` (String): Categoría o tipología del equipamiento, `direccion` (String): Dirección postal georreferenciada, `tipo_estab` (String): Tipo de establecimiento, `depe` (String): Dependencia administrativa (Pública, Privada, Subvencionada)
+- **Servicio Vector Tiles (MVT):** `https://ide.cit.uai.cl/tiles/kpi_mud_2017/{z}/{x}/{y}.pbf`
+- **Descargas Directas:**
+  - GeoParquet: `download/Equipamientos_2017_Nacional_Consolidado.parquet`
+  - GeoPackage (OGC): `https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.gpkg`
+  - Shapefile (ZIP): `https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado_SHP.zip`
+  - CSV Tabular: `https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.csv`
+
+### 11. Red vial urbana caminable y tiempos Tobler 2017 (ID: `red_vial_ejes_2017`)
+- **Matriz / Dimensión:** MBHT
+- **Escala de Resolución:** Lineal segmentada (1.589.595 tramos viales peatonales ruteables)
+- **Cobertura Territorial:** Nacional (16 regiones de Chile — 1.589.595 tramos viales caminables)
+- **Fecha de Corte:** 2017-04-19
+- **Descripción:** Red vial oficial caminable y grafo topológico peatonal integrado por 1.589.595 tramos viales calibrados con tiempos de fricción y decaimiento espacial de Tobler para las 16 regiones de Chile. Permite calcular isocronas peatonales y matrices de costo temporal entre las 204.906 manzanas censales y los equipamientos esenciales para la modelación de accesibilidad urbana de la línea base MBHT 2017.
+- **Linaje Metodológico y Formulación:** Grafo vial caminable consolidado a partir de la red vial INE/MINVU, corregido topológicamente (snapping y split en intersecciones) con velocidad peatonal calibrada según pendiente superficial (ecuación de caminata de Tobler W = 6 * exp(-3.5 * |S + 0.05|)).
+- **Atributos y Variables:** `NOMBRE_VIA` (String): Nombre oficial de la vía o pasaje, `CLASE_COMU` (String): Jerarquía vial comunal (Avenida, Calle, Pasaje, Camino), `CLASE_URBA` (String): Clasificación funcional urbana, `LARGO` (Float): Longitud métrica del segmento en metros, `T_TOBLER` (Float): Tiempo de viaje peatonal en segundos con decaimiento Tobler, `COD_REG` (String): Código regional (ej: R13), `NOM_COM` (String): Nombre de la comuna
+- **Servicio Vector Tiles (MVT):** `https://ide.cit.uai.cl/tiles/kpi_mud_2017/{z}/{x}/{y}.pbf`
+- **Descargas Directas:**
+  - GeoParquet: `download/Red_Vial_Ejes_2017_Nacional.parquet`
+  - GeoPackage (OGC): `https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.gpkg`
+  - Shapefile (ZIP): `https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional_SHP.zip`
+  - CSV Tabular: `https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.csv`
+
+### 12. Educación inicial — Catastro nacional de jardines infantiles y salas cuna (ID: `educacion_inicial_2024`)
+- **Matriz / Dimensión:** MBHT
+- **Escala de Resolución:** Equipamientos georreferenciados (Puntos WGS 84)
+- **Cobertura Territorial:** Nacional (16 regiones de Chile — 3.886 establecimientos)
+- **Fecha de Corte:** 2024-12-31
+- **Descripción:** Catastro maestro nacional unificado de establecimientos de educación inicial (jardines infantiles y salas cuna) para las 16 regiones de Chile. Integra tanto la oferta pública (JUNJI, Integra, VTF, SLEP y Municipal) como la oferta privada particular subvencionada y particular pagada, detallando capacidad y matrícula por nivel formativo (Sala Cuna Menor/Mayor, Nivel Medio Menor/Mayor, Prekínder NT1 y Kínder NT2). Insumo base para la evaluación de cobertura y accesibilidad peatonal infantil en la MBHT.
+- **Linaje Metodológico y Formulación:** Georreferenciación multiproveedor validada por verificación espacial comunal y cruce con Directorio Oficial MINEDUC / Subsecretaría de Educación Parvularia (SdEP). Normalización taxonómica de dependencia institucional y desagregación de matrícula.
+- **Atributos y Variables:** `id_mbht` (String): Identificador único MBHT del equipamiento, `rbd` (String): Rol Base de Datos oficial MINEDUC, `nombre_establecimiento` (String): Nombre oficial del jardín infantil o sala cuna, `dependencia_macro` (String): Dependencia administrativa macro (Pública / Privada), `dependencia_especifica` (String): Dependencia específica (JUNJI, Integra, VTF, Particular Pagado, etc.), `tipo_establecimiento` (String): Tipología (Jardín Infantil con Sala Cuna, Solo Jardín, Solo Sala Cuna), `tiene_sala_cuna` (Integer): Indicador binario de oferta de sala cuna (0/1), `tiene_nivel_medio` (Integer): Indicador binario de oferta de nivel medio menor/mayor (0/1), `mat_sc_total` (Integer): Total matrícula efectiva en sala cuna, `mat_med_total` (Integer): Total matrícula efectiva en nivel medio, `mat_total_parvularia` (Integer): Total general de matrícula parvularia, `comuna_nom` (String): Nombre de la comuna, `region_nom` (String): Nombre de la región, `latitud` (Float): Latitud geográfica (EPSG:4326), `longitud` (Float): Longitud geográfica (EPSG:4326)
+- **Servicio Vector Tiles (MVT):** `https://ide.cit.uai.cl/tiles/educacion_inicial_2024/{z}/{x}/{y}.pbf`
+- **Descargas Directas:**
+  - GeoParquet: `download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet`
+  - GeoPackage (OGC): `https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.gpkg`
+  - Shapefile (ZIP): `https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024_SHP.zip`
+  - CSV Tabular: `https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.csv`
+
+### 13. Huella de edificaciones urbanas — Presencia construida nacional (ID: `huella_edificaciones_2024`)
+- **Matriz / Dimensión:** MBHT
+- **Escala de Resolución:** Polígonos de edificaciones (Alta resolución espacial)
+- **Cobertura Territorial:** Nacional urbana (341.962 polígonos de edificaciones)
+- **Fecha de Corte:** 2024-10-10
+- **Descripción:** Catastro vectorial de huella construida y morfología del entorno edificado para 341.962 polígonos urbanos a nivel nacional. Identifica la superficie en metros cuadrados, nivel de confianza algorítmica y años de presencia de las estructuras urbanas, permitiendo modelar la densidad predial, compacidad morfológica y dinámicas de densificación en ciudades chilenas.
+- **Linaje Metodológico y Formulación:** Detección y extracción vectorial de huella de edificaciones mediante modelos de segmentación satelital y fotogrametría aérea de alta resolución, con verificación multitemporal de presencia construida.
+- **Atributos y Variables:** `latitude` (Float): Latitud centroidal de la edificación (EPSG:4326), `longitude` (Float): Longitud centroidal de la edificación (EPSG:4326), `area_in_me` (Float): Área de la huella construida en metros cuadrados (m²), `confidence` (Float): Nivel de confianza de la detección algorítmica [0.0 - 1.0], `full_plus_` (String): Código Plus Code Open Location de localización espacial, `years` (String): Años de detección comprobada de presencia construida
+- **Servicio Vector Tiles (MVT):** `https://ide.cit.uai.cl/tiles/huella_edificaciones_2024/{z}/{x}/{y}.pbf`
+- **Descargas Directas:**
+  - GeoParquet: `download/Huella_Edificaciones_Urbanas_2024.parquet`
+  - GeoPackage (OGC): `https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.gpkg`
+  - Shapefile (ZIP): `https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024_SHP.zip`
+  - CSV Tabular: `https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.csv`
