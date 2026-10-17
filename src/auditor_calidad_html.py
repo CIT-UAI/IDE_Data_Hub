@@ -12,14 +12,15 @@ from collections import defaultdict
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent if Path(__file__).resolve().parent.name == "src" else Path(__file__).resolve().parent
+PUBLIC = ROOT / "public" if (ROOT / "public").exists() else ROOT
 
 HTML_FILES = {
-    "index.html": ROOT / "index.html",
-    "descargas-2017.html": ROOT / "descargas-2017.html",
-    "guia-tecnica.html": ROOT / "guia-tecnica.html",
-    "red-ides.html": ROOT / "red-ides.html",
-    "ficha-mbht-2017.html": ROOT / "ficha-mbht-2017.html",
+    "index.html": PUBLIC / "index.html" if (PUBLIC / "index.html").exists() else ROOT / "index.html",
+    "descargas-2017.html": PUBLIC / "descargas-2017.html" if (PUBLIC / "descargas-2017.html").exists() else ROOT / "descargas-2017.html",
+    "guia-tecnica.html": PUBLIC / "guia-tecnica.html" if (PUBLIC / "guia-tecnica.html").exists() else ROOT / "guia-tecnica.html",
+    "red-ides.html": PUBLIC / "red-ides.html" if (PUBLIC / "red-ides.html").exists() else ROOT / "red-ides.html",
+    "ficha-mbht-2017.html": PUBLIC / "ficha-mbht-2017.html" if (PUBLIC / "ficha-mbht-2017.html").exists() else ROOT / "ficha-mbht-2017.html",
 }
 
 SECTION_SEP = "\n" + "=" * 80 + "\n"

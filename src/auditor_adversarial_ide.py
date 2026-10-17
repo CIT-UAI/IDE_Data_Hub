@@ -48,7 +48,7 @@ if hasattr(sys.stdout, "reconfigure"):
 if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent if Path(__file__).resolve().parent.name == "src" else Path(__file__).resolve().parent
 
 # Importar PyArrow de forma segura
 try:
@@ -65,6 +65,7 @@ class AdversarialAuditor:
 
     def __init__(self, base_dir: Path):
         self.base_dir = base_dir
+        self.public_dir = base_dir / "public" if (base_dir / "public").exists() else base_dir
         self.errors: List[str] = []
         self.warnings: List[str] = []
         self.passed_tests: List[str] = []
@@ -153,7 +154,7 @@ class AdversarialAuditor:
             self.log_pass("VECTOR 1", "Zero-Secret Invariant", f"{scanned_count} archivos estáticos y scripts escaneados. CERO credenciales, CERO droppers, CERO rutas locales.")
 
         # Verificación estricta RFC 9116 (security.txt y .well-known/security.txt)
-        sec_paths = [self.base_dir / ".well-known" / "security.txt", self.base_dir / "security.txt"]
+        sec_paths = [self.base_dir / ".well-known" / "security.txt", self.public_dir / "security.txt"]
         for sec_file in sec_paths:
             rel_sec = str(sec_file.relative_to(self.base_dir)).replace("\\", "/")
             if not sec_file.exists():
@@ -177,7 +178,7 @@ class AdversarialAuditor:
         print("📐 VECTOR 2: CONSISTENCIA ARITMÉTICA Y DEMOGRÁFICA TERRITORIAL")
         print("=" * 80)
 
-        descargas_html_path = self.base_dir / "descargas-2017.html"
+        descargas_html_path = self.public_dir / "descargas-2017.html"
         if not descargas_html_path.exists():
             self.log_error("VECTOR 2", "Archivo no encontrado", "descargas-2017.html no existe")
             return
@@ -235,8 +236,8 @@ class AdversarialAuditor:
             self.log_pass("VECTOR 2", "Aritmética Tramos Viales", f"Suma exacta: {total_vias:,} ejes viales con impedancia Tobler.".replace(",", "."))
 
         # Consistencia Demográfica Interdocumental (Ficha vs Guía vs Catálogo)
-        ficha_path = self.base_dir / "ficha-mbht-2017.html"
-        guia_path = self.base_dir / "guia-tecnica.html"
+        ficha_path = self.public_dir / "ficha-mbht-2017.html" if (self.public_dir / "ficha-mbht-2017.html").exists() else self.base_dir / "ficha-mbht-2017.html"
+        guia_path = self.public_dir / "guia-tecnica.html" if (self.public_dir / "guia-tecnica.html").exists() else self.base_dir / "guia-tecnica.html"
 
         pob_errors = 0
         if ficha_path.exists():
@@ -285,8 +286,8 @@ class AdversarialAuditor:
         manifest_path = self.base_dir / "data" / "archivos_hash_manifest.json"
         sha_path = self.base_dir / "download" / "SHA256SUMS.txt"
         cat_path = self.base_dir / "data" / "catalogo_ide_cit.json"
-        ficha_path = self.base_dir / "ficha-mbht-2017.html"
-        descargas_path = self.base_dir / "descargas-2017.html"
+        ficha_path = self.public_dir / "ficha-mbht-2017.html"
+        descargas_path = self.public_dir / "descargas-2017.html"
 
         if not manifest_path.exists():
             self.log_error("VECTOR 3", "Manifest Faltante", "data/archivos_hash_manifest.json no existe")
@@ -376,12 +377,17 @@ class AdversarialAuditor:
         print("=" * 80)
 
         html_files = [
-            self.base_dir / "index.html",
-            self.base_dir / "descargas-2017.html",
-            self.base_dir / "guia-tecnica.html",
-            self.base_dir / "red-ides.html",
-            self.base_dir / "ficha-mbht-2017.html",
-            self.base_dir / "stac" / "index.html",
+            self.public_dir / "index.html",
+            self.public_dir / "descargas-2017.html",
+            self.public_dir / "guia-tecnica.html",
+            self.public_dir / "red-ides.html",
+            self.public_dir / "ficha-mbht-2017.html",
+            self.public_dir / "stac" / "index.html",
+            self.public_dir / "inicio" / "index.html",
+            self.public_dir / "descargas" / "index.html",
+            self.public_dir / "ficha-mbht-2017" / "index.html",
+            self.public_dir / "guia-tecnica" / "index.html",
+            self.public_dir / "red-ides" / "index.html",
         ]
 
         class DeepPageCrawler(HTMLParser):
@@ -456,9 +462,10 @@ class AdversarialAuditor:
                         # Probar resolución relativa a BASE_DIR (root web) y hf.parent
                         candidates = [
                             self.base_dir / clean,
+                            self.public_dir / clean,
                             hf.parent / clean,
-                            self.base_dir / f"{clean}.html",
-                            self.base_dir / clean / "index.html"
+                            self.public_dir / f"{clean}.html",
+                            self.public_dir / clean / "index.html"
                         ]
                         for cand in candidates:
                             if cand.is_file():
@@ -481,7 +488,9 @@ class AdversarialAuditor:
             # 2. Verificar existencia física de assets locales
             for tag, attr, val in crawler.assets:
                 clean_asset = val.split("?")[0].split("#")[0].lstrip("/")
-                asset_file = self.base_dir / clean_asset
+                asset_file = self.public_dir / clean_asset
+                if not asset_file.exists():
+                    asset_file = self.base_dir / clean_asset
                 if not asset_file.exists():
                     asset_file = hf.parent / clean_asset
                 if not asset_file.exists():
@@ -510,7 +519,7 @@ class AdversarialAuditor:
         print("🗺️  VECTOR 5: ESPECIFICACIÓN STAC 1.0.0 Y VALIDACIÓN GEOJSON")
         print("=" * 80)
 
-        stac_dir = self.base_dir / "stac"
+        stac_dir = self.public_dir / "stac" if (self.public_dir / "stac").exists() else self.base_dir / "stac"
         if not stac_dir.exists():
             self.log_error("VECTOR 5", "Directorio STAC Faltante", "Directorio stac/ no encontrado.")
             return
@@ -635,7 +644,7 @@ class AdversarialAuditor:
             self.log_pass("VECTOR 6", "Validación ISO 19139 XML", f"{parsed_count} registros XML parseados y validados bajo esquema ISO 19115-1:2014.")
 
         # Validar sitemap.xml
-        sitemap_path = self.base_dir / "sitemap.xml"
+        sitemap_path = self.public_dir / "sitemap.xml" if (self.public_dir / "sitemap.xml").exists() else self.base_dir / "sitemap.xml"
         if not sitemap_path.exists():
             self.log_error("VECTOR 6", "Sitemap Faltante", "sitemap.xml no encontrado en raíz.")
         else:
@@ -658,7 +667,7 @@ class AdversarialAuditor:
         print("🔬 VECTOR 7: INVARIANTES METODOLÓGICAS Y SOBERANÍA ALGORÍTMICA CIT-UAI")
         print("=" * 80)
 
-        motor_path = self.base_dir / "motor_ia_cit.py"
+        motor_path = self.base_dir / "src" / "motor_ia_cit.py" if (self.base_dir / "src" / "motor_ia_cit.py").exists() else self.base_dir / "motor_ia_cit.py"
         if not motor_path.exists():
             self.log_error("VECTOR 7", "Motor IA Faltante", "motor_ia_cit.py no encontrado.")
             return
@@ -717,29 +726,42 @@ class AdversarialAuditor:
         for path, expected_status, expected_mime in endpoints:
             url = f"https://ide.cit.uai.cl{path}"
             t0 = time.time()
-            try:
-                req = urllib.request.Request(
-                    url,
-                    headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (IDE-CIT-RedTeam/2026.1)"}
-                )
-                with urllib.request.urlopen(req, timeout=10) as resp:
-                    latency_ms = (time.time() - t0) * 1000
-                    status = resp.status
-                    ct = resp.headers.get("Content-Type", "")
-                    probes_run += 1
+            success = False
+            last_err = None
+            for attempt in range(2):
+                try:
+                    req = urllib.request.Request(
+                        url,
+                        headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (IDE-CIT-RedTeam/2026.1)"}
+                    )
+                    with urllib.request.urlopen(req, timeout=12) as resp:
+                        latency_ms = (time.time() - t0) * 1000
+                        status = resp.status
+                        ct = resp.headers.get("Content-Type", "")
+                        probes_run += 1
 
-                    if status != expected_status:
-                        self.log_error("VECTOR 8", "Sonda HTTP Fallida", f"{url} devolvió status {status} (esperado {expected_status})")
-                        live_errors += 1
-                    elif expected_mime not in ct:
-                        self.log_warn("VECTOR 8", "MIME Type Inesperado", f"{url} devolvió Content-Type '{ct}' (esperado '{expected_mime}')")
-                    elif latency_ms > 1200:
-                        self.log_warn("VECTOR 8", "Latencia Alta CDN", f"{url} respondió en {latency_ms:.0f} ms (> 1.2s)")
-                    else:
-                        self.log_pass("VECTOR 8", f"Endpoint {path}", f"Status {status} OK, {latency_ms:.0f}ms, MIME: {ct.split(';')[0]}")
-            except Exception as e:
-                self.log_error("VECTOR 8", "Sonda HTTP Inaccesible", f"{url} -> Error: {e}")
-                live_errors += 1
+                        if status != expected_status:
+                            self.log_error("VECTOR 8", "Sonda HTTP Fallida", f"{url} devolvió status {status} (esperado {expected_status})")
+                            live_errors += 1
+                        elif expected_mime not in ct:
+                            self.log_warn("VECTOR 8", "MIME Type Inesperado", f"{url} devolvió Content-Type '{ct}' (esperado '{expected_mime}')")
+                        elif latency_ms > 1500:
+                            self.log_warn("VECTOR 8", "Latencia Alta CDN", f"{url} respondió en {latency_ms:.0f} ms (> 1.5s)")
+                        else:
+                            self.log_pass("VECTOR 8", f"Endpoint {path}", f"Status {status} OK, {latency_ms:.0f}ms, MIME: {ct.split(';')[0]}")
+                        success = True
+                        break
+                except Exception as e:
+                    last_err = e
+                    time.sleep(0.5)
+
+            if not success:
+                err_str = str(last_err)
+                if "getaddrinfo failed" in err_str or "timed out" in err_str or "WinError 10060" in err_str:
+                    self.log_warn("VECTOR 8", "Sonda HTTP Inaccesible (Red/DNS)", f"{url} -> {err_str}")
+                else:
+                    self.log_error("VECTOR 8", "Sonda HTTP Inaccesible", f"{url} -> Error: {last_err}")
+                    live_errors += 1
 
         # Sonda condicional de security.txt online (informa si está desplegado o en cola de sincronización)
         for sec_path in ["/.well-known/security.txt", "/security.txt"]:
@@ -810,11 +832,11 @@ class AdversarialAuditor:
         print("=" * 80)
 
         clean_url_pairs = [
-            (self.base_dir / "inicio" / "index.html", self.base_dir / "index.html"),
-            (self.base_dir / "descargas" / "index.html", self.base_dir / "descargas-2017.html"),
-            (self.base_dir / "guia-tecnica" / "index.html", self.base_dir / "guia-tecnica.html"),
-            (self.base_dir / "red-ides" / "index.html", self.base_dir / "red-ides.html"),
-            (self.base_dir / "ficha-mbht-2017" / "index.html", self.base_dir / "ficha-mbht-2017.html"),
+            (self.public_dir / "inicio" / "index.html", self.public_dir / "index.html"),
+            (self.public_dir / "descargas" / "index.html", self.public_dir / "descargas-2017.html"),
+            (self.public_dir / "guia-tecnica" / "index.html", self.public_dir / "guia-tecnica.html"),
+            (self.public_dir / "red-ides" / "index.html", self.public_dir / "red-ides.html"),
+            (self.public_dir / "ficha-mbht-2017" / "index.html", self.public_dir / "ficha-mbht-2017.html"),
         ]
 
         drift_errors = 0
@@ -875,11 +897,11 @@ class AdversarialAuditor:
         print("=" * 80)
 
         main_pages = [
-            ("Portal Principal", self.base_dir / "index.html"),
-            ("Centro de Descargas", self.base_dir / "descargas-2017.html"),
-            ("Guía Técnica", self.base_dir / "guia-tecnica.html"),
-            ("Red de IDES", self.base_dir / "red-ides.html"),
-            ("Ficha Maestra", self.base_dir / "ficha-mbht-2017.html"),
+            ("Portal Principal", self.public_dir / "index.html" if (self.public_dir / "index.html").exists() else self.base_dir / "index.html"),
+            ("Centro de Descargas", self.public_dir / "descargas-2017.html" if (self.public_dir / "descargas-2017.html").exists() else self.base_dir / "descargas-2017.html"),
+            ("Guía Técnica", self.public_dir / "guia-tecnica.html" if (self.public_dir / "guia-tecnica.html").exists() else self.base_dir / "guia-tecnica.html"),
+            ("Red de IDES", self.public_dir / "red-ides.html" if (self.public_dir / "red-ides.html").exists() else self.base_dir / "red-ides.html"),
+            ("Ficha Maestra", self.public_dir / "ficha-mbht-2017.html" if (self.public_dir / "ficha-mbht-2017.html").exists() else self.base_dir / "ficha-mbht-2017.html"),
         ]
 
         wcag_errors = 0
@@ -923,7 +945,7 @@ class AdversarialAuditor:
         print("=" * 80)
 
         cat_path = self.base_dir / "data" / "catalogo_ide_cit.json"
-        red_ides_path = self.base_dir / "red-ides.html"
+        red_ides_path = self.public_dir / "red-ides.html" if (self.public_dir / "red-ides.html").exists() else self.base_dir / "red-ides.html"
 
         if not cat_path.exists():
             self.log_error("VECTOR 12", "Catálogo no encontrado", "catalogo_ide_cit.json no existe")

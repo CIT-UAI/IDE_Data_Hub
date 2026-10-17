@@ -1343,7 +1343,7 @@ def main() -> int:
     data_dir = ide_hub_dir / "data"
     catalog_json_path = data_dir / "catalogo_ide_cit.json"
     descargas_json_path = data_dir / "indice_descargas_mbht_2017.json"
-    output_html_path = ide_hub_dir / "descargas-2017.html"
+    output_html_path = ide_hub_dir / "public" / "descargas-2017.html"
 
     with open(catalog_json_path, "r", encoding="utf-8") as f:
         catalog_data = json.load(f)

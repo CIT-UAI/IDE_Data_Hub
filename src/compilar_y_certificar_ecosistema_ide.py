@@ -67,9 +67,14 @@ def main():
         "version": "2026.1",
         "description": "IDE CIT — Infraestructura de Datos Espaciales (CIT-UAI)"
     }
-    with open(base_dir / "version.json", "w", encoding="utf-8") as vf:
+    repo_root = base_dir.parent if base_dir.name == "src" else base_dir
+    public_dir = repo_root / "public"
+    with open(repo_root / "version.json", "w", encoding="utf-8") as vf:
         json.dump(version_payload, vf, indent=2)
-    dist_dir = base_dir / "dist"
+    if public_dir.exists():
+        with open(public_dir / "version.json", "w", encoding="utf-8") as vf:
+            json.dump(version_payload, vf, indent=2)
+    dist_dir = repo_root / "dist"
     if dist_dir.exists():
         with open(dist_dir / "version.json", "w", encoding="utf-8") as vf:
             json.dump(version_payload, vf, indent=2)

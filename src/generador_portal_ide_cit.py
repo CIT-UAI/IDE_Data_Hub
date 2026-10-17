@@ -79,21 +79,22 @@ class IDEPortalBuilder:
     def __init__(self, root_dir: Optional[Path] = None) -> None:
         self.root_dir: Path = root_dir or find_proyecto_root()
         self.ide_hub_dir: Path = self.root_dir / "07_Aplicaciones_y_Visualizadores_Web" / "IDE_Data_Hub"
+        self.public_dir: Path = self.ide_hub_dir / "public"
         self.data_dir: Path = self.ide_hub_dir / "data"
         self.img_dir: Path = self.ide_hub_dir / "img"
         self.catalog_json_path: Path = self.data_dir / "catalogo_ide_cit.json"
         self.descargas_2017_json_path: Path = self.data_dir / "indice_descargas_mbht_2017.json"
-        self.output_html_path: Path = self.ide_hub_dir / "index.html"
-        self.output_descargas_path: Path = self.ide_hub_dir / "descargas-2017.html"
-        self.output_guia_path: Path = self.ide_hub_dir / "guia-tecnica.html"
-        self.output_red_path: Path = self.ide_hub_dir / "red-ides.html"
-        self.output_ficha_path: Path = self.ide_hub_dir / "ficha-mbht-2017.html"
+        self.output_html_path: Path = self.public_dir / "index.html"
+        self.output_descargas_path: Path = self.public_dir / "descargas-2017.html"
+        self.output_guia_path: Path = self.public_dir / "guia-tecnica.html"
+        self.output_red_path: Path = self.public_dir / "red-ides.html"
+        self.output_ficha_path: Path = self.public_dir / "ficha-mbht-2017.html"
         self.catalog_csv_path: Path = self.data_dir / "catalogo_ide_cit.csv"
         self.dcat_json_path: Path = self.data_dir / "dcat.json"
-        self.sitemap_path: Path = self.ide_hub_dir / "sitemap.xml"
-        self.robots_path: Path = self.ide_hub_dir / "robots.txt"
-        self.llms_txt_path: Path = self.ide_hub_dir / "llms.txt"
-        self.manifest_pwa_path: Path = self.ide_hub_dir / "site.webmanifest"
+        self.sitemap_path: Path = self.public_dir / "sitemap.xml"
+        self.robots_path: Path = self.public_dir / "robots.txt"
+        self.llms_txt_path: Path = self.public_dir / "llms.txt"
+        self.manifest_pwa_path: Path = self.public_dir / "site.webmanifest"
 
     def validate_environment(self) -> Dict[str, Any]:
         """
@@ -2719,15 +2720,15 @@ Sitemap: https://ide.cit.uai.cl/sitemap.xml
         with open(self.llms_txt_path, "w", encoding="utf-8") as f:
             f.write(llms_txt_content)
 
-        llms_full_path = self.ide_hub_dir / "llms-full.txt"
+        llms_full_path = self.public_dir / "llms-full.txt"
         llms_full_content = get_llms_full_txt_content(catalog_data)
         with open(llms_full_path, "w", encoding="utf-8") as f:
             f.write(llms_full_content)
 
         # Copia espejo de endpoints de datos en la raíz para acceso automatizado inmediato
-        root_catalogo_json = self.ide_hub_dir / "catalogo.json"
-        root_catalogo_csv = self.ide_hub_dir / "catalogo.csv"
-        root_dcat_json = self.ide_hub_dir / "dcat.json"
+        root_catalogo_json = self.public_dir / "catalogo.json"
+        root_catalogo_csv = self.public_dir / "catalogo.csv"
+        root_dcat_json = self.public_dir / "dcat.json"
 
         if self.catalog_json_path.exists():
             with open(root_catalogo_json, "w", encoding="utf-8") as f:

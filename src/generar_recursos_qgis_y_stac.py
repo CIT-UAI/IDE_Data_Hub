@@ -17,9 +17,10 @@ from motor_ia_cit import (
     get_llm_head_meta,
 )
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent if Path(__file__).resolve().parent.name == "src" else Path(__file__).resolve().parent
+PUBLIC_DIR = BASE_DIR / "public"
 CATALOGO_JSON = BASE_DIR / "data" / "catalogo_ide_cit.json"
-STAC_DIR = BASE_DIR / "stac"
+STAC_DIR = PUBLIC_DIR / "stac"
 QGIS_DIR = BASE_DIR / "download" / "qgis"
 DIST_DIR = BASE_DIR / "dist"
 
@@ -696,9 +697,9 @@ def generar_clean_url_dirs():
     ]
     
     for folder_name, src_file in routes:
-        target_dir = BASE_DIR / folder_name
+        target_dir = PUBLIC_DIR / folder_name
         target_dir.mkdir(parents=True, exist_ok=True)
-        src_path = BASE_DIR / src_file
+        src_path = PUBLIC_DIR / src_file if (PUBLIC_DIR / src_file).exists() else BASE_DIR / src_file
         target_path = target_dir / "index.html"
         if src_path.exists() and src_path.resolve() != target_path.resolve():
             shutil.copy2(src_path, target_path)

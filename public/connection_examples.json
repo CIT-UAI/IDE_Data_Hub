@@ -23,7 +23,7 @@
         "tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/{z}/{x}/{y}.pbf",
         "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
-        "stac_item": "https://ide.cit.uai.cl/stac/kpi_mud_2017.json"
+        "stac_item": "https://ide.cit.uai.cl/stac/catalog.json"
       },
       "data_dictionary": [
         {
@@ -259,7 +259,7 @@
         "tilejson": "https://engine.matrizbht.cl/tiles/pem_maritorio_nacional/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/pem_maritorio_nacional/{z}/{x}/{y}.pbf",
         "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
-        "stac_item": "https://ide.cit.uai.cl/stac/pem_maritorio_nacional.json"
+        "stac_item": "https://ide.cit.uai.cl/stac/catalog.json"
       },
       "data_dictionary": [
         {
@@ -310,7 +310,7 @@
         "tilejson": "https://engine.matrizbht.cl/tiles/pem_geomorfologia_gebco/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/pem_geomorfologia_gebco/{z}/{x}/{y}.pbf",
         "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
-        "stac_item": "https://ide.cit.uai.cl/stac/pem_geomorfologia_gebco.json"
+        "stac_item": "https://ide.cit.uai.cl/stac/catalog.json"
       },
       "data_dictionary": [
         {
@@ -351,7 +351,7 @@
         "tilejson": "https://engine.matrizbht.cl/tiles/pem_montes_submarinos/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/pem_montes_submarinos/{z}/{x}/{y}.pbf",
         "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
-        "stac_item": "https://ide.cit.uai.cl/stac/pem_montes_submarinos.json"
+        "stac_item": "https://ide.cit.uai.cl/stac/catalog.json"
       },
       "data_dictionary": [
         {
@@ -402,7 +402,7 @@
         "tilejson": "https://engine.matrizbht.cl/tiles/pem_cuencas_oceanicas/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/pem_cuencas_oceanicas/{z}/{x}/{y}.pbf",
         "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
-        "stac_item": "https://ide.cit.uai.cl/stac/pem_cuencas_oceanicas.json"
+        "stac_item": "https://ide.cit.uai.cl/stac/catalog.json"
       },
       "data_dictionary": [
         {
@@ -448,7 +448,7 @@
         "tilejson": "https://engine.matrizbht.cl/tiles/pem_biodiversidad_especies/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/pem_biodiversidad_especies/{z}/{x}/{y}.pbf",
         "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
-        "stac_item": "https://ide.cit.uai.cl/stac/pem_biodiversidad_especies.json"
+        "stac_item": "https://ide.cit.uai.cl/stac/catalog.json"
       },
       "data_dictionary": [
         {
@@ -534,7 +534,7 @@
         "tilejson": "https://engine.matrizbht.cl/tiles/censo_imputaciones_2024/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/censo_imputaciones_2024/{z}/{x}/{y}.pbf",
         "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
-        "stac_item": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
+        "stac_item": "https://ide.cit.uai.cl/stac/catalog.json"
       },
       "data_dictionary": [
         {
@@ -685,7 +685,7 @@
         "tilejson": "https://engine.matrizbht.cl/tiles/inse_socioeconomico/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/inse_socioeconomico/{z}/{x}/{y}.pbf",
         "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
-        "stac_item": "https://ide.cit.uai.cl/stac/inse_socioeconomico.json"
+        "stac_item": "https://ide.cit.uai.cl/stac/catalog.json"
       },
       "data_dictionary": [
         {
@@ -786,7 +786,7 @@
         "tilejson": "https://engine.matrizbht.cl/tiles/sii_areas_homogeneas/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/sii_areas_homogeneas/{z}/{x}/{y}.pbf",
         "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
-        "stac_item": "https://ide.cit.uai.cl/stac/sii_areas_homogeneas.json"
+        "stac_item": "https://ide.cit.uai.cl/stac/catalog.json"
       },
       "data_dictionary": [
         {
@@ -852,7 +852,7 @@
         "tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/{z}/{x}/{y}.pbf",
         "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
-        "stac_item": "https://ide.cit.uai.cl/stac/equipamientos_2017.json"
+        "stac_item": "https://ide.cit.uai.cl/stac/catalog.json"
       },
       "data_dictionary": [
         {
@@ -923,7 +923,7 @@
         "tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/{z}/{x}/{y}.pbf",
         "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
-        "stac_item": "https://ide.cit.uai.cl/stac/red_vial_ejes_2017.json"
+        "stac_item": "https://ide.cit.uai.cl/stac/catalog.json"
       },
       "data_dictionary": [
         {
@@ -984,7 +984,7 @@
         "tilejson": "https://engine.matrizbht.cl/tiles/educacion_inicial_2024/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/educacion_inicial_2024/{z}/{x}/{y}.pbf",
         "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
-        "stac_item": "https://ide.cit.uai.cl/stac/educacion_inicial_2024.json"
+        "stac_item": "https://ide.cit.uai.cl/stac/catalog.json"
       },
       "data_dictionary": [
         {
@@ -1085,7 +1085,7 @@
         "tilejson": "https://engine.matrizbht.cl/tiles/huella_edificaciones_2024/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/huella_edificaciones_2024/{z}/{x}/{y}.pbf",
         "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
-        "stac_item": "https://ide.cit.uai.cl/stac/huella_edificaciones_2024.json"
+        "stac_item": "https://ide.cit.uai.cl/stac/catalog.json"
       },
       "data_dictionary": [
         {

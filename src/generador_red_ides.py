@@ -740,7 +740,7 @@ def main() -> None:
     root_dir = find_proyecto_root()
     ide_dir = root_dir / "07_Aplicaciones_y_Visualizadores_Web" / "IDE_Data_Hub"
     catalog_path = ide_dir / "data" / "catalogo_ide_cit.json"
-    output_path = ide_dir / "red-ides.html"
+    output_path = ide_dir / "public" / "red-ides.html"
 
     print(f"[*] Leyendo catálogo central: {catalog_path}")
     with open(catalog_path, "r", encoding="utf-8") as f:

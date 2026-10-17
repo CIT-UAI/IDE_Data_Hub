@@ -3,10 +3,10 @@ import json
 import re
 from pathlib import Path
 
-base_dir = Path(__file__).resolve().parent
+base_dir = Path(__file__).resolve().parent.parent if Path(__file__).resolve().parent.name == "src" else Path(__file__).resolve().parent
 cat_path = base_dir / "data" / "catalogo_ide_cit.json"
 conn_path = base_dir / "data" / "connection_examples.json"
-root_conn_path = base_dir / "connection_examples.json"
+root_conn_path = base_dir / "public" / "connection_examples.json"
 
 with open(cat_path, "r", encoding="utf-8") as f:
     cat = json.load(f)
