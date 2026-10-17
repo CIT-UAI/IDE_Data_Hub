@@ -1591,7 +1591,7 @@ class IDEPortalBuilder:
             if (region === 'NACIONAL') {{
                 const opt = document.createElement('option');
                 opt.value = 'all';
-                opt.innerText = 'Todas las comunas de Chile (345 comunas)';
+                opt.innerText = 'Todas las comunas amanzanadas de Chile (345 de 346 comunas)';
                 selComuna.appendChild(opt);
             }} else if (INDICE_DESCARGAS_2017.regiones && INDICE_DESCARGAS_2017.regiones[region]) {{
                 const optAll = document.createElement('option');

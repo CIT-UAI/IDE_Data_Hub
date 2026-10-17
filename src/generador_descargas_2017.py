@@ -398,12 +398,13 @@ def generate_descargas_2017_html(catalog_data: Dict[str, Any], descargas_2017_da
 
                     <!-- Selector 3: Comuna (Filtrado Inteligente) -->
                     <div>
-                        <label for="selDescargaComuna" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2 flex items-center space-x-1.5">
+                        <label for="selDescargaComuna" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1 flex items-center space-x-1.5">
                             <i data-lucide="compass" class="w-3.5 h-3.5 text-slate-500"></i>
                             <span>3. Comuna (Filtrado y atributos)</span>
                         </label>
+                        <p class="text-[10px] text-slate-500 mb-1.5 leading-tight">Chile posee 346 comunas oficiales (345 municipios). La comuna de Antártica no posee manzanas censales habitadas ordinarias.</p>
                         <select id="selDescargaComuna" onchange="updateDescargas2017()" class="w-full bg-white border border-slate-300 rounded-lg px-3.5 py-2.5 text-xs sm:text-sm text-slate-800 font-medium focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition shadow-xs">
-                            <option value="all">Todas las comunas de Chile (345 comunas)</option>
+                            <option value="all">Todas las comunas amanzanadas de Chile (345 de 346 comunas)</option>
                         </select>
                     </div>
 
@@ -821,7 +822,7 @@ def generate_descargas_2017_html(catalog_data: Dict[str, Any], descargas_2017_da
             if (region === 'NACIONAL') {{
                 const opt = document.createElement('option');
                 opt.value = 'all';
-                opt.innerText = 'Todas las comunas de Chile (345 comunas)';
+                opt.innerText = 'Todas las comunas amanzanadas de Chile (345 de 346 comunas)';
                 selComuna.appendChild(opt);
             }} else if (INDICE_DESCARGAS_2017.regiones && INDICE_DESCARGAS_2017.regiones[region]) {{
                 const optAll = document.createElement('option');

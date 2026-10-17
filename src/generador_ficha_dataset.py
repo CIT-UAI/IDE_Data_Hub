@@ -528,14 +528,75 @@ def generate_ficha_mbht_2017_html(catalog_data: Dict[str, Any]) -> str:
                 <div>
                     <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-2">1. Velocidad peatonal e impedancia topográfica de Waldo Tobler (1993)</h3>
                     <p class="mb-3">
-                        Todo traslado humano en los modelos del CIT-UAI se computa estrictamente sobre la red vial continua de ejes de transporte (cero distancia euclidiana). La velocidad de caminata varía en función de la pendiente longitudinal del terreno $S = \frac{\Delta h}{L}$ calculada sobre el Modelo Digital de Elevación:
+                        Todo traslado humano en los modelos del CIT-UAI se computa estrictamente sobre la red vial continua de ejes de transporte (cero distancia euclidiana). La velocidad de marcha humana $W(S)$ varía exponencialmente en función de la pendiente longitudinal adimensional del tramo vial $S = \frac{\Delta h}{L} = \frac{h_{\text{destino}} - h_{\text{origen}}}{L}$ calculada sobre el Modelo Digital de Elevación (DEM), donde $S > 0$ representa un ascenso (subida), $S < 0$ un descenso (bajada) y $S = 0$ terreno horizontal:
                     </p>
                     <div class="bg-slate-50 p-4 sm:p-6 rounded-xl border border-slate-200 text-center my-4">
                         [[FORMULA_TOBLER_SPEED]]
                     </div>
-                    <p class="text-slate-500 text-xs sm:text-sm mt-2">
-                        Donde $W(S)$ representa la velocidad de marcha en $\text{km/h}$. En terreno plano ($S = 0$), la velocidad alcanza $5,04\text{ km/h}$, reduciéndose exponencialmente por debajo de $2,00\text{ km/h}$ en pendientes pronunciadas superiores al $15\%$.
-                    </p>
+                    <div class="space-y-3 text-slate-600 text-xs sm:text-sm mt-3 leading-relaxed">
+                        <p>
+                            Donde $W(S)$ denota la velocidad de marcha resultante en $\text{km/h}$. La formulación captura fielmente el comportamiento biomecánico del desplazamiento peatonal según el gradiente topográfico:
+                        </p>
+                        <div class="overflow-x-auto border border-slate-200 rounded-xl bg-white shadow-xs my-3">
+                            <table class="w-full text-xs text-left">
+                                <thead class="bg-slate-50 text-slate-700 font-bold border-b border-slate-200">
+                                    <tr>
+                                        <th class="py-2.5 px-3.5">Gradiente / Pendiente ($S$)</th>
+                                        <th class="py-2.5 px-3.5">Condición del Terreno</th>
+                                        <th class="py-2.5 px-3.5 font-mono">Velocidad Teórica $W(S)$</th>
+                                        <th class="py-2.5 px-3.5 text-right">Variación vs. Plano</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100 font-mono text-[11px] text-slate-600">
+                                    <tr class="hover:bg-slate-50 transition">
+                                        <td class="py-2 px-3.5 font-semibold text-slate-800">$S = -0{,}05$ ($-5\%$)</td>
+                                        <td class="py-2 px-3.5 font-sans">Descenso suave (óptimo biomecánico de máxima velocidad)</td>
+                                        <td class="py-2 px-3.5 font-bold text-emerald-700">$6{,}00\text{ km/h}$</td>
+                                        <td class="py-2 px-3.5 text-right text-emerald-600 font-sans">+19,0%</td>
+                                    </tr>
+                                    <tr class="bg-slate-50/60 font-semibold text-slate-900">
+                                        <td class="py-2 px-3.5">$S = 0{,}00$ ($0\%$)</td>
+                                        <td class="py-2 px-3.5 font-sans">Terreno plano horizontal (línea base de referencia)</td>
+                                        <td class="py-2 px-3.5 font-bold">$5{,}04\text{ km/h}$</td>
+                                        <td class="py-2 px-3.5 text-right font-sans">0,0% (Base)</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition">
+                                        <td class="py-2 px-3.5 text-slate-800">$S = +0{,}10$ ($+10\%$)</td>
+                                        <td class="py-2 px-3.5 font-sans">Ascenso moderado</td>
+                                        <td class="py-2 px-3.5">$3{,}55\text{ km/h}$</td>
+                                        <td class="py-2 px-3.5 text-right text-amber-700 font-sans">-29,6%</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition">
+                                        <td class="py-2 px-3.5 text-slate-800">$S = +0{,}15$ ($+15\%$)</td>
+                                        <td class="py-2 px-3.5 font-sans">Ascenso fuerte (rampas y calles inclinadas)</td>
+                                        <td class="py-2 px-3.5 font-bold text-amber-800">$2{,}98\text{ km/h}$</td>
+                                        <td class="py-2 px-3.5 text-right text-amber-700 font-sans">-40,8%</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition">
+                                        <td class="py-2 px-3.5 text-slate-800">$S = +0{,}20$ ($+20\%$)</td>
+                                        <td class="py-2 px-3.5 font-sans">Ascenso empinado (quebradas y cerros habitados)</td>
+                                        <td class="py-2 px-3.5">$2{,}50\text{ km/h}$</td>
+                                        <td class="py-2 px-3.5 text-right text-rose-700 font-sans">-50,4%</td>
+                                    </tr>
+                                    <tr class="bg-rose-50/50 hover:bg-rose-50 transition">
+                                        <td class="py-2 px-3.5 font-bold text-rose-900">$S \ge +0{,}264$ ($+26{,}4\%$)</td>
+                                        <td class="py-2 px-3.5 font-sans text-rose-800">Ascenso extremo (umbral analítico estricto: $W \le 2{,}00\text{ km/h}$)</td>
+                                        <td class="py-2 px-3.5 font-bold text-rose-800">$\le 2{,}00\text{ km/h}$</td>
+                                        <td class="py-2 px-3.5 text-right text-rose-700 font-sans">&le; -60,3%</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition">
+                                        <td class="py-2 px-3.5 text-slate-800">$S = +0{,}30$ ($+30\%$)</td>
+                                        <td class="py-2 px-3.5 font-sans">Ascenso muy escarpado</td>
+                                        <td class="py-2 px-3.5">$1{,}76\text{ km/h}$</td>
+                                        <td class="py-2 px-3.5 text-right text-rose-700 font-sans">-65,1%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-[11px] text-slate-500 italic">
+                            *Nota metodológica de resolución analítica:* Al despejar el umbral de marcha lenta $W(S) \le 2{,}00\text{ km/h}$, se obtiene analíticamente $|S + 0{,}05| \ge \frac{\ln(3)}{3{,}5} \approx 0{,}3139$. Esto demuestra con exactitud matemática que en ascenso la velocidad cae por debajo de $2{,}00\text{ km/h}$ a partir del $26{,}4\%$ de pendiente ($S \ge +0{,}264$), mientras que en una pendiente ascendente del $15\%$ ($S = +0{,}15$) la velocidad efectiva es estrictamente de $2{,}98\text{ km/h}$ ($W(0{,}15) = 6 \cdot e^{-0{,}70} \approx 2{,}9795\text{ km/h}$).
+                        </p>
+                    </div>
                 </div>
 
                 <!-- 2. Tiempo de viaje en tramo vial -->

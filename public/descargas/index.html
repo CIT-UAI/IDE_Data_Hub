@@ -554,12 +554,13 @@
 
                     <!-- Selector 3: Comuna (Filtrado Inteligente) -->
                     <div>
-                        <label for="selDescargaComuna" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2 flex items-center space-x-1.5">
+                        <label for="selDescargaComuna" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1 flex items-center space-x-1.5">
                             <i data-lucide="compass" class="w-3.5 h-3.5 text-slate-500"></i>
                             <span>3. Comuna (Filtrado y atributos)</span>
                         </label>
+                        <p class="text-[10px] text-slate-500 mb-1.5 leading-tight">Chile posee 346 comunas oficiales (345 municipios). La comuna de Antártica no posee manzanas censales habitadas ordinarias.</p>
                         <select id="selDescargaComuna" onchange="updateDescargas2017()" class="w-full bg-white border border-slate-300 rounded-lg px-3.5 py-2.5 text-xs sm:text-sm text-slate-800 font-medium focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition shadow-xs">
-                            <option value="all">Todas las comunas de Chile (345 comunas)</option>
+                            <option value="all">Todas las comunas amanzanadas de Chile (345 de 346 comunas)</option>
                         </select>
                     </div>
 
@@ -1284,7 +1285,7 @@
             if (region === 'NACIONAL') {
                 const opt = document.createElement('option');
                 opt.value = 'all';
-                opt.innerText = 'Todas las comunas de Chile (345 comunas)';
+                opt.innerText = 'Todas las comunas amanzanadas de Chile (345 de 346 comunas)';
                 selComuna.appendChild(opt);
             } else if (INDICE_DESCARGAS_2017.regiones && INDICE_DESCARGAS_2017.regiones[region]) {
                 const optAll = document.createElement('option');
@@ -3008,7 +3009,7 @@
                 return {
                     text: '<strong>Es una pregunta justa, y la respondo con honestidad:</strong><br><br>' +
                           'Mi base de conocimiento es exhaustiva en lo que respecta al territorio chileno, los datos del Censo 2024, la metodología MBHT y el ecosistema institucional de datos espaciales del Estado. Sin embargo, reconozco sus límites:<br><br>' +
-                          '• <strong>Lo que sé con certeza:</strong> Demografía de las 345 comunas, indicadores de accesibilidad de la MBHT, biometría del maritorio, estándares IDE, instrumentos de financiamiento público y metodología geoespacial.<br>' +
+                          '• <strong>Lo que sé con certeza:</strong> Demografía de las 345 comunas amanzanadas (de las 346 comunas oficiales del país, considerando que Antártica no posee manzanas censales habitadas ordinarias), indicadores de accesibilidad de la MBHT, biometría del maritorio, estándares IDE, instrumentos de financiamiento público y metodología geoespacial.<br>' +
                           '• <strong>Lo que no tengo:</strong> Información en tiempo real (noticias de hoy, presupuestos municipales del año en curso, proyectos en tramitación en el Congreso) ni datos de salud individual o registros privados.<br>' +
                           '• <strong>Si su pregunta quedó sin respuesta satisfactoria</strong>, le sugiero reformularla con más contexto o escribirnos a <strong>cit@uai.cl</strong>: el equipo del CIT-UAI responde directamente.<br><br>' +
                           '• <em>La incertidumbre honesta es parte del rigor científico. Ningún modelo territorial es una verdad absoluta, sino una aproximación empírica que enriquece la deliberación humana.</em>',
