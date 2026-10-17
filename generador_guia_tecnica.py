@@ -387,6 +387,35 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
                             </div>
                         </div>
                     </div>
+
+                    <!-- Cuadratura Metodológica Canónica (Auditoría y Transparencia Científica) -->
+                    <div class="p-4 sm:p-5 rounded-xl bg-slate-900 text-slate-200 border border-slate-800 text-xs sm:text-sm">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-2.5 mb-3">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-2 h-2 rounded-full bg-uai-gold"></span>
+                                <span class="font-bold text-white text-xs uppercase tracking-wider">Cuadratura Demográfica, Cartográfica y de Esquemas</span>
+                            </div>
+                            <span class="font-mono text-[11px] text-slate-400">Auditoría internacional de consistencia · v2026.1 / Dataset v1.0.3</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 leading-relaxed">
+                            <div>
+                                <strong class="text-white block font-semibold mb-1">1. Conciliación demográfica INE</strong>
+                                <span class="text-slate-300">17.482.699 hab. amanzanados (99,48% de 17.574.003 censados INE en 2017). Los 91.304 hab. restantes corresponden a población en tránsito, situación de calle y áreas sin amanzanamiento físico.</span>
+                            </div>
+                            <div>
+                                <strong class="text-white block font-semibold mb-1">2. Esquema físico dual</strong>
+                                <span class="text-slate-300">42 columnas analíticas completas en descargas (GeoParquet, GPKG, SHP, CSV) para modelación territorial; 16 atributos livianos optimizados en teselas vectoriales MVT (WebGL sub-150ms).</span>
+                            </div>
+                            <div>
+                                <strong class="text-white block font-semibold mb-1">3. Simbología y clasificación</strong>
+                                <span class="text-slate-300">6 clases de Quiebres Naturales de Jenks (<code class="font-mono text-slate-200">ckmeans</code>: Muy Bajo a Muy Alto) para BHT y macro-dimensiones; 5 quintiles socioeconómicos para el índice INSE.</span>
+                            </div>
+                            <div>
+                                <strong class="text-white block font-semibold mb-1">4. Catálogo unificado y STAC</strong>
+                                <span class="text-slate-300">13 coberturas maestras abiertas y descargables en producción + 1 recurso preparatorio STAC (MBHT 2024 en calibración estadística) = 14 recursos totales en STAC.</span>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
 
@@ -1076,6 +1105,27 @@ for comuna, grp in df.groupby("comuna"):
     print(f"  Comuna {{comuna:15s}} | Manzanas: {{len(grp):4d}} | Pob: {{int(grp['personas'].sum()):7d}} | BHT: {{bht_com:.4f}}")
 bht_r15 = (df["bht"] * df["personas"]).sum() / df["personas"].sum()
 print(f"Total Regional R15 -> Manzanas: {{len(df)}} | Población: {{int(df['personas'].sum())}} | BHT R15: {{bht_r15:.4f}}")</code></pre>
+                    </div>
+
+                    <div class="mt-4 p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs sm:text-sm space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-slate-900 flex items-center space-x-1.5">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+                                <span>Protocolo de Ejecución Local Segura (Sin Ejecución Remota de Código)</span>
+                            </span>
+                            <span class="font-mono text-[11px] text-slate-500">SHA-256 verificado</span>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed text-xs">
+                            Conforme a los estándares de seguridad de cadena de suministro (OWASP / NIST), se recomienda descargar el script como archivo estático, validar su integridad criptográfica mediante el hash publicado y ejecutarlo localmente en un entorno aislado:
+                        </p>
+                        <div class="p-3 bg-white rounded-lg border border-slate-200 font-mono text-xs text-slate-800 break-all select-all leading-relaxed">
+                            # 1. Descargar script de verificación auditable<br>
+                            curl -s -O https://ide.cit.uai.cl/download/reproducir_verificacion_r15.py<br><br>
+                            # 2. Verificar integridad del script mediante SHA-256 publicado<br>
+                            echo "7fb25d61a29544e57c17869c6ea3566c68659d003dce9f59dfcd642fbf96a8d0  reproducir_verificacion_r15.py" | sha256sum -c<br><br>
+                            # 3. Ejecutar verificación determinista localmente<br>
+                            python reproducir_verificacion_r15.py
+                        </div>
                     </div>
                 </section>
 

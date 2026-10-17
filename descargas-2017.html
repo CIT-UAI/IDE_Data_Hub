@@ -436,7 +436,7 @@
             <div class="w-full">
                 <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3">
                     <span class="w-2 h-2 rounded-full bg-uai-gold"></span>
-                    <span>Línea base oficial 2017 · 204.906 manzanas · 55.035 equipamientos · 1.589.595 tramos viales</span>
+                    <span>Línea base oficial 2017 (v1.0.3) · 204.906 manzanas (17.482.699 hab.) · 42 columnas físicas · 55.035 equipamientos</span>
                 </div>
                 <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
                     Centro de descargas territoriales
@@ -450,8 +450,9 @@
             <div class="mt-6 flex flex-wrap gap-2 text-xs">
                 <span class="px-2.5 py-1 rounded-md bg-slate-900 text-white font-semibold flex items-center space-x-1.5 shadow-xs">
                     <i data-lucide="shield-check" class="w-3.5 h-3.5 text-uai-gold"></i>
-                    <span>Línea Base Oficial MBHT 2017</span>
+                    <span>Línea Base Oficial MBHT 2017 (v1.0.3)</span>
                 </span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">Esquema 42 Columnas Físicas</span>
                 <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">GeoParquet 1.1</span>
                 <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">GeoPackage (.gpkg)</span>
                 <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">Shapefile (.zip)</span>
@@ -459,6 +460,31 @@
                 <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">EPSG:4326 (WGS 84)</span>
                 <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">SHA-256 Verificado</span>
                 <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">Licencia Abierta CC BY 4.0</span>
+            </div>
+
+            <!-- Cuadratura Metodológica Canónica (Línea Base Oficial) -->
+            <div class="mt-6 p-4 sm:p-5 rounded-xl bg-slate-900 text-slate-200 border border-slate-800 text-xs sm:text-sm">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-2.5 mb-3">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2 h-2 rounded-full bg-uai-gold"></span>
+                        <span class="font-bold text-white text-xs uppercase tracking-wider">Cuadratura Demográfica y Esquema Físico (v1.0.3)</span>
+                    </div>
+                    <span class="font-mono text-[11px] text-slate-400">Verificado con tolerancia cero (&Delta; = 0)</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 leading-relaxed">
+                    <div>
+                        <strong class="text-white block font-semibold mb-1">Población censal amanzanada</strong>
+                        <span class="text-slate-300">17.482.699 habitantes en 204.906 manzanas censales (99,48% de 17.574.003 censados INE). Los 91.304 hab. restantes corresponden a población en tránsito, situación de calle y áreas sin amanzanamiento físico.</span>
+                    </div>
+                    <div>
+                        <strong class="text-white block font-semibold mb-1">Esquema analítico exhaustivo</strong>
+                        <span class="text-slate-300">Los 4 formatos de descarga (GeoParquet, GeoPackage, Shapefile y CSV) contienen las 42 columnas físicas canónicas completas (bht, dimensiones, subindicadores, demografía por tramos etarios y linaje).</span>
+                    </div>
+                    <div>
+                        <strong class="text-white block font-semibold mb-1">Separación MBHT 2017 / 2024</strong>
+                        <span class="text-slate-300">Línea base oficial vigente MBHT 2017 cerrada (<code class="font-mono text-slate-200">v1.0.3</code>). La actualización integral MBHT 2024 tiene lanzamiento oficial previsto para noviembre de 2026.</span>
+                    </div>
+                </div>
             </div>
 
         </div>

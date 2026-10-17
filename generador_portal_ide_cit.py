@@ -703,7 +703,7 @@ class IDEPortalBuilder:
                             <span class="text-xs font-mono bg-slate-900 text-white px-2.5 py-0.5 rounded font-semibold">204.906 manzanas · 42 col.</span>
                         </div>
                         <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">
-                            Línea base histórica oficial compartida con SUBDERE y ministerios en las 16 regiones de Chile (17.482.699 hab.). Estructura el índice BHT en <strong>4 macro-dimensiones</strong> (<code class="font-mono text-xs">dim_acc</code>, <code class="font-mono text-xs">dim_soc</code>, <code class="font-mono text-xs">dim_seg</code>, <code class="font-mono text-xs">dim_amb</code> · 18 indicadores elementales), donde Accesibilidad (<code class="font-mono text-xs">dim_acc</code>) sintetiza <strong>6 sub-indicadores peatonales</strong> (<code class="font-mono text-xs">isal</code>, <code class="font-mono text-xs">ise</code>, <code class="font-mono text-xs">iav</code>, <code class="font-mono text-xs">idep</code>, <code class="font-mono text-xs">icul</code>, <code class="font-mono text-xs">iser</code>). Reúne <strong>204.906 manzanas</strong>, <strong>55.035 equipamientos de libre acceso</strong> (de 113.231 ruteables) y <strong>1.589.595 tramos viales</strong>.
+                            Línea base histórica oficial compartida con SUBDERE y ministerios en las 16 regiones de Chile (17.482.699 hab. amanzanados, correspondientes al 99,48% de 17.574.003 habitantes censados por el INE; diferencia de 91.304 personas en áreas no amanzanadas o en tránsito). Estructura el índice BHT en <strong>4 macro-dimensiones</strong> (<code class="font-mono text-xs">dim_acc</code>, <code class="font-mono text-xs">dim_soc</code>, <code class="font-mono text-xs">dim_seg</code>, <code class="font-mono text-xs">dim_amb</code> · 18 indicadores elementales), donde Accesibilidad (<code class="font-mono text-xs">dim_acc</code>) sintetiza <strong>6 sub-indicadores peatonales</strong> (<code class="font-mono text-xs">isal</code>, <code class="font-mono text-xs">ise</code>, <code class="font-mono text-xs">iav</code>, <code class="font-mono text-xs">idep</code>, <code class="font-mono text-xs">icul</code>, <code class="font-mono text-xs">iser</code>). Reúne <strong>204.906 manzanas</strong>, <strong>55.035 equipamientos de libre acceso</strong> (de 113.231 ruteables) y <strong>1.589.595 tramos viales</strong>.
                         </p>
                     </div>
                     <div class="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-slate-200 text-xs sm:text-sm font-semibold">
@@ -736,6 +736,35 @@ class IDEPortalBuilder:
                         <a href="/download/iso_xml/censo_imputaciones_2024_iso19139.xml" download class="text-slate-600 hover:text-slate-900 underline">
                             Metadatos ISO 19139 XML
                         </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cuadratura Metodológica Canónica (Auditoría y Transparencia Científica) -->
+            <div class="mt-6 p-4 sm:p-5 rounded-xl bg-slate-900 text-slate-200 border border-slate-800 text-xs sm:text-sm">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-2.5 mb-3">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2 h-2 rounded-full bg-uai-gold"></span>
+                        <span class="font-bold text-white text-xs uppercase tracking-wider">Cuadratura Demográfica, Cartográfica y de Esquemas</span>
+                    </div>
+                    <span class="font-mono text-[11px] text-slate-400">Auditoría internacional de consistencia · v2026.1 / Dataset v1.0.3</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 leading-relaxed">
+                    <div>
+                        <strong class="text-white block font-semibold mb-1">1. Conciliación demográfica INE</strong>
+                        <span class="text-slate-300">17.482.699 hab. amanzanados (99,48% de 17.574.003 censados INE en 2017). Los 91.304 hab. restantes corresponden a población en tránsito, situación de calle y áreas sin amanzanamiento físico.</span>
+                    </div>
+                    <div>
+                        <strong class="text-white block font-semibold mb-1">2. Esquema físico dual</strong>
+                        <span class="text-slate-300">42 columnas analíticas completas en descargas (GeoParquet, GPKG, SHP, CSV) para modelación territorial; 16 atributos livianos optimizados en teselas vectoriales MVT (WebGL sub-150ms).</span>
+                    </div>
+                    <div>
+                        <strong class="text-white block font-semibold mb-1">3. Simbología y clasificación</strong>
+                        <span class="text-slate-300">6 clases de Quiebres Naturales de Jenks (<code class="font-mono text-slate-200">ckmeans</code>: Muy Bajo a Muy Alto) para BHT y macro-dimensiones; 5 quintiles socioeconómicos para el índice INSE.</span>
+                    </div>
+                    <div>
+                        <strong class="text-white block font-semibold mb-1">4. Catálogo unificado y STAC</strong>
+                        <span class="text-slate-300">13 coberturas maestras abiertas y descargables en producción + 1 recurso preparatorio STAC (MBHT 2024 en calibración estadística) = 14 recursos totales en STAC.</span>
                     </div>
                 </div>
             </div>

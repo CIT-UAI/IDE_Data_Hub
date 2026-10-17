@@ -240,7 +240,7 @@ def generar_stac():
         "type": "Catalog",
         "id": "cit-uai-ide-catalog",
         "title": "Catálogo de Datos y Modelos Territoriales — IDE CIT (UAI)",
-        "description": "Catálogo espacio-temporal (STAC 1.0.0) de coberturas geoespaciales, matrices de bienestar humano territorial (MBHT 2017/2024), zonificación marina (PEM/FAO/SBAP) e imputaciones demográficas del Centro de Inteligencia Territorial de la Universidad Adolfo Ibáñez.",
+        "description": "Catálogo espacio-temporal (STAC 1.0.0) con 13 coberturas maestras oficiales descargables en producción (bienestar humano MBHT 2017, estratificación INSE, avalúos SII, equipamientos, red vial y zonificación marina FAO/SBAP) más 1 recurso preparatorio institucional (MBHT 2024 en calibración estadística) del Centro de Inteligencia Territorial de la Universidad Adolfo Ibáñez.",
         "links": [
             {"rel": "self", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
             {"rel": "root", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
