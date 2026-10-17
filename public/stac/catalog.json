@@ -17,6 +17,32 @@
       "href": "https://ide.cit.uai.cl/stac/catalog.json"
     },
     {
+      "rel": "conformance",
+      "type": "application/json",
+      "title": "Clases de Conformidad STAC API 1.0.0 y OGC API Features",
+      "href": "https://ide.cit.uai.cl/stac/conformance"
+    },
+    {
+      "rel": "data",
+      "type": "application/json",
+      "title": "Colecciones Disponibles STAC API 1.0.0",
+      "href": "https://ide.cit.uai.cl/stac/collections"
+    },
+    {
+      "rel": "search",
+      "type": "application/geo+json",
+      "title": "Búsqueda Dinámica STAC API 1.0.0 (Item Search GET)",
+      "href": "https://ide.cit.uai.cl/stac/search",
+      "method": "GET"
+    },
+    {
+      "rel": "search",
+      "type": "application/geo+json",
+      "title": "Búsqueda Dinámica STAC API 1.0.0 (Item Search POST)",
+      "href": "https://ide.cit.uai.cl/stac/search",
+      "method": "POST"
+    },
+    {
       "rel": "about",
       "type": "text/html",
       "title": "Guía Técnica, Conformidad y Benchmarks IDE CIT",
@@ -130,5 +156,13 @@
       "title": "Colección Unificada (13 Capas Cartográficas Maestras)",
       "href": "https://ide.cit.uai.cl/stac/collection.json"
     }
+  ],
+  "conformsTo": [
+    "https://api.stacspec.org/v1.0.0/core",
+    "https://api.stacspec.org/v1.0.0/collections",
+    "https://api.stacspec.org/v1.0.0/item-search",
+    "http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core",
+    "http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30",
+    "http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson"
   ]
 }
