@@ -456,6 +456,9 @@ class ISOMetadataValidator:
         stac_collection = {
             "type": "Collection",
             "stac_version": "1.0.0",
+            "stac_extensions": [
+                "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+            ],
             "id": "ide-cit-matrices-territoriales",
             "title": portal.get("nombre", "IDE CIT"),
             "description": portal.get("descripcion", ""),
@@ -471,8 +474,13 @@ class ISOMetadataValidator:
             "providers": [
                 {
                     "name": "Centro de Inteligencia Territorial (CIT-UAI)",
-                    "roles": ["producer", "licensor", "host"],
+                    "roles": ["producer", "licensor", "processor"],
                     "url": "https://cit.uai.cl"
+                },
+                {
+                    "name": "Universidad Adolfo Ibáñez",
+                    "roles": ["host"],
+                    "url": "https://uai.cl"
                 }
             ],
             "item_assets": {},
@@ -486,8 +494,52 @@ class ISOMetadataValidator:
                     "rel": "self",
                     "href": "./collection.json",
                     "type": "application/json"
+                },
+                {
+                    "rel": "license",
+                    "href": "https://creativecommons.org/licenses/by/4.0/",
+                    "type": "text/html",
+                    "title": "Licencia Abierta Creative Commons Attribution 4.0 International (CC BY 4.0)"
+                },
+                {
+                    "rel": "about",
+                    "href": "https://ide.cit.uai.cl/guia-tecnica",
+                    "type": "text/html",
+                    "title": "Guía Técnica y Estándares de Interoperabilidad IDE CIT"
+                },
+                {
+                    "rel": "describedby",
+                    "href": "https://ide.cit.uai.cl/dcat.json",
+                    "type": "application/json",
+                    "title": "Catálogo Semántico W3C DCAT-AP 2.0"
                 }
-            ]
+            ],
+            "assets": {
+                "catalog_json": {
+                    "title": "Catálogo Maestro de la Infraestructura IDE CIT (JSON)",
+                    "type": "application/json",
+                    "roles": ["metadata"],
+                    "href": "https://ide.cit.uai.cl/data/catalogo_ide_cit.json"
+                },
+                "catalog_csv": {
+                    "title": "Catálogo Tabular de Coberturas Geoespaciales (CSV)",
+                    "type": "text/csv",
+                    "roles": ["metadata"],
+                    "href": "https://ide.cit.uai.cl/catalogo.csv"
+                },
+                "stac_catalog": {
+                    "title": "Catálogo Raíz STAC 1.0.0",
+                    "type": "application/json",
+                    "roles": ["metadata"],
+                    "href": "https://ide.cit.uai.cl/stac/catalog.json"
+                },
+                "dcat_json": {
+                    "title": "Catálogo Semántico DCAT-AP",
+                    "type": "application/json",
+                    "roles": ["metadata"],
+                    "href": "https://ide.cit.uai.cl/dcat.json"
+                }
+            }
         }
 
         # Items de la colección STAC
@@ -499,6 +551,7 @@ class ISOMetadataValidator:
                 "type": "application/vnd.apache.parquet",
                 "roles": ["data"],
                 "bbox": bbox,
+                "proj:epsg": 4326,
                 "properties": {
                     "matriz": capa.get("matriz"),
                     "ambito": capa.get("ambito"),

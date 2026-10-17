@@ -665,14 +665,22 @@
                             </p>
                         </div>
 
-                        <div class="border border-slate-200 rounded-xl p-4 sm:p-5 bg-slate-50 space-y-2">
+                        <div class="border border-slate-200 rounded-xl p-4 sm:p-5 bg-slate-50 space-y-3">
                             <div class="flex items-center space-x-2 text-slate-900 font-bold">
                                 <i data-lucide="compass" class="w-4 h-4 text-slate-800"></i>
-                                <span>Sistema geodésico oficial de Chile (SIRGAS-Chile / EPSG:4326)</span>
+                                <span>Marco Geodésico Nacional, Geodinámica y Sistemas de Coordenadas (ISO 19111)</span>
                             </div>
-                            <p class="text-slate-600 leading-relaxed">
-                                Conforme al Decreto N° 215 del Ministerio de Bienes Nacionales, la cartografía oficial utiliza el marco de referencia <strong>SIRGAS-Chile</strong> (compatible a nivel milimétrico con WGS 84 / EPSG:4326). Para análisis métricos de distancias y redes viales caminables, las coberturas se proyectan en los husos UTM oficiales (EPSG:32718 para Huso 18S y EPSG:32719 para Huso 19S).
-                            </p>
+                            <div class="space-y-2 text-slate-600 leading-relaxed text-xs sm:text-sm">
+                                <p>
+                                    En estricta conformidad con el marco geodésico oficial del Estado de Chile (Decreto Supremo N° 215/2004 y Res. Ex. N° 34/2018 del Ministerio de Bienes Nacionales e IGM), la IDE CIT diferencia formalmente entre marco de referencia, datum elipsoidal, geodinámica, CRS de almacenamiento y CRS de cómputo analítico:
+                                </p>
+                                <ul class="list-disc pl-5 space-y-1 text-slate-600">
+                                    <li><strong>Marco de Referencia Oficial y Datum:</strong> <em>SIRGAS-Chile</em> (realización oficial densificada del ITRF ligada a la Placa Sudamericana), asociado al elipsoide <strong>GRS80</strong> (semieje mayor <em>a</em> = 6.378.137 m, aplanamiento inverso 1/<em>f</em> = 298,257222101).</li>
+                                    <li><strong>Distinción y Compatibilidad con WGS 84 (EPSG:4326):</strong> WGS 84 emplea el elipsoide WGS 84 (1/<em>f</em> = 298,257223563). La discrepancia puramente elipsoidal entre GRS80 y WGS 84 es sub-milimétrica (&Delta;<em>b</em> &approx; 0,105 mm en el semieje menor). No obstante, desde el punto de vista geodinámico, SIRGAS-Chile compensa la deriva de la Placa Sudamericana (~2 a 3 cm/año hacia el ENE). Para escalas cartográficas censales y urbanas (&gt; 1:1.000), las coordenadas son equivalentes sin sesgos operacionales.</li>
+                                    <li><strong>CRS de Almacenamiento e Intercambio Cloud-Native:</strong> Se adopta canónicamente <strong>EPSG:4326 (WGS 84 en coordenadas geográficas 2D [latitud, longitud] en grados decimales)</strong> para garantizar interoperabilidad universal con GeoParquet 1.1, STAC 1.0.0, Mapbox Vector Tiles y motores de ciencia de datos (DuckDB, GDAL, Python, R).</li>
+                                    <li><strong>CRS Proyectados para Análisis Métrico de Red:</strong> Para el cálculo de distancias viales físicas, pendientes longitudinales DEM y áreas sin distorsión proyectiva, los algoritmos del CIT-UAI proyectan internamente las geometrías a sus husos conformes oficiales: <strong>UTM Huso 18S (EPSG:32718)</strong> y <strong>UTM Huso 19S (EPSG:32719)</strong> en territorio continental; <strong>UTM Huso 12S (EPSG:32712)</strong> en Rapa Nui; y <strong>UTM Huso 17S (EPSG:32717)</strong> en el Archipiélago Juan Fernández.</li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div class="border border-slate-200 rounded-xl p-4 sm:p-5 bg-slate-50 space-y-2">
@@ -1190,32 +1198,68 @@ map.on('load', () => {
                             </div>
                         </div>
 
-                        <!-- 7.5 Gobernanza Institucional y Preservación a Largo Plazo -->
-                        <div class="border border-slate-200 rounded-xl p-4 sm:p-5 bg-slate-50 space-y-3 flex flex-col justify-between md:col-span-2">
+                        <!-- 7.5 Gobernanza Institucional, Preservación y Ciclo de Vida -->
+                        <div class="border border-slate-200 rounded-xl p-4 sm:p-5 bg-slate-50 space-y-4 md:col-span-2">
                             <div>
                                 <div class="flex items-center space-x-2 text-slate-900 font-bold text-sm mb-2">
                                     <div class="w-7 h-7 rounded bg-slate-900 text-uai-gold flex items-center justify-center text-xs">
                                         <i data-lucide="landmark" class="w-3.5 h-3.5"></i>
                                     </div>
-                                    <span>Gobernanza institucional y preservación de datos a largo plazo</span>
+                                    <span>Gobernanza institucional formal, preservación inmutable y ciclo de vida</span>
                                 </div>
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-slate-600 font-normal pt-1">
                                     <div class="space-y-1">
-                                        <span class="font-bold text-slate-800 text-xs block">Respaldo institucional UAI</span>
-                                        <p class="text-[11px] leading-relaxed">La infraestructura cuenta con el respaldo permanente de la <strong>Universidad Adolfo Ibáñez</strong> como bien público digital, asegurando continuidad operativa independiente de ciclos de financiamiento de proyectos específicos.</p>
+                                        <span class="font-bold text-slate-800 text-xs block">Matriz de Roles y Aprobación</span>
+                                        <p class="text-[11px] leading-relaxed"><strong>Comité Académico-Técnico CIT-UAI:</strong> Aprueba cambios metodológicos y versiones mayores. <strong>Custodio de Datos Espaciales:</strong> Certifica la integridad criptográfica SHA-256 y esquemas ISO. <strong>Equipo DevOps:</strong> Opera el despliegue cloud-native y observabilidad.</p>
                                     </div>
                                     <div class="space-y-1">
-                                        <span class="font-bold text-slate-800 text-xs block">Preservación inmutable y versionado</span>
-                                        <p class="text-[11px] leading-relaxed">Cada versión publicada (MBHT 2017 v1.0, MBHT 2024 v1.0) cuenta con identificador URN inmutable, checksum SHA-256 verificado y réplicas en almacenamiento frío (AWS Glacier / multi-zona) que impiden la sobreescritura accidental.</p>
+                                        <span class="font-bold text-slate-800 text-xs block">SemVer Geoespacial y Deprecación</span>
+                                        <p class="text-[11px] leading-relaxed">Versionamiento semántico estricto (<em>vMAJOR.MINOR.PATCH</em>). Las versiones deprecadas jamás se eliminan: se congelan con URN inmutable y checksum en almacenamiento frío multi-zona para garantizar reproducibilidad histórica.</p>
                                     </div>
                                     <div class="space-y-1">
-                                        <span class="font-bold text-slate-800 text-xs block">Gobernanza de datos abiertos</span>
-                                        <p class="text-[11px] leading-relaxed">El comité técnico-académico del CIT-UAI audita anualmente las matrices, documentando cambios de esquema mediante <em>semver</em> (versionado semántico) y garantizando acceso irrestricto bajo licencia CC BY 4.0.</p>
+                                        <span class="font-bold text-slate-800 text-xs block">Canal Público de Incidencias (Issues)</span>
+                                        <p class="text-[11px] leading-relaxed">Reporte y trazabilidad de anomalías mediante el canal institucional permanente <code>cit@uai.cl</code> y el issue tracker de GitHub, con protocolo de respuesta técnica y resolución en menos de 48 horas hábiles.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-mono">
-                                Compromiso de Custodia: Centro de Inteligencia Territorial · UAI (Vigencia 2026–2036)
+                            <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-500 font-mono flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                                <span>Compromiso de Custodia Institucional: Centro de Inteligencia Territorial · UAI (2026–2036)</span>
+                                <span>Gobernanza: SemVer v2.0 / Licencia Abierta CC BY 4.0</span>
+                            </div>
+                        </div>
+
+                        <!-- 7.6 Marco Dual de Aseguramiento: Data Quality vs. Model Quality -->
+                        <div class="border border-slate-200 rounded-xl p-4 sm:p-5 bg-white space-y-3 md:col-span-2 shadow-xs">
+                            <div class="flex items-center space-x-2 text-slate-900 font-bold text-sm">
+                                <div class="w-7 h-7 rounded bg-slate-900 text-uai-gold flex items-center justify-center text-xs">
+                                    <i data-lucide="check-check" class="w-3.5 h-3.5"></i>
+                                </div>
+                                <span>Aseguramiento de Calidad Dual: Data Quality vs. Model Quality</span>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-600 leading-relaxed pt-1">
+                                <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200 space-y-1.5">
+                                    <span class="font-bold text-slate-900 text-xs flex items-center space-x-1.5">
+                                        <i data-lucide="binary" class="w-3.5 h-3.5 text-slate-700"></i>
+                                        <span>1. Data Quality (Integridad Física y Estructural del Dato)</span>
+                                    </span>
+                                    <ul class="list-disc pl-4 space-y-1 text-[11px] text-slate-600">
+                                        <li><strong>Completitud exhaustiva:</strong> Cuadratura del 100% de las 204.906 manzanas censales y 42 columnas físicas sin truncamiento ni nulos espurios.</li>
+                                        <li><strong>Topología y red ruteable:</strong> Grafo vial nacional de 1.589.595 tramos con verificación de snapping a 0,5 m y split en intersecciones.</li>
+                                        <li><strong>Inmutabilidad criptográfica:</strong> Certificación bit a bit de cada archivo distribuido mediante algoritmo SHA-256 (64 hex).</li>
+                                    </ul>
+                                </div>
+                                <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200 space-y-1.5">
+                                    <span class="font-bold text-slate-900 text-xs flex items-center space-x-1.5">
+                                        <i data-lucide="scale" class="w-3.5 h-3.5 text-slate-700"></i>
+                                        <span>2. Model Quality (Rigor Epistemológico y Territorial del Modelo)</span>
+                                    </span>
+                                    <ul class="list-disc pl-4 space-y-1 text-[11px] text-slate-600">
+                                        <li><strong>Axioma de Neutralidad Elemental:</strong> Ponderación proporcional dimensional <em>W</em>(<em>D</em>) = <em>n<sub>D</sub></em> / <em>N</em><sub>total</sub>, eliminando sesgos artificiales de sobreponderación.</li>
+                                        <li><strong>Física del desplazamiento:</strong> Impedancia regida estrictamente por red vial física y pendientes DEM de Tobler (cero distancia euclidiana).</li>
+                                        <li><strong>Capacidad y competencia (E2SFCA):</strong> Modelamiento de oferta finita (cupos, camas, m<sup>2</sup>) frente a demanda poblacional concurrente en isócronas reales.</li>
+                                        <li><strong>Estabilidad matemática:</strong> Pruebas de perturbación en anchos de banda (<em>t</em><sub>0</sub> &isin; [10, 15, 20] min) con correlación de Spearman &rho; &gt; 0,94.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 

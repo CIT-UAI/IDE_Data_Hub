@@ -1,10 +1,31 @@
 {
   "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+  ],
   "type": "Collection",
   "id": "kpi-mud-2017",
   "title": "MBHT 2017 — Línea base oficial",
   "description": "Línea base nacional oficial de la Matriz de Bienestar Humano Territorial Integral evaluada sobre 204.906 manzanas censales del Censo 2017 en las 16 regiones de Chile. Sintetiza 18 indicadores elementales distribuidos en 4 macro-dimensiones del bienestar (bajo el Axioma de Neutralidad Elemental W(D) = n_D / 18): 1) Macro-dimensión de Accesibilidad (dim_acc, peso 6/18 = 33,33%), que integra los 6 indicadores de acceso peatonal efectivo E2SFCA + Tobler a salud (isal), educación (ise), áreas verdes (iav), deporte (idep), cultura (icul) y servicios públicos (iser); 2) Macro-dimensión Socioeconómica (dim_soc, peso 6/18 = 33,33%); 3) Macro-dimensión de Seguridad (dim_seg, peso 4/18 = 22,22%); y 4) Macro-dimensión Ambiental (dim_amb, peso 2/18 = 11,11%). El archivo físico contiene el esquema completo de 42 columnas físicas (identificadores, demografía censal, índice sintético bht, las 4 macro-dimensiones, los 6 sub-indicadores peatonales con sus valores pre-escalamiento, tipología Jenks tob y geometría WKB).",
   "license": "CC-BY-4.0",
+  "providers": [
+    {
+      "name": "Centro de Inteligencia Territorial (CIT-UAI)",
+      "roles": [
+        "producer",
+        "licensor",
+        "processor"
+      ],
+      "url": "https://cit.uai.cl"
+    },
+    {
+      "name": "Universidad Adolfo Ibáñez",
+      "roles": [
+        "host"
+      ],
+      "url": "https://uai.cl"
+    }
+  ],
   "extent": {
     "spatial": {
       "bbox": [
@@ -71,6 +92,24 @@
       "rel": "self",
       "type": "application/json",
       "href": "https://ide.cit.uai.cl/stac/kpi_mud_2017.json"
+    },
+    {
+      "rel": "license",
+      "type": "text/html",
+      "title": "Licencia Abierta CC BY 4.0",
+      "href": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "rel": "about",
+      "type": "text/html",
+      "title": "Guía Técnica y Estándares IDE CIT",
+      "href": "https://ide.cit.uai.cl/guia-tecnica"
+    },
+    {
+      "rel": "describedby",
+      "type": "application/xml",
+      "title": "Metadatos Oficiales ISO 19139 XML",
+      "href": "https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml"
     }
   ],
   "assets": {
@@ -81,6 +120,7 @@
         "data"
       ],
       "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet",
+      "proj:epsg": 4326,
       "file:size": 252572936,
       "file:checksum": "4a123b83ea1cefa18661c25ea40b9c3fc2a319cf6a45abbbd72a2cb30c069f2a"
     },
@@ -90,7 +130,8 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.gpkg"
+      "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.gpkg",
+      "proj:epsg": 4326
     },
     "shapefile": {
       "title": "Shapefile (.zip) — MBHT 2017 — Línea base oficial",
@@ -98,7 +139,8 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas_SHP.zip"
+      "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas_SHP.zip",
+      "proj:epsg": 4326
     },
     "csv": {
       "title": "Tabla CSV — MBHT 2017 — Línea base oficial",
@@ -124,7 +166,8 @@
       ],
       "href": "https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet",
       "file:size": 2482961,
-      "file:checksum": "712d1d16193a4dee8bab6d88f4c3eed04530e6f1b11a1936349ea6132d134505"
+      "file:checksum": "712d1d16193a4dee8bab6d88f4c3eed04530e6f1b11a1936349ea6132d134505",
+      "proj:epsg": 4326
     }
   }
 }

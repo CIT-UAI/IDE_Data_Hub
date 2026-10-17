@@ -1,10 +1,31 @@
 {
   "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+  ],
   "type": "Collection",
   "id": "equipamientos-2017",
   "title": "Equipamientos urbanos y servicios esenciales 2017",
   "description": "Catastro oficial de equipamientos y servicios urbanos esenciales utilizado para la modelación de accesibilidad peatonal en la Matriz de Bienestar Humano Territorial (MBHT 2017). Documenta de forma trazable los tres niveles del embudo de depuración nacional: 202.275 registros administrativos brutos iniciales, 113.231 unidades en el catastro maestro ruteable consolidado en 6 dimensiones —Áreas Verdes (54.962), Deportes (26.629), Educación (17.129), Salud (5.824), Servicios Públicos (4.914) y Cultura (3.773)— y 55.035 equipamientos públicos de libre acceso y gratuidad publicados en los paquetes regionales y nacionales de la línea base abierta MBHT 2017.",
   "license": "CC-BY-4.0",
+  "providers": [
+    {
+      "name": "Centro de Inteligencia Territorial (CIT-UAI)",
+      "roles": [
+        "producer",
+        "licensor",
+        "processor"
+      ],
+      "url": "https://cit.uai.cl"
+    },
+    {
+      "name": "Universidad Adolfo Ibáñez",
+      "roles": [
+        "host"
+      ],
+      "url": "https://uai.cl"
+    }
+  ],
   "extent": {
     "spatial": {
       "bbox": [
@@ -57,6 +78,24 @@
       "rel": "self",
       "type": "application/json",
       "href": "https://ide.cit.uai.cl/stac/equipamientos_2017.json"
+    },
+    {
+      "rel": "license",
+      "type": "text/html",
+      "title": "Licencia Abierta CC BY 4.0",
+      "href": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "rel": "about",
+      "type": "text/html",
+      "title": "Guía Técnica y Estándares IDE CIT",
+      "href": "https://ide.cit.uai.cl/guia-tecnica"
+    },
+    {
+      "rel": "describedby",
+      "type": "application/xml",
+      "title": "Metadatos Oficiales ISO 19139 XML",
+      "href": "https://ide.cit.uai.cl/download/iso_xml/equipamientos_2017_iso19139.xml"
     }
   ],
   "assets": {
@@ -67,6 +106,7 @@
         "data"
       ],
       "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet",
+      "proj:epsg": 4326,
       "file:size": 8589840,
       "file:checksum": "ab79a066c0e175840a0215626c8f10a91c61920d8c89285433592b4f423d0a97"
     },
@@ -76,7 +116,8 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.gpkg"
+      "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.gpkg",
+      "proj:epsg": 4326
     },
     "shapefile": {
       "title": "Shapefile (.zip) — Equipamientos urbanos y servicios esenciales 2017",
@@ -84,7 +125,8 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado_SHP.zip"
+      "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado_SHP.zip",
+      "proj:epsg": 4326
     },
     "csv": {
       "title": "Tabla CSV — Equipamientos urbanos y servicios esenciales 2017",

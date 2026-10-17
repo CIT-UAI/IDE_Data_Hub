@@ -1,10 +1,31 @@
 {
   "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+  ],
   "type": "Collection",
   "id": "huella-edificaciones-2024",
   "title": "Huella de edificaciones urbanas — Presencia construida nacional",
   "description": "Catastro vectorial de huella construida y morfología del entorno edificado para 341.962 polígonos urbanos a nivel nacional. Identifica la superficie en metros cuadrados, nivel de confianza algorítmica y años de presencia de las estructuras urbanas, permitiendo modelar la densidad predial, compacidad morfológica y dinámicas de densificación en ciudades chilenas.",
   "license": "CC-BY-4.0",
+  "providers": [
+    {
+      "name": "Centro de Inteligencia Territorial (CIT-UAI)",
+      "roles": [
+        "producer",
+        "licensor",
+        "processor"
+      ],
+      "url": "https://cit.uai.cl"
+    },
+    {
+      "name": "Universidad Adolfo Ibáñez",
+      "roles": [
+        "host"
+      ],
+      "url": "https://uai.cl"
+    }
+  ],
   "extent": {
     "spatial": {
       "bbox": [
@@ -57,6 +78,24 @@
       "rel": "self",
       "type": "application/json",
       "href": "https://ide.cit.uai.cl/stac/huella_edificaciones_2024.json"
+    },
+    {
+      "rel": "license",
+      "type": "text/html",
+      "title": "Licencia Abierta CC BY 4.0",
+      "href": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "rel": "about",
+      "type": "text/html",
+      "title": "Guía Técnica y Estándares IDE CIT",
+      "href": "https://ide.cit.uai.cl/guia-tecnica"
+    },
+    {
+      "rel": "describedby",
+      "type": "application/xml",
+      "title": "Metadatos Oficiales ISO 19139 XML",
+      "href": "https://ide.cit.uai.cl/download/iso_xml/huella_edificaciones_2024_iso19139.xml"
     }
   ],
   "assets": {
@@ -67,6 +106,7 @@
         "data"
       ],
       "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet",
+      "proj:epsg": 4326,
       "file:size": 38964900,
       "file:checksum": "1fcecc1ded9e0f17261b88c3f8025d975d6fa75911b5e13ea969279b51cdf991"
     },
@@ -76,7 +116,8 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.gpkg"
+      "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.gpkg",
+      "proj:epsg": 4326
     },
     "shapefile": {
       "title": "Shapefile (.zip) — Huella de edificaciones urbanas — Presencia construida nacional",
@@ -84,7 +125,8 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024_SHP.zip"
+      "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024_SHP.zip",
+      "proj:epsg": 4326
     },
     "csv": {
       "title": "Tabla CSV — Huella de edificaciones urbanas — Presencia construida nacional",

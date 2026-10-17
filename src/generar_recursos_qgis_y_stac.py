@@ -55,7 +55,8 @@ def generar_stac():
                 "title": f"GeoParquet — {titulo}",
                 "type": "application/vnd.apache.parquet",
                 "roles": ["data"],
-                "href": f"https://ide.cit.uai.cl/{capa['s3_parquet']}"
+                "href": f"https://ide.cit.uai.cl/{capa['s3_parquet']}",
+                "proj:epsg": 4326
             }
             if capa.get("size_bytes"):
                 assets["geoparquet"]["file:size"] = capa["size_bytes"]
@@ -66,14 +67,16 @@ def generar_stac():
                 "title": f"OGC GeoPackage — {titulo}",
                 "type": "application/geopackage+sqlite3",
                 "roles": ["data"],
-                "href": f"https://ide.cit.uai.cl/{capa['gpkg_url']}"
+                "href": f"https://ide.cit.uai.cl/{capa['gpkg_url']}",
+                "proj:epsg": 4326
             }
         if capa.get("shp_url"):
             assets["shapefile"] = {
                 "title": f"Shapefile (.zip) — {titulo}",
                 "type": "application/zip",
                 "roles": ["data"],
-                "href": f"https://ide.cit.uai.cl/{capa['shp_url']}"
+                "href": f"https://ide.cit.uai.cl/{capa['shp_url']}",
+                "proj:epsg": 4326
             }
         if capa.get("csv_url"):
             assets["csv"] = {
@@ -105,18 +108,34 @@ def generar_stac():
                 "roles": ["data"],
                 "href": "https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet",
                 "file:size": 2482961,
-                "file:checksum": "712d1d16193a4dee8bab6d88f4c3eed04530e6f1b11a1936349ea6132d134505"
+                "file:checksum": "712d1d16193a4dee8bab6d88f4c3eed04530e6f1b11a1936349ea6132d134505",
+                "proj:epsg": 4326
             }
         elif cid == "censo_imputaciones_2024":
             summaries["demographic_fields"] = ["POBLACION_2024", "HOMBRES", "MUJERES", "E0_5", "E6_13", "E14_17", "E18_24", "E25_44", "E45_59", "E60M", "E65AMAS", "IND_ENVEJ"]
             
         col_json = {
             "stac_version": "1.0.0",
+            "stac_extensions": [
+                "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+            ],
             "type": "Collection",
             "id": col_id,
             "title": titulo,
             "description": resumen,
             "license": "CC-BY-4.0",
+            "providers": [
+                {
+                    "name": "Centro de Inteligencia Territorial (CIT-UAI)",
+                    "roles": ["producer", "licensor", "processor"],
+                    "url": "https://cit.uai.cl"
+                },
+                {
+                    "name": "Universidad Adolfo Ibáñez",
+                    "roles": ["host"],
+                    "url": "https://uai.cl"
+                }
+            ],
             "extent": {
                 "spatial": {"bbox": [bbox]},
                 "temporal": {"interval": [["2017-01-01T00:00:00Z", "2026-12-31T23:59:59Z"]]}
@@ -125,7 +144,10 @@ def generar_stac():
             "links": [
                 {"rel": "root", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
                 {"rel": "parent", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-                {"rel": "self", "type": "application/json", "href": f"https://ide.cit.uai.cl/stac/{cid}.json"}
+                {"rel": "self", "type": "application/json", "href": f"https://ide.cit.uai.cl/stac/{cid}.json"},
+                {"rel": "license", "type": "text/html", "title": "Licencia Abierta CC BY 4.0", "href": "https://creativecommons.org/licenses/by/4.0/"},
+                {"rel": "about", "type": "text/html", "title": "Guía Técnica y Estándares IDE CIT", "href": "https://ide.cit.uai.cl/guia-tecnica"},
+                {"rel": "describedby", "type": "application/xml", "title": "Metadatos Oficiales ISO 19139 XML", "href": f"https://ide.cit.uai.cl/download/iso_xml/{cid}_iso19139.xml"}
             ],
             "assets": assets
         }

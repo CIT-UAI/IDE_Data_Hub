@@ -1,10 +1,31 @@
 {
   "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+  ],
   "type": "Collection",
   "id": "red-vial-ejes-2017",
   "title": "Red vial urbana caminable y tiempos Tobler 2017",
   "description": "Red vial oficial caminable y grafo topológico peatonal integrado por 1.589.595 tramos viales calibrados con tiempos de fricción y decaimiento espacial de Tobler para las 16 regiones de Chile. Permite calcular isocronas peatonales y matrices de costo temporal entre las 204.906 manzanas censales y los equipamientos esenciales para la modelación de accesibilidad urbana de la línea base MBHT 2017.",
   "license": "CC-BY-4.0",
+  "providers": [
+    {
+      "name": "Centro de Inteligencia Territorial (CIT-UAI)",
+      "roles": [
+        "producer",
+        "licensor",
+        "processor"
+      ],
+      "url": "https://cit.uai.cl"
+    },
+    {
+      "name": "Universidad Adolfo Ibáñez",
+      "roles": [
+        "host"
+      ],
+      "url": "https://uai.cl"
+    }
+  ],
   "extent": {
     "spatial": {
       "bbox": [
@@ -57,6 +78,24 @@
       "rel": "self",
       "type": "application/json",
       "href": "https://ide.cit.uai.cl/stac/red_vial_ejes_2017.json"
+    },
+    {
+      "rel": "license",
+      "type": "text/html",
+      "title": "Licencia Abierta CC BY 4.0",
+      "href": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "rel": "about",
+      "type": "text/html",
+      "title": "Guía Técnica y Estándares IDE CIT",
+      "href": "https://ide.cit.uai.cl/guia-tecnica"
+    },
+    {
+      "rel": "describedby",
+      "type": "application/xml",
+      "title": "Metadatos Oficiales ISO 19139 XML",
+      "href": "https://ide.cit.uai.cl/download/iso_xml/red_vial_ejes_2017_iso19139.xml"
     }
   ],
   "assets": {
@@ -67,6 +106,7 @@
         "data"
       ],
       "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet",
+      "proj:epsg": 4326,
       "file:size": 225592155,
       "file:checksum": "85c872e5eb1fb00ca95eb4c3a0248993566b74c53ecbbe42692653657adb8452"
     },
@@ -76,7 +116,8 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.gpkg"
+      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.gpkg",
+      "proj:epsg": 4326
     },
     "shapefile": {
       "title": "Shapefile (.zip) — Red vial urbana caminable y tiempos Tobler 2017",
@@ -84,7 +125,8 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional_SHP.zip"
+      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional_SHP.zip",
+      "proj:epsg": 4326
     },
     "csv": {
       "title": "Tabla CSV — Red vial urbana caminable y tiempos Tobler 2017",
