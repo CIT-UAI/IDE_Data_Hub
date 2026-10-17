@@ -780,10 +780,10 @@ class IDEPortalBuilder:
         <div id="emptyState" class="hidden text-center py-12 sm:py-16 bg-white rounded-xl border border-dashed border-slate-300 px-4">
             <i data-lucide="filter" class="w-8 h-8 sm:w-10 sm:h-10 text-slate-400 mx-auto mb-2 stroke-[1.5]"></i>
             <h3 class="text-sm sm:text-base font-semibold text-slate-800">Filtro activo sin coincidencias en el catálogo</h3>
-            <p class="text-xs sm:text-sm text-slate-500 mt-1 max-w-md mx-auto">No se encontraron coberturas que coincidan con la combinación actual de búsqueda y filtros. El catálogo de IDE CIT cuenta con 19 coberturas maestras completas y disponibles.</p>
+            <p class="text-xs sm:text-sm text-slate-500 mt-1 max-w-md mx-auto">No se encontraron coberturas que coincidan con la combinación actual de búsqueda y filtros. El catálogo de IDE CIT cuenta con 14 recursos territoriales abiertos (13 coberturas maestras completas y 1 recurso preparatorio MBHT 2024).</p>
             <button onclick="resetFilters()" class="mt-4 inline-flex items-center space-x-1.5 px-3.5 py-2 bg-slate-900 hover:bg-black active:bg-slate-800 text-white text-xs font-semibold rounded-lg transition shadow-xs cursor-pointer">
                 <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
-                <span>Restaurar catálogo completo (19 coberturas)</span>
+                <span>Restaurar catálogo completo (13 coberturas maestras)</span>
             </button>
         </div>
 
@@ -1098,7 +1098,7 @@ class IDEPortalBuilder:
                         <span class="font-bold text-amber-950 block mb-0.5">Ciclo de vida de datos: Insumos censales preparatorios (Censo 2024)</span>
                         <p class="text-amber-900 text-[11px] leading-relaxed">
                             <strong>Disponibilidad de infraestructura:</strong> Servicios y descargas 100% en línea (SLA 99.9%, CDN CloudFront).<br>
-                            <strong>Madurez metodológica:</strong> 12 coberturas cerradas y vigentes en producción. Este conjunto entrega los insumos demográficos preparatorios (Sprague y equilibrio de género por manzana) del Censo 2024 para descarga abierta; la síntesis multidimensional MBHT 2024 está programada para su lanzamiento oficial en noviembre de 2026. Para análisis consolidados en producción, consulte la <a href="/descargas" class="underline font-bold text-amber-950 hover:text-black">línea base oficial MBHT 2017</a>.
+                            <strong>Madurez metodológica:</strong> 13 coberturas maestras cerradas y vigentes en producción. Este conjunto entrega los insumos demográficos preparatorios (Sprague y equilibrio de género por manzana) del Censo 2024 para descarga abierta; la síntesis multidimensional MBHT 2024 está programada para su lanzamiento oficial en noviembre de 2026. Para análisis consolidados en producción, consulte la <a href="/descargas" class="underline font-bold text-amber-950 hover:text-black">línea base oficial MBHT 2017</a>.
                         </p>
                     </div>
                 </div>
@@ -2570,7 +2570,7 @@ class IDEPortalBuilder:
                     "dct:title": c.get("titulo"),
                     "dct:description": c.get("resumen"),
                     "dct:issued": c.get("fecha_corte"),
-                    "dct:modified": c.get("updated", "2026-10-15"),
+                    "dct:modified": c.get("updated", "2026-10-17"),
                     "owl:versionInfo": c.get("version", "1.0.3"),
                     "dcat:theme": c.get("matriz"),
                     "dcat:spatialResolutionInMeters": 100,
@@ -2578,10 +2578,34 @@ class IDEPortalBuilder:
                     "dcat:distribution": [
                         {
                             "@type": "dcat:Distribution",
-                            "dct:title": f"{c.get('titulo')} (GeoParquet)",
+                            "dct:title": f"{c.get('titulo')} (" + (
+                                "GeoParquet" if fkey == "parquet" else (
+                                    "GeoPackage OGC" if fkey == "gpkg" else (
+                                        "Shapefile ZIP" if fkey == "shp_zip" else (
+                                            "CSV UTF-8" if fkey == "csv" else fkey.upper()
+                                        )
+                                    )
+                                )
+                            ) + ")",
                             "dcat:accessURL": f"https://ide.cit.uai.cl/{finfo.get('url', finfo.get('filename', ''))}",
-                            "dct:format": "GeoParquet",
-                            "dcat:mediaType": "application/vnd.apache.parquet",
+                            "dct:format": (
+                                "GeoParquet" if fkey == "parquet" else (
+                                    "GeoPackage" if fkey == "gpkg" else (
+                                        "Shapefile" if fkey == "shp_zip" else (
+                                            "CSV" if fkey == "csv" else "Desconocido"
+                                        )
+                                    )
+                                )
+                            ),
+                            "dcat:mediaType": (
+                                "application/vnd.apache.parquet" if fkey == "parquet" else (
+                                    "application/geopackage+sqlite3" if fkey == "gpkg" else (
+                                        "application/zip" if fkey == "shp_zip" else (
+                                            "text/csv; charset=utf-8" if fkey == "csv" else "application/octet-stream"
+                                        )
+                                    )
+                                )
+                            ),
                             "dcat:byteSize": finfo.get("size_bytes"),
                             "spdx:checksum": finfo.get("sha256")
                         }

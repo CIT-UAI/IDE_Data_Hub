@@ -36,8 +36,9 @@ def generar_stac():
     with open(CATALOGO_JSON, "r", encoding="utf-8") as f:
         catalog_data = json.load(f)
 
-    # 1. Colecciones hijas para el catálogo raíz
+    # 1. Colecciones hijas para el catálogo raíz y lista canónica de colecciones
     child_links = []
+    canonical_collections = []
     
     # 2. Generar colecciones individuales para las 13 capas oficiales
     for capa in catalog_data.get("capas", []):
@@ -165,6 +166,7 @@ def generar_stac():
         with open(STAC_DIR / f"{cid}.json", "w", encoding="utf-8") as f:
             json.dump(col_json, f, indent=2, ensure_ascii=False)
             
+        canonical_collections.append(col_json)
         child_links.append({
             "rel": "child",
             "type": "application/json",
@@ -253,6 +255,38 @@ def generar_stac():
     }
     with open(STAC_DIR / "mbht_2024.json", "w", encoding="utf-8") as f:
         json.dump(col_mbht_2024, f, indent=2, ensure_ascii=False)
+
+    canonical_collections.append(col_mbht_2024)
+
+    # 4. Generar stac/collections y stac/conformance canónicos (14 colecciones exactas)
+    collections_payload = {
+        "collections": canonical_collections,
+        "links": [
+            {"rel": "root", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
+            {"rel": "parent", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
+            {"rel": "self", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/collections"}
+        ]
+    }
+    conformance_payload = {
+        "conformsTo": [
+            "https://api.stacspec.org/v1.0.0/core",
+            "https://api.stacspec.org/v1.0.0/collections",
+            "https://api.stacspec.org/v1.0.0/item-search",
+            "http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core",
+            "http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30",
+            "http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson"
+        ]
+    }
+    for stac_target_dir in [STAC_DIR, BASE_DIR / "stac", BASE_DIR / "data" / "stac"]:
+        stac_target_dir.mkdir(parents=True, exist_ok=True)
+        with open(stac_target_dir / "collections.json", "w", encoding="utf-8") as f:
+            json.dump(collections_payload, f, indent=2, ensure_ascii=False)
+        with open(stac_target_dir / "collections", "w", encoding="utf-8") as f:
+            json.dump(collections_payload, f, indent=2, ensure_ascii=False)
+        with open(stac_target_dir / "conformance.json", "w", encoding="utf-8") as f:
+            json.dump(conformance_payload, f, indent=2, ensure_ascii=False)
+        with open(stac_target_dir / "conformance", "w", encoding="utf-8") as f:
+            json.dump(conformance_payload, f, indent=2, ensure_ascii=False)
 
     child_links.append({
         "rel": "child",
@@ -814,24 +848,28 @@ def generar_clean_url_dirs():
     # Sincronizar espejo public/data/ para garantizar acceso HTTP 200 tanto en /dcat.json como en /data/dcat.json
     pub_data_dir = PUBLIC_DIR / "data"
     pub_data_dir.mkdir(parents=True, exist_ok=True)
-    for fname in ["dcat.json", "catalogo_ide_cit.json", "catalogo_ide_cit.csv", "connection_examples.json", "reporte_salud_servicios.json", "reporte_salud_servicios.md"]:
+    for fname in ["dcat.json", "catalogo_ide_cit.json", "catalogo_ide_cit.csv", "connection_examples.json", "conformance_report.json", "reporte_salud_servicios.json", "reporte_salud_servicios.md"]:
         src_f = BASE_DIR / "data" / fname
         if src_f.exists():
             shutil.copy2(src_f, pub_data_dir / fname)
-    # También asegurar que public/dcat.json y public/catalogo.json estén actualizados desde data/
+    # También asegurar que public/dcat.json, catalogo.json, conformance_report.json y connection_examples.json estén actualizados desde data/
     if (BASE_DIR / "data" / "dcat.json").exists():
         shutil.copy2(BASE_DIR / "data" / "dcat.json", PUBLIC_DIR / "dcat.json")
     if (BASE_DIR / "data" / "catalogo_ide_cit.json").exists():
         shutil.copy2(BASE_DIR / "data" / "catalogo_ide_cit.json", PUBLIC_DIR / "catalogo.json")
     if (BASE_DIR / "data" / "catalogo_ide_cit.csv").exists():
         shutil.copy2(BASE_DIR / "data" / "catalogo_ide_cit.csv", PUBLIC_DIR / "catalogo.csv")
+    if (BASE_DIR / "data" / "conformance_report.json").exists():
+        shutil.copy2(BASE_DIR / "data" / "conformance_report.json", PUBLIC_DIR / "conformance_report.json")
+    if (BASE_DIR / "data" / "connection_examples.json").exists():
+        shutil.copy2(BASE_DIR / "data" / "connection_examples.json", PUBLIC_DIR / "connection_examples.json")
 
     # Sincronizar STAC desde public/stac/ hacia stac/, data/stac/ y public/data/stac/
     if STAC_DIR.exists():
         for target_stac_dir in [BASE_DIR / "stac", BASE_DIR / "data" / "stac", pub_data_dir / "stac"]:
             target_stac_dir.mkdir(parents=True, exist_ok=True)
-            for sf in STAC_DIR.glob("*.*"):
-                if sf.resolve() != (target_stac_dir / sf.name).resolve():
+            for sf in STAC_DIR.glob("*"):
+                if sf.is_file() and sf.resolve() != (target_stac_dir / sf.name).resolve():
                     shutil.copy2(sf, target_stac_dir / sf.name)
     if (BASE_DIR / "data" / "iso_xml").exists():
         pub_data_iso = pub_data_dir / "iso_xml"

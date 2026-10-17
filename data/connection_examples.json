@@ -4,8 +4,14 @@
     "institution": "Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez",
     "url_portal": "https://ide.cit.uai.cl",
     "license": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
-    "updated": "2026-10-08",
-    "version": "2026.1",
+    "updated": "2026-10-17",
+    "version": "2026.2",
+    "canonical_inventory": {
+      "master_coverage_layers": 13,
+      "preparatory_resources": 1,
+      "total_catalog_resources": 14,
+      "note": "13 coberturas territoriales maestras completas en producción + 1 recurso preparatorio MBHT 2024 = 14 recursos territoriales."
+    },
     "total_layers": 13
   },
   "connections": [
@@ -241,8 +247,9 @@
         "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet')",
         "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de MBHT 2017 — Línea base oficial')",
         "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
-        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json",
-        "curl_head": "curl -I https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet"
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet",
+        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json"
       }
     },
     {
@@ -258,7 +265,7 @@
         "gpkg_https": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.gpkg",
         "tilejson": "https://engine.matrizbht.cl/tiles/pem_maritorio_nacional/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/pem_maritorio_nacional/{z}/{x}/{y}.pbf",
-        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "qgis_qlr": null,
         "stac_item": "https://ide.cit.uai.cl/stac/pem_maritorio_nacional.json"
       },
       "data_dictionary": [
@@ -292,8 +299,8 @@
         "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.parquet')",
         "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)')",
         "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
-        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/pem_maritorio_nacional/index.json",
-        "curl_head": "curl -I https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.parquet"
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.parquet",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/pem_maritorio_nacional/index.json"
       }
     },
     {
@@ -309,7 +316,7 @@
         "gpkg_https": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.gpkg",
         "tilejson": "https://engine.matrizbht.cl/tiles/pem_geomorfologia_gebco/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/pem_geomorfologia_gebco/{z}/{x}/{y}.pbf",
-        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "qgis_qlr": null,
         "stac_item": "https://ide.cit.uai.cl/stac/pem_geomorfologia_gebco.json"
       },
       "data_dictionary": [
@@ -333,8 +340,8 @@
         "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.parquet')",
         "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)')",
         "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
-        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/pem_geomorfologia_gebco/index.json",
-        "curl_head": "curl -I https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.parquet"
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.parquet",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/pem_geomorfologia_gebco/index.json"
       }
     },
     {
@@ -350,7 +357,7 @@
         "gpkg_https": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.gpkg",
         "tilejson": "https://engine.matrizbht.cl/tiles/pem_montes_submarinos/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/pem_montes_submarinos/{z}/{x}/{y}.pbf",
-        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "qgis_qlr": null,
         "stac_item": "https://ide.cit.uai.cl/stac/pem_montes_submarinos.json"
       },
       "data_dictionary": [
@@ -384,8 +391,8 @@
         "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.parquet')",
         "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)')",
         "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
-        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/pem_montes_submarinos/index.json",
-        "curl_head": "curl -I https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.parquet"
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.parquet",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/pem_montes_submarinos/index.json"
       }
     },
     {
@@ -401,7 +408,7 @@
         "gpkg_https": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.gpkg",
         "tilejson": "https://engine.matrizbht.cl/tiles/pem_cuencas_oceanicas/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/pem_cuencas_oceanicas/{z}/{x}/{y}.pbf",
-        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "qgis_qlr": null,
         "stac_item": "https://ide.cit.uai.cl/stac/pem_cuencas_oceanicas.json"
       },
       "data_dictionary": [
@@ -430,8 +437,8 @@
         "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.parquet')",
         "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)')",
         "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
-        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/pem_cuencas_oceanicas/index.json",
-        "curl_head": "curl -I https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.parquet"
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.parquet",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/pem_cuencas_oceanicas/index.json"
       }
     },
     {
@@ -447,7 +454,7 @@
         "gpkg_https": null,
         "tilejson": "https://engine.matrizbht.cl/tiles/pem_biodiversidad_especies/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/pem_biodiversidad_especies/{z}/{x}/{y}.pbf",
-        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "qgis_qlr": null,
         "stac_item": "https://ide.cit.uai.cl/stac/pem_biodiversidad_especies.json"
       },
       "data_dictionary": [
@@ -516,8 +523,8 @@
         "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet')",
         "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)')",
         "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
-        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/pem_biodiversidad_especies/index.json",
-        "curl_head": "curl -I download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet"
+        "curl_head": "curl -I download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/pem_biodiversidad_especies/index.json"
       }
     },
     {
@@ -533,7 +540,7 @@
         "gpkg_https": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.gpkg",
         "tilejson": "https://engine.matrizbht.cl/tiles/censo_imputaciones_2024/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/censo_imputaciones_2024/{z}/{x}/{y}.pbf",
-        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "qgis_qlr": null,
         "stac_item": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
       },
       "data_dictionary": [
@@ -667,8 +674,8 @@
         "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet')",
         "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Censo 2024 — Imputaciones demográficas por cohortes y sexo')",
         "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
-        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/censo_imputaciones_2024/index.json",
-        "curl_head": "curl -I https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet"
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/censo_imputaciones_2024/index.json"
       }
     },
     {
@@ -684,7 +691,7 @@
         "gpkg_https": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.gpkg",
         "tilejson": "https://engine.matrizbht.cl/tiles/inse_socioeconomico/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/inse_socioeconomico/{z}/{x}/{y}.pbf",
-        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "qgis_qlr": null,
         "stac_item": "https://ide.cit.uai.cl/stac/inse_socioeconomico.json"
       },
       "data_dictionary": [
@@ -768,8 +775,8 @@
         "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet')",
         "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024')",
         "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
-        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/inse_socioeconomico/index.json",
-        "curl_head": "curl -I https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet"
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/inse_socioeconomico/index.json"
       }
     },
     {
@@ -785,7 +792,7 @@
         "gpkg_https": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.gpkg",
         "tilejson": "https://engine.matrizbht.cl/tiles/sii_areas_homogeneas/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/sii_areas_homogeneas/{z}/{x}/{y}.pbf",
-        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "qgis_qlr": null,
         "stac_item": "https://ide.cit.uai.cl/stac/sii_areas_homogeneas.json"
       },
       "data_dictionary": [
@@ -834,8 +841,8 @@
         "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('download/SII_Areas_Homogeneas_Nacional.parquet')",
         "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'download/SII_Areas_Homogeneas_Nacional.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos')",
         "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'download/SII_Areas_Homogeneas_Nacional.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
-        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/sii_areas_homogeneas/index.json",
-        "curl_head": "curl -I download/SII_Areas_Homogeneas_Nacional.parquet"
+        "curl_head": "curl -I download/SII_Areas_Homogeneas_Nacional.parquet",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/sii_areas_homogeneas/index.json"
       }
     },
     {
@@ -851,7 +858,7 @@
         "gpkg_https": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.gpkg",
         "tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/{z}/{x}/{y}.pbf",
-        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "qgis_qlr": null,
         "stac_item": "https://ide.cit.uai.cl/stac/equipamientos_2017.json"
       },
       "data_dictionary": [
@@ -905,8 +912,8 @@
         "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet')",
         "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Equipamientos urbanos y servicios esenciales 2017')",
         "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
-        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json",
-        "curl_head": "curl -I https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet"
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json"
       }
     },
     {
@@ -922,7 +929,7 @@
         "gpkg_https": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.gpkg",
         "tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/{z}/{x}/{y}.pbf",
-        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "qgis_qlr": null,
         "stac_item": "https://ide.cit.uai.cl/stac/red_vial_ejes_2017.json"
       },
       "data_dictionary": [
@@ -966,8 +973,8 @@
         "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet')",
         "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Red vial urbana caminable y tiempos Tobler 2017')",
         "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
-        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json",
-        "curl_head": "curl -I https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet"
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/kpi_mud_2017/index.json"
       }
     },
     {
@@ -983,7 +990,7 @@
         "gpkg_https": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.gpkg",
         "tilejson": "https://engine.matrizbht.cl/tiles/educacion_inicial_2024/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/educacion_inicial_2024/{z}/{x}/{y}.pbf",
-        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "qgis_qlr": null,
         "stac_item": "https://ide.cit.uai.cl/stac/educacion_inicial_2024.json"
       },
       "data_dictionary": [
@@ -1067,8 +1074,8 @@
         "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet')",
         "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Educación inicial — Catastro nacional de jardines infantiles y salas cuna')",
         "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
-        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/educacion_inicial_2024/index.json",
-        "curl_head": "curl -I https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet"
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/educacion_inicial_2024/index.json"
       }
     },
     {
@@ -1084,7 +1091,7 @@
         "gpkg_https": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.gpkg",
         "tilejson": "https://engine.matrizbht.cl/tiles/huella_edificaciones_2024/index.json",
         "mvt_pbf": "https://engine.matrizbht.cl/tiles/huella_edificaciones_2024/{z}/{x}/{y}.pbf",
-        "qgis_qlr": "https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr",
+        "qgis_qlr": null,
         "stac_item": "https://ide.cit.uai.cl/stac/huella_edificaciones_2024.json"
       },
       "data_dictionary": [
@@ -1123,8 +1130,8 @@
         "python_geopandas": "import geopandas as gpd; gdf = gpd.read_parquet('https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet')",
         "python_duckdb": "import duckdb\nimport geopandas as gpd\n\ncon = duckdb.connect()\ncon.execute('INSTALL spatial; LOAD spatial;')\nquery = \"SELECT * FROM 'https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet' LIMIT 1000;\"\ndf = con.execute(query).df()\ngdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkb(df['geometry']) if 'geometry' in df else None, crs='EPSG:4326')\nprint(f'Cargados {len(gdf)} registros de Huella de edificaciones urbanas — Presencia construida nacional')",
         "r_sf_arrow": "library(sf)\nlibrary(arrow)\nlibrary(dplyr)\n\n# Lectura directa desde GeoParquet\nurl <- 'https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet'\ndf <- read_parquet(url)\nsf_layer <- st_as_sf(df, wkt = 'geometry', crs = 4326)\nsummary(sf_layer)",
-        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/huella_edificaciones_2024/index.json",
-        "curl_head": "curl -I https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet"
+        "curl_head": "curl -I https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet",
+        "qgis_tilejson": "https://engine.matrizbht.cl/tiles/huella_edificaciones_2024/index.json"
       }
     }
   ]
