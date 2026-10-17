@@ -580,6 +580,46 @@ def generate_descargas_2017_html(catalog_data: Dict[str, Any], descargas_2017_da
                         </p>
                     </div>
 
+                    <!-- Conectores de Simbología y Definición de Capa para QGIS (.qml / .qlr) -->
+                    <div class="mt-4 bg-slate-900 border border-slate-800 rounded-xl p-4 text-xs text-slate-300">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-800">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#6493B5]"></span>
+                                <span class="font-bold text-white uppercase tracking-wider text-[11px]">Simbología Oficial y Conectores Directos QGIS (.qml / .qlr)</span>
+                            </div>
+                            <span class="font-mono text-[11px] text-slate-400">6 Clases de Quiebres Naturales de Jenks (ckmeans) · EPSG:4326</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <div class="bg-slate-950/60 border border-slate-800 rounded-lg px-3.5 py-2.5 flex items-center justify-between gap-3">
+                                <div class="min-w-0">
+                                    <span class="font-semibold text-slate-200 block truncate">Estilo Oficial Jenks (.qml)</span>
+                                    <span class="font-mono text-[10px] text-slate-400 block truncate">CIT_MBHT_Simbologia_Jenks.qml</span>
+                                </div>
+                                <a href="download/qgis/CIT_MBHT_Simbologia_Jenks.qml" download class="shrink-0 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono text-[11px] px-2.5 py-1.5 rounded transition">
+                                    Descargar .qml
+                                </a>
+                            </div>
+                            <div class="bg-slate-950/60 border border-slate-800 rounded-lg px-3.5 py-2.5 flex items-center justify-between gap-3">
+                                <div class="min-w-0">
+                                    <span class="font-semibold text-slate-200 block truncate">Capa Nacional MVT (.qlr)</span>
+                                    <span class="font-mono text-[10px] text-slate-400 block truncate">CIT_MBHT_2017_Nacional.qlr</span>
+                                </div>
+                                <a href="download/qgis/CIT_MBHT_2017_Nacional.qlr" download class="shrink-0 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono text-[11px] px-2.5 py-1.5 rounded transition">
+                                    Descargar .qlr
+                                </a>
+                            </div>
+                            <div class="bg-slate-950/60 border border-slate-800 rounded-lg px-3.5 py-2.5 flex items-center justify-between gap-3">
+                                <div class="min-w-0">
+                                    <span class="font-semibold text-slate-200 block truncate">Streaming GDAL /vsicurl/ (.qlr)</span>
+                                    <span class="font-mono text-[10px] text-slate-400 block truncate">CIT_Servicios_WMS.qlr</span>
+                                </div>
+                                <a href="download/qgis/CIT_Servicios_WMS.qlr" download class="shrink-0 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono text-[11px] px-2.5 py-1.5 rounded transition">
+                                    Descargar .qlr
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>

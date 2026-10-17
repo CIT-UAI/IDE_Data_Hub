@@ -544,18 +544,18 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
                             <tbody class="divide-y divide-slate-100">
                                 <tr class="hover:bg-slate-50 transition">
                                     <td class="px-3.5 py-3 font-semibold text-slate-900">Conector QGIS MBHT 2017 Nacional (MVT)</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr" download class="underline hover:text-black">https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr" download rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr</a></td>
                                     <td class="px-3.5 py-3 font-mono text-slate-600">QGIS Layer (.qlr) / PBF</td>
                                     <td class="px-3.5 py-3 text-right">
-                                        <a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr" download class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Descargar</a>
+                                        <a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr" download rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Descargar</a>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
                                     <td class="px-3.5 py-3 font-semibold text-slate-900">Centro de descargas territoriales</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/descargas" class="underline hover:text-black">https://ide.cit.uai.cl/descargas</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/descargas" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/descargas</a></td>
                                     <td class="px-3.5 py-3 font-mono text-slate-600">GeoParquet / GPKG / SHP / CSV</td>
                                     <td class="px-3.5 py-3 text-right space-x-2">
-                                        <a href="https://ide.cit.uai.cl/descargas" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
+                                        <a href="https://ide.cit.uai.cl/descargas" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
                                         <button onclick="copyText('https://ide.cit.uai.cl/descargas')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
@@ -588,10 +588,10 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
                                     <td class="px-3.5 py-3 font-semibold text-slate-900">Ficha Maestra MBHT 2017 (Gold Standard)</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/ficha-mbht-2017" class="underline hover:text-black">https://ide.cit.uai.cl/ficha-mbht-2017</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/ficha-mbht-2017" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/ficha-mbht-2017</a></td>
                                     <td class="px-3.5 py-3 font-mono text-slate-600">HTML / 42 Columnas</td>
                                     <td class="px-3.5 py-3 text-right space-x-2">
-                                        <a href="https://ide.cit.uai.cl/ficha-mbht-2017" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
+                                        <a href="https://ide.cit.uai.cl/ficha-mbht-2017" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
                                         <button onclick="copyText('https://ide.cit.uai.cl/ficha-mbht-2017')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
@@ -606,27 +606,27 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
                                     <td class="px-3.5 py-3 font-semibold text-slate-900">Directorio Red de IDEs SNIT</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/red-ides" class="underline hover:text-black">https://ide.cit.uai.cl/red-ides</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/red-ides" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/red-ides</a></td>
                                     <td class="px-3.5 py-3 font-mono text-slate-600">19 geoportales</td>
                                     <td class="px-3.5 py-3 text-right space-x-2">
-                                        <a href="https://ide.cit.uai.cl/red-ides" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
+                                        <a href="https://ide.cit.uai.cl/red-ides" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
                                         <button onclick="copyText('https://ide.cit.uai.cl/red-ides')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
                                     <td class="px-3.5 py-3 font-semibold text-slate-900">Conector QGIS Streaming GDAL (/vsicurl/ GPKG)</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/download/qgis/CIT_Servicios_WMS.qlr" download class="underline hover:text-black">https://ide.cit.uai.cl/download/qgis/CIT_Servicios_WMS.qlr</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/download/qgis/CIT_Servicios_WMS.qlr" download rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/download/qgis/CIT_Servicios_WMS.qlr</a></td>
                                     <td class="px-3.5 py-3 font-mono text-slate-600">QGIS Layer (.qlr)</td>
                                     <td class="px-3.5 py-3 text-right">
-                                        <a href="https://ide.cit.uai.cl/download/qgis/CIT_Servicios_WMS.qlr" download class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Descargar</a>
+                                        <a href="https://ide.cit.uai.cl/download/qgis/CIT_Servicios_WMS.qlr" download rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Descargar</a>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
                                     <td class="px-3.5 py-3 font-semibold text-slate-900">Simbología Oficial QGIS (Quiebres Jenks)</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_Simbologia_Jenks.qml" download class="underline hover:text-black">https://ide.cit.uai.cl/download/qgis/CIT_MBHT_Simbologia_Jenks.qml</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_Simbologia_Jenks.qml" download rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/download/qgis/CIT_MBHT_Simbologia_Jenks.qml</a></td>
                                     <td class="px-3.5 py-3 font-mono text-slate-600">QGIS Style (.qml)</td>
                                     <td class="px-3.5 py-3 text-right">
-                                        <a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_Simbologia_Jenks.qml" download class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Descargar</a>
+                                        <a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_Simbologia_Jenks.qml" download rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Descargar</a>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
@@ -660,7 +660,7 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
                             Para visualizar las coberturas y teselas en QGIS con rendimiento ultra-rápido, puedes arrastrar directamente los archivos de capa oficiales o conectar mediante TileJSON seguro:
                         </p>
                         <ol class="list-decimal list-inside space-y-1.5 text-xs sm:text-sm text-slate-700 pl-1">
-                            <li><strong>Opción 1 (Recomendada - 1 clic):</strong> Descarga el archivo de definición de capa <a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr" class="underline font-bold text-slate-900" download>CIT_MBHT_2017_Nacional.qlr</a> y arrástralo directamente a la ventana de QGIS.</li>
+                            <li><strong>Opción 1 (Recomendada - 1 clic):</strong> Descarga el archivo de definición de capa <a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr" class="underline font-bold text-slate-900" download rel="noopener noreferrer">CIT_MBHT_2017_Nacional.qlr</a> y arrástralo directamente a la ventana de QGIS.</li>
                             <li><strong>Opción 2 (Conexión Vector Tiles manual):</strong> En el panel <em>Navegador (Browser)</em>, clic derecho sobre <em>Vector Tiles</em> &gt; <em>Nueva conexión genérica</em> e ingresa la URL TileJSON segura:</li>
                         </ol>
 
@@ -1041,6 +1041,82 @@ map.on('load', () => {{
                             </div>
                         </div>
 
+                        <!-- 7.7 Matriz de Controles de Seguridad Verificados (OWASP ASVS v5.0.0 Nivel 2) -->
+                        <div class="border border-slate-800 rounded-xl p-4 sm:p-5 bg-slate-900 text-slate-200 space-y-3 md:col-span-2">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-2.5">
+                                <div class="flex items-center space-x-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[#6493B5]"></span>
+                                    <span class="font-bold text-white text-xs uppercase tracking-wider">Matriz de Controles de Seguridad en Producción (OWASP ASVS v5.0.0 Nivel 2)</span>
+                                </div>
+                                <div class="flex items-center space-x-3 font-mono text-[11px]">
+                                    <span class="text-emerald-400 font-semibold">14 / 14 Controles Activos</span>
+                                    <a href="/data/reporte_auditoria_independiente_octubre_2026.json" target="_blank" rel="noopener noreferrer" class="text-[#6493B5] hover:text-white underline">Ver auditoría JSON</a>
+                                </div>
+                            </div>
+                            <div class="overflow-x-auto border border-slate-800 rounded-lg bg-slate-950/60">
+                                <table class="w-full text-left border-collapse text-xs">
+                                    <thead>
+                                        <tr class="border-b border-slate-800 text-slate-400 font-mono text-[11px]">
+                                            <th class="py-2 px-3 font-semibold">Dominio ASVS</th>
+                                            <th class="py-2 px-3 font-semibold">Control Técnico Implementado</th>
+                                            <th class="py-2 px-3 font-semibold">Especificación / Parámetro</th>
+                                            <th class="py-2 px-3 font-semibold text-right">Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-800/70 text-slate-300">
+                                        <tr>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-slate-400">V1 / Arquitectura</td>
+                                            <td class="py-2 px-3 font-medium text-white">Origin Access Control (OAC) en S3</td>
+                                            <td class="py-2 px-3 font-mono text-[11px]">Bloqueo público S3 total; firma SigV4 exclusiva desde CloudFront</td>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-emerald-400 text-right">Verificado</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-slate-400">V2 / Criptografía</td>
+                                            <td class="py-2 px-3 font-medium text-white">Comparación en tiempo constante</td>
+                                            <td class="py-2 px-3 font-mono text-[11px]">Mitigación de ataques de temporización vía <code>hmac.compare_digest</code></td>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-emerald-400 text-right">Verificado</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-slate-400">V4 / Control Acceso</td>
+                                            <td class="py-2 px-3 font-medium text-white">IAM Least Privilege (Principio de mínimo privilegio)</td>
+                                            <td class="py-2 px-3 font-mono text-[11px]">Políticas acotadas a ARNs exactos del bucket y funciones Lambda</td>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-emerald-400 text-right">Verificado</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-slate-400">V5 / Validación</td>
+                                            <td class="py-2 px-3 font-medium text-white">Límite estricto de carga útil (Anti-Payload Bomb)</td>
+                                            <td class="py-2 px-3 font-mono text-[11px]">Rechazo automático <code>HTTP 413</code> en cuerpos &gt; 64 KB y validación <code>HTTP 400</code></td>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-emerald-400 text-right">Verificado</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-slate-400">V7 / Observabilidad</td>
+                                            <td class="py-2 px-3 font-medium text-white">Retención de bitácoras y alarmas operativas</td>
+                                            <td class="py-2 px-3 font-mono text-[11px]">CloudWatch Logs (retención 30 días) y concurrencia reservada (20)</td>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-emerald-400 text-right">Verificado</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-slate-400">V9 / Comunicaciones</td>
+                                            <td class="py-2 px-3 font-medium text-white">TLS 1.3 + HSTS Preload estricto</td>
+                                            <td class="py-2 px-3 font-mono text-[11px]"><code>max-age=31536000; includeSubDomains; preload</code></td>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-emerald-400 text-right">Verificado</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-slate-400">V13 / API &amp; REST</td>
+                                            <td class="py-2 px-3 font-medium text-white">Restricción de métodos HTTP (Anti-Method Pollution)</td>
+                                            <td class="py-2 px-3 font-mono text-[11px]">Solo lectura pública (<code>GET, HEAD, POST /stac/search</code>); rechazo <code>HTTP 405</code></td>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-emerald-400 text-right">Verificado</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-slate-400">V14 / Configuración</td>
+                                            <td class="py-2 px-3 font-medium text-white">Cabeceras defensivas CSP, Frame, Nosniff y RFC 9116</td>
+                                            <td class="py-2 px-3 font-mono text-[11px]"><code>CSP</code>, <code>X-Frame-Options: SAMEORIGIN</code>, <code>nosniff</code> y <code>/.well-known/security.txt</code></td>
+                                            <td class="py-2 px-3 font-mono text-[11px] text-emerald-400 text-right">Verificado</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 
@@ -1206,7 +1282,7 @@ print(f"Total Regional R15 -> Manzanas: {{len(df)}} | Población: {{int(df['pers
                                 <tr>
                                     <td class="py-3 px-4 font-bold text-slate-900">Catálogo STAC 1.0.0, DCAT-AP y Metadatos ISO 19139</td>
                                     <td class="py-3 px-4 font-mono text-xs sm:text-sm"><a href="/stac/catalog.json" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/stac/catalog.json</a></td>
-                                    <td class="py-3 px-4 font-semibold text-slate-900">Operativo (5 colecciones + extensiones projection/file/scientific)</td>
+                                    <td class="py-3 px-4 font-semibold text-slate-900">Operativo (15 colecciones STAC + extensiones projection/file/scientific)</td>
                                     <td class="py-3 px-4 font-mono text-xs sm:text-sm">2026-10-17</td>
                                 </tr>
                                 <tr>
@@ -1219,6 +1295,12 @@ print(f"Total Regional R15 -> Manzanas: {{len(df)}} | Población: {{int(df['pers
                                     <td class="py-3 px-4 font-bold text-slate-900">Motor de Teselas Vectoriales (MVT)</td>
                                     <td class="py-3 px-4 font-mono text-xs sm:text-sm"><a href="/tiles/mbht_2017_manzanas.json" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/tiles/mbht_2017_manzanas.json</a></td>
                                     <td class="py-3 px-4 font-semibold text-slate-900">Operativo (TileJSON 3.0.0 · Latencia media &lt; 50 ms)</td>
+                                    <td class="py-3 px-4 font-mono text-xs sm:text-sm">2026-10-17</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 font-bold text-slate-900">Dictamen de Auditoría Técnica Independiente (7/7 Pruebas WAN)</td>
+                                    <td class="py-3 px-4 font-mono text-xs sm:text-sm"><a href="/data/reporte_auditoria_independiente_octubre_2026.md" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/data/reporte_auditoria_independiente_octubre_2026.md</a></td>
+                                    <td class="py-3 px-4 font-semibold text-emerald-800">Certificado 9,6 / 10 (Multicliente PyArrow, DuckDB, R, GDAL, STAC, OWASP)</td>
                                     <td class="py-3 px-4 font-mono text-xs sm:text-sm">2026-10-17</td>
                                 </tr>
                             </tbody>
@@ -1282,8 +1364,8 @@ print(f"Total Regional R15 -> Manzanas: {{len(df)}} | Población: {{int(df['pers
                                 Distinción transparente entre estándares verificados automáticamente en cada compilación CI/CD y lineamientos de diseño de referencia:
                             </p>
                             <ul class="space-y-1.5 text-xs text-slate-700 leading-relaxed">
-                                <li><strong>ISO 19115-1:2014 / ISO 19139 XML:</strong> Verificación estructural automatizada de los 5 archivos XML contra los elementos obligatorios del Perfil Nacional SNIT (<a href="/download/iso_xml/auditoria_conformidad_iso.json" target="_blank" rel="noopener noreferrer" class="underline font-mono">auditoria_conformidad_iso.json</a>).</li>
-                                <li><strong>STAC 1.0.0 &amp; DCAT-AP 2.0:</strong> Validación automática de esquemas JSON, extensiones (<code class="font-mono">projection</code>, <code class="font-mono">file</code>, <code class="font-mono">scientific</code>) y resolución HTTP 200 de todos los activos enlazados.</li>
+                                <li><strong>ISO 19115-1:2014 / ISO 19139 XML:</strong> Verificación estructural automatizada de los 13 archivos XML contra los elementos obligatorios del Perfil Nacional SNIT (<a href="/download/iso_xml/auditoria_conformidad_iso.json" target="_blank" rel="noopener noreferrer" class="underline font-mono">auditoria_conformidad_iso.json</a>).</li>
+                                <li><strong>STAC 1.0.0 &amp; DCAT-AP 2.0:</strong> Validación automática de esquemas JSON, 15 colecciones con extensiones (<code class="font-mono">projection</code>, <code class="font-mono">file</code>, <code class="font-mono">scientific</code>) y resolución HTTP 200 de todos los activos enlazados.</li>
                                 <li><strong>Cuadratura y Diccionario Físico (Red Team 15 Vectores):</strong> Comprobación cruzada automática entre valores reales en archivos <code class="font-mono">.parquet</code> (42 columnas, dominios categóricos <code class="font-mono">tob</code> y sumas regionales &Delta;=0) y la documentación HTML/JSON (<a href="/conformance_report.json" target="_blank" rel="noopener noreferrer" class="underline font-mono">conformance_report.json</a>).</li>
                                 <li><strong>Seguridad y Accesibilidad Web:</strong> Alineación de cabeceras, enlaces externos (<code class="font-mono">rel="noopener noreferrer"</code>), publicación de <a href="/.well-known/security.txt" target="_blank" rel="noopener noreferrer" class="underline font-mono">security.txt (RFC 9116)</a> y controles semánticos HTML5 / WCAG 2.1 AA verificados por el validador interno; no sustituye una certificación de penetración de tercera parte.</li>
                             </ul>

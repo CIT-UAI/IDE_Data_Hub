@@ -2955,7 +2955,7 @@ def get_llm_guidance_html() -> str:
         <h3>Estructura y resumen de datos espaciales disponibles en esta IDE:</h3>
         <ul>
             <li><strong>Institución:</strong> Centro de Inteligencia Territorial (CIT-UAI), Universidad Adolfo Ibáñez, Chile.</li>
-            <li><strong>Ficha Técnica Maestra (Gold Standard en 17 Dimensiones):</strong> Especificación formal disponible en <a href="https://ide.cit.uai.cl/ficha-mbht-2017">https://ide.cit.uai.cl/ficha-mbht-2017</a>.</li>
+            <li><strong>Ficha Técnica Maestra (Gold Standard en 17 Dimensiones):</strong> Especificación formal disponible en <a href="https://ide.cit.uai.cl/ficha-mbht-2017" rel="noopener noreferrer">https://ide.cit.uai.cl/ficha-mbht-2017</a>.</li>
             <li><strong>Línea base oficial:</strong> MBHT 2017 (17.482.699 habitantes amanzanados en 204.906 manzanas censales de las 16 regiones, de un total de 17.574.003 censados por el INE; 99,48% de cobertura espacial; 55.035 equipamientos de libre acceso derivados del catastro de 113.231 equipamientos ruteables en grafo sobre 202.275 servicios catastrados).</li>
             <li><strong>Línea proyectada:</strong> Censo 2024 (~18,48 millones de habitantes, 7,66M viviendas, 6,62M hogares, 254.395 manzanas urbanas y entidades rurales a nivel nacional).</li>
             <li><strong>Región Metropolitana de Santiago (R13):</strong> 7,42 millones de habitantes en 70.096 manzanas censales.</li>
@@ -3390,7 +3390,10 @@ def get_canonical_footer_html(version: str = "2026.2") -> str:
         </div>
 
         <div class="max-w-[1600px] mx-auto pt-6 border-t border-slate-800 text-center sm:text-left text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-3">
-            <div>© 2026 Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez. Licencia abierta CC BY 4.0.</div>
+            <div class="space-y-1">
+                <div>© 2026 Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez. Licencia abierta CC BY 4.0 · <span class="font-mono text-slate-400">v{version}</span></div>
+                <div class="text-[11px] text-slate-500">Accesibilidad web: Conforme a WCAG 2.1 Nivel AA (HTML5 semántico, navegación por teclado y alto contraste) · Reportar barreras: <a href="mailto:contactocit@uai.cl" class="text-slate-400 hover:text-white underline">contactocit@uai.cl</a></div>
+            </div>
             <div class="flex flex-wrap justify-center sm:justify-end gap-3 text-slate-400">
                 <a href="ficha-mbht-2017" class="hover:text-white transition">Ficha MBHT 2017</a>
                 <span>•</span>

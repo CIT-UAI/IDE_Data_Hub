@@ -721,6 +721,41 @@ class IDEPortalBuilder:
                         <span class="text-slate-300">13 coberturas maestras abiertas y descargables en producción + 1 recurso preparatorio STAC (MBHT 2024 en calibración estadística) = 14 recursos totales en STAC.</span>
                     </div>
                 </div>
+
+                <!-- Tarjetas sobrias de Dictamen de Auditoría Externa y Arquitectura Cloud-Native -->
+                <div class="mt-4 pt-3.5 border-t border-slate-800 grid grid-cols-1 lg:grid-cols-2 gap-3.5 text-xs">
+                    <div class="bg-slate-950/60 border border-slate-800 rounded-lg px-4 py-3 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-1">
+                                <span class="font-bold text-slate-200 uppercase tracking-wider text-[11px]">Dictamen de Auditoría Técnica Independiente</span>
+                                <span class="font-mono text-xs font-bold text-emerald-400">9,6 / 10 · 7/7 Pruebas</span>
+                            </div>
+                            <p class="text-slate-400 leading-relaxed text-[11px]">
+                                Certificación multicliente verificada en red pública WAN sobre 7 vectores empíricos: PyArrow 21.0, DuckDB HTTP Range (206), reproducibilidad R/Python (&Delta;=0), streaming GDAL <code class="font-mono text-slate-300">/vsicurl/</code>, travesía STAC 1.0.0, grafo DCAT-AP 2.0 y blindaje OWASP ASVS Nivel 2.
+                            </p>
+                        </div>
+                        <div class="mt-2 pt-2 border-t border-slate-800/80 flex items-center justify-between font-mono text-[11px]">
+                            <a href="/data/reporte_auditoria_independiente_octubre_2026.md" target="_blank" rel="noopener noreferrer" class="text-[#6493B5] hover:text-white underline">Informe técnico (.md)</a>
+                            <a href="/data/reporte_auditoria_independiente_octubre_2026.json" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white underline">Evidencia machine-readable (.json)</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950/60 border border-slate-800 rounded-lg px-4 py-3 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-1">
+                                <span class="font-bold text-slate-200 uppercase tracking-wider text-[11px]">Decisión Arquitectónica: Cloud-Native Geospatial</span>
+                                <span class="font-mono text-[11px] text-slate-400">HTTP 206 · Latencia &lt; 35 ms</span>
+                            </div>
+                            <p class="text-slate-400 leading-relaxed text-[11px]">
+                                Esta infraestructura prescinde deliberadamente de servicios WFS transaccionales clásicos (cuya serialización XML/GML degrada la transferencia en coberturas &gt;200.000 polígonos), privilegiando lectura columnar parcial <code class="font-mono text-slate-300">Apache GeoParquet 1.1</code>, streaming SQLite <code class="font-mono text-slate-300">GeoPackage 1.3</code> y teselas vectoriales <code class="font-mono text-slate-300">MVT</code>.
+                            </p>
+                        </div>
+                        <div class="mt-2 pt-2 border-t border-slate-800/80 flex items-center justify-between font-mono text-[11px]">
+                            <a href="/guia-tecnica#seccion-3" class="text-[#6493B5] hover:text-white underline">Fundamento arquitectónico</a>
+                            <a href="/conformance_report.json" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white underline">Benchmarks p50/p95/p99</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -847,7 +882,7 @@ class IDEPortalBuilder:
                                     <span class="text-[11px] text-slate-500">WKB Polígonos · Byte-Range HTTP 206</span>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px]">
-                                    <a href="https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet" class="text-slate-900 font-semibold hover:underline">/download/MBHT_2017_R15_Manzanas.parquet</a>
+                                    <a href="https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet" rel="noopener noreferrer" class="text-slate-900 font-semibold hover:underline">/download/MBHT_2017_R15_Manzanas.parquet</a>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">EPSG:4326</td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 / 206 Range</td>
@@ -863,7 +898,7 @@ class IDEPortalBuilder:
                                     <span class="text-[11px] text-slate-500">Estándar ISO/IEC 19125 SQLite · Streaming GDAL</span>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px]">
-                                    <a href="https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.gpkg" class="text-slate-900 font-semibold hover:underline">/download/MBHT_2017_R15_Manzanas.gpkg</a>
+                                    <a href="https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.gpkg" rel="noopener noreferrer" class="text-slate-900 font-semibold hover:underline">/download/MBHT_2017_R15_Manzanas.gpkg</a>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">EPSG:4326</td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (SQLite)</td>
@@ -879,7 +914,7 @@ class IDEPortalBuilder:
                                     <span class="text-[11px] text-slate-500">SHP + SHX + DBF + PRJ + CPG UTF-8</span>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px]">
-                                    <a href="https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas_SHP.zip" class="text-slate-900 font-semibold hover:underline">/download/MBHT_2017_R15_Manzanas_SHP.zip</a>
+                                    <a href="https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas_SHP.zip" rel="noopener noreferrer" class="text-slate-900 font-semibold hover:underline">/download/MBHT_2017_R15_Manzanas_SHP.zip</a>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">EPSG:4326</td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (ZIP)</td>
@@ -895,7 +930,7 @@ class IDEPortalBuilder:
                                     <span class="text-[11px] text-slate-500">Definición de capa con simbología Jenks</span>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px]">
-                                    <a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr" class="text-slate-900 font-semibold hover:underline">/download/qgis/CIT_MBHT_2017_Nacional.qlr</a>
+                                    <a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr" rel="noopener noreferrer" class="text-slate-900 font-semibold hover:underline">/download/qgis/CIT_MBHT_2017_Nacional.qlr</a>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">EPSG:4326</td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (XML QLR)</td>
@@ -911,7 +946,7 @@ class IDEPortalBuilder:
                                     <span class="text-[11px] text-slate-500">Metadatos normalizados gmd:MD_Metadata</span>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px]">
-                                    <a href="https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml" class="text-slate-900 font-semibold hover:underline">/download/iso_xml/kpi_mud_2017_iso19139.xml</a>
+                                    <a href="https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml" rel="noopener noreferrer" class="text-slate-900 font-semibold hover:underline">/download/iso_xml/kpi_mud_2017_iso19139.xml</a>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">EPSG:4326 / 5360</td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (XML)</td>
