@@ -94,7 +94,6 @@ class IDEPortalBuilder:
         self.robots_path: Path = self.ide_hub_dir / "robots.txt"
         self.llms_txt_path: Path = self.ide_hub_dir / "llms.txt"
         self.manifest_pwa_path: Path = self.ide_hub_dir / "site.webmanifest"
-        self.launcher_bat_path: Path = self.ide_hub_dir / "INICIAR_PORTAL_LOCAL.bat"
 
     def validate_environment(self) -> Dict[str, Any]:
         """
@@ -2759,43 +2758,6 @@ Sitemap: https://ide.cit.uai.cl/sitemap.xml
             f.write(manifest_pwa_content)
         logger.info(f"   ✓ Sitemap, Robots, LLMs.txt, LLMs-full.txt y Manifest PWA generados.")
 
-    def generate_local_launcher(self) -> Path:
-        launcher_content = """@echo off
-chcp 65001 >nul
-title IDE CIT — Servidor Local de Previsualización (Puerto 8080)
-color 0B
-
-echo ===============================================================================
-echo  🌐 IDE CIT — LANZADOR LOCAL DE PREVISUALIZACIÓN Y PRUEBAS
-echo  Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez
-echo ===============================================================================
-echo.
-echo [1/3] Verificando compilación del portal web...
-python "%~dp0generador_portal_ide_cit.py"
-if %errorlevel% neq 0 (
-    echo [ERROR] Falló la compilación de index.html.
-    pause
-    exit /b 1
-)
-
-echo.
-echo [2/3] Abriendo navegador web en http://localhost:8080/index.html ...
-start "" "http://localhost:8080/index.html"
-
-echo.
-echo [3/3] Iniciando servidor HTTP local en puerto 8080...
-echo Presiona Ctrl+C para detener el servidor.
-echo.
-cd /d "%~dp0"
-python -m http.server 8080
-
-pause
-"""
-        with open(self.launcher_bat_path, "w", encoding="utf-8") as f:
-            f.write(launcher_content)
-        logger.info(f"   ✓ Lanzador local generado en: {self.launcher_bat_path}")
-        return self.launcher_bat_path
-
     def build(self, output_path: Optional[Path] = None) -> Path:
         """
         Ejecuta el proceso completo de validación y compilación del portal, guía técnica y red de IDEs.
@@ -2836,7 +2798,6 @@ pause
         self.export_csv_catalog(catalog_data)
         self.export_dcat_json(catalog_data)
         self.export_sitemap_and_seo(catalog_data)
-        self.generate_local_launcher()
 
         elapsed = time.time() - start_time
         size_kb = len(html_content.encode("utf-8")) / 1024.0

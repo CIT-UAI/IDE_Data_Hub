@@ -4170,29 +4170,7 @@ df <- read_parquet("${capa.s3_parquet}")`;
             // Despachar telemetría de consulta ciudadana para aprendizaje activo
             sendCitTelemetry('copilot_query', { query: query });
 
-            // 1. En desarrollo local, intentar microservicio si está activo en el mismo host (< 800ms)
-            if (typeof window !== 'undefined' && window.location && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
-                try {
-                    const controller = new AbortController();
-                    const timeoutId = setTimeout(() => controller.abort(), 800);
-                    const localApi = `${window.location.protocol}//${window.location.hostname}:8010/api/v1/ia/copiloto`;
-                    const apiRes = await fetch(localApi, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ prompt_usuario: query, cod_region: '13', anio: '2024' }),
-                        signal: controller.signal
-                    });
-                    clearTimeout(timeoutId);
-                    if (apiRes.ok) {
-                        const data = await apiRes.json();
-                        if (data && data.respuesta_narrativa) {
-                            return { text: data.respuesta_narrativa, action: data.action || null };
-                        }
-                    }
-                } catch (err) {}
-            }
-
-            // 2. Normalización fonética y limpieza de errores extremos en JavaScript
+            // 1. Normalización fonética y limpieza de errores extremos en JavaScript
             let raw = (query || '').toLowerCase().trim();
             // Remover tildes y diacríticos
             let q = raw.normalize("NFD").replace(/[\u0300-\u036f]/g, "");

@@ -24,6 +24,8 @@ actualizar_catalogo_pem.py
 actualizar_metadatos_archivos_catalogo.py
 auditar_index.py
 verificador_servicios_tiles.py
+exportador_*.py
+base_demografica_*.py
 
 # 3. Archivos compilados de distribución y cachés
 dist/
