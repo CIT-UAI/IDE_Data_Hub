@@ -1,114 +1,141 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "audit_metadata": {
-    "title": "Reporte de Auditoría Externa e Independiente de Calidad, Interoperabilidad y Seguridad",
-    "target_platform": "IDE CIT — Infraestructura de Datos Espaciales",
-    "target_url": "https://ide.cit.uai.cl",
-    "institution": "Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez",
-    "audit_cycle": "Octubre 2026 — Certificación de Acceso Abierto y Ciencia Reproducible",
-    "platform_release": "2026.2",
-    "audit_date": "2026-10-17T20:30:00Z",
-    "evaluator_profile": "Comité de Auditoría Técnica Externa y Evaluación de Pares Internacional",
-    "overall_score": 9.6,
-    "max_score": 10.0,
-    "status": "CERTIFIED_REFERENCE_SDI",
-    "classification": "Infraestructura de Datos Espaciales de Nivel de Referencia Internacional (Top Tier)"
+  "document_title": "Declaración de Conformidad de Primera Parte (ISO/IEC 17050-1 SDoC), Cierre de Hallazgos (Conformance Closure) y Verificación Forense GPU CUDA — IDE CIT v2026.2",
+  "governance_framework": "ISO/IEC 17050-1:2004 — Conformity assessment — Supplier's declaration of conformity (First-Party SDoC with Open Reproducible Verification Protocols)",
+  "declaration_id": "CIT-UAI-SDOC-2026-10-17-V3-CUDA",
+  "date_utc": "2026-10-17T22:35:00Z",
+  "issuing_entity": "Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez",
+  "epistemological_transparency_notice": {
+    "is_first_party_declaration": true,
+    "is_accredited_external_third_party_certification": false,
+    "self_assigned_numerical_score": null,
+    "statement": "En estricto apego a la norma ISO/IEC 17050-1 y a la ética de ciencia abierta, el CIT-UAI distingue rigurosamente entre verificación automatizada de primera parte y auditoría externa por terceros independientes. Este documento constituye una Declaración de Conformidad de Primera Parte (SDoC) respaldada por evidencia empírica verificable, scripts públicos con hash SHA-256 y telemetría de hardware GPU CUDA, permitiendo que cualquier comité evaluador externo emita su propio dictamen independiente sin calificaciones auto-asignadas por el emisor."
   },
-  "executive_summary": "La plataforma IDE CIT (https://ide.cit.uai.cl) fue sometida a un proceso riguroso de doble auditoría externa e independiente durante octubre de 2026. La evaluación analizó la veracidad del catálogo, la exactitud de los metadatos, la robustez de la arquitectura Cloud-Native, la reproducibilidad matemática celda por celda, la interoperabilidad multicliente (STAC 1.0.0, W3C DCAT-AP 2.0, GeoParquet, OGC GeoPackage, OGC MVT) y la postura de seguridad perimetral Enterprise. Tras la subsanación integral de los hallazgos de catálogo y la resolución del manejo de trailing slashes en endpoints STAC, la plataforma alcanza una calificación de 9.6 / 10, consolidándose como una infraestructura científica de excelencia.",
-  "canonical_inventory_certified": {
-    "master_coverage_layers_production": 13,
-    "preparatory_resources": 1,
-    "total_catalog_resources": 14,
-    "stac_child_collections": 15,
-    "distribution_formats_per_master_layer": 4,
-    "total_national_distribution_files": 52,
-    "regional_geoparquet_files_mbht_2017": 16,
-    "inventory_statement": "13 coberturas territoriales maestras cerradas y disponibles en producción + 1 recurso censal preparatorio (MBHT 2024 en calibración estadística) = 14 recursos territoriales catalogados."
+  "overall_conformity_status": "CONFORMANT (0 CRITICAL ERRORS · 0 WARNINGS · 128/128 AUTOMATED CHECKS PASSED)",
+  "triple_barrier_verification_summary": {
+    "total_checks_executed": 128,
+    "total_passed": 128,
+    "total_warnings": 0,
+    "total_critical_errors": 0,
+    "barriers": [
+      {
+        "barrier_id": "BARRIER-1-STATIC-NORMATIVE",
+        "name": "Red Team 1.0 — Auditoría Normativa, Semántica, WCAG y Criptográfica",
+        "script_url": "https://ide.cit.uai.cl/download/auditor_adversarial_ide.py",
+        "report_url": "https://ide.cit.uai.cl/conformance_report.json",
+        "vectors_evaluated": 15,
+        "passed_checks": 59,
+        "critical_errors": 0,
+        "warnings": 0,
+        "highlights": [
+          "682 hashes SHA-256 verificados bit a bit entre manifiesto JSON, SHA256SUMS.txt y archivos físicos",
+          "29 registros XML ISO 19115-1:2014 / ISO 19139 validados sin errores de esquema",
+          "15 child links en STAC 1.0.0 catalog.json (13 colecciones temáticas + 1 preparatoria + 1 colección unificadora)",
+          "0 secretos, 0 llaves privadas y 0 rutas locales en 153 archivos de código y artefactos web"
+        ]
+      },
+      {
+        "barrier_id": "BARRIER-2-WAN-ADVERSARIAL-FUZZER",
+        "name": "Red Team 2.0 — Fuzzer Adversarial WAN en Vivo (STAC API, HTTP Range 206, WAF y Paridad S3)",
+        "script_url": "https://ide.cit.uai.cl/download/auditor_red_team_2_antagonista.py",
+        "vectors_evaluated": 6,
+        "passed_checks": 24,
+        "critical_errors": 0,
+        "warnings": 0,
+        "highlights": [
+          "11/11 pruebas de inyección y fuzzing sobre /stac/search (GET/POST limit=-5, limit=abc, bbox invertido, bbox fuera de WGS84, datetime inválido, tipos malformados) rechazadas con HTTP 400 Bad Request",
+          "71/71 assets STAC y 44/44 distribuciones DCAT-AP verificados en vivo por HTTPS HEAD contra CloudFront con paridad exacta Content-Length == file:size",
+          "29/29 metadatos ISO 19139 XML descargados y parseados desde WAN con 0 discrepancias frente a dcat.json"
+        ]
+      },
+      {
+        "barrier_id": "BARRIER-3-CUDA-GPU-TENSOR-FORENSICS",
+        "name": "Red Team 3.0 — Hyper-Auditor Forense en GPU NVIDIA CUDA (Tensor Cores FP64)",
+        "script_url": "https://ide.cit.uai.cl/download/auditor_red_team_3_cuda_gpu.py",
+        "telemetry_url": "https://ide.cit.uai.cl/data/cuda_forensic_telemetry.json",
+        "hardware": "NVIDIA GeForce RTX 4070 Laptop GPU (8.59 GB VRAM · 36 SMs · CUDA 12.4 · PyTorch 2.6.0+cu124)",
+        "vectors_evaluated": 10,
+        "passed_checks": 45,
+        "critical_errors": 0,
+        "warnings": 0,
+        "highlights": [
+          "7.303.643 filas espaciales y 2.077.916.543 celdas numéricas evaluadas en VRAM con 0 valores Inf y cuadratura exacta",
+          "Simulación Monte Carlo Dirichlet en GPU: 10.000 escenarios de ponderación x 204.906 manzanas (2.049.060.000 evaluaciones BHT en 878,6 ms) con 0 NaN/Inf, dominio [0,1] preservado al 100% e IC 90% BHT Nacional [0,5244 - 0,7662]",
+          "Autocorrelación espacial global I de Moran en GPU (grafo K-NN k=8 sobre 2.675.992.900 pares de manzanas habitadas R13): Moran's I = 0,9095 (Z = +413,7, p < 1e-100)",
+          "Paridad topológica y de llave 1:1 en GPU entre Censo_Imputaciones_2024 e INSE_Socioeconomico_2024: 254.268/254.268 manzanas idénticas con diferencia máxima de bounding box = 0,00e+00 grados"
+        ]
+      }
+    ]
   },
-  "evaluation_dimensions": [
-    {
-      "dimension": "1. Arquitectura y Rendimiento Cloud-Native",
-      "score": 9.7,
-      "max_score": 10.0,
-      "status": "EXCELLENT",
-      "findings": "Arquitectura estática desacoplada servida vía CDN CloudFront multi-AZ, con soporte nativo de HTTP Range RFC 7233 para streaming parcial de GeoParquet y GeoPackage sin descarga completa. Latencias p50 < 35 ms a nivel nacional y sub-150 ms en consultas WAN."
-    },
-    {
-      "dimension": "2. Centro de Descargas y Formatos Abiertos",
-      "score": 9.8,
-      "max_score": 10.0,
-      "status": "EXCELLENT",
-      "findings": "Disponibilidad de 4 formatos abiertos por dataset (GeoParquet 1.1, OGC GeoPackage, Shapefile ZIP y CSV UTF-8). Hashes SHA-256 inmutables publicados y verificables mediante módulo criptográfico cliente en navegador WebCrypto API."
-    },
-    {
-      "dimension": "3. Reproducibilidad Científica y Trazabilidad Metodológica",
-      "score": 9.9,
-      "max_score": 10.0,
-      "status": "OUTSTANDING",
-      "findings": "Protocolo de reproducción matemática extremo a extremo (E2E) documentado con celda testigo, linaje de transformación Tobler (pendiente -> velocidad -> tiempo), algoritmo E2SFCA y cuadratura regional ponderada por población certificada (Arica y Parinacota: 3.304 manzanas, 42 columnas físicas, BHT ponderado = 0.4623)."
-    },
-    {
-      "dimension": "4. Interoperabilidad de Catálogos (STAC 1.0.0 & DCAT-AP 2.0)",
-      "score": 9.5,
-      "max_score": 10.0,
-      "status": "EXCELLENT",
-      "findings": "Catálogo estático STAC 1.0.0 completo con 15 child collections, endpoints normalizados para trailing slashes (/stac/conformance, /stac/conformance/, /stac/collections, /stac/collections/, /stac/search, /stac/search/). Catálogo semántico W3C DCAT-AP 2.0 con MIME types específicos por formato de distribución."
-    },
-    {
-      "dimension": "5. Seguridad Enterprise, Privacidad y Gobernanza",
-      "score": 9.7,
-      "max_score": 10.0,
-      "status": "EXCELLENT",
-      "findings": "Aislamiento estricto de origen S3 mediante CloudFront OAC (bloqueo 100% de bypass público HTTP 403), transporte TLS 1.3 con HSTS estricto (max-age=31536000), cloaking de Lambda URL (HTTP 403), sanitización de inputs (HTTP 400), concurrencia reservada limitada (20 slots = 2%), retención de logs CloudWatch a 30 días, cumplimiento OWASP ASVS v5.0 Nivel 2 y Secreto Estadístico bajo Ley N° 17.374."
-    },
-    {
-      "dimension": "6. Accesibilidad y Usabilidad Inclusiva (WCAG 2.1 AA)",
-      "score": 9.4,
-      "max_score": 10.0,
-      "status": "VERY_GOOD",
-      "findings": "Navegación accesible con roles ARIA semánticos, contrastes tipográficos conformes a estándar AA, soporte de teclado y compatibilidad garantizada con lectores de pantalla."
-    }
-  ],
-  "client_compatibility_matrix": {
-    "python_geopandas_pyarrow": {
-      "verified": true,
-      "protocol": "HTTP Range RFC 7233",
-      "performance": "Lectura parcial de metadatos en < 200 ms"
-    },
-    "python_duckdb_spatial": {
-      "verified": true,
-      "protocol": "HTTPFS / GeoParquet",
-      "performance": "Cálculo analítico ponderado en < 300 ms"
-    },
-    "r_sf_arrow": {
-      "verified": true,
-      "protocol": "arrow::read_parquet() & sf",
-      "performance": "Reproducción determinista idéntica a especificación oficial"
-    },
-    "qgis_gdal_vsicurl": {
-      "verified": true,
-      "protocol": "OGC GeoPackage /vsicurl/",
-      "performance": "Streaming de cabeceras SQLite/GPKG sin descarga monolítica"
-    },
-    "stac_crawlers_pystac": {
-      "verified": true,
-      "protocol": "STAC 1.0.0 Core & Collections",
-      "performance": "Recorrido recursivo sin errores de trailing slash"
-    },
-    "w3c_dcat_harvesters": {
-      "verified": true,
-      "protocol": "W3C DCAT-AP 2.0 JSON-LD",
-      "performance": "Extracción semántica automatizada con MIME types válidos"
-    },
-    "curl_http_range_probe": {
-      "verified": true,
-      "protocol": "HTTP/2 & HTTP/1.1 Range RFC 7233",
-      "performance": "Respuesta HTTP 206 Partial Content conforme"
-    }
+  "conformance_closure_log": {
+    "summary": "Registro auditable de resolución definitiva de los 4 errores de estado del reporte previo (CR-01 a CR-04) y de los 4 hallazgos físicos profundos detectados por la auditoría GPU CUDA (CUDA-01 a CUDA-04).",
+    "status_transition": "NON_CONFORMANT (4 critical_errors) -> CONFORMANT (0 critical_errors, 0 warnings)",
+    "closed_items": [
+      {
+        "id": "CR-01",
+        "category": "Zero-Secret / Local Path Hygiene",
+        "finding": "Cadena literal de ruta local de Windows presente en script auxiliar src/auditor_red_team_2_antagonista.py",
+        "resolution": "Reemplazada por resolución dinámica Path(__file__).resolve()",
+        "verification": "VECTOR 1 PASS (0 ocurrencias en 153 archivos)"
+      },
+      {
+        "id": "CR-02",
+        "category": "Zero-Secret / Local Path Hygiene",
+        "finding": "Literal de nombre de usuario local dentro de expresión regular del escáner en src/auditor_red_team_2_antagonista.py",
+        "resolution": "Generalizado a patrón genérico de rutas de estación de trabajo sin incluir literales personales",
+        "verification": "VECTOR 1 PASS"
+      },
+      {
+        "id": "CR-03",
+        "category": "Zero-Secret / Local Path Hygiene",
+        "finding": "Ruta absoluta estática en encabezado de src/auditor_red_team_3_cuda_gpu.py",
+        "resolution": "Sustituida por BASE_DIR = Path(__file__).resolve().parent.parent",
+        "verification": "VECTOR 1 PASS"
+      },
+      {
+        "id": "CR-04",
+        "category": "Conformance Report Synchronization",
+        "finding": "conformance_report.json publicado antes de re-ejecutar el validador tras limpiar CR-01..CR-03",
+        "resolution": "Re-ejecución completa de compilar_y_certificar_ecosistema_ide.py y sincronización atómica a S3/CloudFront con status=CONFORMANT y critical_errors=0",
+        "verification": "VECTOR 15 PASS"
+      },
+      {
+        "id": "CUDA-01",
+        "category": "Geodetic Coordinate Integrity (GPU Vector G4)",
+        "finding": "3 jardines infantiles privados (MBHT_PRIV_00470, MBHT_PRIV_00484, MBHT_PRIV_00487) con latitud y longitud invertidas en Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
+        "resolution": "Inversión corregida a WGS84 continental, geometría WKB regenerada y archivo republicado en S3",
+        "verification": "CUDA Vector G4 PASS (3.886/3.886 puntos válidos en Chile)"
+      },
+      {
+        "id": "CUDA-02",
+        "category": "CRS Reprojection Parity (GPU Vector G4)",
+        "finding": "Geometrías WKB de INSE_Socioeconomico_Nacional_2024.parquet almacenadas en EPSG:32719 (UTM 19S metros) mientras el metadato declaraba EPSG:4326",
+        "resolution": "Reproyección de las 254.268 geometrías a EPSG:4326 (WGS 84) y actualización de STAC/DCAT/SHA256",
+        "verification": "CUDA Vector G4 & G10 PASS"
+      },
+      {
+        "id": "CUDA-03",
+        "category": "Demographic Additivity & CRS Parity (GPU Vector G2 & G4)",
+        "finding": "86.229 manzanas en regiones 09-16 de Censo_Imputaciones_2024_Nacional.parquet con HOMBRES/MUJERES en 0 (no sincronizadas con HOMBRES_y/MUJERES_y de la matriz maestra CIT) y geometría en EPSG:32719",
+        "resolution": "Sincronización completa desde MBHT_MAESTRO_2024_NACIONAL.parquet (H+M == POBLACION_2024 == 18.484.061 hab. en las 254.268 manzanas) y reproyección a EPSG:4326",
+        "verification": "CUDA Vector G2 & G4 PASS (0 discrepancias aditivas en 254.268 manzanas)"
+      },
+      {
+        "id": "CUDA-04",
+        "category": "Multi-Format Cloud Distribution (Red Team 2.0 V2)",
+        "finding": "Faltaban las 4 distribuciones nacionales de SII_Areas_Homogeneas_Nacional en el bucket S3 de producción",
+        "resolution": "Generación y carga a S3 de SII_Areas_Homogeneas_Nacional (.parquet, .gpkg, _SHP.zip, .csv) para las 14.157 áreas homogéneas",
+        "verification": "Red Team 2.0 V2 PASS (71/71 STAC assets HTTP 200 OK)"
+      }
+    ]
   },
-  "certification_signature": {
-    "issuing_entity": "Comité de Certificación y Ciencia Abierta CIT-UAI",
-    "canonical_verification_url": "https://ide.cit.uai.cl/data/reporte_auditoria_independiente_octubre_2026.json",
-    "hash_sha256": "auto-calculado-al-compilar"
+  "stac_api_direct_links_for_evaluators": {
+    "note": "Enlaces directos expuestos también como hipervínculos HTML <a href> en la portada y guía técnica para máxima compatibilidad con agentes de navegación y validadores OGC/STAC:",
+    "stac_root_catalog": "https://ide.cit.uai.cl/stac/catalog.json",
+    "stac_conformance": "https://ide.cit.uai.cl/stac/conformance",
+    "stac_conformance_json": "https://ide.cit.uai.cl/stac/conformance.json",
+    "stac_collections": "https://ide.cit.uai.cl/stac/collections",
+    "stac_collections_json": "https://ide.cit.uai.cl/stac/collections.json",
+    "stac_search_get_sample": "https://ide.cit.uai.cl/stac/search?limit=5",
+    "stac_search_Static_fallback": "https://ide.cit.uai.cl/stac/search.json"
   }
 }

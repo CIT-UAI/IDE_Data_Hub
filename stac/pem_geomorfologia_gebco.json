@@ -96,6 +96,12 @@
       "href": "https://ide.cit.uai.cl/stac/pem_geomorfologia_gebco.json"
     },
     {
+      "rel": "item",
+      "type": "application/geo+json",
+      "title": "STAC Item Nacional — Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+      "href": "https://ide.cit.uai.cl/stac/items/pem-geomorfologia-gebco-nacional.json"
+    },
+    {
       "rel": "license",
       "type": "text/html",
       "title": "Licencia Abierta CC BY 4.0",
@@ -139,7 +145,9 @@
         "data"
       ],
       "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.gpkg",
-      "proj:epsg": 4326
+      "proj:epsg": 4326,
+      "file:size": 2678784,
+      "file:checksum": "8901177e440c61e57be3ad125555c7054526ccb02b0ef3dc8d69ce229ebb6098"
     },
     "shapefile": {
       "title": "Shapefile (.zip) — Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
@@ -148,7 +156,9 @@
         "data"
       ],
       "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO_SHP.zip",
-      "proj:epsg": 4326
+      "proj:epsg": 4326,
+      "file:size": 1154099,
+      "file:checksum": "1946a13918e6c015d518f6602d9af61b0a01f08de9c2b305c4256fd4f07bfb73"
     },
     "csv": {
       "title": "Tabla CSV — Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
@@ -156,7 +166,9 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.csv"
+      "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.csv",
+      "file:size": 2189,
+      "file:checksum": "04100c3d2dea97217195f15f8eda582b7c10cf5bf09e1c77bdccc3b47b70d086"
     },
     "metadata_iso19139": {
       "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",

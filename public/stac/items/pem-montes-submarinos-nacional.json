@@ -1,0 +1,127 @@
+{
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "type": "Feature",
+  "id": "pem-montes-submarinos-nacional",
+  "collection": "pem-montes-submarinos",
+  "bbox": [
+    -115.0,
+    -56.0,
+    -68.0,
+    -18.5
+  ],
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -115.0,
+          -56.0
+        ],
+        [
+          -68.0,
+          -56.0
+        ],
+        [
+          -68.0,
+          -18.5
+        ],
+        [
+          -115.0,
+          -18.5
+        ],
+        [
+          -115.0,
+          -56.0
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "title": "Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP) (Cobertura Nacional Consolidada)",
+    "description": "Catastro geomorfológico y toponímico de 2.234 cimas, guyots, cañones y relieves destacados del lecho oceánico de Chile, con toponimia oficial estandarizada por el Subcomité de Nombres de Formas del Relieve Submarino (SCUFN - GEBCO/OHI) y el SHOA. Identifica estructuras orográficas submarinas que constituyen hábitats bentónicos de alto valor ecológico y áreas prioritarias para la evaluación de Ecosistemas Marinos Vulnerables (VME) bajo directrices de la FAO y el marco de zonificación y conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley N° 21.600), como las cordilleras de Nazca, Desventuradas y Salas y Gómez.",
+    "datetime": "2017-04-19T00:00:00Z",
+    "start_datetime": "2017-01-01T00:00:00Z",
+    "end_datetime": "2026-12-31T23:59:59Z",
+    "proj:epsg": 4326,
+    "license": "CC-BY-4.0"
+  },
+  "links": [
+    {
+      "rel": "self",
+      "type": "application/geo+json",
+      "href": "https://ide.cit.uai.cl/stac/items/pem-montes-submarinos-nacional.json"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/pem_montes_submarinos.json"
+    },
+    {
+      "rel": "collection",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/pem_montes_submarinos.json"
+    },
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    }
+  ],
+  "assets": {
+    "geoparquet": {
+      "title": "GeoParquet — Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.parquet",
+      "proj:epsg": 4326,
+      "file:size": 61134,
+      "file:checksum": "b73487f4dff3bb8383d1053eaf4529ac406db2f27753031892eff1f08c05e3b1"
+    },
+    "geopackage": {
+      "title": "OGC GeoPackage — Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+      "type": "application/geopackage+sqlite3",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.gpkg",
+      "proj:epsg": 4326,
+      "file:size": 430080,
+      "file:checksum": "edad21804ccb36cafb6eef6470619f774533287858a3c18ed0ae3770b9d7d879"
+    },
+    "shapefile": {
+      "title": "Shapefile (.zip) — Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+      "type": "application/zip",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia_SHP.zip",
+      "proj:epsg": 4326,
+      "file:size": 54878,
+      "file:checksum": "5093aba933c90efa89cce37825bd763bcf916b84f8552bd5e0c8a4db303bb3cb"
+    },
+    "csv": {
+      "title": "Tabla CSV — Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+      "type": "text/csv",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.csv",
+      "file:size": 211745,
+      "file:checksum": "a2284ce762b7394a003ac1dd3973ce9538d963b2f6da9e4a82ce850c8cabc5cc"
+    },
+    "metadata_iso19139": {
+      "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "href": "https://ide.cit.uai.cl/download/iso_xml/pem_montes_submarinos_iso19139.xml"
+    }
+  }
+}

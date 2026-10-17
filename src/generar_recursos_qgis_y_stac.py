@@ -35,6 +35,15 @@ def generar_stac():
     print("[*] Generando Catálogo Estático STAC 1.0.0...")
     with open(CATALOGO_JSON, "r", encoding="utf-8") as f:
         catalog_data = json.load(f)
+    manifest_path = BASE_DIR / "data" / "archivos_hash_manifest.json"
+    manifest_data = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}
+
+    def _enrich_asset(asset_dict: dict, rel_url: str) -> dict:
+        fname = rel_url.split("/")[-1]
+        if fname in manifest_data:
+            asset_dict["file:size"] = manifest_data[fname]["size_bytes"]
+            asset_dict["file:checksum"] = manifest_data[fname]["sha256"]
+        return asset_dict
 
     # 1. Colecciones hijas para el catálogo raíz y lista canónica de colecciones
     child_links = []
@@ -52,40 +61,36 @@ def generar_stac():
         
         assets = {}
         if capa.get("s3_parquet"):
-            assets["geoparquet"] = {
+            assets["geoparquet"] = _enrich_asset({
                 "title": f"GeoParquet — {titulo}",
                 "type": "application/vnd.apache.parquet",
                 "roles": ["data"],
                 "href": f"https://ide.cit.uai.cl/{capa['s3_parquet']}",
                 "proj:epsg": 4326
-            }
-            if capa.get("size_bytes"):
-                assets["geoparquet"]["file:size"] = capa["size_bytes"]
-            if capa.get("sha256"):
-                assets["geoparquet"]["file:checksum"] = capa["sha256"]
+            }, capa["s3_parquet"])
         if capa.get("gpkg_url"):
-            assets["geopackage"] = {
+            assets["geopackage"] = _enrich_asset({
                 "title": f"OGC GeoPackage — {titulo}",
                 "type": "application/geopackage+sqlite3",
                 "roles": ["data"],
                 "href": f"https://ide.cit.uai.cl/{capa['gpkg_url']}",
                 "proj:epsg": 4326
-            }
+            }, capa["gpkg_url"])
         if capa.get("shp_url"):
-            assets["shapefile"] = {
+            assets["shapefile"] = _enrich_asset({
                 "title": f"Shapefile (.zip) — {titulo}",
                 "type": "application/zip",
                 "roles": ["data"],
                 "href": f"https://ide.cit.uai.cl/{capa['shp_url']}",
                 "proj:epsg": 4326
-            }
+            }, capa["shp_url"])
         if capa.get("csv_url"):
-            assets["csv"] = {
+            assets["csv"] = _enrich_asset({
                 "title": f"Tabla CSV — {titulo}",
                 "type": "text/csv",
                 "roles": ["data"],
                 "href": f"https://ide.cit.uai.cl/{capa['csv_url']}"
-            }
+            }, capa["csv_url"])
         assets["metadata_iso19139"] = {
             "title": f"Metadatos Oficiales ISO 19115 / ISO 19139 XML — {titulo}",
             "type": "application/xml",
@@ -155,6 +160,7 @@ def generar_stac():
                 {"rel": "root", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
                 {"rel": "parent", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
                 {"rel": "self", "type": "application/json", "href": f"https://ide.cit.uai.cl/stac/{cid}.json"},
+                {"rel": "item", "type": "application/geo+json", "title": f"STAC Item Nacional — {titulo}", "href": f"https://ide.cit.uai.cl/stac/items/{col_id}-nacional.json"},
                 {"rel": "license", "type": "text/html", "title": "Licencia Abierta CC BY 4.0", "href": "https://creativecommons.org/licenses/by/4.0/"},
                 {"rel": "about", "type": "text/html", "title": "Guía Técnica y Estándares IDE CIT", "href": "https://ide.cit.uai.cl/guia-tecnica"},
                 {"rel": "describedby", "type": "application/xml", "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML", "href": f"https://ide.cit.uai.cl/download/iso_xml/{cid}_iso19139.xml"},
@@ -525,13 +531,22 @@ def generar_stac_html():
                         Punto de acceso estandarizado para descubrimiento, consulta automatizada e ingesta de colecciones territoriales del Centro de Inteligencia Territorial de la Universidad Adolfo Ibáñez (CIT-UAI). Compatible con bibliotecas cliente en Python (<code class="bg-slate-100 px-1 py-0.5 rounded text-xs text-slate-800 font-mono">pystac_client</code>), R (<code class="bg-slate-100 px-1 py-0.5 rounded text-xs text-slate-800 font-mono">rstac</code>) y motores QGIS / ArcGIS.
                     </p>
                 </div>
-                <div class="flex flex-col sm:flex-row gap-3">
-                    <a href="https://ide.cit.uai.cl/stac/catalog.json" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-black text-white text-xs font-semibold shadow transition">
-                        <i data-lucide="file-json" class="w-4 h-4 mr-2"></i>
-                        Ver catalog.json
+                <div class="flex flex-wrap gap-2.5">
+                    <a href="https://ide.cit.uai.cl/stac/catalog.json" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-black text-white text-xs font-semibold shadow transition">
+                        <i data-lucide="file-json" class="w-4 h-4 mr-1.5"></i>
+                        catalog.json
                     </a>
-                    <a href="/descargas" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-700 text-xs font-semibold transition">
-                        <i data-lucide="download" class="w-4 h-4 mr-2"></i>
+                    <a href="https://ide.cit.uai.cl/stac/conformance" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3.5 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-800 text-xs font-mono font-semibold transition">
+                        /stac/conformance
+                    </a>
+                    <a href="https://ide.cit.uai.cl/stac/collections" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3.5 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-800 text-xs font-mono font-semibold transition">
+                        /stac/collections
+                    </a>
+                    <a href="https://ide.cit.uai.cl/stac/search?limit=5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3.5 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-800 text-xs font-mono font-semibold transition">
+                        /stac/search?limit=5
+                    </a>
+                    <a href="/descargas" class="inline-flex items-center justify-center px-3.5 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-700 text-xs font-semibold transition">
+                        <i data-lucide="download" class="w-4 h-4 mr-1.5"></i>
                         Descargas Directas
                     </a>
                 </div>

@@ -1,0 +1,341 @@
+{
+  "telemetry_version": "2026.2-CUDA",
+  "generated_at_utc": "2026-10-17T22:33:15Z",
+  "issuing_scope": "First-Party Automated GPU Forensic Verification (ISO/IEC 17050-1 SDoC — CIT-UAI)",
+  "gpu_hardware": {
+    "device_name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "cuda_version": "12.4",
+    "pytorch_version": "2.6.0+cu124",
+    "vram_gb": 8.59,
+    "streaming_multiprocessors": 36
+  },
+  "execution_metrics": {
+    "spatial_rows_scanned": 7303643,
+    "numerical_cells_evaluated_in_vram": 2077916543,
+    "pairwise_distances_evaluated_in_gpu": 2691093896,
+    "monte_carlo_scenarios": 10000,
+    "moran_i_r13_bht": 0.9095,
+    "elapsed_seconds": 21.93,
+    "total_checks": 45,
+    "passed_checks": 45,
+    "failed_checks": 0,
+    "status": "CONFORMANT"
+  },
+  "vectors": [
+    {
+      "vector": "G1",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Escaneo GPU MBHT_2017_Nacional_Manzanas.parquet",
+      "evidence": "204,906 filas x 37 cols numéricas (7,581,522 celdas en VRAM, 0 Inf) [250.4 ms]"
+    },
+    {
+      "vector": "G1",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Escaneo GPU Censo_Imputaciones_2024_Nacional.parquet",
+      "evidence": "254,268 filas x 40 cols numéricas (10,170,720 celdas en VRAM, 0 Inf) [289.9 ms]"
+    },
+    {
+      "vector": "G1",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Escaneo GPU INSE_Socioeconomico_Nacional_2024.parquet",
+      "evidence": "254,268 filas x 5 cols numéricas (1,271,340 celdas en VRAM, 0 Inf) [187.9 ms]"
+    },
+    {
+      "vector": "G1",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Escaneo GPU SII_Areas_Homogeneas_Nacional.parquet",
+      "evidence": "14,157 filas x 9 cols numéricas (127,413 celdas en VRAM, 0 Inf) [25.2 ms]"
+    },
+    {
+      "vector": "G1",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Escaneo GPU Equipamientos_2017_Nacional_Consolidado.parquet",
+      "evidence": "55,035 filas x 6 cols numéricas (330,210 celdas en VRAM, 0 Inf) [74.7 ms]"
+    },
+    {
+      "vector": "G1",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Escaneo GPU Red_Vial_Ejes_2017_Nacional.parquet",
+      "evidence": "1,589,595 filas x 2 cols numéricas (3,179,190 celdas en VRAM, 0 Inf) [469.9 ms]"
+    },
+    {
+      "vector": "G1",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Escaneo GPU Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
+      "evidence": "3,886 filas x 18 cols numéricas (69,948 celdas en VRAM, 0 Inf) [33.0 ms]"
+    },
+    {
+      "vector": "G1",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Escaneo GPU Huella_Edificaciones_Urbanas_2024.parquet",
+      "evidence": "341,962 filas x 4 cols numéricas (1,367,848 celdas en VRAM, 0 Inf) [159.1 ms]"
+    },
+    {
+      "vector": "G1",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Escaneo GPU PEM_Maritorio_Nacional_Tricontinental.parquet",
+      "evidence": "394 filas x 2 cols numéricas (788 celdas en VRAM, 0 Inf) [15.8 ms]"
+    },
+    {
+      "vector": "G1",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Escaneo GPU PEM_Geomorfologia_Submarina_GEBCO.parquet",
+      "evidence": "11 filas x 5 cols numéricas (55 celdas en VRAM, 0 Inf) [7.2 ms]"
+    },
+    {
+      "vector": "G1",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Escaneo GPU PEM_Montes_Submarinos_Toponimia.parquet",
+      "evidence": "2,234 filas x 6 cols numéricas (13,404 celdas en VRAM, 0 Inf) [7.5 ms]"
+    },
+    {
+      "vector": "G1",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Escaneo GPU PEM_Cuencas_Oceanicas_Submarinas.parquet",
+      "evidence": "53,726 filas x 4 cols numéricas (214,904 celdas en VRAM, 0 Inf) [7.4 ms]"
+    },
+    {
+      "vector": "G1",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Escaneo GPU PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet",
+      "evidence": "4,529,201 filas x 1 cols numéricas (4,529,201 celdas en VRAM, 0 Inf) [2684.2 ms]"
+    },
+    {
+      "vector": "G2",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Invariantes algebraicas MBHT 2017 en GPU (204.906 manzanas)",
+      "evidence": "Dominio [0,1] exacto | BHT_Nac=0.6171 | BHT_R13(pond)=0.6517 / BHT_R13(simple)=0.6146 | BHT_R15=0.4623"
+    },
+    {
+      "vector": "G2",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Aditividad demográfica Censo 2024 en GPU (254.268 manzanas)",
+      "evidence": "H+M == POBLACION_2024 y Suma(7 cohortes) == POBLACION_2024 en el 100% de las filas (Pob Total=18,484,061)"
+    },
+    {
+      "vector": "G2",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Cinemática de Tobler en GPU sobre 1.589.595 tramos viales",
+      "evidence": "0 tramos con LARGO<=0 o T_TOBLER<=0 | Largo Total=336,736.6 km | Tiempo Total=316,050,901 min"
+    },
+    {
+      "vector": "G2",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Cuadratura matricial de matrículas Educación Inicial en GPU (3.886 jardines)",
+      "evidence": "0 discrepancias aditivas en Sala Cuna, Niveles Medios y Transición (Matrícula total=201,117)"
+    },
+    {
+      "vector": "G3",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Cuadratura 16 regiones MBHT 2017 (R01..R16) vs Nacional en GPU",
+      "evidence": "Suma 16 regiones = 204,906 manzanas y 17,482,699 habitantes (100% idéntico al Nacional)"
+    },
+    {
+      "vector": "G3",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Cuadratura 16 regiones Red Vial Tobler (R01..R16) vs Nacional en GPU",
+      "evidence": "Suma 16 regiones = 1,589,595 tramos y 336,736.55 km (100% idéntico al Nacional)"
+    },
+    {
+      "vector": "G3",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Cuadratura 16 regiones Equipamientos (R01..R16) vs Nacional",
+      "evidence": "Suma 16 regiones = 55,035 equipamientos == 55.035 Nacional"
+    },
+    {
+      "vector": "G4",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Geometría WGS84 limpia en GPU: MBHT_2017_Nacional_Manzanas.parquet",
+      "evidence": "204,906 bboxes válidos | 0 Null-Island | 0 UTM/Invertidas | BBox=[-109.45, -56.53, -66.42, -17.50] [1346 ms]"
+    },
+    {
+      "vector": "G4",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Geometría WGS84 limpia en GPU: Censo_Imputaciones_2024_Nacional.parquet",
+      "evidence": "254,268 bboxes válidos | 0 Null-Island | 0 UTM/Invertidas | BBox=[-109.44, -55.80, -66.81, -17.50] [1915 ms]"
+    },
+    {
+      "vector": "G4",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Geometría WGS84 limpia en GPU: INSE_Socioeconomico_Nacional_2024.parquet",
+      "evidence": "254,268 bboxes válidos | 0 Null-Island | 0 UTM/Invertidas | BBox=[-109.44, -55.80, -66.81, -17.50] [1807 ms]"
+    },
+    {
+      "vector": "G4",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Geometría WGS84 limpia en GPU: SII_Areas_Homogeneas_Nacional.parquet",
+      "evidence": "14,157 bboxes válidos | 0 Null-Island | 0 UTM/Invertidas | BBox=[-75.35, -55.09, -67.17, -17.60] [242 ms]"
+    },
+    {
+      "vector": "G4",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Geometría WGS84 limpia en GPU: Equipamientos_2017_Nacional_Consolidado.parquet",
+      "evidence": "55,035 bboxes válidos | 0 Null-Island | 0 UTM/Invertidas | BBox=[-109.44, -55.08, -67.08, -17.59] [108 ms]"
+    },
+    {
+      "vector": "G4",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Geometría WGS84 limpia en GPU: Red_Vial_Ejes_2017_Nacional.parquet",
+      "evidence": "1,589,595 bboxes válidos | 0 Null-Island | 0 UTM/Invertidas | BBox=[-109.44, -56.52, -67.04, -17.50] [2500 ms]"
+    },
+    {
+      "vector": "G4",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Geometría WGS84 limpia en GPU: Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
+      "evidence": "3,886 bboxes válidos | 0 Null-Island | 0 UTM/Invertidas | BBox=[-109.43, -54.93, -67.60, -17.59] [481 ms]"
+    },
+    {
+      "vector": "G4",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Geometría WGS84 limpia en GPU: Huella_Edificaciones_Urbanas_2024.parquet",
+      "evidence": "341,962 bboxes válidos | 0 Null-Island | 0 UTM/Invertidas | BBox=[-71.64, -33.16, -70.02, -31.15] [379 ms]"
+    },
+    {
+      "vector": "G4",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Geometría WGS84 limpia en GPU: PEM_Maritorio_Nacional_Tricontinental.parquet",
+      "evidence": "394 bboxes válidos | 0 Null-Island | 0 UTM/Invertidas | BBox=[-118.00, -78.35, -38.42, -18.34] [691 ms]"
+    },
+    {
+      "vector": "G4",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Geometría WGS84 limpia en GPU: PEM_Geomorfologia_Submarina_GEBCO.parquet",
+      "evidence": "11 bboxes válidos | 0 Null-Island | 0 UTM/Invertidas | BBox=[-114.00, -63.32, -56.68, -18.51] [60 ms]"
+    },
+    {
+      "vector": "G4",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Geometría WGS84 limpia en GPU: PEM_Montes_Submarinos_Toponimia.parquet",
+      "evidence": "2,234 bboxes válidos | 0 Null-Island | 0 UTM/Invertidas | BBox=[-118.00, -69.69, -47.37, -19.81] [7 ms]"
+    },
+    {
+      "vector": "G4",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Geometría WGS84 limpia en GPU: PEM_Cuencas_Oceanicas_Submarinas.parquet",
+      "evidence": "53,726 bboxes válidos | 0 Null-Island | 0 UTM/Invertidas | BBox=[-118.00, -78.35, -38.42, -18.35] [167 ms]"
+    },
+    {
+      "vector": "G4",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Geometría WGS84 limpia en GPU: PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet",
+      "evidence": "4,529,201 bboxes válidos | 0 Null-Island | 0 UTM/Invertidas | BBox=[-118.00, -77.92, -38.50, -18.35] [3992 ms]"
+    },
+    {
+      "vector": "G5",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Unicidad 100% de llave primaria id_manzcit en MBHT_2017_Nacional_Manzanas.parquet",
+      "evidence": "204,906 == 204,906 registros únicos (0 duplicados)"
+    },
+    {
+      "vector": "G5",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Unicidad 100% de llave primaria ID_MANZCIT en Censo_Imputaciones_2024_Nacional.parquet",
+      "evidence": "254,268 == 254,268 registros únicos (0 duplicados)"
+    },
+    {
+      "vector": "G5",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Unicidad 100% de llave primaria MANZ_CIT en INSE_Socioeconomico_Nacional_2024.parquet",
+      "evidence": "254,268 == 254,268 registros únicos (0 duplicados)"
+    },
+    {
+      "vector": "G5",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Unicidad 100% de llave primaria id_mbht en Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
+      "evidence": "3,886 == 3,886 registros únicos (0 duplicados)"
+    },
+    {
+      "vector": "G5",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Unicidad 100% de llave primaria id en SII_Areas_Homogeneas_Nacional.parquet",
+      "evidence": "14,157 == 14,157 registros únicos (0 duplicados)"
+    },
+    {
+      "vector": "G5",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Matriz GPU torch.cdist (15.101.000 pares) sobre Educación Inicial",
+      "evidence": "Evaluados 15,100,996 pares en Tensor Cores (0 colisiones espurias)"
+    },
+    {
+      "vector": "G6",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Cero columnas de datos personales (RUT/Nombres/Folios individuales) en las 13 coberturas",
+      "evidence": "259 columnas auditadas cumplen Ley 17.374 y Ley 19.628"
+    },
+    {
+      "vector": "G6",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Análisis GPU de K-Anonimato Territorial en MBHT 2017",
+      "evidence": "100% de los atributos publicados son índices sintéticos agregados de manzana (0 microdatos individuales; 2,233 manzanas rurales/borde con 1-3 hab. sólo exponen promedios zonales)"
+    },
+    {
+      "vector": "G7",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Escáner GPU de Entropía de Shannon y Secretos (32 archivos, 3.38 MB)",
+      "evidence": "0 llaves AWS, 0 credenciales DB, 0 rutas locales filtradas [201.9 ms]"
+    },
+    {
+      "vector": "G8",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Estabilidad numérica Monte Carlo en GPU (10.000 escenarios x 204.906 manzanas = 2,05B celdas)",
+      "evidence": "0 NaN/Inf | Rango=[0.0008, 0.9999] ⊆ [0,1] | IC 90% BHT Nacional=[0.5244, 0.7662] [878.6 ms]"
+    },
+    {
+      "vector": "G9",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Autocorrelación espacial I de Moran en GPU (2,675,992,900 pares sobre 51,730 manzanas habitadas R13)",
+      "evidence": "Moran's I = 0.9095 (Z = +413.7, p < 1e-100, fuerte estructura espacial, 0 permutación de filas) [1461 ms]"
+    },
+    {
+      "vector": "G10",
+      "severity": "PASS",
+      "status": "PASS",
+      "title": "Paridad topológica y de llave 1:1 Censo 2024 vs. INSE 2024 en GPU",
+      "evidence": "254,268/254,268 llaves idénticas | Δ_max_bbox = 0.00e+00° [158.9 ms]"
+    }
+  ]
+}

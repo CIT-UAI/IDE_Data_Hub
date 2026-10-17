@@ -1,0 +1,127 @@
+{
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "type": "Feature",
+  "id": "educacion-inicial-2024-nacional",
+  "collection": "educacion-inicial-2024",
+  "bbox": [
+    -109.43,
+    -54.94,
+    -67.6,
+    -18.25
+  ],
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -109.43,
+          -54.94
+        ],
+        [
+          -67.6,
+          -54.94
+        ],
+        [
+          -67.6,
+          -18.25
+        ],
+        [
+          -109.43,
+          -18.25
+        ],
+        [
+          -109.43,
+          -54.94
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "title": "Educación inicial — Catastro nacional de jardines infantiles y salas cuna (Cobertura Nacional Consolidada)",
+    "description": "Catastro maestro nacional unificado de establecimientos de educación inicial (jardines infantiles y salas cuna) para las 16 regiones de Chile. Integra tanto la oferta pública (JUNJI, Integra, VTF, SLEP y Municipal) como la oferta privada particular subvencionada y particular pagada, detallando capacidad y matrícula por nivel formativo (Sala Cuna Menor/Mayor, Nivel Medio Menor/Mayor, Prekínder NT1 y Kínder NT2). Insumo base para la evaluación de cobertura y accesibilidad peatonal infantil en la MBHT.",
+    "datetime": "2024-06-01T00:00:00Z",
+    "start_datetime": "2017-01-01T00:00:00Z",
+    "end_datetime": "2026-12-31T23:59:59Z",
+    "proj:epsg": 4326,
+    "license": "CC-BY-4.0"
+  },
+  "links": [
+    {
+      "rel": "self",
+      "type": "application/geo+json",
+      "href": "https://ide.cit.uai.cl/stac/items/educacion-inicial-2024-nacional.json"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/educacion_inicial_2024.json"
+    },
+    {
+      "rel": "collection",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/educacion_inicial_2024.json"
+    },
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    }
+  ],
+  "assets": {
+    "geoparquet": {
+      "title": "GeoParquet — Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
+      "proj:epsg": 4326,
+      "file:size": 364944,
+      "file:checksum": "ec9b240098d426b5d2bf9aa1350c3f40a3e8e26aa7acf02a53e20b7ccbce2b8f"
+    },
+    "geopackage": {
+      "title": "OGC GeoPackage — Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
+      "type": "application/geopackage+sqlite3",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.gpkg",
+      "proj:epsg": 4326,
+      "file:size": 2965504,
+      "file:checksum": "3b4af733b0440ed398f19834ab7c1cedbd84b3475cf29f460e6f14e79786fbbd"
+    },
+    "shapefile": {
+      "title": "Shapefile (.zip) — Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
+      "type": "application/zip",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024_SHP.zip",
+      "proj:epsg": 4326,
+      "file:size": 386413,
+      "file:checksum": "7074d332597226a2b18d2b0462f38f7e10f5b731636c5b81b815b56837f2244c"
+    },
+    "csv": {
+      "title": "Tabla CSV — Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
+      "type": "text/csv",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.csv",
+      "file:size": 2489732,
+      "file:checksum": "730e93c76b0070e8c02fe7e0eb9290f763c8b03867e997a1fcd1ea7885b8e29f"
+    },
+    "metadata_iso19139": {
+      "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "href": "https://ide.cit.uai.cl/download/iso_xml/educacion_inicial_2024_iso19139.xml"
+    }
+  }
+}

@@ -722,21 +722,22 @@ class IDEPortalBuilder:
                     </div>
                 </div>
 
-                <!-- Tarjetas sobrias de Dictamen de Auditoría Externa y Arquitectura Cloud-Native -->
+                <!-- Tarjetas sobrias de Declaración de Conformidad ISO/IEC 17050-1 (SDoC), Cierre de Hallazgos y Arquitectura Cloud-Native -->
                 <div class="mt-4 pt-3.5 border-t border-slate-800 grid grid-cols-1 lg:grid-cols-2 gap-3.5 text-xs">
                     <div class="bg-slate-950/60 border border-slate-800 rounded-lg px-4 py-3 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between gap-2 mb-1">
-                                <span class="font-bold text-slate-200 uppercase tracking-wider text-[11px]">Dictamen de Auditoría Técnica Independiente</span>
-                                <span class="font-mono text-xs font-bold text-emerald-400">9,6 / 10 · 7/7 Pruebas</span>
+                                <span class="font-bold text-slate-200 uppercase tracking-wider text-[11px]">Declaración de Conformidad (ISO/IEC 17050-1 SDoC) &amp; GPU CUDA</span>
+                                <span class="font-mono text-xs font-bold text-emerald-400">CONFORMANT · 128/128 PASS · 0 CRITICAL</span>
                             </div>
                             <p class="text-slate-400 leading-relaxed text-[11px]">
-                                Certificación multicliente verificada en red pública WAN sobre 7 vectores empíricos: PyArrow 21.0, DuckDB HTTP Range (206), reproducibilidad R/Python (&Delta;=0), streaming GDAL <code class="font-mono text-slate-300">/vsicurl/</code>, travesía STAC 1.0.0, grafo DCAT-AP 2.0 y blindaje OWASP ASVS Nivel 2.
+                                Verificación reproducible de primera parte emitida por CIT-UAI (sin puntajes auto-asignados de terceros) con bitácora completa de cierre de hallazgos (<code class="font-mono text-slate-300">CR-01..CR-04 &rarr; FIXED</code> y <code class="font-mono text-slate-300">CUDA-01..CUDA-04 &rarr; FIXED</code>) en 3 barreras ejecutables: Red Team 1.0 Normativo (59/59), Red Team 2.0 WAN Fuzzer (24/24) y Red Team 3.0 GPU NVIDIA CUDA RTX 4070 (45/45 checks · 2,08B celdas en VRAM · Monte Carlo 10k escenarios · Moran&apos;s I = 0,9095).
                             </p>
                         </div>
-                        <div class="mt-2 pt-2 border-t border-slate-800/80 flex items-center justify-between font-mono text-[11px]">
-                            <a href="/data/reporte_auditoria_independiente_octubre_2026.md" target="_blank" rel="noopener noreferrer" class="text-[#6493B5] hover:text-white underline">Informe técnico (.md)</a>
-                            <a href="/data/reporte_auditoria_independiente_octubre_2026.json" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white underline">Evidencia machine-readable (.json)</a>
+                        <div class="mt-2 pt-2 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-2 font-mono text-[11px]">
+                            <a href="/data/reporte_auditoria_independiente_octubre_2026.md" target="_blank" rel="noopener noreferrer" class="text-[#6493B5] hover:text-white underline">Declaración SDoC &amp; Closure (.md)</a>
+                            <a href="/data/reporte_auditoria_independiente_octubre_2026.json" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white underline">SDoC (.json)</a>
+                            <a href="/data/cuda_forensic_telemetry.json" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-white underline">Telemetría GPU CUDA (.json)</a>
                         </div>
                     </div>
 
@@ -752,7 +753,7 @@ class IDEPortalBuilder:
                         </div>
                         <div class="mt-2 pt-2 border-t border-slate-800/80 flex items-center justify-between font-mono text-[11px]">
                             <a href="/guia-tecnica#seccion-3" class="text-[#6493B5] hover:text-white underline">Fundamento arquitectónico</a>
-                            <a href="/conformance_report.json" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white underline">Benchmarks p50/p95/p99</a>
+                            <a href="/conformance_report.json" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white underline">Conformance &amp; Closure JSON</a>
                         </div>
                     </div>
                 </div>
@@ -859,19 +860,33 @@ class IDEPortalBuilder:
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-100 font-sans">
-                            <!-- Fila 1: STAC 1.0.0 Catalog -->
+                            <!-- Fila 1: STAC 1.0.0 Catalog & STAC API -->
                             <tr class="hover:bg-slate-50/80 transition">
                                 <td class="p-3.5">
-                                    <span class="font-bold text-slate-900 block">STAC 1.0.0 Catalog</span>
-                                    <span class="text-[11px] text-slate-500">Catálogo estático con extensiones proj / file / sci</span>
+                                    <span class="font-bold text-slate-900 block">STAC 1.0.0 Catalog &amp; API</span>
+                                    <span class="text-[11px] text-slate-500">15 child collections + Endpoints STAC API (GET/POST)</span>
                                 </td>
-                                <td class="p-3.5 font-mono text-[11px]">
-                                    <a href="https://ide.cit.uai.cl/stac/catalog.json" target="_blank" rel="noopener noreferrer" class="text-slate-900 font-semibold hover:underline">/stac/catalog.json</a>
+                                <td class="p-3.5 font-mono text-[11px] space-y-1">
+                                    <div><a href="https://ide.cit.uai.cl/stac/catalog.json" target="_blank" rel="noopener noreferrer" class="text-slate-900 font-semibold hover:underline">/stac/catalog.json</a></div>
+                                    <div class="text-[10px] text-slate-600 space-x-1.5">
+                                        <a href="https://ide.cit.uai.cl/stac/conformance" target="_blank" rel="noopener noreferrer" class="hover:underline">/stac/conformance</a>
+                                        <span>·</span>
+                                        <a href="https://ide.cit.uai.cl/stac/collections" target="_blank" rel="noopener noreferrer" class="hover:underline">/stac/collections</a>
+                                        <span>·</span>
+                                        <a href="https://ide.cit.uai.cl/stac/search?limit=5" target="_blank" rel="noopener noreferrer" class="hover:underline">/stac/search?limit=5</a>
+                                    </div>
+                                    <div class="text-[10px] text-slate-500 space-x-1.5">
+                                        <a href="https://ide.cit.uai.cl/stac/conformance.json" target="_blank" rel="noopener noreferrer" class="hover:underline">conformance.json</a>
+                                        <span>·</span>
+                                        <a href="https://ide.cit.uai.cl/stac/collections.json" target="_blank" rel="noopener noreferrer" class="hover:underline">collections.json</a>
+                                        <span>·</span>
+                                        <a href="https://ide.cit.uai.cl/stac/search.json" target="_blank" rel="noopener noreferrer" class="hover:underline">search.json</a>
+                                    </div>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">EPSG:4326</td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (JSON)</td>
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
-                                    <code class="bg-slate-100 p-1 rounded block">curl -s https://ide.cit.uai.cl/stac/catalog.json | jq .id</code>
+                                    <code class="bg-slate-100 p-1 rounded block">curl -s "https://ide.cit.uai.cl/stac/search?limit=3" | jq .numberReturned</code>
                                 </td>
                                 <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
                             </tr>
@@ -971,19 +986,43 @@ class IDEPortalBuilder:
                                 </td>
                                 <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
                             </tr>
-                            <!-- Fila 8: Reporte de Conformidad y Benchmarks -->
+                            <!-- Fila 8: Reporte de Conformidad, Closure Log y Benchmarks -->
                             <tr class="hover:bg-slate-50/80 transition">
                                 <td class="p-3.5">
-                                    <span class="font-bold text-slate-900 block">Conformance & Benchmarks JSON</span>
-                                    <span class="text-[11px] text-slate-500">Métricas empíricas p50/p95/p99 y auditoría ISO/STAC</span>
+                                    <span class="font-bold text-slate-900 block">Conformance, Closure &amp; Benchmarks JSON</span>
+                                    <span class="text-[11px] text-slate-500">Estado CONFORMANT (0 errores), Closure Log y p50/p95/p99</span>
                                 </td>
-                                <td class="p-3.5 font-mono text-[11px]">
-                                    <a href="https://ide.cit.uai.cl/conformance_report.json" target="_blank" rel="noopener noreferrer" class="text-slate-900 font-semibold hover:underline">/conformance_report.json</a>
+                                <td class="p-3.5 font-mono text-[11px] space-y-1">
+                                    <div><a href="https://ide.cit.uai.cl/conformance_report.json" target="_blank" rel="noopener noreferrer" class="text-slate-900 font-semibold hover:underline">/conformance_report.json</a></div>
+                                    <div class="text-[10px] text-slate-600">
+                                        <a href="https://ide.cit.uai.cl/data/reporte_auditoria_independiente_octubre_2026.json" target="_blank" rel="noopener noreferrer" class="hover:underline">/data/reporte_auditoria_independiente_octubre_2026.json</a>
+                                    </div>
                                 </td>
-                                <td class="p-3.5 font-mono text-[11px] text-slate-700">N/A (Telemetría)</td>
-                                <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (JSON)</td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">ISO/IEC 17050-1</td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (CONFORMANT)</td>
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
-                                    <code class="bg-slate-100 p-1 rounded block">curl -s https://ide.cit.uai.cl/conformance_report.json | jq .benchmarks</code>
+                                    <code class="bg-slate-100 p-1 rounded block">curl -s https://ide.cit.uai.cl/conformance_report.json | jq '.status, .summary'</code>
+                                </td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
+                            </tr>
+                            <!-- Fila 9: Telemetría Forense GPU CUDA y Suites Reproducibles -->
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-3.5">
+                                    <span class="font-bold text-slate-900 block">GPU CUDA Forensic Telemetry (RTX 4070)</span>
+                                    <span class="text-[11px] text-slate-500">2,08B celdas en VRAM · Monte Carlo 10k · Moran&apos;s I = 0,9095</span>
+                                </td>
+                                <td class="p-3.5 font-mono text-[11px] space-y-1">
+                                    <div><a href="https://ide.cit.uai.cl/data/cuda_forensic_telemetry.json" target="_blank" rel="noopener noreferrer" class="text-slate-900 font-semibold hover:underline">/data/cuda_forensic_telemetry.json</a></div>
+                                    <div class="text-[10px] text-slate-600 space-x-1.5">
+                                        <a href="https://ide.cit.uai.cl/download/auditor_red_team_3_cuda_gpu.py" target="_blank" rel="noopener noreferrer" class="hover:underline">auditor_red_team_3_cuda_gpu.py</a>
+                                        <span>·</span>
+                                        <a href="https://ide.cit.uai.cl/download/auditor_red_team_2_antagonista.py" target="_blank" rel="noopener noreferrer" class="hover:underline">auditor_red_team_2_antagonista.py</a>
+                                    </div>
+                                </td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">FP64 Tensor</td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (45/45 PASS)</td>
+                                <td class="p-3.5 font-mono text-[10px] text-slate-700">
+                                    <code class="bg-slate-100 p-1 rounded block">curl -s https://ide.cit.uai.cl/data/cuda_forensic_telemetry.json | jq .execution_metrics</code>
                                 </td>
                                 <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
                             </tr>

@@ -1,0 +1,127 @@
+{
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "type": "Feature",
+  "id": "red-vial-ejes-2017-nacional",
+  "collection": "red-vial-ejes-2017",
+  "bbox": [
+    -75.64,
+    -55.98,
+    -66.86,
+    -17.5
+  ],
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -75.64,
+          -55.98
+        ],
+        [
+          -66.86,
+          -55.98
+        ],
+        [
+          -66.86,
+          -17.5
+        ],
+        [
+          -75.64,
+          -17.5
+        ],
+        [
+          -75.64,
+          -55.98
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "title": "Red vial urbana caminable y tiempos Tobler 2017 (Cobertura Nacional Consolidada)",
+    "description": "Red vial oficial caminable y grafo topológico peatonal integrado por 1.589.595 tramos viales calibrados con tiempos de fricción y decaimiento espacial de Tobler para las 16 regiones de Chile. Permite calcular isocronas peatonales y matrices de costo temporal entre las 204.906 manzanas censales y los equipamientos esenciales para la modelación de accesibilidad urbana de la línea base MBHT 2017.",
+    "datetime": "2017-04-19T00:00:00Z",
+    "start_datetime": "2017-01-01T00:00:00Z",
+    "end_datetime": "2026-12-31T23:59:59Z",
+    "proj:epsg": 4326,
+    "license": "CC-BY-4.0"
+  },
+  "links": [
+    {
+      "rel": "self",
+      "type": "application/geo+json",
+      "href": "https://ide.cit.uai.cl/stac/items/red-vial-ejes-2017-nacional.json"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/red_vial_ejes_2017.json"
+    },
+    {
+      "rel": "collection",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/red_vial_ejes_2017.json"
+    },
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    }
+  ],
+  "assets": {
+    "geoparquet": {
+      "title": "GeoParquet — Red vial urbana caminable y tiempos Tobler 2017",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet",
+      "proj:epsg": 4326,
+      "file:size": 225592155,
+      "file:checksum": "85c872e5eb1fb00ca95eb4c3a0248993566b74c53ecbbe42692653657adb8452"
+    },
+    "geopackage": {
+      "title": "OGC GeoPackage — Red vial urbana caminable y tiempos Tobler 2017",
+      "type": "application/geopackage+sqlite3",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.gpkg",
+      "proj:epsg": 4326,
+      "file:size": 500346880,
+      "file:checksum": "19d5e8cee3a3ee0910fa777a9aac89850c8a897afc3aa6e002a86a879a44dd07"
+    },
+    "shapefile": {
+      "title": "Shapefile (.zip) — Red vial urbana caminable y tiempos Tobler 2017",
+      "type": "application/zip",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional_SHP.zip",
+      "proj:epsg": 4326,
+      "file:size": 224455797,
+      "file:checksum": "758e3b639c9375e9988fc2e0c6e7c756a31f8afff7d147b628c565cc7beae289"
+    },
+    "csv": {
+      "title": "Tabla CSV — Red vial urbana caminable y tiempos Tobler 2017",
+      "type": "text/csv",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.csv",
+      "file:size": 106161078,
+      "file:checksum": "fc0d54d0a92d86aa181fd5ac6ebe4e0b1a1f59417d461dc50a7aff0f8e69ebb2"
+    },
+    "metadata_iso19139": {
+      "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Red vial urbana caminable y tiempos Tobler 2017",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "href": "https://ide.cit.uai.cl/download/iso_xml/red_vial_ejes_2017_iso19139.xml"
+    }
+  }
+}

@@ -569,6 +569,18 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
+                                    <td class="px-3.5 py-3 font-semibold text-slate-900">STAC API Endpoints (Conformance, Collections, Search)</td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] space-y-1">
+                                        <div><a href="https://ide.cit.uai.cl/stac/conformance" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/stac/conformance</a></div>
+                                        <div><a href="https://ide.cit.uai.cl/stac/collections" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/stac/collections</a></div>
+                                        <div><a href="https://ide.cit.uai.cl/stac/search?limit=5" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/stac/search?limit=5</a></div>
+                                    </td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-600">STAC API 1.0.0</td>
+                                    <td class="px-3.5 py-3 text-right space-x-2">
+                                        <a href="https://ide.cit.uai.cl/stac/search?limit=5" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Probar Search</a>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition">
                                     <td class="px-3.5 py-3 font-semibold text-slate-900">Catálogo Semántico DCAT-AP 2.0 (W3C)</td>
                                     <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/dcat.json" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/dcat.json</a></td>
                                     <td class="px-3.5 py-3 font-mono text-slate-600">JSON-LD</td>
@@ -578,12 +590,23 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
-                                    <td class="px-3.5 py-3 font-semibold text-slate-900">Reporte de Conformidad y Benchmarks (p50/p95/p99)</td>
+                                    <td class="px-3.5 py-3 font-semibold text-slate-900">Reporte de Conformidad, Closure Log y Benchmarks (p50/p95/p99)</td>
                                     <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/conformance_report.json" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/conformance_report.json</a></td>
                                     <td class="px-3.5 py-3 font-mono text-slate-600">JSON Telemetría / QA</td>
                                     <td class="px-3.5 py-3 text-right space-x-2">
                                         <a href="https://ide.cit.uai.cl/conformance_report.json" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
                                         <button onclick="copyText('https://ide.cit.uai.cl/conformance_report.json')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="px-3.5 py-3 font-semibold text-slate-900">Declaración de Conformidad (ISO/IEC 17050-1 SDoC) &amp; Telemetría GPU CUDA</td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] space-y-1">
+                                        <div><a href="https://ide.cit.uai.cl/data/reporte_auditoria_independiente_octubre_2026.json" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/data/reporte_auditoria_independiente_octubre_2026.json</a></div>
+                                        <div><a href="https://ide.cit.uai.cl/data/cuda_forensic_telemetry.json" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/data/cuda_forensic_telemetry.json</a></div>
+                                    </td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-600">ISO/IEC 17050-1 / CUDA</td>
+                                    <td class="px-3.5 py-3 text-right space-x-2">
+                                        <a href="https://ide.cit.uai.cl/data/cuda_forensic_telemetry.json" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Telemetría GPU</a>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">

@@ -12,10 +12,10 @@
     "size_mb": 406.87
   },
   "Censo_Imputaciones_2024_Nacional.parquet": {
-    "rel_path": "download/Censo_Imputaciones_2024_Nacional.parquet",
-    "size_bytes": 300547507,
-    "sha256": "864126f757d362213f018ac8b4d584fbc8de1cd42655a8a70cd6fc0f7c95b7cc",
-    "size_mb": 286.62
+    "size_bytes": 284484592,
+    "size_human": "271,3 MB",
+    "sha256": "d1af25f28e15b6f241230865fc506849247bb5736c1e8f03ac7bd89a034295c2",
+    "sha256_short": "d1af25f28e15b6f2"
   },
   "Censo_Imputaciones_2024_Nacional_SHP.zip": {
     "rel_path": "download/Censo_Imputaciones_2024_Nacional_SHP.zip",
@@ -36,10 +36,10 @@
     "size_mb": 2.83
   },
   "Educacion_Inicial_Jardines_SalasCuna_2024.parquet": {
-    "rel_path": "download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
-    "size_bytes": 365383,
-    "sha256": "223cfafbcc4f76949127e109c0a4673e40d4bf4019840e1b0a1d0fcc6918e711",
-    "size_mb": 0.35
+    "size_bytes": 364944,
+    "size_human": "356,4 KB",
+    "sha256": "ec9b240098d426b5d2bf9aa1350c3f40a3e8e26aa7acf02a53e20b7ccbce2b8f",
+    "sha256_short": "ec9b240098d426b5"
   },
   "Educacion_Inicial_Jardines_SalasCuna_2024_SHP.zip": {
     "rel_path": "download/Educacion_Inicial_Jardines_SalasCuna_2024_SHP.zip",
@@ -3012,10 +3012,10 @@
     "size_mb": 464.73
   },
   "INSE_Socioeconomico_Nacional_2024.parquet": {
-    "rel_path": "download/INSE_Socioeconomico_Nacional_2024.parquet",
-    "size_bytes": 295995644,
-    "sha256": "148b716ac5356bdcba4bb578c4a5db824eaa6eeaa253fadcefffb5a7f96c6b1f",
-    "size_mb": 282.28
+    "size_bytes": 279535131,
+    "size_human": "266,6 MB",
+    "sha256": "da7a24420fb4b09963cd8bb9a9bd45b6c4b8110c4ce4f168c308a3e2f75556eb",
+    "sha256_short": "da7a24420fb4b099"
   },
   "INSE_Socioeconomico_Nacional_2024_SHP.zip": {
     "rel_path": "download/INSE_Socioeconomico_Nacional_2024_SHP.zip",
@@ -4066,5 +4066,29 @@
     "size_bytes": 1571,
     "sha256": "12722f25c7ad870d5be2777267d9f84d6161a9811888427cb8b27aceb98338bc",
     "size_mb": 0.0
+  },
+  "SII_Areas_Homogeneas_Nacional.parquet": {
+    "size_bytes": 894409,
+    "size_human": "873,4 KB",
+    "sha256": "e3cb9ca5b196740ce2929db29141a04651110698c2bf620249cc805275c5a16b",
+    "sha256_short": "e3cb9ca5b196740c"
+  },
+  "SII_Areas_Homogeneas_Nacional.gpkg": {
+    "size_bytes": 3469312,
+    "size_human": "3,3 MB",
+    "sha256": "74316a1416c1f845b4915b0a4440d604f2e4ed2adc0053e463c58095bbdcc2bc",
+    "sha256_short": "74316a1416c1f845"
+  },
+  "SII_Areas_Homogeneas_Nacional_SHP.zip": {
+    "size_bytes": 40853655,
+    "size_human": "39,0 MB",
+    "sha256": "d86cabb43073d052862a408802c80f166102d5f522b7df0c468af5685f145f1a",
+    "sha256_short": "d86cabb43073d052"
+  },
+  "SII_Areas_Homogeneas_Nacional.csv": {
+    "size_bytes": 2245788,
+    "size_human": "2,1 MB",
+    "sha256": "06f71a7d1cb9c3450219e47c94d4e1a2a02eb66d79270dc916d9ccca61dae737",
+    "sha256_short": "06f71a7d1cb9c345"
   }
 }

@@ -110,6 +110,12 @@
       "href": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
     },
     {
+      "rel": "item",
+      "type": "application/geo+json",
+      "title": "STAC Item Nacional — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+      "href": "https://ide.cit.uai.cl/stac/items/censo-imputaciones-2024-nacional.json"
+    },
+    {
       "rel": "license",
       "type": "text/html",
       "title": "Licencia Abierta CC BY 4.0",
@@ -153,7 +159,9 @@
         "data"
       ],
       "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.gpkg",
-      "proj:epsg": 4326
+      "proj:epsg": 4326,
+      "file:size": 426635264,
+      "file:checksum": "48a8b5d454107ec24b91c2b3cab0256e08855ba13ae55b3718b29806d6a0ceab"
     },
     "shapefile": {
       "title": "Shapefile (.zip) — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
@@ -162,7 +170,9 @@
         "data"
       ],
       "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional_SHP.zip",
-      "proj:epsg": 4326
+      "proj:epsg": 4326,
+      "file:size": 239654071,
+      "file:checksum": "dbcbbf1f9fa536ea672edb4f5ce664212338b918978fbd99cabc38a38fea456b"
     },
     "csv": {
       "title": "Tabla CSV — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
@@ -170,7 +180,9 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.csv"
+      "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.csv",
+      "file:size": 56300717,
+      "file:checksum": "382436192861e465f853379445e49bd5d8054edf5cf135aeb3570869a5847e81"
     },
     "metadata_iso19139": {
       "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Censo 2024 — Imputaciones demográficas por cohortes y sexo",

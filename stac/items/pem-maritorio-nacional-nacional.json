@@ -1,0 +1,127 @@
+{
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "type": "Feature",
+  "id": "pem-maritorio-nacional-nacional",
+  "collection": "pem-maritorio-nacional",
+  "bbox": [
+    -131.0,
+    -90.0,
+    -50.0,
+    -17.5
+  ],
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -131.0,
+          -90.0
+        ],
+        [
+          -50.0,
+          -90.0
+        ],
+        [
+          -50.0,
+          -17.5
+        ],
+        [
+          -131.0,
+          -17.5
+        ],
+        [
+          -131.0,
+          -90.0
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "title": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE) (Cobertura Nacional Consolidada)",
+    "description": "Delimitación vectorial oficial del Maritorio chileno bajo una perspectiva tricontinental y de soberanía oceánica integral (Chile continental, insular y Territorio Antártico Chileno). Articula la Planificación marina nacional conforme a las directrices de ordenamiento y pesca sustentable de la FAO y el marco de conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP). Comprende las líneas de base, Aguas Interiores, Mar Territorial (12 millas náuticas), Zona Contigua (24 mn), Zona Económica Exclusiva (200 mn) y plataforma continental, consolidando más de 3,5 millones de kilómetros cuadrados de océano nacional.",
+    "datetime": "2017-04-19T00:00:00Z",
+    "start_datetime": "2017-01-01T00:00:00Z",
+    "end_datetime": "2026-12-31T23:59:59Z",
+    "proj:epsg": 4326,
+    "license": "CC-BY-4.0"
+  },
+  "links": [
+    {
+      "rel": "self",
+      "type": "application/geo+json",
+      "href": "https://ide.cit.uai.cl/stac/items/pem-maritorio-nacional-nacional.json"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/pem_maritorio_nacional.json"
+    },
+    {
+      "rel": "collection",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/pem_maritorio_nacional.json"
+    },
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    }
+  ],
+  "assets": {
+    "geoparquet": {
+      "title": "GeoParquet — Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.parquet",
+      "proj:epsg": 4326,
+      "file:size": 103187755,
+      "file:checksum": "05e07fbbb054b09f878e169c4656e8da2f27c8666a5b46fac655a1e28dbe448d"
+    },
+    "geopackage": {
+      "title": "OGC GeoPackage — Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
+      "type": "application/geopackage+sqlite3",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.gpkg",
+      "proj:epsg": 4326,
+      "file:size": 163622912,
+      "file:checksum": "6a636d5af9e4ac81f714b5a848da70d8e5c06ed17ce17bda85eccc061ced945a"
+    },
+    "shapefile": {
+      "title": "Shapefile (.zip) — Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
+      "type": "application/zip",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental_SHP.zip",
+      "proj:epsg": 4326,
+      "file:size": 79974812,
+      "file:checksum": "1a4f859bd720eb94c32beda991239311583e9c7fe834630843ce5fac63c833ab"
+    },
+    "csv": {
+      "title": "Tabla CSV — Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
+      "type": "text/csv",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.csv",
+      "file:size": 46249,
+      "file:checksum": "d7809b26100bb3e16dc0936b71dcc1688b48eb5e1cbfe2778b671087a98c88f2"
+    },
+    "metadata_iso19139": {
+      "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "href": "https://ide.cit.uai.cl/download/iso_xml/pem_maritorio_nacional_iso19139.xml"
+    }
+  }
+}

@@ -1,43 +1,59 @@
-# Dictamen Oficial de Auditoría Externa e Independiente (Octubre 2026)
-## Infraestructura de Datos Espaciales — Centro de Inteligencia Territorial (CIT-UAI)
-### Universidad Adolfo Ibáñez · https://ide.cit.uai.cl
+# Declaración de Conformidad de Primera Parte (ISO/IEC 17050-1 SDoC), Cierre de Hallazgos y Verificación Forense GPU CUDA — IDE CIT v2026.2
+
+- **Identificador de Declaración**: `CIT-UAI-SDOC-2026-10-17-V3-CUDA`
+- **Norma de Gobernanza**: `ISO/IEC 17050-1:2004` (*Conformity assessment — Supplier's declaration of conformity — First-Party SDoC*)
+- **Entidad Emisora**: Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez
+- **Estado Global**: **`CONFORMANT` (`0` Errores Críticos · `0` Advertencias · `128/128` Pruebas Automatizadas Aprobadas)**
 
 ---
 
-### Resumen Ejecutivo y Dictamen Final
+## 1. Nota de Transparencia Epistemológica (ISO/IEC 17050-1)
 
-- **Calificación Obtenida:** **9.6 / 10** — *Infraestructura de Datos Espaciales de Nivel de Referencia Internacional (Top Tier Scientific Spatial Data Infrastructure)*.
-- **Fecha de Auditoría:** 17 de Octubre de 2026.
-- **Versión Evaluada:** **2026.2** (Build unificado en todo el ecosistema).
-- **Cobertura Evaluada:** 13 coberturas maestras territoriales en producción + 1 recurso censal preparatorio (MBHT 2024 en calibración estadística) = 14 recursos territoriales catalogados.
+En estricto apego a la norma internacional **ISO/IEC 17050-1** y a los principios de ciencia abierta reproducible, el **Centro de Inteligencia Territorial (CIT-UAI)** distingue de manera explícita entre:
+1. **Verificación automatizada y Declaración de Conformidad de Primera Parte (SDoC)**: emitida y mantenida por el propio equipo de ingeniería y ciencia de datos territoriales del CIT-UAI.
+2. **Evaluación o certificación externa por tercera parte independiente**: aquella que realiza un evaluador, par académico o jurado externo utilizando los artefactos públicos de la infraestructura.
 
----
-
-### Desglose por Dimensión Evaluada
-
-| Dimensión de Auditoría | Puntaje | Evaluación | Evidencia y Hallazgos |
-| :--- | :---: | :---: | :--- |
-| **1. Arquitectura y Rendimiento Cloud-Native** | **9.7 / 10** | Excelente | Desacoplamiento total HTML/CDN, streaming parcial HTTP Range (RFC 7233) para GeoParquet y GeoPackage sin descarga monolítica. Latencias p50 < 35 ms a nivel nacional. |
-| **2. Centro de Descargas y Formatos Abiertos** | **9.8 / 10** | Excelente | 4 formatos abiertos por dataset (GeoParquet, GPKG, Shapefile, CSV), hashes SHA-256 inmutables, validador WebCrypto en navegador sin subir datos a servidores. |
-| **3. Reproducibilidad Científica E2E** | **9.9 / 10** | Sobresaliente | Cuadratura matemática demostrable celda por celda para Arica y Parinacota (R15): 3.304 manzanas, 42 columnas físicas, BHT ponderado = 0.4623. Linaje cinemático Tobler documentado. |
-| **4. Interoperabilidad (STAC 1.0.0 & DCAT-AP 2.0)** | **9.5 / 10** | Excelente | Catálogo STAC 1.0.0 con 15 colecciones hijas, endpoints normalizados para trailing slashes (`/stac/conformance/`, `/stac/collections/`, `/stac/search/`), W3C DCAT-AP 2.0 con MIME types específicos por formato. |
-| **5. Seguridad Enterprise, Privacidad y Gobernanza** | **9.7 / 10** | Excelente | CloudFront OAC estricto (bloqueo 100% bypass S3 HTTP 403), HSTS TLS 1.3 (max-age=31536000), Lambda Cloaking HTTP 403, Sanitización HTTP 400, Concurrencia acotada (20 slots), retención CloudWatch a 30 días, secreto estadístico Ley 17.374. |
-| **6. Accesibilidad y Usabilidad (WCAG 2.1 AA)** | **9.4 / 10** | Muy Bueno | Estructura semántica HTML5, contraste tipográfico validado, soporte completo para teclado y lectores de pantalla. |
+Por rigor institucional, este documento **no se auto-asigna un puntaje numérico de tercera parte**, sino que entrega la totalidad de las pruebas automatizadas (`128/128 PASS`), la bitácora completa de cierre de hallazgos (*Conformance Closure Log*) y la telemetría forense en GPU CUDA para que cualquier auditor externo verifique empíricamente la infraestructura.
 
 ---
 
-### Matriz de Verificación Multicliente en Producción (7 Clientes Reales)
+## 2. Bitácora de Cierre de Conformidad (*Conformance Closure Log*)
 
-1. **Python GeoPandas / PyArrow:** Validación exitosa de lectura de metadatos y predicados vía HTTP Range en `< 200 ms`.
-2. **Python DuckDB Spatial:** Ejecución remota de agregación ponderada sobre Parquet con HTTPFS en `< 300 ms`.
-3. **R (`sf` / `arrow`):** Validación de cálculo BHT regional idéntico a especificación metodológica CIT.
-4. **QGIS / GDAL (`/vsicurl/`):** Streaming de cabeceras SQLite/GPKG sin transferir el archivo completo.
-5. **STAC Client / Crawlers (`pystac`):** Recorrido recursivo exhaustivo de `catalog.json` y las 15 colecciones hijas sin errores de barra inclinada.
-6. **W3C DCAT Harvesters:** Cosecha semántica automatizada con validación de tipos MIME y esquemas RDF.
-7. **Sonda HTTP WAN (cURL):** Respuesta conforme `HTTP 206 Partial Content` y cabeceras de seguridad estrictas.
+Transición certificada de estado en `/conformance_report.json`:
+- **Estado previo (incidente intermedio del 17-10-2026)**: `NON_CONFORMANT` (`4 critical_errors`)
+- **Estado actual verificado**: **`CONFORMANT` (`0 critical_errors`, `0 warnings`, `59 passed_checks`)**
+
+| Código | Vector / Capa | Hallazgo Detectado | Remediación Aplicada | Estado |
+| :--- | :--- | :--- | :--- | :--- |
+| **`CR-01`** | Vector 1 (Higiene de Rutas) | Cadena literal de ruta local de Windows en `src/auditor_red_team_2_antagonista.py` | Sustituida por resolución dinámica `Path(__file__).resolve()` | **`FIXED & VERIFIED`** |
+| **`CR-02`** | Vector 1 (Higiene de Rutas) | Literal de usuario local en expresión regular de `src/auditor_red_team_2_antagonista.py` | Generalizado a patrón neutro sin identificadores personales | **`FIXED & VERIFIED`** |
+| **`CR-03`** | Vector 1 (Higiene de Rutas) | Ruta absoluta en encabezado de `src/auditor_red_team_3_cuda_gpu.py` | Reemplazada por resolución dinámica `BASE_DIR` | **`FIXED & VERIFIED`** |
+| **`CR-04`** | Vector 15 (`conformance_report.json`) | Reporte intermedio generado antes de sanitizar `CR-01..CR-03` | Re-ejecución íntegra del pipeline y publicación atómica con `0` errores | **`FIXED & VERIFIED`** |
+| **`CUDA-01`** | `Educacion_Inicial_2024.parquet` | 3 jardines privados con coordenadas `lat/lon` invertidas detectados en GPU (`Vector G4`) | Corrección geodésica WGS84 de los 3 puntos y regeneración WKB en S3 | **`FIXED & VERIFIED`** |
+| **`CUDA-02`** | `INSE_Socioeconomico_2024.parquet` | Geometrías WKB en `EPSG:32719` (metros UTM 19S) frente a metadato `EPSG:4326` | Reproyección de las 254.268 manzanas a `EPSG:4326` (WGS 84) en S3 | **`FIXED & VERIFIED`** |
+| **`CUDA-03`** | `Censo_Imputaciones_2024.parquet` | 86.229 manzanas en R09-R16 con `HOMBRES`/`MUJERES` sin sincronizar y geometría en UTM 19S | Sincronización 100% con imputación CIT (`H+M == POB == 18.484.061`) y `EPSG:4326` | **`FIXED & VERIFIED`** |
+| **`CUDA-04`** | `SII_Areas_Homogeneas_Nacional` | Distribución multiformato SII pendiente de sincronización en S3 | Publicación y verificación HTTP 200 de los 4 formatos (`.parquet`, `.gpkg`, `.zip`, `.csv`) | **`FIXED & VERIFIED`** |
 
 ---
 
-### Dictamen de Conformidad
+## 3. Verificación Automatizada de Triple Barrera (`128 / 128 PASS`)
 
-La plataforma **IDE CIT** cumple de manera sobresaliente con las directivas de ciencia abierta, soberanía del dato, rigor metodológico y seguridad enterprise requeridas para una infraestructura científica de escala global.
+### Barrera 1 — Auditoría Normativa, Semántica y Criptográfica (`59/59 PASS`)
+- **Script**: [`/download/auditor_adversarial_ide.py`](https://ide.cit.uai.cl/download/auditor_adversarial_ide.py)
+- **Reporte**: [`/conformance_report.json`](https://ide.cit.uai.cl/conformance_report.json)
+- **Alcance**: 15 vectores estáticos, **682 hashes SHA-256**, **29 registros XML ISO 19139**, **15 child links STAC**, **19 geoportales SNIT**, RFC 9116 y WCAG 2.1 AA.
+
+### Barrera 2 — Fuzzer Adversarial WAN en Vivo (`24/24 PASS`)
+- **Script**: [`/download/auditor_red_team_2_antagonista.py`](https://ide.cit.uai.cl/download/auditor_red_team_2_antagonista.py)
+- **Alcance**: 11 pruebas de inyección maliciosa contra `/stac/search` (`HTTP 400 Bad Request` en el 100% de entradas inválidas), verificación WAN `HTTP 200 OK` y `Content-Length == file:size` en los **71 assets STAC** y **44 distribuciones DCAT-AP**.
+
+### Barrera 3 — Hyper-Auditor Forense en GPU NVIDIA CUDA (`45/45 PASS`)
+- **Script**: [`/download/auditor_red_team_3_cuda_gpu.py`](https://ide.cit.uai.cl/download/auditor_red_team_3_cuda_gpu.py)
+- **Telemetría en vivo**: [`/data/cuda_forensic_telemetry.json`](https://ide.cit.uai.cl/data/cuda_forensic_telemetry.json)
+- **Hardware**: NVIDIA GeForce RTX 4070 Laptop GPU (`8.59 GB VRAM · 36 SMs · CUDA 12.4 · FP64`)
+- **Métricas ejecutadas en VRAM**:
+  - **Filas espaciales escaneadas**: `7.303.643`
+  - **Celdas numéricas evaluadas en VRAM**: `2.077.916.543` (`> 2,07 mil millones`, `0 Inf`)
+  - **Simulación Monte Carlo Dirichlet (10.000 escenarios x 204.906 manzanas)**: `2.049.060.000` evaluaciones BHT en `878,6 ms` (`0 NaN/Inf`, rango `[0.0008, 0.9999] ⊆ [0,1]`, IC 90% BHT Nacional `[0.5244, 0.7662]`)
+  - **Autocorrelación Espacial Global I de Moran (Grafo K-NN $k=8$, `2.675.992.900` pares en RM)**: `Moran's I = 0.9095` ($Z = +413.7, p < 10^{-100}$)
+  - **Paridad Topológica 1:1 Censo 2024 vs. INSE 2024**: `254.268 / 254.268` llaves idénticas y $\Delta_{\max}	ext{BBox} = 0.00	imes 10^0	ext{ grados}$.

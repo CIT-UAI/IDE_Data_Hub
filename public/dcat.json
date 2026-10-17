@@ -296,8 +296,8 @@
           "dcat:accessURL": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet",
           "dct:format": "GeoParquet",
           "dcat:mediaType": "application/vnd.apache.parquet",
-          "dcat:byteSize": 300547507,
-          "spdx:checksum": "864126f757d362213f018ac8b4d584fbc8de1cd42655a8a70cd6fc0f7c95b7cc"
+          "dcat:byteSize": 284484592,
+          "spdx:checksum": "d1af25f28e15b6f241230865fc506849247bb5736c1e8f03ac7bd89a034295c2"
         },
         {
           "@type": "dcat:Distribution",
@@ -346,8 +346,8 @@
           "dcat:accessURL": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet",
           "dct:format": "GeoParquet",
           "dcat:mediaType": "application/vnd.apache.parquet",
-          "dcat:byteSize": 295995644,
-          "spdx:checksum": "148b716ac5356bdcba4bb578c4a5db824eaa6eeaa253fadcefffb5a7f96c6b1f"
+          "dcat:byteSize": 279535131,
+          "spdx:checksum": "da7a24420fb4b09963cd8bb9a9bd45b6c4b8110c4ce4f168c308a3e2f75556eb"
         },
         {
           "@type": "dcat:Distribution",
@@ -509,8 +509,8 @@
           "dcat:accessURL": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
           "dct:format": "GeoParquet",
           "dcat:mediaType": "application/vnd.apache.parquet",
-          "dcat:byteSize": 365383,
-          "spdx:checksum": "223cfafbcc4f76949127e109c0a4673e40d4bf4019840e1b0a1d0fcc6918e711"
+          "dcat:byteSize": 364944,
+          "spdx:checksum": "ec9b240098d426b5d2bf9aa1350c3f40a3e8e26aa7acf02a53e20b7ccbce2b8f"
         },
         {
           "@type": "dcat:Distribution",

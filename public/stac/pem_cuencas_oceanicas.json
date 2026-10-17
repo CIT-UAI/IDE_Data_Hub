@@ -96,6 +96,12 @@
       "href": "https://ide.cit.uai.cl/stac/pem_cuencas_oceanicas.json"
     },
     {
+      "rel": "item",
+      "type": "application/geo+json",
+      "title": "STAC Item Nacional — Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+      "href": "https://ide.cit.uai.cl/stac/items/pem-cuencas-oceanicas-nacional.json"
+    },
+    {
       "rel": "license",
       "type": "text/html",
       "title": "Licencia Abierta CC BY 4.0",
@@ -139,7 +145,9 @@
         "data"
       ],
       "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.gpkg",
-      "proj:epsg": 4326
+      "proj:epsg": 4326,
+      "file:size": 21479424,
+      "file:checksum": "7696d59ed8b7b16c8368350f7d253ced624c34609f6908eacad8d4ec98752c3f"
     },
     "shapefile": {
       "title": "Shapefile (.zip) — Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
@@ -148,7 +156,9 @@
         "data"
       ],
       "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas_SHP.zip",
-      "proj:epsg": 4326
+      "proj:epsg": 4326,
+      "file:size": 3333641,
+      "file:checksum": "8d74c34eefde832d22eb3fdaf7e86c733cb86c5efa21ab4b8871399aaf257894"
     },
     "csv": {
       "title": "Tabla CSV — Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
@@ -156,7 +166,9 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.csv"
+      "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.csv",
+      "file:size": 1467002,
+      "file:checksum": "ccb779cddeeb4b6416d1207d496f28f49891525831a8654f076380570deea41a"
     },
     "metadata_iso19139": {
       "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",

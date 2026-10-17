@@ -96,6 +96,12 @@
       "href": "https://ide.cit.uai.cl/stac/pem_montes_submarinos.json"
     },
     {
+      "rel": "item",
+      "type": "application/geo+json",
+      "title": "STAC Item Nacional — Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+      "href": "https://ide.cit.uai.cl/stac/items/pem-montes-submarinos-nacional.json"
+    },
+    {
       "rel": "license",
       "type": "text/html",
       "title": "Licencia Abierta CC BY 4.0",
@@ -139,7 +145,9 @@
         "data"
       ],
       "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.gpkg",
-      "proj:epsg": 4326
+      "proj:epsg": 4326,
+      "file:size": 430080,
+      "file:checksum": "edad21804ccb36cafb6eef6470619f774533287858a3c18ed0ae3770b9d7d879"
     },
     "shapefile": {
       "title": "Shapefile (.zip) — Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
@@ -148,7 +156,9 @@
         "data"
       ],
       "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia_SHP.zip",
-      "proj:epsg": 4326
+      "proj:epsg": 4326,
+      "file:size": 54878,
+      "file:checksum": "5093aba933c90efa89cce37825bd763bcf916b84f8552bd5e0c8a4db303bb3cb"
     },
     "csv": {
       "title": "Tabla CSV — Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
@@ -156,7 +166,9 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.csv"
+      "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.csv",
+      "file:size": 211745,
+      "file:checksum": "a2284ce762b7394a003ac1dd3973ce9538d963b2f6da9e4a82ce850c8cabc5cc"
     },
     "metadata_iso19139": {
       "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",

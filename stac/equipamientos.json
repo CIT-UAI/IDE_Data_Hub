@@ -115,7 +115,9 @@
         "data"
       ],
       "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.gpkg",
-      "proj:epsg": 4326
+      "proj:epsg": 4326,
+      "file:size": 23638016,
+      "file:checksum": "93803a289f8d7832a6d9dda2f40f84d3892d28351af4e088dac8b75e1e6c3123"
     },
     "shapefile": {
       "title": "Shapefile (.zip) — Equipamientos urbanos y servicios esenciales 2017",
@@ -124,7 +126,9 @@
         "data"
       ],
       "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado_SHP.zip",
-      "proj:epsg": 4326
+      "proj:epsg": 4326,
+      "file:size": 4188174,
+      "file:checksum": "61cb37aa09f72914cede9f7029e9852a0e7cd0a54b8d541ef33bfb23cdf3a48a"
     },
     "csv": {
       "title": "Tabla CSV — Equipamientos urbanos y servicios esenciales 2017",
@@ -132,7 +136,9 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.csv"
+      "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.csv",
+      "file:size": 11734366,
+      "file:checksum": "3d295db619e72300aceb5d527a220810c799660ca3c99a5e66b167ea98fc9835"
     },
     "metadata_iso19139": {
       "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Equipamientos urbanos y servicios esenciales 2017",

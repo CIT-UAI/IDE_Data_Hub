@@ -1,0 +1,127 @@
+{
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "type": "Feature",
+  "id": "pem-cuencas-oceanicas-nacional",
+  "collection": "pem-cuencas-oceanicas",
+  "bbox": [
+    -118.0,
+    -56.0,
+    -68.0,
+    -18.0
+  ],
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -118.0,
+          -56.0
+        ],
+        [
+          -68.0,
+          -56.0
+        ],
+        [
+          -68.0,
+          -18.0
+        ],
+        [
+          -118.0,
+          -18.0
+        ],
+        [
+          -118.0,
+          -56.0
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "title": "Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP) (Cobertura Nacional Consolidada)",
+    "description": "Delimitación espacial morfométrica de 53.726 cuencas y subcuencas oceanográficas submarinas del lecho del Pacífico Suroriental chileno. Modela el drenaje de sedimentos submarinos, cañones tributarios y circulación de fondo, permitiendo caracterizar la conectividad ecológica y apoyar la Planificación marina sustentable bajo directrices de la FAO y las metas de conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP).",
+    "datetime": "2017-04-19T00:00:00Z",
+    "start_datetime": "2017-01-01T00:00:00Z",
+    "end_datetime": "2026-12-31T23:59:59Z",
+    "proj:epsg": 4326,
+    "license": "CC-BY-4.0"
+  },
+  "links": [
+    {
+      "rel": "self",
+      "type": "application/geo+json",
+      "href": "https://ide.cit.uai.cl/stac/items/pem-cuencas-oceanicas-nacional.json"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/pem_cuencas_oceanicas.json"
+    },
+    {
+      "rel": "collection",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/pem_cuencas_oceanicas.json"
+    },
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    }
+  ],
+  "assets": {
+    "geoparquet": {
+      "title": "GeoParquet — Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.parquet",
+      "proj:epsg": 4326,
+      "file:size": 5079409,
+      "file:checksum": "19014b45d7c620e8bc737abcefe5bf7786439d67af619bd34f3d6fc62f52bbff"
+    },
+    "geopackage": {
+      "title": "OGC GeoPackage — Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+      "type": "application/geopackage+sqlite3",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.gpkg",
+      "proj:epsg": 4326,
+      "file:size": 21479424,
+      "file:checksum": "7696d59ed8b7b16c8368350f7d253ced624c34609f6908eacad8d4ec98752c3f"
+    },
+    "shapefile": {
+      "title": "Shapefile (.zip) — Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+      "type": "application/zip",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas_SHP.zip",
+      "proj:epsg": 4326,
+      "file:size": 3333641,
+      "file:checksum": "8d74c34eefde832d22eb3fdaf7e86c733cb86c5efa21ab4b8871399aaf257894"
+    },
+    "csv": {
+      "title": "Tabla CSV — Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+      "type": "text/csv",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.csv",
+      "file:size": 1467002,
+      "file:checksum": "ccb779cddeeb4b6416d1207d496f28f49891525831a8654f076380570deea41a"
+    },
+    "metadata_iso19139": {
+      "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "href": "https://ide.cit.uai.cl/download/iso_xml/pem_cuencas_oceanicas_iso19139.xml"
+    }
+  }
+}
