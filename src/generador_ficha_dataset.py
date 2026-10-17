@@ -1346,7 +1346,7 @@ Universidad Adolfo Ibáñez · Centro de Inteligencia Territorial
                         <tr>
                             <td class="py-3 px-3.5 font-semibold text-slate-900">Planificación Espacial Marina (PEM) — Maritorio (42 capas)</td>
                             <td class="py-3 px-3.5 text-slate-600">Núcleo de Sistemas Socio-Ecológicos y Costeros</td>
-                            <td class="py-3 px-3.5 font-mono text-xs font-semibold text-slate-800">v1.0.0 · Publicado vigente</td>
+                            <td class="py-3 px-3.5 font-mono text-xs font-semibold text-slate-800">v1.0.3 · Publicado vigente</td>
                             <td class="py-3 px-3.5 text-slate-600">Anual (sincronización SHOA / SUBPESCA / SBAP)</td>
                             <td class="py-3 px-3.5 font-mono text-xs"><a href="mailto:contactocit@uai.cl" class="text-slate-900 underline">contactocit@uai.cl</a></td>
                         </tr>

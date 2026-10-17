@@ -786,7 +786,7 @@
       "dimension": "tierra",
       "crs": "EPSG:4326 (WGS 84)",
       "version": "1.0.3",
-      "updated": "2026-10-15",
+      "updated": "2026-10-17",
       "endpoints": {
         "parquet_https": "download/SII_Areas_Homogeneas_Nacional.parquet",
         "gpkg_https": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.gpkg",

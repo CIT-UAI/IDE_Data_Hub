@@ -4,16 +4,16 @@
   "version": "2026.2",
   "platform_release": "2026.2",
   "report_format_version": "1.0.5",
-  "generated_at": "2026-10-17T21:23:42Z",
-  "status": "CONFORMANT",
+  "generated_at": "2026-10-17T22:10:00Z",
+  "status": "NON_CONFORMANT",
   "summary": {
     "vectors_evaluated": 15,
     "master_coverage_layers_production": 13,
     "preparatory_resources": 1,
     "total_catalog_resources": 14,
-    "passed_checks": 56,
+    "passed_checks": 55,
     "warnings": 0,
-    "critical_errors": 0,
+    "critical_errors": 4,
     "hashes_verified_sha256": 658,
     "iso_19139_xml_records_validated": 29,
     "stac_1_0_0_collections_validated": 14,
@@ -60,9 +60,9 @@
   "reproducible_benchmarks": {
     "methodology": "Lectura columnar selectiva PyArrow (GeoParquet 1.1 SNAPPY) y sondas HTTP Range (RFC 9110, 206 Partial Content) hacia CDN CloudFront.",
     "local_columnar_r15_weighted_bht": {
-      "p50_ms": 2.75,
-      "p95_ms": 4.23,
-      "p99_ms": 4.23,
+      "p50_ms": 2.52,
+      "p95_ms": 3.13,
+      "p99_ms": 3.13,
       "rows": 3304,
       "bht_weighted": 0.4623
     },

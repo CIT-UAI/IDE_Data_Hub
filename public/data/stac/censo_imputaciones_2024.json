@@ -143,8 +143,8 @@
       ],
       "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet",
       "proj:epsg": 4326,
-      "file:size": 300547507,
-      "file:checksum": "864126f757d362213f018ac8b4d584fbc8de1cd42655a8a70cd6fc0f7c95b7cc"
+      "file:size": 284484592,
+      "file:checksum": "d1af25f28e15b6f241230865fc506849247bb5736c1e8f03ac7bd89a034295c2"
     },
     "geopackage": {
       "title": "OGC GeoPackage — Censo 2024 — Imputaciones demográficas por cohortes y sexo",

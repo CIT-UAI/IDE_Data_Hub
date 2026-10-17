@@ -384,7 +384,7 @@
       "dct:title": "Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
       "dct:description": "Catastro espacial completo de 14.157 Áreas Homogéneas definido por el Servicio de Impuestos Internos (SII) bajo la Ley N° 17.235 sobre Impuesto Territorial. Delimita zonas territoriales con características urbanísticas, topográficas, de accesibilidad a servicios y valor unitario de terreno homogéneas para los procesos de reavalúo de bienes raíces en todo Chile. Proporciona el Valor Guía de Terreno (VGT en UF/m² y $/m²), coeficiente guía y clasificación comunal para análisis de plusvalía, dinámica inmobiliaria y tributación territorial.",
       "dct:issued": "2024-12-31",
-      "dct:modified": "2026-10-15",
+      "dct:modified": "2026-10-17",
       "owl:versionInfo": "1.0.3",
       "dcat:theme": "sii",
       "dcat:spatialResolutionInMeters": 100,

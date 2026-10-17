@@ -1212,9 +1212,9 @@
           "sha256": "382436192861e465f853379445e49bd5d8054edf5cf135aeb3570869a5847e81"
         }
       },
-      "size_bytes": 300547507,
+      "size_bytes": 284484592,
       "size_human": "286,6 MB",
-      "sha256": "864126f757d362213f018ac8b4d584fbc8de1cd42655a8a70cd6fc0f7c95b7cc"
+      "sha256": "d1af25f28e15b6f241230865fc506849247bb5736c1e8f03ac7bd89a034295c2"
     },
     {
       "id": "inse_socioeconomico",
@@ -1376,9 +1376,9 @@
           "sha256": "d438bf5f535a202736b2b887240130a5286c4d9a7a068d2f6ddea85a0533d047"
         }
       },
-      "size_bytes": 295995644,
+      "size_bytes": 279535131,
       "size_human": "282,3 MB",
-      "sha256": "148b716ac5356bdcba4bb578c4a5db824eaa6eeaa253fadcefffb5a7f96c6b1f"
+      "sha256": "da7a24420fb4b09963cd8bb9a9bd45b6c4b8110c4ce4f168c308a3e2f75556eb"
     },
     {
       "id": "sii_areas_homogeneas",
@@ -1469,7 +1469,9 @@
         }
       ],
       "version": "1.0.3",
-      "updated": "2026-10-15"
+      "updated": "2026-10-17",
+      "size_bytes": 894409,
+      "sha256": "e3cb9ca5b196740ce2929db29141a04651110698c2bf620249cc805275c5a16b"
     },
     {
       "id": "equipamientos_2017",
@@ -1885,9 +1887,9 @@
           "sha256": "730e93c76b0070e8c02fe7e0eb9290f763c8b03867e997a1fcd1ea7885b8e29f"
         }
       },
-      "size_bytes": 365383,
+      "size_bytes": 364944,
       "size_human": "357 KB",
-      "sha256": "223cfafbcc4f76949127e109c0a4673e40d4bf4019840e1b0a1d0fcc6918e711"
+      "sha256": "ec9b240098d426b5d2bf9aa1350c3f40a3e8e26aa7acf02a53e20b7ccbce2b8f"
     },
     {
       "id": "huella_edificaciones_2024",

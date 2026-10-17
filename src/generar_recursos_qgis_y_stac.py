@@ -258,7 +258,13 @@ def generar_stac():
 
     canonical_collections.append(col_mbht_2024)
 
-    # 4. Generar stac/collections y stac/conformance canónicos (14 colecciones exactas)
+    data_stac_col = BASE_DIR / "data" / "stac" / "collection.json"
+    if data_stac_col.exists():
+        shutil.copy2(data_stac_col, STAC_DIR / "collection.json")
+        with open(data_stac_col, "r", encoding="utf-8") as f:
+            canonical_collections.append(json.load(f))
+
+    # 4. Generar stac/collections y stac/conformance canónicos (15 colecciones exactas = 13 maestras + 1 preparatoria + 1 unificadora)
     collections_payload = {
         "collections": canonical_collections,
         "links": [

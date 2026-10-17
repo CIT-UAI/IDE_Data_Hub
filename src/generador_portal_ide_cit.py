@@ -642,7 +642,7 @@ class IDEPortalBuilder:
                     <h2 class="text-lg sm:text-xl font-bold text-slate-900 mt-1">Distinción entre productos vigentes de línea base (2017) y actualizaciones en calibración estadística (2024)</h2>
                 </div>
                 <div class="text-xs sm:text-sm text-slate-500 font-mono">
-                    Última auditoría verificada: 2026-10-16 · v1.0.3
+                    Última auditoría verificada: 2026-10-17 · v2026.2 / Dataset v1.0.3
                 </div>
             </div>
 

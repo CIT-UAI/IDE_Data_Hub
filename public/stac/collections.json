@@ -1181,8 +1181,8 @@
           ],
           "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet",
           "proj:epsg": 4326,
-          "file:size": 300547507,
-          "file:checksum": "864126f757d362213f018ac8b4d584fbc8de1cd42655a8a70cd6fc0f7c95b7cc"
+          "file:size": 284484592,
+          "file:checksum": "d1af25f28e15b6f241230865fc506849247bb5736c1e8f03ac7bd89a034295c2"
         },
         "geopackage": {
           "title": "OGC GeoPackage — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
@@ -1351,8 +1351,8 @@
           ],
           "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet",
           "proj:epsg": 4326,
-          "file:size": 295995644,
-          "file:checksum": "148b716ac5356bdcba4bb578c4a5db824eaa6eeaa253fadcefffb5a7f96c6b1f"
+          "file:size": 279535131,
+          "file:checksum": "da7a24420fb4b09963cd8bb9a9bd45b6c4b8110c4ce4f168c308a3e2f75556eb"
         },
         "geopackage": {
           "title": "OGC GeoPackage — Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
@@ -1520,7 +1520,9 @@
             "data"
           ],
           "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.parquet",
-          "proj:epsg": 4326
+          "proj:epsg": 4326,
+          "file:size": 894409,
+          "file:checksum": "e3cb9ca5b196740ce2929db29141a04651110698c2bf620249cc805275c5a16b"
         },
         "geopackage": {
           "title": "OGC GeoPackage — Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
@@ -2029,8 +2031,8 @@
           ],
           "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
           "proj:epsg": 4326,
-          "file:size": 365383,
-          "file:checksum": "223cfafbcc4f76949127e109c0a4673e40d4bf4019840e1b0a1d0fcc6918e711"
+          "file:size": 364944,
+          "file:checksum": "ec9b240098d426b5d2bf9aa1350c3f40a3e8e26aa7acf02a53e20b7ccbce2b8f"
         },
         "geopackage": {
           "title": "OGC GeoPackage — Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
@@ -2338,6 +2340,407 @@
             "data"
           ],
           "href": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
+        }
+      }
+    },
+    {
+      "type": "Collection",
+      "stac_version": "1.0.0",
+      "stac_extensions": [
+        "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+      ],
+      "id": "ide-cit-matrices-territoriales",
+      "title": "IDE CIT — Infraestructura de Datos Espaciales",
+      "description": "Plataforma académica y de ciencia abierta para la consulta, interoperabilidad y descarga de coberturas y modelos territoriales del Centro de Inteligencia Territorial de la Universidad Adolfo Ibáñez.",
+      "license": "CC-BY-4.0",
+      "extent": {
+        "spatial": {
+          "bbox": [
+            [
+              -109.5,
+              -56.54,
+              -66.42,
+              -17.5
+            ]
+          ]
+        },
+        "temporal": {
+          "interval": [
+            [
+              "2017-04-19T00:00:00Z",
+              null
+            ]
+          ]
+        }
+      },
+      "providers": [
+        {
+          "name": "Centro de Inteligencia Territorial (CIT-UAI)",
+          "roles": [
+            "producer",
+            "licensor",
+            "processor"
+          ],
+          "url": "https://cit.uai.cl"
+        },
+        {
+          "name": "Universidad Adolfo Ibáñez",
+          "roles": [
+            "host"
+          ],
+          "url": "https://uai.cl"
+        }
+      ],
+      "item_assets": {
+        "kpi_mud_2017": {
+          "title": "MBHT 2017 — Línea base oficial",
+          "description": "Línea base nacional oficial de la Matriz de Bienestar Humano Territorial Integral evaluada sobre 204.906 manzanas censales del Censo 2017 en las 16 regiones de Chile. Sintetiza 18 indicadores elementales distribuidos en 4 macro-dimensiones del bienestar (bajo el Axioma de Neutralidad Elemental W(D) = n_D / 18): 1) Macro-dimensión de Accesibilidad (dim_acc, peso 6/18 = 33,33%), que integra los 6 indicadores de acceso peatonal efectivo E2SFCA + Tobler a salud (isal), educación (ise), áreas verdes (iav), deporte (idep), cultura (icul) y servicios públicos (iser); 2) Macro-dimensión Socioeconómica (dim_soc, peso 6/18 = 33,33%); 3) Macro-dimensión de Seguridad (dim_seg, peso 4/18 = 22,22%); y 4) Macro-dimensión Ambiental (dim_amb, peso 2/18 = 11,11%). El archivo físico contiene el esquema completo de 42 columnas físicas (identificadores, demografía censal, índice sintético bht, las 4 macro-dimensiones, los 6 sub-indicadores peatonales con sus valores pre-escalamiento, tipología Jenks tob y geometría WKB).",
+          "type": "application/vnd.apache.parquet",
+          "roles": [
+            "data"
+          ],
+          "bbox": [
+            -75.64,
+            -55.98,
+            -66.86,
+            -17.5
+          ],
+          "proj:epsg": 4326,
+          "properties": {
+            "matriz": "mbht",
+            "ambito": "tierra",
+            "escala": "Manzanas censales (línea base oficial)",
+            "formula_lineage": "Síntesis BHT Integral de 18 indicadores en 4 macro-dimensiones (W(D) = n_D / 18). Accesibilidad (dim_acc) calculada mediante el modelo bietápico E2SFCA sobre el grafo vial nacional (1.589.595 tramos) con velocidad peatonal de Tobler W(S) = 6 * exp(-3.5 * |S + 0.05|), decaimiento gaussiano f(t) = exp(-0.5 * (t / 15)^2) y umbral 30 min.",
+            "tile_endpoint": "https://ide.cit.uai.cl/tiles/kpi_mud_2017/{z}/{x}/{y}.pbf"
+          }
+        },
+        "pem_maritorio_nacional": {
+          "title": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
+          "description": "Delimitación vectorial oficial del Maritorio chileno bajo una perspectiva tricontinental y de soberanía oceánica integral (Chile continental, insular y Territorio Antártico Chileno). Articula la Planificación marina nacional conforme a las directrices de ordenamiento y pesca sustentable de la FAO y el marco de conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP). Comprende las líneas de base, Aguas Interiores, Mar Territorial (12 millas náuticas), Zona Contigua (24 mn), Zona Económica Exclusiva (200 mn) y plataforma continental, consolidando más de 3,5 millones de kilómetros cuadrados de océano nacional.",
+          "type": "application/vnd.apache.parquet",
+          "roles": [
+            "data"
+          ],
+          "bbox": [
+            -131.0,
+            -90.0,
+            -50.0,
+            -17.5
+          ],
+          "proj:epsg": 4326,
+          "properties": {
+            "matriz": "pem",
+            "ambito": "mar",
+            "escala": "Polígonos de soberanía y jurisdicción marítima (394 unidades)",
+            "formula_lineage": "Delimitación de espacios marítimos soberanos provista por DIFROL, SHOA y MMA conforme a la CONVEMAR, directrices de ordenamiento marino de la FAO y el marco ambiental del SBAP (Ley 21.600). Homologación geodésica WGS84 (EPSG:4326).",
+            "tile_endpoint": "https://ide.cit.uai.cl/tiles/pem_maritorio_nacional/{z}/{x}/{y}.pbf"
+          }
+        },
+        "pem_geomorfologia_gebco": {
+          "title": "Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+          "description": "Zonificación geomorfológica del lecho y fondo submarino nacional categorizada conforme al estándar internacional GEBCO (General Bathymetric Chart of the Oceans / IHO). Insumo estructural para la Planificación marina nacional bajo directrices de la FAO y los criterios de zonificación y protección del Servicio de Biodiversidad y Áreas Protegidas (SBAP). Delimita las grandes provincias fisiográficas oceánicas: Fosa de Atacama/Perú-Chile, plataforma continental, talud continental, fosas abisales, dorsales oceánicas (Dorsal de Chile, Cordillera de Nazca, Cordillera de Salas y Gómez) y llanuras abisales.",
+          "type": "application/vnd.apache.parquet",
+          "roles": [
+            "data"
+          ],
+          "bbox": [
+            -120.0,
+            -58.0,
+            -66.0,
+            -18.0
+          ],
+          "proj:epsg": 4326,
+          "properties": {
+            "matriz": "pem",
+            "ambito": "mar",
+            "escala": "Polígonos de macro-unidades fisiográficas de fondo marino (11 macro-unidades)",
+            "formula_lineage": "Clasificación morfométrica de relieve submarino basada en mallas globales GEBCO / IHO y validación fisiográfica regional con criterios de planificación marina FAO y conservación SBAP. Reproyección a WGS84 (EPSG:4326).",
+            "tile_endpoint": "https://ide.cit.uai.cl/tiles/pem_geomorfologia_gebco/{z}/{x}/{y}.pbf"
+          }
+        },
+        "pem_montes_submarinos": {
+          "title": "Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+          "description": "Catastro geomorfológico y toponímico de 2.234 cimas, guyots, cañones y relieves destacados del lecho oceánico de Chile, con toponimia oficial estandarizada por el Subcomité de Nombres de Formas del Relieve Submarino (SCUFN - GEBCO/OHI) y el SHOA. Identifica estructuras orográficas submarinas que constituyen hábitats bentónicos de alto valor ecológico y áreas prioritarias para la evaluación de Ecosistemas Marinos Vulnerables (VME) bajo directrices de la FAO y el marco de zonificación y conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley N° 21.600), como las cordilleras de Nazca, Desventuradas y Salas y Gómez.",
+          "type": "application/vnd.apache.parquet",
+          "roles": [
+            "data"
+          ],
+          "bbox": [
+            -115.0,
+            -56.0,
+            -68.0,
+            -18.5
+          ],
+          "proj:epsg": 4326,
+          "properties": {
+            "matriz": "pem",
+            "ambito": "mar",
+            "escala": "Puntual 3D con elevación y toponimia (2.234 cumbres submarinas catalogadas)",
+            "formula_lineage": "Nomenclatura y toponimia oficial SCUFN (Sub-Committee on Undersea Feature Names) de GEBCO/IHO combinada con modelos digitales batimétricos (GEBCO/SHOA). Los atributos geomorfológicos derivan de mediciones batimétricas directas, mientras que los atributos de estatus ecológico y potencial de conservación se alinean con las directrices técnicas de la FAO para pesquerías de aguas profundas y la zonificación de biodiversidad marina bajo la Ley SBAP (Ley 21.600).",
+            "tile_endpoint": "https://ide.cit.uai.cl/tiles/pem_montes_submarinos/{z}/{x}/{y}.pbf"
+          }
+        },
+        "pem_cuencas_oceanicas": {
+          "title": "Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+          "description": "Delimitación espacial morfométrica de 53.726 cuencas y subcuencas oceanográficas submarinas del lecho del Pacífico Suroriental chileno. Modela el drenaje de sedimentos submarinos, cañones tributarios y circulación de fondo, permitiendo caracterizar la conectividad ecológica y apoyar la Planificación marina sustentable bajo directrices de la FAO y las metas de conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP).",
+          "type": "application/vnd.apache.parquet",
+          "roles": [
+            "data"
+          ],
+          "bbox": [
+            -118.0,
+            -56.0,
+            -68.0,
+            -18.0
+          ],
+          "proj:epsg": 4326,
+          "properties": {
+            "matriz": "pem",
+            "ambito": "mar",
+            "escala": "Polígonos de delimitación morfométrica de cuencas de fondo (53.726 unidades)",
+            "formula_lineage": "Extracción hidrológica/oceanográfica algorítmica sobre modelos digitales batimétricos globales, calibración de conectividad marina FAO y corrección topológica WGS84 (EPSG:4326).",
+            "tile_endpoint": "https://ide.cit.uai.cl/tiles/pem_cuencas_oceanicas/{z}/{x}/{y}.pbf"
+          }
+        },
+        "pem_biodiversidad_especies": {
+          "title": "Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)",
+          "description": "Consolidado nacional de ocurrencias biológicas y biodiversidad marina de Chile, integrando 4.529.201 observaciones georreferenciadas desde las campañas científicas del Instituto de Fomento Pesquero (IFOP) y la Infraestructura Mundial de Información en Biodiversidad (GBIF). Abarca taxonomía completa (reino, filo, clase, orden, familia, género, especie y nombre científico), profundidad de colecta y año de observación. Diseñado para fundamentar la Planificación marina conforme a las directrices de pesca responsable de la FAO y respaldar la creación, monitoreo y fiscalización de la red del Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley N° 21.600).",
+          "type": "application/vnd.apache.parquet",
+          "roles": [
+            "data"
+          ],
+          "bbox": [
+            -115.0,
+            -58.0,
+            -66.0,
+            -18.0
+          ],
+          "proj:epsg": 4326,
+          "properties": {
+            "matriz": "pem",
+            "ambito": "mar",
+            "escala": "Puntual georreferenciada masiva (4.529.201 registros de biodiversidad)",
+            "formula_lineage": "Estandarización taxonómica Darwin Core sobre registros de prospecciones de investigación pesquera de IFOP y nodos GBIF en aguas jurisdiccionales chilenas, armonizados con directrices FAO y marcos de conservación SBAP. Optimizado en GeoParquet 1.1 columnar comprimido.",
+            "tile_endpoint": "https://ide.cit.uai.cl/tiles/pem_biodiversidad_especies/{z}/{x}/{y}.pbf"
+          }
+        },
+        "censo_imputaciones_2024": {
+          "title": "Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+          "description": "Modelo demográfico sintético y desagregación multivariada determinística del Censo 2024 (18,48 millones de personas, 7,66 millones de viviendas y 6,62 millones de hogares) a escala de 254.395 manzanas urbanas y entidades rurales para las 16 regiones de Chile. Desarrollado por el CIT-UAI mediante interpolación osculatriz de Sprague y programación entera de mayor residuo para modelación espacial de accesibilidad y demanda de equipamientos, respetando irrestrictamente el secreto estadístico (Ley N° 17.374, Art. 29).",
+          "type": "application/vnd.apache.parquet",
+          "roles": [
+            "data"
+          ],
+          "bbox": [
+            -75.64,
+            -55.98,
+            -66.86,
+            -17.5
+          ],
+          "proj:epsg": 4326,
+          "properties": {
+            "matriz": "censo",
+            "ambito": "tierra",
+            "escala": "Manzanas censales y entidades rurales",
+            "formula_lineage": "Graduación osculatoria de Sprague de 5.º orden sobre grupos quinquenales Censo 2024 combinada con programación entera por algoritmo de mayor residuo (Largest Remainder Method). Especificación técnica del modelo sintético: 1) Restricciones aplicadas: Preservación estricta de totales marginales (la suma de edades y sexo en cada manzana coincide exactamente con la población total censal de la manzana; la suma comunal iguala los tabulados oficiales INE); 2) Información de control: Tabulados oficiales INE Censo 2024 a nivel comunal/distrital, recuentos de viviendas/hogares por manzana y perfiles de ponderación CASEN; 3) Variables imputadas: Desglose continuo de edades simples (0 a 100+ años) y 42 cohortes por sexo; 4) Incertidumbre y advertencia metodológica: Modelo sintético calibrado para análisis territorial (RMSE < 1.2%), advirtiendo expresamente que no constituye microdatos nominales ni registros administrativos individuales observados.",
+            "tile_endpoint": "https://ide.cit.uai.cl/tiles/censo_imputaciones_2024/{z}/{x}/{y}.pbf"
+          }
+        },
+        "inse_socioeconomico": {
+          "title": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+          "description": "Estratificación socioeconómica y patrimonial continua y por quintiles (Q1 a Q5, y S/P sin población) calibrada a nivel nacional para 254.395 manzanas censales en las 16 regiones de Chile. Integra la caracterización socioeconómica de los hogares (capital humano y ocupación CIUO) con la valoración patrimonial inmobiliaria de suelo según Áreas Homogéneas del SII (Ley 17.235) y Valor Guía de Terreno (VGT en UF/m² y $/m²).",
+          "type": "application/vnd.apache.parquet",
+          "roles": [
+            "data"
+          ],
+          "bbox": [
+            -75.64,
+            -55.98,
+            -66.86,
+            -17.5
+          ],
+          "proj:epsg": 4326,
+          "properties": {
+            "matriz": "inse",
+            "ambito": "tierra",
+            "escala": "Manzanas censales y entidades rurales",
+            "formula_lineage": "Calibración econométrica multivariada del Índice de Nivel Socioeconómico a escala de manzana: INSE = f(Capital Humano, Inserción Ocupacional, Valor Guía de Terreno SII). Estratificación por quintiles poblacionales Q1 a Q5 y categorización GSE.",
+            "tile_endpoint": "https://ide.cit.uai.cl/tiles/inse_socioeconomico/{z}/{x}/{y}.pbf"
+          }
+        },
+        "sii_areas_homogeneas": {
+          "title": "Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+          "description": "Catastro espacial completo de 14.157 Áreas Homogéneas definido por el Servicio de Impuestos Internos (SII) bajo la Ley N° 17.235 sobre Impuesto Territorial. Delimita zonas territoriales con características urbanísticas, topográficas, de accesibilidad a servicios y valor unitario de terreno homogéneas para los procesos de reavalúo de bienes raíces en todo Chile. Proporciona el Valor Guía de Terreno (VGT en UF/m² y $/m²), coeficiente guía y clasificación comunal para análisis de plusvalía, dinámica inmobiliaria y tributación territorial.",
+          "type": "application/vnd.apache.parquet",
+          "roles": [
+            "data"
+          ],
+          "bbox": [
+            -75.64,
+            -55.98,
+            -66.86,
+            -17.5
+          ],
+          "proj:epsg": 4326,
+          "properties": {
+            "matriz": "sii",
+            "ambito": "tierra",
+            "escala": "Polígonos de áreas homogéneas (catastro nacional)",
+            "formula_lineage": "Delimitación poligonal y parametrización de Valor Guía de Terreno (VGT) por resoluciones exentas de reavalúo del SII conforme a la Ley 17.235. Homologación topológica y georreferenciación en WGS84 por CIT-UAI.",
+            "tile_endpoint": "https://ide.cit.uai.cl/tiles/sii_areas_homogeneas/{z}/{x}/{y}.pbf"
+          }
+        },
+        "equipamientos_2017": {
+          "title": "Equipamientos urbanos y servicios esenciales 2017",
+          "description": "Catastro oficial de equipamientos y servicios urbanos esenciales utilizado para la modelación de accesibilidad peatonal en la Matriz de Bienestar Humano Territorial (MBHT 2017). Documenta de forma trazable los tres niveles del embudo de depuración nacional: 202.275 registros administrativos brutos iniciales, 113.231 unidades en el catastro maestro ruteable consolidado en 6 dimensiones —Áreas Verdes (54.962), Deportes (26.629), Educación (17.129), Salud (5.824), Servicios Públicos (4.914) y Cultura (3.773)— y 55.035 equipamientos públicos de libre acceso y gratuidad publicados en los paquetes regionales y nacionales de la línea base abierta MBHT 2017.",
+          "type": "application/vnd.apache.parquet",
+          "roles": [
+            "data"
+          ],
+          "bbox": [
+            -75.64,
+            -55.98,
+            -66.86,
+            -17.5
+          ],
+          "proj:epsg": 4326,
+          "properties": {
+            "matriz": "mbht",
+            "ambito": "tierra",
+            "escala": "Puntual y poligonal georreferenciada (55.035 línea base abierta / 113.231 catastro maestro ruteable)",
+            "formula_lineage": "Catastro georreferenciado de oferta urbana provisto por SUBDERE, MINEDUC, MINSAL, MINVU, IND y Registro Civil. Homologación de coordenadas a WGS84 (EPSG:4326) con validación topológica y deduplicación espacial.",
+            "tile_endpoint": "https://ide.cit.uai.cl/tiles/kpi_mud_2017/{z}/{x}/{y}.pbf"
+          }
+        },
+        "red_vial_ejes_2017": {
+          "title": "Red vial urbana caminable y tiempos Tobler 2017",
+          "description": "Red vial oficial caminable y grafo topológico peatonal integrado por 1.589.595 tramos viales calibrados con tiempos de fricción y decaimiento espacial de Tobler para las 16 regiones de Chile. Permite calcular isocronas peatonales y matrices de costo temporal entre las 204.906 manzanas censales y los equipamientos esenciales para la modelación de accesibilidad urbana de la línea base MBHT 2017.",
+          "type": "application/vnd.apache.parquet",
+          "roles": [
+            "data"
+          ],
+          "bbox": [
+            -75.64,
+            -55.98,
+            -66.86,
+            -17.5
+          ],
+          "proj:epsg": 4326,
+          "properties": {
+            "matriz": "mbht",
+            "ambito": "tierra",
+            "escala": "Lineal segmentada (1.589.595 tramos viales peatonales ruteables)",
+            "formula_lineage": "Grafo vial caminable consolidado a partir de la red vial INE/MINVU, corregido topológicamente (snapping y split en intersecciones) con velocidad peatonal calibrada según pendiente superficial (ecuación de caminata de Tobler W = 6 * exp(-3.5 * |S + 0.05|)).",
+            "tile_endpoint": "https://ide.cit.uai.cl/tiles/kpi_mud_2017/{z}/{x}/{y}.pbf"
+          }
+        },
+        "educacion_inicial_2024": {
+          "title": "Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
+          "description": "Catastro maestro nacional unificado de establecimientos de educación inicial (jardines infantiles y salas cuna) para las 16 regiones de Chile. Integra tanto la oferta pública (JUNJI, Integra, VTF, SLEP y Municipal) como la oferta privada particular subvencionada y particular pagada, detallando capacidad y matrícula por nivel formativo (Sala Cuna Menor/Mayor, Nivel Medio Menor/Mayor, Prekínder NT1 y Kínder NT2). Insumo base para la evaluación de cobertura y accesibilidad peatonal infantil en la MBHT.",
+          "type": "application/vnd.apache.parquet",
+          "roles": [
+            "data"
+          ],
+          "bbox": [
+            -109.43,
+            -54.94,
+            -67.6,
+            -18.25
+          ],
+          "proj:epsg": 4326,
+          "properties": {
+            "matriz": "mbht",
+            "ambito": "tierra",
+            "escala": "Equipamientos georreferenciados (Puntos WGS 84)",
+            "formula_lineage": "Georreferenciación multiproveedor validada por verificación espacial comunal y cruce con Directorio Oficial MINEDUC / Subsecretaría de Educación Parvularia (SdEP). Normalización taxonómica de dependencia institucional y desagregación de matrícula.",
+            "tile_endpoint": "https://ide.cit.uai.cl/tiles/educacion_inicial_2024/{z}/{x}/{y}.pbf"
+          }
+        },
+        "huella_edificaciones_2024": {
+          "title": "Huella de edificaciones urbanas — Presencia construida nacional",
+          "description": "Catastro vectorial de huella construida y morfología del entorno edificado para 341.962 polígonos urbanos a nivel nacional. Identifica la superficie en metros cuadrados, nivel de confianza algorítmica y años de presencia de las estructuras urbanas, permitiendo modelar la densidad predial, compacidad morfológica y dinámicas de densificación en ciudades chilenas.",
+          "type": "application/vnd.apache.parquet",
+          "roles": [
+            "data"
+          ],
+          "bbox": [
+            -75.64,
+            -55.98,
+            -66.86,
+            -17.5
+          ],
+          "proj:epsg": 4326,
+          "properties": {
+            "matriz": "mbht",
+            "ambito": "tierra",
+            "escala": "Polígonos de edificaciones (Alta resolución espacial)",
+            "formula_lineage": "Detección y extracción vectorial de huella de edificaciones mediante modelos de segmentación satelital y fotogrametría aérea de alta resolución, con verificación multitemporal de presencia construida.",
+            "tile_endpoint": "https://ide.cit.uai.cl/tiles/huella_edificaciones_2024/{z}/{x}/{y}.pbf"
+          }
+        }
+      },
+      "links": [
+        {
+          "rel": "root",
+          "href": "./collection.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "self",
+          "href": "./collection.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "license",
+          "href": "https://creativecommons.org/licenses/by/4.0/",
+          "type": "text/html",
+          "title": "Licencia Abierta Creative Commons Attribution 4.0 International (CC BY 4.0)"
+        },
+        {
+          "rel": "about",
+          "href": "https://ide.cit.uai.cl/guia-tecnica",
+          "type": "text/html",
+          "title": "Guía Técnica y Estándares de Interoperabilidad IDE CIT"
+        },
+        {
+          "rel": "describedby",
+          "href": "https://ide.cit.uai.cl/dcat.json",
+          "type": "application/json",
+          "title": "Catálogo Semántico W3C DCAT-AP 2.0"
+        }
+      ],
+      "assets": {
+        "catalog_json": {
+          "title": "Catálogo Maestro de la Infraestructura IDE CIT (JSON)",
+          "type": "application/json",
+          "roles": [
+            "metadata"
+          ],
+          "href": "https://ide.cit.uai.cl/data/catalogo_ide_cit.json"
+        },
+        "catalog_csv": {
+          "title": "Catálogo Tabular de Coberturas Geoespaciales (CSV)",
+          "type": "text/csv",
+          "roles": [
+            "metadata"
+          ],
+          "href": "https://ide.cit.uai.cl/catalogo.csv"
+        },
+        "stac_catalog": {
+          "title": "Catálogo Raíz STAC 1.0.0",
+          "type": "application/json",
+          "roles": [
+            "metadata"
+          ],
+          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+        },
+        "dcat_json": {
+          "title": "Catálogo Semántico DCAT-AP",
+          "type": "application/json",
+          "roles": [
+            "metadata"
+          ],
+          "href": "https://ide.cit.uai.cl/dcat.json"
         }
       }
     }

@@ -129,8 +129,8 @@
       ],
       "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet",
       "proj:epsg": 4326,
-      "file:size": 295995644,
-      "file:checksum": "148b716ac5356bdcba4bb578c4a5db824eaa6eeaa253fadcefffb5a7f96c6b1f"
+      "file:size": 279535131,
+      "file:checksum": "da7a24420fb4b09963cd8bb9a9bd45b6c4b8110c4ce4f168c308a3e2f75556eb"
     },
     "geopackage": {
       "title": "OGC GeoPackage — Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",

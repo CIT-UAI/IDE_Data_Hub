@@ -128,7 +128,9 @@
         "data"
       ],
       "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.parquet",
-      "proj:epsg": 4326
+      "proj:epsg": 4326,
+      "file:size": 894409,
+      "file:checksum": "e3cb9ca5b196740ce2929db29141a04651110698c2bf620249cc805275c5a16b"
     },
     "geopackage": {
       "title": "OGC GeoPackage — Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",

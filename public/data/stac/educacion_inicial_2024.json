@@ -129,8 +129,8 @@
       ],
       "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
       "proj:epsg": 4326,
-      "file:size": 365383,
-      "file:checksum": "223cfafbcc4f76949127e109c0a4673e40d4bf4019840e1b0a1d0fcc6918e711"
+      "file:size": 364944,
+      "file:checksum": "ec9b240098d426b5d2bf9aa1350c3f40a3e8e26aa7acf02a53e20b7ccbce2b8f"
     },
     "geopackage": {
       "title": "OGC GeoPackage — Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
