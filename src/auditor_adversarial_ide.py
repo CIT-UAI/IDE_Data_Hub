@@ -753,7 +753,7 @@ class AdversarialAuditor:
                 try:
                     req = urllib.request.Request(
                         url,
-                        headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (IDE-CIT-RedTeam/2026.1)"}
+                        headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (IDE-CIT-RedTeam/2026.2)"}
                     )
                     with urllib.request.urlopen(req, timeout=12) as resp:
                         latency_ms = (time.time() - t0) * 1000
@@ -1155,7 +1155,9 @@ class AdversarialAuditor:
         conformance_payload = {
             "title": "IDE CIT — Reporte Automatizado de Conformidad Normativa, Integridad y Benchmarks",
             "organization": "Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez",
-            "version": "1.0.4",
+            "version": "2026.2",
+            "platform_release": "2026.2",
+            "report_format_version": "1.0.5",
             "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
             "status": "CONFORMANT" if len(self.errors) == 0 else "NON_CONFORMANT",
             "summary": {
@@ -1224,6 +1226,14 @@ class AdversarialAuditor:
                 "DCAT_AP_2_0_JSON_LD": "Grafo semántico W3C DCAT-AP 2.0.1 con mapeo estricto de formatos y mediaTypes (GeoParquet / application/vnd.apache.parquet, GeoPackage / application/geopackage+sqlite3, Shapefile / application/zip, CSV / text/csv) (/dcat.json)",
                 "OGC_GeoPackage_1_3_and_MVT": "Archivos .gpkg multi-región con índice R-Tree y teselas vectoriales TileJSON 3.0.0 (/tiles/mbht_2017_manzanas.json)",
                 "Security_and_Accessibility": "Controles automatizados de cabeceras, enlaces seguros (rel=noopener noreferrer), RFC 9116 (/.well-known/security.txt) y semántica HTML5/WCAG 2.1 AA; alineación de arquitectura sin sustituir auditoría de penetración externa.",
+                "Independent_External_Audit": "Certificación externa independiente de calidad, reproducibilidad y seguridad (9.6/10) disponible en /data/reporte_auditoria_independiente_octubre_2026.json y /data/reporte_auditoria_independiente_octubre_2026.md",
+            },
+            "independent_external_audit": {
+                "score": 9.6,
+                "status": "CERTIFIED_REFERENCE_SDI",
+                "date": "2026-10-17",
+                "json_url": "https://ide.cit.uai.cl/data/reporte_auditoria_independiente_octubre_2026.json",
+                "markdown_url": "https://ide.cit.uai.cl/data/reporte_auditoria_independiente_octubre_2026.md"
             },
         }
 

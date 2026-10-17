@@ -115,7 +115,7 @@ class IDEPortalBuilder:
                 raise KeyError(f"Falta la clave requerida '{key}' en {self.catalog_json_path}")
 
         capas: List[Dict[str, Any]] = catalog_data.get("capas", [])
-        version = catalog_data.get("portal", {}).get("version", "2026.1")
+        version = catalog_data.get("portal", {}).get("version", "2026.2")
         logger.info(f"   ✓ Catálogo cargado (v{version}): {len(capas)} capas registradas.")
 
         # Validación de activos vectoriales esenciales
@@ -347,7 +347,7 @@ class IDEPortalBuilder:
         Copiloto IA interactivo, filtros dinámicos, visor de referencia espacial y exportadores.
         """
         num_capas = len(catalog_data.get("capas", []))
-        version = catalog_data.get("portal", {}).get("version", "2026.1")
+        version = catalog_data.get("portal", {}).get("version", "2026.2")
         json_ld = self.generate_json_ld(catalog_data)
         catalog_json_str = json.dumps(catalog_data, ensure_ascii=False)
         static_layers_html = self.generate_static_layers_html(catalog_data)
@@ -701,7 +701,7 @@ class IDEPortalBuilder:
                         <span class="w-2 h-2 rounded-full bg-uai-gold"></span>
                         <span class="font-bold text-white text-xs uppercase tracking-wider">Cuadratura Demográfica, Cartográfica y de Esquemas</span>
                     </div>
-                    <span class="font-mono text-[11px] text-slate-400">Auditoría internacional de consistencia · v2026.1 / Dataset v1.0.3</span>
+                    <span class="font-mono text-[11px] text-slate-400">Auditoría internacional de consistencia · v2026.2 / Dataset v1.0.3</span>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 leading-relaxed">
                     <div>

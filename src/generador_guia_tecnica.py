@@ -42,7 +42,7 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
     """
     portal = catalog_data.get("portal", {})
     capas = catalog_data.get("capas", [])
-    version = portal.get("version", "2026.1")
+    version = portal.get("version", "2026.2")
     copilot_js_engine = get_copilot_js_engine()
     llm_head_meta = get_llm_head_meta()
     llm_guidance_html = get_llm_guidance_html()
@@ -371,7 +371,7 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
                                 <span class="w-2 h-2 rounded-full bg-uai-gold"></span>
                                 <span class="font-bold text-white text-xs uppercase tracking-wider">Cuadratura Demográfica, Cartográfica y de Esquemas</span>
                             </div>
-                            <span class="font-mono text-[11px] text-slate-400">Auditoría internacional de consistencia · v2026.1 / Dataset v1.0.3</span>
+                            <span class="font-mono text-[11px] text-slate-400">Auditoría internacional de consistencia · v2026.2 / Dataset v1.0.3</span>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 leading-relaxed">
                             <div>

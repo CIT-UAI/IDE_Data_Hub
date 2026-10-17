@@ -2,7 +2,7 @@
   "portal": {
     "nombre": "IDE CIT — Infraestructura de Datos Espaciales",
     "institucion": "Centro de Inteligencia Territorial (CIT) — Universidad Adolfo Ibáñez",
-    "version": "2026.1",
+    "version": "2026.2",
     "descripcion": "Plataforma académica y de ciencia abierta para la consulta, interoperabilidad y descarga de coberturas y modelos territoriales del Centro de Inteligencia Territorial de la Universidad Adolfo Ibáñez.",
     "contacto": "contactocit@uai.cl",
     "url_base": "https://ide.cit.uai.cl",
@@ -25,7 +25,7 @@
       "privacidad_secreto_estadistico": "Ley N° 17.374 (Microdatos agregados por manzana, sin datos personales)",
       "disponibilidad_sla": "99.9% Uptime Multi-AZ Cloud-Native"
     },
-    "ultima_actualizacion": "2026-10-15",
+    "ultima_actualizacion": "2026-10-17",
     "total_capas_oficiales": 13,
     "conteo_canónico": "13 capas y coberturas geoespaciales maestras oficiales (8 Litósfera / 5 Maritorio)"
   },

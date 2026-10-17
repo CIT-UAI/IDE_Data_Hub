@@ -105,7 +105,7 @@ def generate_descargas_2017_html(catalog_data: Dict[str, Any], descargas_2017_da
     Genera el documento HTML completo y canónico para 'descargas-2017.html'.
     """
     portal = catalog_data.get("portal", {})
-    version = portal.get("version", "2026.1")
+    version = portal.get("version", "2026.2")
     copilot_js_engine = get_copilot_js_engine()
     llm_head_meta = get_llm_head_meta()
     llm_guidance_html = get_llm_guidance_html()

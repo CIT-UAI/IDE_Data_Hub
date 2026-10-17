@@ -44,7 +44,7 @@ def generate_ficha_mbht_2017_html(catalog_data: Dict[str, Any]) -> str:
     y continuidad formal del ecosistema IDE CIT.
     """
     portal = catalog_data.get("portal", {})
-    version = portal.get("version", "2026.1")
+    version = portal.get("version", "2026.2")
     copilot_js_engine = get_copilot_js_engine()
     llm_head_meta = get_llm_head_meta()
     llm_guidance_html = get_llm_guidance_html()

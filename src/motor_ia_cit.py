@@ -1112,7 +1112,7 @@ def get_copilot_js_engine() -> str:
                     const cat = CIT_CATALOGO_IDE_TOTAL;
                     saveCtx('catalogo_total', 'nacional', null, null, 'kpi_mud_2017');
                     return {
-                        text: `<strong>Inventario Completo de Recursos Cargados en la IDE CIT (v2026.1)</strong><br><br>` +
+                        text: `<strong>Inventario Completo de Recursos Cargados en la IDE CIT (v2026.2)</strong><br><br>` +
                               `<div class="bg-slate-50 border border-slate-200 rounded-lg p-3 text-xs text-slate-800 space-y-2">` +
                               `<div>• <strong>13 Capas Cartográficas Maestras Oficiales:</strong><br>` +
                               `1. <em>MBHT 2017:</em> Matriz Urbana de Destinos (204.906 manzanas, 42 columnas físicas).<br>` +
@@ -3214,7 +3214,7 @@ def get_canonical_header_html(active_tab: str = "catalogo") -> str:
             <!-- Estado de Infraestructura en Móvil -->
             <div class="mb-2.5 px-3 py-2 rounded-lg bg-slate-900/90 border border-slate-800 text-[11px] text-slate-300 flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
-                <span><strong>Estado:</strong> Infraestructura oficial operativa de acceso abierto (Versión 2026.1).</span>
+                <span><strong>Estado:</strong> Infraestructura oficial operativa de acceso abierto (Versión 2026.2).</span>
             </div>
 {mobile_tabs_html}
             <div class="pt-2 border-t border-slate-800 mt-2 space-y-1.5">
@@ -3332,7 +3332,7 @@ def get_canonical_header_html(active_tab: str = "catalogo") -> str:
     </script>"""
 
 
-def get_canonical_footer_html(version: str = "2026.1") -> str:
+def get_canonical_footer_html(version: str = "2026.2") -> str:
     """
     Retorna el pie de página institucional idéntico y canónico para todas las páginas de la IDE CIT.
     Garantiza 100% de paridad en estructura de 4 columnas, branding, enlaces cruzados y copyright.

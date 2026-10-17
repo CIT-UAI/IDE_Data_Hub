@@ -334,7 +334,7 @@ def generar_stac():
 def generar_stac_html():
     print("[*] Generando interfaz HTML y visualizador del Catálogo STAC 1.0.0 (stac/index.html)...")
     header_html = get_canonical_header_html("stac")
-    footer_html = get_canonical_footer_html("2026.1")
+    footer_html = get_canonical_footer_html("2026.2")
     head_meta = get_llm_head_meta()
     guidance_html = get_llm_guidance_html()
 
@@ -848,11 +848,11 @@ def generar_clean_url_dirs():
     # Sincronizar espejo public/data/ para garantizar acceso HTTP 200 tanto en /dcat.json como en /data/dcat.json
     pub_data_dir = PUBLIC_DIR / "data"
     pub_data_dir.mkdir(parents=True, exist_ok=True)
-    for fname in ["dcat.json", "catalogo_ide_cit.json", "catalogo_ide_cit.csv", "connection_examples.json", "conformance_report.json", "reporte_salud_servicios.json", "reporte_salud_servicios.md"]:
+    for fname in ["dcat.json", "catalogo_ide_cit.json", "catalogo_ide_cit.csv", "connection_examples.json", "conformance_report.json", "reporte_salud_servicios.json", "reporte_salud_servicios.md", "reporte_auditoria_independiente_octubre_2026.json", "reporte_auditoria_independiente_octubre_2026.md"]:
         src_f = BASE_DIR / "data" / fname
         if src_f.exists():
             shutil.copy2(src_f, pub_data_dir / fname)
-    # También asegurar que public/dcat.json, catalogo.json, conformance_report.json y connection_examples.json estén actualizados desde data/
+    # También asegurar que public/dcat.json, catalogo.json, conformance_report.json, connection_examples.json y auditoría independiente estén actualizados desde data/
     if (BASE_DIR / "data" / "dcat.json").exists():
         shutil.copy2(BASE_DIR / "data" / "dcat.json", PUBLIC_DIR / "dcat.json")
     if (BASE_DIR / "data" / "catalogo_ide_cit.json").exists():
@@ -863,6 +863,10 @@ def generar_clean_url_dirs():
         shutil.copy2(BASE_DIR / "data" / "conformance_report.json", PUBLIC_DIR / "conformance_report.json")
     if (BASE_DIR / "data" / "connection_examples.json").exists():
         shutil.copy2(BASE_DIR / "data" / "connection_examples.json", PUBLIC_DIR / "connection_examples.json")
+    if (BASE_DIR / "data" / "reporte_auditoria_independiente_octubre_2026.json").exists():
+        shutil.copy2(BASE_DIR / "data" / "reporte_auditoria_independiente_octubre_2026.json", PUBLIC_DIR / "reporte_auditoria_independiente_octubre_2026.json")
+    if (BASE_DIR / "data" / "reporte_auditoria_independiente_octubre_2026.md").exists():
+        shutil.copy2(BASE_DIR / "data" / "reporte_auditoria_independiente_octubre_2026.md", PUBLIC_DIR / "reporte_auditoria_independiente_octubre_2026.md")
 
     # Sincronizar STAC desde public/stac/ hacia stac/, data/stac/ y public/data/stac/
     if STAC_DIR.exists():

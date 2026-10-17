@@ -64,7 +64,7 @@ def main():
     version_payload = {
         "build": build_time,
         "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "version": "2026.1",
+        "version": "2026.2",
         "description": "IDE CIT — Infraestructura de Datos Espaciales (CIT-UAI)"
     }
     repo_root = base_dir.parent if base_dir.name == "src" else base_dir

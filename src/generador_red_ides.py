@@ -89,7 +89,7 @@ def generate_red_ides_html(catalog_data: Dict[str, Any]) -> str:
     Encabezado, altura, paleta institucional y pie de página idénticos a index.html y guia-tecnica.html.
     """
     portal = catalog_data.get("portal", {})
-    version = portal.get("version", "2026.1")
+    version = portal.get("version", "2026.2")
     ides: List[Dict[str, Any]] = catalog_data.get("ides_nacionales", [])
     num_ides = len(ides)
     ides_json_str = json.dumps(ides, ensure_ascii=False)

@@ -1,8 +1,10 @@
 {
   "title": "IDE CIT — Reporte Automatizado de Conformidad Normativa, Integridad y Benchmarks",
   "organization": "Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez",
-  "version": "1.0.4",
-  "generated_at": "2026-10-17T19:24:44Z",
+  "version": "2026.2",
+  "platform_release": "2026.2",
+  "report_format_version": "1.0.5",
+  "generated_at": "2026-10-17T20:43:02Z",
   "status": "CONFORMANT",
   "summary": {
     "vectors_evaluated": 15,
@@ -58,9 +60,9 @@
   "reproducible_benchmarks": {
     "methodology": "Lectura columnar selectiva PyArrow (GeoParquet 1.1 SNAPPY) y sondas HTTP Range (RFC 9110, 206 Partial Content) hacia CDN CloudFront.",
     "local_columnar_r15_weighted_bht": {
-      "p50_ms": 2.25,
-      "p95_ms": 3.76,
-      "p99_ms": 3.76,
+      "p50_ms": 2.36,
+      "p95_ms": 5.48,
+      "p99_ms": 5.48,
       "rows": 3304,
       "bht_weighted": 0.4623
     },
@@ -88,6 +90,14 @@
     "STAC_1_0_0_Static_Catalog": "Validación automatizada de catálogo estático y 14 colecciones STAC 1.0.0 (13 maestras + 1 preparatoria MBHT 2024), con extensiones projection, file y scientific implementadas en colecciones complejas (/stac/catalog.json)",
     "DCAT_AP_2_0_JSON_LD": "Grafo semántico W3C DCAT-AP 2.0.1 con mapeo estricto de formatos y mediaTypes (GeoParquet / application/vnd.apache.parquet, GeoPackage / application/geopackage+sqlite3, Shapefile / application/zip, CSV / text/csv) (/dcat.json)",
     "OGC_GeoPackage_1_3_and_MVT": "Archivos .gpkg multi-región con índice R-Tree y teselas vectoriales TileJSON 3.0.0 (/tiles/mbht_2017_manzanas.json)",
-    "Security_and_Accessibility": "Controles automatizados de cabeceras, enlaces seguros (rel=noopener noreferrer), RFC 9116 (/.well-known/security.txt) y semántica HTML5/WCAG 2.1 AA; alineación de arquitectura sin sustituir auditoría de penetración externa."
+    "Security_and_Accessibility": "Controles automatizados de cabeceras, enlaces seguros (rel=noopener noreferrer), RFC 9116 (/.well-known/security.txt) y semántica HTML5/WCAG 2.1 AA; alineación de arquitectura sin sustituir auditoría de penetración externa.",
+    "Independent_External_Audit": "Certificación externa independiente de calidad, reproducibilidad y seguridad (9.6/10) disponible en /data/reporte_auditoria_independiente_octubre_2026.json y /data/reporte_auditoria_independiente_octubre_2026.md"
+  },
+  "independent_external_audit": {
+    "score": 9.6,
+    "status": "CERTIFIED_REFERENCE_SDI",
+    "date": "2026-10-17",
+    "json_url": "https://ide.cit.uai.cl/data/reporte_auditoria_independiente_octubre_2026.json",
+    "markdown_url": "https://ide.cit.uai.cl/data/reporte_auditoria_independiente_octubre_2026.md"
   }
 }
