@@ -436,28 +436,11 @@ def generar_stac_html():
     <link rel="canonical" href="https://ide.cit.uai.cl/stac/">
     <link rel="alternate" type="application/json" href="https://ide.cit.uai.cl/stac/catalog.json" title="STAC Catalog JSON">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {{
-            theme: {{
-                extend: {{
-                    colors: {{
-                        uai: {{
-                            gold: '#6493B5', citCeleste: '#6493B5',
-                            goldHover: '#4e7b9d', citCelesteHover: '#4e7b9d',
-                            black: '#000000',
-                            charcoal: '#1f1f23',
-                            bgSoft: '#f8fafc',
-                            border: '#e2e8f0',
-                            navy: '#003865',
-                            citBlue: '#6493B5'
-                        }}
-                    }}
-                }}
-            }}
-        }};
-    </script>
+    <!-- CSS Estático de Producción (Tailwind Compilado CIT) -->
+    <link rel="stylesheet" href="/css/ide.min.css">
+    
+    <!-- Lucide Icons (Local Vendor) -->
+    <script src="/vendor/lucide/lucide.min.js"></script>
     {head_meta}
 </head>
 <body class="flex flex-col min-h-full font-sans text-slate-800 antialiased bg-slate-50 selection:bg-uai-gold/20 selection:text-uai-navy">

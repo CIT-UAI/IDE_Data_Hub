@@ -2928,8 +2928,8 @@ def get_llm_head_meta() -> str:
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <!-- Directivas de Seguridad Defensiva y Protección de Recursos (Defense in Depth) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https: wss:; img-src 'self' https: data: blob:; font-src 'self' https: data:; frame-ancestors 'self'; object-src 'none'; base-uri 'self';">
+    <!-- Directivas de Seguridad Defensiva y Protección de Recursos (Defense in Depth - CSP Nivel 3 Estricta) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; img-src 'self' data: blob: https://*.tile.openstreetmap.org https://engine.matrizbht.cl https://*.basemaps.cartocdn.com; connect-src 'self' https://ide.cit.uai.cl https://engine.matrizbht.cl https://*.tile.openstreetmap.org https://*.basemaps.cartocdn.com; object-src 'none'; base-uri 'self';">
     <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()">"""
 
 
