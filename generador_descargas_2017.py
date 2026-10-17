@@ -1226,9 +1226,12 @@ def generate_descargas_2017_html(catalog_data: Dict[str, Any], descargas_2017_da
             msgDiv.className = 'flex items-start space-x-2.5 ' + (sender === 'user' ? 'justify-end' : '');
 
             if (sender === 'user') {{
+                const safeUserText = (typeof escapeHtml === 'function') 
+                    ? escapeHtml(text) 
+                    : String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
                 msgDiv.innerHTML = `
                     <div class="bg-slate-900 text-white p-3 rounded-2xl rounded-tr-none text-xs sm:text-sm max-w-[85%] shadow-xs leading-relaxed">
-                        ${{text}}
+                        ${{safeUserText}}
                     </div>
                 `;
             }} else {{
