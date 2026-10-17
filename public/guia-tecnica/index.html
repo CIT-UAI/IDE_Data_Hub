@@ -459,31 +459,36 @@
             </nav>
 
             <div class="w-full">
-                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3">
-                    <span class="w-2 h-2 rounded-full bg-uai-gold"></span>
-                    <span>Documento maestro v2026.1 · Ecosistema MBHT 2024–2026</span>
+                <div class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">
+                    Documento maestro v2026.1 · Ecosistema MBHT 2024–2026
                 </div>
                 <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
                     Guía técnica de interoperabilidad, protocolos y estándares
                 </h1>
                 <p class="text-sm sm:text-base lg:text-lg text-slate-600 mt-2.5 sm:mt-3 leading-relaxed font-normal w-full">
-                    Manual de referencia técnica sobre la arquitectura cloud-native de la IDE CIT, cumplimiento del Perfil Nacional de Metadatos SNIT, estándares internacionales OGC e ISO, catálogo STAC 1.0, reproducción práctica paso a paso de indicadores de accesibilidad y estado operativo de los servicios para software SIG (QGIS, ArcGIS), Python y R.
+                    Manual de referencia técnica sobre la arquitectura cloud-native de la IDE CIT, cumplimiento del Perfil Nacional de Metadatos SNIT, estándares internacionales OGC e ISO, catálogo STAC 1.0.0, reproducción práctica paso a paso de indicadores de accesibilidad, métricas de rendimiento verificables y estado operativo de los servicios para software SIG (QGIS, ArcGIS), Python y R.
                 </p>
             </div>
 
-            <!-- Pastillas de estándares con colores institucionales sobrios -->
-            <div class="mt-6 flex flex-wrap gap-2 text-xs">
-                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-white font-semibold flex items-center space-x-1.5 shadow-xs">
+            <!-- Barra tipográfica sobria de estándares (sin exceso de etiquetas visuales) -->
+            <div class="mt-5 pt-4 border-t border-slate-200/80 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-slate-600">
+                <span class="font-bold text-slate-900 flex items-center space-x-1.5">
                     <i data-lucide="shield-check" class="w-3.5 h-3.5 text-uai-gold"></i>
-                    <span>Perfil SNIT Chile</span>
+                    <span>Estándares implementados:</span>
                 </span>
-                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">ISO 19115-1:2014 e ISO 19139</span>
-                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">OGC Vector Tiles (MVT)</span>
-                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">OGC WMS 1.3.0 y WFS 2.0.0</span>
-                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">Apache GeoParquet 1.1</span>
-                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">STAC 1.0.0</span>
-                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">W3C DCAT-AP 2.0</span>
-                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">Licencia CC BY 4.0</span>
+                <span>Perfil SNIT Chile</span>
+                <span class="text-slate-300">·</span>
+                <span class="font-mono">ISO 19115-1:2014 / ISO 19139 XML</span>
+                <span class="text-slate-300">·</span>
+                <span class="font-mono">Apache GeoParquet 1.1</span>
+                <span class="text-slate-300">·</span>
+                <span class="font-mono">STAC 1.0.0</span>
+                <span class="text-slate-300">·</span>
+                <span class="font-mono">OGC GeoPackage 1.3</span>
+                <span class="text-slate-300">·</span>
+                <span class="font-mono">W3C DCAT-AP 2.0</span>
+                <span class="text-slate-300">·</span>
+                <span>Licencia CC BY 4.0</span>
             </div>
 
         </div>
@@ -672,13 +677,13 @@
                             </div>
                             <div class="space-y-2 text-slate-600 leading-relaxed text-xs sm:text-sm">
                                 <p>
-                                    En estricta conformidad con el marco geodésico oficial del Estado de Chile (Decreto Supremo N° 215/2004 y Res. Ex. N° 34/2018 del Ministerio de Bienes Nacionales e IGM), la IDE CIT diferencia formalmente entre marco de referencia, datum elipsoidal, geodinámica, CRS de almacenamiento y CRS de cómputo analítico:
+                                    En estricta conformidad con el marco geodésico oficial del Estado de Chile (Decreto Supremo N° 215/2004 y Res. Ex. N° 34/2018 del Ministerio de Bienes Nacionales e IGM), la IDE CIT diferencia formalmente entre marco de referencia, datum elipsoidal, época geodinámica, CRS de distribución y CRS de cómputo analítico:
                                 </p>
                                 <ul class="list-disc pl-5 space-y-1 text-slate-600">
-                                    <li><strong>Marco de Referencia Oficial y Datum:</strong> <em>SIRGAS-Chile</em> (realización oficial densificada del ITRF ligada a la Placa Sudamericana), asociado al elipsoide <strong>GRS80</strong> (semieje mayor <em>a</em> = 6.378.137 m, aplanamiento inverso 1/<em>f</em> = 298,257222101).</li>
-                                    <li><strong>Distinción y Compatibilidad con WGS 84 (EPSG:4326):</strong> WGS 84 emplea el elipsoide WGS 84 (1/<em>f</em> = 298,257223563). La discrepancia puramente elipsoidal entre GRS80 y WGS 84 es sub-milimétrica (&Delta;<em>b</em> &approx; 0,105 mm en el semieje menor). No obstante, desde el punto de vista geodinámico, SIRGAS-Chile compensa la deriva de la Placa Sudamericana (~2 a 3 cm/año hacia el ENE). Para escalas cartográficas censales y urbanas (&gt; 1:1.000), las coordenadas son equivalentes sin sesgos operacionales.</li>
-                                    <li><strong>CRS de Almacenamiento e Intercambio Cloud-Native:</strong> Se adopta canónicamente <strong>EPSG:4326 (WGS 84 en coordenadas geográficas 2D [latitud, longitud] en grados decimales)</strong> para garantizar interoperabilidad universal con GeoParquet 1.1, STAC 1.0.0, Mapbox Vector Tiles y motores de ciencia de datos (DuckDB, GDAL, Python, R).</li>
-                                    <li><strong>CRS Proyectados para Análisis Métrico de Red:</strong> Para el cálculo de distancias viales físicas, pendientes longitudinales DEM y áreas sin distorsión proyectiva, los algoritmos del CIT-UAI proyectan internamente las geometrías a sus husos conformes oficiales: <strong>UTM Huso 18S (EPSG:32718)</strong> y <strong>UTM Huso 19S (EPSG:32719)</strong> en territorio continental; <strong>UTM Huso 12S (EPSG:32712)</strong> en Rapa Nui; y <strong>UTM Huso 17S (EPSG:32717)</strong> en el Archipiélago Juan Fernández.</li>
+                                    <li><strong>Marco de Referencia Oficial, Realización y Época:</strong> <em>SIRGAS-Chile</em> (<strong>EPSG:5360</strong>, realización densificada del ITRF ligada a la Placa Sudamericana; época de referencia oficial <code>2002.0</code> / actualización pos-sísmica IGM <code>2016.0</code>), asociado al elipsoide <strong>GRS80</strong> (semieje mayor <em>a</em> = 6.378.137 m, aplanamiento inverso 1/<em>f</em> = 298,257222101).</li>
+                                    <li><strong>Transformación Helmert y Compatibilidad con WGS 84 (EPSG:4326):</strong> WGS 84 emplea el elipsoide WGS 84 (1/<em>f</em> = 298,257223563). La discrepancia elipsoidal entre GRS80 y WGS 84 es sub-milimétrica (&Delta;<em>b</em> &approx; 0,105 mm), y la transformación oficial de 7 parámetros de Helmert (<strong>EPSG:15946</strong>) establece traslación y rotación nulas (&Delta;X = &Delta;Y = &Delta;Z = 0,0 m; precisión declarada 1,0 m) para escalas cartográficas censales y urbanas (&gt; 1:1.000).</li>
+                                    <li><strong>CRS de Almacenamiento y Distribución Cloud-Native:</strong> Todos los archivos descargables y servicios web se distribuyen canónicamente en <strong>EPSG:4326 (WGS 84 en coordenadas geográficas 2D [longitud, latitud] en grados decimales)</strong> para garantizar interoperabilidad directa con GeoParquet 1.1, STAC 1.0.0, Mapbox Vector Tiles y motores analíticos (DuckDB, GDAL, Python, R).</li>
+                                    <li><strong>CRS Proyectados para Análisis Métrico de Red:</strong> Para el cálculo de distancias viales físicas, pendientes longitudinales DEM y áreas sin distorsión proyectiva, los algoritmos del CIT-UAI proyectan internamente las geometrías a sus husos conformes oficiales: <strong>SIRGAS-Chile / UTM Huso 18S (EPSG:5361 / EPSG:32718)</strong> y <strong>UTM Huso 19S (EPSG:5362 / EPSG:32719)</strong> en territorio continental; <strong>UTM Huso 12S (EPSG:32712)</strong> en Rapa Nui; y <strong>UTM Huso 17S (EPSG:32717)</strong> en Juan Fernández.</li>
                                 </ul>
                             </div>
                         </div>
@@ -706,43 +711,43 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
                         
-                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
-                            <span class="px-2 py-0.5 rounded bg-slate-200 text-slate-800 font-bold text-[10px] uppercase">Estándar OGC</span>
-                            <h4 class="font-bold text-slate-900 text-sm">OGC Vector Tiles (MVT)</h4>
+                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-1.5">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Estándar OGC / Mapbox</div>
+                            <h4 class="font-bold text-slate-900 text-sm">Vector Tiles (MVT)</h4>
                             <p class="text-slate-600 leading-relaxed">
-                                Teselas vectoriales binarias en formato ProtocolBuffer (<code class="font-mono text-slate-800">.pbf</code>) servidas mediante Martin MVT. Ofrecen tiempos de respuesta menores a 50 ms y renderizado GPU mediante WebGL en clientes cartográficos.
+                                Teselas vectoriales binarias en formato ProtocolBuffer (<code class="font-mono text-slate-800">.pbf</code>) servidas desde el motor espacial del CIT. Ofrecen tiempos de respuesta menores a 50 ms y renderizado GPU mediante WebGL en clientes cartográficos.
                             </p>
                         </div>
 
-                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
-                            <span class="px-2 py-0.5 rounded bg-slate-200 text-slate-800 font-bold text-[10px] uppercase">Geoespacial cloud-native</span>
+                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-1.5">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Geoespacial cloud-native</div>
                             <h4 class="font-bold text-slate-900 text-sm">Apache GeoParquet 1.1</h4>
                             <p class="text-slate-600 leading-relaxed">
-                                Formato columnar binario con compresión Snappy/ZSTD que almacena geometrías en WKB e indexa Bounding Boxes por grupo de filas (<em>row groups</em>). Permite consultas espaciales en la nube sin escanear el archivo completo.
+                                Formato columnar binario con compresión Snappy/ZSTD que almacena geometrías en WKB e indexa Bounding Boxes por grupo de filas (<em>row groups</em>). Permite consultas espaciales remotas vía <code>HTTP 206 Partial Content</code> sin descargar el archivo completo.
                             </p>
                         </div>
 
-                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
-                            <span class="px-2 py-0.5 rounded bg-slate-200 text-slate-800 font-bold text-[10px] uppercase">Especificación STAC</span>
+                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-1.5">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Especificación STAC</div>
                             <h4 class="font-bold text-slate-900 text-sm">STAC 1.0.0 (SpatioTemporal Asset Catalog)</h4>
                             <p class="text-slate-600 leading-relaxed">
-                                Especificación abierta para catalogar activos geoespaciales. La IDE CIT expone la colección institucional en <code class="font-mono text-slate-800">data/stac/collection.json</code> facilitando el descubrimiento algorítmico de datos.
+                                Especificación abierta para catalogar activos geoespaciales con extensiones <code>projection</code>, <code>file</code> y <code>scientific</code>. La IDE CIT expone el catálogo raíz en <code class="font-mono text-slate-800">/stac/catalog.json</code> facilitando el descubrimiento algorítmico.
                             </p>
                         </div>
 
-                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
-                            <span class="px-2 py-0.5 rounded bg-slate-200 text-slate-800 font-bold text-[10px] uppercase">W3C / Datos abiertos</span>
+                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-1.5">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">W3C / Datos abiertos</div>
                             <h4 class="font-bold text-slate-900 text-sm">W3C DCAT-AP 2.0 y Schema.org</h4>
                             <p class="text-slate-600 leading-relaxed">
-                                Vocabulario estándar de catálogos de datos abiertos de la Unión Europea y marcado semántico JSON-LD para indexación y posicionamiento automático en <em>Google Dataset Search</em>.
+                                Vocabulario estándar de catálogos de datos abiertos (<code class="font-mono text-slate-800">/dcat.json</code> y <code class="font-mono text-slate-800">/data/dcat.json</code>) y marcado semántico JSON-LD para indexación federada en catálogos nacionales y motores científicos.
                             </p>
                         </div>
 
-                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
-                            <span class="px-2 py-0.5 rounded bg-slate-200 text-slate-800 font-bold text-[10px] uppercase">Calidad y Validación</span>
-                            <h4 class="font-bold text-slate-900 text-sm">Conformidad topológica OGC (ST_IsValid)</h4>
+                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-1.5 md:col-span-2">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Calidad geométrica y validación</div>
+                            <h4 class="font-bold text-slate-900 text-sm">Conformidad topológica OGC Simple Features (ST_IsValid)</h4>
                             <p class="text-slate-600 leading-relaxed">
-                                Todas las geometrías de manzanas y polígonos son auditadas rigurosamente bajo la especificación OGC Simple Features (<code>ST_IsValid</code> en PostGIS/GEOS): ausencia de auto-intersecciones, eliminación de polígonos espurios (<em>slivers</em>) y snapping a cuadrícula milimétrica en coordenadas SIRGAS-Chile.
+                                Todas las geometrías de manzanas y polígonos son auditadas rigurosamente bajo la especificación OGC Simple Features (<code>ST_IsValid</code> en PostGIS/GEOS): ausencia de auto-intersecciones, eliminación de polígonos espurios (<em>slivers</em>) y validación métrica en proyección UTM Huso 18S/19S (EPSG:32718 / EPSG:32719) antes de su exportación a EPSG:4326.
                             </p>
                         </div>
 
@@ -755,7 +760,7 @@
                             <span>Paradigma Cloud-Native Geospatial vs. WFS tradicional</span>
                         </div>
                         <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                            A diferencia de las IDEs de primera generación que dependen de servicios transaccionales OGC WFS (cuya serialización GML/XML colapsa el ancho de banda y genera tiempos de espera excesivos en coberturas de más de 250.000 polígonos censales), la <strong>IDE CIT adopta el estándar internacional Cloud-Native Geospatial</strong>: distribución directa en <strong>Apache GeoParquet 1.1</strong> y catálogo <strong>STAC 1.0.0</strong> con soporte para <em>HTTP Range Requests</em>. Esto permite que plataformas analíticas modernas (DuckDB, Python GeoPandas, sf en R) descarguen únicamente los grupos de filas y <em>bounding boxes</em> consultados en menos de <strong>300 ms</strong>, reservando las teselas binarias <strong>MVT</strong> para renderizado WebGL acelerado por GPU y WMS federado para previsualización en software SIG.
+                            A diferencia de las IDEs de primera generación que dependen de servicios transaccionales OGC WFS (cuya serialización GML/XML colapsa el ancho de banda en coberturas de más de 200.000 polígonos censales), la <strong>IDE CIT adopta el estándar internacional Cloud-Native Geospatial</strong>: distribución directa en <strong>Apache GeoParquet 1.1</strong>, contenedores <strong>OGC GeoPackage 1.3</strong> accesibles por streaming GDAL (<code>/vsicurl/</code>) y catálogo <strong>STAC 1.0.0</strong> con soporte verificado para <em>HTTP Range Requests (HTTP 206)</em>.
                         </p>
                     </div>
                 </section>
@@ -773,90 +778,105 @@
                             <thead class="bg-slate-100 border-b border-slate-200 text-slate-700">
                                 <tr>
                                     <th class="px-3.5 py-3 font-bold">Servicio / protocolo</th>
-                                    <th class="px-3.5 py-3 font-bold">Punto de enlace (URL)</th>
+                                    <th class="px-3.5 py-3 font-bold">Punto de enlace verificable (URL)</th>
                                     <th class="px-3.5 py-3 font-bold">Formato</th>
                                     <th class="px-3.5 py-3 font-bold text-right">Acción</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-slate-100">
                                 <tr class="hover:bg-slate-50 transition">
-                                    <td class="px-3.5 py-3 font-semibold text-slate-900">Teselas vectoriales MVT (Conector QGIS)</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-600 text-[11px] break-all">https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2024_VectorTiles.qlr</td>
-                                    <td class="px-3.5 py-3"><span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono">QGIS Layer (.qlr) / PBF</span></td>
+                                    <td class="px-3.5 py-3 font-semibold text-slate-900">Conector QGIS MBHT 2017 Nacional (MVT)</td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr" download class="underline hover:text-black">https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-600">QGIS Layer (.qlr) / PBF</td>
                                     <td class="px-3.5 py-3 text-right">
-                                        <a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2024_VectorTiles.qlr" download class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Descargar</a>
+                                        <a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr" download class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Descargar</a>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
                                     <td class="px-3.5 py-3 font-semibold text-slate-900">Centro de descargas territoriales</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-600 text-[11px] break-all">https://ide.cit.uai.cl/descargas</td>
-                                    <td class="px-3.5 py-3"><span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono">GeoParquet / GPKG / SHP / CSV</span></td>
-                                    <td class="px-3.5 py-3 text-right">
-                                        <button onclick="copyText('https://ide.cit.uai.cl/descargas')" class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Copiar</button>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/descargas" class="underline hover:text-black">https://ide.cit.uai.cl/descargas</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-600">GeoParquet / GPKG / SHP / CSV</td>
+                                    <td class="px-3.5 py-3 text-right space-x-2">
+                                        <a href="https://ide.cit.uai.cl/descargas" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
+                                        <button onclick="copyText('https://ide.cit.uai.cl/descargas')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
-                                    <td class="px-3.5 py-3 font-semibold text-slate-900">Catálogo STAC 1.0.0</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-600 text-[11px] break-all">https://ide.cit.uai.cl/stac/catalog.json</td>
-                                    <td class="px-3.5 py-3"><span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono">STAC JSON</span></td>
-                                    <td class="px-3.5 py-3 text-right">
-                                        <button onclick="copyText('https://ide.cit.uai.cl/stac/catalog.json')" class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Copiar</button>
+                                    <td class="px-3.5 py-3 font-semibold text-slate-900">Catálogo Raíz STAC 1.0.0</td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/stac/catalog.json" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/stac/catalog.json</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-600">STAC JSON 1.0.0</td>
+                                    <td class="px-3.5 py-3 text-right space-x-2">
+                                        <a href="https://ide.cit.uai.cl/stac/catalog.json" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
+                                        <button onclick="copyText('https://ide.cit.uai.cl/stac/catalog.json')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
-                                    <td class="px-3.5 py-3 font-semibold text-slate-900">Catálogo DCAT-AP 2.0 (W3C)</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-600 text-[11px] break-all">https://ide.cit.uai.cl/data/dcat.json</td>
-                                    <td class="px-3.5 py-3"><span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono">JSON-LD</span></td>
-                                    <td class="px-3.5 py-3 text-right">
-                                        <button onclick="copyText('https://ide.cit.uai.cl/data/dcat.json')" class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Copiar</button>
+                                    <td class="px-3.5 py-3 font-semibold text-slate-900">Catálogo Semántico DCAT-AP 2.0 (W3C)</td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/dcat.json" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/dcat.json</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-600">JSON-LD</td>
+                                    <td class="px-3.5 py-3 text-right space-x-2">
+                                        <a href="https://ide.cit.uai.cl/dcat.json" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
+                                        <button onclick="copyText('https://ide.cit.uai.cl/dcat.json')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="px-3.5 py-3 font-semibold text-slate-900">Reporte de Conformidad y Benchmarks (p50/p95/p99)</td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/conformance_report.json" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/conformance_report.json</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-600">JSON Telemetría / QA</td>
+                                    <td class="px-3.5 py-3 text-right space-x-2">
+                                        <a href="https://ide.cit.uai.cl/conformance_report.json" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
+                                        <button onclick="copyText('https://ide.cit.uai.cl/conformance_report.json')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
                                     <td class="px-3.5 py-3 font-semibold text-slate-900">Ficha Maestra MBHT 2017 (Gold Standard)</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-600 text-[11px] break-all">https://ide.cit.uai.cl/ficha-mbht-2017</td>
-                                    <td class="px-3.5 py-3"><span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono">HTML / Metadatos 17 Dim.</span></td>
-                                    <td class="px-3.5 py-3 text-right">
-                                        <button onclick="copyText('https://ide.cit.uai.cl/ficha-mbht-2017')" class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Copiar</button>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/ficha-mbht-2017" class="underline hover:text-black">https://ide.cit.uai.cl/ficha-mbht-2017</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-600">HTML / 42 Columnas</td>
+                                    <td class="px-3.5 py-3 text-right space-x-2">
+                                        <a href="https://ide.cit.uai.cl/ficha-mbht-2017" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
+                                        <button onclick="copyText('https://ide.cit.uai.cl/ficha-mbht-2017')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
-                                    <td class="px-3.5 py-3 font-semibold text-slate-900">API Motor Espacial CIT (FastAPI)</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-600 text-[11px] break-all">https://engine.matrizbht.cl</td>
-                                    <td class="px-3.5 py-3"><span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono">REST JSON (E2SFCA / Tobler)</span></td>
-                                    <td class="px-3.5 py-3 text-right">
-                                        <button onclick="copyText('https://engine.matrizbht.cl')" class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Copiar</button>
+                                    <td class="px-3.5 py-3 font-semibold text-slate-900">API Motor Espacial CIT (FastAPI / MVT)</td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://engine.matrizbht.cl" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://engine.matrizbht.cl</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-600">REST JSON / MVT</td>
+                                    <td class="px-3.5 py-3 text-right space-x-2">
+                                        <a href="https://engine.matrizbht.cl" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
+                                        <button onclick="copyText('https://engine.matrizbht.cl')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
                                     <td class="px-3.5 py-3 font-semibold text-slate-900">Directorio Red de IDEs SNIT</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-600 text-[11px] break-all">https://ide.cit.uai.cl/red-ides</td>
-                                    <td class="px-3.5 py-3"><span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono">19 geoportales</span></td>
-                                    <td class="px-3.5 py-3 text-right">
-                                        <button onclick="copyText('https://ide.cit.uai.cl/red-ides')" class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Copiar</button>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/red-ides" class="underline hover:text-black">https://ide.cit.uai.cl/red-ides</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-600">19 geoportales</td>
+                                    <td class="px-3.5 py-3 text-right space-x-2">
+                                        <a href="https://ide.cit.uai.cl/red-ides" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
+                                        <button onclick="copyText('https://ide.cit.uai.cl/red-ides')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
-                                    <td class="px-3.5 py-3 font-semibold text-slate-900">Conector QGIS Servicios WMS</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-600 text-[11px] break-all">https://ide.cit.uai.cl/download/qgis/CIT_Servicios_WMS.qlr</td>
-                                    <td class="px-3.5 py-3"><span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono">QGIS Layer (.qlr)</span></td>
+                                    <td class="px-3.5 py-3 font-semibold text-slate-900">Conector QGIS Streaming GDAL (/vsicurl/ GPKG)</td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/download/qgis/CIT_Servicios_WMS.qlr" download class="underline hover:text-black">https://ide.cit.uai.cl/download/qgis/CIT_Servicios_WMS.qlr</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-600">QGIS Layer (.qlr)</td>
                                     <td class="px-3.5 py-3 text-right">
                                         <a href="https://ide.cit.uai.cl/download/qgis/CIT_Servicios_WMS.qlr" download class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Descargar</a>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
                                     <td class="px-3.5 py-3 font-semibold text-slate-900">Simbología Oficial QGIS (Quiebres Jenks)</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-600 text-[11px] break-all">https://ide.cit.uai.cl/download/qgis/CIT_MBHT_Simbologia_Jenks.qml</td>
-                                    <td class="px-3.5 py-3"><span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono">QGIS Style (.qml)</span></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_Simbologia_Jenks.qml" download class="underline hover:text-black">https://ide.cit.uai.cl/download/qgis/CIT_MBHT_Simbologia_Jenks.qml</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-600">QGIS Style (.qml)</td>
                                     <td class="px-3.5 py-3 text-right">
                                         <a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_Simbologia_Jenks.qml" download class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Descargar</a>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
-                                    <td class="px-3.5 py-3 font-semibold text-slate-900">Repositorio Metodológico Institucional (GitHub CIT-UAI)</td>
-                                    <td class="px-3.5 py-3 font-mono text-slate-600 text-[11px] break-all">https://github.com/CIT-UAI/mbht2024-metodologia</td>
-                                    <td class="px-3.5 py-3"><span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono">Git / Python / Acceso Institucional</span></td>
+                                    <td class="px-3.5 py-3 font-semibold text-slate-900">Ejemplos de Conexión Programática (JSON)</td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/connection_examples.json" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/connection_examples.json</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-600">JSON / Snippets</td>
                                     <td class="px-3.5 py-3 text-right">
-                                        <a href="https://github.com/CIT-UAI/mbht2024-metodologia" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Visitar</a>
+                                        <a href="https://ide.cit.uai.cl/connection_examples.json" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black cursor-pointer underline">Abrir</a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -882,7 +902,7 @@
                             Para visualizar las coberturas y teselas en QGIS con rendimiento ultra-rápido, puedes arrastrar directamente los archivos de capa oficiales o conectar mediante TileJSON seguro:
                         </p>
                         <ol class="list-decimal list-inside space-y-1.5 text-xs sm:text-sm text-slate-700 pl-1">
-                            <li><strong>Opción 1 (Recomendada - 1 clic):</strong> Descarga el archivo de capa <a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2024_VectorTiles.qlr" class="underline font-bold text-slate-900" download>CIT_MBHT_2024_VectorTiles.qlr</a> y arrástralo directamente a la ventana de QGIS.</li>
+                            <li><strong>Opción 1 (Recomendada - 1 clic):</strong> Descarga el archivo de definición de capa <a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr" class="underline font-bold text-slate-900" download>CIT_MBHT_2017_Nacional.qlr</a> y arrástralo directamente a la ventana de QGIS.</li>
                             <li><strong>Opción 2 (Conexión Vector Tiles manual):</strong> En el panel <em>Navegador (Browser)</em>, clic derecho sobre <em>Vector Tiles</em> &gt; <em>Nueva conexión genérica</em> e ingresa la URL TileJSON segura:</li>
                         </ol>
 
@@ -1394,12 +1414,12 @@ print(f"Total Regional R15 -> Manzanas: {len(df)} | Población: {int(df['persona
                             <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">Estado operativo de los servicios, historial de versiones e incidencias públicas</h2>
                         </div>
                         <div class="text-xs sm:text-sm font-mono bg-slate-100 text-slate-800 px-3 py-1.5 rounded-lg border border-slate-200 shrink-0">
-                            Última actualización y auditoría: <strong>2026-10-15 · v1.0.3</strong>
+                            Última actualización y auditoría: <strong>2026-10-17 · v1.0.3</strong>
                         </div>
                     </div>
 
                     <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-                        Con el propósito de brindar certidumbre operativa a investigadores, equipos municipales y organismos públicos, esta sección consolida el estado actual de los servicios de la IDE CIT, el registro de versiones publicadas, las observaciones técnicas conocidas y los canales directos de custodia institucional.
+                        Con el propósito de brindar certidumbre operativa a investigadores, equipos municipales y organismos públicos, esta sección consolida el estado actual de los servicios de la IDE CIT, la matriz de evidencia de conformidad normativa, los benchmarks empíricos reproducibles (<code class="font-mono text-xs">p50 / p95 / p99</code>) y el registro de versiones e incidencias.
                     </p>
 
                     <div class="overflow-x-auto border border-slate-200 rounded-xl">
@@ -1417,35 +1437,106 @@ print(f"Total Regional R15 -> Manzanas: {len(df)} | Población: {int(df['persona
                                     <td class="py-3 px-4 font-bold text-slate-900">Portal Web y Catálogo Abierto</td>
                                     <td class="py-3 px-4 font-mono text-xs sm:text-sm"><a href="/inicio" class="underline hover:text-black">https://ide.cit.uai.cl/inicio</a></td>
                                     <td class="py-3 px-4 font-semibold text-slate-900">Operativo (HTTP 200 · CDN CloudFront)</td>
-                                    <td class="py-3 px-4 font-mono text-xs sm:text-sm">2026-10-15</td>
+                                    <td class="py-3 px-4 font-mono text-xs sm:text-sm">2026-10-17</td>
                                 </tr>
                                 <tr>
                                     <td class="py-3 px-4 font-bold text-slate-900">Centro de Descargas y Verificación SHA-256</td>
                                     <td class="py-3 px-4 font-mono text-xs sm:text-sm"><a href="/descargas" class="underline hover:text-black">https://ide.cit.uai.cl/descargas</a></td>
                                     <td class="py-3 px-4 font-semibold text-slate-900">Operativo (208 paquetes línea base 2017 con SHA-256)</td>
-                                    <td class="py-3 px-4 font-mono text-xs sm:text-sm">2026-10-15</td>
+                                    <td class="py-3 px-4 font-mono text-xs sm:text-sm">2026-10-17</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-3 px-4 font-bold text-slate-900">Catálogo STAC 1.0.0 y Metadatos ISO 19139</td>
+                                    <td class="py-3 px-4 font-bold text-slate-900">Catálogo STAC 1.0.0, DCAT-AP y Metadatos ISO 19139</td>
                                     <td class="py-3 px-4 font-mono text-xs sm:text-sm"><a href="/stac/catalog.json" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/stac/catalog.json</a></td>
-                                    <td class="py-3 px-4 font-semibold text-slate-900">Operativo (5 colecciones + enlaces S3 100% activos)</td>
-                                    <td class="py-3 px-4 font-mono text-xs sm:text-sm">2026-10-15</td>
+                                    <td class="py-3 px-4 font-semibold text-slate-900">Operativo (5 colecciones + extensiones projection/file/scientific)</td>
+                                    <td class="py-3 px-4 font-mono text-xs sm:text-sm">2026-10-17</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 font-bold text-slate-900">Reporte de Conformidad y Benchmarks (<code class="font-mono text-xs">conformance_report.json</code>)</td>
+                                    <td class="py-3 px-4 font-mono text-xs sm:text-sm"><a href="/conformance_report.json" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/conformance_report.json</a></td>
+                                    <td class="py-3 px-4 font-semibold text-slate-900">Operativo (15 vectores Red Team + métricas p50/p95/p99)</td>
+                                    <td class="py-3 px-4 font-mono text-xs sm:text-sm">2026-10-17</td>
                                 </tr>
                                 <tr>
                                     <td class="py-3 px-4 font-bold text-slate-900">Motor de Teselas Vectoriales (MVT)</td>
-                                    <td class="py-3 px-4 font-mono text-xs sm:text-sm"><code>https://ide.cit.uai.cl/tiles/{layer}/{z}/{x}/{y}.pbf</code></td>
-                                    <td class="py-3 px-4 font-semibold text-slate-900">Operativo (Latencia media &lt; 50 ms)</td>
-                                    <td class="py-3 px-4 font-mono text-xs sm:text-sm">2026-10-15</td>
+                                    <td class="py-3 px-4 font-mono text-xs sm:text-sm"><a href="/tiles/mbht_2017_manzanas.json" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/tiles/mbht_2017_manzanas.json</a></td>
+                                    <td class="py-3 px-4 font-semibold text-slate-900">Operativo (TileJSON 3.0.0 · Latencia media &lt; 50 ms)</td>
+                                    <td class="py-3 px-4 font-mono text-xs sm:text-sm">2026-10-17</td>
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+
+                    <!-- Benchmarks Reproducibles (p50 / p95 / p99) y Matriz de Conformidad -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2">
+                        <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                                <h3 class="font-bold text-slate-900 text-sm sm:text-base">Benchmarks empíricos reproducibles (GeoParquet 1.1 &amp; HTTP Range)</h3>
+                                <a href="/conformance_report.json" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] text-slate-700 underline hover:text-black">Ver JSON</a>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Mediciones empíricas sobre los activos reales publicados (<code class="font-mono">PyArrow 21.0</code>, compresión <code class="font-mono">SNAPPY</code>, <code class="font-mono">N=30</code> iteraciones locales y <code class="font-mono">N=10</code> sondas HTTPS WAN sobre CloudFront):
+                            </p>
+                            <div class="overflow-x-auto border border-slate-200 rounded-lg bg-white">
+                                <table class="w-full text-left border-collapse text-xs">
+                                    <thead>
+                                        <tr class="bg-slate-100 text-slate-700 border-b border-slate-200">
+                                            <th class="py-2 px-2.5 font-semibold">Prueba reproducible</th>
+                                            <th class="py-2 px-2.5 font-semibold font-mono">p50</th>
+                                            <th class="py-2 px-2.5 font-semibold font-mono">p95</th>
+                                            <th class="py-2 px-2.5 font-semibold font-mono">p99</th>
+                                            <th class="py-2 px-2.5 font-semibold">I/O efectivo</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-100 text-slate-700 font-mono">
+                                        <tr>
+                                            <td class="py-2 px-2.5 font-sans font-semibold text-slate-900">Nacional (204.906 filas &rarr; filtro RM <code class="font-mono">bht &lt; 0.40</code>)</td>
+                                            <td class="py-2 px-2.5">14,4 ms</td>
+                                            <td class="py-2 px-2.5">15,4 ms</td>
+                                            <td class="py-2 px-2.5">21,9 ms</td>
+                                            <td class="py-2 px-2.5 font-sans text-[11px]">4,2 MB de 128,8 MB (96,7% ahorro)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-2.5 font-sans font-semibold text-slate-900">Regional R15 (3.304 filas &rarr; media ponderada <code class="font-mono">0,4623</code>)</td>
+                                            <td class="py-2 px-2.5">4,4 ms</td>
+                                            <td class="py-2 px-2.5">5,1 ms</td>
+                                            <td class="py-2 px-2.5">6,7 ms</td>
+                                            <td class="py-2 px-2.5 font-sans text-[11px]">Lectura de 2 columnas (<code class="font-mono">bht, personas</code>)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-2.5 font-sans font-semibold text-slate-900">HTTPS WAN <code class="font-mono">Range: bytes=0-4095</code> (HTTP 206)</td>
+                                            <td class="py-2 px-2.5">340,7 ms</td>
+                                            <td class="py-2 px-2.5">359,4 ms</td>
+                                            <td class="py-2 px-2.5">684,7 ms</td>
+                                            <td class="py-2 px-2.5 font-sans text-[11px]">4.096 B de 2,48 MB (0,16% transferido)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                                <h3 class="font-bold text-slate-900 text-sm sm:text-base">Alcance de verificación normativa y evidencia pública</h3>
+                                <a href="/download/iso_xml/auditoria_conformidad_iso.json" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] text-slate-700 underline hover:text-black">Auditoría ISO</a>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Distinción transparente entre estándares verificados automáticamente en cada compilación CI/CD y lineamientos de diseño de referencia:
+                            </p>
+                            <ul class="space-y-1.5 text-xs text-slate-700 leading-relaxed">
+                                <li><strong>ISO 19115-1:2014 / ISO 19139 XML:</strong> Verificación estructural automatizada de los 5 archivos XML contra los elementos obligatorios del Perfil Nacional SNIT (<a href="/download/iso_xml/auditoria_conformidad_iso.json" target="_blank" rel="noopener noreferrer" class="underline font-mono">auditoria_conformidad_iso.json</a>).</li>
+                                <li><strong>STAC 1.0.0 &amp; DCAT-AP 2.0:</strong> Validación automática de esquemas JSON, extensiones (<code class="font-mono">projection</code>, <code class="font-mono">file</code>, <code class="font-mono">scientific</code>) y resolución HTTP 200 de todos los activos enlazados.</li>
+                                <li><strong>Cuadratura y Diccionario Físico (Red Team 15 Vectores):</strong> Comprobación cruzada automática entre valores reales en archivos <code class="font-mono">.parquet</code> (42 columnas, dominios categóricos <code class="font-mono">tob</code> y sumas regionales &Delta;=0) y la documentación HTML/JSON (<a href="/conformance_report.json" target="_blank" rel="noopener noreferrer" class="underline font-mono">conformance_report.json</a>).</li>
+                                <li><strong>Seguridad y Accesibilidad Web:</strong> Alineación de cabeceras, enlaces externos (<code class="font-mono">rel="noopener noreferrer"</code>), publicación de <a href="/.well-known/security.txt" target="_blank" rel="noopener noreferrer" class="underline font-mono">security.txt (RFC 9116)</a> y controles semánticos HTML5 / WCAG 2.1 AA verificados por el validador interno; no sustituye una certificación de penetración de tercera parte.</li>
+                            </ul>
+                        </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm sm:text-base">
                         <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
                             <h3 class="font-bold text-slate-900 text-base">Historial de versiones recientes</h3>
                             <ul class="space-y-2 text-slate-600 leading-relaxed text-xs sm:text-sm">
-                                <li><strong>v1.0.3 (2026-10-15 — Vigente):</strong> Alineación canónica entre las 4 macro-dimensiones del bienestar (<code>dim_acc</code>, <code>dim_soc</code>, <code>dim_seg</code>, <code>dim_amb</code>) y los 6 sub-indicadores peatonales (<code>isal</code>..<code>iser</code>) sobre el esquema real de 42 columnas; homologación de URLs en <code>stac/equipamientos.json</code> y <code>stac/mbht_2024.json</code>, y prueba E2E verificada sobre R15.</li>
+                                <li><strong>v1.0.3 (2026-10-17 — Vigente):</strong> Publicación de <code class="font-mono">conformance_report.json</code> con benchmarks empíricos (<code class="font-mono">p50/p95/p99</code>), precisión geodésica SIRGAS-Chile (<code class="font-mono">EPSG:5360</code>) vs WGS 84 (<code class="font-mono">EPSG:4326</code>), extensiones STAC científicas y simplificación visual por perfiles de usuario.</li>
                                 <li><strong>v1.0.2 (2026-10-08):</strong> Separación explícita entre línea base vigente MBHT 2017 y actualización MBHT 2024 en calibración metodológica; publicación de matriz de control de calidad y verificador SHA-256 en el navegador.</li>
                                 <li><strong>v1.0.1 (2026-06-15):</strong> Cuadratura aritmética exacta (&Delta; = 0) entre los 16 paquetes regionales y el consolidado nacional MBHT 2017 (204.906 manzanas, 55.035 equipamientos, 1.589.595 tramos).</li>
                                 <li><strong>v1.0.0 (2018-11-20):</strong> Publicación original de la Línea Base MBHT 2017 (Convenio SUBDERE, 18 indicadores elementales).</li>

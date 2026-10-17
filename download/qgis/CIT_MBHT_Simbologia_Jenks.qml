@@ -1,6 +1,6 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
 <qgis version="3.28.0" styleCategories="AllStyleCategories">
-  <renderer-v2 attr="MUD_S" type="graduatedSymbol">
+  <renderer-v2 attr="bht" type="graduatedSymbol">
     <ranges>
       <range render="true" symbol="0" lower="0.00" upper="0.28" label="Muy Bajo [0.00 - 0.28]"/>
       <range render="true" symbol="1" lower="0.28" upper="0.41" label="Bajo [0.28 - 0.41]"/>

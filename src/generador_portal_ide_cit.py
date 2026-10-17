@@ -230,22 +230,19 @@ class IDEPortalBuilder:
             ambito_label = "Litósfera" if ambito == "tierra" else ("Maritorio" if ambito == "mar" else "Atmósfera")
             mat_id = capa.get("matriz", "mbht")
             mat_name = matrices.get(mat_id, mat_id.upper())
-            badge_estado = capa.get("badge_estado", "")
             
-            # Distinción inequívoca institucional (Hallazgo B)
+            # Indicador tipográfico sobrio de estado (sin pastillas estridentes)
             if capa_id == "kpi_mud_2017":
-                badge_html = '<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-900 border border-blue-300">LÍNEA BASE OFICIAL VIGENTE (SUBDERE - MINISTERIAL)</span>'
+                status_label = '<span class="text-[11px] font-semibold text-slate-700">Línea base oficial 2017</span>'
             elif capa_id == "censo_imputaciones_2024":
-                badge_html = '<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-50 text-amber-950 border border-amber-300">INSUMO DEMOGRÁFICO PREPARATORIO (EN CALIBRACIÓN - NO ES MBHT 2024 FINAL)</span>'
+                status_label = '<span class="text-[11px] font-semibold text-amber-800">En calibración · Censo 2024</span>'
             elif capa.get("estado") == "reserva_institucional":
-                badge_html = f'<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-900 text-uai-gold border border-slate-700">{badge_estado}</span>'
-            elif badge_estado:
-                badge_html = f'<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-800 border border-slate-200">{badge_estado}</span>'
+                status_label = '<span class="text-[11px] font-medium text-slate-600">Reserva institucional</span>'
             else:
-                badge_html = ""
+                status_label = f'<span class="text-[11px] font-mono text-slate-400">v{capa.get("version", "1.0")}</span>'
             
             size_str = capa.get("size_human", "")
-            size_badge = f'<span class="font-mono text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded text-[10px]">{size_str}</span>' if size_str else ""
+            size_meta = f' · <span class="font-mono text-slate-500">{size_str}</span>' if size_str else ""
 
             # Atributos (primeros 4)
             attrs_rows = []
@@ -253,37 +250,23 @@ class IDEPortalBuilder:
                 attrs_rows.append(f'<tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">{attr.get("campo")}</td><td class="text-slate-500 pr-2 py-0.5">{attr.get("tipo")}</td><td class="text-slate-600 py-0.5">{attr.get("descripcion")}</td></tr>')
             attrs_table = "\n                                    ".join(attrs_rows)
             num_total_attrs = len(capa.get("atributos", []))
-            more_attrs = f'<span class="text-[10px] text-slate-500 font-medium block mt-1">+ {num_total_attrs - 4} campos adicionales en la ficha técnica maestra ({num_total_attrs} columnas físicas)</span>' if num_total_attrs > 4 else ""
+            more_attrs = f'<span class="text-[10px] text-slate-500 font-medium block mt-1">+ {num_total_attrs - 4} campos adicionales en la ficha técnica ({num_total_attrs} columnas físicas)</span>' if num_total_attrs > 4 else ""
 
-            # Fuentes institucionales legibles inline (Hallazgo A)
+            # Fuentes institucionales y operador integrados limpiamente en el acordeón técnico
             fuentes = capa.get("fuentes_institucionales", [])
-            if fuentes:
-                inst_list = ", ".join([f.get("institucion", "") for f in fuentes[:3] if f.get("institucion")])
-                sources_box = f"""                <div class="mt-2 text-[11px] text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-200/80 flex items-start space-x-1.5">
-                    <span class="font-bold text-slate-800 shrink-0">Fuentes:</span>
-                    <span class="text-slate-700 truncate">{inst_list}</span>
-                </div>"""
-            else:
-                sources_box = ""
-
-            # Operador matemático legible inline (Hallazgo A)
+            inst_list = ", ".join([f.get("institucion", "") for f in fuentes[:3] if f.get("institucion")]) if fuentes else "CIT-UAI"
             formula_raw = capa.get("formula_lineage", "")
-            if formula_raw:
-                f_snippet = formula_raw[:120] + "..." if len(formula_raw) > 120 else formula_raw
-                formula_box = f"""                <div class="mt-1.5 text-[10.5px] font-mono text-slate-700 bg-slate-100/70 p-2 rounded-lg border border-slate-200/70 leading-relaxed overflow-x-auto">
-                    <span class="font-bold text-slate-900 block font-sans text-[10px] uppercase tracking-wider mb-0.5">Operador Matemático y Linaje:</span>
-                    <span class="text-slate-800">{f_snippet}</span>
-                </div>"""
-            else:
-                formula_box = ""
+            f_snippet = (formula_raw[:140] + "..." if len(formula_raw) > 140 else formula_raw) if formula_raw else ""
+            formula_row = f'<div class="mb-2 text-[10.5px] font-mono text-slate-600 bg-white p-1.5 rounded border border-slate-200/80 overflow-x-auto"><strong class="font-sans text-slate-800">Operador:</strong> {f_snippet}</div>' if f_snippet else ""
 
-            # Esquema físico expandible
-            details_html = f"""                <details class="mt-2 text-[11px] bg-slate-50 border border-slate-200 rounded-lg p-2 text-slate-700">
-                    <summary class="font-semibold text-slate-800 cursor-pointer flex items-center justify-between select-none">
-                        <span>Esquema físico ({num_total_attrs} campos oficiales)</span>
-                        <a href="download/iso_xml/{capa_id}_iso19139.xml" download class="text-[10px] text-indigo-600 hover:underline font-mono">metadata.xml</a>
+            # Esquema físico y linaje expandible (sobrio, sin sobrecargar la vista inicial)
+            details_html = f"""                <details class="mt-2.5 text-[11px] bg-slate-50/80 border border-slate-200/90 rounded-lg p-2.5 text-slate-700">
+                    <summary class="font-medium text-slate-700 hover:text-slate-900 cursor-pointer flex items-center justify-between select-none">
+                        <span>Especificación técnica ({num_total_attrs} campos · {inst_list})</span>
+                        <a href="download/iso_xml/{capa_id}_iso19139.xml" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono">ISO XML</a>
                     </summary>
-                    <div class="mt-2 pt-1.5 border-t border-slate-200 overflow-x-auto">
+                    <div class="mt-2 pt-2 border-t border-slate-200/80 overflow-x-auto">
+                        {formula_row}
                         <table class="w-full text-left text-[10px]">
                             <tbody class="divide-y divide-slate-100">
                                 {attrs_table}
@@ -295,42 +278,34 @@ class IDEPortalBuilder:
             
             # Enlace semántico directo a la Ficha Técnica para crawlers
             if capa_id == "kpi_mud_2017":
-                ficha_link_html = '<a href="/ficha-mbht-2017" class="mt-2 block text-center text-xs font-semibold text-indigo-700 hover:text-indigo-900 hover:underline">Ver Ficha Metodológica Exhaustiva (Línea Base 2017) &rarr;</a>'
+                ficha_link_html = '<a href="/ficha-mbht-2017" class="mt-2.5 block text-center text-xs font-medium text-slate-600 hover:text-slate-900 underline underline-offset-2">Ver ficha metodológica exhaustiva (Línea base 2017) &rarr;</a>'
             else:
-                ficha_link_html = f'<a href="download/iso_xml/{capa_id}_iso19139.xml" download class="mt-2 block text-center text-[11px] font-mono text-slate-500 hover:text-slate-800 hover:underline">Descargar Metadatos ISO 19139 XML ({capa_id}) &rarr;</a>'
+                ficha_link_html = ""
 
-            card = f"""        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-4 sm:p-5 transition flex flex-col justify-between group" data-layer-id="{capa_id}" data-matriz="{mat_id}" data-ambito="{ambito}">
+            card = f"""        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group" data-layer-id="{capa_id}" data-matriz="{mat_id}" data-ambito="{ambito}">
             <div>
-                <div class="flex items-center justify-between mb-2.5 sm:mb-3">
-                    <div class="flex items-center gap-1.5 flex-wrap">
-                        <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-slate-100 text-slate-800 border border-slate-200">{mat_name}</span>
-                        {badge_html}
-                    </div>
-                    <span class="text-xs text-slate-400 font-medium">{ambito_label}</span>
+                <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">{mat_name} · {ambito_label}</span>
+                    {status_label}
                 </div>
-                <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 sm:mb-2 group-hover:text-black transition leading-snug">{capa.get('titulo')}</h3>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">{capa.get('titulo')}</h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">{capa.get('resumen')}</p>
-{sources_box}
-{formula_box}
 {details_html}
             </div>
 
-            <div class="pt-3 sm:pt-3.5 border-t border-slate-100 mt-3">
-                <div class="flex items-center justify-between text-[11px] sm:text-xs text-slate-400 mb-2.5 sm:mb-3">
+            <div class="pt-3.5 border-t border-slate-100 mt-3.5">
+                <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
                     <span>Escala: <strong class="text-slate-700 font-medium">{capa.get('escala')}</strong></span>
-                    <div class="flex items-center space-x-1.5">
-                        <span class="text-[10px] font-mono text-slate-400">v{capa.get('version', '1.0')}</span>
-                        {size_badge}
-                    </div>
+                    <span class="text-[11px] text-slate-400">Corte {capa.get('fecha_corte', '2017')}{size_meta}</span>
                 </div>
                 <div class="flex items-center space-x-2">
-                    <button onclick="openLayerModal('{capa_id}')" class="flex-1 bg-slate-900 hover:bg-black active:bg-slate-800 text-white text-xs sm:text-sm font-semibold py-2 sm:py-2.5 px-3 rounded-lg transition flex items-center justify-center space-x-1 shadow-xs cursor-pointer">
-                        <span>Ficha y metadatos</span>
+                    <button onclick="openLayerModal('{capa_id}')" class="flex-1 bg-slate-900 hover:bg-black active:bg-slate-800 text-white text-xs sm:text-sm font-semibold py-2 px-3 rounded-lg transition flex items-center justify-center space-x-1 shadow-xs cursor-pointer">
+                        <span>Ficha y descarga</span>
                     </button>
-                    <button onclick="openLayerModal('{capa_id}', true)" title="Ver referencia espacial en mapa" class="p-2 sm:p-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
+                    <button onclick="openLayerModal('{capa_id}', true)" title="Ver referencia espacial en mapa" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
                         <i data-lucide="map" class="w-4 h-4 stroke-[1.5]"></i>
                     </button>
-                    <button onclick="quickCopyQGIS('{capa.get('tile_source')}')" title="Copiar conector para QGIS" class="p-2 sm:p-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
+                    <button onclick="quickCopyQGIS('{capa.get('tile_source')}')" title="Copiar conector para QGIS" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
                         <i data-lucide="link" class="w-4 h-4 stroke-[1.5]"></i>
                     </button>
                 </div>
@@ -346,14 +321,14 @@ class IDEPortalBuilder:
         """
         apps_cards = []
         for app in catalog_data.get("aplicaciones_satelitales", []):
-            cat_badge = f'<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-200/80 text-slate-700">{app.get("categoria")}</span>' if app.get("categoria") else ""
+            cat_label = f'<span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">{app.get("categoria")}</span>' if app.get("categoria") else ""
             card = f"""        <a href="{app.get('url')}" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-200 shadow-clean hover:bg-white hover:border-slate-300 hover:shadow-hover transition flex flex-col justify-between group">
             <div>
                 <div class="flex items-center justify-between mb-2.5 sm:mb-3">
                     <div class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-700 bg-white border border-slate-200 shadow-xs">
                         <i data-lucide="{app.get('icono', 'compass')}" class="w-4 h-4 stroke-[1.5]"></i>
                     </div>
-                    {cat_badge}
+                    {cat_label}
                 </div>
                 <h4 class="font-bold text-slate-900 text-xs sm:text-sm mb-1 group-hover:text-black transition leading-snug">{app.get('titulo')}</h4>
                 <p class="text-xs text-slate-500 leading-relaxed mb-3 sm:mb-4 font-normal">{app.get('descripcion')}</p>
@@ -576,11 +551,10 @@ class IDEPortalBuilder:
                 <span class="text-slate-800 font-bold">Catálogo de datos espaciales y modelos analíticos</span>
             </nav>
 
-            <!-- Título y Propósito Estratégico (Columnas Ampliadas con 1 Columna de Margen) -->
+            <!-- Título y Propósito Estratégico -->
             <div class="text-center max-w-6xl mx-auto mb-10 sm:mb-12">
-                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3">
-                    <span class="w-2 h-2 rounded-full bg-uai-gold"></span>
-                    <span>Infraestructura de Datos Espaciales · Centro de Inteligencia Territorial</span>
+                <div class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2.5">
+                    Infraestructura de Datos Espaciales · Centro de Inteligencia Territorial
                 </div>
                 <h1 class="text-2xl sm:text-3xl lg:text-4xl xl:text-[2.65rem] font-bold tracking-tight text-slate-900 mb-4 sm:mb-5 leading-tight">
                     Catálogo de datos espaciales y modelos analíticos territoriales
@@ -593,68 +567,77 @@ class IDEPortalBuilder:
                 </p>
             </div>
 
-            <!-- 3 Entradas Directas: Explorar el territorio, Descargar datos, Comprender la metodología -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-12">
-                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 sm:p-6 flex flex-col justify-between shadow-clean hover:shadow-hover hover:border-slate-300 transition">
+            <!-- Arquitectura de Descubrimiento por Perfil de Usuario (4 niveles: Básico, SIG, Científico, Máquina/IA) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-10 sm:mb-12">
+                <!-- Nivel 1: Usuario Básico / Gestión Pública -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 flex flex-col justify-between shadow-clean hover:shadow-hover hover:border-slate-300 transition">
                     <div>
-                        <div class="w-9 h-9 rounded-lg bg-slate-900 text-uai-gold flex items-center justify-center font-bold text-sm mb-3 shadow-xs">
-                            <i data-lucide="compass" class="w-4 h-4 stroke-[1.5]"></i>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">1. Exploración y gestión</span>
+                            <i data-lucide="compass" class="w-4 h-4 text-slate-700 stroke-[1.5]"></i>
                         </div>
-                        <h3 class="text-base font-bold text-slate-900 mb-1.5">1. Explorar el territorio y el catálogo</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Recorre las 13 coberturas y capas cartográficas maestras oficiales (bienestar urbano MBHT, estratificación INSE, avalúos SII y maritorio tricontinental) con previsualización cartográfica y consulta interactiva por comuna y región.
+                        <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Buscar &rarr; Encontrar &rarr; Descargar</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Recorre las 13 coberturas maestras y descarga paquetes nacionales o regionales en formatos listos para uso inmediato (GeoPackage, Shapefile y CSV).
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between text-xs sm:text-sm font-semibold">
-                        <a href="#catalogo" class="text-slate-900 hover:underline flex items-center space-x-1">
-                            <span>Ir al catálogo interactivo</span>
-                            <span>&darr;</span>
-                        </a>
-                        <a href="https://matrizbht.cl/visualizations" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-slate-900 underline">
-                            Visor MBHT
-                        </a>
+                    <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between text-xs font-semibold">
+                        <a href="#catalogo" class="text-slate-900 hover:underline">Catálogo &darr;</a>
+                        <a href="/descargas" class="text-slate-600 hover:text-slate-900 underline">Descargas &rarr;</a>
                     </div>
                 </div>
 
-                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 sm:p-6 flex flex-col justify-between shadow-clean hover:shadow-hover hover:border-slate-300 transition">
+                <!-- Nivel 2: Especialista SIG -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 flex flex-col justify-between shadow-clean hover:shadow-hover hover:border-slate-300 transition">
                     <div>
-                        <div class="w-9 h-9 rounded-lg bg-slate-900 text-uai-gold flex items-center justify-center font-bold text-sm mb-3 shadow-xs">
-                            <i data-lucide="download" class="w-4 h-4 stroke-[1.5]"></i>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">2. Especialista SIG</span>
+                            <i data-lucide="layers" class="w-4 h-4 text-slate-700 stroke-[1.5]"></i>
                         </div>
-                        <h3 class="text-base font-bold text-slate-900 mb-1.5">2. Descargar datos abiertos</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Acceso directo en un clic a las matrices nacionales y a los 48 paquetes regionales en formatos abiertos equivalentes (GeoParquet, GeoPackage, Shapefile y CSV) con verificación criptográfica SHA-256.
+                        <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Metadatos &rarr; Servicios &rarr; QGIS</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Integración directa en QGIS y ArcGIS Pro mediante definiciones de capa (<code>.qlr</code>), estilos Jenks (<code>.qml</code>), streaming GDAL <code>/vsicurl/</code> y metadatos ISO 19139.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between text-xs sm:text-sm font-semibold">
-                        <a href="/descargas" class="text-slate-900 hover:underline flex items-center space-x-1">
-                            <span>Centro de descargas</span>
-                            <span>&rarr;</span>
-                        </a>
-                        <a href="/stac/catalog.json" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-slate-900 underline font-mono text-xs">
-                            STAC 1.0.0
-                        </a>
+                    <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between text-xs font-semibold">
+                        <a href="/download/qgis/CIT_MBHT_2017_Nacional.qlr" download class="text-slate-900 hover:underline">Conector QLR &darr;</a>
+                        <a href="/red-ides" class="text-slate-600 hover:text-slate-900 underline">Red SNIT (19 IDEs)</a>
                     </div>
                 </div>
 
-                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 sm:p-6 flex flex-col justify-between shadow-clean hover:shadow-hover hover:border-slate-300 transition">
+                <!-- Nivel 3: Científico e Investigador -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 flex flex-col justify-between shadow-clean hover:shadow-hover hover:border-slate-300 transition">
                     <div>
-                        <div class="w-9 h-9 rounded-lg bg-slate-900 text-uai-gold flex items-center justify-center font-bold text-sm mb-3 shadow-xs">
-                            <i data-lucide="book-open" class="w-4 h-4 stroke-[1.5]"></i>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">3. Investigación científica</span>
+                            <i data-lucide="book-open" class="w-4 h-4 text-slate-700 stroke-[1.5]"></i>
                         </div>
-                        <h3 class="text-base font-bold text-slate-900 mb-1.5">3. Comprender la metodología y calidad</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Revisa la formulación matemática del modelo E2SFCA sobre red vial de Tobler, el ejemplo mínimo reproducible de un indicador paso a paso, las fichas de control de calidad y el estado operativo.
+                        <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Fórmulas &rarr; Linaje &rarr; Reproducción</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Formulación matemática E2SFCA sobre red vial de Tobler con pendiente DEM, cuadratura demográfica censal y verificación determinista de extremo a extremo.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between text-xs sm:text-sm font-semibold">
-                        <a href="/ficha-mbht-2017" class="text-slate-900 hover:underline flex items-center space-x-1">
-                            <span>Ficha técnica MBHT</span>
-                            <span>&rarr;</span>
-                        </a>
-                        <a href="/guia-tecnica" class="text-slate-600 hover:text-slate-900 underline">
-                            Guía y reproducibilidad
-                        </a>
+                    <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between text-xs font-semibold">
+                        <a href="/ficha-mbht-2017" class="text-slate-900 hover:underline">Ficha maestra &rarr;</a>
+                        <a href="/guia-tecnica" class="text-slate-600 hover:text-slate-900 underline">Guía metodológica</a>
+                    </div>
+                </div>
+
+                <!-- Nivel 4: Máquina, Cloud y Agentes IA -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 flex flex-col justify-between shadow-clean hover:shadow-hover hover:border-slate-300 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">4. Máquina, Cloud e IA</span>
+                            <i data-lucide="terminal" class="w-4 h-4 text-slate-700 stroke-[1.5]"></i>
+                        </div>
+                        <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">STAC &rarr; GeoParquet &rarr; DCAT-AP</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Acceso columnar vía <code>HTTP 206 Range</code> para DuckDB/PyArrow, catálogo STAC 1.0.0, grafo semántico DCAT-AP 2.0 y métricas de rendimiento verificables.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between text-xs font-mono font-semibold">
+                        <a href="/stac/catalog.json" target="_blank" rel="noopener noreferrer" class="text-slate-900 hover:underline">STAC 1.0.0</a>
+                        <a href="/conformance_report.json" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-slate-900 underline">Benchmarks JSON</a>
                     </div>
                 </div>
             </div>
@@ -688,7 +671,7 @@ class IDEPortalBuilder:
                     <h2 class="text-lg sm:text-xl font-bold text-slate-900 mt-1">Distinción entre productos vigentes de línea base (2017) y actualizaciones en calibración estadística (2024)</h2>
                 </div>
                 <div class="text-xs sm:text-sm text-slate-500 font-mono">
-                    Última auditoría verificada: 2026-10-15 · v1.0.3
+                    Última auditoría verificada: 2026-10-16 · v1.0.3
                 </div>
             </div>
 
@@ -696,11 +679,11 @@ class IDEPortalBuilder:
                 <!-- Tarjeta Línea Base 2017 -->
                 <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
                     <div>
-                        <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center justify-between mb-2 pb-2 border-b border-slate-200/70">
                             <span class="font-bold text-slate-900 text-base">
                                 MBHT 2017 — Línea base oficial vigente (Cerrada · v1.0.3)
                             </span>
-                            <span class="text-xs font-mono bg-slate-900 text-white px-2.5 py-0.5 rounded font-semibold">204.906 manzanas · 42 col.</span>
+                            <span class="text-xs font-mono text-slate-500 font-semibold">204.906 manzanas · 42 col.</span>
                         </div>
                         <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">
                             Línea base histórica oficial compartida con SUBDERE y ministerios en las 16 regiones de Chile (17.482.699 hab. amanzanados, correspondientes al 99,48% de 17.574.003 habitantes censados por el INE; diferencia de 91.304 personas en áreas no amanzanadas o en tránsito). Estructura el índice BHT en <strong>4 macro-dimensiones</strong> (<code class="font-mono text-xs">dim_acc</code>, <code class="font-mono text-xs">dim_soc</code>, <code class="font-mono text-xs">dim_seg</code>, <code class="font-mono text-xs">dim_amb</code> · 18 indicadores elementales), donde Accesibilidad (<code class="font-mono text-xs">dim_acc</code>) sintetiza <strong>6 sub-indicadores peatonales</strong> (<code class="font-mono text-xs">isal</code>, <code class="font-mono text-xs">ise</code>, <code class="font-mono text-xs">iav</code>, <code class="font-mono text-xs">idep</code>, <code class="font-mono text-xs">icul</code>, <code class="font-mono text-xs">iser</code>). Reúne <strong>204.906 manzanas</strong>, <strong>55.035 equipamientos de libre acceso</strong> (de 113.231 ruteables) y <strong>1.589.595 tramos viales</strong>.
@@ -719,11 +702,11 @@ class IDEPortalBuilder:
                 <!-- Tarjeta Censo 2024 con Imputaciones Demográficas -->
                 <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
                     <div>
-                        <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center justify-between mb-2 pb-2 border-b border-slate-200/70">
                             <span class="font-bold text-slate-900 text-base">
                                 Censo 2024 — Imputaciones demográficas por cohortes y sexo
                             </span>
-                            <span class="text-xs font-mono bg-slate-900 text-white px-2.5 py-0.5 rounded font-semibold">254.395 unidades censales</span>
+                            <span class="text-xs font-mono text-slate-500 font-semibold">254.395 unidades censales</span>
                         </div>
                         <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">
                             Insumos cartográficos y demográficos oficiales del Censo de Población y Vivienda 2024 del INE (<strong>254.395 manzanas urbanas y entidades rurales</strong> en las 16 regiones), con la modelación de desagregación demográfica por edades simples (interpolación osculatriz de Sprague) y conciliación por sexo desarrollada por el CIT-UAI como una de las etapas preparatorias del proceso de actualización de la MBHT (cuyo lanzamiento oficial está programado para noviembre). Disponible para descarga directa abierta en GeoParquet, GeoPackage, Shapefile y CSV.
@@ -839,19 +822,18 @@ class IDEPortalBuilder:
         <div class="max-w-[1600px] mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
                 <div>
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold uppercase tracking-wider mb-2">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span>OGC / ISO / STAC Compliant — 6/6 Servicios Verificados</span>
+                    <div class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1.5">
+                        Verificación técnica y conformidad normativa · 8/8 protocolos auditados
                     </div>
                     <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 leading-tight">
                         Panel de Interoperabilidad Probada y Verificación Técnica
                     </h2>
                     <p class="text-xs sm:text-sm text-slate-600 mt-2 max-w-3xl leading-relaxed">
-                        Pruebas públicas y reproducibles de conectividad para software SIG (QGIS, ArcGIS Pro), motores analíticos (DuckDB, GeoPandas, R sf) y agentes de IA. Cada endpoint ha sido auditado con respuesta HTTP 200, sistema de coordenadas EPSG:4326 y verificación criptográfica SHA-256.
+                        Pruebas públicas y reproducibles de conectividad para software SIG (QGIS, ArcGIS Pro), motores analíticos (DuckDB, GeoPandas, R sf) y agentes de IA. Cada endpoint ha sido auditado con respuesta HTTP 200/206, sistema de coordenadas de distribución EPSG:4326 y verificación criptográfica SHA-256.
                     </p>
                 </div>
-                <div class="shrink-0 flex items-center space-x-2 text-xs font-mono text-slate-500 bg-white px-3 py-2 rounded-xl border border-slate-200 shadow-xs">
-                    <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+                <div class="shrink-0 flex items-center space-x-2 text-xs font-mono text-slate-500">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-emerald-700"></i>
                     <span>Auditoría de integridad: Octubre de 2026</span>
                 </div>
             </div>
@@ -871,65 +853,53 @@ class IDEPortalBuilder:
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-100 font-sans">
-                            <!-- Fila 1: STAC API 1.0.0 -->
+                            <!-- Fila 1: STAC 1.0.0 Catalog -->
                             <tr class="hover:bg-slate-50/80 transition">
                                 <td class="p-3.5">
                                     <span class="font-bold text-slate-900 block">STAC 1.0.0 Catalog</span>
-                                    <span class="text-[11px] text-slate-500">SpatioTemporal Asset Catalog</span>
+                                    <span class="text-[11px] text-slate-500">Catálogo estático con extensiones proj / file / sci</span>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px]">
-                                    <a href="https://ide.cit.uai.cl/stac/catalog.json" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">/stac/catalog.json</a>
+                                    <a href="https://ide.cit.uai.cl/stac/catalog.json" target="_blank" rel="noopener noreferrer" class="text-slate-900 font-semibold hover:underline">/stac/catalog.json</a>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">EPSG:4326</td>
-                                <td class="p-3.5">
-                                    <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[10px]">HTTP 200 (JSON)</span>
-                                </td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (JSON)</td>
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
                                     <code class="bg-slate-100 p-1 rounded block">curl -s https://ide.cit.uai.cl/stac/catalog.json | jq .id</code>
                                 </td>
-                                <td class="p-3.5 text-center">
-                                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Verificado</span>
-                                </td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
                             </tr>
                             <!-- Fila 2: GeoParquet 1.1 -->
                             <tr class="hover:bg-slate-50/80 transition">
                                 <td class="p-3.5">
                                     <span class="font-bold text-slate-900 block">Cloud-Optimized GeoParquet 1.1</span>
-                                    <span class="text-[11px] text-slate-500">WKB Polígonos con compresión Snappy</span>
+                                    <span class="text-[11px] text-slate-500">WKB Polígonos · Byte-Range HTTP 206</span>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px]">
-                                    <a href="https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet" class="text-indigo-600 hover:underline">/download/MBHT_2017_R15_Manzanas.parquet</a>
+                                    <a href="https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet" class="text-slate-900 font-semibold hover:underline">/download/MBHT_2017_R15_Manzanas.parquet</a>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">EPSG:4326</td>
-                                <td class="p-3.5">
-                                    <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[10px]">HTTP 200 (Range 206)</span>
-                                </td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 / 206 Range</td>
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
-                                    <code class="bg-slate-100 p-1 rounded block">duckdb -c "SELECT count(*), round(avg(bht_2017),4) FROM 'https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet'"</code>
+                                    <code class="bg-slate-100 p-1 rounded block">duckdb -c "SELECT count(*), round(avg(bht),4) FROM 'https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet'"</code>
                                 </td>
-                                <td class="p-3.5 text-center">
-                                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Verificado</span>
-                                </td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
                             </tr>
                             <!-- Fila 3: OGC GeoPackage -->
                             <tr class="hover:bg-slate-50/80 transition">
                                 <td class="p-3.5">
-                                    <span class="font-bold text-slate-900 block">OGC GeoPackage (GPKG)</span>
-                                    <span class="text-[11px] text-slate-500">Estándar ISO/IEC 19125 SQLite</span>
+                                    <span class="font-bold text-slate-900 block">OGC GeoPackage 1.3 (GPKG)</span>
+                                    <span class="text-[11px] text-slate-500">Estándar ISO/IEC 19125 SQLite · Streaming GDAL</span>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px]">
-                                    <a href="https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.gpkg" class="text-indigo-600 hover:underline">/download/MBHT_2017_R15_Manzanas.gpkg</a>
+                                    <a href="https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.gpkg" class="text-slate-900 font-semibold hover:underline">/download/MBHT_2017_R15_Manzanas.gpkg</a>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">EPSG:4326</td>
-                                <td class="p-3.5">
-                                    <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[10px]">HTTP 200 (Binary)</span>
-                                </td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (SQLite)</td>
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
-                                    <code class="bg-slate-100 p-1 rounded block">ogrinfo -so https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.gpkg mbht_2017_r15</code>
+                                    <code class="bg-slate-100 p-1 rounded block">ogrinfo -ro -so /vsicurl/https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.gpkg</code>
                                 </td>
-                                <td class="p-3.5 text-center">
-                                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Verificado</span>
-                                </td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
                             </tr>
                             <!-- Fila 4: ESRI Shapefile -->
                             <tr class="hover:bg-slate-50/80 transition">
@@ -938,18 +908,14 @@ class IDEPortalBuilder:
                                     <span class="text-[11px] text-slate-500">SHP + SHX + DBF + PRJ + CPG UTF-8</span>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px]">
-                                    <a href="https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas_SHP.zip" class="text-indigo-600 hover:underline">/download/MBHT_2017_R15_Manzanas_SHP.zip</a>
+                                    <a href="https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas_SHP.zip" class="text-slate-900 font-semibold hover:underline">/download/MBHT_2017_R15_Manzanas_SHP.zip</a>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">EPSG:4326</td>
-                                <td class="p-3.5">
-                                    <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[10px]">HTTP 200 (ZIP Archive)</span>
-                                </td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (ZIP)</td>
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
                                     <code class="bg-slate-100 p-1 rounded block">curl -sI https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas_SHP.zip | grep -i content-length</code>
                                 </td>
-                                <td class="p-3.5 text-center">
-                                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Verificado</span>
-                                </td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
                             </tr>
                             <!-- Fila 5: QGIS Layer Definition (QLR) -->
                             <tr class="hover:bg-slate-50/80 transition">
@@ -958,38 +924,62 @@ class IDEPortalBuilder:
                                     <span class="text-[11px] text-slate-500">Definición de capa con simbología Jenks</span>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px]">
-                                    <a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr" class="text-indigo-600 hover:underline">/download/qgis/CIT_MBHT_2017_Nacional.qlr</a>
+                                    <a href="https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr" class="text-slate-900 font-semibold hover:underline">/download/qgis/CIT_MBHT_2017_Nacional.qlr</a>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px] text-slate-700">EPSG:4326</td>
-                                <td class="p-3.5">
-                                    <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[10px]">HTTP 200 (XML qgis-qlr)</span>
-                                </td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (XML QLR)</td>
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
                                     <code class="bg-slate-100 p-1 rounded block">curl -s https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr | head -n 5</code>
                                 </td>
-                                <td class="p-3.5 text-center">
-                                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Verificado</span>
-                                </td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
                             </tr>
-                            <!-- Fila 6: ISO 19139 XML -->
+                            <!-- Fila 6: ISO 19115-1:2014 / ISO 19139 XML -->
                             <tr class="hover:bg-slate-50/80 transition">
                                 <td class="p-3.5">
-                                    <span class="font-bold text-slate-900 block">ISO 19139 / Dublin Core XML</span>
+                                    <span class="font-bold text-slate-900 block">ISO 19115-1:2014 / ISO 19139 XML</span>
                                     <span class="text-[11px] text-slate-500">Metadatos normalizados gmd:MD_Metadata</span>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px]">
-                                    <a href="https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml" class="text-indigo-600 hover:underline">/download/iso_xml/kpi_mud_2017_iso19139.xml</a>
+                                    <a href="https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml" class="text-slate-900 font-semibold hover:underline">/download/iso_xml/kpi_mud_2017_iso19139.xml</a>
                                 </td>
-                                <td class="p-3.5 font-mono text-[11px] text-slate-700">EPSG:4326</td>
-                                <td class="p-3.5">
-                                    <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[10px]">HTTP 200 (XML)</span>
-                                </td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">EPSG:4326 / 5360</td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (XML)</td>
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
                                     <code class="bg-slate-100 p-1 rounded block">curl -s https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml | head -n 10</code>
                                 </td>
-                                <td class="p-3.5 text-center">
-                                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Verificado</span>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
+                            </tr>
+                            <!-- Fila 7: W3C DCAT-AP 2.0 JSON-LD -->
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-3.5">
+                                    <span class="font-bold text-slate-900 block">W3C DCAT-AP 2.0 (JSON-LD)</span>
+                                    <span class="text-[11px] text-slate-500">Grafo semántico de catálogo para cosecha federada</span>
                                 </td>
+                                <td class="p-3.5 font-mono text-[11px]">
+                                    <a href="https://ide.cit.uai.cl/dcat.json" target="_blank" rel="noopener noreferrer" class="text-slate-900 font-semibold hover:underline">/dcat.json</a>
+                                </td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">EPSG:4326</td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (JSON-LD)</td>
+                                <td class="p-3.5 font-mono text-[10px] text-slate-700">
+                                    <code class="bg-slate-100 p-1 rounded block">curl -s https://ide.cit.uai.cl/dcat.json | jq '."dcat:dataset" | length'</code>
+                                </td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
+                            </tr>
+                            <!-- Fila 8: Reporte de Conformidad y Benchmarks -->
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-3.5">
+                                    <span class="font-bold text-slate-900 block">Conformance & Benchmarks JSON</span>
+                                    <span class="text-[11px] text-slate-500">Métricas empíricas p50/p95/p99 y auditoría ISO/STAC</span>
+                                </td>
+                                <td class="p-3.5 font-mono text-[11px]">
+                                    <a href="https://ide.cit.uai.cl/conformance_report.json" target="_blank" rel="noopener noreferrer" class="text-slate-900 font-semibold hover:underline">/conformance_report.json</a>
+                                </td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">N/A (Telemetría)</td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (JSON)</td>
+                                <td class="p-3.5 font-mono text-[10px] text-slate-700">
+                                    <code class="bg-slate-100 p-1 rounded block">curl -s https://ide.cit.uai.cl/conformance_report.json | jq .benchmarks</code>
+                                </td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
                             </tr>
                         </tbody>
                     </table>
@@ -1003,7 +993,7 @@ class IDEPortalBuilder:
                         <i data-lucide="terminal" class="w-5 h-5 text-uai-gold"></i>
                         <h3 class="text-base sm:text-lg font-bold">Protocolo Seguro de Reproducibilidad Científica de Extremo a Extremo (E2E)</h3>
                     </div>
-                    <span class="px-2.5 py-1 rounded bg-white/10 text-slate-300 font-mono text-xs">Testigo Censal: Manzana 15101011001004001 (Arica)</span>
+                    <span class="text-slate-400 font-mono text-xs">Testigo Censal: Manzana 15101011001004001 (Arica)</span>
                 </div>
                 <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
                     Para certificar la integridad de los datos y reproducir la formulación matemática de la MBHT en un entorno aislado, ejecute el flujo de 3 pasos auditado (sin patrones de ejecución remota insegura):
@@ -1047,23 +1037,15 @@ class IDEPortalBuilder:
         <div class="max-w-[1600px] mx-auto">
             <div class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 lg:p-10 shadow-lg relative overflow-hidden flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                 <div class="max-w-3xl">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 text-uai-gold border border-uai-gold/30 text-xs font-semibold uppercase tracking-wider mb-3">
-                        <i data-lucide="download-cloud" class="w-3.5 h-3.5"></i>
-                        <span>Pestaña dedicada de descargas masivas</span>
+                    <div class="text-xs font-bold uppercase tracking-widest text-uai-gold mb-2">
+                        Repositorio de descargas masivas · 16 regiones y consolidado nacional
                     </div>
                     <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight">
                         Centro de descargas territoriales
                     </h2>
                     <p class="text-xs sm:text-sm text-slate-300 mt-2.5 leading-relaxed font-normal">
-                        Descarga directa y abierta de las <strong>204.906 manzanas censales</strong> con indicadores de bienestar, <strong>55.035 equipamientos</strong> y <strong>1.589.595 tramos viales</strong> en GeoParquet, GeoPackage, Shapefile y CSV, filtrables por cobertura temática, región y comuna en nuestra página dedicada.
+                        Descarga directa y abierta de las <strong>204.906 manzanas censales</strong> con indicadores de bienestar, <strong>55.035 equipamientos</strong> y <strong>1.589.595 tramos viales</strong> en formatos equivalentes (<code class="font-mono text-slate-200">GeoParquet</code>, <code class="font-mono text-slate-200">GeoPackage</code>, <code class="font-mono text-slate-200">Shapefile</code> y <code class="font-mono text-slate-200">CSV</code>), filtrables por cobertura temática, región y comuna.
                     </p>
-                    <div class="mt-4 flex flex-wrap gap-2 text-xs">
-                        <span class="px-2.5 py-1 rounded bg-white/10 text-slate-200 font-mono">GeoParquet</span>
-                        <span class="px-2.5 py-1 rounded bg-white/10 text-slate-200 font-mono">GeoPackage</span>
-                        <span class="px-2.5 py-1 rounded bg-white/10 text-slate-200 font-mono">Shapefile</span>
-                        <span class="px-2.5 py-1 rounded bg-white/10 text-slate-200 font-mono">CSV</span>
-                        <span class="px-2.5 py-1 rounded bg-white/10 text-slate-200">16 regiones + Consolidado nacional</span>
-                    </div>
                 </div>
                 <div class="shrink-0">
                     <a href="descargas" class="inline-flex items-center space-x-2 px-5 py-3 rounded-xl bg-uai-gold hover:bg-uai-goldHover text-white font-bold text-sm shadow-md transition transform hover:-translate-y-0.5 cursor-pointer">
@@ -1095,9 +1077,8 @@ class IDEPortalBuilder:
         <div class="max-w-[1600px] mx-auto">
             <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-clean flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                 <div class="max-w-3xl">
-                    <div class="flex items-center space-x-2 mb-2">
-                        <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Sistema Nacional de Información Territorial (SNIT)</span>
-                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-200 text-slate-700">19 geoportales oficiales</span>
+                    <div class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1.5">
+                        Sistema Nacional de Información Territorial (SNIT) · 19 geoportales oficiales
                     </div>
                     <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 leading-tight">
                         Red de IDEs y geoportales de Chile
@@ -1468,33 +1449,33 @@ class IDEPortalBuilder:
             <!-- Grid de 4 Servicios OGC / Conectores -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-8">
                 
-                <!-- OGC WMS 1.3.0 -->
+                <!-- Conectores QGIS & Cartografía Base -->
                 <div class="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 flex flex-col justify-between shadow-clean hover:shadow-md hover:border-slate-300 transition">
                     <div>
                         <div class="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center mb-3">
                             <i data-lucide="map" class="w-4 h-4 stroke-[1.5]"></i>
                         </div>
-                        <h4 class="font-bold text-slate-900 text-sm mb-1">OGC Web Map Service (WMS)</h4>
-                        <p class="text-xs text-slate-500 mb-3 leading-relaxed font-normal">Renderizado de mapas georreferenciados en formato raster para QGIS, ArcGIS y Leaflet.</p>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1">Conectores QGIS (QLR / QML)</h4>
+                        <p class="text-xs text-slate-500 mb-3 leading-relaxed font-normal">Definiciones de capa preconfiguradas con simbología oficial Jenks y streaming GDAL <code>/vsicurl/</code> para QGIS 3.28+.</p>
                     </div>
                     <div class="pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
-                        <span class="text-[11px] font-mono text-slate-400">Versión 1.3.0</span>
-                        <a href="download/qgis/CIT_Servicios_WMS.qlr" download class="font-semibold text-slate-700 hover:text-black transition cursor-pointer underline">Descargar QLR</a>
+                        <span class="text-[11px] font-mono text-slate-400">QGIS 3.28+ XML</span>
+                        <a href="download/qgis/CIT_MBHT_2017_Nacional.qlr" download class="font-semibold text-slate-700 hover:text-black transition cursor-pointer underline">Descargar QLR</a>
                     </div>
                 </div>
 
-                <!-- OGC WFS 2.0.0 -->
+                <!-- OGC GeoPackage 1.3 -->
                 <div class="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 flex flex-col justify-between shadow-clean hover:shadow-md hover:border-slate-300 transition">
                     <div>
                         <div class="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center mb-3">
                             <i data-lucide="database" class="w-4 h-4 stroke-[1.5]"></i>
                         </div>
-                        <h4 class="font-bold text-slate-900 text-sm mb-1">OGC Web Feature Service (WFS)</h4>
-                        <p class="text-xs text-slate-500 mb-3 leading-relaxed font-normal">Descarga vectorial y consulta de geometrías y atributos en formato GML o GeoJSON.</p>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1">OGC GeoPackage 1.3 (SQLite)</h4>
+                        <p class="text-xs text-slate-500 mb-3 leading-relaxed font-normal">Contenedor espacial relacional abierto con índice R-Tree para análisis vectorial en QGIS, ArcGIS Pro y PostGIS.</p>
                     </div>
                     <div class="pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
-                        <span class="text-[11px] font-mono text-slate-400">STAC / GeoJSON</span>
-                        <button onclick="navigator.clipboard.writeText('https://ide.cit.uai.cl/stac/catalog.json'); alert('URL Catálogo STAC copiada al portapapeles.');" class="font-semibold text-slate-700 hover:text-black transition cursor-pointer">Copiar STAC</button>
+                        <span class="text-[11px] font-mono text-slate-400">ISO/IEC 19125</span>
+                        <a href="descargas" class="font-semibold text-slate-700 hover:text-black transition cursor-pointer underline">Ver paquetes GPKG</a>
                     </div>
                 </div>
 
@@ -1505,11 +1486,11 @@ class IDEPortalBuilder:
                             <i data-lucide="layers" class="w-4 h-4 stroke-[1.5]"></i>
                         </div>
                         <h4 class="font-bold text-slate-900 text-sm mb-1">Vector Tiles (MVT / Mapbox)</h4>
-                        <p class="text-xs text-slate-500 mb-3 leading-relaxed font-normal">Teselas vectoriales binarias ultrarrápidas (&lt; 50 ms) para renderizado dinámico en WebGL.</p>
+                        <p class="text-xs text-slate-500 mb-3 leading-relaxed font-normal">Teselas vectoriales binarias ultrarrápidas (&lt; 50 ms) servidas desde el motor espacial para renderizado WebGL.</p>
                     </div>
                     <div class="pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
                         <span class="text-[11px] font-mono text-slate-400">ProtocolBuffer (.pbf)</span>
-                        <button onclick="navigator.clipboard.writeText('https://ide.cit.uai.cl/tiles/index.json'); alert('URL TileJSON copiada al portapapeles.');" class="font-semibold text-slate-700 hover:text-black transition cursor-pointer">Copiar URL</button>
+                        <a href="connection_examples.json" target="_blank" rel="noopener noreferrer" class="font-semibold text-slate-700 hover:text-black transition cursor-pointer underline">Ver endpoints</a>
                     </div>
                 </div>
 
@@ -1519,12 +1500,12 @@ class IDEPortalBuilder:
                         <div class="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center mb-3">
                             <i data-lucide="binary" class="w-4 h-4 stroke-[1.5]"></i>
                         </div>
-                        <h4 class="font-bold text-slate-900 text-sm mb-1">STAC 1.0 & GeoParquet</h4>
-                        <p class="text-xs text-slate-500 mb-3 leading-relaxed font-normal">Catálogo espacio-temporal y almacenamiento columnar para análisis en la nube con DuckDB y Python.</p>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1">STAC 1.0.0 & GeoParquet 1.1</h4>
+                        <p class="text-xs text-slate-500 mb-3 leading-relaxed font-normal">Catálogo espacio-temporal estático y particionamiento columnar con soporte <code>HTTP 206 Range</code> para DuckDB y Python.</p>
                     </div>
                     <div class="pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
-                        <span class="text-[11px] font-mono text-slate-400">STAC API / Parquet 1.1</span>
-                        <button onclick="navigator.clipboard.writeText('https://ide.cit.uai.cl/stac/catalog.json'); alert('URL STAC Catalog copiada al portapapeles.');" class="font-semibold text-slate-700 hover:text-black transition cursor-pointer">Copiar URL</button>
+                        <span class="text-[11px] font-mono text-slate-400">STAC 1.0.0 / Parquet 1.1</span>
+                        <a href="stac/catalog.json" target="_blank" rel="noopener noreferrer" class="font-semibold text-slate-700 hover:text-black transition cursor-pointer underline">Abrir STAC JSON</a>
                     </div>
                 </div>
 
@@ -1538,13 +1519,15 @@ class IDEPortalBuilder:
                     </div>
                     <div>
                         <h4 class="font-bold text-white">Conformidad con el Perfil Nacional de Metadatos SNIT (Chile)</h4>
-                        <p class="text-slate-400 text-xs font-normal">Todas las coberturas cuentan con especificación ISO 19115:2003 e ISO 19139 para interoperabilidad institucional.</p>
+                        <p class="text-slate-400 text-xs font-normal">Todas las coberturas cuentan con especificación ISO 19115-1:2014, codificación ISO 19139 XML y grafo semántico W3C DCAT-AP 2.0.</p>
                     </div>
                 </div>
-                <button onclick="exportCatalogJson()" class="bg-white/10 hover:bg-white/20 active:bg-white/30 text-white border border-white/20 px-3.5 py-2 rounded-lg font-medium text-xs transition shrink-0 cursor-pointer flex items-center space-x-1.5">
-                    <span>Exportar DCAT-AP</span>
-                    <i data-lucide="download" class="w-3.5 h-3.5 stroke-[1.5]"></i>
-                </button>
+                <div class="flex items-center space-x-2 shrink-0">
+                    <a href="dcat.json" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 active:bg-white/30 text-white border border-white/20 px-3.5 py-2 rounded-lg font-medium text-xs transition cursor-pointer flex items-center space-x-1.5">
+                        <span>Abrir DCAT-AP 2.0</span>
+                        <i data-lucide="external-link" class="w-3.5 h-3.5 stroke-[1.5]"></i>
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -1889,43 +1872,59 @@ class IDEPortalBuilder:
             }} else {{
                 if (empty) empty.classList.add('hidden');
                 filtered.forEach(capa => {{
-                    const card = document.createElement('div');
-                    card.className = 'bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-4 sm:p-5 transition flex flex-col justify-between group';
+                    const card = document.createElement('article');
+                    card.className = 'layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group';
                     
                     const ambitoLabel = capa.ambito === 'tierra' ? 'Litósfera' : (capa.ambito === 'mar' ? 'Maritorio' : 'Atmósfera');
                     const matrixObj = catalogData.matrices ? catalogData.matrices.find(m => m.id === capa.matriz) : null;
                     const matrixName = matrixObj ? matrixObj.nombre : capa.matriz.toUpperCase();
-                    const badgeHtml = capa.badge_estado ? `<span class="text-[10px] font-bold px-2 py-0.5 rounded ${{capa.estado === 'reserva_institucional' ? 'bg-slate-900 text-uai-gold border border-slate-700' : 'bg-slate-100 text-slate-800 border border-slate-200'}}">${{capa.badge_estado}}</span>` : '';
                     
+                    let statusLabel = `<span class="text-[11px] font-mono text-slate-400">v${{capa.version || '1.0'}}</span>`;
+                    if (capa.id === 'kpi_mud_2017') {{
+                        statusLabel = '<span class="text-[11px] font-semibold text-slate-700">Línea base oficial 2017</span>';
+                    }} else if (capa.id === 'censo_imputaciones_2024') {{
+                        statusLabel = '<span class="text-[11px] font-semibold text-amber-800">En calibración · Censo 2024</span>';
+                    }} else if (capa.estado === 'reserva_institucional') {{
+                        statusLabel = '<span class="text-[11px] font-medium text-slate-600">Reserva institucional</span>';
+                    }}
+
+                    const sizeMeta = capa.size_human ? ` · <span class="font-mono text-slate-500">${{capa.size_human}}</span>` : '';
+                    const numAttrs = (capa.atributos || []).length;
+                    const instList = (capa.fuentes_institucionales || []).slice(0, 3).map(f => f.institucion).filter(Boolean).join(', ') || 'CIT-UAI';
+                    const fichaLink = capa.id === 'kpi_mud_2017' ? '<a href="/ficha-mbht-2017" class="mt-2.5 block text-center text-xs font-medium text-slate-600 hover:text-slate-900 underline underline-offset-2">Ver ficha metodológica exhaustiva (Línea base 2017) &rarr;</a>' : '';
+                    const xmlHref = 'download/iso_xml/' + capa.id + '_iso19139.xml';
+
                     card.innerHTML = `
                         <div>
-                            <div class="flex items-center justify-between mb-2.5 sm:mb-3">
-                                <div class="flex items-center gap-1.5 flex-wrap">
-                                    <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-slate-100 text-slate-800 border border-slate-200">${{matrixName}}</span>
-                                    ${{badgeHtml}}
-                                </div>
-                                <span class="text-xs text-slate-400 font-medium">${{ambitoLabel}}</span>
+                            <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">${{matrixName}} · ${{ambitoLabel}}</span>
+                                ${{statusLabel}}
                             </div>
-                            <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 sm:mb-2 group-hover:text-black transition leading-snug">${{capa.titulo}}</h3>
-                            <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-3.5 sm:mb-4 leading-relaxed font-normal">${{capa.resumen}}</p>
+                            <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">${{capa.titulo}}</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">${{capa.resumen}}</p>
+                            <div class="mt-2 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50/80 border border-slate-200/80 rounded-lg px-2.5 py-1.5">
+                                <span class="truncate pr-2">${{numAttrs}} campos · ${{instList}}</span>
+                                <a href="${{xmlHref}}" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                            </div>
                         </div>
 
-                        <div class="pt-3 sm:pt-3.5 border-t border-slate-100">
-                            <div class="flex items-center justify-between text-[11px] sm:text-xs text-slate-400 mb-2.5 sm:mb-3">
+                        <div class="pt-3.5 border-t border-slate-100 mt-3.5">
+                            <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
                                 <span>Escala: <strong class="text-slate-700 font-medium">${{capa.escala}}</strong></span>
-                                <span>Corte: ${{capa.fecha_corte}}</span>
+                                <span class="text-[11px] text-slate-400">Corte ${{capa.fecha_corte || '2017'}}${{sizeMeta}}</span>
                             </div>
                             <div class="flex items-center space-x-2">
-                                <button onclick="openLayerModal('${{capa.id}}')" class="flex-1 bg-slate-900 hover:bg-black active:bg-slate-800 text-white text-xs sm:text-sm font-semibold py-2 sm:py-2.5 px-3 rounded-lg transition flex items-center justify-center space-x-1 shadow-xs cursor-pointer">
-                                    <span>Ficha y metadatos</span>
+                                <button onclick="openLayerModal('${{capa.id}}')" class="flex-1 bg-slate-900 hover:bg-black active:bg-slate-800 text-white text-xs sm:text-sm font-semibold py-2 px-3 rounded-lg transition flex items-center justify-center space-x-1 shadow-xs cursor-pointer">
+                                    <span>Ficha y descarga</span>
                                 </button>
-                                <button onclick="openLayerModal('${{capa.id}}', true)" title="Ver referencia espacial en mapa" class="p-2 sm:p-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
+                                <button onclick="openLayerModal('${{capa.id}}', true)" title="Ver referencia espacial en mapa" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
                                     <i data-lucide="map" class="w-4 h-4 stroke-[1.5]"></i>
                                 </button>
-                                <button onclick="quickCopyQGIS('${{capa.tile_source}}')" title="Copiar conector para QGIS" class="p-2 sm:p-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
+                                <button onclick="quickCopyQGIS('${{capa.tile_source}}')" title="Copiar conector para QGIS" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
                                     <i data-lucide="link" class="w-4 h-4 stroke-[1.5]"></i>
                                 </button>
                             </div>
+                            ${{fichaLink}}
                         </div>
                     `;
                     grid.appendChild(card);
@@ -1947,7 +1946,7 @@ class IDEPortalBuilder:
                 card.rel = 'noopener noreferrer';
                 card.className = 'bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-200 shadow-clean hover:bg-white hover:border-slate-300 hover:shadow-hover transition flex flex-col justify-between group';
                 
-                const catBadge = app.categoria ? `<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-200/80 text-slate-700">${{app.categoria}}</span>` : '';
+                const catLabel = app.categoria ? `<span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">${{app.categoria}}</span>` : '';
                 
                 card.innerHTML = `
                     <div>
@@ -1955,7 +1954,7 @@ class IDEPortalBuilder:
                             <div class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-700 bg-white border border-slate-200 shadow-xs">
                                 <i data-lucide="${{app.icono}}" class="w-4 h-4 stroke-[1.5]"></i>
                             </div>
-                            ${{catBadge}}
+                            ${{catLabel}}
                         </div>
                         <h4 class="font-bold text-slate-900 text-xs sm:text-sm mb-1 group-hover:text-black transition leading-snug">${{app.titulo}}</h4>
                         <p class="text-xs text-slate-500 leading-relaxed mb-3 sm:mb-4 font-normal">${{app.descripcion}}</p>

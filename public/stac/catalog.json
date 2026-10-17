@@ -4,7 +4,7 @@
   "type": "Catalog",
   "id": "cit-uai-ide-catalog",
   "title": "Catálogo de Datos y Modelos Territoriales — IDE CIT (UAI)",
-  "description": "Catálogo espacio-temporal (STAC 1.0.0) con 13 coberturas maestras oficiales descargables en producción (bienestar humano MBHT 2017, estratificación INSE, avalúos SII, equipamientos, red vial y zonificación marina FAO/SBAP) más 1 recurso preparatorio institucional (MBHT 2024 en calibración estadística) del Centro de Inteligencia Territorial de la Universidad Adolfo Ibáñez.",
+  "description": "Catálogo espacio-temporal estático Cloud-Native (STAC 1.0.0 Catalog & Collections) con 13 coberturas maestras oficiales descargables en producción (bienestar humano MBHT 2017, estratificación INSE, avalúos SII, equipamientos, red vial y zonificación marina FAO/SBAP) más 1 recurso preparatorio institucional (MBHT 2024 en calibración estadística) del Centro de Inteligencia Territorial de la Universidad Adolfo Ibáñez.",
   "links": [
     {
       "rel": "self",
@@ -15,6 +15,30 @@
       "rel": "root",
       "type": "application/json",
       "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "about",
+      "type": "text/html",
+      "title": "Guía Técnica, Conformidad y Benchmarks IDE CIT",
+      "href": "https://ide.cit.uai.cl/guia-tecnica"
+    },
+    {
+      "rel": "describedby",
+      "type": "application/ld+json",
+      "title": "Catálogo Semántico W3C DCAT-AP 2.0",
+      "href": "https://ide.cit.uai.cl/dcat.json"
+    },
+    {
+      "rel": "service-desc",
+      "type": "application/json",
+      "title": "Reporte de Conformidad y Benchmarks Reproducibles",
+      "href": "https://ide.cit.uai.cl/conformance_report.json"
+    },
+    {
+      "rel": "license",
+      "type": "text/html",
+      "title": "Licencia Abierta CC BY 4.0",
+      "href": "https://creativecommons.org/licenses/by/4.0/"
     },
     {
       "rel": "child",
@@ -106,9 +130,5 @@
       "title": "Colección Unificada (13 Capas Cartográficas Maestras)",
       "href": "https://ide.cit.uai.cl/stac/collection.json"
     }
-  ],
-  "conformsTo": [
-    "https://api.stacspec.org/v1.0.0/core",
-    "https://api.stacspec.org/v1.0.0/collections"
   ]
 }

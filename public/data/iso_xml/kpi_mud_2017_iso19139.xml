@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd">
+  <gmd:fileIdentifier>
+    <gco:CharacterString>CIT-UAI::kpi_mud_2017::2026</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language>
+    <gco:CharacterString>spa</gco:CharacterString>
+  </gmd:language>
+  <gmd:characterSet>
+    <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</gmd:MD_CharacterSetCode>
+  </gmd:characterSet>
+  <gmd:contact>
+    <gmd:CI_ResponsibleParty>
+      <gmd:organisationName>
+        <gco:CharacterString>Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez</gco:CharacterString>
+      </gmd:organisationName>
+      <gmd:contactInfo>
+        <gmd:CI_Address>
+          <gmd:electronicMailAddress>
+            <gco:CharacterString>contactocit@uai.cl</gco:CharacterString>
+          </gmd:electronicMailAddress>
+        </gmd:CI_Address>
+      </gmd:contactInfo>
+      <gmd:role>
+        <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</gmd:CI_RoleCode>
+      </gmd:role>
+    </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp>
+    <gco:DateTime>2026-10-17T03:08:36Z</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName>
+    <gco:CharacterString>ISO 19115-1:2014 / Perfil Chileno SNIT</gco:CharacterString>
+  </gmd:metadataStandardName>
+  <gmd:identificationInfo>
+    <gmd:MD_DataIdentification>
+      <gmd:citation>
+        <gmd:CI_Citation>
+          <gmd:title>
+            <gco:CharacterString>MBHT 2017 — Línea base oficial</gco:CharacterString>
+          </gmd:title>
+        </gmd:CI_Citation>
+      </gmd:citation>
+      <gmd:abstract>
+        <gco:CharacterString>Línea base nacional oficial de la Matriz de Bienestar Humano Territorial Integral evaluada sobre 204.906 manzanas censales del Censo 2017 en las 16 regiones de Chile. Sintetiza 18 indicadores elementales distribuidos en 4 macro-dimensiones del bienestar (bajo el Axioma de Neutralidad Elemental W(D) = n_D / 18): 1) Macro-dimensión de Accesibilidad (dim_acc, peso 6/18 = 33,33%), que integra los 6 indicadores de acceso peatonal efectivo E2SFCA + Tobler a salud (isal), educación (ise), áreas verdes (iav), deporte (idep), cultura (icul) y servicios públicos (iser); 2) Macro-dimensión Socioeconómica (dim_soc, peso 6/18 = 33,33%); 3) Macro-dimensión de Seguridad (dim_seg, peso 4/18 = 22,22%); y 4) Macro-dimensión Ambiental (dim_amb, peso 2/18 = 11,11%). El archivo físico contiene el esquema completo de 42 columnas físicas (identificadores, demografía censal, índice sintético bht, las 4 macro-dimensiones, los 6 sub-indicadores peatonales con sus valores pre-escalamiento, tipología Jenks tob y geometría WKB).</gco:CharacterString>
+      </gmd:abstract>
+      <gmd:purpose>
+        <gco:CharacterString>Linaje de cálculo: Síntesis BHT Integral de 18 indicadores en 4 macro-dimensiones (W(D) = n_D / 18). Accesibilidad (dim_acc) calculada mediante el modelo bietápico E2SFCA sobre el grafo vial nacional (1.589.595 tramos) con velocidad peatonal de Tobler W(S) = 6 * exp(-3.5 * |S + 0.05|), decaimiento gaussiano f(t) = exp(-0.5 * (t / 15)^2) y umbral 30 min.</gco:CharacterString>
+      </gmd:purpose>
+      <gmd:extent>
+        <gmd:EX_Extent>
+          <gmd:geographicElement>
+            <gmd:EX_GeographicBoundingBox>
+              <gmd:westBoundLongitude>
+                <gco:Decimal>-75.64</gco:Decimal>
+              </gmd:westBoundLongitude>
+              <gmd:eastBoundLongitude>
+                <gco:Decimal>-66.86</gco:Decimal>
+              </gmd:eastBoundLongitude>
+              <gmd:southBoundLatitude>
+                <gco:Decimal>-55.98</gco:Decimal>
+              </gmd:southBoundLatitude>
+              <gmd:northBoundLatitude>
+                <gco:Decimal>-17.5</gco:Decimal>
+              </gmd:northBoundLatitude>
+            </gmd:EX_GeographicBoundingBox>
+          </gmd:geographicElement>
+        </gmd:EX_Extent>
+      </gmd:extent>
+    </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo>
+    <gmd:MD_Distribution>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://ide.cit.uai.cl/tiles/kpi_mud_2017/{z}/{x}/{y}.pbf</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>OGC:MVT</gco:CharacterString>
+              </gmd:protocol>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>download/MBHT_2017_Nacional_Manzanas.parquet</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>HTTP:GEOPARQUET</gco:CharacterString>
+              </gmd:protocol>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+    </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+</gmd:MD_Metadata>

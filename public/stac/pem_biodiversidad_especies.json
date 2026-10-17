@@ -1,13 +1,16 @@
 {
   "stac_version": "1.0.0",
   "stac_extensions": [
-    "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "type": "Collection",
   "id": "pem-biodiversidad-especies",
   "title": "Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)",
   "description": "Consolidado nacional de ocurrencias biológicas y biodiversidad marina de Chile, integrando 4.529.201 observaciones georreferenciadas desde las campañas científicas del Instituto de Fomento Pesquero (IFOP) y la Infraestructura Mundial de Información en Biodiversidad (GBIF). Abarca taxonomía completa (reino, filo, clase, orden, familia, género, especie y nombre científico), profundidad de colecta y año de observación. Diseñado para fundamentar la Planificación marina conforme a las directrices de pesca responsable de la FAO y respaldar la creación, monitoreo y fiscalización de la red del Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley N° 21.600).",
   "license": "CC-BY-4.0",
+  "sci:citation": "Centro de Inteligencia Territorial [CIT-UAI]. (2026). Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF) [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl/stac/pem_biodiversidad_especies.json",
   "providers": [
     {
       "name": "Centro de Inteligencia Territorial (CIT-UAI)",
@@ -53,6 +56,19 @@
     "status": [
       "Conjunto de datos oficial vigente"
     ],
+    "proj:epsg": [
+      4326
+    ],
+    "crs_storage": [
+      "EPSG:4326 (WGS 84)"
+    ],
+    "crs_national_frame": [
+      "SIRGAS-Chile (EPSG:5360, GRS80)"
+    ],
+    "crs_metric_analysis": [
+      "UTM 18S (EPSG:32718)",
+      "UTM 19S (EPSG:32719)"
+    ],
     "matriz": [
       "pem"
     ],
@@ -94,8 +110,14 @@
     {
       "rel": "describedby",
       "type": "application/xml",
-      "title": "Metadatos Oficiales ISO 19139 XML",
+      "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
       "href": "https://ide.cit.uai.cl/download/iso_xml/pem_biodiversidad_especies_iso19139.xml"
+    },
+    {
+      "rel": "alternate",
+      "type": "application/ld+json",
+      "title": "Catálogo Semántico W3C DCAT-AP 2.0",
+      "href": "https://ide.cit.uai.cl/dcat.json"
     }
   ],
   "assets": {

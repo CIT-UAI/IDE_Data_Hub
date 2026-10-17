@@ -409,7 +409,7 @@ def generate_ficha_mbht_2017_html(catalog_data: Dict[str, Any]) -> str:
                 <div class="space-y-4">
                     <div>
                         <span class="text-xs font-semibold text-slate-500 block uppercase tracking-wider mb-1">Sistema de referencia de coordenadas</span>
-                        <span class="text-slate-800 font-medium text-sm sm:text-base">EPSG:4326 · WGS 84 (coordenadas geográficas latitud/longitud)</span>
+                        <span class="text-slate-800 font-medium text-sm sm:text-base">Distribución: EPSG:4326 (WGS 84) · Marco oficial: SIRGAS-Chile (EPSG:5360, GRS80; Helmert EPSG:15946 &Delta;=0,0 m)</span>
                     </div>
                     <div>
                         <span class="text-xs font-semibold text-slate-500 block uppercase tracking-wider mb-1">Línea base temporal y estado</span>
@@ -486,21 +486,21 @@ def generate_ficha_mbht_2017_html(catalog_data: Dict[str, Any]) -> str:
                         <tbody class="divide-y divide-slate-100 text-slate-600">
                             <tr>
                                 <td class="py-2.5 px-3.5 font-bold text-slate-900">MBHT 2017 (Línea Base Oficial)</td>
-                                <td class="py-2.5 px-3.5"><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded font-medium text-xs border border-emerald-200">Vigente en producción (v1.0.3)</span></td>
+                                <td class="py-2.5 px-3.5 font-semibold text-xs text-slate-900">Vigente en producción (v1.0.3)</td>
                                 <td class="py-2.5 px-3.5 font-mono text-xs">17.482.699 hab. <span class="text-slate-400 block text-[11px]">(99,48% de 17.574.003 censados INE)</span></td>
                                 <td class="py-2.5 px-3.5 font-mono text-xs">204.906 manzanas censales</td>
                                 <td class="py-2.5 px-3.5 leading-relaxed text-xs">Medición oficial del Bienestar Humano Territorial: 18 indicadores elementales, 4 macro-dimensiones, 42 columnas físicas, ruteo peatonal en 1,59M tramos viales.</td>
                             </tr>
                             <tr>
                                 <td class="py-2.5 px-3.5 font-bold text-slate-900">Censo 2024 — Insumo Demográfico</td>
-                                <td class="py-2.5 px-3.5"><span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-medium text-xs border border-blue-200">Disponible como insumo abierto</span></td>
+                                <td class="py-2.5 px-3.5 font-semibold text-xs text-slate-800">Disponible como insumo abierto</td>
                                 <td class="py-2.5 px-3.5 font-mono text-xs">~18,48 millones hab. <span class="text-slate-400 block text-[11px]">(7,66M viviendas · 6,62M hogares)</span></td>
                                 <td class="py-2.5 px-3.5 font-mono text-xs">254.395 manzanas y entidades</td>
                                 <td class="py-2.5 px-3.5 leading-relaxed text-xs">Insumo demográfico abierto desagregado por cohortes etarias (0 a 100+ años) y sexo mediante algoritmo osculatorio Sprague + IPF, preservando totales oficiales del INE.</td>
                             </tr>
                             <tr class="bg-slate-50/50">
                                 <td class="py-2.5 px-3.5 font-bold text-slate-900">Actualización MBHT 2024</td>
-                                <td class="py-2.5 px-3.5"><span class="bg-amber-50 text-amber-700 px-2 py-0.5 rounded font-medium text-xs border border-amber-200">En calibración metodológica</span></td>
+                                <td class="py-2.5 px-3.5 font-medium text-xs text-slate-600">En calibración metodológica</td>
                                 <td class="py-2.5 px-3.5 font-mono text-xs text-slate-400">Población Censo 2024</td>
                                 <td class="py-2.5 px-3.5 font-mono text-xs text-slate-400">254.395 manzanas y entidades</td>
                                 <td class="py-2.5 px-3.5 leading-relaxed text-xs text-slate-500">Nueva síntesis BHT 2024 en calibración estadística final. <strong>Lanzamiento oficial programado para noviembre de 2026.</strong> No se distribuye en la IDE para evitar colisión con la línea base vigente.</td>
@@ -1438,32 +1438,29 @@ Universidad Adolfo Ibáñez · Centro de Inteligencia Territorial
                             <td class="py-3 px-3.5 font-mono text-xs text-slate-600">2026-09-28</td>
                             <td class="py-3 px-3.5 font-medium text-slate-800">Inventario regional 2017</td>
                             <td class="py-3 px-3.5 text-slate-600 leading-relaxed">Discrepancia en tabla descriptiva antigua entre sumas parciales y total nacional. Se regeneró la tabla contra los archivos físicos verificando cuadratura exacta (204.906 manzanas, 55.035 equipamientos, 1.589.595 tramos).</td>
-                            <td class="py-3 px-3.5"><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">Cerrada (v1.0.1)</span></td>
+                            <td class="py-3 px-3.5 font-mono text-xs font-semibold text-slate-800">Cerrada (v1.0.1)</td>
                         </tr>
                         <tr>
                             <td class="py-3 px-3.5 font-mono font-bold text-slate-900">INC-2026-02</td>
                             <td class="py-3 px-3.5 font-mono text-xs text-slate-600">2026-10-14</td>
-                            <td class="py-3 px-3.5 font-medium text-slate-800">Nomenclatura dimensional</td>
-                            <td class="py-3 px-3.5 text-slate-600 leading-relaxed">El JSON del catálogo describía los 6 sub-indicadores de accesibilidad (<code class="font-mono text-xs">isal</code>.. <code class="font-mono text-xs">iser</code>) como "dimensiones", mientras la ficha listaba las 4 macro-dimensiones (<code class="font-mono text-xs">dim_acc</code>.. <code class="font-mono text-xs">dim_amb</code>). Se unificó la jerarquía canónica y el diccionario de 42 columnas en todo el portal.</td>
-                            <td class="py-3 px-3.5"><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">Cerrada (v1.0.3)</span></td>
+                            <td class="py-3 px-3.5 font-medium text-slate-800">Nomenclatura dimensional y <code class="font-mono text-xs">tob</code></td>
+                            <td class="py-3 px-3.5 text-slate-600 leading-relaxed">Se unificó la jerarquía canónica (4 macro-dimensiones <code class="font-mono text-xs">dim_acc..dim_amb</code> vs. 6 sub-indicadores <code class="font-mono text-xs">isal..iser</code>) y el dominio de 3 macro-estratos de <code class="font-mono text-xs">tob</code> (<code class="font-mono text-xs">Alto</code>, <code class="font-mono text-xs">Medio</code>, <code class="font-mono text-xs">Bajo</code>) en todos los diccionarios JSON y fichas HTML.</td>
+                            <td class="py-3 px-3.5 font-mono text-xs font-semibold text-slate-800">Cerrada (v1.0.3)</td>
                         </tr>
                         <tr>
                             <td class="py-3 px-3.5 font-mono font-bold text-slate-900">INC-2026-03</td>
                             <td class="py-3 px-3.5 font-mono text-xs text-slate-600">2026-10-15</td>
-                            <td class="py-3 px-3.5 font-medium text-slate-800">Activos STAC (<code class="font-mono text-xs">equipamientos</code>)</td>
-                            <td class="py-3 px-3.5 text-slate-600 leading-relaxed">Se homologaron las URL de <code class="font-mono text-xs">stac/equipamientos.json</code> hacia los consolidados nacionales reales (<code class="font-mono text-xs">/download/Equipamientos_2017_Nacional_Consolidado.*</code>).</td>
-                            <td class="py-3 px-3.5"><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">Cerrada (v1.0.3)</span></td>
+                            <td class="py-3 px-3.5 font-medium text-slate-800">Activos STAC y extensiones</td>
+                            <td class="py-3 px-3.5 text-slate-600 leading-relaxed">Se homologaron las URL de <code class="font-mono text-xs">stac/equipamientos.json</code> hacia los consolidados nacionales reales y se añadieron las extensiones STAC <code class="font-mono text-xs">projection</code>, <code class="font-mono text-xs">file</code> y <code class="font-mono text-xs">scientific</code>.</td>
+                            <td class="py-3 px-3.5 font-mono text-xs font-semibold text-slate-800">Cerrada (v1.0.3)</td>
                         </tr>
                         <tr>
                             <td class="py-3 px-3.5 font-mono font-bold text-slate-900">INC-2026-04</td>
                             <td class="py-3 px-3.5 font-mono text-xs text-slate-600">2026-10-15</td>
                             <td class="py-3 px-3.5 font-medium text-slate-800">Deslinde MBHT 2024 vs. Insumos Censo 2024</td>
                             <td class="py-3 px-3.5 text-slate-600 leading-relaxed">Se establece con estricto rigor que la MBHT 2024 no se carga en esta IDE hasta su lanzamiento oficial en noviembre de 2026; la IDE provee de forma abierta los insumos demográficos del Censo 2024 procesados con las imputaciones de cohortes y sexo desarrolladas por el CIT-UAI.</td>
-                            <td class="py-3 px-3.5"><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">Cerrada (v1.0.3)</span></td>
+                            <td class="py-3 px-3.5 font-mono text-xs font-semibold text-slate-800">Cerrada (v1.0.3)</td>
                         </tr>
-                    </tbody>
-                </table>
-            </div>
                     </tbody>
                 </table>
             </div>

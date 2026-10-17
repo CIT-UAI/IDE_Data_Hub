@@ -290,20 +290,15 @@ def generate_descargas_2017_html(catalog_data: Dict[str, Any], descargas_2017_da
                 </p>
             </div>
 
-            <!-- Pastillas de características técnicas -->
-            <div class="mt-6 flex flex-wrap gap-2 text-xs">
-                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-white font-semibold flex items-center space-x-1.5 shadow-xs">
-                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-uai-gold"></i>
-                    <span>Línea Base Oficial MBHT 2017 (v1.0.3)</span>
-                </span>
-                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">Esquema 42 Columnas Físicas</span>
-                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">GeoParquet 1.1</span>
-                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">GeoPackage (.gpkg)</span>
-                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">Shapefile (.zip)</span>
-                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">CSV UTF-8</span>
-                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">EPSG:4326 (WGS 84)</span>
-                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">SHA-256 Verificado</span>
-                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium">Licencia Abierta CC BY 4.0</span>
+            <!-- Barra tipográfica sobria de especificaciones técnicas (sin sobrecarga de etiquetas) -->
+            <div class="mt-5 pt-4 border-t border-slate-100 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-600">
+                <div><strong class="text-slate-900">Formatos:</strong> <span class="font-mono">GeoParquet 1.1 · GeoPackage 1.3 · Shapefile · CSV UTF-8</span></div>
+                <span class="hidden sm:inline text-slate-300">|</span>
+                <div><strong class="text-slate-900">Esquema:</strong> <span class="font-mono">42 columnas físicas</span></div>
+                <span class="hidden sm:inline text-slate-300">|</span>
+                <div><strong class="text-slate-900">CRS distribución:</strong> <span class="font-mono">EPSG:4326 (WGS 84)</span> · <strong class="text-slate-900">Marco oficial:</strong> <span class="font-mono">SIRGAS-Chile (EPSG:5360)</span></div>
+                <span class="hidden sm:inline text-slate-300">|</span>
+                <div><strong class="text-slate-900">Integridad y licencia:</strong> <span class="font-mono">SHA-256 · CC BY 4.0</span></div>
             </div>
 
             <!-- Cuadratura Metodológica Canónica (Línea Base Oficial) -->
@@ -414,15 +409,17 @@ def generate_descargas_2017_html(catalog_data: Dict[str, Any], descargas_2017_da
                 <div class="mt-6 pt-6 border-t border-slate-200">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                         <div>
-                            <div class="flex items-center gap-2 flex-wrap mb-1.5">
-                                <span id="badgeDescargaTipo" class="text-xs font-bold px-2.5 py-0.5 rounded bg-slate-900 text-uai-gold border border-slate-800">Manzanas MBHT 2017</span>
-                                <span id="badgeDescargaAmbito" class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-200 text-slate-700">Nacional</span>
+                            <div class="flex items-center gap-2 flex-wrap mb-1">
+                                <span id="badgeDescargaTipo" class="text-[11px] font-bold uppercase tracking-wider text-slate-700">Manzanas MBHT 2017</span>
+                                <span class="text-slate-300">·</span>
+                                <span id="badgeDescargaAmbito" class="text-[11px] font-semibold text-slate-600">Nacional</span>
+                                <span class="text-slate-300">·</span>
                                 <span id="badgeDescargaRegistros" class="text-xs text-slate-500 font-mono">204.906 registros</span>
                             </div>
                             <h3 id="descargaTituloPaquete" class="text-base sm:text-lg font-bold text-slate-900">
                                 Manzanas censales MBHT 2017 — Consolidado nacional
                             </h3>
-                            <p class="text-xs text-slate-500 mt-0.5">Línea base oficial MBHT 2017 · Sistema de coordenadas EPSG:4326 (WGS 84) / SIRGAS-Chile</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Línea base oficial MBHT 2017 · CRS de distribución: EPSG:4326 (WGS 84) · Marco oficial: SIRGAS-Chile (EPSG:5360, GRS80)</p>
                         </div>
 
                         <!-- Ayuda y Documentación Rápida -->

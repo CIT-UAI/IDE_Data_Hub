@@ -1,13 +1,16 @@
 {
   "stac_version": "1.0.0",
   "stac_extensions": [
-    "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "type": "Collection",
   "id": "pem-maritorio",
   "title": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
   "description": "Delimitación vectorial oficial del Maritorio chileno bajo una perspectiva tricontinental y de soberanía oceánica integral (Chile continental, insular y Territorio Antártico Chileno). Articula la Planificación marina nacional conforme a las directrices de ordenamiento y pesca sustentable de la FAO y el marco de conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP). Comprende las líneas de base, Aguas Interiores, Mar Territorial (12 millas náuticas), Zona Contigua (24 mn), Zona Económica Exclusiva (200 mn) y plataforma continental, consolidando más de 3,5 millones de kilómetros cuadrados de océano nacional.",
   "license": "CC-BY-4.0",
+  "sci:citation": "Centro de Inteligencia Territorial [CIT-UAI]. (2026). Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE) [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl/stac/pem_maritorio_nacional.json",
   "providers": [
     {
       "name": "Centro de Inteligencia Territorial (CIT-UAI)",
@@ -52,6 +55,19 @@
     ],
     "status": [
       "Conjunto de datos oficial vigente"
+    ],
+    "proj:epsg": [
+      4326
+    ],
+    "crs_storage": [
+      "EPSG:4326 (WGS 84)"
+    ],
+    "crs_national_frame": [
+      "SIRGAS-Chile (EPSG:5360, GRS80)"
+    ],
+    "crs_metric_analysis": [
+      "UTM 18S (EPSG:32718)",
+      "UTM 19S (EPSG:32719)"
     ],
     "matriz": [
       "pem"

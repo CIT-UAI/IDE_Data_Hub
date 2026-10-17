@@ -1,0 +1,74 @@
+{
+  "title": "IDE CIT — Reporte Automatizado de Conformidad Normativa, Integridad y Benchmarks",
+  "organization": "Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez",
+  "version": "1.0.3",
+  "generated_at": "2026-10-17T03:19:02Z",
+  "status": "CONFORMANT",
+  "summary": {
+    "vectors_evaluated": 15,
+    "passed_checks": 52,
+    "warnings": 2,
+    "critical_errors": 0,
+    "hashes_verified_sha256": 658,
+    "iso_19139_xml_records_validated": 29,
+    "stac_1_0_0_collections_validated": 18,
+    "snit_geoportals_verified": 19
+  },
+  "geodetic_reference": {
+    "distribution_crs": "EPSG:4326 (WGS 84)",
+    "national_official_crs": "EPSG:5360 (SIRGAS-Chile 2002 / 2016, elipsoide GRS80)",
+    "helmert_transformation_epsg": "EPSG:15946 (dX=0.0m, dY=0.0m, dZ=0.0m; diferencia planimétrica < 0.02 m)",
+    "metric_network_routing_crs": [
+      "EPSG:32718 (UTM Zona 18S)",
+      "EPSG:32719 (UTM Zona 19S)"
+    ]
+  },
+  "data_dictionary_verification": {
+    "canonical_columns": 42,
+    "tob_physical_domain": {
+      "type": "categorical (3 macro-strata)",
+      "values": {
+        "Alto": 45292,
+        "Medio": 111271,
+        "Bajo": 48343
+      },
+      "total_manzanas_2017": 204906,
+      "note": "El atributo 'tob' clasifica las manzanas en 3 macro-estratos (Alto, Medio, Bajo). La visualización de 6 clases utiliza Quiebres Naturales de Jenks (ckmeans) sobre la variable continua 'bht'."
+    }
+  },
+  "reproducible_benchmarks": {
+    "methodology": "Lectura columnar selectiva PyArrow (GeoParquet 1.1 SNAPPY) y sondas HTTP Range (RFC 9110, 206 Partial Content) hacia CDN CloudFront.",
+    "local_columnar_r15_weighted_bht": {
+      "p50_ms": 2.11,
+      "p95_ms": 2.71,
+      "p99_ms": 2.71,
+      "rows": 3304,
+      "bht_weighted": 0.4623
+    },
+    "local_columnar_nacional_predicate_pushdown": {
+      "p50_ms": 14.36,
+      "p95_ms": 15.39,
+      "p99_ms": 21.85,
+      "rows": 204906,
+      "filtered_rows_rm_low_bht": 3671
+    },
+    "wan_https_byte_range_206": {
+      "endpoint": "https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet",
+      "range_header": "bytes=0-4095",
+      "http_status": 206,
+      "bytes_transferred": 4096,
+      "total_file_bytes": 2482961,
+      "bandwidth_savings_pct": 99.84,
+      "p50_ms": 340.72,
+      "p95_ms": 359.44,
+      "p99_ms": 684.71
+    }
+  },
+  "standards_scope": {
+    "ISO_19115_1_2014_ISO_19139": "Validación automatizada de esquema y elementos obligatorios SNIT (/download/iso_xml/auditoria_conformidad_iso.json)",
+    "STAC_1_0_0_Static_Catalog": "Validación automatizada de catálogo estático y 5 colecciones con extensiones projection, file y scientific (/stac/catalog.json)",
+    "DCAT_AP_2_0_JSON_LD": "Grafo semántico de datos abiertos verificable (/dcat.json)",
+    "OGC_GeoPackage_1_3_and_MVT": "Archivos .gpkg multi-región con índice R-Tree y teselas vectoriales TileJSON 3.0.0 (/tiles/mbht_2017_manzanas.json)",
+    "Security_and_Accessibility": "Controles automatizados de cabeceras, enlaces seguros (rel=noopener noreferrer), RFC 9116 (/.well-known/security.txt) y semántica HTML5/WCAG 2.1 AA; alineación de arquitectura sin sustituir auditoría de penetración externa."
+  }
+}

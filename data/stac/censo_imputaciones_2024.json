@@ -1,0 +1,184 @@
+{
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+  ],
+  "type": "Collection",
+  "id": "censo-imputaciones-2024",
+  "title": "Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+  "description": "Modelo demográfico sintético y desagregación multivariada determinística del Censo 2024 (18,48 millones de personas, 7,66 millones de viviendas y 6,62 millones de hogares) a escala de 254.395 manzanas urbanas y entidades rurales para las 16 regiones de Chile. Desarrollado por el CIT-UAI mediante interpolación osculatriz de Sprague y programación entera de mayor residuo para modelación espacial de accesibilidad y demanda de equipamientos, respetando irrestrictamente el secreto estadístico (Ley N° 17.374, Art. 29).",
+  "license": "CC-BY-4.0",
+  "sci:citation": "Centro de Inteligencia Territorial [CIT-UAI]. (2026). Censo 2024 — Imputaciones demográficas por cohortes y sexo [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json",
+  "providers": [
+    {
+      "name": "Centro de Inteligencia Territorial (CIT-UAI)",
+      "roles": [
+        "producer",
+        "licensor",
+        "processor"
+      ],
+      "url": "https://cit.uai.cl"
+    },
+    {
+      "name": "Universidad Adolfo Ibáñez",
+      "roles": [
+        "host"
+      ],
+      "url": "https://uai.cl"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -75.64,
+          -55.98,
+          -66.86,
+          -17.5
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2017-01-01T00:00:00Z",
+          "2026-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "summaries": {
+    "version": [
+      "v1.0.3"
+    ],
+    "status": [
+      "Insumos censales preparatorios disponibles"
+    ],
+    "proj:epsg": [
+      4326
+    ],
+    "crs_storage": [
+      "EPSG:4326 (WGS 84)"
+    ],
+    "crs_national_frame": [
+      "SIRGAS-Chile (EPSG:5360, GRS80)"
+    ],
+    "crs_metric_analysis": [
+      "UTM 18S (EPSG:32718)",
+      "UTM 19S (EPSG:32719)"
+    ],
+    "matriz": [
+      "censo"
+    ],
+    "escala": [
+      "Manzanas censales y entidades rurales"
+    ],
+    "physical_columns": [
+      25
+    ],
+    "demographic_fields": [
+      "POBLACION_2024",
+      "HOMBRES",
+      "MUJERES",
+      "E0_5",
+      "E6_13",
+      "E14_17",
+      "E18_24",
+      "E25_44",
+      "E45_59",
+      "E60M",
+      "E65AMAS",
+      "IND_ENVEJ"
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "self",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
+    },
+    {
+      "rel": "license",
+      "type": "text/html",
+      "title": "Licencia Abierta CC BY 4.0",
+      "href": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "rel": "about",
+      "type": "text/html",
+      "title": "Guía Técnica y Estándares IDE CIT",
+      "href": "https://ide.cit.uai.cl/guia-tecnica"
+    },
+    {
+      "rel": "describedby",
+      "type": "application/xml",
+      "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
+      "href": "https://ide.cit.uai.cl/download/iso_xml/censo_imputaciones_2024_iso19139.xml"
+    },
+    {
+      "rel": "alternate",
+      "type": "application/ld+json",
+      "title": "Catálogo Semántico W3C DCAT-AP 2.0",
+      "href": "https://ide.cit.uai.cl/dcat.json"
+    }
+  ],
+  "assets": {
+    "geoparquet": {
+      "title": "GeoParquet — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet",
+      "proj:epsg": 4326,
+      "file:size": 300547507,
+      "file:checksum": "864126f757d362213f018ac8b4d584fbc8de1cd42655a8a70cd6fc0f7c95b7cc"
+    },
+    "geopackage": {
+      "title": "OGC GeoPackage — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+      "type": "application/geopackage+sqlite3",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.gpkg",
+      "proj:epsg": 4326
+    },
+    "shapefile": {
+      "title": "Shapefile (.zip) — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+      "type": "application/zip",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional_SHP.zip",
+      "proj:epsg": 4326
+    },
+    "csv": {
+      "title": "Tabla CSV — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+      "type": "text/csv",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.csv"
+    },
+    "metadata_iso19139": {
+      "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "href": "https://ide.cit.uai.cl/download/iso_xml/censo_imputaciones_2024_iso19139.xml"
+    }
+  }
+}

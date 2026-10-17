@@ -1,0 +1,182 @@
+{
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+  ],
+  "type": "Collection",
+  "id": "mbht-2017",
+  "title": "MBHT 2017 — Línea base oficial",
+  "description": "Línea base nacional oficial de la Matriz de Bienestar Humano Territorial Integral evaluada sobre 204.906 manzanas censales del Censo 2017 en las 16 regiones de Chile. Sintetiza 18 indicadores elementales distribuidos en 4 macro-dimensiones del bienestar (bajo el Axioma de Neutralidad Elemental W(D) = n_D / 18): 1) Macro-dimensión de Accesibilidad (dim_acc, peso 6/18 = 33,33%), que integra los 6 indicadores de acceso peatonal efectivo E2SFCA + Tobler a salud (isal), educación (ise), áreas verdes (iav), deporte (idep), cultura (icul) y servicios públicos (iser); 2) Macro-dimensión Socioeconómica (dim_soc, peso 6/18 = 33,33%); 3) Macro-dimensión de Seguridad (dim_seg, peso 4/18 = 22,22%); y 4) Macro-dimensión Ambiental (dim_amb, peso 2/18 = 11,11%). El archivo físico contiene el esquema completo de 42 columnas físicas (identificadores, demografía censal, índice sintético bht, las 4 macro-dimensiones, los 6 sub-indicadores peatonales con sus valores pre-escalamiento, tipología Jenks tob y geometría WKB).",
+  "license": "CC-BY-4.0",
+  "sci:citation": "Centro de Inteligencia Territorial [CIT-UAI]. (2026). MBHT 2017 — Línea base oficial [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl/stac/kpi_mud_2017.json",
+  "providers": [
+    {
+      "name": "Centro de Inteligencia Territorial (CIT-UAI)",
+      "roles": [
+        "producer",
+        "licensor",
+        "processor"
+      ],
+      "url": "https://cit.uai.cl"
+    },
+    {
+      "name": "Universidad Adolfo Ibáñez",
+      "roles": [
+        "host"
+      ],
+      "url": "https://uai.cl"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -75.64,
+          -55.98,
+          -66.86,
+          -17.5
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2017-01-01T00:00:00Z",
+          "2026-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "summaries": {
+    "version": [
+      "v1.0.3"
+    ],
+    "status": [
+      "Línea base oficial cerrada y vigente"
+    ],
+    "proj:epsg": [
+      4326
+    ],
+    "crs_storage": [
+      "EPSG:4326 (WGS 84)"
+    ],
+    "crs_national_frame": [
+      "SIRGAS-Chile (EPSG:5360, GRS80)"
+    ],
+    "crs_metric_analysis": [
+      "UTM 18S (EPSG:32718)",
+      "UTM 19S (EPSG:32719)"
+    ],
+    "matriz": [
+      "mbht"
+    ],
+    "escala": [
+      "Manzanas censales (línea base oficial)"
+    ],
+    "physical_columns": [
+      42
+    ],
+    "macro_dimensions": [
+      "dim_acc (6/18)",
+      "dim_soc (6/18)",
+      "dim_seg (4/18)",
+      "dim_amb (2/18)"
+    ],
+    "accessibility_subindicators": [
+      "isal",
+      "ise",
+      "iav",
+      "idep",
+      "icul",
+      "iser"
+    ],
+    "tob_strata": [
+      "Alto (45.292 mzs)",
+      "Medio (111.271 mzs)",
+      "Bajo (48.343 mzs)"
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "self",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/mbht_2017.json"
+    }
+  ],
+  "assets": {
+    "geoparquet": {
+      "title": "GeoParquet — MBHT 2017 — Línea base oficial",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet",
+      "proj:epsg": 4326,
+      "file:size": 252572936,
+      "file:checksum": "4a123b83ea1cefa18661c25ea40b9c3fc2a319cf6a45abbbd72a2cb30c069f2a"
+    },
+    "geopackage": {
+      "title": "OGC GeoPackage — MBHT 2017 — Línea base oficial",
+      "type": "application/geopackage+sqlite3",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.gpkg",
+      "proj:epsg": 4326
+    },
+    "shapefile": {
+      "title": "Shapefile (.zip) — MBHT 2017 — Línea base oficial",
+      "type": "application/zip",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas_SHP.zip",
+      "proj:epsg": 4326
+    },
+    "csv": {
+      "title": "Tabla CSV — MBHT 2017 — Línea base oficial",
+      "type": "text/csv",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.csv"
+    },
+    "metadata_iso19139": {
+      "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — MBHT 2017 — Línea base oficial",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "href": "https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml"
+    },
+    "geoparquet_muestra_r15": {
+      "title": "Muestra Ligera Reproducible GeoParquet — Región de Arica y Parinacota R15 (3.304 manzanas, 42 columnas, 2,37 MB)",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "href": "https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet",
+      "file:size": 2482961,
+      "file:checksum": "712d1d16193a4dee8bab6d88f4c3eed04530e6f1b11a1936349ea6132d134505",
+      "proj:epsg": 4326,
+      "proj:bbox": [
+        -70.38,
+        -19.23,
+        -68.91,
+        -17.5
+      ]
+    }
+  }
+}

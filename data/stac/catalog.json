@@ -1,0 +1,134 @@
+{
+  "stac_version": "1.0.0",
+  "stac_extensions": [],
+  "type": "Catalog",
+  "id": "cit-uai-ide-catalog",
+  "title": "Catálogo de Datos y Modelos Territoriales — IDE CIT (UAI)",
+  "description": "Catálogo espacio-temporal estático Cloud-Native (STAC 1.0.0 Catalog & Collections) con 13 coberturas maestras oficiales descargables en producción (bienestar humano MBHT 2017, estratificación INSE, avalúos SII, equipamientos, red vial y zonificación marina FAO/SBAP) más 1 recurso preparatorio institucional (MBHT 2024 en calibración estadística) del Centro de Inteligencia Territorial de la Universidad Adolfo Ibáñez.",
+  "links": [
+    {
+      "rel": "self",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+    },
+    {
+      "rel": "about",
+      "type": "text/html",
+      "title": "Guía Técnica, Conformidad y Benchmarks IDE CIT",
+      "href": "https://ide.cit.uai.cl/guia-tecnica"
+    },
+    {
+      "rel": "describedby",
+      "type": "application/ld+json",
+      "title": "Catálogo Semántico W3C DCAT-AP 2.0",
+      "href": "https://ide.cit.uai.cl/dcat.json"
+    },
+    {
+      "rel": "service-desc",
+      "type": "application/json",
+      "title": "Reporte de Conformidad y Benchmarks Reproducibles",
+      "href": "https://ide.cit.uai.cl/conformance_report.json"
+    },
+    {
+      "rel": "license",
+      "type": "text/html",
+      "title": "Licencia Abierta CC BY 4.0",
+      "href": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "MBHT 2017 — Línea base oficial",
+      "href": "https://ide.cit.uai.cl/stac/kpi_mud_2017.json"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
+      "href": "https://ide.cit.uai.cl/stac/pem_maritorio_nacional.json"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+      "href": "https://ide.cit.uai.cl/stac/pem_geomorfologia_gebco.json"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+      "href": "https://ide.cit.uai.cl/stac/pem_montes_submarinos.json"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+      "href": "https://ide.cit.uai.cl/stac/pem_cuencas_oceanicas.json"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)",
+      "href": "https://ide.cit.uai.cl/stac/pem_biodiversidad_especies.json"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+      "href": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+      "href": "https://ide.cit.uai.cl/stac/inse_socioeconomico.json"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+      "href": "https://ide.cit.uai.cl/stac/sii_areas_homogeneas.json"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "Equipamientos urbanos y servicios esenciales 2017",
+      "href": "https://ide.cit.uai.cl/stac/equipamientos_2017.json"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "Red vial urbana caminable y tiempos Tobler 2017",
+      "href": "https://ide.cit.uai.cl/stac/red_vial_ejes_2017.json"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
+      "href": "https://ide.cit.uai.cl/stac/educacion_inicial_2024.json"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "Huella de edificaciones urbanas — Presencia construida nacional",
+      "href": "https://ide.cit.uai.cl/stac/huella_edificaciones_2024.json"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "MBHT 2024 — Aviso Oficial de Lanzamiento (Noviembre 2026)",
+      "href": "https://ide.cit.uai.cl/stac/mbht_2024.json"
+    },
+    {
+      "rel": "child",
+      "type": "application/json",
+      "title": "Colección Unificada (13 Capas Cartográficas Maestras)",
+      "href": "https://ide.cit.uai.cl/stac/collection.json"
+    }
+  ]
+}

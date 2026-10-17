@@ -1,13 +1,16 @@
 {
   "stac_version": "1.0.0",
   "stac_extensions": [
-    "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "type": "Collection",
   "id": "sii-areas-homogeneas",
   "title": "Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
   "description": "Catastro espacial completo de 14.157 Áreas Homogéneas definido por el Servicio de Impuestos Internos (SII) bajo la Ley N° 17.235 sobre Impuesto Territorial. Delimita zonas territoriales con características urbanísticas, topográficas, de accesibilidad a servicios y valor unitario de terreno homogéneas para los procesos de reavalúo de bienes raíces en todo Chile. Proporciona el Valor Guía de Terreno (VGT en UF/m² y $/m²), coeficiente guía y clasificación comunal para análisis de plusvalía, dinámica inmobiliaria y tributación territorial.",
   "license": "CC-BY-4.0",
+  "sci:citation": "Centro de Inteligencia Territorial [CIT-UAI]. (2026). Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl/stac/sii_areas_homogeneas.json",
   "providers": [
     {
       "name": "Centro de Inteligencia Territorial (CIT-UAI)",
@@ -53,6 +56,19 @@
     "status": [
       "Conjunto de datos oficial vigente"
     ],
+    "proj:epsg": [
+      4326
+    ],
+    "crs_storage": [
+      "EPSG:4326 (WGS 84)"
+    ],
+    "crs_national_frame": [
+      "SIRGAS-Chile (EPSG:5360, GRS80)"
+    ],
+    "crs_metric_analysis": [
+      "UTM 18S (EPSG:32718)",
+      "UTM 19S (EPSG:32719)"
+    ],
     "matriz": [
       "sii"
     ],
@@ -94,8 +110,14 @@
     {
       "rel": "describedby",
       "type": "application/xml",
-      "title": "Metadatos Oficiales ISO 19139 XML",
+      "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
       "href": "https://ide.cit.uai.cl/download/iso_xml/sii_areas_homogeneas_iso19139.xml"
+    },
+    {
+      "rel": "alternate",
+      "type": "application/ld+json",
+      "title": "Catálogo Semántico W3C DCAT-AP 2.0",
+      "href": "https://ide.cit.uai.cl/dcat.json"
     }
   ],
   "assets": {

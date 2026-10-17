@@ -1,13 +1,16 @@
 {
   "stac_version": "1.0.0",
   "stac_extensions": [
-    "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "type": "Collection",
   "id": "equipamientos-2017",
   "title": "Equipamientos urbanos y servicios esenciales 2017",
   "description": "Catastro oficial de equipamientos y servicios urbanos esenciales utilizado para la modelación de accesibilidad peatonal en la Matriz de Bienestar Humano Territorial (MBHT 2017). Documenta de forma trazable los tres niveles del embudo de depuración nacional: 202.275 registros administrativos brutos iniciales, 113.231 unidades en el catastro maestro ruteable consolidado en 6 dimensiones —Áreas Verdes (54.962), Deportes (26.629), Educación (17.129), Salud (5.824), Servicios Públicos (4.914) y Cultura (3.773)— y 55.035 equipamientos públicos de libre acceso y gratuidad publicados en los paquetes regionales y nacionales de la línea base abierta MBHT 2017.",
   "license": "CC-BY-4.0",
+  "sci:citation": "Centro de Inteligencia Territorial [CIT-UAI]. (2026). Equipamientos urbanos y servicios esenciales 2017 [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl/stac/equipamientos_2017.json",
   "providers": [
     {
       "name": "Centro de Inteligencia Territorial (CIT-UAI)",
@@ -53,6 +56,19 @@
     "status": [
       "Conjunto de datos oficial vigente"
     ],
+    "proj:epsg": [
+      4326
+    ],
+    "crs_storage": [
+      "EPSG:4326 (WGS 84)"
+    ],
+    "crs_national_frame": [
+      "SIRGAS-Chile (EPSG:5360, GRS80)"
+    ],
+    "crs_metric_analysis": [
+      "UTM 18S (EPSG:32718)",
+      "UTM 19S (EPSG:32719)"
+    ],
     "matriz": [
       "mbht"
     ],
@@ -94,8 +110,14 @@
     {
       "rel": "describedby",
       "type": "application/xml",
-      "title": "Metadatos Oficiales ISO 19139 XML",
+      "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
       "href": "https://ide.cit.uai.cl/download/iso_xml/equipamientos_2017_iso19139.xml"
+    },
+    {
+      "rel": "alternate",
+      "type": "application/ld+json",
+      "title": "Catálogo Semántico W3C DCAT-AP 2.0",
+      "href": "https://ide.cit.uai.cl/dcat.json"
     }
   ],
   "assets": {

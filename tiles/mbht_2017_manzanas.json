@@ -1,0 +1,45 @@
+{
+  "tilejson": "3.0.0",
+  "name": "MBHT 2017 — Manzanas Censales de Chile (204.906 unidades)",
+  "description": "Teselas vectoriales Mapbox (MVT) de la Línea Base Oficial MBHT 2017 (CIT-UAI / SUBDERE). Incluye índice sintético bht, 4 macro-dimensiones (dim_acc, dim_soc, dim_seg, dim_amb), 6 sub-indicadores peatonales (isal, ise, iav, idep, icul, iser) y tipología tob (Alto, Medio, Bajo).",
+  "version": "1.0.3",
+  "attribution": "Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez (CC BY 4.0)",
+  "scheme": "xyz",
+  "tiles": [
+    "https://engine.matrizbht.cl/tiles/mbht_2017_manzanas/{z}/{x}/{y}.pbf"
+  ],
+  "minzoom": 4,
+  "maxzoom": 16,
+  "bounds": [
+    -109.45,
+    -56.53,
+    -66.41,
+    -17.5
+  ],
+  "center": [
+    -70.65,
+    -33.45,
+    11
+  ],
+  "vector_layers": [
+    {
+      "id": "mbht_2017_manzanas",
+      "description": "Manzanas censales MBHT 2017 (42 columnas físicas)",
+      "minzoom": 4,
+      "maxzoom": 16,
+      "fields": {
+        "id_manzcit": "String",
+        "cod_reg": "Number",
+        "cod_com": "Number",
+        "comuna": "String",
+        "personas": "Number",
+        "bht": "Number",
+        "tob": "String",
+        "dim_acc": "Number",
+        "dim_soc": "Number",
+        "dim_seg": "Number",
+        "dim_amb": "Number"
+      }
+    }
+  ]
+}

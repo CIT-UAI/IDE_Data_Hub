@@ -55,21 +55,19 @@ def generate_static_ides_html(catalog_data: Dict[str, Any]) -> str:
     ides_cards = []
     for ide in catalog_data.get("ides_nacionales", []):
         cat_name = ide.get("categoria", "Nacional")
-        badge_cat = f'<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">{cat_name}</span>'
         
         items_html = ""
         if ide.get("que_encontraras"):
-            items_li = "".join([f'<li class="flex items-start space-x-1.5 text-[11px] text-slate-600 leading-tight"><i data-lucide="check" class="w-3 h-3 text-slate-500 shrink-0 mt-0.5 stroke-[2]"></i><span>{item}</span></li>' for item in ide.get("que_encontraras", [])[:3]])
-            items_html = f'<ul class="space-y-1 my-3">{items_li}</ul>'
+            items_li = "".join([f'<li class="flex items-start space-x-1.5 text-[11px] text-slate-600 leading-tight"><span class="text-slate-400 font-bold">·</span><span>{item}</span></li>' for item in ide.get("que_encontraras", [])[:3]])
+            items_html = f'<ul class="space-y-1 my-3 pt-2.5 border-t border-slate-100">{items_li}</ul>'
 
         card = f"""        <article class="ide-card bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-clean hover:shadow-hover hover:border-slate-300 transition flex flex-col justify-between group" data-ide-id="{ide.get('id')}" data-categoria="{cat_name}">
             <div>
-                <div class="flex items-center justify-between mb-2.5 sm:mb-3">
-                    <span class="text-xs font-bold text-slate-400 font-mono">{ide.get('sigla', '')}</span>
-                    {badge_cat}
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">{ide.get('institucion')}</span>
+                    <span class="text-[11px] font-mono text-slate-400">{cat_name}</span>
                 </div>
                 <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 leading-snug group-hover:text-black transition">{ide.get('nombre')}</h3>
-                <p class="text-xs text-slate-500 mb-2 leading-relaxed font-medium">{ide.get('institucion')}</p>
                 <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed font-normal">{ide.get('descripcion')}</p>
                 {items_html}
             </div>
@@ -78,10 +76,7 @@ def generate_static_ides_html(catalog_data: Dict[str, Any]) -> str:
                     <span>Visitar geoportal</span>
                     <i data-lucide="external-link" class="w-3.5 h-3.5 stroke-[2]"></i>
                 </a>
-                <span class="text-[10px] text-slate-600 font-semibold flex items-center space-x-1">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                    <span>Portal institucional</span>
-                </span>
+                <span class="text-[11px] text-slate-500 font-mono">{ide.get('sigla', 'SNIT')}</span>
             </div>
         </article>"""
         ides_cards.append(card)
@@ -314,7 +309,7 @@ def generate_red_ides_html(catalog_data: Dict[str, Any]) -> str:
                 </div>
                 <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
                     <span class="text-[10px] font-bold text-slate-400 uppercase block mb-0.5">Interoperabilidad</span>
-                    <span class="text-lg sm:text-xl font-bold text-slate-900 font-mono">OGC / ISO 19115</span>
+                    <span class="text-lg sm:text-xl font-bold text-slate-900 font-mono">OGC / ISO 19115-1</span>
                 </div>
             </div>
 
@@ -589,16 +584,13 @@ def generate_red_ides_html(catalog_data: Dict[str, Any]) -> str:
                 if (ide.que_encontraras && Array.isArray(ide.que_encontraras) && ide.que_encontraras.length > 0) {{
                     const itemsHtml = ide.que_encontraras.map(item => `
                         <li class="flex items-start space-x-1.5 text-[11px] text-slate-600 leading-tight">
-                            <i data-lucide="check" class="w-3 h-3 text-emerald-600 shrink-0 mt-0.5 stroke-[2]"></i>
+                            <span class="text-slate-400 font-bold">·</span>
                             <span>${{item}}</span>
                         </li>
                     `).join('');
                     queEncontrarasHtml = `
                         <div class="mt-3 pt-3 border-t border-slate-100 bg-slate-50/80 -mx-4 p-3 sm:-mx-5 sm:p-3.5 rounded-b-lg space-y-1.5">
-                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block flex items-center space-x-1">
-                                <i data-lucide="layers" class="w-3 h-3 text-slate-400 stroke-[1.5]"></i>
-                                <span>¿Qué encontrarás en este geoportal?</span>
-                            </span>
+                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Coberturas e insumos principales</span>
                             <ul class="space-y-1 pl-0.5">
                                 ${{itemsHtml}}
                             </ul>
@@ -609,17 +601,12 @@ def generate_red_ides_html(catalog_data: Dict[str, Any]) -> str:
                 card.innerHTML = `
                     <div class="flex-1 flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center justify-between mb-2.5">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-700 bg-slate-50 border border-slate-200 shadow-xs">
-                                    <i data-lucide="${{ide.icono || 'globe'}}" class="w-4 h-4 stroke-[1.5]"></i>
-                                </div>
-                                <div class="flex items-center space-x-1.5">
-                                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">${{ide.categoria}}</span>
-                                </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">${{ide.institucion}}</span>
+                                <span class="text-[11px] font-mono text-slate-400">${{ide.categoria}}</span>
                             </div>
-                            <span class="text-[11px] font-semibold text-slate-400 block uppercase tracking-wider mb-1">${{ide.institucion}}</span>
-                            <h4 class="font-bold text-slate-900 text-sm mb-1.5 group-hover:text-black transition leading-snug">${{ide.nombre}}</h4>
-                            <p class="text-xs text-slate-500 leading-relaxed font-normal">${{ide.descripcion}}</p>
+                            <h4 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 group-hover:text-black transition leading-snug">${{ide.nombre}}</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed font-normal">${{ide.descripcion}}</p>
                         </div>
                         ${{queEncontrarasHtml}}
                     </div>

@@ -1,13 +1,16 @@
 {
   "stac_version": "1.0.0",
   "stac_extensions": [
-    "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "type": "Collection",
   "id": "inse-socioeconomico",
   "title": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
   "description": "Estratificación socioeconómica y patrimonial continua y por quintiles (Q1 a Q5, y S/P sin población) calibrada a nivel nacional para 254.395 manzanas censales en las 16 regiones de Chile. Integra la caracterización socioeconómica de los hogares (capital humano y ocupación CIUO) con la valoración patrimonial inmobiliaria de suelo según Áreas Homogéneas del SII (Ley 17.235) y Valor Guía de Terreno (VGT en UF/m² y $/m²).",
   "license": "CC-BY-4.0",
+  "sci:citation": "Centro de Inteligencia Territorial [CIT-UAI]. (2026). Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024 [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl/stac/inse_socioeconomico.json",
   "providers": [
     {
       "name": "Centro de Inteligencia Territorial (CIT-UAI)",
@@ -53,6 +56,19 @@
     "status": [
       "Conjunto de datos oficial vigente"
     ],
+    "proj:epsg": [
+      4326
+    ],
+    "crs_storage": [
+      "EPSG:4326 (WGS 84)"
+    ],
+    "crs_national_frame": [
+      "SIRGAS-Chile (EPSG:5360, GRS80)"
+    ],
+    "crs_metric_analysis": [
+      "UTM 18S (EPSG:32718)",
+      "UTM 19S (EPSG:32719)"
+    ],
     "matriz": [
       "inse"
     ],
@@ -94,8 +110,14 @@
     {
       "rel": "describedby",
       "type": "application/xml",
-      "title": "Metadatos Oficiales ISO 19139 XML",
+      "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
       "href": "https://ide.cit.uai.cl/download/iso_xml/inse_socioeconomico_iso19139.xml"
+    },
+    {
+      "rel": "alternate",
+      "type": "application/ld+json",
+      "title": "Catálogo Semántico W3C DCAT-AP 2.0",
+      "href": "https://ide.cit.uai.cl/dcat.json"
     }
   ],
   "assets": {

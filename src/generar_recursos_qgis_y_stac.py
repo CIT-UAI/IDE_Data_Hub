@@ -95,6 +95,10 @@ def generar_stac():
         summaries = {
             "version": [version],
             "status": [status],
+            "proj:epsg": [4326],
+            "crs_storage": ["EPSG:4326 (WGS 84)"],
+            "crs_national_frame": ["SIRGAS-Chile (EPSG:5360, GRS80)"],
+            "crs_metric_analysis": ["UTM 18S (EPSG:32718)", "UTM 19S (EPSG:32719)"],
             "matriz": [capa.get("matriz", "mbht")],
             "escala": [capa.get("escala", "Nacional")],
             "physical_columns": [len(capa.get("atributos", []))]
@@ -102,6 +106,7 @@ def generar_stac():
         if cid == "kpi_mud_2017":
             summaries["macro_dimensions"] = ["dim_acc (6/18)", "dim_soc (6/18)", "dim_seg (4/18)", "dim_amb (2/18)"]
             summaries["accessibility_subindicators"] = ["isal", "ise", "iav", "idep", "icul", "iser"]
+            summaries["tob_strata"] = ["Alto (45.292 mzs)", "Medio (111.271 mzs)", "Bajo (48.343 mzs)"]
             assets["geoparquet_muestra_r15"] = {
                 "title": "Muestra Ligera Reproducible GeoParquet — Región de Arica y Parinacota R15 (3.304 manzanas, 42 columnas, 2,37 MB)",
                 "type": "application/vnd.apache.parquet",
@@ -109,7 +114,8 @@ def generar_stac():
                 "href": "https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet",
                 "file:size": 2482961,
                 "file:checksum": "712d1d16193a4dee8bab6d88f4c3eed04530e6f1b11a1936349ea6132d134505",
-                "proj:epsg": 4326
+                "proj:epsg": 4326,
+                "proj:bbox": [-70.38, -19.23, -68.91, -17.50]
             }
         elif cid == "censo_imputaciones_2024":
             summaries["demographic_fields"] = ["POBLACION_2024", "HOMBRES", "MUJERES", "E0_5", "E6_13", "E14_17", "E18_24", "E25_44", "E45_59", "E60M", "E65AMAS", "IND_ENVEJ"]
@@ -117,13 +123,16 @@ def generar_stac():
         col_json = {
             "stac_version": "1.0.0",
             "stac_extensions": [
-                "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+                "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+                "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+                "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
             ],
             "type": "Collection",
             "id": col_id,
             "title": titulo,
             "description": resumen,
             "license": "CC-BY-4.0",
+            "sci:citation": capa.get("citacion_apa7", f"Centro de Inteligencia Territorial [CIT-UAI]. (2026). {titulo} [Conjunto de datos geoespaciales]. Universidad Adolfo Ibáñez. https://ide.cit.uai.cl/stac/{cid}.json"),
             "providers": [
                 {
                     "name": "Centro de Inteligencia Territorial (CIT-UAI)",
@@ -147,7 +156,8 @@ def generar_stac():
                 {"rel": "self", "type": "application/json", "href": f"https://ide.cit.uai.cl/stac/{cid}.json"},
                 {"rel": "license", "type": "text/html", "title": "Licencia Abierta CC BY 4.0", "href": "https://creativecommons.org/licenses/by/4.0/"},
                 {"rel": "about", "type": "text/html", "title": "Guía Técnica y Estándares IDE CIT", "href": "https://ide.cit.uai.cl/guia-tecnica"},
-                {"rel": "describedby", "type": "application/xml", "title": "Metadatos Oficiales ISO 19139 XML", "href": f"https://ide.cit.uai.cl/download/iso_xml/{cid}_iso19139.xml"}
+                {"rel": "describedby", "type": "application/xml", "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML", "href": f"https://ide.cit.uai.cl/download/iso_xml/{cid}_iso19139.xml"},
+                {"rel": "alternate", "type": "application/ld+json", "title": "Catálogo Semántico W3C DCAT-AP 2.0", "href": "https://ide.cit.uai.cl/dcat.json"}
             ],
             "assets": assets
         }
@@ -263,15 +273,15 @@ def generar_stac():
         "type": "Catalog",
         "id": "cit-uai-ide-catalog",
         "title": "Catálogo de Datos y Modelos Territoriales — IDE CIT (UAI)",
-        "description": "Catálogo espacio-temporal (STAC 1.0.0) con 13 coberturas maestras oficiales descargables en producción (bienestar humano MBHT 2017, estratificación INSE, avalúos SII, equipamientos, red vial y zonificación marina FAO/SBAP) más 1 recurso preparatorio institucional (MBHT 2024 en calibración estadística) del Centro de Inteligencia Territorial de la Universidad Adolfo Ibáñez.",
+        "description": "Catálogo espacio-temporal estático Cloud-Native (STAC 1.0.0 Catalog & Collections) con 13 coberturas maestras oficiales descargables en producción (bienestar humano MBHT 2017, estratificación INSE, avalúos SII, equipamientos, red vial y zonificación marina FAO/SBAP) más 1 recurso preparatorio institucional (MBHT 2024 en calibración estadística) del Centro de Inteligencia Territorial de la Universidad Adolfo Ibáñez.",
         "links": [
             {"rel": "self", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
             {"rel": "root", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-        ] + child_links,
-        "conformsTo": [
-            "https://api.stacspec.org/v1.0.0/core",
-            "https://api.stacspec.org/v1.0.0/collections"
-        ]
+            {"rel": "about", "type": "text/html", "title": "Guía Técnica, Conformidad y Benchmarks IDE CIT", "href": "https://ide.cit.uai.cl/guia-tecnica"},
+            {"rel": "describedby", "type": "application/ld+json", "title": "Catálogo Semántico W3C DCAT-AP 2.0", "href": "https://ide.cit.uai.cl/dcat.json"},
+            {"rel": "service-desc", "type": "application/json", "title": "Reporte de Conformidad y Benchmarks Reproducibles", "href": "https://ide.cit.uai.cl/conformance_report.json"},
+            {"rel": "license", "type": "text/html", "title": "Licencia Abierta CC BY 4.0", "href": "https://creativecommons.org/licenses/by/4.0/"}
+        ] + child_links
     }
     with open(STAC_DIR / "catalog.json", "w", encoding="utf-8") as f:
         json.dump(root_catalog, f, indent=2, ensure_ascii=False)
@@ -618,14 +628,14 @@ def generar_conectores_qgis():
   <maplayers>
     <maplayer autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" maxScale="0" minScale="1e+08" refreshOnNotifyEnabled="0" type="vector-tile" styleCategories="AllStyleCategories">
       <id>CIT_MBHT_2017_MVT</id>
-      <datasource>type=xyz&amp;url=https://ide.cit.uai.cl/tiles/kpi_mud_2017/%7Bz%7D/%7Bx%7D/%7By%7D.pbf&amp;zmax=16&amp;zmin=0</datasource>
+      <datasource>type=xyz&amp;url=https://engine.matrizbht.cl/tiles/kpi_mud_2017/%7Bz%7D/%7Bx%7D/%7By%7D.pbf&amp;zmax=16&amp;zmin=0</datasource>
       <keywordList>
         <value>CIT-UAI</value>
         <value>MBHT</value>
         <value>Bienestar Humano Territorial</value>
         <value>Censo 2017</value>
       </keywordList>
-      <layername>CIT - Matriz de Bienestar Humano Territorial (MBHT 2017)</layername>
+      <layername>CIT - Matriz de Bienestar Humano Territorial (MBHT 2017 MVT)</layername>
       <srs>
         <spatialrefsys nativeFormat="Wkt">
           <wkt>PROJCRS["WGS 84 / Pseudo-Mercator",BASEGEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["Popular Visualisation Pseudo-Mercator",METHOD["Popular Visualisation Pseudo Mercator",ID["EPSG",1024]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]],ID["EPSG",3857]]</wkt>
@@ -646,19 +656,20 @@ def generar_conectores_qgis():
     with open(QGIS_DIR / "CIT_MBHT_2017_Nacional.qlr", "w", encoding="utf-8") as f:
         f.write(qlr_mvt_2017)
 
-    # 2. Conector WMS IDE CIT
+    # 2. Conector Cloud-Native QGIS (Cartografía Base XYZ + OGC GeoPackage Remoto /vsicurl/)
     qlr_wms = """<!DOCTYPE qgis-layer-definition>
 <qlr>
   <maplayers>
-    <maplayer autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" maxScale="0" minScale="1e+08" refreshOnNotifyEnabled="0" type="raster" styleCategories="AllStyleCategories">
-      <id>CIT_WMS_IDE</id>
-      <datasource>contextualWMSLegend=0&amp;crs=EPSG:4326&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=ide_cit_mbht&amp;styles=&amp;url=https://ide.cit.uai.cl/wms</datasource>
+    <maplayer autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" maxScale="0" minScale="1e+08" refreshOnNotifyEnabled="0" type="vector" geometry="Polygon" styleCategories="AllStyleCategories">
+      <id>CIT_MBHT_2017_R15_GPKG</id>
+      <datasource>/vsicurl/https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.gpkg</datasource>
       <keywordList>
         <value>CIT-UAI</value>
-        <value>WMS</value>
-        <value>OGC</value>
+        <value>OGC GeoPackage</value>
+        <value>MBHT 2017</value>
       </keywordList>
-      <layername>CIT - Servicio WMS Oficial (IDE CIT)</layername>
+      <layername>CIT - MBHT 2017 Muestra Reproducible R15 (OGC GeoPackage Streaming)</layername>
+      <provider encoding="UTF-8">ogr</provider>
       <srs>
         <spatialrefsys nativeFormat="Wkt">
           <wkt>GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]]</wkt>
@@ -673,16 +684,40 @@ def generar_conectores_qgis():
         </spatialrefsys>
       </srs>
     </maplayer>
+    <maplayer autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" maxScale="0" minScale="1e+08" refreshOnNotifyEnabled="0" type="raster" styleCategories="AllStyleCategories">
+      <id>CIT_BASEMAP_POSITRON</id>
+      <datasource>type=xyz&amp;url=https://basemaps.cartocdn.com/light_all/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=19&amp;zmin=0</datasource>
+      <keywordList>
+        <value>CIT-UAI</value>
+        <value>Basemap</value>
+        <value>WMS/XYZ</value>
+      </keywordList>
+      <layername>CIT - Cartografia Base Neutral (Positron XYZ/WMS)</layername>
+      <provider>wms</provider>
+      <srs>
+        <spatialrefsys nativeFormat="Wkt">
+          <wkt>PROJCRS["WGS 84 / Pseudo-Mercator",BASEGEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["Popular Visualisation Pseudo-Mercator",METHOD["Popular Visualisation Pseudo Mercator",ID["EPSG",1024]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]],ID["EPSG",3857]]</wkt>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <srsid>3857</srsid>
+          <srid>3857</srid>
+          <authid>EPSG:3857</authid>
+          <description>WGS 84 / Pseudo-Mercator</description>
+          <projectionacronym>merc</projectionacronym>
+          <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
   </maplayers>
 </qlr>
 """
     with open(QGIS_DIR / "CIT_Servicios_WMS.qlr", "w", encoding="utf-8") as f:
         f.write(qlr_wms)
         
-    # 3. Estilo QGIS (.qml) para visualización inmediata en municipios
+    # 3. Estilo QGIS (.qml) para visualización inmediata en municipios sobre variable continua 'bht'
     qml_content = """<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
 <qgis version="3.28.0" styleCategories="AllStyleCategories">
-  <renderer-v2 attr="MUD_S" type="graduatedSymbol">
+  <renderer-v2 attr="bht" type="graduatedSymbol">
     <ranges>
       <range render="true" symbol="0" lower="0.00" upper="0.28" label="Muy Bajo [0.00 - 0.28]"/>
       <range render="true" symbol="1" lower="0.28" upper="0.41" label="Bajo [0.28 - 0.41]"/>
@@ -704,10 +739,66 @@ def generar_conectores_qgis():
     with open(QGIS_DIR / "CIT_MBHT_Simbologia_Jenks.qml", "w", encoding="utf-8") as f:
         f.write(qml_content)
 
-    print("  [+] Conectores y Estilos QGIS generados en download/qgis/")
+    # Espejar conectores QGIS en public/download/qgis/, data/ y public/data/ para evitar 404 en rutas alternativas
+    pub_qgis_dir = PUBLIC_DIR / "download" / "qgis"
+    pub_qgis_dir.mkdir(parents=True, exist_ok=True)
+    data_dir = BASE_DIR / "data"
+    pub_data_dir = PUBLIC_DIR / "data"
+    data_dir.mkdir(parents=True, exist_ok=True)
+    pub_data_dir.mkdir(parents=True, exist_ok=True)
+    for qfile in ["CIT_MBHT_2017_Nacional.qlr", "CIT_Servicios_WMS.qlr", "CIT_MBHT_Simbologia_Jenks.qml"]:
+        src_q = QGIS_DIR / qfile
+        if src_q.exists():
+            shutil.copy2(src_q, pub_qgis_dir / qfile)
+            shutil.copy2(src_q, data_dir / qfile)
+            shutil.copy2(src_q, pub_data_dir / qfile)
+
+    # 4. Generar descriptor TileJSON 3.0.0 canónico para el motor de teselas vectoriales MVT
+    tilejson_payload = {
+        "tilejson": "3.0.0",
+        "name": "MBHT 2017 — Manzanas Censales de Chile (204.906 unidades)",
+        "description": "Teselas vectoriales Mapbox (MVT) de la Línea Base Oficial MBHT 2017 (CIT-UAI / SUBDERE). Incluye índice sintético bht, 4 macro-dimensiones (dim_acc, dim_soc, dim_seg, dim_amb), 6 sub-indicadores peatonales (isal, ise, iav, idep, icul, iser) y tipología tob (Alto, Medio, Bajo).",
+        "version": "1.0.3",
+        "attribution": "Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez (CC BY 4.0)",
+        "scheme": "xyz",
+        "tiles": [
+            "https://engine.matrizbht.cl/tiles/mbht_2017_manzanas/{z}/{x}/{y}.pbf"
+        ],
+        "minzoom": 4,
+        "maxzoom": 16,
+        "bounds": [-109.45, -56.53, -66.41, -17.50],
+        "center": [-70.65, -33.45, 11],
+        "vector_layers": [
+            {
+                "id": "mbht_2017_manzanas",
+                "description": "Manzanas censales MBHT 2017 (42 columnas físicas)",
+                "minzoom": 4,
+                "maxzoom": 16,
+                "fields": {
+                    "id_manzcit": "String",
+                    "cod_reg": "Number",
+                    "cod_com": "Number",
+                    "comuna": "String",
+                    "personas": "Number",
+                    "bht": "Number",
+                    "tob": "String",
+                    "dim_acc": "Number",
+                    "dim_soc": "Number",
+                    "dim_seg": "Number",
+                    "dim_amb": "Number"
+                }
+            }
+        ]
+    }
+    tilejson_str = json.dumps(tilejson_payload, indent=2, ensure_ascii=False)
+    for tdir in [BASE_DIR / "tiles", PUBLIC_DIR / "tiles"]:
+        tdir.mkdir(parents=True, exist_ok=True)
+        (tdir / "mbht_2017_manzanas.json").write_text(tilejson_str, encoding="utf-8")
+
+    print("  [+] Conectores QGIS, espejos y descriptor TileJSON 3.0.0 generados exitosamente.")
 
 def generar_clean_url_dirs():
-    print("[*] Creando estructura de Clean URLs (/inicio, /descargas, /guia-tecnica, /red-ides)...")
+    print("[*] Creando estructura de Clean URLs (/inicio, /descargas, /guia-tecnica, /red-ides) y espejo /data/...")
     
     routes = [
         ("inicio", "index.html"),
@@ -736,6 +827,41 @@ def generar_clean_url_dirs():
                 shutil.copy2(src_path, dist_target_path)
             if src_path.exists():
                 shutil.copy2(src_path, DIST_DIR / src_file)
+
+    # Sincronizar espejo public/data/ para garantizar acceso HTTP 200 tanto en /dcat.json como en /data/dcat.json
+    pub_data_dir = PUBLIC_DIR / "data"
+    pub_data_dir.mkdir(parents=True, exist_ok=True)
+    for fname in ["dcat.json", "catalogo_ide_cit.json", "catalogo_ide_cit.csv", "connection_examples.json", "reporte_salud_servicios.json", "reporte_salud_servicios.md"]:
+        src_f = BASE_DIR / "data" / fname
+        if src_f.exists():
+            shutil.copy2(src_f, pub_data_dir / fname)
+    # También asegurar que public/dcat.json y public/catalogo.json estén actualizados desde data/
+    if (BASE_DIR / "data" / "dcat.json").exists():
+        shutil.copy2(BASE_DIR / "data" / "dcat.json", PUBLIC_DIR / "dcat.json")
+    if (BASE_DIR / "data" / "catalogo_ide_cit.json").exists():
+        shutil.copy2(BASE_DIR / "data" / "catalogo_ide_cit.json", PUBLIC_DIR / "catalogo.json")
+    if (BASE_DIR / "data" / "catalogo_ide_cit.csv").exists():
+        shutil.copy2(BASE_DIR / "data" / "catalogo_ide_cit.csv", PUBLIC_DIR / "catalogo.csv")
+
+    # Sincronizar STAC desde public/stac/ hacia stac/, data/stac/ y public/data/stac/
+    if STAC_DIR.exists():
+        for target_stac_dir in [BASE_DIR / "stac", BASE_DIR / "data" / "stac", pub_data_dir / "stac"]:
+            target_stac_dir.mkdir(parents=True, exist_ok=True)
+            for sf in STAC_DIR.glob("*.*"):
+                if sf.resolve() != (target_stac_dir / sf.name).resolve():
+                    shutil.copy2(sf, target_stac_dir / sf.name)
+    if (BASE_DIR / "data" / "iso_xml").exists():
+        pub_data_iso = pub_data_dir / "iso_xml"
+        pub_data_iso.mkdir(parents=True, exist_ok=True)
+        for xf in (BASE_DIR / "data" / "iso_xml").glob("*.*"):
+            shutil.copy2(xf, pub_data_iso / xf.name)
+
+    # Sincronizar .well-known/security.txt en public/
+    wk_src = BASE_DIR / ".well-known" / "security.txt"
+    if wk_src.exists():
+        pub_wk = PUBLIC_DIR / ".well-known"
+        pub_wk.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(wk_src, pub_wk / "security.txt")
                 
     if DIST_DIR.exists():
         (DIST_DIR / "download").mkdir(parents=True, exist_ok=True)
