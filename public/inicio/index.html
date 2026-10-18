@@ -1185,6 +1185,22 @@
                         Buscar
                     </button>
                 </div>
+
+                <!-- Enlaces Rápidos de Navegación Sobria y Directa -->
+                <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 mt-3.5 text-xs text-slate-600">
+                    <a href="#catalogo" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium transition shadow-2xs">
+                        <span>Explorar catálogo</span>
+                        <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-slate-500"></i>
+                    </a>
+                    <a href="/descargas" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium transition shadow-2xs">
+                        <span>Centro de descargas</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-slate-500"></i>
+                    </a>
+                    <a href="/guia-tecnica" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium transition shadow-2xs">
+                        <span>Guía técnica y estándares</span>
+                        <i data-lucide="file-text" class="w-3.5 h-3.5 text-slate-500"></i>
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -1373,32 +1389,18 @@
 
         <!-- Grid de Tarjetas de Capas -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" id="layersGrid" role="region" aria-label="Catálogo de coberturas territoriales" aria-live="polite">
-        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group" data-layer-id="kpi_mud_2017" data-matriz="mbht" data-ambito="tierra">
+        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover hover:border-slate-300 p-5 transition flex flex-col justify-between group" data-layer-id="kpi_mud_2017" data-matriz="mbht" data-ambito="tierra">
             <div>
                 <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">MBHT · Litósfera</span>
                     <span class="text-[11px] font-semibold text-slate-700">Línea base oficial 2017</span>
                 </div>
-                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">MBHT 2017 — Línea base oficial</h3>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">MBHT 2017 — Línea base oficial</h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">Línea base nacional oficial de la Matriz de Bienestar Humano Territorial Integral evaluada sobre 204.906 manzanas censales del Censo 2017 en las 16 regiones de Chile. Sintetiza 18 indicadores elementales distribuidos en 4 macro-dimensiones del bienestar (bajo el Axioma de Neutralidad Elemental W(D) = n_D / 18): 1) Macro-dimensión de Accesibilidad (dim_acc, peso 6/18 = 33,33%), que integra los 6 indicadores de acceso peatonal efectivo E2SFCA + Tobler a salud (isal), educación (ise), áreas verdes (iav), deporte (idep), cultura (icul) y servicios públicos (iser); 2) Macro-dimensión Socioeconómica (dim_soc, peso 6/18 = 33,33%); 3) Macro-dimensión de Seguridad (dim_seg, peso 4/18 = 22,22%); y 4) Macro-dimensión Ambiental (dim_amb, peso 2/18 = 11,11%). El archivo físico contiene el esquema completo de 42 columnas físicas (identificadores, demografía censal, índice sintético BHT, las 4 macro-dimensiones, los 6 sub-indicadores peatonales con sus valores pre-escalamiento, tipología Jenks tob y geometría WKB).</p>
-                <details class="mt-2.5 text-[11px] bg-slate-50/80 border border-slate-200/90 rounded-lg p-2.5 text-slate-700">
-                    <summary class="font-medium text-slate-700 hover:text-slate-900 cursor-pointer flex items-center justify-between select-none">
-                        <span>Especificación técnica (42 campos · Instituto Nacional de Estadísticas [INE], Ministerio de Salud [MINSAL], Ministerio de Educación [MINEDUC])</span>
-                        <a href="download/iso_xml/kpi_mud_2017_iso19139.xml" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono">ISO XML</a>
-                    </summary>
-                    <div class="mt-2 pt-2 border-t border-slate-200/80 overflow-x-auto">
-                        <div class="mb-2 text-[10.5px] font-mono text-slate-600 bg-white p-1.5 rounded border border-slate-200/80 overflow-x-auto"><strong class="font-sans text-slate-800">Operador:</strong> Síntesis BHT Integral de 18 indicadores en 4 macro-dimensiones (W(D) = n_D / 18). Accesibilidad (dim_acc) calculada mediante el modelo bietá...</div>
-                        <table class="w-full text-left text-[10px]">
-                            <tbody class="divide-y divide-slate-100">
-                                <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">id_manzcit</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Identificador único censal oficial de la manzana (16 dígitos INE/CIT). Clave primaria nacional.</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">cod_reg</td><td class="text-slate-500 pr-2 py-0.5">Integer</td><td class="text-slate-600 py-0.5">Código numérico de la región político-administrativa (1 a 16)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">cod_prov</td><td class="text-slate-500 pr-2 py-0.5">Integer</td><td class="text-slate-600 py-0.5">Código numérico de la provincia</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">cod_com</td><td class="text-slate-500 pr-2 py-0.5">Integer</td><td class="text-slate-600 py-0.5">Código numérico único de la comuna (CUT oficial SUBDERE)</td></tr>
-                            </tbody>
-                        </table>
-                        <span class="text-[10px] text-slate-500 font-medium block mt-1">+ 38 campos adicionales en la ficha técnica (42 columnas físicas)</span>
-                    </div>
-                </details>
+                <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                    <span class="truncate pr-2">42 columnas físicas · Instituto Nacional de Estadísticas [INE], Ministerio de Salud [MINSAL], Ministerio de Educación [MINEDUC]</span>
+                    <a href="download/iso_xml/kpi_mud_2017_iso19139.xml" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                </div>
             </div>
 
             <div class="pt-3.5 border-t border-slate-100 mt-3.5">
@@ -1420,32 +1422,18 @@
                 <a href="/ficha-mbht-2017" class="mt-2.5 block text-center text-xs font-medium text-slate-600 hover:text-slate-900 underline underline-offset-2">Ver ficha metodológica exhaustiva (Línea base 2017) &rarr;</a>
             </div>
         </article>
-        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group" data-layer-id="pem_maritorio_nacional" data-matriz="pem" data-ambito="mar">
+        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover hover:border-slate-300 p-5 transition flex flex-col justify-between group" data-layer-id="pem_maritorio_nacional" data-matriz="pem" data-ambito="mar">
             <div>
                 <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Planificación marina (FAO / SBAP) · Maritorio</span>
                     <span class="text-[11px] font-mono text-slate-400">v1.0.3</span>
                 </div>
-                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)</h3>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)</h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">Delimitación vectorial oficial del Maritorio chileno bajo una perspectiva tricontinental y de soberanía oceánica integral (Chile continental, insular y Territorio Antártico Chileno). Articula la Planificación marina nacional conforme a las directrices de ordenamiento y pesca sustentable de la FAO y el marco de conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP). Comprende las líneas de base, Aguas Interiores, Mar Territorial (12 millas náuticas), Zona Contigua (24 mn), Zona Económica Exclusiva (200 mn) y plataforma continental, consolidando más de 3,5 millones de kilómetros cuadrados de océano nacional.</p>
-                <details class="mt-2.5 text-[11px] bg-slate-50/80 border border-slate-200/90 rounded-lg p-2.5 text-slate-700">
-                    <summary class="font-medium text-slate-700 hover:text-slate-900 cursor-pointer flex items-center justify-between select-none">
-                        <span>Especificación técnica (5 campos · Dirección Nacional de Fronteras y Límites del Estado [DIFROL], Servicio Hidrográfico y Oceanográfico de la Armada [SHOA], Organización de las Naciones Unidas para la Alimentación y la Agricultura [FAO])</span>
-                        <a href="download/iso_xml/pem_maritorio_nacional_iso19139.xml" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono">ISO XML</a>
-                    </summary>
-                    <div class="mt-2 pt-2 border-t border-slate-200/80 overflow-x-auto">
-                        <div class="mb-2 text-[10.5px] font-mono text-slate-600 bg-white p-1.5 rounded border border-slate-200/80 overflow-x-auto"><strong class="font-sans text-slate-800">Operador:</strong> Delimitación de espacios marítimos soberanos provista por DIFROL, SHOA y MMA conforme a la CONVEMAR, directrices de ordenamiento marino de l...</div>
-                        <table class="w-full text-left text-[10px]">
-                            <tbody class="divide-y divide-slate-100">
-                                <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">OBJECTID</td><td class="text-slate-500 pr-2 py-0.5">Integer</td><td class="text-slate-600 py-0.5">Identificador secuencial del polígono marítimo</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">perimetro_km</td><td class="text-slate-500 pr-2 py-0.5">Float</td><td class="text-slate-600 py-0.5">Perímetro geodésico del polígono marítimo en kilómetros (km)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">area_km2</td><td class="text-slate-500 pr-2 py-0.5">Float</td><td class="text-slate-600 py-0.5">Área superficial geodésica del polígono en kilómetros cuadrados (km²)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">ambito</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Ámbito geográfico tricontinental (Continental, Insular, Antártico)</td></tr>
-                            </tbody>
-                        </table>
-                        <span class="text-[10px] text-slate-500 font-medium block mt-1">+ 1 campos adicionales en la ficha técnica (5 columnas físicas)</span>
-                    </div>
-                </details>
+                <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                    <span class="truncate pr-2">5 columnas físicas · Dirección Nacional de Fronteras y Límites del Estado [DIFROL], Servicio Hidrográfico y Oceanográfico de la Armada [SHOA], Organización de las Naciones Unidas para la Alimentación y la Agricultura [FAO]</span>
+                    <a href="download/iso_xml/pem_maritorio_nacional_iso19139.xml" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                </div>
             </div>
 
             <div class="pt-3.5 border-t border-slate-100 mt-3.5">
@@ -1467,31 +1455,18 @@
                 
             </div>
         </article>
-        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group" data-layer-id="pem_geomorfologia_gebco" data-matriz="pem" data-ambito="mar">
+        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover hover:border-slate-300 p-5 transition flex flex-col justify-between group" data-layer-id="pem_geomorfologia_gebco" data-matriz="pem" data-ambito="mar">
             <div>
                 <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Planificación marina (FAO / SBAP) · Maritorio</span>
                     <span class="text-[11px] font-mono text-slate-400">v1.0.3</span>
                 </div>
-                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)</h3>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)</h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">Zonificación geomorfológica del lecho y fondo submarino nacional categorizada conforme al estándar internacional GEBCO (General Bathymetric Chart of the Oceans / IHO). Insumo estructural para la Planificación marina nacional bajo directrices de la FAO y los criterios de zonificación y protección del Servicio de Biodiversidad y Áreas Protegidas (SBAP). Delimita las grandes provincias fisiográficas oceánicas: Fosa de Atacama/Perú-Chile, plataforma continental, talud continental, fosas abisales, dorsales oceánicas (Dorsal de Chile, Cordillera de Nazca, Cordillera de Salas y Gómez) y llanuras abisales.</p>
-                <details class="mt-2.5 text-[11px] bg-slate-50/80 border border-slate-200/90 rounded-lg p-2.5 text-slate-700">
-                    <summary class="font-medium text-slate-700 hover:text-slate-900 cursor-pointer flex items-center justify-between select-none">
-                        <span>Especificación técnica (3 campos · General Bathymetric Chart of the Oceans [GEBCO], Organización Hidrográfica Internacional [IHO], Organización de las Naciones Unidas para la Alimentación y la Agricultura [FAO])</span>
-                        <a href="download/iso_xml/pem_geomorfologia_gebco_iso19139.xml" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono">ISO XML</a>
-                    </summary>
-                    <div class="mt-2 pt-2 border-t border-slate-200/80 overflow-x-auto">
-                        <div class="mb-2 text-[10.5px] font-mono text-slate-600 bg-white p-1.5 rounded border border-slate-200/80 overflow-x-auto"><strong class="font-sans text-slate-800">Operador:</strong> Clasificación morfométrica de relieve submarino basada en mallas globales GEBCO / IHO y validación fisiográfica regional con criterios de pl...</div>
-                        <table class="w-full text-left text-[10px]">
-                            <tbody class="divide-y divide-slate-100">
-                                <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">unidad_geomorfologica</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Tipo de unidad morfológica submarina (plataforma, talud, fosa, dorsal, etc.)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">superficie_km2</td><td class="text-slate-500 pr-2 py-0.5">Float</td><td class="text-slate-600 py-0.5">Superficie de la macro-unidad en kilómetros cuadrados</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">ano_fuente</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Año de publicación del modelo geomorfológico GEBCO</td></tr>
-                            </tbody>
-                        </table>
-                        
-                    </div>
-                </details>
+                <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                    <span class="truncate pr-2">3 columnas físicas · General Bathymetric Chart of the Oceans [GEBCO], Organización Hidrográfica Internacional [IHO], Organización de las Naciones Unidas para la Alimentación y la Agricultura [FAO]</span>
+                    <a href="download/iso_xml/pem_geomorfologia_gebco_iso19139.xml" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                </div>
             </div>
 
             <div class="pt-3.5 border-t border-slate-100 mt-3.5">
@@ -1513,32 +1488,18 @@
                 
             </div>
         </article>
-        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group" data-layer-id="pem_montes_submarinos" data-matriz="pem" data-ambito="mar">
+        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover hover:border-slate-300 p-5 transition flex flex-col justify-between group" data-layer-id="pem_montes_submarinos" data-matriz="pem" data-ambito="mar">
             <div>
                 <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Planificación marina (FAO / SBAP) · Maritorio</span>
                     <span class="text-[11px] font-mono text-slate-400">v1.0.3</span>
                 </div>
-                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)</h3>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)</h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">Catastro geomorfológico y toponímico de 2.234 cimas, guyots, cañones y relieves destacados del lecho oceánico de Chile, con toponimia oficial estandarizada por el Subcomité de Nombres de Formas del Relieve Submarino (SCUFN - GEBCO/OHI) y el SHOA. Identifica estructuras orográficas submarinas que constituyen hábitats bentónicos de alto valor ecológico y áreas prioritarias para la evaluación de Ecosistemas Marinos Vulnerables (VME) bajo directrices de la FAO y el marco de zonificación y conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley N° 21.600), como las cordilleras de Nazca, Desventuradas y Salas y Gómez.</p>
-                <details class="mt-2.5 text-[11px] bg-slate-50/80 border border-slate-200/90 rounded-lg p-2.5 text-slate-700">
-                    <summary class="font-medium text-slate-700 hover:text-slate-900 cursor-pointer flex items-center justify-between select-none">
-                        <span>Especificación técnica (5 campos · Sub-Committee on Undersea Feature Names [SCUFN / IHO], Organización de las Naciones Unidas para la Alimentación y la Agricultura [FAO], Servicio de Biodiversidad y Áreas Protegidas [SBAP / MMA])</span>
-                        <a href="download/iso_xml/pem_montes_submarinos_iso19139.xml" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono">ISO XML</a>
-                    </summary>
-                    <div class="mt-2 pt-2 border-t border-slate-200/80 overflow-x-auto">
-                        <div class="mb-2 text-[10.5px] font-mono text-slate-600 bg-white p-1.5 rounded border border-slate-200/80 overflow-x-auto"><strong class="font-sans text-slate-800">Operador:</strong> Nomenclatura y toponimia oficial SCUFN (Sub-Committee on Undersea Feature Names) de GEBCO/IHO combinada con modelos digitales batimétricos (...</div>
-                        <table class="w-full text-left text-[10px]">
-                            <tbody class="divide-y divide-slate-100">
-                                <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">nombre_monte</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Nombre o toponimia oficial del monte submarino (fuente: SCUFN / IHO / SHOA)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">catalogo_categoria</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Categoría morfoestructural (Guyot, Seamount, Ridge, Trench, Hill, Canyon) según estándar SCUFN</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">elevacion_submarina_m</td><td class="text-slate-500 pr-2 py-0.5">Float</td><td class="text-slate-600 py-0.5">Cota batimétrica o elevación sobre el lecho marino en metros (fuente: GEBCO / SHOA)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">interes_ecologico_vme</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Relevancia como hábitat bentónico y potencial Ecosistema Marino Vulnerable (criterios FAO / SBAP)</td></tr>
-                            </tbody>
-                        </table>
-                        <span class="text-[10px] text-slate-500 font-medium block mt-1">+ 1 campos adicionales en la ficha técnica (5 columnas físicas)</span>
-                    </div>
-                </details>
+                <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                    <span class="truncate pr-2">5 columnas físicas · Sub-Committee on Undersea Feature Names [SCUFN / IHO], Organización de las Naciones Unidas para la Alimentación y la Agricultura [FAO], Servicio de Biodiversidad y Áreas Protegidas [SBAP / MMA]</span>
+                    <a href="download/iso_xml/pem_montes_submarinos_iso19139.xml" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                </div>
             </div>
 
             <div class="pt-3.5 border-t border-slate-100 mt-3.5">
@@ -1560,32 +1521,18 @@
                 
             </div>
         </article>
-        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group" data-layer-id="pem_cuencas_oceanicas" data-matriz="pem" data-ambito="mar">
+        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover hover:border-slate-300 p-5 transition flex flex-col justify-between group" data-layer-id="pem_cuencas_oceanicas" data-matriz="pem" data-ambito="mar">
             <div>
                 <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Planificación marina (FAO / SBAP) · Maritorio</span>
                     <span class="text-[11px] font-mono text-slate-400">v1.0.3</span>
                 </div>
-                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)</h3>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)</h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">Delimitación espacial morfométrica de 53.726 cuencas y subcuencas oceanográficas submarinas del lecho del Pacífico Suroriental chileno. Modela el drenaje de sedimentos submarinos, cañones tributarios y circulación de fondo, permitiendo caracterizar la conectividad ecológica y apoyar la Planificación marina sustentable bajo directrices de la FAO y las metas de conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP).</p>
-                <details class="mt-2.5 text-[11px] bg-slate-50/80 border border-slate-200/90 rounded-lg p-2.5 text-slate-700">
-                    <summary class="font-medium text-slate-700 hover:text-slate-900 cursor-pointer flex items-center justify-between select-none">
-                        <span>Especificación técnica (4 campos · Centro de Inteligencia Territorial [CIT-UAI], Organización de las Naciones Unidas para la Alimentación y la Agricultura [FAO], Servicio de Biodiversidad y Áreas Protegidas [SBAP / MMA])</span>
-                        <a href="download/iso_xml/pem_cuencas_oceanicas_iso19139.xml" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono">ISO XML</a>
-                    </summary>
-                    <div class="mt-2 pt-2 border-t border-slate-200/80 overflow-x-auto">
-                        <div class="mb-2 text-[10.5px] font-mono text-slate-600 bg-white p-1.5 rounded border border-slate-200/80 overflow-x-auto"><strong class="font-sans text-slate-800">Operador:</strong> Extracción hidrológica/oceanográfica algorítmica sobre modelos digitales batimétricos globales, calibración de conectividad marina FAO y cor...</div>
-                        <table class="w-full text-left text-[10px]">
-                            <tbody class="divide-y divide-slate-100">
-                                <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">id_cuenca</td><td class="text-slate-500 pr-2 py-0.5">Integer</td><td class="text-slate-600 py-0.5">Identificador único de la cuenca oceanográfica submarina</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">codigo_cuenca</td><td class="text-slate-500 pr-2 py-0.5">Integer</td><td class="text-slate-600 py-0.5">Código morfométrico de drenaje abisal</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">perimetro_km</td><td class="text-slate-500 pr-2 py-0.5">Float</td><td class="text-slate-600 py-0.5">Perímetro geodésico de la cuenca oceanográfica en kilómetros (km)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">area_km2</td><td class="text-slate-500 pr-2 py-0.5">Float</td><td class="text-slate-600 py-0.5">Área superficial geodésica de la cuenca en kilómetros cuadrados (km²)</td></tr>
-                            </tbody>
-                        </table>
-                        
-                    </div>
-                </details>
+                <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                    <span class="truncate pr-2">4 columnas físicas · Centro de Inteligencia Territorial [CIT-UAI], Organización de las Naciones Unidas para la Alimentación y la Agricultura [FAO], Servicio de Biodiversidad y Áreas Protegidas [SBAP / MMA]</span>
+                    <a href="download/iso_xml/pem_cuencas_oceanicas_iso19139.xml" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                </div>
             </div>
 
             <div class="pt-3.5 border-t border-slate-100 mt-3.5">
@@ -1607,32 +1554,18 @@
                 
             </div>
         </article>
-        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group" data-layer-id="pem_biodiversidad_especies" data-matriz="pem" data-ambito="mar">
+        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover hover:border-slate-300 p-5 transition flex flex-col justify-between group" data-layer-id="pem_biodiversidad_especies" data-matriz="pem" data-ambito="mar">
             <div>
                 <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Planificación marina (FAO / SBAP) · Maritorio</span>
                     <span class="text-[11px] font-mono text-slate-400">v1.0.3</span>
                 </div>
-                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)</h3>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)</h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">Consolidado nacional de ocurrencias biológicas y biodiversidad marina de Chile, integrando 4.529.201 observaciones georreferenciadas desde las campañas científicas del Instituto de Fomento Pesquero (IFOP) y la Infraestructura Mundial de Información en Biodiversidad (GBIF). Abarca taxonomía completa (reino, filo, clase, orden, familia, género, especie y nombre científico), profundidad de colecta y año de observación. Diseñado para fundamentar la Planificación marina conforme a las directrices de pesca responsable de la FAO y respaldar la creación, monitoreo y fiscalización de la red del Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley N° 21.600).</p>
-                <details class="mt-2.5 text-[11px] bg-slate-50/80 border border-slate-200/90 rounded-lg p-2.5 text-slate-700">
-                    <summary class="font-medium text-slate-700 hover:text-slate-900 cursor-pointer flex items-center justify-between select-none">
-                        <span>Especificación técnica (12 campos · Instituto de Fomento Pesquero [IFOP], Global Biodiversity Information Facility [GBIF], Organización de las Naciones Unidas para la Alimentación y la Agricultura [FAO])</span>
-                        <a href="download/iso_xml/pem_biodiversidad_especies_iso19139.xml" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono">ISO XML</a>
-                    </summary>
-                    <div class="mt-2 pt-2 border-t border-slate-200/80 overflow-x-auto">
-                        <div class="mb-2 text-[10.5px] font-mono text-slate-600 bg-white p-1.5 rounded border border-slate-200/80 overflow-x-auto"><strong class="font-sans text-slate-800">Operador:</strong> Estandarización taxonómica Darwin Core sobre registros de prospecciones de investigación pesquera de IFOP y nodos GBIF en aguas jurisdiccion...</div>
-                        <table class="w-full text-left text-[10px]">
-                            <tbody class="divide-y divide-slate-100">
-                                <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">id_gbif</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Identificador universal único del espécimen o avistamiento (GBIF ID)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">reino</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Reino taxonómico (Animalia, Plantae, Chromista, Fungi, etc.)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">filo</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Filo o división biológica</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">clase</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Clase taxonómica</td></tr>
-                            </tbody>
-                        </table>
-                        <span class="text-[10px] text-slate-500 font-medium block mt-1">+ 8 campos adicionales en la ficha técnica (12 columnas físicas)</span>
-                    </div>
-                </details>
+                <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                    <span class="truncate pr-2">12 columnas físicas · Instituto de Fomento Pesquero [IFOP], Global Biodiversity Information Facility [GBIF], Organización de las Naciones Unidas para la Alimentación y la Agricultura [FAO]</span>
+                    <a href="download/iso_xml/pem_biodiversidad_especies_iso19139.xml" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                </div>
             </div>
 
             <div class="pt-3.5 border-t border-slate-100 mt-3.5">
@@ -1654,32 +1587,18 @@
                 
             </div>
         </article>
-        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group" data-layer-id="censo_imputaciones_2024" data-matriz="censo" data-ambito="tierra">
+        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover hover:border-slate-300 p-5 transition flex flex-col justify-between group" data-layer-id="censo_imputaciones_2024" data-matriz="censo" data-ambito="tierra">
             <div>
                 <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Censo 2024 · Litósfera</span>
                     <span class="text-[11px] font-semibold text-amber-800">En calibración · Censo 2024</span>
                 </div>
-                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">Censo 2024 — Imputaciones demográficas por cohortes y sexo</h3>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">Censo 2024 — Imputaciones demográficas por cohortes y sexo</h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">Modelo demográfico sintético y desagregación multivariada determinística del Censo 2024 (18,48 millones de personas, 7,66 millones de viviendas y 6,62 millones de hogares) a escala de 254.395 manzanas urbanas y entidades rurales para las 16 regiones de Chile. Desarrollado por el CIT-UAI mediante interpolación osculatriz de Sprague y programación entera de mayor residuo para modelación espacial de accesibilidad y demanda de equipamientos, respetando irrestrictamente el secreto estadístico (Ley N° 17.374, Art. 29).</p>
-                <details class="mt-2.5 text-[11px] bg-slate-50/80 border border-slate-200/90 rounded-lg p-2.5 text-slate-700">
-                    <summary class="font-medium text-slate-700 hover:text-slate-900 cursor-pointer flex items-center justify-between select-none">
-                        <span>Especificación técnica (25 campos · Instituto Nacional de Estadísticas [INE], Centro de Inteligencia Territorial [CIT-UAI], Subsecretaría de Desarrollo Regional y Administrativo [SUBDERE])</span>
-                        <a href="download/iso_xml/censo_imputaciones_2024_iso19139.xml" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono">ISO XML</a>
-                    </summary>
-                    <div class="mt-2 pt-2 border-t border-slate-200/80 overflow-x-auto">
-                        <div class="mb-2 text-[10.5px] font-mono text-slate-600 bg-white p-1.5 rounded border border-slate-200/80 overflow-x-auto"><strong class="font-sans text-slate-800">Operador:</strong> Graduación osculatoria de Sprague de 5.º orden sobre grupos quinquenales Censo 2024 combinada con programación entera por algoritmo de mayor...</div>
-                        <table class="w-full text-left text-[10px]">
-                            <tbody class="divide-y divide-slate-100">
-                                <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">ID_MANZCIT</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Código censal único de la manzana (16 dígitos)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">COD_REG</td><td class="text-slate-500 pr-2 py-0.5">Integer</td><td class="text-slate-600 py-0.5">Código numérico de la región</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">REGION</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Nombre oficial de la región</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">COD_PROV</td><td class="text-slate-500 pr-2 py-0.5">Integer</td><td class="text-slate-600 py-0.5">Código de la provincia</td></tr>
-                            </tbody>
-                        </table>
-                        <span class="text-[10px] text-slate-500 font-medium block mt-1">+ 21 campos adicionales en la ficha técnica (25 columnas físicas)</span>
-                    </div>
-                </details>
+                <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                    <span class="truncate pr-2">25 columnas físicas · Instituto Nacional de Estadísticas [INE], Centro de Inteligencia Territorial [CIT-UAI], Subsecretaría de Desarrollo Regional y Administrativo [SUBDERE]</span>
+                    <a href="download/iso_xml/censo_imputaciones_2024_iso19139.xml" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                </div>
             </div>
 
             <div class="pt-3.5 border-t border-slate-100 mt-3.5">
@@ -1701,32 +1620,18 @@
                 
             </div>
         </article>
-        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group" data-layer-id="inse_socioeconomico" data-matriz="inse" data-ambito="tierra">
+        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover hover:border-slate-300 p-5 transition flex flex-col justify-between group" data-layer-id="inse_socioeconomico" data-matriz="inse" data-ambito="tierra">
             <div>
                 <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">INSE · Litósfera</span>
                     <span class="text-[11px] font-mono text-slate-400">v1.0.3</span>
                 </div>
-                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024</h3>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024</h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">Estratificación socioeconómica y patrimonial continua y por quintiles (Q1 a Q5, y S/P sin población) calibrada a nivel nacional para 254.395 manzanas censales en las 16 regiones de Chile. Integra la caracterización socioeconómica de los hogares (capital humano y ocupación CIUO) con la valoración patrimonial inmobiliaria de suelo según Áreas Homogéneas del SII (Ley 17.235) y Valor Guía de Terreno (VGT en UF/m² y $/m²).</p>
-                <details class="mt-2.5 text-[11px] bg-slate-50/80 border border-slate-200/90 rounded-lg p-2.5 text-slate-700">
-                    <summary class="font-medium text-slate-700 hover:text-slate-900 cursor-pointer flex items-center justify-between select-none">
-                        <span>Especificación técnica (15 campos · Instituto Nacional de Estadísticas [INE], Servicio de Impuestos Internos [SII], Centro de Inteligencia Territorial [CIT-UAI])</span>
-                        <a href="download/iso_xml/inse_socioeconomico_iso19139.xml" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono">ISO XML</a>
-                    </summary>
-                    <div class="mt-2 pt-2 border-t border-slate-200/80 overflow-x-auto">
-                        <div class="mb-2 text-[10.5px] font-mono text-slate-600 bg-white p-1.5 rounded border border-slate-200/80 overflow-x-auto"><strong class="font-sans text-slate-800">Operador:</strong> Calibración econométrica multivariada del Índice de Nivel Socioeconómico a escala de manzana: INSE = f(Capital Humano, Inserción Ocupacional...</div>
-                        <table class="w-full text-left text-[10px]">
-                            <tbody class="divide-y divide-slate-100">
-                                <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">MANZ_CIT</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Código censal único de la manzana (16 dígitos)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">COD_REG</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Código oficial de la región</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">COD_COM</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Código único de la comuna (CUT)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">COMUNA</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Nombre oficial de la comuna</td></tr>
-                            </tbody>
-                        </table>
-                        <span class="text-[10px] text-slate-500 font-medium block mt-1">+ 11 campos adicionales en la ficha técnica (15 columnas físicas)</span>
-                    </div>
-                </details>
+                <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                    <span class="truncate pr-2">15 columnas físicas · Instituto Nacional de Estadísticas [INE], Servicio de Impuestos Internos [SII], Centro de Inteligencia Territorial [CIT-UAI]</span>
+                    <a href="download/iso_xml/inse_socioeconomico_iso19139.xml" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                </div>
             </div>
 
             <div class="pt-3.5 border-t border-slate-100 mt-3.5">
@@ -1748,32 +1653,18 @@
                 
             </div>
         </article>
-        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group" data-layer-id="sii_areas_homogeneas" data-matriz="sii" data-ambito="tierra">
+        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover hover:border-slate-300 p-5 transition flex flex-col justify-between group" data-layer-id="sii_areas_homogeneas" data-matriz="sii" data-ambito="tierra">
             <div>
                 <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">SII · Litósfera</span>
                     <span class="text-[11px] font-mono text-slate-400">v1.0.3</span>
                 </div>
-                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos</h3>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos</h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">Catastro espacial completo de 14.157 Áreas Homogéneas definido por el Servicio de Impuestos Internos (SII) bajo la Ley N° 17.235 sobre Impuesto Territorial. Delimita zonas territoriales con características urbanísticas, topográficas, de accesibilidad a servicios y valor unitario de terreno homogéneas para los procesos de reavalúo de bienes raíces en todo Chile. Proporciona el Valor Guía de Terreno (VGT en UF/m² y $/m²), coeficiente guía y clasificación comunal para análisis de plusvalía, dinámica inmobiliaria y tributación territorial.</p>
-                <details class="mt-2.5 text-[11px] bg-slate-50/80 border border-slate-200/90 rounded-lg p-2.5 text-slate-700">
-                    <summary class="font-medium text-slate-700 hover:text-slate-900 cursor-pointer flex items-center justify-between select-none">
-                        <span>Especificación técnica (8 campos · Servicio de Impuestos Internos [SII], Centro de Inteligencia Territorial [CIT-UAI])</span>
-                        <a href="download/iso_xml/sii_areas_homogeneas_iso19139.xml" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono">ISO XML</a>
-                    </summary>
-                    <div class="mt-2 pt-2 border-t border-slate-200/80 overflow-x-auto">
-                        <div class="mb-2 text-[10.5px] font-mono text-slate-600 bg-white p-1.5 rounded border border-slate-200/80 overflow-x-auto"><strong class="font-sans text-slate-800">Operador:</strong> Delimitación poligonal y parametrización de Valor Guía de Terreno (VGT) por resoluciones exentas de reavalúo del SII conforme a la Ley 17.23...</div>
-                        <table class="w-full text-left text-[10px]">
-                            <tbody class="divide-y divide-slate-100">
-                                <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">id_ah</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Código identificador de área homogénea SII (Comuna + Sector + Código)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">comuna</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Nombre oficial de la comuna</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">region</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Código regional (ej: R13)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">tipo_suelo</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Destino o tipología (Urbano / Extensión Urbana / Rural)</td></tr>
-                            </tbody>
-                        </table>
-                        <span class="text-[10px] text-slate-500 font-medium block mt-1">+ 4 campos adicionales en la ficha técnica (8 columnas físicas)</span>
-                    </div>
-                </details>
+                <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                    <span class="truncate pr-2">8 columnas físicas · Servicio de Impuestos Internos [SII], Centro de Inteligencia Territorial [CIT-UAI]</span>
+                    <a href="download/iso_xml/sii_areas_homogeneas_iso19139.xml" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                </div>
             </div>
 
             <div class="pt-3.5 border-t border-slate-100 mt-3.5">
@@ -1795,32 +1686,18 @@
                 
             </div>
         </article>
-        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group" data-layer-id="equipamientos_2017" data-matriz="mbht" data-ambito="tierra">
+        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover hover:border-slate-300 p-5 transition flex flex-col justify-between group" data-layer-id="equipamientos_2017" data-matriz="mbht" data-ambito="tierra">
             <div>
                 <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">MBHT · Litósfera</span>
                     <span class="text-[11px] font-mono text-slate-400">v1.0.3</span>
                 </div>
-                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">Equipamientos urbanos y servicios esenciales 2017</h3>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">Equipamientos urbanos y servicios esenciales 2017</h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">Catastro oficial de equipamientos y servicios urbanos esenciales utilizado para la modelación de accesibilidad peatonal en la Matriz de Bienestar Humano Territorial (MBHT 2017). Documenta de forma trazable los tres niveles del embudo de depuración nacional: 202.275 registros administrativos brutos iniciales, 113.231 unidades en el catastro maestro ruteable consolidado en 6 dimensiones —Áreas Verdes (54.962), Deportes (26.629), Educación (17.129), Salud (5.824), Servicios Públicos (4.914) y Cultura (3.773)— y 55.035 equipamientos públicos de libre acceso y gratuidad publicados en los paquetes regionales y nacionales de la línea base abierta MBHT 2017.</p>
-                <details class="mt-2.5 text-[11px] bg-slate-50/80 border border-slate-200/90 rounded-lg p-2.5 text-slate-700">
-                    <summary class="font-medium text-slate-700 hover:text-slate-900 cursor-pointer flex items-center justify-between select-none">
-                        <span>Especificación técnica (9 campos · Subsecretaría de Desarrollo Regional y Administrativo [SUBDERE], Ministerio de Educación [MINEDUC], Ministerio de Salud [MINSAL])</span>
-                        <a href="download/iso_xml/equipamientos_2017_iso19139.xml" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono">ISO XML</a>
-                    </summary>
-                    <div class="mt-2 pt-2 border-t border-slate-200/80 overflow-x-auto">
-                        <div class="mb-2 text-[10.5px] font-mono text-slate-600 bg-white p-1.5 rounded border border-slate-200/80 overflow-x-auto"><strong class="font-sans text-slate-800">Operador:</strong> Catastro georreferenciado de oferta urbana provisto por SUBDERE, MINEDUC, MINSAL, MINVU, IND y Registro Civil. Homologación de coordenadas a...</div>
-                        <table class="w-full text-left text-[10px]">
-                            <tbody class="divide-y divide-slate-100">
-                                <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">indicador</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Código de dimensión urbana (ISAL, ISE, IAV, IDEP, ICUL, ISER)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">nombre</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Nombre del establecimiento o recinto</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">cod_reg</td><td class="text-slate-500 pr-2 py-0.5">Integer</td><td class="text-slate-600 py-0.5">Código regional oficial</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">cod_com</td><td class="text-slate-500 pr-2 py-0.5">Integer</td><td class="text-slate-600 py-0.5">Código comunal único (CUT)</td></tr>
-                            </tbody>
-                        </table>
-                        <span class="text-[10px] text-slate-500 font-medium block mt-1">+ 5 campos adicionales en la ficha técnica (9 columnas físicas)</span>
-                    </div>
-                </details>
+                <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                    <span class="truncate pr-2">9 columnas físicas · Subsecretaría de Desarrollo Regional y Administrativo [SUBDERE], Ministerio de Educación [MINEDUC], Ministerio de Salud [MINSAL]</span>
+                    <a href="download/iso_xml/equipamientos_2017_iso19139.xml" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                </div>
             </div>
 
             <div class="pt-3.5 border-t border-slate-100 mt-3.5">
@@ -1842,32 +1719,18 @@
                 
             </div>
         </article>
-        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group" data-layer-id="red_vial_ejes_2017" data-matriz="mbht" data-ambito="tierra">
+        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover hover:border-slate-300 p-5 transition flex flex-col justify-between group" data-layer-id="red_vial_ejes_2017" data-matriz="mbht" data-ambito="tierra">
             <div>
                 <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">MBHT · Litósfera</span>
                     <span class="text-[11px] font-mono text-slate-400">v1.0.3</span>
                 </div>
-                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">Red vial urbana caminable y tiempos Tobler 2017</h3>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">Red vial urbana caminable y tiempos Tobler 2017</h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">Red vial oficial caminable y grafo topológico peatonal integrado por 1.589.595 tramos viales calibrados con tiempos de fricción y decaimiento espacial de Tobler para las 16 regiones de Chile. Permite calcular isocronas peatonales y matrices de costo temporal entre las 204.906 manzanas censales y los equipamientos esenciales para la modelación de accesibilidad urbana de la línea base MBHT 2017.</p>
-                <details class="mt-2.5 text-[11px] bg-slate-50/80 border border-slate-200/90 rounded-lg p-2.5 text-slate-700">
-                    <summary class="font-medium text-slate-700 hover:text-slate-900 cursor-pointer flex items-center justify-between select-none">
-                        <span>Especificación técnica (7 campos · Ministerio de Vivienda y Urbanismo [MINVU], Instituto Nacional de Estadísticas [INE])</span>
-                        <a href="download/iso_xml/red_vial_ejes_2017_iso19139.xml" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono">ISO XML</a>
-                    </summary>
-                    <div class="mt-2 pt-2 border-t border-slate-200/80 overflow-x-auto">
-                        <div class="mb-2 text-[10.5px] font-mono text-slate-600 bg-white p-1.5 rounded border border-slate-200/80 overflow-x-auto"><strong class="font-sans text-slate-800">Operador:</strong> Grafo vial caminable consolidado a partir de la red vial INE/MINVU, corregido topológicamente (snapping y split en intersecciones) con veloc...</div>
-                        <table class="w-full text-left text-[10px]">
-                            <tbody class="divide-y divide-slate-100">
-                                <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">NOMBRE_VIA</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Nombre oficial de la vía o pasaje</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">CLASE_COMU</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Jerarquía vial comunal (Avenida, Calle, Pasaje, Camino)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">CLASE_URBA</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Clasificación funcional urbana</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">LARGO</td><td class="text-slate-500 pr-2 py-0.5">Float</td><td class="text-slate-600 py-0.5">Longitud métrica del segmento en metros</td></tr>
-                            </tbody>
-                        </table>
-                        <span class="text-[10px] text-slate-500 font-medium block mt-1">+ 3 campos adicionales en la ficha técnica (7 columnas físicas)</span>
-                    </div>
-                </details>
+                <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                    <span class="truncate pr-2">7 columnas físicas · Ministerio de Vivienda y Urbanismo [MINVU], Instituto Nacional de Estadísticas [INE]</span>
+                    <a href="download/iso_xml/red_vial_ejes_2017_iso19139.xml" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                </div>
             </div>
 
             <div class="pt-3.5 border-t border-slate-100 mt-3.5">
@@ -1889,32 +1752,18 @@
                 
             </div>
         </article>
-        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group" data-layer-id="educacion_inicial_2024" data-matriz="mbht" data-ambito="tierra">
+        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover hover:border-slate-300 p-5 transition flex flex-col justify-between group" data-layer-id="educacion_inicial_2024" data-matriz="mbht" data-ambito="tierra">
             <div>
                 <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">MBHT · Litósfera</span>
                     <span class="text-[11px] font-mono text-slate-400">v1.0.3</span>
                 </div>
-                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">Educación inicial — Catastro nacional de jardines infantiles y salas cuna</h3>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">Educación inicial — Catastro nacional de jardines infantiles y salas cuna</h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">Catastro maestro nacional unificado de establecimientos de educación inicial (jardines infantiles y salas cuna) para las 16 regiones de Chile. Integra tanto la oferta pública (JUNJI, Integra, VTF, SLEP y Municipal) como la oferta privada particular subvencionada y particular pagada, detallando capacidad y matrícula por nivel formativo (Sala Cuna Menor/Mayor, Nivel Medio Menor/Mayor, Prekínder NT1 y Kínder NT2). Insumo base para la evaluación de cobertura y accesibilidad peatonal infantil en la MBHT.</p>
-                <details class="mt-2.5 text-[11px] bg-slate-50/80 border border-slate-200/90 rounded-lg p-2.5 text-slate-700">
-                    <summary class="font-medium text-slate-700 hover:text-slate-900 cursor-pointer flex items-center justify-between select-none">
-                        <span>Especificación técnica (15 campos · Ministerio de Educación [MINEDUC] / Subsecretaría de Educación Parvularia [SdEP], Junta Nacional de Jardines Infantiles [JUNJI] / Fundación Integra, Centro de Inteligencia Territorial [CIT-UAI])</span>
-                        <a href="download/iso_xml/educacion_inicial_2024_iso19139.xml" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono">ISO XML</a>
-                    </summary>
-                    <div class="mt-2 pt-2 border-t border-slate-200/80 overflow-x-auto">
-                        <div class="mb-2 text-[10.5px] font-mono text-slate-600 bg-white p-1.5 rounded border border-slate-200/80 overflow-x-auto"><strong class="font-sans text-slate-800">Operador:</strong> Georreferenciación multiproveedor validada por verificación espacial comunal y cruce con Directorio Oficial MINEDUC / Subsecretaría de Educa...</div>
-                        <table class="w-full text-left text-[10px]">
-                            <tbody class="divide-y divide-slate-100">
-                                <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">id_mbht</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Identificador único MBHT del equipamiento</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">rbd</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Rol Base de Datos oficial MINEDUC</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">nombre_establecimiento</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Nombre oficial del jardín infantil o sala cuna</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">dependencia_macro</td><td class="text-slate-500 pr-2 py-0.5">String</td><td class="text-slate-600 py-0.5">Dependencia administrativa macro (Pública / Privada)</td></tr>
-                            </tbody>
-                        </table>
-                        <span class="text-[10px] text-slate-500 font-medium block mt-1">+ 11 campos adicionales en la ficha técnica (15 columnas físicas)</span>
-                    </div>
-                </details>
+                <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                    <span class="truncate pr-2">15 columnas físicas · Ministerio de Educación [MINEDUC] / Subsecretaría de Educación Parvularia [SdEP], Junta Nacional de Jardines Infantiles [JUNJI] / Fundación Integra, Centro de Inteligencia Territorial [CIT-UAI]</span>
+                    <a href="download/iso_xml/educacion_inicial_2024_iso19139.xml" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                </div>
             </div>
 
             <div class="pt-3.5 border-t border-slate-100 mt-3.5">
@@ -1936,32 +1785,18 @@
                 
             </div>
         </article>
-        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group" data-layer-id="huella_edificaciones_2024" data-matriz="mbht" data-ambito="tierra">
+        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover hover:border-slate-300 p-5 transition flex flex-col justify-between group" data-layer-id="huella_edificaciones_2024" data-matriz="mbht" data-ambito="tierra">
             <div>
                 <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">MBHT · Litósfera</span>
                     <span class="text-[11px] font-mono text-slate-400">v1.0.3</span>
                 </div>
-                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">Huella de edificaciones urbanas — Presencia construida nacional</h3>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">Huella de edificaciones urbanas — Presencia construida nacional</h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">Catastro vectorial de huella construida y morfología del entorno edificado para 341.962 polígonos urbanos a nivel nacional. Identifica la superficie en metros cuadrados, nivel de confianza algorítmica y años de presencia de las estructuras urbanas, permitiendo modelar la densidad predial, compacidad morfológica y dinámicas de densificación en ciudades chilenas.</p>
-                <details class="mt-2.5 text-[11px] bg-slate-50/80 border border-slate-200/90 rounded-lg p-2.5 text-slate-700">
-                    <summary class="font-medium text-slate-700 hover:text-slate-900 cursor-pointer flex items-center justify-between select-none">
-                        <span>Especificación técnica (6 campos · Centro de Inteligencia Territorial [CIT-UAI])</span>
-                        <a href="download/iso_xml/huella_edificaciones_2024_iso19139.xml" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono">ISO XML</a>
-                    </summary>
-                    <div class="mt-2 pt-2 border-t border-slate-200/80 overflow-x-auto">
-                        <div class="mb-2 text-[10.5px] font-mono text-slate-600 bg-white p-1.5 rounded border border-slate-200/80 overflow-x-auto"><strong class="font-sans text-slate-800">Operador:</strong> Detección y extracción vectorial de huella de edificaciones mediante modelos de segmentación satelital y fotogrametría aérea de alta resoluc...</div>
-                        <table class="w-full text-left text-[10px]">
-                            <tbody class="divide-y divide-slate-100">
-                                <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">latitude</td><td class="text-slate-500 pr-2 py-0.5">Float</td><td class="text-slate-600 py-0.5">Latitud centroidal de la edificación (EPSG:4326)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">longitude</td><td class="text-slate-500 pr-2 py-0.5">Float</td><td class="text-slate-600 py-0.5">Longitud centroidal de la edificación (EPSG:4326)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">area_in_me</td><td class="text-slate-500 pr-2 py-0.5">Float</td><td class="text-slate-600 py-0.5">Área de la huella construida en metros cuadrados (m²)</td></tr>
-                                    <tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">confidence</td><td class="text-slate-500 pr-2 py-0.5">Float</td><td class="text-slate-600 py-0.5">Nivel de confianza de la detección algorítmica [0.0 - 1.0]</td></tr>
-                            </tbody>
-                        </table>
-                        <span class="text-[10px] text-slate-500 font-medium block mt-1">+ 2 campos adicionales en la ficha técnica (6 columnas físicas)</span>
-                    </div>
-                </details>
+                <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                    <span class="truncate pr-2">6 columnas físicas · Centro de Inteligencia Territorial [CIT-UAI]</span>
+                    <a href="download/iso_xml/huella_edificaciones_2024_iso19139.xml" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                </div>
             </div>
 
             <div class="pt-3.5 border-t border-slate-100 mt-3.5">
@@ -3150,12 +2985,30 @@
             updateDescargas2017();
         }
 
+        function showToast(msg, icon = 'check') {
+            let toast = document.getElementById('portalToast');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'portalToast';
+                toast.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white text-xs px-4 py-2.5 rounded-xl shadow-lg border border-slate-700 flex items-center space-x-2 transition-all duration-300 opacity-0 pointer-events-none translate-y-2';
+                document.body.appendChild(toast);
+            }
+            toast.innerHTML = `<i data-lucide="${icon}" class="w-4 h-4 text-[#6493B5]"></i><span>${msg}</span>`;
+            if (window.lucide) lucide.createIcons();
+            toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+            clearTimeout(window.__toastTimeout);
+            window.__toastTimeout = setTimeout(() => {
+                toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+            }, 2500);
+        }
+
         function copyDescargaSnippet() {
             const el = document.getElementById('inputDescargaSnippet');
             if (el) {
                 el.select();
-                navigator.clipboard.writeText(el.value);
-                alert('Código de análisis copiado al portapapeles.');
+                navigator.clipboard.writeText(el.value).then(() => {
+                    showToast('Código de análisis copiado al portapapeles');
+                });
             }
         }
 
@@ -3163,8 +3016,9 @@
             const el = document.getElementById('inputDescargaSha256');
             if (el) {
                 el.select();
-                navigator.clipboard.writeText(el.value);
-                alert('Hash criptográfico SHA-256 copiado al portapapeles.');
+                navigator.clipboard.writeText(el.value).then(() => {
+                    showToast('Hash criptográfico SHA-256 copiado al portapapeles');
+                });
             }
         }
 
@@ -3303,11 +3157,11 @@
                                 <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">${matrixName} · ${ambitoLabel}</span>
                                 ${statusLabel}
                             </div>
-                            <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">${capa.titulo}</h3>
+                            <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">${capa.titulo}</h3>
                             <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">${capa.resumen}</p>
-                            <div class="mt-2 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50/80 border border-slate-200/80 rounded-lg px-2.5 py-1.5">
-                                <span class="truncate pr-2">${numAttrs} campos · ${instList}</span>
-                                <a href="${xmlHref}" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                            <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                                <span class="truncate pr-2">${numAttrs} columnas físicas · ${instList}</span>
+                                <a href="${xmlHref}" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
                             </div>
                         </div>
 
@@ -3700,21 +3554,24 @@ df <- read_parquet("${capa.s3_parquet}")`;
             const el = document.getElementById(elId);
             if (el) {
                 el.select();
-                navigator.clipboard.writeText(el.value);
-                alert(`Conector [${type.toUpperCase()}] copiado al portapapeles.`);
+                navigator.clipboard.writeText(el.value).then(() => {
+                    showToast(`Conector [${type.toUpperCase()}] copiado al portapapeles`);
+                });
             }
         }
 
         function copyCitation() {
             const text = document.getElementById('modalCitation').innerText;
-            navigator.clipboard.writeText(text);
-            alert('Cita académica copiada al portapapeles.');
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Cita académica copiada al portapapeles');
+            });
         }
 
         function quickCopyQGIS(tileSource) {
             const url = `https://ide.cit.uai.cl/tiles/${tileSource}/{z}/{x}/{y}.pbf`;
-            navigator.clipboard.writeText(url);
-            alert('URL TileJSON/MVT copiada para QGIS: ' + url);
+            navigator.clipboard.writeText(url).then(() => {
+                showToast('URL TileJSON/MVT copiada para QGIS');
+            });
         }
 
         function exportCatalogJson() {

@@ -67,7 +67,7 @@ def generate_static_ides_html(catalog_data: Dict[str, Any]) -> str:
                     <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">{ide.get('institucion')}</span>
                     <span class="text-[11px] font-mono text-slate-400">{cat_name}</span>
                 </div>
-                <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 leading-snug group-hover:text-black transition">{ide.get('nombre')}</h3>
+                <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 leading-snug group-hover:text-black transition min-h-[2.5rem] line-clamp-2">{ide.get('nombre')}</h3>
                 <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed font-normal">{ide.get('descripcion')}</p>
                 {items_html}
             </div>
@@ -578,8 +578,8 @@ def generate_red_ides_html(catalog_data: Dict[str, Any]) -> str:
                                 <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">${{ide.institucion}}</span>
                                 <span class="text-[11px] font-mono text-slate-400">${{ide.categoria}}</span>
                             </div>
-                            <h4 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 group-hover:text-black transition leading-snug">${{ide.nombre}}</h4>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal">${{ide.descripcion}}</p>
+                            <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">${{ide.nombre}}</h3>
+                            <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed font-normal">${{ide.descripcion}}</p>
                         </div>
                         ${{queEncontrarasHtml}}
                     </div>

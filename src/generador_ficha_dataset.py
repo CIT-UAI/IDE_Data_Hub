@@ -702,8 +702,19 @@ def generate_ficha_mbht_2017_html(catalog_data: Dict[str, Any]) -> str:
                 El archivo consolidado contiene <strong>42 columnas físicas</strong> organizadas en cinco bloques: identificadores territoriales (7), demografía y vivienda censal (11), índice sintético y tipología (3), las cuatro macro-dimensiones del bienestar en versión normalizada y bruta (8), los seis sub-indicadores de accesibilidad peatonal en versión estandarizada y previa (12), y la geometría poligonal (1).
             </p>
 
+            <!-- Buscador Dinámico de Columnas Físicas -->
+            <div class="mb-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-slate-50 p-3 sm:p-3.5 rounded-xl border border-slate-200">
+                <div class="relative flex-1 max-w-md">
+                    <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 stroke-[1.5]"></i>
+                    <input type="text" id="attrSearchInput" oninput="filterAttributesTable()" placeholder="Filtrar por columna (ej. isal, bht, tipologia, personas)..." 
+                           class="w-full pl-9 pr-8 py-2 text-xs sm:text-sm bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-slate-900 transition" />
+                    <button id="attrSearchClear" type="button" onclick="clearAttrSearch()" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-slate-700 p-0.5">✕</button>
+                </div>
+                <div class="text-xs text-slate-500 font-mono" id="attrFilterCount">Mostrando 42 de 42 columnas físicas</div>
+            </div>
+
             <div class="overflow-x-auto">
-                <table class="w-full text-left text-xs sm:text-sm border-collapse">
+                <table id="attributesTable" class="w-full text-left text-xs sm:text-sm border-collapse">
                                         <thead>
                         <tr class="border-b border-slate-200 bg-slate-50 text-slate-700 font-semibold">
                             <th class="py-3 px-3 text-xs font-semibold uppercase tracking-wider text-slate-700 bg-slate-50 text-center">#</th>
@@ -1469,6 +1480,39 @@ Universidad Adolfo Ibáñez · Centro de Inteligencia Territorial
                 setTimeout(renderKaTeX, 100);
             }
         }
+
+        function filterAttributesTable() {
+            const input = document.getElementById('attrSearchInput');
+            const clearBtn = document.getElementById('attrSearchClear');
+            const countEl = document.getElementById('attrFilterCount');
+            const filter = (input ? input.value : '').toLowerCase().trim();
+            if (clearBtn) clearBtn.classList.toggle('hidden', !filter);
+            
+            const rows = document.querySelectorAll('#attributesTable tbody tr');
+            let visibleCount = 0;
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                const match = !filter || text.includes(filter);
+                row.style.display = match ? '' : 'none';
+                if (match) visibleCount++;
+            });
+            if (countEl) {
+                countEl.textContent = `Mostrando ${visibleCount} de 42 columnas físicas`;
+            }
+        }
+
+        function clearAttrSearch() {
+            const input = document.getElementById('attrSearchInput');
+            if (input) {
+                input.value = '';
+                filterAttributesTable();
+                input.focus();
+            }
+        }
+
+        window.filterAttributesTable = filterAttributesTable;
+        window.clearAttrSearch = clearAttrSearch;
+
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', function() {
                 if (typeof lucide !== 'undefined') lucide.createIcons();

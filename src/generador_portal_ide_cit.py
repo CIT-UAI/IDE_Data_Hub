@@ -244,37 +244,16 @@ class IDEPortalBuilder:
             size_str = capa.get("size_human", "")
             size_meta = f' · <span class="font-mono text-slate-500">{size_str}</span>' if size_str else ""
 
-            # Atributos (primeros 4)
-            attrs_rows = []
-            for attr in capa.get("atributos", [])[:4]:
-                attrs_rows.append(f'<tr><td class="font-mono font-bold text-slate-800 pr-2 py-0.5">{attr.get("campo")}</td><td class="text-slate-500 pr-2 py-0.5">{attr.get("tipo")}</td><td class="text-slate-600 py-0.5">{attr.get("descripcion")}</td></tr>')
-            attrs_table = "\n                                    ".join(attrs_rows)
-            num_total_attrs = len(capa.get("atributos", []))
-            more_attrs = f'<span class="text-[10px] text-slate-500 font-medium block mt-1">+ {num_total_attrs - 4} campos adicionales en la ficha técnica ({num_total_attrs} columnas físicas)</span>' if num_total_attrs > 4 else ""
-
-            # Fuentes institucionales y operador integrados limpiamente en el acordeón técnico
+            # Fuentes institucionales
             fuentes = capa.get("fuentes_institucionales", [])
             inst_list = ", ".join([f.get("institucion", "") for f in fuentes[:3] if f.get("institucion")]) if fuentes else "CIT-UAI"
-            formula_raw = capa.get("formula_lineage", "")
-            f_snippet = (formula_raw[:140] + "..." if len(formula_raw) > 140 else formula_raw) if formula_raw else ""
-            formula_row = f'<div class="mb-2 text-[10.5px] font-mono text-slate-600 bg-white p-1.5 rounded border border-slate-200/80 overflow-x-auto"><strong class="font-sans text-slate-800">Operador:</strong> {f_snippet}</div>' if f_snippet else ""
+            num_total_attrs = len(capa.get("atributos", []))
 
-            # Esquema físico y linaje expandible (sobrio, sin sobrecargar la vista inicial)
-            details_html = f"""                <details class="mt-2.5 text-[11px] bg-slate-50/80 border border-slate-200/90 rounded-lg p-2.5 text-slate-700">
-                    <summary class="font-medium text-slate-700 hover:text-slate-900 cursor-pointer flex items-center justify-between select-none">
-                        <span>Especificación técnica ({num_total_attrs} campos · {inst_list})</span>
-                        <a href="download/iso_xml/{capa_id}_iso19139.xml" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono">ISO XML</a>
-                    </summary>
-                    <div class="mt-2 pt-2 border-t border-slate-200/80 overflow-x-auto">
-                        {formula_row}
-                        <table class="w-full text-left text-[10px]">
-                            <tbody class="divide-y divide-slate-100">
-                                {attrs_table}
-                            </tbody>
-                        </table>
-                        {more_attrs}
-                    </div>
-                </details>"""
+            # Franja técnica minimalista y sobria (paridad 100% con renderLayers dinámico)
+            details_html = f"""                <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                    <span class="truncate pr-2">{num_total_attrs} columnas físicas · {inst_list}</span>
+                    <a href="download/iso_xml/{capa_id}_iso19139.xml" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                </div>"""
             
             # Enlace semántico directo a la Ficha Técnica para crawlers
             if capa_id == "kpi_mud_2017":
@@ -282,13 +261,13 @@ class IDEPortalBuilder:
             else:
                 ficha_link_html = ""
 
-            card = f"""        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover p-5 transition flex flex-col justify-between group" data-layer-id="{capa_id}" data-matriz="{mat_id}" data-ambito="{ambito}">
+            card = f"""        <article class="layer-card bg-white rounded-xl border border-slate-200 shadow-clean hover:shadow-hover hover:border-slate-300 p-5 transition flex flex-col justify-between group" data-layer-id="{capa_id}" data-matriz="{mat_id}" data-ambito="{ambito}">
             <div>
                 <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">{mat_name} · {ambito_label}</span>
                     {status_label}
                 </div>
-                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">{capa.get('titulo')}</h3>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">{capa.get('titulo')}</h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">{capa.get('resumen')}</p>
 {details_html}
             </div>
@@ -625,6 +604,22 @@ class IDEPortalBuilder:
                     <button type="button" aria-label="Ejecutar búsqueda en catálogo" onclick="document.getElementById('searchInput') && document.getElementById('searchInput').focus()" class="absolute right-1 sm:right-2 bg-slate-900 hover:bg-black active:bg-slate-800 text-white text-xs sm:text-sm font-medium px-3 py-1.5 sm:px-4 sm:py-2 rounded transition">
                         Buscar
                     </button>
+                </div>
+
+                <!-- Enlaces Rápidos de Navegación Sobria y Directa -->
+                <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 mt-3.5 text-xs text-slate-600">
+                    <a href="#catalogo" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium transition shadow-2xs">
+                        <span>Explorar catálogo</span>
+                        <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-slate-500"></i>
+                    </a>
+                    <a href="/descargas" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium transition shadow-2xs">
+                        <span>Centro de descargas</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-slate-500"></i>
+                    </a>
+                    <a href="/guia-tecnica" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium transition shadow-2xs">
+                        <span>Guía técnica y estándares</span>
+                        <i data-lucide="file-text" class="w-3.5 h-3.5 text-slate-500"></i>
+                    </a>
                 </div>
             </div>
 
@@ -1801,12 +1796,30 @@ class IDEPortalBuilder:
             updateDescargas2017();
         }}
 
+        function showToast(msg, icon = 'check') {{
+            let toast = document.getElementById('portalToast');
+            if (!toast) {{
+                toast = document.createElement('div');
+                toast.id = 'portalToast';
+                toast.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white text-xs px-4 py-2.5 rounded-xl shadow-lg border border-slate-700 flex items-center space-x-2 transition-all duration-300 opacity-0 pointer-events-none translate-y-2';
+                document.body.appendChild(toast);
+            }}
+            toast.innerHTML = `<i data-lucide="${{icon}}" class="w-4 h-4 text-[#6493B5]"></i><span>${{msg}}</span>`;
+            if (window.lucide) lucide.createIcons();
+            toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+            clearTimeout(window.__toastTimeout);
+            window.__toastTimeout = setTimeout(() => {{
+                toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+            }}, 2500);
+        }}
+
         function copyDescargaSnippet() {{
             const el = document.getElementById('inputDescargaSnippet');
             if (el) {{
                 el.select();
-                navigator.clipboard.writeText(el.value);
-                alert('Código de análisis copiado al portapapeles.');
+                navigator.clipboard.writeText(el.value).then(() => {{
+                    showToast('Código de análisis copiado al portapapeles');
+                }});
             }}
         }}
 
@@ -1814,8 +1827,9 @@ class IDEPortalBuilder:
             const el = document.getElementById('inputDescargaSha256');
             if (el) {{
                 el.select();
-                navigator.clipboard.writeText(el.value);
-                alert('Hash criptográfico SHA-256 copiado al portapapeles.');
+                navigator.clipboard.writeText(el.value).then(() => {{
+                    showToast('Hash criptográfico SHA-256 copiado al portapapeles');
+                }});
             }}
         }}
 
@@ -1954,11 +1968,11 @@ class IDEPortalBuilder:
                                 <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">${{matrixName}} · ${{ambitoLabel}}</span>
                                 ${{statusLabel}}
                             </div>
-                            <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug">${{capa.titulo}}</h3>
+                            <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-black transition leading-snug min-h-[2.5rem] line-clamp-2">${{capa.titulo}}</h3>
                             <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 mb-2 leading-relaxed font-normal">${{capa.resumen}}</p>
-                            <div class="mt-2 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50/80 border border-slate-200/80 rounded-lg px-2.5 py-1.5">
-                                <span class="truncate pr-2">${{numAttrs}} campos · ${{instList}}</span>
-                                <a href="${{xmlHref}}" download class="text-[10px] text-slate-500 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
+                            <div class="mt-2.5 text-[11px] text-slate-500 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-lg px-3 py-1.5">
+                                <span class="truncate pr-2">${{numAttrs}} columnas físicas · ${{instList}}</span>
+                                <a href="${{xmlHref}}" download class="text-[10px] text-slate-600 hover:text-slate-900 underline font-mono shrink-0">ISO XML</a>
                             </div>
                         </div>
 
@@ -2347,21 +2361,24 @@ class IDEPortalBuilder:
             const el = document.getElementById(elId);
             if (el) {{
                 el.select();
-                navigator.clipboard.writeText(el.value);
-                alert(`Conector [${{type.toUpperCase()}}] copiado al portapapeles.`);
+                navigator.clipboard.writeText(el.value).then(() => {{
+                    showToast(`Conector [${{type.toUpperCase()}}] copiado al portapapeles`);
+                }});
             }}
         }}
 
         function copyCitation() {{
             const text = document.getElementById('modalCitation').innerText;
-            navigator.clipboard.writeText(text);
-            alert('Cita académica copiada al portapapeles.');
+            navigator.clipboard.writeText(text).then(() => {{
+                showToast('Cita académica copiada al portapapeles');
+            }});
         }}
 
         function quickCopyQGIS(tileSource) {{
             const url = `https://ide.cit.uai.cl/tiles/${{tileSource}}/{{z}}/{{x}}/{{y}}.pbf`;
-            navigator.clipboard.writeText(url);
-            alert('URL TileJSON/MVT copiada para QGIS: ' + url);
+            navigator.clipboard.writeText(url).then(() => {{
+                showToast('URL TileJSON/MVT copiada para QGIS');
+            }});
         }}
 
         function exportCatalogJson() {{

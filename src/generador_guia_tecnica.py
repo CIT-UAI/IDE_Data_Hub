@@ -1518,31 +1518,56 @@ print(f"Total Regional R15 -> Manzanas: {{len(df)}} | Población: {{int(df['pers
         // El menú móvil hamburguesa está gestionado canónicamente por get_canonical_header_html()
         // El botón scroll to top (volver arriba) y su control están gestionados universalmente por get_canonical_footer_html()
 
+        function showToast(msg, icon = 'check') {{
+            let toast = document.getElementById('guiaToast');
+            if (!toast) {{
+                toast = document.createElement('div');
+                toast.id = 'guiaToast';
+                toast.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white text-xs px-4 py-2.5 rounded-xl shadow-lg border border-slate-700 flex items-center space-x-2 transition-all duration-300 opacity-0 pointer-events-none translate-y-2';
+                document.body.appendChild(toast);
+            }}
+            toast.innerHTML = `<i data-lucide="${{icon}}" class="w-4 h-4 text-[#6493B5]"></i><span>${{msg}}</span>`;
+            if (window.lucide) lucide.createIcons();
+            toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+            clearTimeout(window.__toastTimeout);
+            window.__toastTimeout = setTimeout(() => {{
+                toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+            }}, 2500);
+        }}
+
         function setupScrollSpy() {{
             const sections = document.querySelectorAll('section[id^="seccion-"]');
             const links = document.querySelectorAll('.toc-link');
+            if (!sections.length || !links.length) return;
 
-            window.addEventListener('scroll', () => {{
+            const updateSpy = () => {{
                 let current = '';
+                const scrollPos = (window.scrollY || 0) + 200;
                 sections.forEach(section => {{
-                    const sectionTop = section.offsetTop - 180;
-                    if (window.scrollY >= sectionTop) {{
+                    if (scrollPos >= section.offsetTop) {{
                         current = section.getAttribute('id');
                     }}
                 }});
+                if (!current && sections.length > 0) {{
+                    current = sections[0].getAttribute('id');
+                }}
 
                 links.forEach(link => {{
-                    link.classList.remove('active');
                     if (link.getAttribute('href') === `#${{current}}`) {{
                         link.classList.add('active');
+                    }} else {{
+                        link.classList.remove('active');
                     }}
                 }});
-            }});
+            }};
+
+            window.addEventListener('scroll', updateSpy, {{ passive: true }});
+            updateSpy();
         }}
 
         function copyText(text) {{
             navigator.clipboard.writeText(text).then(() => {{
-                alert('URL copiada al portapapeles.');
+                showToast('URL copiada al portapapeles');
             }});
         }}
 
@@ -1551,7 +1576,7 @@ print(f"Total Regional R15 -> Manzanas: {{len(df)}} | Población: {{int(df['pers
             if (!el) return;
             const text = el.innerText || el.textContent;
             navigator.clipboard.writeText(text).then(() => {{
-                alert('Código copiado al portapapeles.');
+                showToast('Código copiado al portapapeles');
             }});
         }}
 
