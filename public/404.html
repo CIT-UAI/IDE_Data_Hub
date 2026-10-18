@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Recurso No Encontrado | IDE CIT</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/ide.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; color: #1e293b; }
+    </style>
+</head>
+<body class="h-full flex flex-col justify-between">
+    <header class="bg-white border-b border-slate-200 py-4 px-6">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3 text-decoration-none">
+                <img src="/img/logo-cit-uai.svg" alt="CIT-UAI" class="h-9 w-auto" onerror="this.src='/img/logo-ide-standalone.svg'">
+                <div>
+                    <span class="text-sm font-semibold tracking-wider text-slate-800 uppercase block">IDE CIT</span>
+                    <span class="text-xs text-slate-500 block">Infraestructura de Datos Espaciales</span>
+                </div>
+            </a>
+            <nav class="flex items-center gap-4 text-xs font-medium text-slate-600">
+                <a href="/inicio" class="hover:text-blue-700 transition-colors">Catálogo</a>
+                <a href="/descargas" class="hover:text-blue-700 transition-colors">Descargas</a>
+                <a href="/guia-tecnica" class="hover:text-blue-700 transition-colors">Guía Técnica</a>
+                <a href="/stac" class="hover:text-blue-700 transition-colors">STAC API</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center px-6 py-16">
+        <div class="max-w-md w-full text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 text-slate-600 mb-6">
+                <span class="text-2xl font-bold tracking-tight">404</span>
+            </div>
+            <h1 class="text-xl font-bold text-slate-900 mb-2">Recurso o Cobertura No Encontrada</h1>
+            <p class="text-sm text-slate-600 mb-8 leading-relaxed">
+                La dirección o el archivo solicitado no se encuentra en el repositorio público de la IDE CIT. Puede haber sido reubicado, actualizado o su identificador de capa no corresponde a las series censales publicadas.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href="/inicio" class="w-full sm:w-auto inline-flex items-center justify-center px-4 py-2 text-xs font-medium rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition-colors">
+                    Explorar Catálogo de Capas
+                </a>
+                <a href="/stac/collections" class="w-full sm:w-auto inline-flex items-center justify-center px-4 py-2 text-xs font-medium rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors">
+                    Colecciones STAC 1.0.0
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-4 px-6 text-center text-xs text-slate-500">
+        Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez · <a href="/security.txt" class="underline hover:text-slate-700">Seguridad y Divulgación Responsable</a>
+    </footer>
+</body>
+</html>
