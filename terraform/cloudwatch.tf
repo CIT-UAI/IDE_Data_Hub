@@ -7,8 +7,8 @@ resource "aws_cloudwatch_metric_alarm" "high_egress" {
   namespace           = "AWS/CloudFront"
   period              = 3600
   statistic           = "Sum"
-  threshold           = 53687091200 # 50 GB en 1 hora
-  alarm_description   = "Alerta FinOps/Seguridad: Descarga masiva de datos en CloudFront IDE CIT (posible scraper o Denial of Wallet)"
+  threshold           = var.cloudwatch_egress_threshold_gb * 1073741824 # 25 GB en bytes
+  alarm_description   = "Alerta FinOps/Seguridad: Descarga anómala >${var.cloudwatch_egress_threshold_gb} GB en 1 hora en CloudFront IDE CIT (posible bot o bucle de descarga)"
   treat_missing_data  = "notBreaching"
 
   dimensions = {

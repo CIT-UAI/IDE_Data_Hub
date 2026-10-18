@@ -1,5 +1,6 @@
-# AWS WAFv2 WebACL (Scope: CLOUDFRONT) — Protección Proactiva "Cortar antes de pagar"
+# AWS WAFv2 WebACL (Scope: CLOUDFRONT) — Módulo Opcional de Rate-Limiting ($7/mes)
 resource "aws_wafv2_web_acl" "shield" {
+  count       = var.enable_waf ? 1 : 0
   name        = "${var.project_name}-waf-rate-shield"
   description = "WAFv2 Rate-Limiting Shield for IDE CIT - Proactive FinOps Protection"
   scope       = "CLOUDFRONT"

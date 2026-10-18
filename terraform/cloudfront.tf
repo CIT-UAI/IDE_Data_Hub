@@ -69,7 +69,7 @@ resource "aws_cloudfront_distribution" "main" {
   is_ipv6_enabled     = true
   default_root_object = "index.html"
   price_class         = "PriceClass_200" # Edge PoP en Santiago de Chile y Sudamérica
-  web_acl_id          = aws_wafv2_web_acl.shield.arn
+  web_acl_id          = var.enable_waf ? aws_wafv2_web_acl.shield[0].arn : null
 
   aliases = [var.domain_name]
 

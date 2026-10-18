@@ -19,6 +19,6 @@ output "s3_logging_bucket_arn" {
 }
 
 output "waf_web_acl_arn" {
-  description = "ARN del WebACL WAFv2 con Rate Limiting activo"
-  value       = aws_wafv2_web_acl.shield.arn
+  description = "ARN del WebACL WAFv2 (si está habilitado)"
+  value       = var.enable_waf ? aws_wafv2_web_acl.shield[0].arn : "Desactivado por política FinOps ($0 costo fijo)"
 }
