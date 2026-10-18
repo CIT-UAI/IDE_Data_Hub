@@ -1330,9 +1330,9 @@ print(f"Total Regional R15 -> Manzanas: {{len(df)}} | Población: {{int(df['pers
                                     <td class="py-3 px-4 font-mono text-xs sm:text-sm">2026-10-17</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-3 px-4 font-bold text-slate-900">Dictamen de Auditoría Técnica Independiente (7/7 Pruebas WAN)</td>
+                                    <td class="py-3 px-4 font-bold text-slate-900">Declaración de Conformidad de Primera Parte (ISO/IEC 17050-1 SDoC)</td>
                                     <td class="py-3 px-4 font-mono text-xs sm:text-sm"><a href="/data/reporte_auditoria_independiente_octubre_2026.md" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/data/reporte_auditoria_independiente_octubre_2026.md</a></td>
-                                    <td class="py-3 px-4 font-semibold text-emerald-800">Certificado 9,6 / 10 (Multicliente PyArrow, DuckDB, R, GDAL, STAC, OWASP)</td>
+                                    <td class="py-3 px-4 font-semibold text-emerald-800">Conforme SDoC (100% Verificable · Multicliente PyArrow, DuckDB, R, GDAL, STAC, OWASP)</td>
                                     <td class="py-3 px-4 font-mono text-xs sm:text-sm">2026-10-17</td>
                                 </tr>
                             </tbody>
