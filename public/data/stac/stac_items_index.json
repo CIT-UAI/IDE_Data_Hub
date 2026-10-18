@@ -1,0 +1,1710 @@
+[
+  {
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+      "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+      "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    ],
+    "type": "Feature",
+    "id": "kpi-mud-2017-nacional",
+    "collection": "kpi-mud-2017",
+    "bbox": [
+      -75.64,
+      -55.98,
+      -66.86,
+      -17.5
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -75.64,
+            -55.98
+          ],
+          [
+            -66.86,
+            -55.98
+          ],
+          [
+            -66.86,
+            -17.5
+          ],
+          [
+            -75.64,
+            -17.5
+          ],
+          [
+            -75.64,
+            -55.98
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "title": "MBHT 2017 — Línea base oficial (Cobertura Nacional Consolidada)",
+      "description": "Línea base nacional oficial de la Matriz de Bienestar Humano Territorial Integral evaluada sobre 204.906 manzanas censales del Censo 2017 en las 16 regiones de Chile. Sintetiza 18 indicadores elementales distribuidos en 4 macro-dimensiones del bienestar (bajo el Axioma de Neutralidad Elemental W(D) = n_D / 18): 1) Macro-dimensión de Accesibilidad (dim_acc, peso 6/18 = 33,33%), que integra los 6 indicadores de acceso peatonal efectivo E2SFCA + Tobler a salud (isal), educación (ise), áreas verdes (iav), deporte (idep), cultura (icul) y servicios públicos (iser); 2) Macro-dimensión Socioeconómica (dim_soc, peso 6/18 = 33,33%); 3) Macro-dimensión de Seguridad (dim_seg, peso 4/18 = 22,22%); y 4) Macro-dimensión Ambiental (dim_amb, peso 2/18 = 11,11%). El archivo físico contiene el esquema completo de 42 columnas físicas (identificadores, demografía censal, índice sintético bht, las 4 macro-dimensiones, los 6 sub-indicadores peatonales con sus valores pre-escalamiento, tipología Jenks tob y geometría WKB).",
+      "datetime": "2017-04-19T00:00:00Z",
+      "start_datetime": "2017-01-01T00:00:00Z",
+      "end_datetime": "2026-12-31T23:59:59Z",
+      "proj:epsg": 4326,
+      "license": "CC-BY-4.0"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://ide.cit.uai.cl/stac/items/kpi-mud-2017-nacional.json"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/kpi_mud_2017.json"
+      },
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/kpi_mud_2017.json"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      }
+    ],
+    "assets": {
+      "geoparquet": {
+        "title": "GeoParquet — MBHT 2017 — Línea base oficial",
+        "type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet",
+        "proj:epsg": 4326,
+        "file:size": 252572936,
+        "file:checksum": "4a123b83ea1cefa18661c25ea40b9c3fc2a319cf6a45abbbd72a2cb30c069f2a"
+      },
+      "geopackage": {
+        "title": "OGC GeoPackage — MBHT 2017 — Línea base oficial",
+        "type": "application/geopackage+sqlite3",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.gpkg",
+        "proj:epsg": 4326,
+        "file:size": 360656896,
+        "file:checksum": "3db07960a5d2ac94d4443c5ba59a3715655db8aabf040e01993180c316e1d230"
+      },
+      "shapefile": {
+        "title": "Shapefile (.zip) — MBHT 2017 — Línea base oficial",
+        "type": "application/zip",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas_SHP.zip",
+        "proj:epsg": 4326,
+        "file:size": 214822331,
+        "file:checksum": "9899f31ae5aa104b40e9c4bbfd4030eb1b8e2b3fb431544b1d103fc720f8cb32"
+      },
+      "csv": {
+        "title": "Tabla CSV — MBHT 2017 — Línea base oficial",
+        "type": "text/csv",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.csv",
+        "file:size": 100911556,
+        "file:checksum": "ebea6ee15f32639345b0f7ce1b3211f808d17b55b3b7d7283d180c48721d5cf5"
+      },
+      "metadata_iso19139": {
+        "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — MBHT 2017 — Línea base oficial",
+        "type": "application/xml",
+        "roles": [
+          "metadata"
+        ],
+        "href": "https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml"
+      }
+    }
+  },
+  {
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+      "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+      "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    ],
+    "type": "Feature",
+    "id": "pem-maritorio-nacional-nacional",
+    "collection": "pem-maritorio-nacional",
+    "bbox": [
+      -131.0,
+      -90.0,
+      -50.0,
+      -17.5
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -131.0,
+            -90.0
+          ],
+          [
+            -50.0,
+            -90.0
+          ],
+          [
+            -50.0,
+            -17.5
+          ],
+          [
+            -131.0,
+            -17.5
+          ],
+          [
+            -131.0,
+            -90.0
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "title": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE) (Cobertura Nacional Consolidada)",
+      "description": "Delimitación vectorial oficial del Maritorio chileno bajo una perspectiva tricontinental y de soberanía oceánica integral (Chile continental, insular y Territorio Antártico Chileno). Articula la Planificación marina nacional conforme a las directrices de ordenamiento y pesca sustentable de la FAO y el marco de conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP). Comprende las líneas de base, Aguas Interiores, Mar Territorial (12 millas náuticas), Zona Contigua (24 mn), Zona Económica Exclusiva (200 mn) y plataforma continental, consolidando más de 3,5 millones de kilómetros cuadrados de océano nacional.",
+      "datetime": "2017-04-19T00:00:00Z",
+      "start_datetime": "2017-01-01T00:00:00Z",
+      "end_datetime": "2026-12-31T23:59:59Z",
+      "proj:epsg": 4326,
+      "license": "CC-BY-4.0"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://ide.cit.uai.cl/stac/items/pem-maritorio-nacional-nacional.json"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/pem_maritorio_nacional.json"
+      },
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/pem_maritorio_nacional.json"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      }
+    ],
+    "assets": {
+      "geoparquet": {
+        "title": "GeoParquet — Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
+        "type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.parquet",
+        "proj:epsg": 4326,
+        "file:size": 103187755,
+        "file:checksum": "05e07fbbb054b09f878e169c4656e8da2f27c8666a5b46fac655a1e28dbe448d"
+      },
+      "geopackage": {
+        "title": "OGC GeoPackage — Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
+        "type": "application/geopackage+sqlite3",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.gpkg",
+        "proj:epsg": 4326,
+        "file:size": 163622912,
+        "file:checksum": "6a636d5af9e4ac81f714b5a848da70d8e5c06ed17ce17bda85eccc061ced945a"
+      },
+      "shapefile": {
+        "title": "Shapefile (.zip) — Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
+        "type": "application/zip",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental_SHP.zip",
+        "proj:epsg": 4326,
+        "file:size": 79974812,
+        "file:checksum": "1a4f859bd720eb94c32beda991239311583e9c7fe834630843ce5fac63c833ab"
+      },
+      "csv": {
+        "title": "Tabla CSV — Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
+        "type": "text/csv",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.csv",
+        "file:size": 46249,
+        "file:checksum": "d7809b26100bb3e16dc0936b71dcc1688b48eb5e1cbfe2778b671087a98c88f2"
+      },
+      "metadata_iso19139": {
+        "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
+        "type": "application/xml",
+        "roles": [
+          "metadata"
+        ],
+        "href": "https://ide.cit.uai.cl/download/iso_xml/pem_maritorio_nacional_iso19139.xml"
+      }
+    }
+  },
+  {
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+      "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+      "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    ],
+    "type": "Feature",
+    "id": "pem-geomorfologia-gebco-nacional",
+    "collection": "pem-geomorfologia-gebco",
+    "bbox": [
+      -120.0,
+      -58.0,
+      -66.0,
+      -18.0
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -120.0,
+            -58.0
+          ],
+          [
+            -66.0,
+            -58.0
+          ],
+          [
+            -66.0,
+            -18.0
+          ],
+          [
+            -120.0,
+            -18.0
+          ],
+          [
+            -120.0,
+            -58.0
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "title": "Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO) (Cobertura Nacional Consolidada)",
+      "description": "Zonificación geomorfológica del lecho y fondo submarino nacional categorizada conforme al estándar internacional GEBCO (General Bathymetric Chart of the Oceans / IHO). Insumo estructural para la Planificación marina nacional bajo directrices de la FAO y los criterios de zonificación y protección del Servicio de Biodiversidad y Áreas Protegidas (SBAP). Delimita las grandes provincias fisiográficas oceánicas: Fosa de Atacama/Perú-Chile, plataforma continental, talud continental, fosas abisales, dorsales oceánicas (Dorsal de Chile, Cordillera de Nazca, Cordillera de Salas y Gómez) y llanuras abisales.",
+      "datetime": "2017-04-19T00:00:00Z",
+      "start_datetime": "2017-01-01T00:00:00Z",
+      "end_datetime": "2026-12-31T23:59:59Z",
+      "proj:epsg": 4326,
+      "license": "CC-BY-4.0"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://ide.cit.uai.cl/stac/items/pem-geomorfologia-gebco-nacional.json"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/pem_geomorfologia_gebco.json"
+      },
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/pem_geomorfologia_gebco.json"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      }
+    ],
+    "assets": {
+      "geoparquet": {
+        "title": "GeoParquet — Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+        "type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.parquet",
+        "proj:epsg": 4326,
+        "file:size": 1212254,
+        "file:checksum": "7c7589083d61163cf66218e7ccdae1b3eb88e7d3a0569752d2f62addb810959d"
+      },
+      "geopackage": {
+        "title": "OGC GeoPackage — Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+        "type": "application/geopackage+sqlite3",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.gpkg",
+        "proj:epsg": 4326,
+        "file:size": 2678784,
+        "file:checksum": "8901177e440c61e57be3ad125555c7054526ccb02b0ef3dc8d69ce229ebb6098"
+      },
+      "shapefile": {
+        "title": "Shapefile (.zip) — Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+        "type": "application/zip",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO_SHP.zip",
+        "proj:epsg": 4326,
+        "file:size": 1154099,
+        "file:checksum": "1946a13918e6c015d518f6602d9af61b0a01f08de9c2b305c4256fd4f07bfb73"
+      },
+      "csv": {
+        "title": "Tabla CSV — Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+        "type": "text/csv",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.csv",
+        "file:size": 2189,
+        "file:checksum": "04100c3d2dea97217195f15f8eda582b7c10cf5bf09e1c77bdccc3b47b70d086"
+      },
+      "metadata_iso19139": {
+        "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
+        "type": "application/xml",
+        "roles": [
+          "metadata"
+        ],
+        "href": "https://ide.cit.uai.cl/download/iso_xml/pem_geomorfologia_gebco_iso19139.xml"
+      }
+    }
+  },
+  {
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+      "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+      "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    ],
+    "type": "Feature",
+    "id": "pem-montes-submarinos-nacional",
+    "collection": "pem-montes-submarinos",
+    "bbox": [
+      -115.0,
+      -56.0,
+      -68.0,
+      -18.5
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -115.0,
+            -56.0
+          ],
+          [
+            -68.0,
+            -56.0
+          ],
+          [
+            -68.0,
+            -18.5
+          ],
+          [
+            -115.0,
+            -18.5
+          ],
+          [
+            -115.0,
+            -56.0
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "title": "Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP) (Cobertura Nacional Consolidada)",
+      "description": "Catastro geomorfológico y toponímico de 2.234 cimas, guyots, cañones y relieves destacados del lecho oceánico de Chile, con toponimia oficial estandarizada por el Subcomité de Nombres de Formas del Relieve Submarino (SCUFN - GEBCO/OHI) y el SHOA. Identifica estructuras orográficas submarinas que constituyen hábitats bentónicos de alto valor ecológico y áreas prioritarias para la evaluación de Ecosistemas Marinos Vulnerables (VME) bajo directrices de la FAO y el marco de zonificación y conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley N° 21.600), como las cordilleras de Nazca, Desventuradas y Salas y Gómez.",
+      "datetime": "2017-04-19T00:00:00Z",
+      "start_datetime": "2017-01-01T00:00:00Z",
+      "end_datetime": "2026-12-31T23:59:59Z",
+      "proj:epsg": 4326,
+      "license": "CC-BY-4.0"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://ide.cit.uai.cl/stac/items/pem-montes-submarinos-nacional.json"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/pem_montes_submarinos.json"
+      },
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/pem_montes_submarinos.json"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      }
+    ],
+    "assets": {
+      "geoparquet": {
+        "title": "GeoParquet — Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+        "type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.parquet",
+        "proj:epsg": 4326,
+        "file:size": 61134,
+        "file:checksum": "b73487f4dff3bb8383d1053eaf4529ac406db2f27753031892eff1f08c05e3b1"
+      },
+      "geopackage": {
+        "title": "OGC GeoPackage — Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+        "type": "application/geopackage+sqlite3",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.gpkg",
+        "proj:epsg": 4326,
+        "file:size": 430080,
+        "file:checksum": "edad21804ccb36cafb6eef6470619f774533287858a3c18ed0ae3770b9d7d879"
+      },
+      "shapefile": {
+        "title": "Shapefile (.zip) — Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+        "type": "application/zip",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia_SHP.zip",
+        "proj:epsg": 4326,
+        "file:size": 54878,
+        "file:checksum": "5093aba933c90efa89cce37825bd763bcf916b84f8552bd5e0c8a4db303bb3cb"
+      },
+      "csv": {
+        "title": "Tabla CSV — Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+        "type": "text/csv",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.csv",
+        "file:size": 211745,
+        "file:checksum": "a2284ce762b7394a003ac1dd3973ce9538d963b2f6da9e4a82ce850c8cabc5cc"
+      },
+      "metadata_iso19139": {
+        "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
+        "type": "application/xml",
+        "roles": [
+          "metadata"
+        ],
+        "href": "https://ide.cit.uai.cl/download/iso_xml/pem_montes_submarinos_iso19139.xml"
+      }
+    }
+  },
+  {
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+      "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+      "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    ],
+    "type": "Feature",
+    "id": "pem-cuencas-oceanicas-nacional",
+    "collection": "pem-cuencas-oceanicas",
+    "bbox": [
+      -118.0,
+      -56.0,
+      -68.0,
+      -18.0
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -118.0,
+            -56.0
+          ],
+          [
+            -68.0,
+            -56.0
+          ],
+          [
+            -68.0,
+            -18.0
+          ],
+          [
+            -118.0,
+            -18.0
+          ],
+          [
+            -118.0,
+            -56.0
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "title": "Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP) (Cobertura Nacional Consolidada)",
+      "description": "Delimitación espacial morfométrica de 53.726 cuencas y subcuencas oceanográficas submarinas del lecho del Pacífico Suroriental chileno. Modela el drenaje de sedimentos submarinos, cañones tributarios y circulación de fondo, permitiendo caracterizar la conectividad ecológica y apoyar la Planificación marina sustentable bajo directrices de la FAO y las metas de conservación del Servicio de Biodiversidad y Áreas Protegidas (SBAP).",
+      "datetime": "2017-04-19T00:00:00Z",
+      "start_datetime": "2017-01-01T00:00:00Z",
+      "end_datetime": "2026-12-31T23:59:59Z",
+      "proj:epsg": 4326,
+      "license": "CC-BY-4.0"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://ide.cit.uai.cl/stac/items/pem-cuencas-oceanicas-nacional.json"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/pem_cuencas_oceanicas.json"
+      },
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/pem_cuencas_oceanicas.json"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      }
+    ],
+    "assets": {
+      "geoparquet": {
+        "title": "GeoParquet — Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+        "type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.parquet",
+        "proj:epsg": 4326,
+        "file:size": 5079409,
+        "file:checksum": "19014b45d7c620e8bc737abcefe5bf7786439d67af619bd34f3d6fc62f52bbff"
+      },
+      "geopackage": {
+        "title": "OGC GeoPackage — Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+        "type": "application/geopackage+sqlite3",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.gpkg",
+        "proj:epsg": 4326,
+        "file:size": 21479424,
+        "file:checksum": "7696d59ed8b7b16c8368350f7d253ced624c34609f6908eacad8d4ec98752c3f"
+      },
+      "shapefile": {
+        "title": "Shapefile (.zip) — Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+        "type": "application/zip",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas_SHP.zip",
+        "proj:epsg": 4326,
+        "file:size": 3333641,
+        "file:checksum": "8d74c34eefde832d22eb3fdaf7e86c733cb86c5efa21ab4b8871399aaf257894"
+      },
+      "csv": {
+        "title": "Tabla CSV — Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+        "type": "text/csv",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.csv",
+        "file:size": 1467002,
+        "file:checksum": "ccb779cddeeb4b6416d1207d496f28f49891525831a8654f076380570deea41a"
+      },
+      "metadata_iso19139": {
+        "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
+        "type": "application/xml",
+        "roles": [
+          "metadata"
+        ],
+        "href": "https://ide.cit.uai.cl/download/iso_xml/pem_cuencas_oceanicas_iso19139.xml"
+      }
+    }
+  },
+  {
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+      "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+      "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    ],
+    "type": "Feature",
+    "id": "pem-biodiversidad-especies-nacional",
+    "collection": "pem-biodiversidad-especies",
+    "bbox": [
+      -115.0,
+      -58.0,
+      -66.0,
+      -18.0
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -115.0,
+            -58.0
+          ],
+          [
+            -66.0,
+            -58.0
+          ],
+          [
+            -66.0,
+            -18.0
+          ],
+          [
+            -115.0,
+            -18.0
+          ],
+          [
+            -115.0,
+            -58.0
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "title": "Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF) (Cobertura Nacional Consolidada)",
+      "description": "Consolidado nacional de ocurrencias biológicas y biodiversidad marina de Chile, integrando 4.529.201 observaciones georreferenciadas desde las campañas científicas del Instituto de Fomento Pesquero (IFOP) y la Infraestructura Mundial de Información en Biodiversidad (GBIF). Abarca taxonomía completa (reino, filo, clase, orden, familia, género, especie y nombre científico), profundidad de colecta y año de observación. Diseñado para fundamentar la Planificación marina conforme a las directrices de pesca responsable de la FAO y respaldar la creación, monitoreo y fiscalización de la red del Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley N° 21.600).",
+      "datetime": "2017-04-19T00:00:00Z",
+      "start_datetime": "2017-01-01T00:00:00Z",
+      "end_datetime": "2026-12-31T23:59:59Z",
+      "proj:epsg": 4326,
+      "license": "CC-BY-4.0"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://ide.cit.uai.cl/stac/items/pem-biodiversidad-especies-nacional.json"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/pem_biodiversidad_especies.json"
+      },
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/pem_biodiversidad_especies.json"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      }
+    ],
+    "assets": {
+      "geoparquet": {
+        "title": "GeoParquet — Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)",
+        "type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet",
+        "proj:epsg": 4326,
+        "file:size": 62178037,
+        "file:checksum": "dc5379796038dd65503bade26d0cf5f72af2e5517b6b5fb50d23c689d70aea60"
+      },
+      "csv": {
+        "title": "Tabla CSV — Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)",
+        "type": "text/csv",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.csv",
+        "file:size": 975699785,
+        "file:checksum": "6ad38f79b0134624dd24d90a46c096c54337839ea56d5ecec73a4b4e59796942"
+      },
+      "metadata_iso19139": {
+        "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)",
+        "type": "application/xml",
+        "roles": [
+          "metadata"
+        ],
+        "href": "https://ide.cit.uai.cl/download/iso_xml/pem_biodiversidad_especies_iso19139.xml"
+      }
+    }
+  },
+  {
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+      "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+      "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    ],
+    "type": "Feature",
+    "id": "censo-imputaciones-2024-nacional",
+    "collection": "censo-imputaciones-2024",
+    "bbox": [
+      -75.64,
+      -55.98,
+      -66.86,
+      -17.5
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -75.64,
+            -55.98
+          ],
+          [
+            -66.86,
+            -55.98
+          ],
+          [
+            -66.86,
+            -17.5
+          ],
+          [
+            -75.64,
+            -17.5
+          ],
+          [
+            -75.64,
+            -55.98
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "title": "Censo 2024 — Imputaciones demográficas por cohortes y sexo (Cobertura Nacional Consolidada)",
+      "description": "Modelo demográfico sintético y desagregación multivariada determinística del Censo 2024 (18,48 millones de personas, 7,66 millones de viviendas y 6,62 millones de hogares) a escala de 254.395 manzanas urbanas y entidades rurales para las 16 regiones de Chile. Desarrollado por el CIT-UAI mediante interpolación osculatriz de Sprague y programación entera de mayor residuo para modelación espacial de accesibilidad y demanda de equipamientos, respetando irrestrictamente el secreto estadístico (Ley N° 17.374, Art. 29).",
+      "datetime": "2024-06-01T00:00:00Z",
+      "start_datetime": "2017-01-01T00:00:00Z",
+      "end_datetime": "2026-12-31T23:59:59Z",
+      "proj:epsg": 4326,
+      "license": "CC-BY-4.0"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://ide.cit.uai.cl/stac/items/censo-imputaciones-2024-nacional.json"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
+      },
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      }
+    ],
+    "assets": {
+      "geoparquet": {
+        "title": "GeoParquet — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+        "type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet",
+        "proj:epsg": 4326,
+        "file:size": 284484592,
+        "file:checksum": "d1af25f28e15b6f241230865fc506849247bb5736c1e8f03ac7bd89a034295c2"
+      },
+      "geopackage": {
+        "title": "OGC GeoPackage — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+        "type": "application/geopackage+sqlite3",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.gpkg",
+        "proj:epsg": 4326,
+        "file:size": 426635264,
+        "file:checksum": "48a8b5d454107ec24b91c2b3cab0256e08855ba13ae55b3718b29806d6a0ceab"
+      },
+      "shapefile": {
+        "title": "Shapefile (.zip) — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+        "type": "application/zip",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional_SHP.zip",
+        "proj:epsg": 4326,
+        "file:size": 239654071,
+        "file:checksum": "dbcbbf1f9fa536ea672edb4f5ce664212338b918978fbd99cabc38a38fea456b"
+      },
+      "csv": {
+        "title": "Tabla CSV — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+        "type": "text/csv",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.csv",
+        "file:size": 56300717,
+        "file:checksum": "382436192861e465f853379445e49bd5d8054edf5cf135aeb3570869a5847e81"
+      },
+      "metadata_iso19139": {
+        "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
+        "type": "application/xml",
+        "roles": [
+          "metadata"
+        ],
+        "href": "https://ide.cit.uai.cl/download/iso_xml/censo_imputaciones_2024_iso19139.xml"
+      }
+    }
+  },
+  {
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+      "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+      "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    ],
+    "type": "Feature",
+    "id": "inse-socioeconomico-nacional",
+    "collection": "inse-socioeconomico",
+    "bbox": [
+      -75.64,
+      -55.98,
+      -66.86,
+      -17.5
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -75.64,
+            -55.98
+          ],
+          [
+            -66.86,
+            -55.98
+          ],
+          [
+            -66.86,
+            -17.5
+          ],
+          [
+            -75.64,
+            -17.5
+          ],
+          [
+            -75.64,
+            -55.98
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "title": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024 (Cobertura Nacional Consolidada)",
+      "description": "Estratificación socioeconómica y patrimonial continua y por quintiles (Q1 a Q5, y S/P sin población) calibrada a nivel nacional para 254.395 manzanas censales en las 16 regiones de Chile. Integra la caracterización socioeconómica de los hogares (capital humano y ocupación CIUO) con la valoración patrimonial inmobiliaria de suelo según Áreas Homogéneas del SII (Ley 17.235) y Valor Guía de Terreno (VGT en UF/m² y $/m²).",
+      "datetime": "2024-06-01T00:00:00Z",
+      "start_datetime": "2017-01-01T00:00:00Z",
+      "end_datetime": "2026-12-31T23:59:59Z",
+      "proj:epsg": 4326,
+      "license": "CC-BY-4.0"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://ide.cit.uai.cl/stac/items/inse-socioeconomico-nacional.json"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/inse_socioeconomico.json"
+      },
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/inse_socioeconomico.json"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      }
+    ],
+    "assets": {
+      "geoparquet": {
+        "title": "GeoParquet — Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+        "type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet",
+        "proj:epsg": 4326,
+        "file:size": 279535131,
+        "file:checksum": "da7a24420fb4b09963cd8bb9a9bd45b6c4b8110c4ce4f168c308a3e2f75556eb"
+      },
+      "geopackage": {
+        "title": "OGC GeoPackage — Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+        "type": "application/geopackage+sqlite3",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.gpkg",
+        "proj:epsg": 4326,
+        "file:size": 487309312,
+        "file:checksum": "f86cab40317e5f405879bcb58dd600805bc4ec31293714ab1d45c218ec805de9"
+      },
+      "shapefile": {
+        "title": "Shapefile (.zip) — Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+        "type": "application/zip",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024_SHP.zip",
+        "proj:epsg": 4326,
+        "file:size": 232586385,
+        "file:checksum": "4626a5ce30d47fdddf066f26620d65948fa983cc7075bfea4545612cfe7e1bb9"
+      },
+      "csv": {
+        "title": "Tabla CSV — Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+        "type": "text/csv",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.csv",
+        "file:size": 29972846,
+        "file:checksum": "d438bf5f535a202736b2b887240130a5286c4d9a7a068d2f6ddea85a0533d047"
+      },
+      "metadata_iso19139": {
+        "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
+        "type": "application/xml",
+        "roles": [
+          "metadata"
+        ],
+        "href": "https://ide.cit.uai.cl/download/iso_xml/inse_socioeconomico_iso19139.xml"
+      }
+    }
+  },
+  {
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+      "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+      "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    ],
+    "type": "Feature",
+    "id": "sii-areas-homogeneas-nacional",
+    "collection": "sii-areas-homogeneas",
+    "bbox": [
+      -75.64,
+      -55.98,
+      -66.86,
+      -17.5
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -75.64,
+            -55.98
+          ],
+          [
+            -66.86,
+            -55.98
+          ],
+          [
+            -66.86,
+            -17.5
+          ],
+          [
+            -75.64,
+            -17.5
+          ],
+          [
+            -75.64,
+            -55.98
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "title": "Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos (Cobertura Nacional Consolidada)",
+      "description": "Catastro espacial completo de 14.157 Áreas Homogéneas definido por el Servicio de Impuestos Internos (SII) bajo la Ley N° 17.235 sobre Impuesto Territorial. Delimita zonas territoriales con características urbanísticas, topográficas, de accesibilidad a servicios y valor unitario de terreno homogéneas para los procesos de reavalúo de bienes raíces en todo Chile. Proporciona el Valor Guía de Terreno (VGT en UF/m² y $/m²), coeficiente guía y clasificación comunal para análisis de plusvalía, dinámica inmobiliaria y tributación territorial.",
+      "datetime": "2024-06-01T00:00:00Z",
+      "start_datetime": "2017-01-01T00:00:00Z",
+      "end_datetime": "2026-12-31T23:59:59Z",
+      "proj:epsg": 4326,
+      "license": "CC-BY-4.0"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://ide.cit.uai.cl/stac/items/sii-areas-homogeneas-nacional.json"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/sii_areas_homogeneas.json"
+      },
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/sii_areas_homogeneas.json"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      }
+    ],
+    "assets": {
+      "geoparquet": {
+        "title": "GeoParquet — Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+        "type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.parquet",
+        "proj:epsg": 4326,
+        "file:size": 894409,
+        "file:checksum": "e3cb9ca5b196740ce2929db29141a04651110698c2bf620249cc805275c5a16b"
+      },
+      "geopackage": {
+        "title": "OGC GeoPackage — Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+        "type": "application/geopackage+sqlite3",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.gpkg",
+        "proj:epsg": 4326,
+        "file:size": 3469312,
+        "file:checksum": "74316a1416c1f845b4915b0a4440d604f2e4ed2adc0053e463c58095bbdcc2bc"
+      },
+      "shapefile": {
+        "title": "Shapefile (.zip) — Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+        "type": "application/zip",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional_SHP.zip",
+        "proj:epsg": 4326,
+        "file:size": 40853655,
+        "file:checksum": "d86cabb43073d052862a408802c80f166102d5f522b7df0c468af5685f145f1a"
+      },
+      "csv": {
+        "title": "Tabla CSV — Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+        "type": "text/csv",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.csv",
+        "file:size": 2245788,
+        "file:checksum": "06f71a7d1cb9c3450219e47c94d4e1a2a02eb66d79270dc916d9ccca61dae737"
+      },
+      "metadata_iso19139": {
+        "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
+        "type": "application/xml",
+        "roles": [
+          "metadata"
+        ],
+        "href": "https://ide.cit.uai.cl/download/iso_xml/sii_areas_homogeneas_iso19139.xml"
+      }
+    }
+  },
+  {
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+      "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+      "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    ],
+    "type": "Feature",
+    "id": "equipamientos-2017-nacional",
+    "collection": "equipamientos-2017",
+    "bbox": [
+      -75.64,
+      -55.98,
+      -66.86,
+      -17.5
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -75.64,
+            -55.98
+          ],
+          [
+            -66.86,
+            -55.98
+          ],
+          [
+            -66.86,
+            -17.5
+          ],
+          [
+            -75.64,
+            -17.5
+          ],
+          [
+            -75.64,
+            -55.98
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "title": "Equipamientos urbanos y servicios esenciales 2017 (Cobertura Nacional Consolidada)",
+      "description": "Catastro oficial de equipamientos y servicios urbanos esenciales utilizado para la modelación de accesibilidad peatonal en la Matriz de Bienestar Humano Territorial (MBHT 2017). Documenta de forma trazable los tres niveles del embudo de depuración nacional: 202.275 registros administrativos brutos iniciales, 113.231 unidades en el catastro maestro ruteable consolidado en 6 dimensiones —Áreas Verdes (54.962), Deportes (26.629), Educación (17.129), Salud (5.824), Servicios Públicos (4.914) y Cultura (3.773)— y 55.035 equipamientos públicos de libre acceso y gratuidad publicados en los paquetes regionales y nacionales de la línea base abierta MBHT 2017.",
+      "datetime": "2017-04-19T00:00:00Z",
+      "start_datetime": "2017-01-01T00:00:00Z",
+      "end_datetime": "2026-12-31T23:59:59Z",
+      "proj:epsg": 4326,
+      "license": "CC-BY-4.0"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://ide.cit.uai.cl/stac/items/equipamientos-2017-nacional.json"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/equipamientos_2017.json"
+      },
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/equipamientos_2017.json"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      }
+    ],
+    "assets": {
+      "geoparquet": {
+        "title": "GeoParquet — Equipamientos urbanos y servicios esenciales 2017",
+        "type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet",
+        "proj:epsg": 4326,
+        "file:size": 8589840,
+        "file:checksum": "ab79a066c0e175840a0215626c8f10a91c61920d8c89285433592b4f423d0a97"
+      },
+      "geopackage": {
+        "title": "OGC GeoPackage — Equipamientos urbanos y servicios esenciales 2017",
+        "type": "application/geopackage+sqlite3",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.gpkg",
+        "proj:epsg": 4326,
+        "file:size": 23638016,
+        "file:checksum": "93803a289f8d7832a6d9dda2f40f84d3892d28351af4e088dac8b75e1e6c3123"
+      },
+      "shapefile": {
+        "title": "Shapefile (.zip) — Equipamientos urbanos y servicios esenciales 2017",
+        "type": "application/zip",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado_SHP.zip",
+        "proj:epsg": 4326,
+        "file:size": 4188174,
+        "file:checksum": "61cb37aa09f72914cede9f7029e9852a0e7cd0a54b8d541ef33bfb23cdf3a48a"
+      },
+      "csv": {
+        "title": "Tabla CSV — Equipamientos urbanos y servicios esenciales 2017",
+        "type": "text/csv",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.csv",
+        "file:size": 11734366,
+        "file:checksum": "3d295db619e72300aceb5d527a220810c799660ca3c99a5e66b167ea98fc9835"
+      },
+      "metadata_iso19139": {
+        "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Equipamientos urbanos y servicios esenciales 2017",
+        "type": "application/xml",
+        "roles": [
+          "metadata"
+        ],
+        "href": "https://ide.cit.uai.cl/download/iso_xml/equipamientos_2017_iso19139.xml"
+      }
+    }
+  },
+  {
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+      "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+      "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    ],
+    "type": "Feature",
+    "id": "red-vial-ejes-2017-nacional",
+    "collection": "red-vial-ejes-2017",
+    "bbox": [
+      -75.64,
+      -55.98,
+      -66.86,
+      -17.5
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -75.64,
+            -55.98
+          ],
+          [
+            -66.86,
+            -55.98
+          ],
+          [
+            -66.86,
+            -17.5
+          ],
+          [
+            -75.64,
+            -17.5
+          ],
+          [
+            -75.64,
+            -55.98
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "title": "Red vial urbana caminable y tiempos Tobler 2017 (Cobertura Nacional Consolidada)",
+      "description": "Red vial oficial caminable y grafo topológico peatonal integrado por 1.589.595 tramos viales calibrados con tiempos de fricción y decaimiento espacial de Tobler para las 16 regiones de Chile. Permite calcular isocronas peatonales y matrices de costo temporal entre las 204.906 manzanas censales y los equipamientos esenciales para la modelación de accesibilidad urbana de la línea base MBHT 2017.",
+      "datetime": "2017-04-19T00:00:00Z",
+      "start_datetime": "2017-01-01T00:00:00Z",
+      "end_datetime": "2026-12-31T23:59:59Z",
+      "proj:epsg": 4326,
+      "license": "CC-BY-4.0"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://ide.cit.uai.cl/stac/items/red-vial-ejes-2017-nacional.json"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/red_vial_ejes_2017.json"
+      },
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/red_vial_ejes_2017.json"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      }
+    ],
+    "assets": {
+      "geoparquet": {
+        "title": "GeoParquet — Red vial urbana caminable y tiempos Tobler 2017",
+        "type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet",
+        "proj:epsg": 4326,
+        "file:size": 225592155,
+        "file:checksum": "85c872e5eb1fb00ca95eb4c3a0248993566b74c53ecbbe42692653657adb8452"
+      },
+      "geopackage": {
+        "title": "OGC GeoPackage — Red vial urbana caminable y tiempos Tobler 2017",
+        "type": "application/geopackage+sqlite3",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.gpkg",
+        "proj:epsg": 4326,
+        "file:size": 500346880,
+        "file:checksum": "19d5e8cee3a3ee0910fa777a9aac89850c8a897afc3aa6e002a86a879a44dd07"
+      },
+      "shapefile": {
+        "title": "Shapefile (.zip) — Red vial urbana caminable y tiempos Tobler 2017",
+        "type": "application/zip",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional_SHP.zip",
+        "proj:epsg": 4326,
+        "file:size": 224455797,
+        "file:checksum": "758e3b639c9375e9988fc2e0c6e7c756a31f8afff7d147b628c565cc7beae289"
+      },
+      "csv": {
+        "title": "Tabla CSV — Red vial urbana caminable y tiempos Tobler 2017",
+        "type": "text/csv",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.csv",
+        "file:size": 106161078,
+        "file:checksum": "fc0d54d0a92d86aa181fd5ac6ebe4e0b1a1f59417d461dc50a7aff0f8e69ebb2"
+      },
+      "metadata_iso19139": {
+        "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Red vial urbana caminable y tiempos Tobler 2017",
+        "type": "application/xml",
+        "roles": [
+          "metadata"
+        ],
+        "href": "https://ide.cit.uai.cl/download/iso_xml/red_vial_ejes_2017_iso19139.xml"
+      }
+    }
+  },
+  {
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+      "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+      "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    ],
+    "type": "Feature",
+    "id": "educacion-inicial-2024-nacional",
+    "collection": "educacion-inicial-2024",
+    "bbox": [
+      -109.43,
+      -54.94,
+      -67.6,
+      -18.25
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -109.43,
+            -54.94
+          ],
+          [
+            -67.6,
+            -54.94
+          ],
+          [
+            -67.6,
+            -18.25
+          ],
+          [
+            -109.43,
+            -18.25
+          ],
+          [
+            -109.43,
+            -54.94
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "title": "Educación inicial — Catastro nacional de jardines infantiles y salas cuna (Cobertura Nacional Consolidada)",
+      "description": "Catastro maestro nacional unificado de establecimientos de educación inicial (jardines infantiles y salas cuna) para las 16 regiones de Chile. Integra tanto la oferta pública (JUNJI, Integra, VTF, SLEP y Municipal) como la oferta privada particular subvencionada y particular pagada, detallando capacidad y matrícula por nivel formativo (Sala Cuna Menor/Mayor, Nivel Medio Menor/Mayor, Prekínder NT1 y Kínder NT2). Insumo base para la evaluación de cobertura y accesibilidad peatonal infantil en la MBHT.",
+      "datetime": "2024-06-01T00:00:00Z",
+      "start_datetime": "2017-01-01T00:00:00Z",
+      "end_datetime": "2026-12-31T23:59:59Z",
+      "proj:epsg": 4326,
+      "license": "CC-BY-4.0"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://ide.cit.uai.cl/stac/items/educacion-inicial-2024-nacional.json"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/educacion_inicial_2024.json"
+      },
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/educacion_inicial_2024.json"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      }
+    ],
+    "assets": {
+      "geoparquet": {
+        "title": "GeoParquet — Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
+        "type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
+        "proj:epsg": 4326,
+        "file:size": 364944,
+        "file:checksum": "ec9b240098d426b5d2bf9aa1350c3f40a3e8e26aa7acf02a53e20b7ccbce2b8f"
+      },
+      "geopackage": {
+        "title": "OGC GeoPackage — Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
+        "type": "application/geopackage+sqlite3",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.gpkg",
+        "proj:epsg": 4326,
+        "file:size": 2965504,
+        "file:checksum": "3b4af733b0440ed398f19834ab7c1cedbd84b3475cf29f460e6f14e79786fbbd"
+      },
+      "shapefile": {
+        "title": "Shapefile (.zip) — Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
+        "type": "application/zip",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024_SHP.zip",
+        "proj:epsg": 4326,
+        "file:size": 386413,
+        "file:checksum": "7074d332597226a2b18d2b0462f38f7e10f5b731636c5b81b815b56837f2244c"
+      },
+      "csv": {
+        "title": "Tabla CSV — Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
+        "type": "text/csv",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.csv",
+        "file:size": 2489732,
+        "file:checksum": "730e93c76b0070e8c02fe7e0eb9290f763c8b03867e997a1fcd1ea7885b8e29f"
+      },
+      "metadata_iso19139": {
+        "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
+        "type": "application/xml",
+        "roles": [
+          "metadata"
+        ],
+        "href": "https://ide.cit.uai.cl/download/iso_xml/educacion_inicial_2024_iso19139.xml"
+      }
+    }
+  },
+  {
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+      "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+      "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    ],
+    "type": "Feature",
+    "id": "huella-edificaciones-2024-nacional",
+    "collection": "huella-edificaciones-2024",
+    "bbox": [
+      -75.64,
+      -55.98,
+      -66.86,
+      -17.5
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -75.64,
+            -55.98
+          ],
+          [
+            -66.86,
+            -55.98
+          ],
+          [
+            -66.86,
+            -17.5
+          ],
+          [
+            -75.64,
+            -17.5
+          ],
+          [
+            -75.64,
+            -55.98
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "title": "Huella de edificaciones urbanas — Presencia construida nacional (Cobertura Nacional Consolidada)",
+      "description": "Catastro vectorial de huella construida y morfología del entorno edificado para 341.962 polígonos urbanos a nivel nacional. Identifica la superficie en metros cuadrados, nivel de confianza algorítmica y años de presencia de las estructuras urbanas, permitiendo modelar la densidad predial, compacidad morfológica y dinámicas de densificación en ciudades chilenas.",
+      "datetime": "2024-06-01T00:00:00Z",
+      "start_datetime": "2017-01-01T00:00:00Z",
+      "end_datetime": "2026-12-31T23:59:59Z",
+      "proj:epsg": 4326,
+      "license": "CC-BY-4.0"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://ide.cit.uai.cl/stac/items/huella-edificaciones-2024-nacional.json"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/huella_edificaciones_2024.json"
+      },
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/huella_edificaciones_2024.json"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      }
+    ],
+    "assets": {
+      "geoparquet": {
+        "title": "GeoParquet — Huella de edificaciones urbanas — Presencia construida nacional",
+        "type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet",
+        "proj:epsg": 4326,
+        "file:size": 38964900,
+        "file:checksum": "1fcecc1ded9e0f17261b88c3f8025d975d6fa75911b5e13ea969279b51cdf991"
+      },
+      "geopackage": {
+        "title": "OGC GeoPackage — Huella de edificaciones urbanas — Presencia construida nacional",
+        "type": "application/geopackage+sqlite3",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.gpkg",
+        "proj:epsg": 4326,
+        "file:size": 96378880,
+        "file:checksum": "3ad4330ce2edf44952636009101bc16d2e74d54e0575a58d4d8e6cf475b0312a"
+      },
+      "shapefile": {
+        "title": "Shapefile (.zip) — Huella de edificaciones urbanas — Presencia construida nacional",
+        "type": "application/zip",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024_SHP.zip",
+        "proj:epsg": 4326,
+        "file:size": 18106961,
+        "file:checksum": "2c4212891c52f0eb9e5bf8f2714c83c6c252e8bb04a956c321749e52ef6d701f"
+      },
+      "csv": {
+        "title": "Tabla CSV — Huella de edificaciones urbanas — Presencia construida nacional",
+        "type": "text/csv",
+        "roles": [
+          "data"
+        ],
+        "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.csv",
+        "file:size": 28438098,
+        "file:checksum": "9a3f816b66223cb399ae1becedcd75017ac8914f0155eaf60ca0750922723a16"
+      },
+      "metadata_iso19139": {
+        "title": "Metadatos Oficiales ISO 19115 / ISO 19139 XML — Huella de edificaciones urbanas — Presencia construida nacional",
+        "type": "application/xml",
+        "roles": [
+          "metadata"
+        ],
+        "href": "https://ide.cit.uai.cl/download/iso_xml/huella_edificaciones_2024_iso19139.xml"
+      }
+    }
+  },
+  {
+    "stac_version": "1.0.0",
+    "type": "Feature",
+    "id": "mbht-2024-aviso-nacional",
+    "collection": "mbht-2024-aviso",
+    "bbox": [
+      -109.45,
+      -56.53,
+      -66.41,
+      -17.5
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -109.45,
+            -56.53
+          ],
+          [
+            -66.41,
+            -56.53
+          ],
+          [
+            -66.41,
+            -17.5
+          ],
+          [
+            -109.45,
+            -17.5
+          ],
+          [
+            -109.45,
+            -56.53
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "title": "Aviso Oficial de Lanzamiento MBHT 2024 (Noviembre 2026)",
+      "datetime": "2026-10-01T00:00:00Z",
+      "start_datetime": "2024-01-01T00:00:00Z",
+      "end_datetime": "2026-12-31T23:59:59Z",
+      "proj:epsg": 4326,
+      "license": "CC-BY-4.0"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://ide.cit.uai.cl/stac/items/mbht-2024-aviso-nacional.json"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/mbht_2024.json"
+      },
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/mbht_2024.json"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      }
+    ],
+    "assets": {
+      "guia_tecnica": {
+        "title": "Guía Técnica y Metodológica IDE CIT",
+        "type": "text/html",
+        "roles": [
+          "metadata"
+        ],
+        "href": "https://ide.cit.uai.cl/guia-tecnica"
+      }
+    }
+  }
+]

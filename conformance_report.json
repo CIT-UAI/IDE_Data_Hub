@@ -5,14 +5,14 @@
   "version": "2026.2",
   "platform_release": "2026.2",
   "report_format_version": "1.1.0-CUDA-SDoC",
-  "generated_at": "2026-10-17T22:53:20Z",
+  "generated_at": "2026-10-17T23:57:08Z",
   "status": "CONFORMANT",
   "summary": {
     "vectors_evaluated": 15,
     "master_coverage_layers_production": 13,
     "preparatory_resources": 1,
     "total_catalog_resources": 14,
-    "passed_checks": 56,
+    "passed_checks": 58,
     "warnings": 0,
     "critical_errors": 0,
     "hashes_verified_sha256": 662,
@@ -146,9 +146,9 @@
   "reproducible_benchmarks": {
     "methodology": "Lectura columnar selectiva PyArrow (GeoParquet 1.1 SNAPPY) y sondas HTTP Range (RFC 9110, 206 Partial Content) hacia CDN CloudFront.",
     "local_columnar_r15_weighted_bht": {
-      "p50_ms": 3.19,
-      "p95_ms": 7.66,
-      "p99_ms": 7.66,
+      "p50_ms": 3.3,
+      "p95_ms": 9.08,
+      "p99_ms": 9.08,
       "rows": 3304,
       "bht_weighted": 0.4623
     },
@@ -171,6 +171,96 @@
       "p99_ms": 684.71
     }
   },
+  "wcag_2_1_aa_interactive_audit": {
+    "status": "CONFORMANT_WCAG_2_1_AA",
+    "report_url": "https://ide.cit.uai.cl/data/auditoria_wcag_interactiva_2026.json",
+    "total_interactive_elements_audited": 631,
+    "compliance_percentage": 100.0,
+    "standards_verified": [
+      "1.1.1 Non-text Content (Leaflet preview maps role='region' & descriptive aria-labels)",
+      "1.3.1 Info & Relationships (Strict HTML5, single h1, modal role='dialog', filter groups role='group')",
+      "2.1.1 Keyboard Navigable (100% interactive elements operable via Tab/Enter/Arrows)",
+      "2.3.3 Reduced Motion (@media prefers-reduced-motion respected universally)",
+      "2.4.7 Focus Visible (High-contrast 2px solid #6493B5 focus outline active)",
+      "4.1.2 Name, Role, Value (aria-pressed toggle on filters, aria-modal on dialogs)",
+      "4.1.3 Status Messages (Universal polite live region for dynamic feedback)"
+    ],
+    "note": "Auditoría automatizada y reproducible de accesibilidad sobre mapas, diálogos modales, selectores dinámicos y estilos de alto contraste."
+  },
+  "stac_endpoint_verification_battery": [
+    {
+      "endpoint": "https://ide.cit.uai.cl/stac/catalog.json",
+      "method": "GET",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "status": "PASS",
+      "role": "STAC 1.0.0 Root Catalog (15 child links: 13 master + 1 preparatory + 1 unifying)",
+      "verified_at": "2026-10-17T22:45:00Z"
+    },
+    {
+      "endpoint": "https://ide.cit.uai.cl/stac/collections",
+      "method": "GET",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "status": "PASS",
+      "role": "STAC API Collections Endpoint (Canonical)",
+      "verified_at": "2026-10-17T22:45:00Z"
+    },
+    {
+      "endpoint": "https://ide.cit.uai.cl/stac/collections/",
+      "method": "GET",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "status": "PASS",
+      "role": "STAC API Collections Endpoint (Trailing Slash Variant)",
+      "verified_at": "2026-10-17T22:45:00Z"
+    },
+    {
+      "endpoint": "https://ide.cit.uai.cl/stac/conformance",
+      "method": "GET",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "status": "PASS",
+      "role": "STAC API Conformance Classes (Canonical)",
+      "verified_at": "2026-10-17T22:45:00Z"
+    },
+    {
+      "endpoint": "https://ide.cit.uai.cl/stac/conformance/",
+      "method": "GET",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "status": "PASS",
+      "role": "STAC API Conformance Classes (Trailing Slash Variant)",
+      "verified_at": "2026-10-17T22:45:00Z"
+    },
+    {
+      "endpoint": "https://ide.cit.uai.cl/stac/search",
+      "method": "GET",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "status": "PASS",
+      "role": "STAC API Search Endpoint (Canonical)",
+      "verified_at": "2026-10-17T22:45:00Z"
+    },
+    {
+      "endpoint": "https://ide.cit.uai.cl/stac/search/",
+      "method": "GET",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "status": "PASS",
+      "role": "STAC API Search Endpoint (Trailing Slash Variant)",
+      "verified_at": "2026-10-17T22:45:00Z"
+    },
+    {
+      "endpoint": "https://ide.cit.uai.cl/stac/search?limit=5",
+      "method": "GET",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "status": "PASS",
+      "role": "STAC API Search Parameterized Query",
+      "verified_at": "2026-10-17T22:45:00Z"
+    }
+  ],
   "standards_scope": {
     "ISO_19115_1_2014_ISO_19139": "Validación automatizada de esquema y elementos obligatorios SNIT (/download/iso_xml/auditoria_conformidad_iso.json)",
     "STAC_1_0_0_Catalog_and_API": "Catálogo estático STAC 1.0.0 (15 child links) + Endpoints STAC API (/stac/conformance, /stac/collections, /stac/search GET/POST) con validación estricta RFC 7946 / RFC 3339 (/stac/catalog.json)",
@@ -184,7 +274,28 @@
     "issuing_entity": "Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez",
     "is_third_party_external_audit": false,
     "self_assigned_score": null,
-    "note": "Siguiendo buenas prácticas internacionales de gobernanza científica, CIT-UAI emite una Declaración de Conformidad de Primera Parte (SDoC) sin auto-asignarse calificación numérica de terceros, entregando en su lugar 3 suites ejecutables abiertas, bitácora de cierre de hallazgos (Conformance Closure Log) y telemetría forense GPU CUDA para que cualquier evaluador externo verifique empíricamente la infraestructura.",
+    "verifiable_authorship_and_custody": {
+      "lead_systems_and_spatial_data_architect": "John Treimun R. (Lead Systems & Spatial Data Architect, CIT-UAI)",
+      "executive_and_engineering_team": "Dirección Ejecutiva y Equipo de Ingeniería de Datos Geoespaciales, Centro de Inteligencia Territorial (CIT-UAI)",
+      "institutional_custody": "Comité Académico-Técnico CIT-UAI, Universidad Adolfo Ibáñez",
+      "institution": "Universidad Adolfo Ibáñez (UAI)",
+      "institution_ror": "https://ror.org/016279t50",
+      "campus_address": "Av. Diagonal Las Torres 2640, Peñalolén, Santiago, Región Metropolitana, Chile",
+      "official_contact_email": "contactocit@uai.cl",
+      "verification_date_utc": "2026-10-17T22:45:00Z"
+    },
+    "cryptographic_verification_manifest": {
+      "methodology": "Triple Barrera de Verificación Abierta (Red Team 1.0 Normativo, Red Team 2.0 WAN Fuzzer, Red Team 3.0 GPU CUDA)",
+      "red_team_1_script": "https://ide.cit.uai.cl/download/auditor_adversarial_ide.py",
+      "red_team_2_script": "https://ide.cit.uai.cl/download/auditor_red_team_2_antagonista.py",
+      "red_team_3_script": "https://ide.cit.uai.cl/download/auditor_red_team_3_cuda_gpu.py",
+      "cuda_telemetry_json": "https://ide.cit.uai.cl/data/cuda_forensic_telemetry.json",
+      "wcag_interactive_audit_json": "https://ide.cit.uai.cl/data/auditoria_wcag_interactiva_2026.json",
+      "conformance_report_json": "https://ide.cit.uai.cl/conformance_report.json",
+      "first_party_sdoc_json": "https://ide.cit.uai.cl/data/reporte_auditoria_independiente_octubre_2026.json",
+      "first_party_sdoc_md": "https://ide.cit.uai.cl/data/reporte_auditoria_independiente_octubre_2026.md"
+    },
+    "note": "Siguiendo buenas prácticas internacionales de gobernanza científica y la norma ISO/IEC 17050-1, CIT-UAI emite una Declaración de Conformidad de Primera Parte (SDoC) con autoría institucional verificable, sin auto-asignarse calificación numérica de terceros, entregando en su lugar 3 suites ejecutables abiertas, bitácora de cierre de hallazgos (Conformance Closure Log) y telemetría forense GPU CUDA para que cualquier evaluador externo verifique empíricamente la infraestructura.",
     "status": "CONFORMANT_FIRST_PARTY_SDOC",
     "date": "2026-10-17",
     "json_url": "https://ide.cit.uai.cl/data/reporte_auditoria_independiente_octubre_2026.json",

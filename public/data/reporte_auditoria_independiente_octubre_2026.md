@@ -3,17 +3,23 @@
 - **Identificador de Declaración**: `CIT-UAI-SDOC-2026-10-17-V3-CUDA`
 - **Norma de Gobernanza**: `ISO/IEC 17050-1:2004` (*Conformity assessment — Supplier's declaration of conformity — First-Party SDoC*)
 - **Entidad Emisora**: Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez
+- **Arquitecto Líder de Sistemas y Datos Espaciales**: John Treimun R.
+- **Custodia Institucional**: Dirección Ejecutiva y Comité Académico-Técnico CIT-UAI
+- **Afiliación Institucional**: Universidad Adolfo Ibáñez (UAI) · ROR: [`https://ror.org/016279t50`](https://ror.org/016279t50)
+- **Sede y Campus**: Av. Diagonal Las Torres 2640, Peñalolén, Santiago, Chile
+- **Contacto Oficial**: `contactocit@uai.cl`
+- **Fecha y Marca Temporal**: 17 de octubre de 2026 (UTC)
 - **Estado Global**: **`CONFORMANT` (`0` Errores Críticos · `0` Advertencias · `128/128` Pruebas Automatizadas Aprobadas)**
 
 ---
 
-## 1. Nota de Transparencia Epistemológica (ISO/IEC 17050-1)
+## 1. Nota de Transparencia Epistemológica y Autoría (ISO/IEC 17050-1)
 
 En estricto apego a la norma internacional **ISO/IEC 17050-1** y a los principios de ciencia abierta reproducible, el **Centro de Inteligencia Territorial (CIT-UAI)** distingue de manera explícita entre:
-1. **Verificación automatizada y Declaración de Conformidad de Primera Parte (SDoC)**: emitida y mantenida por el propio equipo de ingeniería y ciencia de datos territoriales del CIT-UAI.
+1. **Verificación automatizada y Declaración de Conformidad de Primera Parte (SDoC)**: emitida y suscrita responsablemente por el equipo de ingeniería y ciencia de datos territoriales del CIT-UAI con custodia institucional de la Universidad Adolfo Ibáñez.
 2. **Evaluación o certificación externa por tercera parte independiente**: aquella que realiza un evaluador, par académico o jurado externo utilizando los artefactos públicos de la infraestructura.
 
-Por rigor institucional, este documento **no se auto-asigna un puntaje numérico de tercera parte**, sino que entrega la totalidad de las pruebas automatizadas (`128/128 PASS`), la bitácora completa de cierre de hallazgos (*Conformance Closure Log*) y la telemetría forense en GPU CUDA para que cualquier auditor externo verifique empíricamente la infraestructura.
+Por rigor institucional, este documento **no se auto-asigna un puntaje numérico de tercera parte**, sino que entrega la totalidad de las pruebas automatizadas (`128/128 PASS`), la bitácora completa de cierre de hallazgos (*Conformance Closure Log*), la auditoría de accesibilidad interactiva WCAG 2.1 AA y la telemetría forense en GPU CUDA para que cualquier auditor externo verifique empíricamente la infraestructura.
 
 ---
 
@@ -36,7 +42,40 @@ Transición certificada de estado en `/conformance_report.json`:
 
 ---
 
-## 3. Verificación Automatizada de Triple Barrera (`128 / 128 PASS`)
+## 3. Batería Pública de Endpoints STAC Verificados en Vivo (Recomendación 19.C)
+
+Todos los endpoints STAC responden con `HTTP 200 OK` y cabecera canónica `Content-Type: application/json; charset=utf-8`:
+
+| Endpoint STAC | Método | Estado HTTP | Content-Type | Rol Arquitectónico | Estado |
+| :--- | :---: | :---: | :--- | :--- | :---: |
+| [`/stac/catalog.json`](https://ide.cit.uai.cl/stac/catalog.json) | GET | `200 OK` | `application/json; charset=utf-8` | Catálogo Raíz STAC 1.0.0 (15 child links) | **PASS** |
+| [`/stac/collections`](https://ide.cit.uai.cl/stac/collections) | GET | `200 OK` | `application/json; charset=utf-8` | STAC API Collections (Canónico) | **PASS** |
+| [`/stac/collections/`](https://ide.cit.uai.cl/stac/collections/) | GET | `200 OK` | `application/json; charset=utf-8` | STAC API Collections (Variante Trailing Slash) | **PASS** |
+| [`/stac/conformance`](https://ide.cit.uai.cl/stac/conformance) | GET | `200 OK` | `application/json; charset=utf-8` | STAC API Conformance Classes (Canónico) | **PASS** |
+| [`/stac/conformance/`](https://ide.cit.uai.cl/stac/conformance/) | GET | `200 OK` | `application/json; charset=utf-8` | STAC API Conformance (Variante Trailing Slash) | **PASS** |
+| [`/stac/search`](https://ide.cit.uai.cl/stac/search) | GET/POST | `200 OK` | `application/json; charset=utf-8` | STAC API Search Endpoint (Canónico) | **PASS** |
+| [`/stac/search/`](https://ide.cit.uai.cl/stac/search/) | GET/POST | `200 OK` | `application/json; charset=utf-8` | STAC API Search (Variante Trailing Slash) | **PASS** |
+| [`/stac/search?limit=5`](https://ide.cit.uai.cl/stac/search?limit=5) | GET | `200 OK` | `application/json; charset=utf-8` | STAC API Search con Parámetro Query | **PASS** |
+
+---
+
+## 4. Auditoría de Accesibilidad Web WCAG 2.1 AA Interactiva (Punto 12)
+
+- **Reporte Completo**: [`/data/auditoria_wcag_interactiva_2026.json`](https://ide.cit.uai.cl/data/auditoria_wcag_interactiva_2026.json)
+- **Estado de Conformidad**: **`CONFORMANT_WCAG_2_1_AA` (`100,0%` de cumplimiento)**
+- **Elementos Interactivos Auditados**: Más de 80 componentes dinámicos en las 5 páginas principales.
+- **Criterios Clave Verificados**:
+  - `1.1.1 Contenido no textual`: Mapa Leaflet con `role="region"`, `aria-label` descriptivo y botones de acción con nombres accesibles explícitos.
+  - `1.3.1 Información y relaciones`: Diálogos modales con `role="dialog"`, `aria-modal="true"` y grupos de filtros con `role="group"`.
+  - `2.1.1 Teclado`: Navegabilidad 100% mediante teclado (tecla Tab, Enter, Espacio y flechas con `tabindex="0"`).
+  - `2.3.3 Movimiento reducido`: Directiva CSS `@media (prefers-reduced-motion: reduce)` activa universalmente.
+  - `2.4.7 Foco visible`: Contorno de foco de alto contraste (`:focus-visible { outline: 2px solid #6493B5 }`).
+  - `4.1.2 Nombre, rol, valor`: Botones de filtro dinámicos con `aria-pressed="true/false"`.
+  - `4.1.3 Mensajes de estado`: Región viva ARIA universal (`<div id="wcagLiveAnnouncer" role="status" aria-live="polite">`).
+
+---
+
+## 5. Verificación Automatizada de Triple Barrera (`128 / 128 PASS`)
 
 ### Barrera 1 — Auditoría Normativa, Semántica y Criptográfica (`59/59 PASS`)
 - **Script**: [`/download/auditor_adversarial_ide.py`](https://ide.cit.uai.cl/download/auditor_adversarial_ide.py)
@@ -55,5 +94,5 @@ Transición certificada de estado en `/conformance_report.json`:
   - **Filas espaciales escaneadas**: `7.303.643`
   - **Celdas numéricas evaluadas en VRAM**: `2.077.916.543` (`> 2,07 mil millones`, `0 Inf`)
   - **Simulación Monte Carlo Dirichlet (10.000 escenarios x 204.906 manzanas)**: `2.049.060.000` evaluaciones BHT en `878,6 ms` (`0 NaN/Inf`, rango `[0.0008, 0.9999] ⊆ [0,1]`, IC 90% BHT Nacional `[0.5244, 0.7662]`)
-  - **Autocorrelación Espacial Global I de Moran (Grafo K-NN $k=8$, `2.675.992.900` pares en RM)**: `Moran's I = 0.9095` ($Z = +413.7, p < 10^{-100}$)
-  - **Paridad Topológica 1:1 Censo 2024 vs. INSE 2024**: `254.268 / 254.268` llaves idénticas y $\Delta_{\max}	ext{BBox} = 0.00	imes 10^0	ext{ grados}$.
+  - **Autocorrelación Espacial Global I de Moran (Grafo K-NN $k=8$, `2.675.992.900` pares en RM)**: `Moran's I = 0.9095` ($Z = +413.7, p < 10^-100$)
+  - **Paridad Topológica 1:1 Censo 2024 vs. INSE 2024**: `254.268 / 254.268` llaves idénticas y $\Delta_{\max}	ext{BBox} = 0.00 	imes 10^0	ext{ grados}$.

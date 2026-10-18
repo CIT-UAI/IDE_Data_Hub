@@ -297,26 +297,26 @@ def generate_red_ides_html(catalog_data: Dict[str, Any]) -> str:
                 <!-- Buscador Dinámico -->
                 <div class="relative flex-1">
                     <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 stroke-[1.5]"></i>
-                    <input type="text" id="searchInput" oninput="filterIdes()" placeholder="Buscar geoportal por nombre, ministerio, temática o insumos (ej: INE, glaciares, vialidad, energía)..." 
+                    <input type="text" id="searchInput" oninput="filterIdes()" aria-label="Buscar geoportal por nombre, ministerio, temática o insumos" placeholder="Buscar geoportal por nombre, ministerio, temática o insumos (ej: INE, glaciares, vialidad, energía)..." 
                            class="w-full pl-10 pr-10 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition" />
-                    <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 p-1 rounded-md transition">
+                    <button id="clearSearchBtn" onclick="clearSearch()" type="button" aria-label="Limpiar búsqueda" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 p-1 rounded-md transition cursor-pointer">
                         <i data-lucide="x" class="w-3.5 h-3.5"></i>
                     </button>
                 </div>
 
                 <!-- Contador de resultados -->
-                <div class="text-xs text-slate-500 shrink-0 font-medium self-end md:self-center">
+                <div class="text-xs text-slate-500 shrink-0 font-medium self-end md:self-center" aria-live="polite">
                     Mostrando <strong id="resultsCount" class="text-slate-900 font-mono">{num_ides}</strong> de {num_ides} geoportales
                 </div>
             </div>
 
             <!-- Filtros Temáticos por Categoría -->
-            <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar pt-1 border-t border-slate-100" id="ideCategoryFilters">
-                <button onclick="setCategoryFilter('all', this)" class="ide-cat-btn active text-xs font-bold px-3 py-1.5 rounded-lg bg-slate-900 text-white transition cursor-pointer whitespace-nowrap shadow-xs">Todas ({num_ides})</button>
-                <button onclick="setCategoryFilter('Nacional', this)" class="ide-cat-btn text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition cursor-pointer whitespace-nowrap">Nacionales y multisectoriales</button>
-                <button onclick="setCategoryFilter('Urbano', this)" class="ide-cat-btn text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition cursor-pointer whitespace-nowrap">Urbano, vivienda y académico</button>
-                <button onclick="setCategoryFilter('Medio Ambiente', this)" class="ide-cat-btn text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition cursor-pointer whitespace-nowrap">Medio ambiente, agua y recursos</button>
-                <button onclick="setCategoryFilter('Infraestructura', this)" class="ide-cat-btn text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition cursor-pointer whitespace-nowrap">Infraestructura, energía y regiones</button>
+            <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar pt-1 border-t border-slate-100" id="ideCategoryFilters" role="group" aria-label="Filtros temáticos de geoportales">
+                <button type="button" onclick="setCategoryFilter('all', this)" aria-pressed="true" class="ide-cat-btn active text-xs font-bold px-3 py-1.5 rounded-lg bg-slate-900 text-white transition cursor-pointer whitespace-nowrap shadow-xs">Todas ({num_ides})</button>
+                <button type="button" onclick="setCategoryFilter('Nacional', this)" aria-pressed="false" class="ide-cat-btn text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition cursor-pointer whitespace-nowrap">Nacionales y multisectoriales</button>
+                <button type="button" onclick="setCategoryFilter('Urbano', this)" aria-pressed="false" class="ide-cat-btn text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition cursor-pointer whitespace-nowrap">Urbano, vivienda y académico</button>
+                <button type="button" onclick="setCategoryFilter('Medio Ambiente', this)" aria-pressed="false" class="ide-cat-btn text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition cursor-pointer whitespace-nowrap">Medio ambiente, agua y recursos</button>
+                <button type="button" onclick="setCategoryFilter('Infraestructura', this)" aria-pressed="false" class="ide-cat-btn text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition cursor-pointer whitespace-nowrap">Infraestructura, energía y regiones</button>
             </div>
 
         </div>
@@ -480,9 +480,11 @@ def generate_red_ides_html(catalog_data: Dict[str, Any]) -> str:
             document.querySelectorAll('.ide-cat-btn').forEach(b => {{
                 b.classList.remove('active', 'bg-slate-900', 'text-white', 'shadow-xs', 'font-bold');
                 b.classList.add('bg-slate-100', 'text-slate-700', 'font-medium');
+                b.setAttribute('aria-pressed', 'false');
             }});
             btn.classList.remove('bg-slate-100', 'text-slate-700', 'font-medium');
             btn.classList.add('active', 'bg-slate-900', 'text-white', 'shadow-xs', 'font-bold');
+            btn.setAttribute('aria-pressed', 'true');
             filterIdes();
         }}
 

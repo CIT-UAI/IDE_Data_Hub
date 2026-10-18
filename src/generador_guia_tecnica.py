@@ -556,7 +556,7 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
                                     <td class="px-3.5 py-3 font-mono text-slate-600">GeoParquet / GPKG / SHP / CSV</td>
                                     <td class="px-3.5 py-3 text-right space-x-2">
                                         <a href="https://ide.cit.uai.cl/descargas" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
-                                        <button onclick="copyText('https://ide.cit.uai.cl/descargas')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
+                                        <button onclick="copyText('https://ide.cit.uai.cl/descargas')" type="button" aria-label="Copiar URL del centro de descargas" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
@@ -565,15 +565,15 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
                                     <td class="px-3.5 py-3 font-mono text-slate-600">STAC JSON 1.0.0</td>
                                     <td class="px-3.5 py-3 text-right space-x-2">
                                         <a href="https://ide.cit.uai.cl/stac/catalog.json" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
-                                        <button onclick="copyText('https://ide.cit.uai.cl/stac/catalog.json')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
+                                        <button onclick="copyText('https://ide.cit.uai.cl/stac/catalog.json')" type="button" aria-label="Copiar URL del catálogo raíz STAC" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
                                     <td class="px-3.5 py-3 font-semibold text-slate-900">STAC API Endpoints (Conformance, Collections, Search)</td>
                                     <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] space-y-1">
-                                        <div><a href="https://ide.cit.uai.cl/stac/conformance" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/stac/conformance</a></div>
-                                        <div><a href="https://ide.cit.uai.cl/stac/collections" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/stac/collections</a></div>
-                                        <div><a href="https://ide.cit.uai.cl/stac/search?limit=5" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/stac/search?limit=5</a></div>
+                                        <div><a href="https://ide.cit.uai.cl/stac/conformance" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/stac/conformance</a> · <a href="https://ide.cit.uai.cl/stac/conformance/" target="_blank" rel="noopener noreferrer" class="underline hover:text-black font-mono">/conformance/</a></div>
+                                        <div><a href="https://ide.cit.uai.cl/stac/collections" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/stac/collections</a> · <a href="https://ide.cit.uai.cl/stac/collections/" target="_blank" rel="noopener noreferrer" class="underline hover:text-black font-mono">/collections/</a></div>
+                                        <div><a href="https://ide.cit.uai.cl/stac/search" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/stac/search</a> · <a href="https://ide.cit.uai.cl/stac/search/" target="_blank" rel="noopener noreferrer" class="underline hover:text-black font-mono">/search/</a> · <a href="https://ide.cit.uai.cl/stac/search?limit=5" target="_blank" rel="noopener noreferrer" class="underline hover:text-black font-bold">?limit=5</a></div>
                                     </td>
                                     <td class="px-3.5 py-3 font-mono text-slate-600">STAC API 1.0.0</td>
                                     <td class="px-3.5 py-3 text-right space-x-2">
@@ -586,7 +586,7 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
                                     <td class="px-3.5 py-3 font-mono text-slate-600">JSON-LD</td>
                                     <td class="px-3.5 py-3 text-right space-x-2">
                                         <a href="https://ide.cit.uai.cl/dcat.json" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
-                                        <button onclick="copyText('https://ide.cit.uai.cl/dcat.json')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
+                                        <button onclick="copyText('https://ide.cit.uai.cl/dcat.json')" type="button" aria-label="Copiar URL del catálogo DCAT-AP" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
@@ -595,7 +595,7 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
                                     <td class="px-3.5 py-3 font-mono text-slate-600">JSON Telemetría / QA</td>
                                     <td class="px-3.5 py-3 text-right space-x-2">
                                         <a href="https://ide.cit.uai.cl/conformance_report.json" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
-                                        <button onclick="copyText('https://ide.cit.uai.cl/conformance_report.json')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
+                                        <button onclick="copyText('https://ide.cit.uai.cl/conformance_report.json')" type="button" aria-label="Copiar URL del reporte de conformidad" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
@@ -610,12 +610,21 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
+                                    <td class="px-3.5 py-3 font-semibold text-slate-900">Auditoría de Accesibilidad Web WCAG 2.1 AA (Interactiva y Mapas)</td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/data/auditoria_wcag_interactiva_2026.json" target="_blank" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/data/auditoria_wcag_interactiva_2026.json</a></td>
+                                    <td class="px-3.5 py-3 font-mono text-slate-600">JSON Auditoría WCAG</td>
+                                    <td class="px-3.5 py-3 text-right space-x-2">
+                                        <a href="https://ide.cit.uai.cl/data/auditoria_wcag_interactiva_2026.json" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
+                                        <button onclick="copyText('https://ide.cit.uai.cl/data/auditoria_wcag_interactiva_2026.json')" type="button" aria-label="Copiar URL de auditoría WCAG" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition">
                                     <td class="px-3.5 py-3 font-semibold text-slate-900">Ficha Maestra MBHT 2017 (Gold Standard)</td>
                                     <td class="px-3.5 py-3 font-mono text-slate-700 text-[11px] break-all"><a href="https://ide.cit.uai.cl/ficha-mbht-2017" rel="noopener noreferrer" class="underline hover:text-black">https://ide.cit.uai.cl/ficha-mbht-2017</a></td>
                                     <td class="px-3.5 py-3 font-mono text-slate-600">HTML / 42 Columnas</td>
                                     <td class="px-3.5 py-3 text-right space-x-2">
                                         <a href="https://ide.cit.uai.cl/ficha-mbht-2017" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
-                                        <button onclick="copyText('https://ide.cit.uai.cl/ficha-mbht-2017')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
+                                        <button onclick="copyText('https://ide.cit.uai.cl/ficha-mbht-2017')" type="button" aria-label="Copiar URL de ficha técnica" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
@@ -624,7 +633,7 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
                                     <td class="px-3.5 py-3 font-mono text-slate-600">REST JSON / MVT</td>
                                     <td class="px-3.5 py-3 text-right space-x-2">
                                         <a href="https://engine.matrizbht.cl" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
-                                        <button onclick="copyText('https://engine.matrizbht.cl')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
+                                        <button onclick="copyText('https://engine.matrizbht.cl')" type="button" aria-label="Copiar URL de API de simulación" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">
@@ -633,7 +642,7 @@ def generate_guia_tecnica_html(catalog_data: Dict[str, Any]) -> str:
                                     <td class="px-3.5 py-3 font-mono text-slate-600">19 geoportales</td>
                                     <td class="px-3.5 py-3 text-right space-x-2">
                                         <a href="https://ide.cit.uai.cl/red-ides" rel="noopener noreferrer" class="font-bold text-slate-700 hover:text-black underline">Abrir</a>
-                                        <button onclick="copyText('https://ide.cit.uai.cl/red-ides')" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
+                                        <button onclick="copyText('https://ide.cit.uai.cl/red-ides')" type="button" aria-label="Copiar URL de red de IDEs" class="text-slate-500 hover:text-black cursor-pointer underline">Copiar</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 transition">

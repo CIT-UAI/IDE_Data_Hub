@@ -3132,7 +3132,27 @@ def get_canonical_header_html(active_tab: str = "catalogo") -> str:
     desktop_tabs_html = "\n".join(desktop_nav_items)
     mobile_tabs_html = "\n".join(mobile_nav_items)
 
-    return f"""    <!-- SKIP-TO-MAIN LINK (Accesibilidad WCAG 2.1 AA) -->
+    return f"""    <!-- REGLAS DE ACCESIBILIDAD UNIVERSAL WCAG 2.1 AA (Foco de Teclado, Reduced Motion y Lectores de Pantalla) -->
+    <style id="wcag-2-1-aa-global-rules">
+        @media (prefers-reduced-motion: reduce) {{
+            *, *::before, *::after {{
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }}
+        }}
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, [tabindex="0"]:focus-visible {{
+            outline: 2px solid #6493B5 !important;
+            outline-offset: 2px !important;
+        }}
+        [aria-pressed="true"] {{
+            box-shadow: 0 0 0 2px #0f172a;
+        }}
+    </style>
+    <div id="wcagLiveAnnouncer" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+    <!-- SKIP-TO-MAIN LINK (Accesibilidad WCAG 2.1 AA) -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#6493B5] focus:text-white focus:rounded-lg focus:font-bold focus:shadow-md focus:ring-2 focus:ring-black">
         Ir al contenido principal
     </a>
@@ -3149,7 +3169,7 @@ def get_canonical_header_html(active_tab: str = "catalogo") -> str:
                     </span>
                     <span class="text-slate-300 font-normal leading-tight text-[10.5px] sm:text-xs">
                         <span class="inline sm:hidden">Infraestructura oficial de datos abiertos</span>
-                        <span class="hidden sm:inline">Infraestructura de Datos Espaciales de Acceso Abierto y Reproducibilidad Científica (Versión 2026.1).</span>
+                        <span class="hidden sm:inline">Infraestructura de Datos Espaciales de Acceso Abierto y Reproducibilidad Científica (Versión 2026.2).</span>
                     </span>
                 </div>
                 <div class="hidden sm:flex items-center gap-2 text-slate-400 text-[11px] shrink-0 font-normal">

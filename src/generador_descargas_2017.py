@@ -407,7 +407,7 @@ def generate_descargas_2017_html(catalog_data: Dict[str, Any], descargas_2017_da
                                 <i data-lucide="book-open" class="w-3.5 h-3.5 text-slate-600"></i>
                                 <span>Ver guía técnica</span>
                             </a>
-                            <button onclick="toggleCopilot(true)" class="text-xs font-semibold text-uai-gold hover:text-white bg-slate-900 hover:bg-black px-3 py-2 rounded-lg transition flex items-center space-x-1.5 shadow-xs cursor-pointer">
+                            <button onclick="toggleCopilot(true)" type="button" aria-label="Abrir asistente inteligente Copiloto CIT" class="text-xs font-semibold text-uai-gold hover:text-white bg-slate-900 hover:bg-black px-3 py-2 rounded-lg transition flex items-center space-x-1.5 shadow-xs cursor-pointer">
                                 <i data-lucide="sparkles" class="w-3.5 h-3.5 text-uai-gold"></i>
                                 <span>Consultar al Copiloto</span>
                             </button>
@@ -512,11 +512,11 @@ def generate_descargas_2017_html(catalog_data: Dict[str, Any], descargas_2017_da
                             <i data-lucide="hash" class="w-4 h-4 text-slate-600 shrink-0"></i>
                             <div class="overflow-hidden">
                                 <span class="font-bold text-slate-800 block text-[11px]">Integridad criptográfica (SHA-256 Parquet):</span>
-                                <input id="inputDescargaSha256" type="text" readonly value="4a123b83ea1cefa18661c25ea40b9c3fc2a319cf6a45abbbd72a2cb30c069f2a" class="font-mono text-[11px] text-slate-600 bg-transparent border-none p-0 w-full sm:w-96 outline-none select-all truncate" />
+                                <input id="inputDescargaSha256" type="text" readonly aria-label="Hash criptográfico SHA-256 del archivo seleccionado" value="4a123b83ea1cefa18661c25ea40b9c3fc2a319cf6a45abbbd72a2cb30c069f2a" class="font-mono text-[11px] text-slate-600 bg-transparent border-none p-0 w-full sm:w-96 outline-none select-all truncate" />
                             </div>
                         </div>
                         <div class="flex items-center space-x-2 shrink-0">
-                            <button onclick="copyDescargaHash()" class="text-xs font-semibold text-slate-700 hover:text-black bg-white hover:bg-slate-200 border border-slate-300 px-3 py-1.5 rounded-lg transition flex items-center space-x-1 cursor-pointer">
+                            <button onclick="copyDescargaHash()" type="button" aria-label="Copiar hash SHA-256 al portapapeles" class="text-xs font-semibold text-slate-700 hover:text-black bg-white hover:bg-slate-200 border border-slate-300 px-3 py-1.5 rounded-lg transition flex items-center space-x-1 cursor-pointer">
                                 <i data-lucide="copy" class="w-3 h-3 text-slate-600"></i>
                                 <span>Copiar hash</span>
                             </button>
@@ -539,7 +539,7 @@ def generate_descargas_2017_html(catalog_data: Dict[str, Any], descargas_2017_da
 
                     <!-- Verificador de Integridad de Archivos en el Navegador (Web Crypto API SHA-256) -->
                     <div class="bg-white border-2 border-dashed border-slate-300 hover:border-[#6493B5] rounded-xl p-4 sm:p-5 mb-6 transition text-center" id="shaDropZone">
-                        <input type="file" id="shaFileInput" class="hidden" onchange="handleShaFileSelect(event)" />
+                        <input type="file" id="shaFileInput" aria-label="Seleccionar archivo local para verificar integridad criptográfica" class="hidden" onchange="handleShaFileSelect(event)" />
                         <div class="flex flex-col items-center justify-center space-y-2">
                             <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600">
                                 <i data-lucide="shield-check" class="w-5 h-5 text-[#6493B5]"></i>
@@ -562,18 +562,18 @@ def generate_descargas_2017_html(catalog_data: Dict[str, Any], descargas_2017_da
                             <div class="flex items-center space-x-3">
                                 <span class="text-xs font-bold text-uai-gold uppercase tracking-wider">Lectura directa en script</span>
                                 <div class="flex items-center space-x-2 text-xs">
-                                    <button id="btnLangPython" onclick="setSnippetLang('python')" class="text-[11px] font-bold text-slate-900 underline cursor-pointer">Python (GeoPandas)</button>
+                                    <button id="btnLangPython" type="button" aria-label="Ver ejemplo de código en Python" onclick="setSnippetLang('python')" class="text-[11px] font-bold text-slate-900 underline cursor-pointer">Python (GeoPandas)</button>
                                     <span class="text-slate-600">|</span>
-                                    <button id="btnLangR" onclick="setSnippetLang('r')" class="text-[11px] font-medium text-slate-400 hover:text-slate-900 cursor-pointer">R (sf / arrow)</button>
+                                    <button id="btnLangR" type="button" aria-label="Ver ejemplo de código en R" onclick="setSnippetLang('r')" class="text-[11px] font-medium text-slate-400 hover:text-slate-900 cursor-pointer">R (sf / arrow)</button>
                                 </div>
                             </div>
-                            <button onclick="copyDescargaSnippet()" class="text-[11px] font-medium text-slate-300 hover:text-white flex items-center space-x-1 cursor-pointer">
+                            <button onclick="copyDescargaSnippet()" type="button" aria-label="Copiar código de lectura al portapapeles" class="text-[11px] font-medium text-slate-300 hover:text-white flex items-center space-x-1 cursor-pointer">
                                 <i data-lucide="copy" class="w-3 h-3"></i>
                                 <span>Copiar código</span>
                             </button>
                         </div>
                         <div class="relative">
-                            <input id="inputDescargaSnippet" type="text" readonly value="import geopandas as gpd; gdf = gpd.read_parquet('download/...')" class="w-full bg-black/50 border border-slate-800 rounded-lg px-3 py-2 text-xs font-mono text-slate-200 outline-none select-all" />
+                            <input id="inputDescargaSnippet" type="text" readonly aria-label="Código de ejemplo para cargar datos en Python o R" value="import geopandas as gpd; gdf = gpd.read_parquet('download/...')" class="w-full bg-black/50 border border-slate-800 rounded-lg px-3 py-2 text-xs font-mono text-slate-200 outline-none select-all" />
                         </div>
                         <p id="descargaComunaNoteText" class="text-[11px] text-slate-400 mt-2 leading-relaxed">
                             El paquete descargable contiene la cartografía completa del territorio seleccionado con atributos estandarizados. Puedes filtrarlo por comuna directamente en tu software SIG o script de análisis.

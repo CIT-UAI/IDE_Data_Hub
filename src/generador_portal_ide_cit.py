@@ -299,13 +299,13 @@ class IDEPortalBuilder:
                     <span class="text-[11px] text-slate-400">Corte {capa.get('fecha_corte', '2017')}{size_meta}</span>
                 </div>
                 <div class="flex items-center space-x-2">
-                    <button onclick="openLayerModal('{capa_id}')" class="flex-1 bg-slate-900 hover:bg-black active:bg-slate-800 text-white text-xs sm:text-sm font-semibold py-2 px-3 rounded-lg transition flex items-center justify-center space-x-1 shadow-xs cursor-pointer">
+                    <button onclick="openLayerModal('{capa_id}')" type="button" class="flex-1 bg-slate-900 hover:bg-black active:bg-slate-800 text-white text-xs sm:text-sm font-semibold py-2 px-3 rounded-lg transition flex items-center justify-center space-x-1 shadow-xs cursor-pointer">
                         <span>Ficha y descarga</span>
                     </button>
-                    <button onclick="openLayerModal('{capa_id}', true)" title="Ver referencia espacial en mapa" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
+                    <button onclick="openLayerModal('{capa_id}', true)" title="Ver referencia espacial en mapa" aria-label="Ver referencia espacial en mapa para {capa.get('titulo')}" type="button" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
                         <i data-lucide="map" class="w-4 h-4 stroke-[1.5]"></i>
                     </button>
-                    <button onclick="quickCopyQGIS('{capa.get('tile_source')}')" title="Copiar conector para QGIS" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
+                    <button onclick="quickCopyQGIS('{capa.get('tile_source')}')" title="Copiar conector para QGIS" aria-label="Copiar conector para QGIS de {capa.get('titulo')}" type="button" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
                         <i data-lucide="link" class="w-4 h-4 stroke-[1.5]"></i>
                     </button>
                 </div>
@@ -366,13 +366,13 @@ class IDEPortalBuilder:
         canonical_footer = get_canonical_footer_html(version)
 
         matrix_buttons = [
-            f'<button data-filter="all" class="filter-btn active text-xs sm:text-sm font-bold px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-md transition bg-slate-900 text-white shadow-xs shrink-0 sm:shrink whitespace-nowrap">Todas ({num_capas})</button>'
+            f'<button type="button" data-filter="all" aria-pressed="true" class="filter-btn active text-xs sm:text-sm font-bold px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-md transition bg-slate-900 text-white shadow-xs shrink-0 sm:shrink whitespace-nowrap">Todas ({num_capas})</button>'
         ]
         for m in catalog_data.get("matrices", []):
             m_id = m.get("id")
             m_nom = m.get("nombre", m_id.upper())
             matrix_buttons.append(
-                f'<button data-filter="{m_id}" class="filter-btn text-xs sm:text-sm font-medium px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-md transition text-slate-700 hover:text-slate-900 hover:bg-slate-200 shrink-0 sm:shrink whitespace-nowrap">{m_nom}</button>'
+                f'<button type="button" data-filter="{m_id}" aria-pressed="false" class="filter-btn text-xs sm:text-sm font-medium px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-md transition text-slate-700 hover:text-slate-900 hover:bg-slate-200 shrink-0 sm:shrink whitespace-nowrap">{m_nom}</button>'
             )
         matrix_filters_html = "\n                        ".join(matrix_buttons)
 
@@ -613,16 +613,16 @@ class IDEPortalBuilder:
                 </div>
             </div>
 
-            <!-- Buscador Rápido Móvil/Escritorio (Amplitud Optimizada) -->
-            <div class="max-w-3xl mx-auto relative">
+            <!-- Buscador Rápido Móvil/Escritorio (Amplitud Optimizada y Accesibilidad WCAG 2.1 AA) -->
+            <div class="max-w-3xl mx-auto relative" role="search" aria-label="Búsqueda en catálogo de datos espaciales">
                 <div class="relative flex items-center rounded-lg overflow-hidden bg-slate-50 border border-slate-300 focus-within:border-slate-800 focus-within:bg-white transition shadow-xs">
-                    <i data-lucide="search" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 absolute left-3 sm:left-4 stroke-[1.5]"></i>
-                    <input type="text" id="searchInput" placeholder="Buscar por indicador (ISAL, IAV, INSE), cobertura o escala..." 
+                    <i data-lucide="search" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 absolute left-3 sm:left-4 stroke-[1.5]" aria-hidden="true"></i>
+                    <input type="text" id="searchInput" aria-label="Buscar cobertura, indicador o escala en el catálogo" placeholder="Buscar por indicador (ISAL, IAV, INSE), cobertura o escala..." 
                            class="w-full pl-9 sm:pl-11 pr-20 sm:pr-28 py-2.5 sm:py-3 bg-transparent text-slate-800 text-xs sm:text-base focus:outline-none font-medium placeholder-slate-400" />
-                    <button id="btnSearchClear" class="hidden absolute right-16 sm:right-24 text-xs text-slate-400 hover:text-slate-700 px-2 py-1">
+                    <button id="btnSearchClear" type="button" aria-label="Limpiar búsqueda" class="hidden absolute right-16 sm:right-24 text-xs text-slate-400 hover:text-slate-700 px-2 py-1">
                         Limpiar
                     </button>
-                    <button class="absolute right-1 sm:right-2 bg-slate-900 hover:bg-black active:bg-slate-800 text-white text-xs sm:text-sm font-medium px-3 py-1.5 sm:px-4 sm:py-2 rounded transition">
+                    <button type="button" aria-label="Ejecutar búsqueda en catálogo" onclick="document.getElementById('searchInput') && document.getElementById('searchInput').focus()" class="absolute right-1 sm:right-2 bg-slate-900 hover:bg-black active:bg-slate-800 text-white text-xs sm:text-sm font-medium px-3 py-1.5 sm:px-4 sm:py-2 rounded transition">
                         Buscar
                     </button>
                 </div>
@@ -766,11 +766,11 @@ class IDEPortalBuilder:
                 
                 <!-- Filtros de Matriz (Columna 1 a 7) -->
                 <div class="lg:col-span-7">
-                    <div class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5 sm:mb-2 flex items-center space-x-1.5">
-                        <i data-lucide="layers" class="w-3.5 h-3.5 text-slate-500 stroke-[1.5]"></i>
+                    <div id="labelMatrixFilters" class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5 sm:mb-2 flex items-center space-x-1.5">
+                        <i data-lucide="layers" class="w-3.5 h-3.5 text-slate-500 stroke-[1.5]" aria-hidden="true"></i>
                         <span>Matriz territorial</span>
                     </div>
-                    <div class="bg-slate-100 p-1 rounded-lg flex overflow-x-auto sm:flex-wrap gap-1 sm:gap-1.5 border border-slate-200 no-scrollbar" id="matrixFilters">
+                    <div role="group" aria-labelledby="labelMatrixFilters" class="bg-slate-100 p-1 rounded-lg flex overflow-x-auto sm:flex-wrap gap-1 sm:gap-1.5 border border-slate-200 no-scrollbar" id="matrixFilters">
                         {matrix_filters_html}
                     </div>
                 </div>
@@ -778,27 +778,27 @@ class IDEPortalBuilder:
                 <!-- Filtros de Dimensión (Columna 8 a 12) -->
                 <div class="lg:col-span-5">
                     <div class="flex items-center justify-between mb-1.5 sm:mb-2">
-                        <div class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center space-x-1.5">
-                            <i data-lucide="compass" class="w-3.5 h-3.5 text-slate-500 stroke-[1.5]"></i>
+                        <div id="labelAmbitoFilters" class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center space-x-1.5">
+                            <i data-lucide="compass" class="w-3.5 h-3.5 text-slate-500 stroke-[1.5]" aria-hidden="true"></i>
                             <span>Dimensión de soberanía</span>
                         </div>
                         <!-- Botón de Exportación Rápida -->
-                        <button onclick="exportCatalogJson()" title="Descargar catálogo completo en formato JSON" class="text-[11px] text-slate-500 hover:text-slate-900 flex items-center space-x-1 font-medium cursor-pointer">
-                            <i data-lucide="download" class="w-3 h-3"></i>
+                        <button type="button" onclick="exportCatalogJson()" aria-label="Descargar catálogo completo en formato JSON" title="Descargar catálogo completo en formato JSON" class="text-[11px] text-slate-500 hover:text-slate-900 flex items-center space-x-1 font-medium cursor-pointer">
+                            <i data-lucide="download" class="w-3 h-3" aria-hidden="true"></i>
                             <span class="hidden sm:inline">Exportar JSON</span>
                         </button>
                     </div>
-                    <div class="bg-slate-100 p-1 rounded-lg flex overflow-x-auto sm:flex-wrap gap-1 sm:gap-1.5 border border-slate-200 no-scrollbar" id="ambitoFilters">
-                        <button data-ambito="all" class="ambito-btn active text-xs sm:text-sm font-bold px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-md transition bg-slate-900 text-white shadow-xs shrink-0 sm:shrink whitespace-nowrap">
+                    <div role="group" aria-labelledby="labelAmbitoFilters" class="bg-slate-100 p-1 rounded-lg flex overflow-x-auto sm:flex-wrap gap-1 sm:gap-1.5 border border-slate-200 no-scrollbar" id="ambitoFilters">
+                        <button type="button" data-ambito="all" aria-pressed="true" class="ambito-btn active text-xs sm:text-sm font-bold px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-md transition bg-slate-900 text-white shadow-xs shrink-0 sm:shrink whitespace-nowrap">
                             Todas
                         </button>
-                        <button data-ambito="tierra" class="ambito-btn text-xs sm:text-sm font-medium px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-md transition text-slate-700 hover:text-slate-900 hover:bg-slate-200 shrink-0 sm:shrink whitespace-nowrap">
+                        <button type="button" data-ambito="tierra" aria-pressed="false" class="ambito-btn text-xs sm:text-sm font-medium px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-md transition text-slate-700 hover:text-slate-900 hover:bg-slate-200 shrink-0 sm:shrink whitespace-nowrap">
                             Litósfera
                         </button>
-                        <button data-ambito="mar" class="ambito-btn text-xs sm:text-sm font-medium px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-md transition text-slate-700 hover:text-slate-900 hover:bg-slate-200 shrink-0 sm:shrink whitespace-nowrap">
+                        <button type="button" data-ambito="mar" aria-pressed="false" class="ambito-btn text-xs sm:text-sm font-medium px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-md transition text-slate-700 hover:text-slate-900 hover:bg-slate-200 shrink-0 sm:shrink whitespace-nowrap">
                             Maritorio
                         </button>
-                        <button data-ambito="aire" class="ambito-btn text-xs sm:text-sm font-medium px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-md transition text-slate-700 hover:text-slate-900 hover:bg-slate-200 shrink-0 sm:shrink whitespace-nowrap">
+                        <button type="button" data-ambito="aire" aria-pressed="false" class="ambito-btn text-xs sm:text-sm font-medium px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-md transition text-slate-700 hover:text-slate-900 hover:bg-slate-200 shrink-0 sm:shrink whitespace-nowrap">
                             Atmósfera
                         </button>
                     </div>
@@ -808,17 +808,17 @@ class IDEPortalBuilder:
         </div>
 
         <!-- Grid de Tarjetas de Capas -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" id="layersGrid">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" id="layersGrid" role="region" aria-label="Catálogo de coberturas territoriales" aria-live="polite">
 {static_layers_html}
         </div>
 
         <!-- Estado Vacío (Filtro Activo Sin Coincidencias) -->
-        <div id="emptyState" class="hidden text-center py-12 sm:py-16 bg-white rounded-xl border border-dashed border-slate-300 px-4">
-            <i data-lucide="filter" class="w-8 h-8 sm:w-10 sm:h-10 text-slate-400 mx-auto mb-2 stroke-[1.5]"></i>
+        <div id="emptyState" role="status" aria-live="polite" class="hidden text-center py-12 sm:py-16 bg-white rounded-xl border border-dashed border-slate-300 px-4">
+            <i data-lucide="filter" class="w-8 h-8 sm:w-10 sm:h-10 text-slate-400 mx-auto mb-2 stroke-[1.5]" aria-hidden="true"></i>
             <h3 class="text-sm sm:text-base font-semibold text-slate-800">Filtro activo sin coincidencias en el catálogo</h3>
             <p class="text-xs sm:text-sm text-slate-500 mt-1 max-w-md mx-auto">No se encontraron coberturas que coincidan con la combinación actual de búsqueda y filtros. El catálogo de IDE CIT cuenta con 14 recursos territoriales abiertos (13 coberturas maestras completas y 1 recurso preparatorio MBHT 2024).</p>
-            <button onclick="resetFilters()" class="mt-4 inline-flex items-center space-x-1.5 px-3.5 py-2 bg-slate-900 hover:bg-black active:bg-slate-800 text-white text-xs font-semibold rounded-lg transition shadow-xs cursor-pointer">
-                <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+            <button type="button" onclick="resetFilters()" class="mt-4 inline-flex items-center space-x-1.5 px-3.5 py-2 bg-slate-900 hover:bg-black active:bg-slate-800 text-white text-xs font-semibold rounded-lg transition shadow-xs cursor-pointer">
+                <i data-lucide="refresh-cw" class="w-3.5 h-3.5" aria-hidden="true"></i>
                 <span>Restaurar catálogo completo (13 coberturas maestras)</span>
             </button>
         </div>
@@ -830,7 +830,7 @@ class IDEPortalBuilder:
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
                 <div>
                     <div class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1.5">
-                        Verificación técnica y conformidad normativa · 8/8 protocolos auditados
+                        Verificación técnica y conformidad normativa · 9/9 protocolos auditados
                     </div>
                     <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 leading-tight">
                         Panel de Interoperabilidad Probada y Verificación Técnica
@@ -840,7 +840,7 @@ class IDEPortalBuilder:
                     </p>
                 </div>
                 <div class="shrink-0 flex items-center space-x-2 text-xs font-mono text-slate-500">
-                    <i data-lucide="shield-check" class="w-4 h-4 text-emerald-700"></i>
+                    <i data-lucide="shield-check" class="w-4 h-4 text-emerald-700" aria-hidden="true"></i>
                     <span>Auditoría de integridad: Octubre de 2026</span>
                 </div>
             </div>
@@ -848,23 +848,23 @@ class IDEPortalBuilder:
             <!-- Tabla de Servicios Probados (Hallazgo C) -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-clean overflow-hidden mb-8">
                 <div class="overflow-x-auto">
-                    <table class="w-full text-left text-xs border-collapse">
+                    <table class="w-full text-left text-xs border-collapse" aria-label="Tabla de verificación técnica de endpoints e interoperabilidad">
                         <thead>
                             <tr class="bg-slate-900 text-white border-b border-slate-800">
-                                <th class="p-3.5 font-bold uppercase tracking-wider">Protocolo / Estándar</th>
-                                <th class="p-3.5 font-bold uppercase tracking-wider">Endpoint / URL Funcional</th>
-                                <th class="p-3.5 font-bold uppercase tracking-wider">Sistema Ref.</th>
-                                <th class="p-3.5 font-bold uppercase tracking-wider">Respuesta Esperada</th>
-                                <th class="p-3.5 font-bold uppercase tracking-wider">Prueba Reproducible (CLI)</th>
-                                <th class="p-3.5 font-bold uppercase tracking-wider text-center">Estado</th>
+                                <th scope="col" class="p-3.5 font-bold uppercase tracking-wider">Protocolo / Estándar</th>
+                                <th scope="col" class="p-3.5 font-bold uppercase tracking-wider">Endpoint / URL Funcional</th>
+                                <th scope="col" class="p-3.5 font-bold uppercase tracking-wider">Sistema Ref.</th>
+                                <th scope="col" class="p-3.5 font-bold uppercase tracking-wider">Respuesta Esperada</th>
+                                <th scope="col" class="p-3.5 font-bold uppercase tracking-wider">Prueba Reproducible (CLI)</th>
+                                <th scope="col" class="p-3.5 font-bold uppercase tracking-wider text-center">Estado</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-100 font-sans">
-                            <!-- Fila 1: STAC 1.0.0 Catalog & STAC API -->
+                            <!-- Fila 1: STAC 1.0.0 Catalog & STAC API (Batería 19.C Completa) -->
                             <tr class="hover:bg-slate-50/80 transition">
                                 <td class="p-3.5">
                                     <span class="font-bold text-slate-900 block">STAC 1.0.0 Catalog &amp; API</span>
-                                    <span class="text-[11px] text-slate-500">15 child collections + Endpoints STAC API (GET/POST)</span>
+                                    <span class="text-[11px] text-slate-500">15 child collections + Batería STAC API (sin y con trailing slash)</span>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px] space-y-1">
                                     <div><a href="https://ide.cit.uai.cl/stac/catalog.json" target="_blank" rel="noopener noreferrer" class="text-slate-900 font-semibold hover:underline">/stac/catalog.json</a></div>
@@ -873,9 +873,17 @@ class IDEPortalBuilder:
                                         <span>·</span>
                                         <a href="https://ide.cit.uai.cl/stac/collections" target="_blank" rel="noopener noreferrer" class="hover:underline">/stac/collections</a>
                                         <span>·</span>
+                                        <a href="https://ide.cit.uai.cl/stac/search" target="_blank" rel="noopener noreferrer" class="hover:underline">/stac/search</a>
+                                        <span>·</span>
                                         <a href="https://ide.cit.uai.cl/stac/search?limit=5" target="_blank" rel="noopener noreferrer" class="hover:underline">/stac/search?limit=5</a>
                                     </div>
                                     <div class="text-[10px] text-slate-500 space-x-1.5">
+                                        <a href="https://ide.cit.uai.cl/stac/conformance/" target="_blank" rel="noopener noreferrer" class="hover:underline">/stac/conformance/</a>
+                                        <span>·</span>
+                                        <a href="https://ide.cit.uai.cl/stac/collections/" target="_blank" rel="noopener noreferrer" class="hover:underline">/stac/collections/</a>
+                                        <span>·</span>
+                                        <a href="https://ide.cit.uai.cl/stac/search/" target="_blank" rel="noopener noreferrer" class="hover:underline">/stac/search/</a>
+                                        <span>·</span>
                                         <a href="https://ide.cit.uai.cl/stac/conformance.json" target="_blank" rel="noopener noreferrer" class="hover:underline">conformance.json</a>
                                         <span>·</span>
                                         <a href="https://ide.cit.uai.cl/stac/collections.json" target="_blank" rel="noopener noreferrer" class="hover:underline">collections.json</a>
@@ -888,7 +896,7 @@ class IDEPortalBuilder:
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
                                     <code class="bg-slate-100 p-1 rounded block">curl -s "https://ide.cit.uai.cl/stac/search?limit=3" | jq .numberReturned</code>
                                 </td>
-                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">PASS · HTTP 200</td>
                             </tr>
                             <!-- Fila 2: GeoParquet 1.1 -->
                             <tr class="hover:bg-slate-50/80 transition">
@@ -904,7 +912,7 @@ class IDEPortalBuilder:
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
                                     <code class="bg-slate-100 p-1 rounded block">duckdb -c "SELECT count(*), round(avg(bht),4) FROM 'https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet'"</code>
                                 </td>
-                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">PASS · HTTP 206</td>
                             </tr>
                             <!-- Fila 3: OGC GeoPackage -->
                             <tr class="hover:bg-slate-50/80 transition">
@@ -920,7 +928,7 @@ class IDEPortalBuilder:
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
                                     <code class="bg-slate-100 p-1 rounded block">ogrinfo -ro -so /vsicurl/https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.gpkg</code>
                                 </td>
-                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">PASS · HTTP 200</td>
                             </tr>
                             <!-- Fila 4: ESRI Shapefile -->
                             <tr class="hover:bg-slate-50/80 transition">
@@ -936,7 +944,7 @@ class IDEPortalBuilder:
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
                                     <code class="bg-slate-100 p-1 rounded block">curl -sI https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas_SHP.zip | grep -i content-length</code>
                                 </td>
-                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">PASS · HTTP 200</td>
                             </tr>
                             <!-- Fila 5: QGIS Layer Definition (QLR) -->
                             <tr class="hover:bg-slate-50/80 transition">
@@ -952,7 +960,7 @@ class IDEPortalBuilder:
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
                                     <code class="bg-slate-100 p-1 rounded block">curl -s https://ide.cit.uai.cl/download/qgis/CIT_MBHT_2017_Nacional.qlr | head -n 5</code>
                                 </td>
-                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">PASS · HTTP 200</td>
                             </tr>
                             <!-- Fila 6: ISO 19115-1:2014 / ISO 19139 XML -->
                             <tr class="hover:bg-slate-50/80 transition">
@@ -968,7 +976,7 @@ class IDEPortalBuilder:
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
                                     <code class="bg-slate-100 p-1 rounded block">curl -s https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml | head -n 10</code>
                                 </td>
-                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">PASS · HTTP 200</td>
                             </tr>
                             <!-- Fila 7: W3C DCAT-AP 2.0 JSON-LD -->
                             <tr class="hover:bg-slate-50/80 transition">
@@ -984,7 +992,7 @@ class IDEPortalBuilder:
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
                                     <code class="bg-slate-100 p-1 rounded block">curl -s https://ide.cit.uai.cl/dcat.json | jq '."dcat:dataset" | length'</code>
                                 </td>
-                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">PASS · HTTP 200</td>
                             </tr>
                             <!-- Fila 8: Reporte de Conformidad, Closure Log y Benchmarks -->
                             <tr class="hover:bg-slate-50/80 transition">
@@ -1003,28 +1011,28 @@ class IDEPortalBuilder:
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
                                     <code class="bg-slate-100 p-1 rounded block">curl -s https://ide.cit.uai.cl/conformance_report.json | jq '.status, .summary'</code>
                                 </td>
-                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">PASS · HTTP 200</td>
                             </tr>
-                            <!-- Fila 9: Telemetría Forense GPU CUDA y Suites Reproducibles -->
+                            <!-- Fila 9: Telemetría Forense GPU CUDA y Auditoría WCAG Interactiva -->
                             <tr class="hover:bg-slate-50/80 transition">
                                 <td class="p-3.5">
-                                    <span class="font-bold text-slate-900 block">GPU CUDA Forensic Telemetry (RTX 4070)</span>
-                                    <span class="text-[11px] text-slate-500">2,08B celdas en VRAM · Monte Carlo 10k · Moran&apos;s I = 0,9095</span>
+                                    <span class="font-bold text-slate-900 block">GPU CUDA Forensic &amp; WCAG 2.1 AA Audit</span>
+                                    <span class="text-[11px] text-slate-500">2,08B celdas en VRAM · Monte Carlo 10k · WCAG Mapas/DOM</span>
                                 </td>
                                 <td class="p-3.5 font-mono text-[11px] space-y-1">
                                     <div><a href="https://ide.cit.uai.cl/data/cuda_forensic_telemetry.json" target="_blank" rel="noopener noreferrer" class="text-slate-900 font-semibold hover:underline">/data/cuda_forensic_telemetry.json</a></div>
                                     <div class="text-[10px] text-slate-600 space-x-1.5">
-                                        <a href="https://ide.cit.uai.cl/download/auditor_red_team_3_cuda_gpu.py" target="_blank" rel="noopener noreferrer" class="hover:underline">auditor_red_team_3_cuda_gpu.py</a>
+                                        <a href="https://ide.cit.uai.cl/data/auditoria_wcag_interactiva_2026.json" target="_blank" rel="noopener noreferrer" class="hover:underline">auditoria_wcag_interactiva_2026.json</a>
                                         <span>·</span>
-                                        <a href="https://ide.cit.uai.cl/download/auditor_red_team_2_antagonista.py" target="_blank" rel="noopener noreferrer" class="hover:underline">auditor_red_team_2_antagonista.py</a>
+                                        <a href="https://ide.cit.uai.cl/download/auditor_red_team_3_cuda_gpu.py" target="_blank" rel="noopener noreferrer" class="hover:underline">auditor_red_team_3_cuda_gpu.py</a>
                                     </div>
                                 </td>
-                                <td class="p-3.5 font-mono text-[11px] text-slate-700">FP64 Tensor</td>
-                                <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (45/45 PASS)</td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">FP64 / WCAG 2.1 AA</td>
+                                <td class="p-3.5 font-mono text-[11px] text-slate-700">HTTP 200 (PASS)</td>
                                 <td class="p-3.5 font-mono text-[10px] text-slate-700">
-                                    <code class="bg-slate-100 p-1 rounded block">curl -s https://ide.cit.uai.cl/data/cuda_forensic_telemetry.json | jq .execution_metrics</code>
+                                    <code class="bg-slate-100 p-1 rounded block">curl -s https://ide.cit.uai.cl/data/auditoria_wcag_interactiva_2026.json | jq .summary</code>
                                 </td>
-                                <td class="p-3.5 text-center font-semibold text-emerald-800">Verificado</td>
+                                <td class="p-3.5 text-center font-semibold text-emerald-800">PASS · HTTP 200</td>
                             </tr>
                         </tbody>
                     </table>
@@ -1035,7 +1043,7 @@ class IDEPortalBuilder:
             <div class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-lg border border-slate-800">
                 <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
                     <div class="flex items-center space-x-2">
-                        <i data-lucide="terminal" class="w-5 h-5 text-uai-gold"></i>
+                        <i data-lucide="terminal" class="w-5 h-5 text-uai-gold" aria-hidden="true"></i>
                         <h3 class="text-base sm:text-lg font-bold">Protocolo Seguro de Reproducibilidad Científica de Extremo a Extremo (E2E)</h3>
                     </div>
                     <span class="text-slate-400 font-mono text-xs">Testigo Censal: Manzana 15101011001004001 (Arica)</span>
@@ -1095,7 +1103,7 @@ class IDEPortalBuilder:
                 <div class="shrink-0">
                     <a href="descargas" class="inline-flex items-center space-x-2 px-5 py-3 rounded-xl bg-uai-gold hover:bg-uai-goldHover text-white font-bold text-sm shadow-md transition transform hover:-translate-y-0.5 cursor-pointer">
                         <span>Ir al centro de descargas</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2.5]"></i>
+                        <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2.5]" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -1135,15 +1143,15 @@ class IDEPortalBuilder:
                 <div class="shrink-0">
                     <a href="red-ides" class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-black text-white font-semibold text-xs sm:text-sm shadow-xs transition cursor-pointer">
                         <span>Explorar los 19 geoportales</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]"></i>
+                        <i data-lucide="arrow-right" class="w-4 h-4 stroke-[2]" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. MODAL DETALLE DE CAPA / FICHA TÉCNICA -->
-    <div id="layerModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 md:p-6 overflow-y-auto">
+    <!-- 5. MODAL DETALLE DE CAPA / FICHA TÉCNICA (Accesible WCAG 2.1 AA role="dialog") -->
+    <div id="layerModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalResumen" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 md:p-6 overflow-y-auto">
         <div class="bg-white rounded-xl max-w-3xl w-full shadow-2xl border border-slate-300 overflow-hidden flex flex-col max-h-[94vh] sm:max-h-[90vh]">
             
             <!-- Modal Header -->
@@ -1152,13 +1160,13 @@ class IDEPortalBuilder:
                     <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1">
                         <span id="modalBadge" class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-900 border border-blue-300">LÍNEA BASE OFICIAL VIGENTE (SUBDERE - MINISTERIAL)</span>
                         <span id="modalAmbito" class="text-xs text-slate-300">Litósfera</span>
-                        <span class="text-xs text-slate-600">•</span>
+                        <span class="text-xs text-slate-600" aria-hidden="true">•</span>
                         <span id="modalEscala" class="text-xs text-slate-300">204.906 manzanas censales (16 Regiones de Chile)</span>
                     </div>
                     <h2 id="modalTitle" class="text-sm sm:text-lg font-bold leading-snug text-white break-words">Matriz de Bienestar Humano Territorial (MBHT 2017) — 18 Indicadores E2SFCA</h2>
                 </div>
-                <button id="btnCloseModal" class="text-slate-400 hover:text-white p-2 rounded-lg bg-white/10 hover:bg-white/20 active:bg-white/30 transition shrink-0 cursor-pointer">
-                    <i data-lucide="x" class="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.5]"></i>
+                <button id="btnCloseModal" type="button" aria-label="Cerrar ficha técnica de la cobertura" title="Cerrar ficha técnica (Escape)" class="text-slate-400 hover:text-white p-2 rounded-lg bg-white/10 hover:bg-white/20 active:bg-white/30 transition shrink-0 cursor-pointer">
+                    <i data-lucide="x" class="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.5]" aria-hidden="true"></i>
                 </button>
             </div>
 
@@ -1166,8 +1174,8 @@ class IDEPortalBuilder:
             <div class="p-4 sm:p-6 overflow-y-auto space-y-4 sm:space-y-5 custom-scrollbar text-xs sm:text-sm">
                 
                 <!-- Aviso de Próxima Publicación (Censo 2024 en Calibración) -->
-                <div id="modalRestrictedNotice" class="hidden p-3.5 bg-amber-50 border border-amber-200 rounded-xl text-amber-950 text-xs flex items-start space-x-2.5 shadow-xs">
-                    <i data-lucide="info" class="w-4 h-4 shrink-0 text-amber-700 mt-0.5"></i>
+                <div id="modalRestrictedNotice" role="note" class="hidden p-3.5 bg-amber-50 border border-amber-200 rounded-xl text-amber-950 text-xs flex items-start space-x-2.5 shadow-xs">
+                    <i data-lucide="info" class="w-4 h-4 shrink-0 text-amber-700 mt-0.5" aria-hidden="true"></i>
                     <div>
                         <span class="font-bold text-amber-950 block mb-0.5">Ciclo de vida de datos: Insumos censales preparatorios (Censo 2024)</span>
                         <p class="text-amber-900 text-[11px] leading-relaxed">
@@ -1186,17 +1194,17 @@ class IDEPortalBuilder:
                 <!-- Formulación Matemática Pre-Poblada (Hallazgo A) -->
                 <div class="bg-slate-50 border border-slate-200 rounded-lg p-3 sm:p-4">
                     <div class="flex items-center space-x-1.5 mb-1.5 text-slate-800 font-bold text-xs sm:text-sm">
-                        <i data-lucide="calculator" class="w-4 h-4 stroke-[1.5]"></i>
+                        <i data-lucide="calculator" class="w-4 h-4 stroke-[1.5]" aria-hidden="true"></i>
                         <span>Formulación matemática y operador</span>
                     </div>
                     <code id="modalFormula" class="block font-mono text-[11px] sm:text-xs text-slate-800 bg-white p-2.5 rounded border border-slate-200 overflow-x-auto leading-relaxed">BHT = \sum_{{i=1}}^{{18}} w_i \cdot I_i = 0.3333 \cdot Dim_{{Acc}} + 0.3333 \cdot Dim_{{Soc}} + 0.2222 \cdot Dim_{{Seg}} + 0.1111 \cdot Dim_{{Amb}} | A_i = \sum_{{j}} \frac{{S_j \cdot f(d_{{ij}})}}{{\sum_{{k}} D_k \cdot f(d_{{kj}})}} | f(d_{{ij}}) = \exp\left(-0.5 \cdot \left(\frac{{t_{{ij}}}}{{15}}\right)^2\right) \text{{ con velocidad Tobler }} W(S) = 6 \cdot \exp(-3.5 \cdot |S + 0.05|)</code>
                 </div>
 
-                <!-- Referencia Espacial y Cobertura Geográfica (ISO 19115 Standard) -->
+                <!-- Referencia Espacial y Cobertura Geográfica (ISO 19115 Standard + WCAG 2.1 AA Map Region) -->
                 <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50" id="sectionSpatialRef">
                     <div class="p-3 bg-slate-100 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
                         <div class="flex items-center space-x-1.5 text-slate-800 font-bold text-xs sm:text-sm">
-                            <i data-lucide="map" class="w-4 h-4 text-slate-700 stroke-[1.5]"></i>
+                            <i data-lucide="map" class="w-4 h-4 text-slate-700 stroke-[1.5]" aria-hidden="true"></i>
                             <span>Referencia espacial y cobertura (ISO 19115)</span>
                         </div>
                         <div class="flex items-center space-x-1.5 text-[11px] font-mono">
@@ -1205,11 +1213,11 @@ class IDEPortalBuilder:
                         </div>
                     </div>
                     <div class="p-2.5 sm:p-3 space-y-2">
-                        <!-- Contenedor del Mapa Leaflet -->
-                        <div id="layerPreviewMap" class="w-full h-48 sm:h-56 rounded-lg border border-slate-200 bg-slate-200 relative z-0"></div>
+                        <!-- Contenedor del Mapa Leaflet Accesible (WCAG 1.1.1 / 2.1.1 / 4.1.2) -->
+                        <div id="layerPreviewMap" role="region" aria-label="Mapa interactivo de referencia espacial e inventario geodésico ISO 19115 (navegable por teclado con flechas y teclas +/-)" aria-describedby="modalBboxCoords" tabindex="0" class="w-full h-48 sm:h-56 rounded-lg border border-slate-200 bg-slate-200 relative z-0"></div>
                         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 text-[11px] text-slate-500 px-1 font-mono">
-                            <span id="modalBboxCoords">BBOX: [-75.64, -55.98, -66.86, -17.50]</span>
-                            <button type="button" onclick="fitLayerBounds()" class="text-slate-700 hover:text-black font-sans font-semibold underline text-xs cursor-pointer">
+                            <span id="modalBboxCoords" aria-live="polite">BBOX: [-75.64, -55.98, -66.86, -17.50]</span>
+                            <button type="button" onclick="fitLayerBounds()" aria-label="Centrar extensión geográfica del mapa" class="text-slate-700 hover:text-black font-sans font-semibold underline text-xs cursor-pointer">
                                 Centrar extensión
                             </button>
                         </div>
@@ -1317,24 +1325,24 @@ class IDEPortalBuilder:
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-2.5">
                         <div class="border border-slate-200 rounded-lg p-2.5 bg-slate-50">
                             <div class="flex justify-between items-center mb-1 text-xs font-bold text-slate-700">
-                                <span>QGIS (Vector Tile)</span>
-                                <button onclick="copySnippet('qgis')" class="text-slate-600 hover:text-black font-bold text-xs p-1">Copiar</button>
+                                <label for="snippetQGIS">QGIS (Vector Tile)</label>
+                                <button type="button" onclick="copySnippet('qgis')" aria-label="Copiar conector QGIS al portapapeles" class="text-slate-600 hover:text-black font-bold text-xs p-1">Copiar</button>
                             </div>
-                            <input type="text" id="snippetQGIS" readonly value="https://ide.cit.uai.cl/tiles/kpi_mud_2017/{{z}}/{{x}}/{{y}}.pbf" class="w-full text-[10px] sm:text-xs font-mono bg-white border border-slate-200 p-1.5 rounded text-slate-600 truncate" />
+                            <input type="text" id="snippetQGIS" aria-label="Conector URL Vector Tile para QGIS" readonly value="https://ide.cit.uai.cl/tiles/kpi_mud_2017/{{z}}/{{x}}/{{y}}.pbf" class="w-full text-[10px] sm:text-xs font-mono bg-white border border-slate-200 p-1.5 rounded text-slate-600 truncate" />
                         </div>
                         <div class="border border-slate-200 rounded-lg p-2.5 bg-slate-50">
                             <div class="flex justify-between items-center mb-1 text-xs font-bold text-slate-700">
-                                <span>Python (GeoPandas)</span>
-                                <button onclick="copySnippet('python')" class="text-slate-600 hover:text-black font-bold text-xs p-1">Copiar</button>
+                                <label for="snippetPython">Python (GeoPandas)</label>
+                                <button type="button" onclick="copySnippet('python')" aria-label="Copiar snippet Python al portapapeles" class="text-slate-600 hover:text-black font-bold text-xs p-1">Copiar</button>
                             </div>
-                            <input type="text" id="snippetPython" readonly value="gpd.read_parquet('https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet')" class="w-full text-[10px] sm:text-xs font-mono bg-white border border-slate-200 p-1.5 rounded text-slate-600 truncate" />
+                            <input type="text" id="snippetPython" aria-label="Snippet Python GeoPandas para lectura de GeoParquet" readonly value="gpd.read_parquet('https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet')" class="w-full text-[10px] sm:text-xs font-mono bg-white border border-slate-200 p-1.5 rounded text-slate-600 truncate" />
                         </div>
                         <div class="border border-slate-200 rounded-lg p-2.5 bg-slate-50">
                             <div class="flex justify-between items-center mb-1 text-xs font-bold text-slate-700">
-                                <span>R (sf)</span>
-                                <button onclick="copySnippet('r')" class="text-slate-600 hover:text-black font-bold text-xs p-1">Copiar</button>
+                                <label for="snippetR">R (sf)</label>
+                                <button type="button" onclick="copySnippet('r')" aria-label="Copiar snippet R al portapapeles" class="text-slate-600 hover:text-black font-bold text-xs p-1">Copiar</button>
                             </div>
-                            <input type="text" id="snippetR" readonly value="sf::st_read('https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet')" class="w-full text-[10px] sm:text-xs font-mono bg-white border border-slate-200 p-1.5 rounded text-slate-600 truncate" />
+                            <input type="text" id="snippetR" aria-label="Snippet R sf para lectura de GeoParquet" readonly value="sf::st_read('https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet')" class="w-full text-[10px] sm:text-xs font-mono bg-white border border-slate-200 p-1.5 rounded text-slate-600 truncate" />
                         </div>
                     </div>
                 </div>
@@ -1343,8 +1351,8 @@ class IDEPortalBuilder:
                 <div class="bg-slate-50 border border-slate-200 p-3 rounded-lg">
                     <div class="flex justify-between items-center mb-1">
                         <h4 class="text-[11px] sm:text-xs font-bold text-slate-700">Cómo citar esta cobertura (Norma APA 7.ª edición en español)</h4>
-                        <button onclick="copyCitation()" class="text-slate-600 hover:text-black text-xs font-semibold flex items-center space-x-1 p-1">
-                            <i data-lucide="copy" class="w-3.5 h-3.5 stroke-[1.5]"></i>
+                        <button type="button" onclick="copyCitation()" aria-label="Copiar citación APA 7 al portapapeles" class="text-slate-600 hover:text-black text-xs font-semibold flex items-center space-x-1 p-1">
+                            <i data-lucide="copy" class="w-3.5 h-3.5 stroke-[1.5]" aria-hidden="true"></i>
                             <span>Copiar</span>
                         </button>
                     </div>
@@ -1360,11 +1368,11 @@ class IDEPortalBuilder:
                 </div>
                 <div class="grid grid-cols-2 sm:flex items-center gap-1.5 sm:gap-2 flex-wrap justify-end">
                     <a id="btnVerFichaMaestra" href="ficha-mbht-2017" target="_blank" rel="noopener noreferrer" class="bg-amber-50 hover:bg-amber-100 text-amber-950 border border-amber-300 px-2.5 py-2 sm:px-3 sm:py-1.5 rounded-lg font-bold transition flex items-center justify-center space-x-1 text-center">
-                        <i data-lucide="file-text" class="w-3.5 h-3.5 text-amber-800"></i>
+                        <i data-lucide="file-text" class="w-3.5 h-3.5 text-amber-800" aria-hidden="true"></i>
                         <span>Ficha Maestra (17D)</span>
                     </a>
                     <a id="btnDownloadParquet" href="#" class="bg-slate-900 hover:bg-black active:bg-slate-800 text-white px-2.5 py-2 sm:px-3 sm:py-1.5 rounded-lg font-medium transition flex items-center justify-center space-x-1 text-center">
-                        <i data-lucide="download" class="w-3.5 h-3.5 stroke-[1.5] hidden sm:inline"></i>
+                        <i data-lucide="download" class="w-3.5 h-3.5 stroke-[1.5] hidden sm:inline" aria-hidden="true"></i>
                         <span>GeoParquet</span>
                     </a>
                     <a id="btnDownloadGPKG" href="#" class="bg-white hover:bg-slate-100 active:bg-slate-200 text-slate-700 border border-slate-300 px-2.5 py-2 sm:px-3 sm:py-1.5 rounded-lg font-medium transition text-center">
@@ -1377,7 +1385,7 @@ class IDEPortalBuilder:
                         <span>CSV</span>
                     </a>
                     <a id="btnDownloadXML" href="#" target="_blank" rel="noopener noreferrer" class="bg-white hover:bg-slate-100 active:bg-slate-200 text-slate-700 border border-slate-300 px-2.5 py-2 sm:px-3 sm:py-1.5 rounded-lg font-medium transition text-center flex items-center justify-center space-x-1">
-                        <i data-lucide="file-code" class="w-3.5 h-3.5 stroke-[1.5] hidden sm:inline"></i>
+                        <i data-lucide="file-code" class="w-3.5 h-3.5 stroke-[1.5] hidden sm:inline" aria-hidden="true"></i>
                         <span>ISO XML</span>
                     </a>
                 </div>
@@ -1404,13 +1412,13 @@ class IDEPortalBuilder:
         <span class="text-xs sm:text-sm font-semibold tracking-wide">Copiloto IA</span>
     </button>
 
-    <!-- Ventana de Chat del Copiloto IA -->
-    <div id="copilotDrawer" class="fixed bottom-20 right-3 sm:right-6 w-[calc(100vw-1.5rem)] sm:w-[400px] max-h-[75vh] sm:max-h-[580px] bg-white rounded-2xl shadow-widget border border-slate-300 hidden flex-col z-50 overflow-hidden transition-all duration-200">
+    <!-- Ventana de Chat del Copiloto IA (Accesible WCAG 2.1 AA role="dialog") -->
+    <div id="copilotDrawer" role="dialog" aria-label="Asistente conversacional Copiloto IA Territorial CIT-UAI" aria-modal="false" class="fixed bottom-20 right-3 sm:right-6 w-[calc(100vw-1.5rem)] sm:w-[400px] max-h-[75vh] sm:max-h-[580px] bg-white rounded-2xl shadow-widget border border-slate-300 hidden flex-col z-50 overflow-hidden transition-all duration-200">
         
         <!-- Header del Copiloto -->
         <div class="bg-slate-900 text-white p-3.5 sm:p-4 flex items-center justify-between border-b border-slate-800 shrink-0">
             <div class="flex items-center space-x-2.5">
-                <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-[#6493B5] border border-white/10 font-bold text-xs">
+                <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-[#6493B5] border border-white/10 font-bold text-xs" aria-hidden="true">
                     CIT
                 </div>
                 <div>
@@ -1421,17 +1429,17 @@ class IDEPortalBuilder:
                     <p class="text-[11px] text-slate-400">Asistente de datos y metodologías</p>
                 </div>
             </div>
-            <button onclick="toggleCopilot(false)" class="text-slate-400 hover:text-white p-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition cursor-pointer">
-                <i data-lucide="x" class="w-4 h-4"></i>
+            <button type="button" onclick="toggleCopilot(false)" aria-label="Cerrar asistente Copiloto IA Territorial" title="Cerrar (Escape)" class="text-slate-400 hover:text-white p-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition cursor-pointer">
+                <i data-lucide="x" class="w-4 h-4" aria-hidden="true"></i>
             </button>
         </div>
 
         <!-- Hilo de Mensajes -->
-        <div id="copilotMessages" class="p-3.5 sm:p-4 overflow-y-auto space-y-3 custom-scrollbar flex-1 bg-slate-50 text-xs sm:text-sm">
+        <div id="copilotMessages" role="log" aria-live="polite" aria-label="Historial de conversación del Copiloto IA" class="p-3.5 sm:p-4 overflow-y-auto space-y-3 custom-scrollbar flex-1 bg-slate-50 text-xs sm:text-sm">
             
             <!-- Mensaje de Bienvenida -->
             <div class="flex items-start space-x-2.5">
-                <div class="w-7 h-7 rounded-full bg-slate-900 text-[#6493B5] flex items-center justify-center text-xs shrink-0 font-bold border border-slate-700">
+                <div class="w-7 h-7 rounded-full bg-slate-900 text-[#6493B5] flex items-center justify-center text-xs shrink-0 font-bold border border-slate-700" aria-hidden="true">
                     CIT
                 </div>
                 <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 text-slate-800 space-y-2 shadow-xs max-w-[85%]">
@@ -1453,10 +1461,10 @@ class IDEPortalBuilder:
             <div class="pt-2 space-y-1.5">
                 <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Consultas orientativas:</p>
                 <div class="flex flex-col gap-1.5">
-                    <button onclick="sendCopilotSuggestion('¿Qué indicadores componen la matriz de bienestar territorial MBHT?')" class="bg-white hover:bg-slate-100 text-left text-slate-700 border border-slate-200 text-xs px-3 py-2 rounded-lg transition cursor-pointer">
+                    <button type="button" onclick="sendCopilotSuggestion('¿Qué indicadores componen la matriz de bienestar territorial MBHT?')" class="bg-white hover:bg-slate-100 text-left text-slate-700 border border-slate-200 text-xs px-3 py-2 rounded-lg transition cursor-pointer">
                         ¿Qué indicadores componen la matriz de bienestar territorial MBHT?
                     </button>
-                    <button onclick="sendCopilotSuggestion('¿Cómo descargar y abrir las coberturas en QGIS o Python?')" class="bg-white hover:bg-slate-100 text-left text-slate-700 border border-slate-200 text-xs px-3 py-2 rounded-lg transition cursor-pointer">
+                    <button type="button" onclick="sendCopilotSuggestion('¿Cómo descargar y abrir las coberturas en QGIS o Python?')" class="bg-white hover:bg-slate-100 text-left text-slate-700 border border-slate-200 text-xs px-3 py-2 rounded-lg transition cursor-pointer">
                         ¿Cómo descargar y abrir las coberturas en QGIS o Python?
                     </button>
                 </div>
@@ -1467,10 +1475,10 @@ class IDEPortalBuilder:
         <!-- Barra de Entrada -->
         <div class="p-2.5 sm:p-3 bg-white border-t border-slate-200 shrink-0">
             <form onsubmit="handleCopilotSubmit(event)" class="flex items-center space-x-1.5">
-                <input type="text" id="copilotInput" placeholder="Pregunta sobre indicadores, datos o fórmulas..." 
+                <input type="text" id="copilotInput" aria-label="Escribir consulta para el Copiloto IA Territorial" placeholder="Pregunta sobre indicadores, datos o fórmulas..." 
                        class="flex-1 bg-slate-50 border border-slate-300 focus:border-slate-800 focus:bg-white rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-800 focus:outline-none transition font-normal placeholder-slate-400" />
-                <button type="submit" class="bg-slate-900 hover:bg-black active:bg-slate-800 text-white p-2 rounded-lg transition cursor-pointer shrink-0">
-                    <i data-lucide="send" class="w-4 h-4"></i>
+                <button type="submit" aria-label="Enviar consulta al Copiloto IA" title="Enviar consulta" class="bg-slate-900 hover:bg-black active:bg-slate-800 text-white p-2 rounded-lg transition cursor-pointer shrink-0">
+                    <i data-lucide="send" class="w-4 h-4" aria-hidden="true"></i>
                 </button>
             </form>
         </div>
@@ -1823,7 +1831,7 @@ class IDEPortalBuilder:
             }}).setView([-35.6751, -71.5430], 4);
 
             L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>',
                 maxZoom: 19
             }}).addTo(previewMap);
 
@@ -1889,6 +1897,7 @@ class IDEPortalBuilder:
                 b.classList.toggle('shadow-xs', isAll);
                 b.classList.toggle('text-slate-700', !isAll);
                 b.classList.toggle('font-medium', !isAll);
+                b.setAttribute('aria-pressed', isAll ? 'true' : 'false');
             }});
             renderLayers();
         }};
@@ -1959,13 +1968,13 @@ class IDEPortalBuilder:
                                 <span class="text-[11px] text-slate-400">Corte ${{capa.fecha_corte || '2017'}}${{sizeMeta}}</span>
                             </div>
                             <div class="flex items-center space-x-2">
-                                <button onclick="openLayerModal('${{capa.id}}')" class="flex-1 bg-slate-900 hover:bg-black active:bg-slate-800 text-white text-xs sm:text-sm font-semibold py-2 px-3 rounded-lg transition flex items-center justify-center space-x-1 shadow-xs cursor-pointer">
+                                <button onclick="openLayerModal('${{capa.id}}')" type="button" class="flex-1 bg-slate-900 hover:bg-black active:bg-slate-800 text-white text-xs sm:text-sm font-semibold py-2 px-3 rounded-lg transition flex items-center justify-center space-x-1 shadow-xs cursor-pointer">
                                     <span>Ficha y descarga</span>
                                 </button>
-                                <button onclick="openLayerModal('${{capa.id}}', true)" title="Ver referencia espacial en mapa" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
+                                <button onclick="openLayerModal('${{capa.id}}', true)" title="Ver referencia espacial en mapa" aria-label="Ver referencia espacial en mapa para ${{capa.titulo}}" type="button" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
                                     <i data-lucide="map" class="w-4 h-4 stroke-[1.5]"></i>
                                 </button>
-                                <button onclick="quickCopyQGIS('${{capa.tile_source}}')" title="Copiar conector para QGIS" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
+                                <button onclick="quickCopyQGIS('${{capa.tile_source}}')" title="Copiar conector para QGIS" aria-label="Copiar conector para QGIS de ${{capa.titulo}}" type="button" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 transition cursor-pointer">
                                     <i data-lucide="link" class="w-4 h-4 stroke-[1.5]"></i>
                                 </button>
                             </div>
@@ -2295,33 +2304,37 @@ class IDEPortalBuilder:
             }});
         }}
 
-        // Matrix filters
-        document.querySelectorAll('#matrixFilters button').forEach(btn => {{
-            btn.addEventListener('click', () => {{
-                document.querySelectorAll('#matrixFilters button').forEach(b => {{
-                    b.classList.remove('bg-slate-900', 'text-white', 'font-bold', 'shadow-xs');
-                    b.classList.add('text-slate-700', 'font-medium');
+            // Matrix filters
+            document.querySelectorAll('#matrixFilters button').forEach(btn => {{
+                btn.addEventListener('click', () => {{
+                    document.querySelectorAll('#matrixFilters button').forEach(b => {{
+                        b.classList.remove('bg-slate-900', 'text-white', 'font-bold', 'shadow-xs');
+                        b.classList.add('text-slate-700', 'font-medium');
+                        b.setAttribute('aria-pressed', 'false');
+                    }});
+                    btn.classList.add('bg-slate-900', 'text-white', 'font-bold', 'shadow-xs');
+                    btn.classList.remove('text-slate-700', 'font-medium');
+                    btn.setAttribute('aria-pressed', 'true');
+                    activeMatrix = btn.dataset.filter;
+                    renderLayers();
                 }});
-                btn.classList.add('bg-slate-900', 'text-white', 'font-bold', 'shadow-xs');
-                btn.classList.remove('text-slate-700', 'font-medium');
-                activeMatrix = btn.dataset.filter;
-                renderLayers();
             }});
-        }});
 
-        // Ambito filters
-        document.querySelectorAll('#ambitoFilters button').forEach(btn => {{
-            btn.addEventListener('click', () => {{
-                document.querySelectorAll('#ambitoFilters button').forEach(b => {{
-                    b.classList.remove('bg-slate-900', 'text-white', 'font-bold', 'shadow-xs');
-                    b.classList.add('text-slate-700', 'font-medium');
+            // Ambito filters
+            document.querySelectorAll('#ambitoFilters button').forEach(btn => {{
+                btn.addEventListener('click', () => {{
+                    document.querySelectorAll('#ambitoFilters button').forEach(b => {{
+                        b.classList.remove('bg-slate-900', 'text-white', 'font-bold', 'shadow-xs');
+                        b.classList.add('text-slate-700', 'font-medium');
+                        b.setAttribute('aria-pressed', 'false');
+                    }});
+                    btn.classList.add('bg-slate-900', 'text-white', 'font-bold', 'shadow-xs');
+                    btn.classList.remove('text-slate-700', 'font-medium');
+                    btn.setAttribute('aria-pressed', 'true');
+                    activeAmbito = btn.dataset.ambito;
+                    renderLayers();
                 }});
-                btn.classList.add('bg-slate-900', 'text-white', 'font-bold', 'shadow-xs');
-                btn.classList.remove('text-slate-700', 'font-medium');
-                activeAmbito = btn.dataset.ambito;
-                renderLayers();
             }});
-        }});
 
         function copySnippet(type) {{
             const map = {{
