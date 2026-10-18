@@ -3731,7 +3731,7 @@
     "Equipamientos_2017_Nacional_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "NACIONAL",
       "registros": 8940,
       "archivos": {
@@ -4812,7 +4812,7 @@
     "Equipamientos_2017_R01_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R01",
       "registros": 125,
       "archivos": {
@@ -4841,7 +4841,7 @@
     "Equipamientos_2017_R01_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R01",
       "registros": 230,
       "archivos": {
@@ -4928,7 +4928,7 @@
     "Equipamientos_2017_R01_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R01",
       "registros": 47,
       "archivos": {
@@ -4986,7 +4986,7 @@
     "Equipamientos_2017_R02_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R02",
       "registros": 153,
       "archivos": {
@@ -5015,7 +5015,7 @@
     "Equipamientos_2017_R02_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R02",
       "registros": 230,
       "archivos": {
@@ -5102,7 +5102,7 @@
     "Equipamientos_2017_R02_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R02",
       "registros": 80,
       "archivos": {
@@ -5160,7 +5160,7 @@
     "Equipamientos_2017_R03_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R03",
       "registros": 132,
       "archivos": {
@@ -5189,7 +5189,7 @@
     "Equipamientos_2017_R03_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R03",
       "registros": 650,
       "archivos": {
@@ -5276,7 +5276,7 @@
     "Equipamientos_2017_R03_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R03",
       "registros": 78,
       "archivos": {
@@ -5334,7 +5334,7 @@
     "Equipamientos_2017_R04_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R04",
       "registros": 571,
       "archivos": {
@@ -5363,7 +5363,7 @@
     "Equipamientos_2017_R04_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R04",
       "registros": 1491,
       "archivos": {
@@ -5450,7 +5450,7 @@
     "Equipamientos_2017_R04_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R04",
       "registros": 142,
       "archivos": {
@@ -5508,7 +5508,7 @@
     "Equipamientos_2017_R05_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R05",
       "registros": 830,
       "archivos": {
@@ -5537,7 +5537,7 @@
     "Equipamientos_2017_R05_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R05",
       "registros": 2614,
       "archivos": {
@@ -5624,7 +5624,7 @@
     "Equipamientos_2017_R05_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R05",
       "registros": 202,
       "archivos": {
@@ -5682,7 +5682,7 @@
     "Equipamientos_2017_R06_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R06",
       "registros": 522,
       "archivos": {
@@ -5711,7 +5711,7 @@
     "Equipamientos_2017_R06_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R06",
       "registros": 2405,
       "archivos": {
@@ -5798,7 +5798,7 @@
     "Equipamientos_2017_R06_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R06",
       "registros": 273,
       "archivos": {
@@ -5856,7 +5856,7 @@
     "Equipamientos_2017_R07_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R07",
       "registros": 680,
       "archivos": {
@@ -5885,7 +5885,7 @@
     "Equipamientos_2017_R07_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R07",
       "registros": 2898,
       "archivos": {
@@ -5972,7 +5972,7 @@
     "Equipamientos_2017_R07_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R07",
       "registros": 302,
       "archivos": {
@@ -6030,7 +6030,7 @@
     "Equipamientos_2017_R08_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R08",
       "registros": 794,
       "archivos": {
@@ -6059,7 +6059,7 @@
     "Equipamientos_2017_R08_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R08",
       "registros": 3408,
       "archivos": {
@@ -6146,7 +6146,7 @@
     "Equipamientos_2017_R08_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R08",
       "registros": 176,
       "archivos": {
@@ -6204,7 +6204,7 @@
     "Equipamientos_2017_R09_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R09",
       "registros": 974,
       "archivos": {
@@ -6233,7 +6233,7 @@
     "Equipamientos_2017_R09_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R09",
       "registros": 1370,
       "archivos": {
@@ -6320,7 +6320,7 @@
     "Equipamientos_2017_R09_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R09",
       "registros": 189,
       "archivos": {
@@ -6378,7 +6378,7 @@
     "Equipamientos_2017_R10_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R10",
       "registros": 838,
       "archivos": {
@@ -6407,7 +6407,7 @@
     "Equipamientos_2017_R10_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R10",
       "registros": 1749,
       "archivos": {
@@ -6494,7 +6494,7 @@
     "Equipamientos_2017_R10_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R10",
       "registros": 192,
       "archivos": {
@@ -6552,7 +6552,7 @@
     "Equipamientos_2017_R11_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R11",
       "registros": 74,
       "archivos": {
@@ -6581,7 +6581,7 @@
     "Equipamientos_2017_R11_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R11",
       "registros": 221,
       "archivos": {
@@ -6668,7 +6668,7 @@
     "Equipamientos_2017_R11_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R11",
       "registros": 112,
       "archivos": {
@@ -6726,7 +6726,7 @@
     "Equipamientos_2017_R12_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R12",
       "registros": 68,
       "archivos": {
@@ -6755,7 +6755,7 @@
     "Equipamientos_2017_R12_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R12",
       "registros": 220,
       "archivos": {
@@ -6842,7 +6842,7 @@
     "Equipamientos_2017_R12_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R12",
       "registros": 61,
       "archivos": {
@@ -6900,7 +6900,7 @@
     "Equipamientos_2017_R13_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R13",
       "registros": 2328,
       "archivos": {
@@ -6929,7 +6929,7 @@
     "Equipamientos_2017_R13_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R13",
       "registros": 6596,
       "archivos": {
@@ -7016,7 +7016,7 @@
     "Equipamientos_2017_R13_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R13",
       "registros": 301,
       "archivos": {
@@ -7074,7 +7074,7 @@
     "Equipamientos_2017_R14_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R14",
       "registros": 402,
       "archivos": {
@@ -7103,7 +7103,7 @@
     "Equipamientos_2017_R14_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R14",
       "registros": 509,
       "archivos": {
@@ -7190,7 +7190,7 @@
     "Equipamientos_2017_R14_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R14",
       "registros": 69,
       "archivos": {
@@ -7248,7 +7248,7 @@
     "Equipamientos_2017_R15_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R15",
       "registros": 98,
       "archivos": {
@@ -7277,7 +7277,7 @@
     "Equipamientos_2017_R15_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R15",
       "registros": 461,
       "archivos": {
@@ -7364,7 +7364,7 @@
     "Equipamientos_2017_R15_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R15",
       "registros": 96,
       "archivos": {
@@ -7422,7 +7422,7 @@
     "Equipamientos_2017_R16_ISE_Educacion": {
       "capa": "equipamientos_2017",
       "dimension": "ISE",
-      "nombre_dimension": "Educacion",
+      "nombre_dimension": "Educación",
       "region": "R16",
       "registros": 351,
       "archivos": {
@@ -7451,7 +7451,7 @@
     "Equipamientos_2017_R16_IAV_Areas_Verdes": {
       "capa": "equipamientos_2017",
       "dimension": "IAV",
-      "nombre_dimension": "Areas Verdes",
+      "nombre_dimension": "Áreas Verdes",
       "region": "R16",
       "registros": 604,
       "archivos": {
@@ -7538,7 +7538,7 @@
     "Equipamientos_2017_R16_ISER_Servicios_Publicos": {
       "capa": "equipamientos_2017",
       "dimension": "ISER",
-      "nombre_dimension": "Servicios Publicos",
+      "nombre_dimension": "Servicios Públicos",
       "region": "R16",
       "registros": 128,
       "archivos": {

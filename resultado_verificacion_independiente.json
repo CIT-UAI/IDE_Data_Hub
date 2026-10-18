@@ -1,0 +1,294 @@
+{
+  "resumen": {
+    "total_pruebas": 31,
+    "pass": 29,
+    "warn": 2,
+    "fail": 0,
+    "inicio_utc": "2026-10-18T01:39:48Z",
+    "duracion_segundos": 8.53,
+    "base_url": "https://d1owm1ug2fpvep.cloudfront.net",
+    "verificador_version": "1.2.0",
+    "python_version": "3.11.7 (tags/v3.11.7:fa7a6f2, Dec  4 2023, 19:24:49) [MSC v.1937 64 bit (AMD64)]"
+  },
+  "pruebas": [
+    {
+      "suite": "STAC",
+      "prueba": "Catalog Root HTTP 200",
+      "estado": "PASS",
+      "observado": "200",
+      "esperado": "200",
+      "detalle": "Catálogo raíz accesible",
+      "timestamp": "2026-10-18T01:39:48Z"
+    },
+    {
+      "suite": "STAC",
+      "prueba": "STAC Version",
+      "estado": "PASS",
+      "observado": "1.0.0",
+      "esperado": "1.0.0",
+      "detalle": "Versión STAC: 1.0.0",
+      "timestamp": "2026-10-18T01:39:48Z"
+    },
+    {
+      "suite": "STAC",
+      "prueba": "Colecciones Hijas Declaradas",
+      "estado": "PASS",
+      "observado": "15",
+      "esperado": ">=13",
+      "detalle": "15 colecciones registradas",
+      "timestamp": "2026-10-18T01:39:48Z"
+    },
+    {
+      "suite": "STAC",
+      "prueba": "Independencia de Enlaces Raíz",
+      "estado": "PASS",
+      "observado": "0",
+      "esperado": "0",
+      "detalle": "Cero enlaces dependientes de cit.uai.cl",
+      "timestamp": "2026-10-18T01:39:48Z"
+    },
+    {
+      "suite": "STAC API",
+      "prueba": "Endpoint /stac/collections",
+      "estado": "PASS",
+      "observado": "200",
+      "esperado": "200",
+      "detalle": "Endpoint respondió HTTP 200",
+      "timestamp": "2026-10-18T01:39:49Z"
+    },
+    {
+      "suite": "STAC API",
+      "prueba": "Endpoint /stac/conformance",
+      "estado": "PASS",
+      "observado": "200",
+      "esperado": "200",
+      "detalle": "Endpoint respondió HTTP 200",
+      "timestamp": "2026-10-18T01:39:49Z"
+    },
+    {
+      "suite": "STAC API",
+      "prueba": "Endpoint /stac/search",
+      "estado": "PASS",
+      "observado": "200",
+      "esperado": "200",
+      "detalle": "Endpoint respondió HTTP 200",
+      "timestamp": "2026-10-18T01:39:50Z"
+    },
+    {
+      "suite": "STAC Semántica Temporal",
+      "prueba": "Intervalo Fenómeno MBHT 2017",
+      "estado": "PASS",
+      "observado": "['2017-04-19T00:00:00Z', '2017-12-31T23:59:59Z']",
+      "esperado": "['2017-04-19...', '2017-12-31...']",
+      "detalle": "Extent temporal acotado al fenómeno censal observado (2017)",
+      "timestamp": "2026-10-18T01:39:50Z"
+    },
+    {
+      "suite": "STAC Semántica Temporal",
+      "prueba": "Distinción Observación vs Vigencia",
+      "estado": "PASS",
+      "observado": "Obs=True, Vigencia=True",
+      "esperado": "True, True",
+      "detalle": "Semántica temporal de 5 niveles explícitamente declarada",
+      "timestamp": "2026-10-18T01:39:50Z"
+    },
+    {
+      "suite": "DCAT-AP",
+      "prueba": "DCAT JSON HTTP 200",
+      "estado": "PASS",
+      "observado": "200",
+      "esperado": "200",
+      "detalle": "Catálogo semántico accesible",
+      "timestamp": "2026-10-18T01:39:51Z"
+    },
+    {
+      "suite": "DCAT-AP",
+      "prueba": "Datasets Registrados",
+      "estado": "PASS",
+      "observado": "13",
+      "esperado": ">=13",
+      "detalle": "13 datasets con distribuciones completas",
+      "timestamp": "2026-10-18T01:39:51Z"
+    },
+    {
+      "suite": "DCAT-AP",
+      "prueba": "Distribuciones Totales",
+      "estado": "WARN",
+      "observado": "44",
+      "esperado": ">=50",
+      "detalle": "44 distribuciones multiformato",
+      "timestamp": "2026-10-18T01:39:51Z"
+    },
+    {
+      "suite": "DCAT-AP",
+      "prueba": "Cobertura Parquet & GeoPackage",
+      "estado": "PASS",
+      "observado": "Pqt=True, GPKG=True",
+      "esperado": "True, True",
+      "detalle": "Formatos OGC y Cloud-Native verificados",
+      "timestamp": "2026-10-18T01:39:51Z"
+    },
+    {
+      "suite": "HTTP Range",
+      "prueba": "Status HTTP 206 Partial Content",
+      "estado": "PASS",
+      "observado": "206",
+      "esperado": "206",
+      "detalle": "Respuesta HTTP 206",
+      "timestamp": "2026-10-18T01:39:51Z"
+    },
+    {
+      "suite": "HTTP Range",
+      "prueba": "Cabecera Accept-Ranges: bytes",
+      "estado": "WARN",
+      "observado": "",
+      "esperado": "bytes",
+      "detalle": "Servidor anuncia soporte de rangos",
+      "timestamp": "2026-10-18T01:39:51Z"
+    },
+    {
+      "suite": "HTTP Range",
+      "prueba": "Cabecera Content-Range",
+      "estado": "PASS",
+      "observado": "bytes 0-1023/2482961",
+      "esperado": "bytes 0-1023/*",
+      "detalle": "Rango devuelto: bytes 0-1023/2482961",
+      "timestamp": "2026-10-18T01:39:51Z"
+    },
+    {
+      "suite": "HTTP Range",
+      "prueba": "Parquet Magic Bytes (PAR1)",
+      "estado": "PASS",
+      "observado": "b'PAR1'",
+      "esperado": "b'PAR1'",
+      "detalle": "Cabecera binaria Parquet válida",
+      "timestamp": "2026-10-18T01:39:51Z"
+    },
+    {
+      "suite": "Crypto",
+      "prueba": "SHA256SUMS.txt accesible",
+      "estado": "PASS",
+      "observado": "200",
+      "esperado": "200",
+      "detalle": "Manifiesto criptográfico público disponible",
+      "timestamp": "2026-10-18T01:39:51Z"
+    },
+    {
+      "suite": "Crypto",
+      "prueba": "SHA-256 MBHT 2017 R15",
+      "estado": "PASS",
+      "observado": "712d1d16193a4dee8bab6d88f4c3eed04530e6f1b11a1936349ea6132d134505",
+      "esperado": "712d1d16193a4dee8bab6d88f4c3eed04530e6f1b11a1936349ea6132d134505",
+      "detalle": "Integridad bit-a-bit exacta",
+      "timestamp": "2026-10-18T01:39:52Z"
+    },
+    {
+      "suite": "Calidad Datos",
+      "prueba": "Conteo Manzanas R15 (Filas)",
+      "estado": "PASS",
+      "observado": "3304",
+      "esperado": "3304",
+      "detalle": "3304 unidades censales observadas",
+      "timestamp": "2026-10-18T01:39:54Z"
+    },
+    {
+      "suite": "Calidad Datos",
+      "prueba": "Columnas Físicas (Esquema 42)",
+      "estado": "PASS",
+      "observado": "42",
+      "esperado": "42",
+      "detalle": "42 columnas individuales verificadas",
+      "timestamp": "2026-10-18T01:39:54Z"
+    },
+    {
+      "suite": "Calidad Datos",
+      "prueba": "Unicidad ID Manzana (id_manzcit)",
+      "estado": "PASS",
+      "observado": "3304/3304",
+      "esperado": "3304/3304",
+      "detalle": "100% IDs primarios únicos y sin colisiones",
+      "timestamp": "2026-10-18T01:39:54Z"
+    },
+    {
+      "suite": "Calidad Datos",
+      "prueba": "Presencia de Georreferenciación",
+      "estado": "PASS",
+      "observado": "True",
+      "esperado": "True",
+      "detalle": "Vectores geodésicos integrados",
+      "timestamp": "2026-10-18T01:39:54Z"
+    },
+    {
+      "suite": "Calidad Datos",
+      "prueba": "Indicadores Esenciales en Esquema",
+      "estado": "PASS",
+      "observado": "Completos",
+      "esperado": "Completos",
+      "detalle": "100% indicadores clave presentes",
+      "timestamp": "2026-10-18T01:39:54Z"
+    },
+    {
+      "suite": "Calidad Datos",
+      "prueba": "Reproducibilidad Testigo BHT",
+      "estado": "PASS",
+      "observado": "0.3751",
+      "esperado": "0.3751",
+      "detalle": "Tolerancia: diff=0.000034",
+      "timestamp": "2026-10-18T01:39:54Z"
+    },
+    {
+      "suite": "Calidad Datos",
+      "prueba": "Reproducibilidad Testigo dim_acc",
+      "estado": "PASS",
+      "observado": "0.6279",
+      "esperado": "0.6279",
+      "detalle": "Tolerancia: diff=0.000002",
+      "timestamp": "2026-10-18T01:39:54Z"
+    },
+    {
+      "suite": "Seguridad",
+      "prueba": "Cabecera HSTS",
+      "estado": "PASS",
+      "observado": "max-age=31536000; includeSubDomains; preload",
+      "esperado": "max-age=...",
+      "detalle": "Protección de transporte estricto TLS",
+      "timestamp": "2026-10-18T01:39:55Z"
+    },
+    {
+      "suite": "Seguridad",
+      "prueba": "X-Content-Type-Options: nosniff",
+      "estado": "PASS",
+      "observado": "nosniff",
+      "esperado": "nosniff",
+      "detalle": "Prevención de MIME-sniffing",
+      "timestamp": "2026-10-18T01:39:55Z"
+    },
+    {
+      "suite": "Seguridad",
+      "prueba": "CORS Data Access",
+      "estado": "PASS",
+      "observado": "*",
+      "esperado": "*",
+      "detalle": "Permite consumo desde clientes GIS web/desktop",
+      "timestamp": "2026-10-18T01:39:56Z"
+    },
+    {
+      "suite": "Seguridad",
+      "prueba": "Content-Security-Policy (CSP)",
+      "estado": "PASS",
+      "observado": "Configurado",
+      "esperado": "Directivas CSP",
+      "detalle": "Mitigación de inyecciones XSS",
+      "timestamp": "2026-10-18T01:39:56Z"
+    },
+    {
+      "suite": "Seguridad",
+      "prueba": "RFC 9116 security.txt",
+      "estado": "PASS",
+      "observado": "200",
+      "esperado": "200",
+      "detalle": "Protocolo de divulgación responsable de vulnerabilidades",
+      "timestamp": "2026-10-18T01:39:56Z"
+    }
+  ]
+}

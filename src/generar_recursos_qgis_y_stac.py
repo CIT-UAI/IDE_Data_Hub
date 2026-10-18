@@ -89,7 +89,7 @@ TEMPORAL_SEMANTICS_REGISTRY = {
         "last_modified": "2026-10-17T22:45:00Z",
         "validity_period": "2024-2026",
         "validity_status": "Vigente",
-        "phenomenon_description": "Directorio oficial MINEDUC/Junji/Integra de jardines infantiles y salas cuna 2024"
+        "phenomenon_description": "Directorio oficial MINEDUC / JUNJI / Fundación Integra de jardines infantiles y salas cuna 2024"
     },
     "huella_edificaciones_2024": {
         "observation_datetime": "2024-01-01T00:00:00Z",

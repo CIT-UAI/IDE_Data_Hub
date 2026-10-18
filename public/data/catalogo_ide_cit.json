@@ -101,7 +101,7 @@
       "disponible_descarga": true,
       "estado": "activo",
       "badge_estado": "Oficial CIT-UAI (Línea base nacional)",
-      "resumen": "Línea base nacional oficial de la Matriz de Bienestar Humano Territorial Integral evaluada sobre 204.906 manzanas censales del Censo 2017 en las 16 regiones de Chile. Sintetiza 18 indicadores elementales distribuidos en 4 macro-dimensiones del bienestar (bajo el Axioma de Neutralidad Elemental W(D) = n_D / 18): 1) Macro-dimensión de Accesibilidad (dim_acc, peso 6/18 = 33,33%), que integra los 6 indicadores de acceso peatonal efectivo E2SFCA + Tobler a salud (isal), educación (ise), áreas verdes (iav), deporte (idep), cultura (icul) y servicios públicos (iser); 2) Macro-dimensión Socioeconómica (dim_soc, peso 6/18 = 33,33%); 3) Macro-dimensión de Seguridad (dim_seg, peso 4/18 = 22,22%); y 4) Macro-dimensión Ambiental (dim_amb, peso 2/18 = 11,11%). El archivo físico contiene el esquema completo de 42 columnas físicas (identificadores, demografía censal, índice sintético bht, las 4 macro-dimensiones, los 6 sub-indicadores peatonales con sus valores pre-escalamiento, tipología Jenks tob y geometría WKB).",
+      "resumen": "Línea base nacional oficial de la Matriz de Bienestar Humano Territorial Integral evaluada sobre 204.906 manzanas censales del Censo 2017 en las 16 regiones de Chile. Sintetiza 18 indicadores elementales distribuidos en 4 macro-dimensiones del bienestar (bajo el Axioma de Neutralidad Elemental W(D) = n_D / 18): 1) Macro-dimensión de Accesibilidad (dim_acc, peso 6/18 = 33,33%), que integra los 6 indicadores de acceso peatonal efectivo E2SFCA + Tobler a salud (isal), educación (ise), áreas verdes (iav), deporte (idep), cultura (icul) y servicios públicos (iser); 2) Macro-dimensión Socioeconómica (dim_soc, peso 6/18 = 33,33%); 3) Macro-dimensión de Seguridad (dim_seg, peso 4/18 = 22,22%); y 4) Macro-dimensión Ambiental (dim_amb, peso 2/18 = 11,11%). El archivo físico contiene el esquema completo de 42 columnas físicas (identificadores, demografía censal, índice sintético BHT, las 4 macro-dimensiones, los 6 sub-indicadores peatonales con sus valores pre-escalamiento, tipología Jenks tob y geometría WKB).",
       "formula_lineage": "Síntesis BHT Integral de 18 indicadores en 4 macro-dimensiones (W(D) = n_D / 18). Accesibilidad (dim_acc) calculada mediante el modelo bietápico E2SFCA sobre el grafo vial nacional (1.589.595 tramos) con velocidad peatonal de Tobler W(S) = 6 * exp(-3.5 * |S + 0.05|), decaimiento gaussiano f(t) = exp(-0.5 * (t / 15)^2) y umbral 30 min.",
       "autor": "Centro de Inteligencia Territorial (CIT-UAI)",
       "licencia": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
@@ -135,7 +135,7 @@
         {
           "campo": "tob",
           "tipo": "String",
-          "descripcion": "Tipología de Oportunidad de Bienestar territorial clasificada en 3 macro-estratos (Alto: 45.292 mzs, Medio: 111.271 mzs, Bajo: 48.343 mzs). La discretización cartográfica de 6 clases por Quiebres Naturales de Jenks (ckmeans) se aplica sobre la variable continua bht."
+          "descripcion": "Tipología de Oportunidad de Bienestar territorial clasificada en 3 macro-estratos (Alto: 45.292 mzs, Medio: 111.271 mzs, Bajo: 48.343 mzs). La discretización cartográfica de 6 clases por Quiebres Naturales de Jenks (ckmeans) se aplica sobre la variable continua BHT."
         },
         {
           "campo": "manz_en",

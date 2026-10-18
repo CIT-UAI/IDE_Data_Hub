@@ -55,7 +55,7 @@
         {
           "name": "tob",
           "type": "String",
-          "description": "Tipología de Oportunidad de Bienestar territorial clasificada en 3 macro-estratos (Alto: 45.292 mzs, Medio: 111.271 mzs, Bajo: 48.343 mzs). La discretización cartográfica de 6 clases por Quiebres Naturales de Jenks (ckmeans) se aplica sobre la variable continua bht."
+          "description": "Tipología de Oportunidad de Bienestar territorial clasificada en 3 macro-estratos (Alto: 45.292 mzs, Medio: 111.271 mzs, Bajo: 48.343 mzs). La discretización cartográfica de 6 clases por Quiebres Naturales de Jenks (ckmeans) se aplica sobre la variable continua BHT."
         },
         {
           "name": "manz_en",
