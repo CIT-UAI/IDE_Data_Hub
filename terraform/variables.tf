@@ -46,6 +46,18 @@ variable "rate_limit_downloads" {
   default     = 500
 }
 
+variable "alert_email" {
+  description = "Correo electrónico institucional para recepción de alertas FinOps y CloudWatch"
+  type        = string
+  default     = "investigacioncit@uai.cl"
+}
+
+variable "budget_limit_usd" {
+  description = "Límite mensual del presupuesto AWS en USD"
+  type        = number
+  default     = 10.0
+}
+
 variable "log_retention_days" {
   description = "Días de retención para los logs de acceso antes de su purga automática"
   type        = number

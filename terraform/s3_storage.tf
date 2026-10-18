@@ -132,6 +132,13 @@ resource "aws_s3_bucket_policy" "main" {
             "aws:SecureTransport" = "false"
           }
         }
+      },
+      {
+        Sid       = "PreventAccidentalBucketDeletion"
+        Effect    = "Deny"
+        Principal = "*"
+        Action    = "s3:DeleteBucket"
+        Resource  = aws_s3_bucket.main.arn
       }
     ]
   })

@@ -67,6 +67,7 @@ resource "aws_cloudfront_response_headers_policy" "security" {
 resource "aws_cloudfront_distribution" "main" {
   enabled             = true
   is_ipv6_enabled     = true
+  http_version        = "http2and3" # Soporte HTTP/3 (QUIC) nativo para conexiones móviles
   default_root_object = "index.html"
   price_class         = "PriceClass_200" # Edge PoP en Santiago de Chile y Sudamérica
   web_acl_id          = var.enable_waf ? aws_wafv2_web_acl.shield[0].arn : null
