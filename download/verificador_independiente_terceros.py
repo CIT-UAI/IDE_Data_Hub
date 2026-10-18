@@ -136,6 +136,21 @@ class VerificadorIndependienteIDE:
             code, hdrs, body = self.http_request(ep)
             self.registrar_prueba("STAC API", f"Endpoint {ep}", "PASS" if code == 200 else "FAIL", code, 200, f"Endpoint respondió HTTP {code}")
 
+        # 1.3 Precisión Semántica Temporal STAC (Fenómeno vs Vigencia)
+        code_mbht, _, body_mbht = self.http_request("/stac/kpi_mud_2017.json")
+        if code_mbht == 200:
+            try:
+                col_mbht = json.loads(body_mbht.decode('utf-8'))
+                temp_interval = col_mbht.get("extent", {}).get("temporal", {}).get("interval", [[]])[0]
+                has_closed_phenomenon = len(temp_interval) == 2 and "2017" in str(temp_interval[0]) and "2017" in str(temp_interval[1])
+                summaries = col_mbht.get("summaries", {})
+                has_obs = "temporal_semantics:observation_date" in summaries
+                has_val = "temporal_semantics:validity_period" in summaries
+                self.registrar_prueba("STAC Semántica Temporal", "Intervalo Fenómeno MBHT 2017", "PASS" if has_closed_phenomenon else "WARN", temp_interval, "['2017-04-19...', '2017-12-31...']", "Extent temporal acotado al fenómeno censal observado (2017)")
+                self.registrar_prueba("STAC Semántica Temporal", "Distinción Observación vs Vigencia", "PASS" if (has_obs and has_val) else "WARN", f"Obs={has_obs}, Vigencia={has_val}", "True, True", "Semántica temporal de 5 niveles explícitamente declarada")
+            except Exception as e:
+                self.registrar_prueba("STAC Semántica Temporal", "Parseo MBHT 2017", "FAIL", str(e), "JSON válido", "Error parseando metadatos temporales")
+
     # =========================================================================
     # SUITE 2: CATÁLOGO SEMÁNTICO W3C DCAT-AP 2.0.1
     # =========================================================================

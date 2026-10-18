@@ -1,11 +1,11 @@
 {
   "resumen": {
-    "total_pruebas": 29,
-    "pass": 27,
+    "total_pruebas": 31,
+    "pass": 29,
     "warn": 2,
     "fail": 0,
-    "inicio_utc": "2026-10-18T01:07:53Z",
-    "duracion_segundos": 8.4,
+    "inicio_utc": "2026-10-18T01:33:22Z",
+    "duracion_segundos": 8.99,
     "base_url": "https://d1owm1ug2fpvep.cloudfront.net",
     "verificador_version": "1.2.0",
     "python_version": "3.11.7 (tags/v3.11.7:fa7a6f2, Dec  4 2023, 19:24:49) [MSC v.1937 64 bit (AMD64)]"
@@ -18,7 +18,7 @@
       "observado": "200",
       "esperado": "200",
       "detalle": "Catálogo raíz accesible",
-      "timestamp": "2026-10-18T01:07:53Z"
+      "timestamp": "2026-10-18T01:33:23Z"
     },
     {
       "suite": "STAC",
@@ -27,7 +27,7 @@
       "observado": "1.0.0",
       "esperado": "1.0.0",
       "detalle": "Versión STAC: 1.0.0",
-      "timestamp": "2026-10-18T01:07:53Z"
+      "timestamp": "2026-10-18T01:33:23Z"
     },
     {
       "suite": "STAC",
@@ -36,7 +36,7 @@
       "observado": "15",
       "esperado": ">=13",
       "detalle": "15 colecciones registradas",
-      "timestamp": "2026-10-18T01:07:53Z"
+      "timestamp": "2026-10-18T01:33:23Z"
     },
     {
       "suite": "STAC",
@@ -45,7 +45,7 @@
       "observado": "0",
       "esperado": "0",
       "detalle": "Cero enlaces dependientes de cit.uai.cl",
-      "timestamp": "2026-10-18T01:07:53Z"
+      "timestamp": "2026-10-18T01:33:23Z"
     },
     {
       "suite": "STAC API",
@@ -54,7 +54,7 @@
       "observado": "200",
       "esperado": "200",
       "detalle": "Endpoint respondió HTTP 200",
-      "timestamp": "2026-10-18T01:07:54Z"
+      "timestamp": "2026-10-18T01:33:23Z"
     },
     {
       "suite": "STAC API",
@@ -63,7 +63,7 @@
       "observado": "200",
       "esperado": "200",
       "detalle": "Endpoint respondió HTTP 200",
-      "timestamp": "2026-10-18T01:07:54Z"
+      "timestamp": "2026-10-18T01:33:24Z"
     },
     {
       "suite": "STAC API",
@@ -72,7 +72,25 @@
       "observado": "200",
       "esperado": "200",
       "detalle": "Endpoint respondió HTTP 200",
-      "timestamp": "2026-10-18T01:07:55Z"
+      "timestamp": "2026-10-18T01:33:25Z"
+    },
+    {
+      "suite": "STAC Semántica Temporal",
+      "prueba": "Intervalo Fenómeno MBHT 2017",
+      "estado": "PASS",
+      "observado": "['2017-04-19T00:00:00Z', '2017-12-31T23:59:59Z']",
+      "esperado": "['2017-04-19...', '2017-12-31...']",
+      "detalle": "Extent temporal acotado al fenómeno censal observado (2017)",
+      "timestamp": "2026-10-18T01:33:25Z"
+    },
+    {
+      "suite": "STAC Semántica Temporal",
+      "prueba": "Distinción Observación vs Vigencia",
+      "estado": "PASS",
+      "observado": "Obs=True, Vigencia=True",
+      "esperado": "True, True",
+      "detalle": "Semántica temporal de 5 niveles explícitamente declarada",
+      "timestamp": "2026-10-18T01:33:25Z"
     },
     {
       "suite": "DCAT-AP",
@@ -81,7 +99,7 @@
       "observado": "200",
       "esperado": "200",
       "detalle": "Catálogo semántico accesible",
-      "timestamp": "2026-10-18T01:07:55Z"
+      "timestamp": "2026-10-18T01:33:26Z"
     },
     {
       "suite": "DCAT-AP",
@@ -90,7 +108,7 @@
       "observado": "13",
       "esperado": ">=13",
       "detalle": "13 datasets con distribuciones completas",
-      "timestamp": "2026-10-18T01:07:55Z"
+      "timestamp": "2026-10-18T01:33:26Z"
     },
     {
       "suite": "DCAT-AP",
@@ -99,7 +117,7 @@
       "observado": "44",
       "esperado": ">=50",
       "detalle": "44 distribuciones multiformato",
-      "timestamp": "2026-10-18T01:07:55Z"
+      "timestamp": "2026-10-18T01:33:26Z"
     },
     {
       "suite": "DCAT-AP",
@@ -108,7 +126,7 @@
       "observado": "Pqt=True, GPKG=True",
       "esperado": "True, True",
       "detalle": "Formatos OGC y Cloud-Native verificados",
-      "timestamp": "2026-10-18T01:07:55Z"
+      "timestamp": "2026-10-18T01:33:26Z"
     },
     {
       "suite": "HTTP Range",
@@ -117,7 +135,7 @@
       "observado": "206",
       "esperado": "206",
       "detalle": "Respuesta HTTP 206",
-      "timestamp": "2026-10-18T01:07:56Z"
+      "timestamp": "2026-10-18T01:33:26Z"
     },
     {
       "suite": "HTTP Range",
@@ -126,7 +144,7 @@
       "observado": "",
       "esperado": "bytes",
       "detalle": "Servidor anuncia soporte de rangos",
-      "timestamp": "2026-10-18T01:07:56Z"
+      "timestamp": "2026-10-18T01:33:26Z"
     },
     {
       "suite": "HTTP Range",
@@ -135,7 +153,7 @@
       "observado": "bytes 0-1023/2482961",
       "esperado": "bytes 0-1023/*",
       "detalle": "Rango devuelto: bytes 0-1023/2482961",
-      "timestamp": "2026-10-18T01:07:56Z"
+      "timestamp": "2026-10-18T01:33:26Z"
     },
     {
       "suite": "HTTP Range",
@@ -144,7 +162,7 @@
       "observado": "b'PAR1'",
       "esperado": "b'PAR1'",
       "detalle": "Cabecera binaria Parquet válida",
-      "timestamp": "2026-10-18T01:07:56Z"
+      "timestamp": "2026-10-18T01:33:26Z"
     },
     {
       "suite": "Crypto",
@@ -153,7 +171,7 @@
       "observado": "200",
       "esperado": "200",
       "detalle": "Manifiesto criptográfico público disponible",
-      "timestamp": "2026-10-18T01:07:56Z"
+      "timestamp": "2026-10-18T01:33:27Z"
     },
     {
       "suite": "Crypto",
@@ -162,7 +180,7 @@
       "observado": "712d1d16193a4dee8bab6d88f4c3eed04530e6f1b11a1936349ea6132d134505",
       "esperado": "712d1d16193a4dee8bab6d88f4c3eed04530e6f1b11a1936349ea6132d134505",
       "detalle": "Integridad bit-a-bit exacta",
-      "timestamp": "2026-10-18T01:07:58Z"
+      "timestamp": "2026-10-18T01:33:28Z"
     },
     {
       "suite": "Calidad Datos",
@@ -171,7 +189,7 @@
       "observado": "3304",
       "esperado": "3304",
       "detalle": "3304 unidades censales observadas",
-      "timestamp": "2026-10-18T01:07:59Z"
+      "timestamp": "2026-10-18T01:33:29Z"
     },
     {
       "suite": "Calidad Datos",
@@ -180,7 +198,7 @@
       "observado": "42",
       "esperado": "42",
       "detalle": "42 columnas individuales verificadas",
-      "timestamp": "2026-10-18T01:07:59Z"
+      "timestamp": "2026-10-18T01:33:29Z"
     },
     {
       "suite": "Calidad Datos",
@@ -189,7 +207,7 @@
       "observado": "3304/3304",
       "esperado": "3304/3304",
       "detalle": "100% IDs primarios únicos y sin colisiones",
-      "timestamp": "2026-10-18T01:07:59Z"
+      "timestamp": "2026-10-18T01:33:29Z"
     },
     {
       "suite": "Calidad Datos",
@@ -198,7 +216,7 @@
       "observado": "True",
       "esperado": "True",
       "detalle": "Vectores geodésicos integrados",
-      "timestamp": "2026-10-18T01:07:59Z"
+      "timestamp": "2026-10-18T01:33:29Z"
     },
     {
       "suite": "Calidad Datos",
@@ -207,7 +225,7 @@
       "observado": "Completos",
       "esperado": "Completos",
       "detalle": "100% indicadores clave presentes",
-      "timestamp": "2026-10-18T01:07:59Z"
+      "timestamp": "2026-10-18T01:33:29Z"
     },
     {
       "suite": "Calidad Datos",
@@ -216,7 +234,7 @@
       "observado": "0.3751",
       "esperado": "0.3751",
       "detalle": "Tolerancia: diff=0.000034",
-      "timestamp": "2026-10-18T01:07:59Z"
+      "timestamp": "2026-10-18T01:33:29Z"
     },
     {
       "suite": "Calidad Datos",
@@ -225,7 +243,7 @@
       "observado": "0.6279",
       "esperado": "0.6279",
       "detalle": "Tolerancia: diff=0.000002",
-      "timestamp": "2026-10-18T01:07:59Z"
+      "timestamp": "2026-10-18T01:33:29Z"
     },
     {
       "suite": "Seguridad",
@@ -234,7 +252,7 @@
       "observado": "max-age=31536000; includeSubDomains; preload",
       "esperado": "max-age=...",
       "detalle": "Protección de transporte estricto TLS",
-      "timestamp": "2026-10-18T01:08:00Z"
+      "timestamp": "2026-10-18T01:33:30Z"
     },
     {
       "suite": "Seguridad",
@@ -243,7 +261,7 @@
       "observado": "nosniff",
       "esperado": "nosniff",
       "detalle": "Prevención de MIME-sniffing",
-      "timestamp": "2026-10-18T01:08:00Z"
+      "timestamp": "2026-10-18T01:33:30Z"
     },
     {
       "suite": "Seguridad",
@@ -252,7 +270,7 @@
       "observado": "*",
       "esperado": "*",
       "detalle": "Permite consumo desde clientes GIS web/desktop",
-      "timestamp": "2026-10-18T01:08:01Z"
+      "timestamp": "2026-10-18T01:33:31Z"
     },
     {
       "suite": "Seguridad",
@@ -261,7 +279,7 @@
       "observado": "Configurado",
       "esperado": "Directivas CSP",
       "detalle": "Mitigación de inyecciones XSS",
-      "timestamp": "2026-10-18T01:08:01Z"
+      "timestamp": "2026-10-18T01:33:31Z"
     },
     {
       "suite": "Seguridad",
@@ -270,7 +288,7 @@
       "observado": "200",
       "esperado": "200",
       "detalle": "Protocolo de divulgación responsable de vulnerabilidades",
-      "timestamp": "2026-10-18T01:08:01Z"
+      "timestamp": "2026-10-18T01:33:31Z"
     }
   ]
 }

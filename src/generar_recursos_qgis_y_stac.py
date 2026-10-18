@@ -24,6 +24,138 @@ STAC_DIR = PUBLIC_DIR / "stac"
 QGIS_DIR = BASE_DIR / "download" / "qgis"
 DIST_DIR = BASE_DIR / "dist"
 
+
+
+
+TEMPORAL_SEMANTICS_REGISTRY = {
+    "kpi_mud_2017": {
+        "observation_datetime": "2017-04-19T00:00:00Z",
+        "phenomenon_interval": [["2017-04-19T00:00:00Z", "2017-12-31T23:59:59Z"]],
+        "publication_date": "2018-05-01T00:00:00Z",
+        "last_modified": "2026-10-17T22:45:00Z",
+        "validity_period": "2017-2026",
+        "validity_status": "Línea base oficial cerrada y vigente en producción (matrizbht.cl)",
+        "phenomenon_description": "Censo Nacional de Población y Vivienda 2017 y catastros sectoriales 2017"
+    },
+    "censo_imputaciones_2024": {
+        "observation_datetime": "2024-03-09T00:00:00Z",
+        "phenomenon_interval": [["2024-03-09T00:00:00Z", "2024-07-31T23:59:59Z"]],
+        "publication_date": "2026-04-01T00:00:00Z",
+        "last_modified": "2026-10-17T22:45:00Z",
+        "validity_period": "2024-2034",
+        "validity_status": "Insumos censales preparatorios oficiales disponibles",
+        "phenomenon_description": "Levantamiento presencial Censo de Población y Vivienda INE 2024"
+    },
+    "inse_socioeconomico": {
+        "observation_datetime": "2024-01-01T00:00:00Z",
+        "phenomenon_interval": [["2024-01-01T00:00:00Z", "2024-12-31T23:59:59Z"]],
+        "publication_date": "2026-04-15T00:00:00Z",
+        "last_modified": "2026-10-17T22:45:00Z",
+        "validity_period": "2024-2028",
+        "validity_status": "Vigente como estratificación socioeconómica territorial",
+        "phenomenon_description": "Caracterización socioeconómica decenal y fuentes tributarias SII 2024"
+    },
+    "sii_areas_homogeneas": {
+        "observation_datetime": "2024-01-01T00:00:00Z",
+        "phenomenon_interval": [["2024-01-01T00:00:00Z", "2024-12-31T23:59:59Z"]],
+        "publication_date": "2026-03-15T00:00:00Z",
+        "last_modified": "2026-10-17T22:45:00Z",
+        "validity_period": "2024-2028",
+        "validity_status": "Vigente conforme al reavalúo fiscal habitacional cuadrienal SII",
+        "phenomenon_description": "Reavalúo fiscal habitacional nacional del Servicio de Impuestos Internos (SII 2024)"
+    },
+    "equipamientos_2017": {
+        "observation_datetime": "2017-01-01T00:00:00Z",
+        "phenomenon_interval": [["2017-01-01T00:00:00Z", "2017-12-31T23:59:59Z"]],
+        "publication_date": "2018-05-01T00:00:00Z",
+        "last_modified": "2026-10-17T22:45:00Z",
+        "validity_period": "2017-2026",
+        "validity_status": "Línea base histórica oficial de equipamientos urbanos",
+        "phenomenon_description": "Catastro nacional unificado de equipamientos 2017 (Salud, Educación, Áreas Verdes, Deporte, Cultura, Servicios)"
+    },
+    "red_vial_ejes_2017": {
+        "observation_datetime": "2017-01-01T00:00:00Z",
+        "phenomenon_interval": [["2017-01-01T00:00:00Z", "2017-12-31T23:59:59Z"]],
+        "publication_date": "2018-05-01T00:00:00Z",
+        "last_modified": "2026-10-17T22:45:00Z",
+        "validity_period": "2017-2026",
+        "validity_status": "Línea base oficial de ruteo y accesibilidad peatonal",
+        "phenomenon_description": "Grafo de ejes viales nacionales ruteables con impedancia Tobler y pendientes DEM"
+    },
+    "educacion_inicial_2024": {
+        "observation_datetime": "2024-01-01T00:00:00Z",
+        "phenomenon_interval": [["2024-01-01T00:00:00Z", "2024-12-31T23:59:59Z"]],
+        "publication_date": "2026-05-01T00:00:00Z",
+        "last_modified": "2026-10-17T22:45:00Z",
+        "validity_period": "2024-2026",
+        "validity_status": "Vigente",
+        "phenomenon_description": "Directorio oficial MINEDUC/Junji/Integra de jardines infantiles y salas cuna 2024"
+    },
+    "huella_edificaciones_2024": {
+        "observation_datetime": "2024-01-01T00:00:00Z",
+        "phenomenon_interval": [["2024-01-01T00:00:00Z", "2024-12-31T23:59:59Z"]],
+        "publication_date": "2026-05-15T00:00:00Z",
+        "last_modified": "2026-10-17T22:45:00Z",
+        "validity_period": "2024-2027",
+        "validity_status": "Vigente",
+        "phenomenon_description": "Catastro vectorial de huella física construida y morfología urbana 2024"
+    },
+    "pem_maritorio_nacional": {
+        "observation_datetime": "2020-01-01T00:00:00Z",
+        "phenomenon_interval": [["2020-01-01T00:00:00Z", "2024-12-31T23:59:59Z"]],
+        "publication_date": "2024-08-01T00:00:00Z",
+        "last_modified": "2026-10-17T22:45:00Z",
+        "validity_period": "2020-2030",
+        "validity_status": "Vigente conforme a directrices FAO y Ley SBAP",
+        "phenomenon_description": "Zonificación y soberanía marítima tricontinental, ZEE y áreas protegidas"
+    },
+    "pem_geomorfologia_gebco": {
+        "observation_datetime": "2023-01-01T00:00:00Z",
+        "phenomenon_interval": [["2023-01-01T00:00:00Z", "2024-12-31T23:59:59Z"]],
+        "publication_date": "2024-08-01T00:00:00Z",
+        "last_modified": "2026-10-17T22:45:00Z",
+        "validity_period": "2023-2030",
+        "validity_status": "Vigente",
+        "phenomenon_description": "Batimetría y relieve de fondos marinos GEBCO 2023/2024"
+    },
+    "pem_montes_submarinos": {
+        "observation_datetime": "2020-01-01T00:00:00Z",
+        "phenomenon_interval": [["2020-01-01T00:00:00Z", "2024-12-31T23:59:59Z"]],
+        "publication_date": "2024-08-01T00:00:00Z",
+        "last_modified": "2026-10-17T22:45:00Z",
+        "validity_period": "2020-2030",
+        "validity_status": "Vigente",
+        "phenomenon_description": "Catastro geomorfológico de montes submarinos y guyots en aguas chilenas"
+    },
+    "pem_cuencas_oceanicas": {
+        "observation_datetime": "2020-01-01T00:00:00Z",
+        "phenomenon_interval": [["2020-01-01T00:00:00Z", "2024-12-31T23:59:59Z"]],
+        "publication_date": "2024-08-01T00:00:00Z",
+        "last_modified": "2026-10-17T22:45:00Z",
+        "validity_period": "2020-2030",
+        "validity_status": "Vigente",
+        "phenomenon_description": "Macro-cuencas oceanográficas y fondos marinos abisales"
+    },
+    "pem_biodiversidad_especies": {
+        "observation_datetime": "2020-01-01T00:00:00Z",
+        "phenomenon_interval": [["2020-01-01T00:00:00Z", "2024-12-31T23:59:59Z"]],
+        "publication_date": "2024-08-01T00:00:00Z",
+        "last_modified": "2026-10-17T22:45:00Z",
+        "validity_period": "2020-2030",
+        "validity_status": "Vigente",
+        "phenomenon_description": "Registro biogeográfico de especies marinas protegidas y vulnerables"
+    },
+    "mbht_2024": {
+        "observation_datetime": "2024-01-01T00:00:00Z",
+        "phenomenon_interval": [["2024-01-01T00:00:00Z", "2024-12-31T23:59:59Z"]],
+        "publication_date": "2026-11-30T00:00:00Z",
+        "last_modified": "2026-10-17T22:45:00Z",
+        "validity_period": "2024-2034",
+        "validity_status": "Publicación oficial programada para noviembre de 2026",
+        "phenomenon_description": "Síntesis BHT 2024 en calibración con microdatos INE y fuentes 2024"
+    }
+}
+
 def ensure_dirs():
     STAC_DIR.mkdir(parents=True, exist_ok=True)
     QGIS_DIR.mkdir(parents=True, exist_ok=True)
@@ -48,10 +180,19 @@ def generar_stac():
     # 1. Colecciones hijas para el catálogo raíz y lista canónica de colecciones
     child_links = []
     canonical_collections = []
-    
+
     # 2. Generar colecciones individuales para las 13 capas oficiales
     for capa in catalog_data.get("capas", []):
         cid = capa["id"]
+        ts_info = TEMPORAL_SEMANTICS_REGISTRY.get(cid, {
+            "observation_datetime": "2017-04-19T00:00:00Z",
+            "phenomenon_interval": [["2017-01-01T00:00:00Z", "2024-12-31T23:59:59Z"]],
+            "publication_date": "2018-05-01T00:00:00Z",
+            "last_modified": "2026-10-17T22:45:00Z",
+            "validity_period": "2017-2026",
+            "validity_status": "Vigente",
+            "phenomenon_description": "Cobertura geoespacial oficial CIT-UAI"
+        })
         col_id = cid.replace("_", "-")
         titulo = capa["titulo"]
         resumen = capa["resumen"]
@@ -107,7 +248,14 @@ def generar_stac():
             "crs_metric_analysis": ["UTM 18S (EPSG:32718)", "UTM 19S (EPSG:32719)"],
             "matriz": [capa.get("matriz", "mbht")],
             "escala": [capa.get("escala", "Nacional")],
-            "physical_columns": [len(capa.get("atributos", []))]
+            "physical_columns": [len(capa.get("atributos", []))],
+            "temporal_semantics:phenomenon_interval": ts_info["phenomenon_interval"][0],
+            "temporal_semantics:observation_date": [ts_info["observation_datetime"]],
+            "temporal_semantics:publication_date": [ts_info["publication_date"]],
+            "temporal_semantics:last_modified": [ts_info["last_modified"]],
+            "temporal_semantics:validity_period": [ts_info["validity_period"]],
+            "temporal_semantics:validity_status": [ts_info["validity_status"]],
+            "temporal_semantics:phenomenon_description": [ts_info["phenomenon_description"]]
         }
         if cid == "kpi_mud_2017":
             summaries["macro_dimensions"] = ["dim_acc (6/18)", "dim_soc (6/18)", "dim_seg (4/18)", "dim_amb (2/18)"]
@@ -153,7 +301,7 @@ def generar_stac():
             ],
             "extent": {
                 "spatial": {"bbox": [bbox]},
-                "temporal": {"interval": [["2017-01-01T00:00:00Z", "2026-12-31T23:59:59Z"]]}
+                "temporal": {"interval": ts_info["phenomenon_interval"]}
             },
             "summaries": summaries,
             "links": [
@@ -342,33 +490,55 @@ def generar_stac():
         col_title = col.get("title", col_id)
         col_desc = col.get("description", "")
         bbox = col.get("extent", {}).get("spatial", {}).get("bbox", [[-109.45, -56.53, -66.41, -17.50]])[0]
-        
+        cid_key = col_id.replace("-", "_")
+        ts_item = TEMPORAL_SEMANTICS_REGISTRY.get(cid_key, {
+            "observation_datetime": "2017-04-19T00:00:00Z",
+            "phenomenon_interval": [["2017-01-01T00:00:00Z", "2024-12-31T23:59:59Z"]],
+            "publication_date": "2018-05-01T00:00:00Z",
+            "last_modified": "2026-10-17T22:45:00Z",
+            "validity_period": "2017-2026",
+            "validity_status": "Vigente",
+            "phenomenon_description": "Cobertura geoespacial oficial CIT-UAI"
+        })
         feature_item = {
-            "stac_version": "1.0.0",
-            "stac_extensions": [
-                "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
-                "https://stac-extensions.github.io/file/v2.1.0/schema.json"
-            ],
-            "type": "Feature",
-            "id": f"{col_id}-nacional",
-            "collection": col_id,
-            "bbox": bbox,
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [[
-                    [bbox[0], bbox[1]],
-                    [bbox[2], bbox[1]],
-                    [bbox[2], bbox[3]],
-                    [bbox[0], bbox[3]],
-                    [bbox[0], bbox[1]]
-                ]]
-            },
-            "properties": {
-                "title": f"STAC Item Nacional — {col_title}",
-                "description": col_desc,
-                "datetime": "2026-10-17T00:00:00Z",
-                "proj:epsg": 4326
-            },
+                "stac_version": "1.0.0",
+                "stac_extensions": [
+                    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+                    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+                ],
+                "type": "Feature",
+                "id": f"{col_id}-nacional",
+                "collection": col_id,
+                "bbox": bbox,
+                "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [[
+                        [bbox[0], bbox[1]],
+                        [bbox[2], bbox[1]],
+                        [bbox[2], bbox[3]],
+                        [bbox[0], bbox[3]],
+                        [bbox[0], bbox[1]]
+                    ]]
+                },
+                "properties": {
+                    "title": f"STAC Item Nacional — {col_title}",
+                    "description": col_desc,
+                    "datetime": ts_item["observation_datetime"],
+                    "start_datetime": ts_item["phenomenon_interval"][0][0],
+                    "end_datetime": ts_item["phenomenon_interval"][0][1],
+                    "created": ts_item["publication_date"],
+                    "updated": ts_item["last_modified"],
+                    "proj:epsg": 4326,
+                    "cit:temporal_semantics": {
+                        "phenomenon_observation_date": ts_item["observation_datetime"],
+                        "phenomenon_time_span": f"{ts_item['phenomenon_interval'][0][0]} / {ts_item['phenomenon_interval'][0][1]}",
+                        "publication_date": ts_item["publication_date"],
+                        "last_modified_date": ts_item["last_modified"],
+                        "validity_period": ts_item["validity_period"],
+                        "validity_status": ts_item["validity_status"],
+                        "phenomenon_description": ts_item["phenomenon_description"]
+                    }
+                },
             "links": [
                 {"rel": "root", "type": "application/json", "href": "/stac/catalog.json"},
                 {"rel": "parent", "type": "application/json", "href": f"/stac/{col_id.replace('-', '_')}.json"},
@@ -470,6 +640,15 @@ def generar_stac_html():
     # Collections for all 13 official layers
     for capa in catalog_data.get("capas", []):
         cid = capa["id"]
+        ts_info = TEMPORAL_SEMANTICS_REGISTRY.get(cid, {
+            "observation_datetime": "2017-04-19T00:00:00Z",
+            "phenomenon_interval": [["2017-01-01T00:00:00Z", "2024-12-31T23:59:59Z"]],
+            "publication_date": "2018-05-01T00:00:00Z",
+            "last_modified": "2026-10-17T22:45:00Z",
+            "validity_period": "2017-2026",
+            "validity_status": "Vigente",
+            "phenomenon_description": "Cobertura geoespacial oficial CIT-UAI"
+        })
         titulo = capa["titulo"]
         resumen = capa["resumen"]
         ambito = capa.get("ambito", "tierra")

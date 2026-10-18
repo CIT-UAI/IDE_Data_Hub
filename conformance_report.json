@@ -5,7 +5,7 @@
   "version": "2026.2",
   "platform_release": "2026.2",
   "report_format_version": "1.1.0-CUDA-SDoC",
-  "generated_at": "2026-10-18T01:04:49Z",
+  "generated_at": "2026-10-18T01:31:57Z",
   "status": "CONFORMANT",
   "summary": {
     "vectors_evaluated": 15,
@@ -146,9 +146,9 @@
   "reproducible_benchmarks": {
     "methodology": "Lectura columnar selectiva PyArrow (GeoParquet 1.1 SNAPPY) y sondas HTTP Range (RFC 9110, 206 Partial Content) hacia CDN CloudFront.",
     "local_columnar_r15_weighted_bht": {
-      "p50_ms": 5.26,
-      "p95_ms": 6.05,
-      "p99_ms": 6.05,
+      "p50_ms": 2.62,
+      "p95_ms": 3.19,
+      "p99_ms": 3.19,
       "rows": 3304,
       "bht_weighted": 0.4623
     },

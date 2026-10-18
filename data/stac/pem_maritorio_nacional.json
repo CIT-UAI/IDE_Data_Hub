@@ -43,8 +43,8 @@
     "temporal": {
       "interval": [
         [
-          "2017-01-01T00:00:00Z",
-          "2026-12-31T23:59:59Z"
+          "2020-01-01T00:00:00Z",
+          "2024-12-31T23:59:59Z"
         ]
       ]
     }
@@ -77,6 +77,28 @@
     ],
     "physical_columns": [
       5
+    ],
+    "temporal_semantics:phenomenon_interval": [
+      "2020-01-01T00:00:00Z",
+      "2024-12-31T23:59:59Z"
+    ],
+    "temporal_semantics:observation_date": [
+      "2020-01-01T00:00:00Z"
+    ],
+    "temporal_semantics:publication_date": [
+      "2024-08-01T00:00:00Z"
+    ],
+    "temporal_semantics:last_modified": [
+      "2026-10-17T22:45:00Z"
+    ],
+    "temporal_semantics:validity_period": [
+      "2020-2030"
+    ],
+    "temporal_semantics:validity_status": [
+      "Vigente conforme a directrices FAO y Ley SBAP"
+    ],
+    "temporal_semantics:phenomenon_description": [
+      "Zonificación y soberanía marítima tricontinental, ZEE y áreas protegidas"
     ]
   },
   "links": [

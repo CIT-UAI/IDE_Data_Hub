@@ -45,8 +45,8 @@
         "temporal": {
           "interval": [
             [
-              "2017-01-01T00:00:00Z",
-              "2026-12-31T23:59:59Z"
+              "2017-04-19T00:00:00Z",
+              "2017-12-31T23:59:59Z"
             ]
           ]
         }
@@ -79,6 +79,28 @@
         ],
         "physical_columns": [
           42
+        ],
+        "temporal_semantics:phenomenon_interval": [
+          "2017-04-19T00:00:00Z",
+          "2017-12-31T23:59:59Z"
+        ],
+        "temporal_semantics:observation_date": [
+          "2017-04-19T00:00:00Z"
+        ],
+        "temporal_semantics:publication_date": [
+          "2018-05-01T00:00:00Z"
+        ],
+        "temporal_semantics:last_modified": [
+          "2026-10-17T22:45:00Z"
+        ],
+        "temporal_semantics:validity_period": [
+          "2017-2026"
+        ],
+        "temporal_semantics:validity_status": [
+          "Línea base oficial cerrada y vigente en producción (matrizbht.cl)"
+        ],
+        "temporal_semantics:phenomenon_description": [
+          "Censo Nacional de Población y Vivienda 2017 y catastros sectoriales 2017"
         ],
         "macro_dimensions": [
           "dim_acc (6/18)",
@@ -263,8 +285,8 @@
         "temporal": {
           "interval": [
             [
-              "2017-01-01T00:00:00Z",
-              "2026-12-31T23:59:59Z"
+              "2020-01-01T00:00:00Z",
+              "2024-12-31T23:59:59Z"
             ]
           ]
         }
@@ -297,6 +319,28 @@
         ],
         "physical_columns": [
           5
+        ],
+        "temporal_semantics:phenomenon_interval": [
+          "2020-01-01T00:00:00Z",
+          "2024-12-31T23:59:59Z"
+        ],
+        "temporal_semantics:observation_date": [
+          "2020-01-01T00:00:00Z"
+        ],
+        "temporal_semantics:publication_date": [
+          "2024-08-01T00:00:00Z"
+        ],
+        "temporal_semantics:last_modified": [
+          "2026-10-17T22:45:00Z"
+        ],
+        "temporal_semantics:validity_period": [
+          "2020-2030"
+        ],
+        "temporal_semantics:validity_status": [
+          "Vigente conforme a directrices FAO y Ley SBAP"
+        ],
+        "temporal_semantics:phenomenon_description": [
+          "Zonificación y soberanía marítima tricontinental, ZEE y áreas protegidas"
         ]
       },
       "links": [
@@ -445,8 +489,8 @@
         "temporal": {
           "interval": [
             [
-              "2017-01-01T00:00:00Z",
-              "2026-12-31T23:59:59Z"
+              "2023-01-01T00:00:00Z",
+              "2024-12-31T23:59:59Z"
             ]
           ]
         }
@@ -479,6 +523,28 @@
         ],
         "physical_columns": [
           3
+        ],
+        "temporal_semantics:phenomenon_interval": [
+          "2023-01-01T00:00:00Z",
+          "2024-12-31T23:59:59Z"
+        ],
+        "temporal_semantics:observation_date": [
+          "2023-01-01T00:00:00Z"
+        ],
+        "temporal_semantics:publication_date": [
+          "2024-08-01T00:00:00Z"
+        ],
+        "temporal_semantics:last_modified": [
+          "2026-10-17T22:45:00Z"
+        ],
+        "temporal_semantics:validity_period": [
+          "2023-2030"
+        ],
+        "temporal_semantics:validity_status": [
+          "Vigente"
+        ],
+        "temporal_semantics:phenomenon_description": [
+          "Batimetría y relieve de fondos marinos GEBCO 2023/2024"
         ]
       },
       "links": [
@@ -627,8 +693,8 @@
         "temporal": {
           "interval": [
             [
-              "2017-01-01T00:00:00Z",
-              "2026-12-31T23:59:59Z"
+              "2020-01-01T00:00:00Z",
+              "2024-12-31T23:59:59Z"
             ]
           ]
         }
@@ -661,6 +727,28 @@
         ],
         "physical_columns": [
           5
+        ],
+        "temporal_semantics:phenomenon_interval": [
+          "2020-01-01T00:00:00Z",
+          "2024-12-31T23:59:59Z"
+        ],
+        "temporal_semantics:observation_date": [
+          "2020-01-01T00:00:00Z"
+        ],
+        "temporal_semantics:publication_date": [
+          "2024-08-01T00:00:00Z"
+        ],
+        "temporal_semantics:last_modified": [
+          "2026-10-17T22:45:00Z"
+        ],
+        "temporal_semantics:validity_period": [
+          "2020-2030"
+        ],
+        "temporal_semantics:validity_status": [
+          "Vigente"
+        ],
+        "temporal_semantics:phenomenon_description": [
+          "Catastro geomorfológico de montes submarinos y guyots en aguas chilenas"
         ]
       },
       "links": [
@@ -809,8 +897,8 @@
         "temporal": {
           "interval": [
             [
-              "2017-01-01T00:00:00Z",
-              "2026-12-31T23:59:59Z"
+              "2020-01-01T00:00:00Z",
+              "2024-12-31T23:59:59Z"
             ]
           ]
         }
@@ -843,6 +931,28 @@
         ],
         "physical_columns": [
           4
+        ],
+        "temporal_semantics:phenomenon_interval": [
+          "2020-01-01T00:00:00Z",
+          "2024-12-31T23:59:59Z"
+        ],
+        "temporal_semantics:observation_date": [
+          "2020-01-01T00:00:00Z"
+        ],
+        "temporal_semantics:publication_date": [
+          "2024-08-01T00:00:00Z"
+        ],
+        "temporal_semantics:last_modified": [
+          "2026-10-17T22:45:00Z"
+        ],
+        "temporal_semantics:validity_period": [
+          "2020-2030"
+        ],
+        "temporal_semantics:validity_status": [
+          "Vigente"
+        ],
+        "temporal_semantics:phenomenon_description": [
+          "Macro-cuencas oceanográficas y fondos marinos abisales"
         ]
       },
       "links": [
@@ -991,8 +1101,8 @@
         "temporal": {
           "interval": [
             [
-              "2017-01-01T00:00:00Z",
-              "2026-12-31T23:59:59Z"
+              "2020-01-01T00:00:00Z",
+              "2024-12-31T23:59:59Z"
             ]
           ]
         }
@@ -1025,6 +1135,28 @@
         ],
         "physical_columns": [
           12
+        ],
+        "temporal_semantics:phenomenon_interval": [
+          "2020-01-01T00:00:00Z",
+          "2024-12-31T23:59:59Z"
+        ],
+        "temporal_semantics:observation_date": [
+          "2020-01-01T00:00:00Z"
+        ],
+        "temporal_semantics:publication_date": [
+          "2024-08-01T00:00:00Z"
+        ],
+        "temporal_semantics:last_modified": [
+          "2026-10-17T22:45:00Z"
+        ],
+        "temporal_semantics:validity_period": [
+          "2020-2030"
+        ],
+        "temporal_semantics:validity_status": [
+          "Vigente"
+        ],
+        "temporal_semantics:phenomenon_description": [
+          "Registro biogeográfico de especies marinas protegidas y vulnerables"
         ]
       },
       "links": [
@@ -1151,8 +1283,8 @@
         "temporal": {
           "interval": [
             [
-              "2017-01-01T00:00:00Z",
-              "2026-12-31T23:59:59Z"
+              "2024-03-09T00:00:00Z",
+              "2024-07-31T23:59:59Z"
             ]
           ]
         }
@@ -1185,6 +1317,28 @@
         ],
         "physical_columns": [
           25
+        ],
+        "temporal_semantics:phenomenon_interval": [
+          "2024-03-09T00:00:00Z",
+          "2024-07-31T23:59:59Z"
+        ],
+        "temporal_semantics:observation_date": [
+          "2024-03-09T00:00:00Z"
+        ],
+        "temporal_semantics:publication_date": [
+          "2026-04-01T00:00:00Z"
+        ],
+        "temporal_semantics:last_modified": [
+          "2026-10-17T22:45:00Z"
+        ],
+        "temporal_semantics:validity_period": [
+          "2024-2034"
+        ],
+        "temporal_semantics:validity_status": [
+          "Insumos censales preparatorios oficiales disponibles"
+        ],
+        "temporal_semantics:phenomenon_description": [
+          "Levantamiento presencial Censo de Población y Vivienda INE 2024"
         ],
         "demographic_fields": [
           "POBLACION_2024",
@@ -1347,8 +1501,8 @@
         "temporal": {
           "interval": [
             [
-              "2017-01-01T00:00:00Z",
-              "2026-12-31T23:59:59Z"
+              "2024-01-01T00:00:00Z",
+              "2024-12-31T23:59:59Z"
             ]
           ]
         }
@@ -1381,6 +1535,28 @@
         ],
         "physical_columns": [
           15
+        ],
+        "temporal_semantics:phenomenon_interval": [
+          "2024-01-01T00:00:00Z",
+          "2024-12-31T23:59:59Z"
+        ],
+        "temporal_semantics:observation_date": [
+          "2024-01-01T00:00:00Z"
+        ],
+        "temporal_semantics:publication_date": [
+          "2026-04-15T00:00:00Z"
+        ],
+        "temporal_semantics:last_modified": [
+          "2026-10-17T22:45:00Z"
+        ],
+        "temporal_semantics:validity_period": [
+          "2024-2028"
+        ],
+        "temporal_semantics:validity_status": [
+          "Vigente como estratificación socioeconómica territorial"
+        ],
+        "temporal_semantics:phenomenon_description": [
+          "Caracterización socioeconómica decenal y fuentes tributarias SII 2024"
         ]
       },
       "links": [
@@ -1529,8 +1705,8 @@
         "temporal": {
           "interval": [
             [
-              "2017-01-01T00:00:00Z",
-              "2026-12-31T23:59:59Z"
+              "2024-01-01T00:00:00Z",
+              "2024-12-31T23:59:59Z"
             ]
           ]
         }
@@ -1563,6 +1739,28 @@
         ],
         "physical_columns": [
           8
+        ],
+        "temporal_semantics:phenomenon_interval": [
+          "2024-01-01T00:00:00Z",
+          "2024-12-31T23:59:59Z"
+        ],
+        "temporal_semantics:observation_date": [
+          "2024-01-01T00:00:00Z"
+        ],
+        "temporal_semantics:publication_date": [
+          "2026-03-15T00:00:00Z"
+        ],
+        "temporal_semantics:last_modified": [
+          "2026-10-17T22:45:00Z"
+        ],
+        "temporal_semantics:validity_period": [
+          "2024-2028"
+        ],
+        "temporal_semantics:validity_status": [
+          "Vigente conforme al reavalúo fiscal habitacional cuadrienal SII"
+        ],
+        "temporal_semantics:phenomenon_description": [
+          "Reavalúo fiscal habitacional nacional del Servicio de Impuestos Internos (SII 2024)"
         ]
       },
       "links": [
@@ -1712,7 +1910,7 @@
           "interval": [
             [
               "2017-01-01T00:00:00Z",
-              "2026-12-31T23:59:59Z"
+              "2017-12-31T23:59:59Z"
             ]
           ]
         }
@@ -1745,6 +1943,28 @@
         ],
         "physical_columns": [
           9
+        ],
+        "temporal_semantics:phenomenon_interval": [
+          "2017-01-01T00:00:00Z",
+          "2017-12-31T23:59:59Z"
+        ],
+        "temporal_semantics:observation_date": [
+          "2017-01-01T00:00:00Z"
+        ],
+        "temporal_semantics:publication_date": [
+          "2018-05-01T00:00:00Z"
+        ],
+        "temporal_semantics:last_modified": [
+          "2026-10-17T22:45:00Z"
+        ],
+        "temporal_semantics:validity_period": [
+          "2017-2026"
+        ],
+        "temporal_semantics:validity_status": [
+          "Línea base histórica oficial de equipamientos urbanos"
+        ],
+        "temporal_semantics:phenomenon_description": [
+          "Catastro nacional unificado de equipamientos 2017 (Salud, Educación, Áreas Verdes, Deporte, Cultura, Servicios)"
         ]
       },
       "links": [
@@ -1894,7 +2114,7 @@
           "interval": [
             [
               "2017-01-01T00:00:00Z",
-              "2026-12-31T23:59:59Z"
+              "2017-12-31T23:59:59Z"
             ]
           ]
         }
@@ -1927,6 +2147,28 @@
         ],
         "physical_columns": [
           7
+        ],
+        "temporal_semantics:phenomenon_interval": [
+          "2017-01-01T00:00:00Z",
+          "2017-12-31T23:59:59Z"
+        ],
+        "temporal_semantics:observation_date": [
+          "2017-01-01T00:00:00Z"
+        ],
+        "temporal_semantics:publication_date": [
+          "2018-05-01T00:00:00Z"
+        ],
+        "temporal_semantics:last_modified": [
+          "2026-10-17T22:45:00Z"
+        ],
+        "temporal_semantics:validity_period": [
+          "2017-2026"
+        ],
+        "temporal_semantics:validity_status": [
+          "Línea base oficial de ruteo y accesibilidad peatonal"
+        ],
+        "temporal_semantics:phenomenon_description": [
+          "Grafo de ejes viales nacionales ruteables con impedancia Tobler y pendientes DEM"
         ]
       },
       "links": [
@@ -2075,8 +2317,8 @@
         "temporal": {
           "interval": [
             [
-              "2017-01-01T00:00:00Z",
-              "2026-12-31T23:59:59Z"
+              "2024-01-01T00:00:00Z",
+              "2024-12-31T23:59:59Z"
             ]
           ]
         }
@@ -2109,6 +2351,28 @@
         ],
         "physical_columns": [
           15
+        ],
+        "temporal_semantics:phenomenon_interval": [
+          "2024-01-01T00:00:00Z",
+          "2024-12-31T23:59:59Z"
+        ],
+        "temporal_semantics:observation_date": [
+          "2024-01-01T00:00:00Z"
+        ],
+        "temporal_semantics:publication_date": [
+          "2026-05-01T00:00:00Z"
+        ],
+        "temporal_semantics:last_modified": [
+          "2026-10-17T22:45:00Z"
+        ],
+        "temporal_semantics:validity_period": [
+          "2024-2026"
+        ],
+        "temporal_semantics:validity_status": [
+          "Vigente"
+        ],
+        "temporal_semantics:phenomenon_description": [
+          "Directorio oficial MINEDUC/Junji/Integra de jardines infantiles y salas cuna 2024"
         ]
       },
       "links": [
@@ -2257,8 +2521,8 @@
         "temporal": {
           "interval": [
             [
-              "2017-01-01T00:00:00Z",
-              "2026-12-31T23:59:59Z"
+              "2024-01-01T00:00:00Z",
+              "2024-12-31T23:59:59Z"
             ]
           ]
         }
@@ -2291,6 +2555,28 @@
         ],
         "physical_columns": [
           6
+        ],
+        "temporal_semantics:phenomenon_interval": [
+          "2024-01-01T00:00:00Z",
+          "2024-12-31T23:59:59Z"
+        ],
+        "temporal_semantics:observation_date": [
+          "2024-01-01T00:00:00Z"
+        ],
+        "temporal_semantics:publication_date": [
+          "2026-05-15T00:00:00Z"
+        ],
+        "temporal_semantics:last_modified": [
+          "2026-10-17T22:45:00Z"
+        ],
+        "temporal_semantics:validity_period": [
+          "2024-2027"
+        ],
+        "temporal_semantics:validity_status": [
+          "Vigente"
+        ],
+        "temporal_semantics:phenomenon_description": [
+          "Catastro vectorial de huella física construida y morfología urbana 2024"
         ]
       },
       "links": [

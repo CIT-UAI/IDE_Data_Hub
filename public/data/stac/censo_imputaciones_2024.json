@@ -43,8 +43,8 @@
     "temporal": {
       "interval": [
         [
-          "2017-01-01T00:00:00Z",
-          "2026-12-31T23:59:59Z"
+          "2024-03-09T00:00:00Z",
+          "2024-07-31T23:59:59Z"
         ]
       ]
     }
@@ -77,6 +77,28 @@
     ],
     "physical_columns": [
       25
+    ],
+    "temporal_semantics:phenomenon_interval": [
+      "2024-03-09T00:00:00Z",
+      "2024-07-31T23:59:59Z"
+    ],
+    "temporal_semantics:observation_date": [
+      "2024-03-09T00:00:00Z"
+    ],
+    "temporal_semantics:publication_date": [
+      "2026-04-01T00:00:00Z"
+    ],
+    "temporal_semantics:last_modified": [
+      "2026-10-17T22:45:00Z"
+    ],
+    "temporal_semantics:validity_period": [
+      "2024-2034"
+    ],
+    "temporal_semantics:validity_status": [
+      "Insumos censales preparatorios oficiales disponibles"
+    ],
+    "temporal_semantics:phenomenon_description": [
+      "Levantamiento presencial Censo de Población y Vivienda INE 2024"
     ],
     "demographic_fields": [
       "POBLACION_2024",

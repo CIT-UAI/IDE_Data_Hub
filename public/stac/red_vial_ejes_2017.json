@@ -44,7 +44,7 @@
       "interval": [
         [
           "2017-01-01T00:00:00Z",
-          "2026-12-31T23:59:59Z"
+          "2017-12-31T23:59:59Z"
         ]
       ]
     }
@@ -77,6 +77,28 @@
     ],
     "physical_columns": [
       7
+    ],
+    "temporal_semantics:phenomenon_interval": [
+      "2017-01-01T00:00:00Z",
+      "2017-12-31T23:59:59Z"
+    ],
+    "temporal_semantics:observation_date": [
+      "2017-01-01T00:00:00Z"
+    ],
+    "temporal_semantics:publication_date": [
+      "2018-05-01T00:00:00Z"
+    ],
+    "temporal_semantics:last_modified": [
+      "2026-10-17T22:45:00Z"
+    ],
+    "temporal_semantics:validity_period": [
+      "2017-2026"
+    ],
+    "temporal_semantics:validity_status": [
+      "Línea base oficial de ruteo y accesibilidad peatonal"
+    ],
+    "temporal_semantics:phenomenon_description": [
+      "Grafo de ejes viales nacionales ruteables con impedancia Tobler y pendientes DEM"
     ]
   },
   "links": [

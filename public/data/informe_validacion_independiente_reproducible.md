@@ -1,10 +1,10 @@
 # 🌐 Informe de Validación Independiente y Reproducible — Infraestructura de Datos Espaciales (IDE CIT)
 > **Entidad Emisora**: Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez  
-> **Fecha y Hora de Certificación (UTC)**: `2026-10-18T00:58:24Z`  
+> **Fecha y Hora de Certificación (UTC)**: `2026-10-18T01:33:22Z`  
 > **URL Evaluada**: `https://d1owm1ug2fpvep.cloudfront.net`  
 > **Versión del Protocolo Verificador**: `v1.2.0`  
 > **Entorno de Ejecución**: `3.11.7 Open Source`  
-> **Resultado Global**: **CONFORMIDAD TOTAL (PASS)** — `27/29` pruebas aprobadas (2 advertencias, 0 fallas).  
+> **Resultado Global**: **CONFORMIDAD TOTAL (PASS)** — `29/31` pruebas aprobadas (2 advertencias, 0 fallas).  
 
 ---
 
@@ -48,6 +48,8 @@ python verificador_independiente_terceros.py --base-url https://d1owm1ug2fpvep.c
 | ✅ PASS | STAC API | Endpoint /stac/collections | `200` | `200` | Endpoint respondió HTTP 200 |
 | ✅ PASS | STAC API | Endpoint /stac/conformance | `200` | `200` | Endpoint respondió HTTP 200 |
 | ✅ PASS | STAC API | Endpoint /stac/search | `200` | `200` | Endpoint respondió HTTP 200 |
+| ✅ PASS | STAC Semántica Temporal | Intervalo Fenómeno MBHT 2017 | `['2017-04-19T00:00:00Z', '2017-12-31T23:59:59Z']` | `['2017-04-19...', '2017-12-31...']` | Extent temporal acotado al fenómeno censal observado (2017) |
+| ✅ PASS | STAC Semántica Temporal | Distinción Observación vs Vigencia | `Obs=True, Vigencia=True` | `True, True` | Semántica temporal de 5 niveles explícitamente declarada |
 | ✅ PASS | DCAT-AP | DCAT JSON HTTP 200 | `200` | `200` | Catálogo semántico accesible |
 | ✅ PASS | DCAT-AP | Datasets Registrados | `13` | `>=13` | 13 datasets con distribuciones completas |
 | ⚠️ WARN | DCAT-AP | Distribuciones Totales | `44` | `>=50` | 44 distribuciones multiformato |

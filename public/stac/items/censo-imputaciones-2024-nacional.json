@@ -43,8 +43,21 @@
   "properties": {
     "title": "STAC Item Nacional — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
     "description": "Modelo demográfico sintético y desagregación multivariada determinística del Censo 2024 (18,48 millones de personas, 7,66 millones de viviendas y 6,62 millones de hogares) a escala de 254.395 manzanas urbanas y entidades rurales para las 16 regiones de Chile. Desarrollado por el CIT-UAI mediante interpolación osculatriz de Sprague y programación entera de mayor residuo para modelación espacial de accesibilidad y demanda de equipamientos, respetando irrestrictamente el secreto estadístico (Ley N° 17.374, Art. 29).",
-    "datetime": "2026-10-17T00:00:00Z",
-    "proj:epsg": 4326
+    "datetime": "2024-03-09T00:00:00Z",
+    "start_datetime": "2024-03-09T00:00:00Z",
+    "end_datetime": "2024-07-31T23:59:59Z",
+    "created": "2026-04-01T00:00:00Z",
+    "updated": "2026-10-17T22:45:00Z",
+    "proj:epsg": 4326,
+    "cit:temporal_semantics": {
+      "phenomenon_observation_date": "2024-03-09T00:00:00Z",
+      "phenomenon_time_span": "2024-03-09T00:00:00Z / 2024-07-31T23:59:59Z",
+      "publication_date": "2026-04-01T00:00:00Z",
+      "last_modified_date": "2026-10-17T22:45:00Z",
+      "validity_period": "2024-2034",
+      "validity_status": "Insumos censales preparatorios oficiales disponibles",
+      "phenomenon_description": "Levantamiento presencial Censo de Población y Vivienda INE 2024"
+    }
   },
   "links": [
     {

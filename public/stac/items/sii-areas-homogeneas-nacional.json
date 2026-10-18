@@ -43,8 +43,21 @@
   "properties": {
     "title": "STAC Item Nacional — Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
     "description": "Catastro espacial completo de 14.157 Áreas Homogéneas definido por el Servicio de Impuestos Internos (SII) bajo la Ley N° 17.235 sobre Impuesto Territorial. Delimita zonas territoriales con características urbanísticas, topográficas, de accesibilidad a servicios y valor unitario de terreno homogéneas para los procesos de reavalúo de bienes raíces en todo Chile. Proporciona el Valor Guía de Terreno (VGT en UF/m² y $/m²), coeficiente guía y clasificación comunal para análisis de plusvalía, dinámica inmobiliaria y tributación territorial.",
-    "datetime": "2026-10-17T00:00:00Z",
-    "proj:epsg": 4326
+    "datetime": "2024-01-01T00:00:00Z",
+    "start_datetime": "2024-01-01T00:00:00Z",
+    "end_datetime": "2024-12-31T23:59:59Z",
+    "created": "2026-03-15T00:00:00Z",
+    "updated": "2026-10-17T22:45:00Z",
+    "proj:epsg": 4326,
+    "cit:temporal_semantics": {
+      "phenomenon_observation_date": "2024-01-01T00:00:00Z",
+      "phenomenon_time_span": "2024-01-01T00:00:00Z / 2024-12-31T23:59:59Z",
+      "publication_date": "2026-03-15T00:00:00Z",
+      "last_modified_date": "2026-10-17T22:45:00Z",
+      "validity_period": "2024-2028",
+      "validity_status": "Vigente conforme al reavalúo fiscal habitacional cuadrienal SII",
+      "phenomenon_description": "Reavalúo fiscal habitacional nacional del Servicio de Impuestos Internos (SII 2024)"
+    }
   },
   "links": [
     {
