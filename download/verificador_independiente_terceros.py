@@ -363,10 +363,10 @@ class VerificadorIndependienteIDE:
             print(f"[*] Reporte JSON guardado exitosamente en: {self.output_json}")
 
         if self.summary["fail"] == 0:
-            print("\n🏆 CERTIFICACIÓN INDEPENDIENTE: CONFORMIDAD TOTAL VERIFICADA.")
+            print("\n[OK] PROTOCOLO DE VERIFICACIÓN REPRODUCIBLE: CONFORMIDAD TÉCNICA VERIFICADA.")
             return 0
         else:
-            print(f"\n❌ SE REGISTRARON {self.summary['fail']} FALLAS EN LA AUDITORÍA.")
+            print(f"\n[-] SE REGISTRARON {self.summary['fail']} DISCREPANCIAS EN EL PROTOCOLO DE VERIFICACIÓN.")
             return 1
 
 def main():

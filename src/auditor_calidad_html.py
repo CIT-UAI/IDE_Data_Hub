@@ -259,4 +259,4 @@ if __name__ == "__main__":
         for issue in all_issues:
             print(f"     → {issue}")
     else:
-        print("\n  🏆 PORTAL IDE CIT: CALIDAD DE EXCELENCIA VERIFICADA")
+        print("\n  [OK] Conformidad técnica y estructural verificada según especificación.")

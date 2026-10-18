@@ -2864,7 +2864,7 @@ def get_copilot_js_engine() -> str:
             }
 
             // -------------------------------------------------------------
-            // 12. PROTOCOLO DE HUMILDAD INTELECTUAL Y CONSTRUCCIÓN DE VÍNCULO
+            // 12. LÍMITE DE COBERTURA OFICIAL Y REGISTRO EN BITÁCORA DE TRABAJO
             // -------------------------------------------------------------
             // A. Evaluación de Fuera de Ámbito (Fútbol, Recetas, Farándula, Chistes, Horóscopo, etc.)
             const patronesFueraAmbito = [
@@ -2881,8 +2881,8 @@ def get_copilot_js_engine() -> str:
             if (esFueraDeAmbito) {
                 registrarBitacoraEstudio(query, 'fuera_de_ambito', 'Pregunta fuera de ámbito territorial');
                 return {
-                    text: '<strong>Orientación y Vocación Institucional</strong><br><br>' +
-                          'Agradezco su pregunta. Mi vocación y campo de estudio se circunscriben estrictamente a la geografía humana, el bienestar territorial y la equidad de nuestras comunidades en Chile. Con mucho gusto puedo orientarle sobre el acceso a servicios o la calidad de vida en su barrio o comuna.',
+                    text: '<strong>Ámbito y Vocación Institucional</strong><br><br>' +
+                          'Agradezco su consulta. El campo de estudio de la IDE CIT se circunscribe a la geografía humana, el bienestar territorial y la equidad comunitaria en Chile. Con gusto puedo orientarle sobre el acceso a equipamientos o las condiciones observadas en su comuna.',
                     action: { layerId: 'kpi_mud_2017', layerTitle: 'Catálogo de Capas' }
                 };
             }
@@ -2897,9 +2897,9 @@ def get_copilot_js_engine() -> str:
             registrarBitacoraEstudio(query, 'territorial_pendiente', temaLimpio);
 
             return {
-                text: `<strong>Protocolo de Humildad Intelectual — Bitácora de Estudio</strong><br><br>` +
-                      `Le agradezco profundamente esta pregunta sobre ${temaLabel}. En este momento no cuento con la evidencia oficial suficiente en mis fuentes para darle una respuesta rigurosa y certera, y prefiero ser totalmente honesto antes que aventurar una suposición.<br><br>` +
-                      `He guardado su inquietud en mi bitácora de estudio. El equipo y yo nos dedicaremos a profundizar en ella para que, en su próxima visita a la plataforma, pueda ofrecerle una perspectiva fundada en la realidad de ese territorio.`,
+                text: `<strong>Límite de Cobertura Oficial — Registro en Bitácora</strong><br><br>` +
+                      `Le agradezco sinceramente su consulta sobre ${temaLabel}. En este momento la plataforma no dispone de la evidencia censal o catastral oficial suficiente para entregar una respuesta con el rigor que corresponde, y por principio metodológico evitamos conjeturas.<br><br>` +
+                      `He registrado su consulta en nuestra bitácora de trabajo para orientar futuros levantamientos y análisis en ese territorio.`,
                 action: { layerId: 'kpi_mud_2017', layerTitle: 'Catálogo de Capas' }
             };
         }

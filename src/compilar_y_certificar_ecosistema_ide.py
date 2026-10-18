@@ -82,9 +82,9 @@ def main():
 
     elapsed = time.time() - t0
     print("\n" + "=" * 80)
-    print(f"🎉 CERTIFICACIÓN Y COMPILACIÓN COMPLETA EXITOSA ({elapsed:.2f}s)")
-    print("   Fuente Única de Verdad: catalogo_ide_cit.json")
-    print("   Cadena Unificada: 100% Validada y Operativa")
+    print(f"[OK] Compilación y verificación del ecosistema completada ({elapsed:.2f}s)")
+    print("   Fuente de Verdad: catalogo_ide_cit.json")
+    print("   Cadena de Recursos: Validada y Sincronizada")
     print("=" * 80)
     return 0
 

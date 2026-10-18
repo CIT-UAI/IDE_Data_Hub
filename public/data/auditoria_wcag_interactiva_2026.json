@@ -2,7 +2,7 @@
   "title": "IDE CIT — Auditoría de Accesibilidad Web WCAG 2.1 Nivel AA (Sistema Interactivo, Mapas y Componentes Dinámicos)",
   "organization": "Centro de Inteligencia Territorial (CIT-UAI) · Universidad Adolfo Ibáñez",
   "standard": "W3C Web Content Accessibility Guidelines (WCAG) 2.1 Nivel AA",
-  "evaluation_date_utc": "2026-10-18T13:04:46Z",
+  "evaluation_date_utc": "2026-10-18T13:20:17Z",
   "overall_status": "CONFORMANT_WCAG_2_1_AA",
   "compliance_percentage": 100.0,
   "total_interactive_elements_audited": 636,
