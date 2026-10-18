@@ -412,9 +412,9 @@ class IDEPortalBuilder:
     <!-- Lucide Icons (Local Vendor) -->
     <script src="/vendor/lucide/lucide.min.js"></script>
 
-    <!-- Leaflet CSS & JS (Visor de Referencia Espacial Estándar OGC) -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Leaflet CSS & JS (Visor de Referencia Espacial Estándar OGC — Local Vendor Alojado) -->
+    <link rel="stylesheet" href="/vendor/leaflet/leaflet.css" />
+    <script src="/vendor/leaflet/leaflet.js"></script>
     
     <!-- View Transitions API para Navegación Fluida sin Saltos -->
     <meta name="view-transition" content="same-origin">

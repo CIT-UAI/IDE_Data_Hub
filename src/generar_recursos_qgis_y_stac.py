@@ -1189,6 +1189,11 @@ def generar_clean_url_dirs():
         wk_sec = BASE_DIR / ".well-known" / "security.txt"
         if wk_sec.exists():
             shutil.copy2(wk_sec, DIST_DIR / ".well-known" / "security.txt")
+        if (PUBLIC_DIR / "vendor").exists():
+            dist_vendor = DIST_DIR / "vendor"
+            if dist_vendor.exists():
+                shutil.rmtree(dist_vendor)
+            shutil.copytree(PUBLIC_DIR / "vendor", dist_vendor)
 
 def main():
     ensure_dirs()
