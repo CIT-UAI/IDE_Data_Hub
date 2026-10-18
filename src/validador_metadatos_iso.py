@@ -503,13 +503,13 @@ class ISOMetadataValidator:
                 },
                 {
                     "rel": "about",
-                    "href": "https://ide.cit.uai.cl/guia-tecnica",
+                    "href": "/guia-tecnica",
                     "type": "text/html",
                     "title": "Guía Técnica y Estándares de Interoperabilidad IDE CIT"
                 },
                 {
                     "rel": "describedby",
-                    "href": "https://ide.cit.uai.cl/dcat.json",
+                    "href": "/dcat.json",
                     "type": "application/json",
                     "title": "Catálogo Semántico W3C DCAT-AP 2.0"
                 }
@@ -519,25 +519,25 @@ class ISOMetadataValidator:
                     "title": "Catálogo Maestro de la Infraestructura IDE CIT (JSON)",
                     "type": "application/json",
                     "roles": ["metadata"],
-                    "href": "https://ide.cit.uai.cl/data/catalogo_ide_cit.json"
+                    "href": "/data/catalogo_ide_cit.json"
                 },
                 "catalog_csv": {
                     "title": "Catálogo Tabular de Coberturas Geoespaciales (CSV)",
                     "type": "text/csv",
                     "roles": ["metadata"],
-                    "href": "https://ide.cit.uai.cl/catalogo.csv"
+                    "href": "/catalogo.csv"
                 },
                 "stac_catalog": {
                     "title": "Catálogo Raíz STAC 1.0.0",
                     "type": "application/json",
                     "roles": ["metadata"],
-                    "href": "https://ide.cit.uai.cl/stac/catalog.json"
+                    "href": "/stac/catalog.json"
                 },
                 "dcat_json": {
                     "title": "Catálogo Semántico DCAT-AP",
                     "type": "application/json",
                     "roles": ["metadata"],
-                    "href": "https://ide.cit.uai.cl/dcat.json"
+                    "href": "/dcat.json"
                 }
             }
         }

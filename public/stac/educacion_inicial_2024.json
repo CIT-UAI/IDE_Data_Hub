@@ -83,23 +83,23 @@
     {
       "rel": "root",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "self",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/educacion_inicial_2024.json"
+      "href": "/stac/educacion_inicial_2024.json"
     },
     {
       "rel": "item",
       "type": "application/geo+json",
       "title": "STAC Item Nacional — Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
-      "href": "https://ide.cit.uai.cl/stac/items/educacion-inicial-2024-nacional.json"
+      "href": "/stac/items/educacion-inicial-2024-nacional.json"
     },
     {
       "rel": "license",
@@ -111,19 +111,19 @@
       "rel": "about",
       "type": "text/html",
       "title": "Guía Técnica y Estándares IDE CIT",
-      "href": "https://ide.cit.uai.cl/guia-tecnica"
+      "href": "/guia-tecnica"
     },
     {
       "rel": "describedby",
       "type": "application/xml",
       "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-      "href": "https://ide.cit.uai.cl/download/iso_xml/educacion_inicial_2024_iso19139.xml"
+      "href": "/download/iso_xml/educacion_inicial_2024_iso19139.xml"
     },
     {
       "rel": "alternate",
       "type": "application/ld+json",
       "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-      "href": "https://ide.cit.uai.cl/dcat.json"
+      "href": "/dcat.json"
     }
   ],
   "assets": {
@@ -133,7 +133,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
+      "href": "/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
       "proj:epsg": 4326,
       "file:size": 364944,
       "file:checksum": "ec9b240098d426b5d2bf9aa1350c3f40a3e8e26aa7acf02a53e20b7ccbce2b8f"
@@ -144,7 +144,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.gpkg",
+      "href": "/download/Educacion_Inicial_Jardines_SalasCuna_2024.gpkg",
       "proj:epsg": 4326,
       "file:size": 2965504,
       "file:checksum": "3b4af733b0440ed398f19834ab7c1cedbd84b3475cf29f460e6f14e79786fbbd"
@@ -155,7 +155,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024_SHP.zip",
+      "href": "/download/Educacion_Inicial_Jardines_SalasCuna_2024_SHP.zip",
       "proj:epsg": 4326,
       "file:size": 386413,
       "file:checksum": "7074d332597226a2b18d2b0462f38f7e10f5b731636c5b81b815b56837f2244c"
@@ -166,7 +166,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.csv",
+      "href": "/download/Educacion_Inicial_Jardines_SalasCuna_2024.csv",
       "file:size": 2489732,
       "file:checksum": "730e93c76b0070e8c02fe7e0eb9290f763c8b03867e997a1fcd1ea7885b8e29f"
     },
@@ -176,7 +176,7 @@
       "roles": [
         "metadata"
       ],
-      "href": "https://ide.cit.uai.cl/download/iso_xml/educacion_inicial_2024_iso19139.xml"
+      "href": "/download/iso_xml/educacion_inicial_2024_iso19139.xml"
     }
   }
 }

@@ -83,23 +83,23 @@
     {
       "rel": "root",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "self",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/inse_socioeconomico.json"
+      "href": "/stac/inse_socioeconomico.json"
     },
     {
       "rel": "item",
       "type": "application/geo+json",
       "title": "STAC Item Nacional — Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
-      "href": "https://ide.cit.uai.cl/stac/items/inse-socioeconomico-nacional.json"
+      "href": "/stac/items/inse-socioeconomico-nacional.json"
     },
     {
       "rel": "license",
@@ -111,19 +111,19 @@
       "rel": "about",
       "type": "text/html",
       "title": "Guía Técnica y Estándares IDE CIT",
-      "href": "https://ide.cit.uai.cl/guia-tecnica"
+      "href": "/guia-tecnica"
     },
     {
       "rel": "describedby",
       "type": "application/xml",
       "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-      "href": "https://ide.cit.uai.cl/download/iso_xml/inse_socioeconomico_iso19139.xml"
+      "href": "/download/iso_xml/inse_socioeconomico_iso19139.xml"
     },
     {
       "rel": "alternate",
       "type": "application/ld+json",
       "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-      "href": "https://ide.cit.uai.cl/dcat.json"
+      "href": "/dcat.json"
     }
   ],
   "assets": {
@@ -133,7 +133,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet",
+      "href": "/download/INSE_Socioeconomico_Nacional_2024.parquet",
       "proj:epsg": 4326,
       "file:size": 279535131,
       "file:checksum": "da7a24420fb4b09963cd8bb9a9bd45b6c4b8110c4ce4f168c308a3e2f75556eb"
@@ -144,7 +144,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.gpkg",
+      "href": "/download/INSE_Socioeconomico_Nacional_2024.gpkg",
       "proj:epsg": 4326,
       "file:size": 487309312,
       "file:checksum": "f86cab40317e5f405879bcb58dd600805bc4ec31293714ab1d45c218ec805de9"
@@ -155,7 +155,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024_SHP.zip",
+      "href": "/download/INSE_Socioeconomico_Nacional_2024_SHP.zip",
       "proj:epsg": 4326,
       "file:size": 232586385,
       "file:checksum": "4626a5ce30d47fdddf066f26620d65948fa983cc7075bfea4545612cfe7e1bb9"
@@ -166,7 +166,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.csv",
+      "href": "/download/INSE_Socioeconomico_Nacional_2024.csv",
       "file:size": 29972846,
       "file:checksum": "d438bf5f535a202736b2b887240130a5286c4d9a7a068d2f6ddea85a0533d047"
     },
@@ -176,7 +176,7 @@
       "roles": [
         "metadata"
       ],
-      "href": "https://ide.cit.uai.cl/download/iso_xml/inse_socioeconomico_iso19139.xml"
+      "href": "/download/iso_xml/inse_socioeconomico_iso19139.xml"
     }
   }
 }

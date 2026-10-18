@@ -97,23 +97,23 @@
     {
       "rel": "root",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "self",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
+      "href": "/stac/censo_imputaciones_2024.json"
     },
     {
       "rel": "item",
       "type": "application/geo+json",
       "title": "STAC Item Nacional — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
-      "href": "https://ide.cit.uai.cl/stac/items/censo-imputaciones-2024-nacional.json"
+      "href": "/stac/items/censo-imputaciones-2024-nacional.json"
     },
     {
       "rel": "license",
@@ -125,19 +125,19 @@
       "rel": "about",
       "type": "text/html",
       "title": "Guía Técnica y Estándares IDE CIT",
-      "href": "https://ide.cit.uai.cl/guia-tecnica"
+      "href": "/guia-tecnica"
     },
     {
       "rel": "describedby",
       "type": "application/xml",
       "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-      "href": "https://ide.cit.uai.cl/download/iso_xml/censo_imputaciones_2024_iso19139.xml"
+      "href": "/download/iso_xml/censo_imputaciones_2024_iso19139.xml"
     },
     {
       "rel": "alternate",
       "type": "application/ld+json",
       "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-      "href": "https://ide.cit.uai.cl/dcat.json"
+      "href": "/dcat.json"
     }
   ],
   "assets": {
@@ -147,7 +147,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet",
+      "href": "/download/Censo_Imputaciones_2024_Nacional.parquet",
       "proj:epsg": 4326,
       "file:size": 284484592,
       "file:checksum": "d1af25f28e15b6f241230865fc506849247bb5736c1e8f03ac7bd89a034295c2"
@@ -158,7 +158,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.gpkg",
+      "href": "/download/Censo_Imputaciones_2024_Nacional.gpkg",
       "proj:epsg": 4326,
       "file:size": 426635264,
       "file:checksum": "48a8b5d454107ec24b91c2b3cab0256e08855ba13ae55b3718b29806d6a0ceab"
@@ -169,7 +169,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional_SHP.zip",
+      "href": "/download/Censo_Imputaciones_2024_Nacional_SHP.zip",
       "proj:epsg": 4326,
       "file:size": 239654071,
       "file:checksum": "dbcbbf1f9fa536ea672edb4f5ce664212338b918978fbd99cabc38a38fea456b"
@@ -180,7 +180,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.csv",
+      "href": "/download/Censo_Imputaciones_2024_Nacional.csv",
       "file:size": 56300717,
       "file:checksum": "382436192861e465f853379445e49bd5d8054edf5cf135aeb3570869a5847e81"
     },
@@ -190,7 +190,7 @@
       "roles": [
         "metadata"
       ],
-      "href": "https://ide.cit.uai.cl/download/iso_xml/censo_imputaciones_2024_iso19139.xml"
+      "href": "/download/iso_xml/censo_imputaciones_2024_iso19139.xml"
     }
   }
 }

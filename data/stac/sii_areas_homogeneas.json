@@ -83,23 +83,23 @@
     {
       "rel": "root",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "self",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/sii_areas_homogeneas.json"
+      "href": "/stac/sii_areas_homogeneas.json"
     },
     {
       "rel": "item",
       "type": "application/geo+json",
       "title": "STAC Item Nacional — Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
-      "href": "https://ide.cit.uai.cl/stac/items/sii-areas-homogeneas-nacional.json"
+      "href": "/stac/items/sii-areas-homogeneas-nacional.json"
     },
     {
       "rel": "license",
@@ -111,19 +111,19 @@
       "rel": "about",
       "type": "text/html",
       "title": "Guía Técnica y Estándares IDE CIT",
-      "href": "https://ide.cit.uai.cl/guia-tecnica"
+      "href": "/guia-tecnica"
     },
     {
       "rel": "describedby",
       "type": "application/xml",
       "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-      "href": "https://ide.cit.uai.cl/download/iso_xml/sii_areas_homogeneas_iso19139.xml"
+      "href": "/download/iso_xml/sii_areas_homogeneas_iso19139.xml"
     },
     {
       "rel": "alternate",
       "type": "application/ld+json",
       "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-      "href": "https://ide.cit.uai.cl/dcat.json"
+      "href": "/dcat.json"
     }
   ],
   "assets": {
@@ -133,7 +133,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.parquet",
+      "href": "/download/SII_Areas_Homogeneas_Nacional.parquet",
       "proj:epsg": 4326,
       "file:size": 894409,
       "file:checksum": "e3cb9ca5b196740ce2929db29141a04651110698c2bf620249cc805275c5a16b"
@@ -144,7 +144,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.gpkg",
+      "href": "/download/SII_Areas_Homogeneas_Nacional.gpkg",
       "proj:epsg": 4326,
       "file:size": 3469312,
       "file:checksum": "74316a1416c1f845b4915b0a4440d604f2e4ed2adc0053e463c58095bbdcc2bc"
@@ -155,7 +155,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional_SHP.zip",
+      "href": "/download/SII_Areas_Homogeneas_Nacional_SHP.zip",
       "proj:epsg": 4326,
       "file:size": 40853655,
       "file:checksum": "d86cabb43073d052862a408802c80f166102d5f522b7df0c468af5685f145f1a"
@@ -166,7 +166,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.csv",
+      "href": "/download/SII_Areas_Homogeneas_Nacional.csv",
       "file:size": 2245788,
       "file:checksum": "06f71a7d1cb9c3450219e47c94d4e1a2a02eb66d79270dc916d9ccca61dae737"
     },
@@ -176,7 +176,7 @@
       "roles": [
         "metadata"
       ],
-      "href": "https://ide.cit.uai.cl/download/iso_xml/sii_areas_homogeneas_iso19139.xml"
+      "href": "/download/iso_xml/sii_areas_homogeneas_iso19139.xml"
     }
   }
 }

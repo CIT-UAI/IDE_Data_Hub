@@ -1,0 +1,105 @@
+{
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "type": "Feature",
+  "id": "ide-cit-matrices-territoriales-nacional",
+  "collection": "ide-cit-matrices-territoriales",
+  "bbox": [
+    -109.5,
+    -56.54,
+    -66.42,
+    -17.5
+  ],
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -109.5,
+          -56.54
+        ],
+        [
+          -66.42,
+          -56.54
+        ],
+        [
+          -66.42,
+          -17.5
+        ],
+        [
+          -109.5,
+          -17.5
+        ],
+        [
+          -109.5,
+          -56.54
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "title": "STAC Item Nacional — IDE CIT — Infraestructura de Datos Espaciales",
+    "description": "Plataforma académica y de ciencia abierta para la consulta, interoperabilidad y descarga de coberturas y modelos territoriales del Centro de Inteligencia Territorial de la Universidad Adolfo Ibáñez.",
+    "datetime": "2026-10-17T00:00:00Z",
+    "proj:epsg": 4326
+  },
+  "links": [
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "/stac/catalog.json"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "/stac/ide_cit_matrices_territoriales.json"
+    },
+    {
+      "rel": "collection",
+      "type": "application/json",
+      "href": "/stac/ide_cit_matrices_territoriales.json"
+    },
+    {
+      "rel": "self",
+      "type": "application/geo+json",
+      "href": "/stac/items/ide-cit-matrices-territoriales-nacional.json"
+    }
+  ],
+  "assets": {
+    "catalog_json": {
+      "title": "Catálogo Maestro de la Infraestructura IDE CIT (JSON)",
+      "type": "application/json",
+      "roles": [
+        "metadata"
+      ],
+      "href": "/data/catalogo_ide_cit.json"
+    },
+    "catalog_csv": {
+      "title": "Catálogo Tabular de Coberturas Geoespaciales (CSV)",
+      "type": "text/csv",
+      "roles": [
+        "metadata"
+      ],
+      "href": "/catalogo.csv"
+    },
+    "stac_catalog": {
+      "title": "Catálogo Raíz STAC 1.0.0",
+      "type": "application/json",
+      "roles": [
+        "metadata"
+      ],
+      "href": "/stac/catalog.json"
+    },
+    "dcat_json": {
+      "title": "Catálogo Semántico DCAT-AP",
+      "type": "application/json",
+      "roles": [
+        "metadata"
+      ],
+      "href": "/dcat.json"
+    }
+  }
+}

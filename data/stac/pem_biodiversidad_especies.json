@@ -83,23 +83,23 @@
     {
       "rel": "root",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "self",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/pem_biodiversidad_especies.json"
+      "href": "/stac/pem_biodiversidad_especies.json"
     },
     {
       "rel": "item",
       "type": "application/geo+json",
       "title": "STAC Item Nacional — Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)",
-      "href": "https://ide.cit.uai.cl/stac/items/pem-biodiversidad-especies-nacional.json"
+      "href": "/stac/items/pem-biodiversidad-especies-nacional.json"
     },
     {
       "rel": "license",
@@ -111,19 +111,19 @@
       "rel": "about",
       "type": "text/html",
       "title": "Guía Técnica y Estándares IDE CIT",
-      "href": "https://ide.cit.uai.cl/guia-tecnica"
+      "href": "/guia-tecnica"
     },
     {
       "rel": "describedby",
       "type": "application/xml",
       "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-      "href": "https://ide.cit.uai.cl/download/iso_xml/pem_biodiversidad_especies_iso19139.xml"
+      "href": "/download/iso_xml/pem_biodiversidad_especies_iso19139.xml"
     },
     {
       "rel": "alternate",
       "type": "application/ld+json",
       "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-      "href": "https://ide.cit.uai.cl/dcat.json"
+      "href": "/dcat.json"
     }
   ],
   "assets": {
@@ -133,7 +133,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet",
+      "href": "/download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet",
       "proj:epsg": 4326,
       "file:size": 62178037,
       "file:checksum": "dc5379796038dd65503bade26d0cf5f72af2e5517b6b5fb50d23c689d70aea60"
@@ -144,7 +144,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.csv",
+      "href": "/download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.csv",
       "file:size": 975699785,
       "file:checksum": "6ad38f79b0134624dd24d90a46c096c54337839ea56d5ecec73a4b4e59796942"
     },
@@ -154,7 +154,7 @@
       "roles": [
         "metadata"
       ],
-      "href": "https://ide.cit.uai.cl/download/iso_xml/pem_biodiversidad_especies_iso19139.xml"
+      "href": "/download/iso_xml/pem_biodiversidad_especies_iso19139.xml"
     }
   }
 }

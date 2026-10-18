@@ -83,23 +83,23 @@
     {
       "rel": "root",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "self",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/huella_edificaciones_2024.json"
+      "href": "/stac/huella_edificaciones_2024.json"
     },
     {
       "rel": "item",
       "type": "application/geo+json",
       "title": "STAC Item Nacional — Huella de edificaciones urbanas — Presencia construida nacional",
-      "href": "https://ide.cit.uai.cl/stac/items/huella-edificaciones-2024-nacional.json"
+      "href": "/stac/items/huella-edificaciones-2024-nacional.json"
     },
     {
       "rel": "license",
@@ -111,19 +111,19 @@
       "rel": "about",
       "type": "text/html",
       "title": "Guía Técnica y Estándares IDE CIT",
-      "href": "https://ide.cit.uai.cl/guia-tecnica"
+      "href": "/guia-tecnica"
     },
     {
       "rel": "describedby",
       "type": "application/xml",
       "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-      "href": "https://ide.cit.uai.cl/download/iso_xml/huella_edificaciones_2024_iso19139.xml"
+      "href": "/download/iso_xml/huella_edificaciones_2024_iso19139.xml"
     },
     {
       "rel": "alternate",
       "type": "application/ld+json",
       "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-      "href": "https://ide.cit.uai.cl/dcat.json"
+      "href": "/dcat.json"
     }
   ],
   "assets": {
@@ -133,7 +133,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet",
+      "href": "/download/Huella_Edificaciones_Urbanas_2024.parquet",
       "proj:epsg": 4326,
       "file:size": 38964900,
       "file:checksum": "1fcecc1ded9e0f17261b88c3f8025d975d6fa75911b5e13ea969279b51cdf991"
@@ -144,7 +144,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.gpkg",
+      "href": "/download/Huella_Edificaciones_Urbanas_2024.gpkg",
       "proj:epsg": 4326,
       "file:size": 96378880,
       "file:checksum": "3ad4330ce2edf44952636009101bc16d2e74d54e0575a58d4d8e6cf475b0312a"
@@ -155,7 +155,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024_SHP.zip",
+      "href": "/download/Huella_Edificaciones_Urbanas_2024_SHP.zip",
       "proj:epsg": 4326,
       "file:size": 18106961,
       "file:checksum": "2c4212891c52f0eb9e5bf8f2714c83c6c252e8bb04a956c321749e52ef6d701f"
@@ -166,7 +166,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.csv",
+      "href": "/download/Huella_Edificaciones_Urbanas_2024.csv",
       "file:size": 28438098,
       "file:checksum": "9a3f816b66223cb399ae1becedcd75017ac8914f0155eaf60ca0750922723a16"
     },
@@ -176,7 +176,7 @@
       "roles": [
         "metadata"
       ],
-      "href": "https://ide.cit.uai.cl/download/iso_xml/huella_edificaciones_2024_iso19139.xml"
+      "href": "/download/iso_xml/huella_edificaciones_2024_iso19139.xml"
     }
   }
 }

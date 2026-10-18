@@ -104,23 +104,23 @@
         {
           "rel": "root",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "parent",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "self",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/kpi_mud_2017.json"
+          "href": "/stac/kpi_mud_2017.json"
         },
         {
           "rel": "item",
           "type": "application/geo+json",
           "title": "STAC Item Nacional — MBHT 2017 — Línea base oficial",
-          "href": "https://ide.cit.uai.cl/stac/items/kpi-mud-2017-nacional.json"
+          "href": "/stac/items/kpi-mud-2017-nacional.json"
         },
         {
           "rel": "license",
@@ -132,19 +132,19 @@
           "rel": "about",
           "type": "text/html",
           "title": "Guía Técnica y Estándares IDE CIT",
-          "href": "https://ide.cit.uai.cl/guia-tecnica"
+          "href": "/guia-tecnica"
         },
         {
           "rel": "describedby",
           "type": "application/xml",
           "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-          "href": "https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml"
+          "href": "/download/iso_xml/kpi_mud_2017_iso19139.xml"
         },
         {
           "rel": "alternate",
           "type": "application/ld+json",
           "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-          "href": "https://ide.cit.uai.cl/dcat.json"
+          "href": "/dcat.json"
         }
       ],
       "assets": {
@@ -154,7 +154,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet",
+          "href": "/download/MBHT_2017_Nacional_Manzanas.parquet",
           "proj:epsg": 4326,
           "file:size": 252572936,
           "file:checksum": "4a123b83ea1cefa18661c25ea40b9c3fc2a319cf6a45abbbd72a2cb30c069f2a"
@@ -165,7 +165,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.gpkg",
+          "href": "/download/MBHT_2017_Nacional_Manzanas.gpkg",
           "proj:epsg": 4326,
           "file:size": 360656896,
           "file:checksum": "3db07960a5d2ac94d4443c5ba59a3715655db8aabf040e01993180c316e1d230"
@@ -176,7 +176,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas_SHP.zip",
+          "href": "/download/MBHT_2017_Nacional_Manzanas_SHP.zip",
           "proj:epsg": 4326,
           "file:size": 214822331,
           "file:checksum": "9899f31ae5aa104b40e9c4bbfd4030eb1b8e2b3fb431544b1d103fc720f8cb32"
@@ -187,7 +187,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.csv",
+          "href": "/download/MBHT_2017_Nacional_Manzanas.csv",
           "file:size": 100911556,
           "file:checksum": "ebea6ee15f32639345b0f7ce1b3211f808d17b55b3b7d7283d180c48721d5cf5"
         },
@@ -197,7 +197,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml"
+          "href": "/download/iso_xml/kpi_mud_2017_iso19139.xml"
         },
         "geoparquet_muestra_r15": {
           "title": "Muestra Ligera Reproducible GeoParquet — Región de Arica y Parinacota R15 (3.304 manzanas, 42 columnas, 2,37 MB)",
@@ -205,7 +205,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet",
+          "href": "/download/MBHT_2017_R15_Manzanas.parquet",
           "file:size": 2482961,
           "file:checksum": "712d1d16193a4dee8bab6d88f4c3eed04530e6f1b11a1936349ea6132d134505",
           "proj:epsg": 4326,
@@ -303,23 +303,23 @@
         {
           "rel": "root",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "parent",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "self",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/pem_maritorio_nacional.json"
+          "href": "/stac/pem_maritorio_nacional.json"
         },
         {
           "rel": "item",
           "type": "application/geo+json",
           "title": "STAC Item Nacional — Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE)",
-          "href": "https://ide.cit.uai.cl/stac/items/pem-maritorio-nacional-nacional.json"
+          "href": "/stac/items/pem-maritorio-nacional-nacional.json"
         },
         {
           "rel": "license",
@@ -331,19 +331,19 @@
           "rel": "about",
           "type": "text/html",
           "title": "Guía Técnica y Estándares IDE CIT",
-          "href": "https://ide.cit.uai.cl/guia-tecnica"
+          "href": "/guia-tecnica"
         },
         {
           "rel": "describedby",
           "type": "application/xml",
           "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-          "href": "https://ide.cit.uai.cl/download/iso_xml/pem_maritorio_nacional_iso19139.xml"
+          "href": "/download/iso_xml/pem_maritorio_nacional_iso19139.xml"
         },
         {
           "rel": "alternate",
           "type": "application/ld+json",
           "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-          "href": "https://ide.cit.uai.cl/dcat.json"
+          "href": "/dcat.json"
         }
       ],
       "assets": {
@@ -353,7 +353,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.parquet",
+          "href": "/download/PEM_Maritorio_Nacional_Tricontinental.parquet",
           "proj:epsg": 4326,
           "file:size": 103187755,
           "file:checksum": "05e07fbbb054b09f878e169c4656e8da2f27c8666a5b46fac655a1e28dbe448d"
@@ -364,7 +364,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.gpkg",
+          "href": "/download/PEM_Maritorio_Nacional_Tricontinental.gpkg",
           "proj:epsg": 4326,
           "file:size": 163622912,
           "file:checksum": "6a636d5af9e4ac81f714b5a848da70d8e5c06ed17ce17bda85eccc061ced945a"
@@ -375,7 +375,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental_SHP.zip",
+          "href": "/download/PEM_Maritorio_Nacional_Tricontinental_SHP.zip",
           "proj:epsg": 4326,
           "file:size": 79974812,
           "file:checksum": "1a4f859bd720eb94c32beda991239311583e9c7fe834630843ce5fac63c833ab"
@@ -386,7 +386,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.csv",
+          "href": "/download/PEM_Maritorio_Nacional_Tricontinental.csv",
           "file:size": 46249,
           "file:checksum": "d7809b26100bb3e16dc0936b71dcc1688b48eb5e1cbfe2778b671087a98c88f2"
         },
@@ -396,7 +396,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/download/iso_xml/pem_maritorio_nacional_iso19139.xml"
+          "href": "/download/iso_xml/pem_maritorio_nacional_iso19139.xml"
         }
       }
     },
@@ -485,23 +485,23 @@
         {
           "rel": "root",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "parent",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "self",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/pem_geomorfologia_gebco.json"
+          "href": "/stac/pem_geomorfologia_gebco.json"
         },
         {
           "rel": "item",
           "type": "application/geo+json",
           "title": "STAC Item Nacional — Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO)",
-          "href": "https://ide.cit.uai.cl/stac/items/pem-geomorfologia-gebco-nacional.json"
+          "href": "/stac/items/pem-geomorfologia-gebco-nacional.json"
         },
         {
           "rel": "license",
@@ -513,19 +513,19 @@
           "rel": "about",
           "type": "text/html",
           "title": "Guía Técnica y Estándares IDE CIT",
-          "href": "https://ide.cit.uai.cl/guia-tecnica"
+          "href": "/guia-tecnica"
         },
         {
           "rel": "describedby",
           "type": "application/xml",
           "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-          "href": "https://ide.cit.uai.cl/download/iso_xml/pem_geomorfologia_gebco_iso19139.xml"
+          "href": "/download/iso_xml/pem_geomorfologia_gebco_iso19139.xml"
         },
         {
           "rel": "alternate",
           "type": "application/ld+json",
           "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-          "href": "https://ide.cit.uai.cl/dcat.json"
+          "href": "/dcat.json"
         }
       ],
       "assets": {
@@ -535,7 +535,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.parquet",
+          "href": "/download/PEM_Geomorfologia_Submarina_GEBCO.parquet",
           "proj:epsg": 4326,
           "file:size": 1212254,
           "file:checksum": "7c7589083d61163cf66218e7ccdae1b3eb88e7d3a0569752d2f62addb810959d"
@@ -546,7 +546,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.gpkg",
+          "href": "/download/PEM_Geomorfologia_Submarina_GEBCO.gpkg",
           "proj:epsg": 4326,
           "file:size": 2678784,
           "file:checksum": "8901177e440c61e57be3ad125555c7054526ccb02b0ef3dc8d69ce229ebb6098"
@@ -557,7 +557,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO_SHP.zip",
+          "href": "/download/PEM_Geomorfologia_Submarina_GEBCO_SHP.zip",
           "proj:epsg": 4326,
           "file:size": 1154099,
           "file:checksum": "1946a13918e6c015d518f6602d9af61b0a01f08de9c2b305c4256fd4f07bfb73"
@@ -568,7 +568,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.csv",
+          "href": "/download/PEM_Geomorfologia_Submarina_GEBCO.csv",
           "file:size": 2189,
           "file:checksum": "04100c3d2dea97217195f15f8eda582b7c10cf5bf09e1c77bdccc3b47b70d086"
         },
@@ -578,7 +578,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/download/iso_xml/pem_geomorfologia_gebco_iso19139.xml"
+          "href": "/download/iso_xml/pem_geomorfologia_gebco_iso19139.xml"
         }
       }
     },
@@ -667,23 +667,23 @@
         {
           "rel": "root",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "parent",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "self",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/pem_montes_submarinos.json"
+          "href": "/stac/pem_montes_submarinos.json"
         },
         {
           "rel": "item",
           "type": "application/geo+json",
           "title": "STAC Item Nacional — Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP)",
-          "href": "https://ide.cit.uai.cl/stac/items/pem-montes-submarinos-nacional.json"
+          "href": "/stac/items/pem-montes-submarinos-nacional.json"
         },
         {
           "rel": "license",
@@ -695,19 +695,19 @@
           "rel": "about",
           "type": "text/html",
           "title": "Guía Técnica y Estándares IDE CIT",
-          "href": "https://ide.cit.uai.cl/guia-tecnica"
+          "href": "/guia-tecnica"
         },
         {
           "rel": "describedby",
           "type": "application/xml",
           "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-          "href": "https://ide.cit.uai.cl/download/iso_xml/pem_montes_submarinos_iso19139.xml"
+          "href": "/download/iso_xml/pem_montes_submarinos_iso19139.xml"
         },
         {
           "rel": "alternate",
           "type": "application/ld+json",
           "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-          "href": "https://ide.cit.uai.cl/dcat.json"
+          "href": "/dcat.json"
         }
       ],
       "assets": {
@@ -717,7 +717,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.parquet",
+          "href": "/download/PEM_Montes_Submarinos_Toponimia.parquet",
           "proj:epsg": 4326,
           "file:size": 61134,
           "file:checksum": "b73487f4dff3bb8383d1053eaf4529ac406db2f27753031892eff1f08c05e3b1"
@@ -728,7 +728,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.gpkg",
+          "href": "/download/PEM_Montes_Submarinos_Toponimia.gpkg",
           "proj:epsg": 4326,
           "file:size": 430080,
           "file:checksum": "edad21804ccb36cafb6eef6470619f774533287858a3c18ed0ae3770b9d7d879"
@@ -739,7 +739,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia_SHP.zip",
+          "href": "/download/PEM_Montes_Submarinos_Toponimia_SHP.zip",
           "proj:epsg": 4326,
           "file:size": 54878,
           "file:checksum": "5093aba933c90efa89cce37825bd763bcf916b84f8552bd5e0c8a4db303bb3cb"
@@ -750,7 +750,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.csv",
+          "href": "/download/PEM_Montes_Submarinos_Toponimia.csv",
           "file:size": 211745,
           "file:checksum": "a2284ce762b7394a003ac1dd3973ce9538d963b2f6da9e4a82ce850c8cabc5cc"
         },
@@ -760,7 +760,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/download/iso_xml/pem_montes_submarinos_iso19139.xml"
+          "href": "/download/iso_xml/pem_montes_submarinos_iso19139.xml"
         }
       }
     },
@@ -849,23 +849,23 @@
         {
           "rel": "root",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "parent",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "self",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/pem_cuencas_oceanicas.json"
+          "href": "/stac/pem_cuencas_oceanicas.json"
         },
         {
           "rel": "item",
           "type": "application/geo+json",
           "title": "STAC Item Nacional — Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP)",
-          "href": "https://ide.cit.uai.cl/stac/items/pem-cuencas-oceanicas-nacional.json"
+          "href": "/stac/items/pem-cuencas-oceanicas-nacional.json"
         },
         {
           "rel": "license",
@@ -877,19 +877,19 @@
           "rel": "about",
           "type": "text/html",
           "title": "Guía Técnica y Estándares IDE CIT",
-          "href": "https://ide.cit.uai.cl/guia-tecnica"
+          "href": "/guia-tecnica"
         },
         {
           "rel": "describedby",
           "type": "application/xml",
           "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-          "href": "https://ide.cit.uai.cl/download/iso_xml/pem_cuencas_oceanicas_iso19139.xml"
+          "href": "/download/iso_xml/pem_cuencas_oceanicas_iso19139.xml"
         },
         {
           "rel": "alternate",
           "type": "application/ld+json",
           "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-          "href": "https://ide.cit.uai.cl/dcat.json"
+          "href": "/dcat.json"
         }
       ],
       "assets": {
@@ -899,7 +899,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.parquet",
+          "href": "/download/PEM_Cuencas_Oceanicas_Submarinas.parquet",
           "proj:epsg": 4326,
           "file:size": 5079409,
           "file:checksum": "19014b45d7c620e8bc737abcefe5bf7786439d67af619bd34f3d6fc62f52bbff"
@@ -910,7 +910,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.gpkg",
+          "href": "/download/PEM_Cuencas_Oceanicas_Submarinas.gpkg",
           "proj:epsg": 4326,
           "file:size": 21479424,
           "file:checksum": "7696d59ed8b7b16c8368350f7d253ced624c34609f6908eacad8d4ec98752c3f"
@@ -921,7 +921,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas_SHP.zip",
+          "href": "/download/PEM_Cuencas_Oceanicas_Submarinas_SHP.zip",
           "proj:epsg": 4326,
           "file:size": 3333641,
           "file:checksum": "8d74c34eefde832d22eb3fdaf7e86c733cb86c5efa21ab4b8871399aaf257894"
@@ -932,7 +932,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.csv",
+          "href": "/download/PEM_Cuencas_Oceanicas_Submarinas.csv",
           "file:size": 1467002,
           "file:checksum": "ccb779cddeeb4b6416d1207d496f28f49891525831a8654f076380570deea41a"
         },
@@ -942,7 +942,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/download/iso_xml/pem_cuencas_oceanicas_iso19139.xml"
+          "href": "/download/iso_xml/pem_cuencas_oceanicas_iso19139.xml"
         }
       }
     },
@@ -1031,23 +1031,23 @@
         {
           "rel": "root",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "parent",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "self",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/pem_biodiversidad_especies.json"
+          "href": "/stac/pem_biodiversidad_especies.json"
         },
         {
           "rel": "item",
           "type": "application/geo+json",
           "title": "STAC Item Nacional — Biodiversidad marina y catálogo de especies (FAO / SBAP / IFOP / GBIF)",
-          "href": "https://ide.cit.uai.cl/stac/items/pem-biodiversidad-especies-nacional.json"
+          "href": "/stac/items/pem-biodiversidad-especies-nacional.json"
         },
         {
           "rel": "license",
@@ -1059,19 +1059,19 @@
           "rel": "about",
           "type": "text/html",
           "title": "Guía Técnica y Estándares IDE CIT",
-          "href": "https://ide.cit.uai.cl/guia-tecnica"
+          "href": "/guia-tecnica"
         },
         {
           "rel": "describedby",
           "type": "application/xml",
           "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-          "href": "https://ide.cit.uai.cl/download/iso_xml/pem_biodiversidad_especies_iso19139.xml"
+          "href": "/download/iso_xml/pem_biodiversidad_especies_iso19139.xml"
         },
         {
           "rel": "alternate",
           "type": "application/ld+json",
           "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-          "href": "https://ide.cit.uai.cl/dcat.json"
+          "href": "/dcat.json"
         }
       ],
       "assets": {
@@ -1081,7 +1081,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet",
+          "href": "/download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.parquet",
           "proj:epsg": 4326,
           "file:size": 62178037,
           "file:checksum": "dc5379796038dd65503bade26d0cf5f72af2e5517b6b5fb50d23c689d70aea60"
@@ -1092,7 +1092,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.csv",
+          "href": "/download/PEM_Biodiversidad_Marina_Especies_IFOP_GBIF.csv",
           "file:size": 975699785,
           "file:checksum": "6ad38f79b0134624dd24d90a46c096c54337839ea56d5ecec73a4b4e59796942"
         },
@@ -1102,7 +1102,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/download/iso_xml/pem_biodiversidad_especies_iso19139.xml"
+          "href": "/download/iso_xml/pem_biodiversidad_especies_iso19139.xml"
         }
       }
     },
@@ -1205,23 +1205,23 @@
         {
           "rel": "root",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "parent",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "self",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
+          "href": "/stac/censo_imputaciones_2024.json"
         },
         {
           "rel": "item",
           "type": "application/geo+json",
           "title": "STAC Item Nacional — Censo 2024 — Imputaciones demográficas por cohortes y sexo",
-          "href": "https://ide.cit.uai.cl/stac/items/censo-imputaciones-2024-nacional.json"
+          "href": "/stac/items/censo-imputaciones-2024-nacional.json"
         },
         {
           "rel": "license",
@@ -1233,19 +1233,19 @@
           "rel": "about",
           "type": "text/html",
           "title": "Guía Técnica y Estándares IDE CIT",
-          "href": "https://ide.cit.uai.cl/guia-tecnica"
+          "href": "/guia-tecnica"
         },
         {
           "rel": "describedby",
           "type": "application/xml",
           "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-          "href": "https://ide.cit.uai.cl/download/iso_xml/censo_imputaciones_2024_iso19139.xml"
+          "href": "/download/iso_xml/censo_imputaciones_2024_iso19139.xml"
         },
         {
           "rel": "alternate",
           "type": "application/ld+json",
           "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-          "href": "https://ide.cit.uai.cl/dcat.json"
+          "href": "/dcat.json"
         }
       ],
       "assets": {
@@ -1255,7 +1255,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet",
+          "href": "/download/Censo_Imputaciones_2024_Nacional.parquet",
           "proj:epsg": 4326,
           "file:size": 284484592,
           "file:checksum": "d1af25f28e15b6f241230865fc506849247bb5736c1e8f03ac7bd89a034295c2"
@@ -1266,7 +1266,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.gpkg",
+          "href": "/download/Censo_Imputaciones_2024_Nacional.gpkg",
           "proj:epsg": 4326,
           "file:size": 426635264,
           "file:checksum": "48a8b5d454107ec24b91c2b3cab0256e08855ba13ae55b3718b29806d6a0ceab"
@@ -1277,7 +1277,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional_SHP.zip",
+          "href": "/download/Censo_Imputaciones_2024_Nacional_SHP.zip",
           "proj:epsg": 4326,
           "file:size": 239654071,
           "file:checksum": "dbcbbf1f9fa536ea672edb4f5ce664212338b918978fbd99cabc38a38fea456b"
@@ -1288,7 +1288,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.csv",
+          "href": "/download/Censo_Imputaciones_2024_Nacional.csv",
           "file:size": 56300717,
           "file:checksum": "382436192861e465f853379445e49bd5d8054edf5cf135aeb3570869a5847e81"
         },
@@ -1298,7 +1298,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/download/iso_xml/censo_imputaciones_2024_iso19139.xml"
+          "href": "/download/iso_xml/censo_imputaciones_2024_iso19139.xml"
         }
       }
     },
@@ -1387,23 +1387,23 @@
         {
           "rel": "root",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "parent",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "self",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/inse_socioeconomico.json"
+          "href": "/stac/inse_socioeconomico.json"
         },
         {
           "rel": "item",
           "type": "application/geo+json",
           "title": "STAC Item Nacional — Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024",
-          "href": "https://ide.cit.uai.cl/stac/items/inse-socioeconomico-nacional.json"
+          "href": "/stac/items/inse-socioeconomico-nacional.json"
         },
         {
           "rel": "license",
@@ -1415,19 +1415,19 @@
           "rel": "about",
           "type": "text/html",
           "title": "Guía Técnica y Estándares IDE CIT",
-          "href": "https://ide.cit.uai.cl/guia-tecnica"
+          "href": "/guia-tecnica"
         },
         {
           "rel": "describedby",
           "type": "application/xml",
           "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-          "href": "https://ide.cit.uai.cl/download/iso_xml/inse_socioeconomico_iso19139.xml"
+          "href": "/download/iso_xml/inse_socioeconomico_iso19139.xml"
         },
         {
           "rel": "alternate",
           "type": "application/ld+json",
           "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-          "href": "https://ide.cit.uai.cl/dcat.json"
+          "href": "/dcat.json"
         }
       ],
       "assets": {
@@ -1437,7 +1437,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet",
+          "href": "/download/INSE_Socioeconomico_Nacional_2024.parquet",
           "proj:epsg": 4326,
           "file:size": 279535131,
           "file:checksum": "da7a24420fb4b09963cd8bb9a9bd45b6c4b8110c4ce4f168c308a3e2f75556eb"
@@ -1448,7 +1448,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.gpkg",
+          "href": "/download/INSE_Socioeconomico_Nacional_2024.gpkg",
           "proj:epsg": 4326,
           "file:size": 487309312,
           "file:checksum": "f86cab40317e5f405879bcb58dd600805bc4ec31293714ab1d45c218ec805de9"
@@ -1459,7 +1459,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024_SHP.zip",
+          "href": "/download/INSE_Socioeconomico_Nacional_2024_SHP.zip",
           "proj:epsg": 4326,
           "file:size": 232586385,
           "file:checksum": "4626a5ce30d47fdddf066f26620d65948fa983cc7075bfea4545612cfe7e1bb9"
@@ -1470,7 +1470,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.csv",
+          "href": "/download/INSE_Socioeconomico_Nacional_2024.csv",
           "file:size": 29972846,
           "file:checksum": "d438bf5f535a202736b2b887240130a5286c4d9a7a068d2f6ddea85a0533d047"
         },
@@ -1480,7 +1480,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/download/iso_xml/inse_socioeconomico_iso19139.xml"
+          "href": "/download/iso_xml/inse_socioeconomico_iso19139.xml"
         }
       }
     },
@@ -1569,23 +1569,23 @@
         {
           "rel": "root",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "parent",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "self",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/sii_areas_homogeneas.json"
+          "href": "/stac/sii_areas_homogeneas.json"
         },
         {
           "rel": "item",
           "type": "application/geo+json",
           "title": "STAC Item Nacional — Áreas homogéneas del SII — Catastro nacional de valor de suelo y avalúos",
-          "href": "https://ide.cit.uai.cl/stac/items/sii-areas-homogeneas-nacional.json"
+          "href": "/stac/items/sii-areas-homogeneas-nacional.json"
         },
         {
           "rel": "license",
@@ -1597,19 +1597,19 @@
           "rel": "about",
           "type": "text/html",
           "title": "Guía Técnica y Estándares IDE CIT",
-          "href": "https://ide.cit.uai.cl/guia-tecnica"
+          "href": "/guia-tecnica"
         },
         {
           "rel": "describedby",
           "type": "application/xml",
           "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-          "href": "https://ide.cit.uai.cl/download/iso_xml/sii_areas_homogeneas_iso19139.xml"
+          "href": "/download/iso_xml/sii_areas_homogeneas_iso19139.xml"
         },
         {
           "rel": "alternate",
           "type": "application/ld+json",
           "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-          "href": "https://ide.cit.uai.cl/dcat.json"
+          "href": "/dcat.json"
         }
       ],
       "assets": {
@@ -1619,7 +1619,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.parquet",
+          "href": "/download/SII_Areas_Homogeneas_Nacional.parquet",
           "proj:epsg": 4326,
           "file:size": 894409,
           "file:checksum": "e3cb9ca5b196740ce2929db29141a04651110698c2bf620249cc805275c5a16b"
@@ -1630,7 +1630,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.gpkg",
+          "href": "/download/SII_Areas_Homogeneas_Nacional.gpkg",
           "proj:epsg": 4326,
           "file:size": 3469312,
           "file:checksum": "74316a1416c1f845b4915b0a4440d604f2e4ed2adc0053e463c58095bbdcc2bc"
@@ -1641,7 +1641,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional_SHP.zip",
+          "href": "/download/SII_Areas_Homogeneas_Nacional_SHP.zip",
           "proj:epsg": 4326,
           "file:size": 40853655,
           "file:checksum": "d86cabb43073d052862a408802c80f166102d5f522b7df0c468af5685f145f1a"
@@ -1652,7 +1652,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/SII_Areas_Homogeneas_Nacional.csv",
+          "href": "/download/SII_Areas_Homogeneas_Nacional.csv",
           "file:size": 2245788,
           "file:checksum": "06f71a7d1cb9c3450219e47c94d4e1a2a02eb66d79270dc916d9ccca61dae737"
         },
@@ -1662,7 +1662,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/download/iso_xml/sii_areas_homogeneas_iso19139.xml"
+          "href": "/download/iso_xml/sii_areas_homogeneas_iso19139.xml"
         }
       }
     },
@@ -1751,23 +1751,23 @@
         {
           "rel": "root",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "parent",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "self",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/equipamientos_2017.json"
+          "href": "/stac/equipamientos_2017.json"
         },
         {
           "rel": "item",
           "type": "application/geo+json",
           "title": "STAC Item Nacional — Equipamientos urbanos y servicios esenciales 2017",
-          "href": "https://ide.cit.uai.cl/stac/items/equipamientos-2017-nacional.json"
+          "href": "/stac/items/equipamientos-2017-nacional.json"
         },
         {
           "rel": "license",
@@ -1779,19 +1779,19 @@
           "rel": "about",
           "type": "text/html",
           "title": "Guía Técnica y Estándares IDE CIT",
-          "href": "https://ide.cit.uai.cl/guia-tecnica"
+          "href": "/guia-tecnica"
         },
         {
           "rel": "describedby",
           "type": "application/xml",
           "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-          "href": "https://ide.cit.uai.cl/download/iso_xml/equipamientos_2017_iso19139.xml"
+          "href": "/download/iso_xml/equipamientos_2017_iso19139.xml"
         },
         {
           "rel": "alternate",
           "type": "application/ld+json",
           "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-          "href": "https://ide.cit.uai.cl/dcat.json"
+          "href": "/dcat.json"
         }
       ],
       "assets": {
@@ -1801,7 +1801,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet",
+          "href": "/download/Equipamientos_2017_Nacional_Consolidado.parquet",
           "proj:epsg": 4326,
           "file:size": 8589840,
           "file:checksum": "ab79a066c0e175840a0215626c8f10a91c61920d8c89285433592b4f423d0a97"
@@ -1812,7 +1812,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.gpkg",
+          "href": "/download/Equipamientos_2017_Nacional_Consolidado.gpkg",
           "proj:epsg": 4326,
           "file:size": 23638016,
           "file:checksum": "93803a289f8d7832a6d9dda2f40f84d3892d28351af4e088dac8b75e1e6c3123"
@@ -1823,7 +1823,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado_SHP.zip",
+          "href": "/download/Equipamientos_2017_Nacional_Consolidado_SHP.zip",
           "proj:epsg": 4326,
           "file:size": 4188174,
           "file:checksum": "61cb37aa09f72914cede9f7029e9852a0e7cd0a54b8d541ef33bfb23cdf3a48a"
@@ -1834,7 +1834,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.csv",
+          "href": "/download/Equipamientos_2017_Nacional_Consolidado.csv",
           "file:size": 11734366,
           "file:checksum": "3d295db619e72300aceb5d527a220810c799660ca3c99a5e66b167ea98fc9835"
         },
@@ -1844,7 +1844,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/download/iso_xml/equipamientos_2017_iso19139.xml"
+          "href": "/download/iso_xml/equipamientos_2017_iso19139.xml"
         }
       }
     },
@@ -1933,23 +1933,23 @@
         {
           "rel": "root",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "parent",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "self",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/red_vial_ejes_2017.json"
+          "href": "/stac/red_vial_ejes_2017.json"
         },
         {
           "rel": "item",
           "type": "application/geo+json",
           "title": "STAC Item Nacional — Red vial urbana caminable y tiempos Tobler 2017",
-          "href": "https://ide.cit.uai.cl/stac/items/red-vial-ejes-2017-nacional.json"
+          "href": "/stac/items/red-vial-ejes-2017-nacional.json"
         },
         {
           "rel": "license",
@@ -1961,19 +1961,19 @@
           "rel": "about",
           "type": "text/html",
           "title": "Guía Técnica y Estándares IDE CIT",
-          "href": "https://ide.cit.uai.cl/guia-tecnica"
+          "href": "/guia-tecnica"
         },
         {
           "rel": "describedby",
           "type": "application/xml",
           "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-          "href": "https://ide.cit.uai.cl/download/iso_xml/red_vial_ejes_2017_iso19139.xml"
+          "href": "/download/iso_xml/red_vial_ejes_2017_iso19139.xml"
         },
         {
           "rel": "alternate",
           "type": "application/ld+json",
           "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-          "href": "https://ide.cit.uai.cl/dcat.json"
+          "href": "/dcat.json"
         }
       ],
       "assets": {
@@ -1983,7 +1983,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet",
+          "href": "/download/Red_Vial_Ejes_2017_Nacional.parquet",
           "proj:epsg": 4326,
           "file:size": 225592155,
           "file:checksum": "85c872e5eb1fb00ca95eb4c3a0248993566b74c53ecbbe42692653657adb8452"
@@ -1994,7 +1994,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.gpkg",
+          "href": "/download/Red_Vial_Ejes_2017_Nacional.gpkg",
           "proj:epsg": 4326,
           "file:size": 500346880,
           "file:checksum": "19d5e8cee3a3ee0910fa777a9aac89850c8a897afc3aa6e002a86a879a44dd07"
@@ -2005,7 +2005,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional_SHP.zip",
+          "href": "/download/Red_Vial_Ejes_2017_Nacional_SHP.zip",
           "proj:epsg": 4326,
           "file:size": 224455797,
           "file:checksum": "758e3b639c9375e9988fc2e0c6e7c756a31f8afff7d147b628c565cc7beae289"
@@ -2016,7 +2016,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.csv",
+          "href": "/download/Red_Vial_Ejes_2017_Nacional.csv",
           "file:size": 106161078,
           "file:checksum": "fc0d54d0a92d86aa181fd5ac6ebe4e0b1a1f59417d461dc50a7aff0f8e69ebb2"
         },
@@ -2026,7 +2026,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/download/iso_xml/red_vial_ejes_2017_iso19139.xml"
+          "href": "/download/iso_xml/red_vial_ejes_2017_iso19139.xml"
         }
       }
     },
@@ -2115,23 +2115,23 @@
         {
           "rel": "root",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "parent",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "self",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/educacion_inicial_2024.json"
+          "href": "/stac/educacion_inicial_2024.json"
         },
         {
           "rel": "item",
           "type": "application/geo+json",
           "title": "STAC Item Nacional — Educación inicial — Catastro nacional de jardines infantiles y salas cuna",
-          "href": "https://ide.cit.uai.cl/stac/items/educacion-inicial-2024-nacional.json"
+          "href": "/stac/items/educacion-inicial-2024-nacional.json"
         },
         {
           "rel": "license",
@@ -2143,19 +2143,19 @@
           "rel": "about",
           "type": "text/html",
           "title": "Guía Técnica y Estándares IDE CIT",
-          "href": "https://ide.cit.uai.cl/guia-tecnica"
+          "href": "/guia-tecnica"
         },
         {
           "rel": "describedby",
           "type": "application/xml",
           "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-          "href": "https://ide.cit.uai.cl/download/iso_xml/educacion_inicial_2024_iso19139.xml"
+          "href": "/download/iso_xml/educacion_inicial_2024_iso19139.xml"
         },
         {
           "rel": "alternate",
           "type": "application/ld+json",
           "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-          "href": "https://ide.cit.uai.cl/dcat.json"
+          "href": "/dcat.json"
         }
       ],
       "assets": {
@@ -2165,7 +2165,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
+          "href": "/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
           "proj:epsg": 4326,
           "file:size": 364944,
           "file:checksum": "ec9b240098d426b5d2bf9aa1350c3f40a3e8e26aa7acf02a53e20b7ccbce2b8f"
@@ -2176,7 +2176,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.gpkg",
+          "href": "/download/Educacion_Inicial_Jardines_SalasCuna_2024.gpkg",
           "proj:epsg": 4326,
           "file:size": 2965504,
           "file:checksum": "3b4af733b0440ed398f19834ab7c1cedbd84b3475cf29f460e6f14e79786fbbd"
@@ -2187,7 +2187,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024_SHP.zip",
+          "href": "/download/Educacion_Inicial_Jardines_SalasCuna_2024_SHP.zip",
           "proj:epsg": 4326,
           "file:size": 386413,
           "file:checksum": "7074d332597226a2b18d2b0462f38f7e10f5b731636c5b81b815b56837f2244c"
@@ -2198,7 +2198,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.csv",
+          "href": "/download/Educacion_Inicial_Jardines_SalasCuna_2024.csv",
           "file:size": 2489732,
           "file:checksum": "730e93c76b0070e8c02fe7e0eb9290f763c8b03867e997a1fcd1ea7885b8e29f"
         },
@@ -2208,7 +2208,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/download/iso_xml/educacion_inicial_2024_iso19139.xml"
+          "href": "/download/iso_xml/educacion_inicial_2024_iso19139.xml"
         }
       }
     },
@@ -2297,23 +2297,23 @@
         {
           "rel": "root",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "parent",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "self",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/huella_edificaciones_2024.json"
+          "href": "/stac/huella_edificaciones_2024.json"
         },
         {
           "rel": "item",
           "type": "application/geo+json",
           "title": "STAC Item Nacional — Huella de edificaciones urbanas — Presencia construida nacional",
-          "href": "https://ide.cit.uai.cl/stac/items/huella-edificaciones-2024-nacional.json"
+          "href": "/stac/items/huella-edificaciones-2024-nacional.json"
         },
         {
           "rel": "license",
@@ -2325,19 +2325,19 @@
           "rel": "about",
           "type": "text/html",
           "title": "Guía Técnica y Estándares IDE CIT",
-          "href": "https://ide.cit.uai.cl/guia-tecnica"
+          "href": "/guia-tecnica"
         },
         {
           "rel": "describedby",
           "type": "application/xml",
           "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-          "href": "https://ide.cit.uai.cl/download/iso_xml/huella_edificaciones_2024_iso19139.xml"
+          "href": "/download/iso_xml/huella_edificaciones_2024_iso19139.xml"
         },
         {
           "rel": "alternate",
           "type": "application/ld+json",
           "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-          "href": "https://ide.cit.uai.cl/dcat.json"
+          "href": "/dcat.json"
         }
       ],
       "assets": {
@@ -2347,7 +2347,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet",
+          "href": "/download/Huella_Edificaciones_Urbanas_2024.parquet",
           "proj:epsg": 4326,
           "file:size": 38964900,
           "file:checksum": "1fcecc1ded9e0f17261b88c3f8025d975d6fa75911b5e13ea969279b51cdf991"
@@ -2358,7 +2358,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.gpkg",
+          "href": "/download/Huella_Edificaciones_Urbanas_2024.gpkg",
           "proj:epsg": 4326,
           "file:size": 96378880,
           "file:checksum": "3ad4330ce2edf44952636009101bc16d2e74d54e0575a58d4d8e6cf475b0312a"
@@ -2369,7 +2369,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024_SHP.zip",
+          "href": "/download/Huella_Edificaciones_Urbanas_2024_SHP.zip",
           "proj:epsg": 4326,
           "file:size": 18106961,
           "file:checksum": "2c4212891c52f0eb9e5bf8f2714c83c6c252e8bb04a956c321749e52ef6d701f"
@@ -2380,7 +2380,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.csv",
+          "href": "/download/Huella_Edificaciones_Urbanas_2024.csv",
           "file:size": 28438098,
           "file:checksum": "9a3f816b66223cb399ae1becedcd75017ac8914f0155eaf60ca0750922723a16"
         },
@@ -2390,7 +2390,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/download/iso_xml/huella_edificaciones_2024_iso19139.xml"
+          "href": "/download/iso_xml/huella_edificaciones_2024_iso19139.xml"
         }
       }
     },
@@ -2439,29 +2439,29 @@
         {
           "rel": "root",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "parent",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         {
           "rel": "self",
           "type": "application/json",
-          "href": "https://ide.cit.uai.cl/stac/mbht_2024.json"
+          "href": "/stac/mbht_2024.json"
         },
         {
           "rel": "related",
           "type": "application/json",
           "title": "Censo 2024 — Imputaciones Demográficas por Cohortes y Sexo (Disponible)",
-          "href": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
+          "href": "/stac/censo_imputaciones_2024.json"
         },
         {
           "rel": "related",
           "type": "application/json",
           "title": "Matriz MBHT 2017 — Línea Base Oficial Vigente (42 Columnas Físicas)",
-          "href": "https://ide.cit.uai.cl/stac/mbht_2017.json"
+          "href": "/stac/mbht_2017.json"
         },
         {
           "rel": "via",
@@ -2477,7 +2477,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/guia-tecnica"
+          "href": "/guia-tecnica"
         },
         "ficha_mbht_2017": {
           "title": "Ficha Técnica Maestra MBHT 2017 (Línea Base Oficial)",
@@ -2485,7 +2485,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/ficha-mbht-2017"
+          "href": "/ficha-mbht-2017"
         },
         "insumos_censo_2024": {
           "title": "Colección STAC Censo 2024 Imputaciones Demográficas (Datos Preparatorios Disponibles)",
@@ -2493,7 +2493,7 @@
           "roles": [
             "data"
           ],
-          "href": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
+          "href": "/stac/censo_imputaciones_2024.json"
         }
       }
     },
@@ -2852,13 +2852,13 @@
         },
         {
           "rel": "about",
-          "href": "https://ide.cit.uai.cl/guia-tecnica",
+          "href": "/guia-tecnica",
           "type": "text/html",
           "title": "Guía Técnica y Estándares de Interoperabilidad IDE CIT"
         },
         {
           "rel": "describedby",
-          "href": "https://ide.cit.uai.cl/dcat.json",
+          "href": "/dcat.json",
           "type": "application/json",
           "title": "Catálogo Semántico W3C DCAT-AP 2.0"
         }
@@ -2870,7 +2870,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/data/catalogo_ide_cit.json"
+          "href": "/data/catalogo_ide_cit.json"
         },
         "catalog_csv": {
           "title": "Catálogo Tabular de Coberturas Geoespaciales (CSV)",
@@ -2878,7 +2878,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/catalogo.csv"
+          "href": "/catalogo.csv"
         },
         "stac_catalog": {
           "title": "Catálogo Raíz STAC 1.0.0",
@@ -2886,7 +2886,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/stac/catalog.json"
+          "href": "/stac/catalog.json"
         },
         "dcat_json": {
           "title": "Catálogo Semántico DCAT-AP",
@@ -2894,7 +2894,7 @@
           "roles": [
             "metadata"
           ],
-          "href": "https://ide.cit.uai.cl/dcat.json"
+          "href": "/dcat.json"
         }
       }
     }
@@ -2903,17 +2903,17 @@
     {
       "rel": "root",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "self",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/collections"
+      "href": "/stac/collections"
     }
   ]
 }

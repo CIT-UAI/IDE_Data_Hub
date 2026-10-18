@@ -41,34 +41,31 @@
     ]
   },
   "properties": {
-    "title": "Equipamientos urbanos y servicios esenciales 2017 (Cobertura Nacional Consolidada)",
+    "title": "STAC Item Nacional — Equipamientos urbanos y servicios esenciales 2017",
     "description": "Catastro oficial de equipamientos y servicios urbanos esenciales utilizado para la modelación de accesibilidad peatonal en la Matriz de Bienestar Humano Territorial (MBHT 2017). Documenta de forma trazable los tres niveles del embudo de depuración nacional: 202.275 registros administrativos brutos iniciales, 113.231 unidades en el catastro maestro ruteable consolidado en 6 dimensiones —Áreas Verdes (54.962), Deportes (26.629), Educación (17.129), Salud (5.824), Servicios Públicos (4.914) y Cultura (3.773)— y 55.035 equipamientos públicos de libre acceso y gratuidad publicados en los paquetes regionales y nacionales de la línea base abierta MBHT 2017.",
-    "datetime": "2017-04-19T00:00:00Z",
-    "start_datetime": "2017-01-01T00:00:00Z",
-    "end_datetime": "2026-12-31T23:59:59Z",
-    "proj:epsg": 4326,
-    "license": "CC-BY-4.0"
+    "datetime": "2026-10-17T00:00:00Z",
+    "proj:epsg": 4326
   },
   "links": [
     {
-      "rel": "self",
-      "type": "application/geo+json",
-      "href": "https://ide.cit.uai.cl/stac/items/equipamientos-2017-nacional.json"
+      "rel": "root",
+      "type": "application/json",
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/equipamientos_2017.json"
+      "href": "/stac/equipamientos_2017.json"
     },
     {
       "rel": "collection",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/equipamientos_2017.json"
+      "href": "/stac/equipamientos_2017.json"
     },
     {
-      "rel": "root",
-      "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "rel": "self",
+      "type": "application/geo+json",
+      "href": "/stac/items/equipamientos-2017-nacional.json"
     }
   ],
   "assets": {
@@ -78,7 +75,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet",
+      "href": "/download/Equipamientos_2017_Nacional_Consolidado.parquet",
       "proj:epsg": 4326,
       "file:size": 8589840,
       "file:checksum": "ab79a066c0e175840a0215626c8f10a91c61920d8c89285433592b4f423d0a97"
@@ -89,7 +86,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.gpkg",
+      "href": "/download/Equipamientos_2017_Nacional_Consolidado.gpkg",
       "proj:epsg": 4326,
       "file:size": 23638016,
       "file:checksum": "93803a289f8d7832a6d9dda2f40f84d3892d28351af4e088dac8b75e1e6c3123"
@@ -100,7 +97,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado_SHP.zip",
+      "href": "/download/Equipamientos_2017_Nacional_Consolidado_SHP.zip",
       "proj:epsg": 4326,
       "file:size": 4188174,
       "file:checksum": "61cb37aa09f72914cede9f7029e9852a0e7cd0a54b8d541ef33bfb23cdf3a48a"
@@ -111,7 +108,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.csv",
+      "href": "/download/Equipamientos_2017_Nacional_Consolidado.csv",
       "file:size": 11734366,
       "file:checksum": "3d295db619e72300aceb5d527a220810c799660ca3c99a5e66b167ea98fc9835"
     },
@@ -121,7 +118,7 @@
       "roles": [
         "metadata"
       ],
-      "href": "https://ide.cit.uai.cl/download/iso_xml/equipamientos_2017_iso19139.xml"
+      "href": "/download/iso_xml/equipamientos_2017_iso19139.xml"
     }
   }
 }

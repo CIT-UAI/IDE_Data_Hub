@@ -83,23 +83,23 @@
     {
       "rel": "root",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "self",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/red_vial_ejes_2017.json"
+      "href": "/stac/red_vial_ejes_2017.json"
     },
     {
       "rel": "item",
       "type": "application/geo+json",
       "title": "STAC Item Nacional — Red vial urbana caminable y tiempos Tobler 2017",
-      "href": "https://ide.cit.uai.cl/stac/items/red-vial-ejes-2017-nacional.json"
+      "href": "/stac/items/red-vial-ejes-2017-nacional.json"
     },
     {
       "rel": "license",
@@ -111,19 +111,19 @@
       "rel": "about",
       "type": "text/html",
       "title": "Guía Técnica y Estándares IDE CIT",
-      "href": "https://ide.cit.uai.cl/guia-tecnica"
+      "href": "/guia-tecnica"
     },
     {
       "rel": "describedby",
       "type": "application/xml",
       "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML",
-      "href": "https://ide.cit.uai.cl/download/iso_xml/red_vial_ejes_2017_iso19139.xml"
+      "href": "/download/iso_xml/red_vial_ejes_2017_iso19139.xml"
     },
     {
       "rel": "alternate",
       "type": "application/ld+json",
       "title": "Catálogo Semántico W3C DCAT-AP 2.0",
-      "href": "https://ide.cit.uai.cl/dcat.json"
+      "href": "/dcat.json"
     }
   ],
   "assets": {
@@ -133,7 +133,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet",
+      "href": "/download/Red_Vial_Ejes_2017_Nacional.parquet",
       "proj:epsg": 4326,
       "file:size": 225592155,
       "file:checksum": "85c872e5eb1fb00ca95eb4c3a0248993566b74c53ecbbe42692653657adb8452"
@@ -144,7 +144,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.gpkg",
+      "href": "/download/Red_Vial_Ejes_2017_Nacional.gpkg",
       "proj:epsg": 4326,
       "file:size": 500346880,
       "file:checksum": "19d5e8cee3a3ee0910fa777a9aac89850c8a897afc3aa6e002a86a879a44dd07"
@@ -155,7 +155,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional_SHP.zip",
+      "href": "/download/Red_Vial_Ejes_2017_Nacional_SHP.zip",
       "proj:epsg": 4326,
       "file:size": 224455797,
       "file:checksum": "758e3b639c9375e9988fc2e0c6e7c756a31f8afff7d147b628c565cc7beae289"
@@ -166,7 +166,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.csv",
+      "href": "/download/Red_Vial_Ejes_2017_Nacional.csv",
       "file:size": 106161078,
       "file:checksum": "fc0d54d0a92d86aa181fd5ac6ebe4e0b1a1f59417d461dc50a7aff0f8e69ebb2"
     },
@@ -176,7 +176,7 @@
       "roles": [
         "metadata"
       ],
-      "href": "https://ide.cit.uai.cl/download/iso_xml/red_vial_ejes_2017_iso19139.xml"
+      "href": "/download/iso_xml/red_vial_ejes_2017_iso19139.xml"
     }
   }
 }

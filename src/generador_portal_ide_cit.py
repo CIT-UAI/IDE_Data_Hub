@@ -2641,7 +2641,7 @@ class IDEPortalBuilder:
                 "foaf": "http://xmlns.com/foaf/0.1/",
                 "locn": "http://www.w3.org/ns/locn#"
             },
-            "@id": portal.get("url_base", "https://ide.cit.uai.cl") + "/data/dcat.json",
+            "@id": "/dcat.json",
             "@type": "dcat:Catalog",
             "dct:title": portal.get("nombre", "IDE CIT — Infraestructura de Datos Espaciales"),
             "dct:description": portal.get("descripcion", ""),
@@ -2674,7 +2674,7 @@ class IDEPortalBuilder:
                                     )
                                 )
                             ) + ")",
-                            "dcat:accessURL": f"https://ide.cit.uai.cl/{finfo.get('url', finfo.get('filename', ''))}",
+                            "dcat:accessURL": f"/{finfo.get('url', finfo.get('filename', '')).lstrip('/')}",
                             "dct:format": (
                                 "GeoParquet" if fkey == "parquet" else (
                                     "GeoPackage" if fkey == "gpkg" else (

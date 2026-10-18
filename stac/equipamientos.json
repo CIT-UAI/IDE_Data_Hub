@@ -83,17 +83,17 @@
     {
       "rel": "root",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "self",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/equipamientos.json"
+      "href": "/stac/equipamientos.json"
     }
   ],
   "assets": {
@@ -103,7 +103,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet",
+      "href": "/download/Equipamientos_2017_Nacional_Consolidado.parquet",
       "proj:epsg": 4326,
       "file:size": 8589840,
       "file:checksum": "ab79a066c0e175840a0215626c8f10a91c61920d8c89285433592b4f423d0a97"
@@ -114,7 +114,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.gpkg",
+      "href": "/download/Equipamientos_2017_Nacional_Consolidado.gpkg",
       "proj:epsg": 4326,
       "file:size": 23638016,
       "file:checksum": "93803a289f8d7832a6d9dda2f40f84d3892d28351af4e088dac8b75e1e6c3123"
@@ -125,7 +125,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado_SHP.zip",
+      "href": "/download/Equipamientos_2017_Nacional_Consolidado_SHP.zip",
       "proj:epsg": 4326,
       "file:size": 4188174,
       "file:checksum": "61cb37aa09f72914cede9f7029e9852a0e7cd0a54b8d541ef33bfb23cdf3a48a"
@@ -136,7 +136,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.csv",
+      "href": "/download/Equipamientos_2017_Nacional_Consolidado.csv",
       "file:size": 11734366,
       "file:checksum": "3d295db619e72300aceb5d527a220810c799660ca3c99a5e66b167ea98fc9835"
     },
@@ -146,7 +146,7 @@
       "roles": [
         "metadata"
       ],
-      "href": "https://ide.cit.uai.cl/download/iso_xml/equipamientos_2017_iso19139.xml"
+      "href": "/download/iso_xml/equipamientos_2017_iso19139.xml"
     }
   }
 }

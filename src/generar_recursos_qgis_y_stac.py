@@ -65,7 +65,7 @@ def generar_stac():
                 "title": f"GeoParquet — {titulo}",
                 "type": "application/vnd.apache.parquet",
                 "roles": ["data"],
-                "href": f"https://ide.cit.uai.cl/{capa['s3_parquet']}",
+                "href": f"/{capa['s3_parquet'].lstrip('/')}",
                 "proj:epsg": 4326
             }, capa["s3_parquet"])
         if capa.get("gpkg_url"):
@@ -73,7 +73,7 @@ def generar_stac():
                 "title": f"OGC GeoPackage — {titulo}",
                 "type": "application/geopackage+sqlite3",
                 "roles": ["data"],
-                "href": f"https://ide.cit.uai.cl/{capa['gpkg_url']}",
+                "href": f"/{capa['gpkg_url'].lstrip('/')}",
                 "proj:epsg": 4326
             }, capa["gpkg_url"])
         if capa.get("shp_url"):
@@ -81,7 +81,7 @@ def generar_stac():
                 "title": f"Shapefile (.zip) — {titulo}",
                 "type": "application/zip",
                 "roles": ["data"],
-                "href": f"https://ide.cit.uai.cl/{capa['shp_url']}",
+                "href": f"/{capa['shp_url'].lstrip('/')}",
                 "proj:epsg": 4326
             }, capa["shp_url"])
         if capa.get("csv_url"):
@@ -89,13 +89,13 @@ def generar_stac():
                 "title": f"Tabla CSV — {titulo}",
                 "type": "text/csv",
                 "roles": ["data"],
-                "href": f"https://ide.cit.uai.cl/{capa['csv_url']}"
+                "href": f"/{capa['csv_url'].lstrip('/')}"
             }, capa["csv_url"])
         assets["metadata_iso19139"] = {
             "title": f"Metadatos Oficiales ISO 19115 / ISO 19139 XML — {titulo}",
             "type": "application/xml",
             "roles": ["metadata"],
-            "href": f"https://ide.cit.uai.cl/download/iso_xml/{cid}_iso19139.xml"
+            "href": f"/download/iso_xml/{cid}_iso19139.xml"
         }
         
         summaries = {
@@ -117,7 +117,7 @@ def generar_stac():
                 "title": "Muestra Ligera Reproducible GeoParquet — Región de Arica y Parinacota R15 (3.304 manzanas, 42 columnas, 2,37 MB)",
                 "type": "application/vnd.apache.parquet",
                 "roles": ["data"],
-                "href": "https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet",
+                "href": "/download/MBHT_2017_R15_Manzanas.parquet",
                 "file:size": 2482961,
                 "file:checksum": "712d1d16193a4dee8bab6d88f4c3eed04530e6f1b11a1936349ea6132d134505",
                 "proj:epsg": 4326,
@@ -157,14 +157,14 @@ def generar_stac():
             },
             "summaries": summaries,
             "links": [
-                {"rel": "root", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-                {"rel": "parent", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-                {"rel": "self", "type": "application/json", "href": f"https://ide.cit.uai.cl/stac/{cid}.json"},
-                {"rel": "item", "type": "application/geo+json", "title": f"STAC Item Nacional — {titulo}", "href": f"https://ide.cit.uai.cl/stac/items/{col_id}-nacional.json"},
+                {"rel": "root", "type": "application/json", "href": "/stac/catalog.json"},
+                {"rel": "parent", "type": "application/json", "href": "/stac/catalog.json"},
+                {"rel": "self", "type": "application/json", "href": f"/stac/{cid}.json"},
+                {"rel": "item", "type": "application/geo+json", "title": f"STAC Item Nacional — {titulo}", "href": f"/stac/items/{col_id}-nacional.json"},
                 {"rel": "license", "type": "text/html", "title": "Licencia Abierta CC BY 4.0", "href": "https://creativecommons.org/licenses/by/4.0/"},
-                {"rel": "about", "type": "text/html", "title": "Guía Técnica y Estándares IDE CIT", "href": "https://ide.cit.uai.cl/guia-tecnica"},
-                {"rel": "describedby", "type": "application/xml", "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML", "href": f"https://ide.cit.uai.cl/download/iso_xml/{cid}_iso19139.xml"},
-                {"rel": "alternate", "type": "application/ld+json", "title": "Catálogo Semántico W3C DCAT-AP 2.0", "href": "https://ide.cit.uai.cl/dcat.json"}
+                {"rel": "about", "type": "text/html", "title": "Guía Técnica y Estándares IDE CIT", "href": "/guia-tecnica"},
+                {"rel": "describedby", "type": "application/xml", "title": "Metadatos Oficiales ISO 19115-1:2014 / ISO 19139 XML", "href": f"/download/iso_xml/{cid}_iso19139.xml"},
+                {"rel": "alternate", "type": "application/ld+json", "title": "Catálogo Semántico W3C DCAT-AP 2.0", "href": "/dcat.json"}
             ],
             "assets": assets
         }
@@ -177,7 +177,7 @@ def generar_stac():
             "rel": "child",
             "type": "application/json",
             "title": titulo,
-            "href": f"https://ide.cit.uai.cl/stac/{cid}.json"
+            "href": f"/stac/{cid}.json"
         })
         
         # Aliases para compatibilidad hacia atrás
@@ -185,9 +185,9 @@ def generar_stac():
             alias_col = dict(col_json)
             alias_col["id"] = "mbht-2017"
             alias_col["links"] = [
-                {"rel": "root", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-                {"rel": "parent", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-                {"rel": "self", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/mbht_2017.json"}
+                {"rel": "root", "type": "application/json", "href": "/stac/catalog.json"},
+                {"rel": "parent", "type": "application/json", "href": "/stac/catalog.json"},
+                {"rel": "self", "type": "application/json", "href": "/stac/mbht_2017.json"}
             ]
             with open(STAC_DIR / "mbht_2017.json", "w", encoding="utf-8") as f:
                 json.dump(alias_col, f, indent=2, ensure_ascii=False)
@@ -195,9 +195,9 @@ def generar_stac():
             alias_col = dict(col_json)
             alias_col["id"] = "pem-maritorio"
             alias_col["links"] = [
-                {"rel": "root", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-                {"rel": "parent", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-                {"rel": "self", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/pem_maritorio.json"}
+                {"rel": "root", "type": "application/json", "href": "/stac/catalog.json"},
+                {"rel": "parent", "type": "application/json", "href": "/stac/catalog.json"},
+                {"rel": "self", "type": "application/json", "href": "/stac/pem_maritorio.json"}
             ]
             with open(STAC_DIR / "pem_maritorio.json", "w", encoding="utf-8") as f:
                 json.dump(alias_col, f, indent=2, ensure_ascii=False)
@@ -205,9 +205,9 @@ def generar_stac():
             alias_col = dict(col_json)
             alias_col["id"] = "equipamientos-urbanos"
             alias_col["links"] = [
-                {"rel": "root", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-                {"rel": "parent", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-                {"rel": "self", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/equipamientos.json"}
+                {"rel": "root", "type": "application/json", "href": "/stac/catalog.json"},
+                {"rel": "parent", "type": "application/json", "href": "/stac/catalog.json"},
+                {"rel": "self", "type": "application/json", "href": "/stac/equipamientos.json"}
             ]
             with open(STAC_DIR / "equipamientos.json", "w", encoding="utf-8") as f:
                 json.dump(alias_col, f, indent=2, ensure_ascii=False)
@@ -231,11 +231,11 @@ def generar_stac():
             "linea_base_vigente": ["mbht_2017"]
         },
         "links": [
-            {"rel": "root", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-            {"rel": "parent", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-            {"rel": "self", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/mbht_2024.json"},
-            {"rel": "related", "type": "application/json", "title": "Censo 2024 — Imputaciones Demográficas por Cohortes y Sexo (Disponible)", "href": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"},
-            {"rel": "related", "type": "application/json", "title": "Matriz MBHT 2017 — Línea Base Oficial Vigente (42 Columnas Físicas)", "href": "https://ide.cit.uai.cl/stac/mbht_2017.json"},
+            {"rel": "root", "type": "application/json", "href": "/stac/catalog.json"},
+            {"rel": "parent", "type": "application/json", "href": "/stac/catalog.json"},
+            {"rel": "self", "type": "application/json", "href": "/stac/mbht_2024.json"},
+            {"rel": "related", "type": "application/json", "title": "Censo 2024 — Imputaciones Demográficas por Cohortes y Sexo (Disponible)", "href": "/stac/censo_imputaciones_2024.json"},
+            {"rel": "related", "type": "application/json", "title": "Matriz MBHT 2017 — Línea Base Oficial Vigente (42 Columnas Físicas)", "href": "/stac/mbht_2017.json"},
             {"rel": "via", "type": "text/html", "title": "Plataforma Canónica MBHT", "href": "https://matrizbht.cl"}
         ],
         "assets": {
@@ -243,19 +243,19 @@ def generar_stac():
                 "title": "Guía Técnica y Metodológica IDE CIT",
                 "type": "text/html",
                 "roles": ["metadata"],
-                "href": "https://ide.cit.uai.cl/guia-tecnica"
+                "href": "/guia-tecnica"
             },
             "ficha_mbht_2017": {
                 "title": "Ficha Técnica Maestra MBHT 2017 (Línea Base Oficial)",
                 "type": "text/html",
                 "roles": ["metadata"],
-                "href": "https://ide.cit.uai.cl/ficha-mbht-2017"
+                "href": "/ficha-mbht-2017"
             },
             "insumos_censo_2024": {
                 "title": "Colección STAC Censo 2024 Imputaciones Demográficas (Datos Preparatorios Disponibles)",
                 "type": "application/json",
                 "roles": ["data"],
-                "href": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
+                "href": "/stac/censo_imputaciones_2024.json"
             }
         }
     }
@@ -274,9 +274,9 @@ def generar_stac():
     collections_payload = {
         "collections": canonical_collections,
         "links": [
-            {"rel": "root", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-            {"rel": "parent", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-            {"rel": "self", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/collections"}
+            {"rel": "root", "type": "application/json", "href": "/stac/catalog.json"},
+            {"rel": "parent", "type": "application/json", "href": "/stac/catalog.json"},
+            {"rel": "self", "type": "application/json", "href": "/stac/collections"}
         ]
     }
     conformance_payload = {
@@ -304,13 +304,13 @@ def generar_stac():
         "rel": "child",
         "type": "application/json",
         "title": "MBHT 2024 — Aviso Oficial de Lanzamiento (Noviembre 2026)",
-        "href": "https://ide.cit.uai.cl/stac/mbht_2024.json"
+        "href": "/stac/mbht_2024.json"
     })
     child_links.append({
         "rel": "child",
         "type": "application/json",
         "title": "Colección Unificada (13 Capas Cartográficas Maestras)",
-        "href": "https://ide.cit.uai.cl/stac/collection.json"
+        "href": "/stac/collection.json"
     })
 
     root_catalog = {
@@ -321,16 +321,96 @@ def generar_stac():
         "title": "Catálogo de Datos y Modelos Territoriales — IDE CIT (UAI)",
         "description": "Catálogo espacio-temporal estático Cloud-Native (STAC 1.0.0 Catalog & Collections) con 13 coberturas maestras oficiales descargables en producción (bienestar humano MBHT 2017, estratificación INSE, avalúos SII, equipamientos, red vial y zonificación marina FAO/SBAP) más 1 recurso preparatorio institucional (MBHT 2024 en calibración estadística) del Centro de Inteligencia Territorial de la Universidad Adolfo Ibáñez.",
         "links": [
-            {"rel": "self", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-            {"rel": "root", "type": "application/json", "href": "https://ide.cit.uai.cl/stac/catalog.json"},
-            {"rel": "about", "type": "text/html", "title": "Guía Técnica, Conformidad y Benchmarks IDE CIT", "href": "https://ide.cit.uai.cl/guia-tecnica"},
-            {"rel": "describedby", "type": "application/ld+json", "title": "Catálogo Semántico W3C DCAT-AP 2.0", "href": "https://ide.cit.uai.cl/dcat.json"},
-            {"rel": "service-desc", "type": "application/json", "title": "Reporte de Conformidad y Benchmarks Reproducibles", "href": "https://ide.cit.uai.cl/conformance_report.json"},
+            {"rel": "self", "type": "application/json", "href": "/stac/catalog.json"},
+            {"rel": "root", "type": "application/json", "href": "/stac/catalog.json"},
+            {"rel": "about", "type": "text/html", "title": "Guía Técnica, Conformidad y Benchmarks IDE CIT", "href": "/guia-tecnica"},
+            {"rel": "describedby", "type": "application/ld+json", "title": "Catálogo Semántico W3C DCAT-AP 2.0", "href": "/dcat.json"},
+            {"rel": "service-desc", "type": "application/json", "title": "Reporte de Conformidad y Benchmarks Reproducibles", "href": "/conformance_report.json"},
             {"rel": "license", "type": "text/html", "title": "Licencia Abierta CC BY 4.0", "href": "https://creativecommons.org/licenses/by/4.0/"}
         ] + child_links
     }
     with open(STAC_DIR / "catalog.json", "w", encoding="utf-8") as f:
         json.dump(root_catalog, f, indent=2, ensure_ascii=False)
+
+    # 5. Generar STAC Items individuales y STAC Item Search con rutas relativas
+    items_dir = STAC_DIR / "items"
+    items_dir.mkdir(parents=True, exist_ok=True)
+    all_features = []
+    
+    for col in canonical_collections:
+        col_id = col["id"]
+        col_title = col.get("title", col_id)
+        col_desc = col.get("description", "")
+        bbox = col.get("extent", {}).get("spatial", {}).get("bbox", [[-109.45, -56.53, -66.41, -17.50]])[0]
+        
+        feature_item = {
+            "stac_version": "1.0.0",
+            "stac_extensions": [
+                "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+                "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+            ],
+            "type": "Feature",
+            "id": f"{col_id}-nacional",
+            "collection": col_id,
+            "bbox": bbox,
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[
+                    [bbox[0], bbox[1]],
+                    [bbox[2], bbox[1]],
+                    [bbox[2], bbox[3]],
+                    [bbox[0], bbox[3]],
+                    [bbox[0], bbox[1]]
+                ]]
+            },
+            "properties": {
+                "title": f"STAC Item Nacional — {col_title}",
+                "description": col_desc,
+                "datetime": "2026-10-17T00:00:00Z",
+                "proj:epsg": 4326
+            },
+            "links": [
+                {"rel": "root", "type": "application/json", "href": "/stac/catalog.json"},
+                {"rel": "parent", "type": "application/json", "href": f"/stac/{col_id.replace('-', '_')}.json"},
+                {"rel": "collection", "type": "application/json", "href": f"/stac/{col_id.replace('-', '_')}.json"},
+                {"rel": "self", "type": "application/geo+json", "href": f"/stac/items/{col_id}-nacional.json"}
+            ],
+            "assets": col.get("assets", {})
+        }
+        
+        with open(items_dir / f"{col_id}-nacional.json", "w", encoding="utf-8") as f:
+            json.dump(feature_item, f, indent=2, ensure_ascii=False)
+        all_features.append(feature_item)
+
+    search_payload = {
+        "type": "FeatureCollection",
+        "stac_version": "1.0.0",
+        "numberMatched": len(all_features),
+        "numberReturned": len(all_features),
+        "context": {
+            "returned": len(all_features),
+            "limit": 100,
+            "matched": len(all_features)
+        },
+        "features": all_features,
+        "links": [
+            {"rel": "root", "type": "application/json", "href": "/stac/catalog.json"},
+            {"rel": "self", "type": "application/json", "href": "/stac/search"}
+        ]
+    }
+    
+    for s_target_dir in [STAC_DIR, BASE_DIR / "stac"]:
+        s_target_dir.mkdir(parents=True, exist_ok=True)
+        (s_target_dir / "items").mkdir(parents=True, exist_ok=True)
+        with open(s_target_dir / "search.json", "w", encoding="utf-8") as f:
+            json.dump(search_payload, f, indent=2, ensure_ascii=False)
+        with open(s_target_dir / "search", "w", encoding="utf-8") as f:
+            json.dump(search_payload, f, indent=2, ensure_ascii=False)
+        with open(s_target_dir / "stac_items_index.json", "w", encoding="utf-8") as f:
+            json.dump(all_features, f, indent=2, ensure_ascii=False)
+        for feat in all_features:
+            with open(s_target_dir / "items" / f"{feat['id']}.json", "w", encoding="utf-8") as f:
+                json.dump(feat, f, indent=2, ensure_ascii=False)
 
     data_stac_col = BASE_DIR / "data" / "stac" / "collection.json"
     if data_stac_col.exists():
@@ -338,10 +418,19 @@ def generar_stac():
 
     if DIST_DIR.exists():
         (DIST_DIR / "stac").mkdir(parents=True, exist_ok=True)
+        (DIST_DIR / "stac" / "items").mkdir(parents=True, exist_ok=True)
         for stac_file in STAC_DIR.glob("*.json"):
             shutil.copy2(stac_file, DIST_DIR / "stac" / stac_file.name)
+        if (STAC_DIR / "search").exists():
+            shutil.copy2(STAC_DIR / "search", DIST_DIR / "stac" / "search")
+        if (STAC_DIR / "collections").exists():
+            shutil.copy2(STAC_DIR / "collections", DIST_DIR / "stac" / "collections")
+        if (STAC_DIR / "conformance").exists():
+            shutil.copy2(STAC_DIR / "conformance", DIST_DIR / "stac" / "conformance")
+        for item_file in (STAC_DIR / "items").glob("*.json"):
+            shutil.copy2(item_file, DIST_DIR / "stac" / "items" / item_file.name)
 
-    print(f"  [+] STAC 1.0.0 generado exitosamente (catalog.json con {len(child_links)} colecciones hijas).")
+    print(f"  [+] STAC 1.0.0 generado exitosamente (catalog.json con {len(child_links)} colecciones hijas y {len(all_features)} items search).")
 
 def generar_stac_html():
     print("[*] Generando interfaz HTML y visualizador del Catálogo STAC 1.0.0 (stac/index.html)...")

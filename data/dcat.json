@@ -5,7 +5,7 @@
     "foaf": "http://xmlns.com/foaf/0.1/",
     "locn": "http://www.w3.org/ns/locn#"
   },
-  "@id": "https://ide.cit.uai.cl/data/dcat.json",
+  "@id": "/dcat.json",
   "@type": "dcat:Catalog",
   "dct:title": "IDE CIT — Infraestructura de Datos Espaciales",
   "dct:description": "Plataforma académica y de ciencia abierta para la consulta, interoperabilidad y descarga de coberturas y modelos territoriales del Centro de Inteligencia Territorial de la Universidad Adolfo Ibáñez.",
@@ -30,7 +30,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "MBHT 2017 — Línea base oficial (GeoParquet)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet",
+          "dcat:accessURL": "/download/MBHT_2017_Nacional_Manzanas.parquet",
           "dct:format": "GeoParquet",
           "dcat:mediaType": "application/vnd.apache.parquet",
           "dcat:byteSize": 252572936,
@@ -39,7 +39,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "MBHT 2017 — Línea base oficial (GeoPackage OGC)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.gpkg",
+          "dcat:accessURL": "/download/MBHT_2017_Nacional_Manzanas.gpkg",
           "dct:format": "GeoPackage",
           "dcat:mediaType": "application/geopackage+sqlite3",
           "dcat:byteSize": 360656896,
@@ -48,7 +48,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "MBHT 2017 — Línea base oficial (Shapefile ZIP)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas_SHP.zip",
+          "dcat:accessURL": "/download/MBHT_2017_Nacional_Manzanas_SHP.zip",
           "dct:format": "Shapefile",
           "dcat:mediaType": "application/zip",
           "dcat:byteSize": 214822331,
@@ -57,7 +57,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "MBHT 2017 — Línea base oficial (CSV UTF-8)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.csv",
+          "dcat:accessURL": "/download/MBHT_2017_Nacional_Manzanas.csv",
           "dct:format": "CSV",
           "dcat:mediaType": "text/csv; charset=utf-8",
           "dcat:byteSize": 100911556,
@@ -80,7 +80,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE) (GeoParquet)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.parquet",
+          "dcat:accessURL": "/download/PEM_Maritorio_Nacional_Tricontinental.parquet",
           "dct:format": "GeoParquet",
           "dcat:mediaType": "application/vnd.apache.parquet",
           "dcat:byteSize": 103187755,
@@ -89,7 +89,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE) (GeoPackage OGC)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.gpkg",
+          "dcat:accessURL": "/download/PEM_Maritorio_Nacional_Tricontinental.gpkg",
           "dct:format": "GeoPackage",
           "dcat:mediaType": "application/geopackage+sqlite3",
           "dcat:byteSize": 163622912,
@@ -98,7 +98,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE) (Shapefile ZIP)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental_SHP.zip",
+          "dcat:accessURL": "/download/PEM_Maritorio_Nacional_Tricontinental_SHP.zip",
           "dct:format": "Shapefile",
           "dcat:mediaType": "application/zip",
           "dcat:byteSize": 79974812,
@@ -107,7 +107,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Maritorio nacional y Planificación marina tricontinental (FAO / SBAP / ZEE) (CSV UTF-8)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Maritorio_Nacional_Tricontinental.csv",
+          "dcat:accessURL": "/download/PEM_Maritorio_Nacional_Tricontinental.csv",
           "dct:format": "CSV",
           "dcat:mediaType": "text/csv; charset=utf-8",
           "dcat:byteSize": 46249,
@@ -130,7 +130,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO) (GeoParquet)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.parquet",
+          "dcat:accessURL": "/download/PEM_Geomorfologia_Submarina_GEBCO.parquet",
           "dct:format": "GeoParquet",
           "dcat:mediaType": "application/vnd.apache.parquet",
           "dcat:byteSize": 1212254,
@@ -139,7 +139,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO) (GeoPackage OGC)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.gpkg",
+          "dcat:accessURL": "/download/PEM_Geomorfologia_Submarina_GEBCO.gpkg",
           "dct:format": "GeoPackage",
           "dcat:mediaType": "application/geopackage+sqlite3",
           "dcat:byteSize": 2678784,
@@ -148,7 +148,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO) (Shapefile ZIP)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO_SHP.zip",
+          "dcat:accessURL": "/download/PEM_Geomorfologia_Submarina_GEBCO_SHP.zip",
           "dct:format": "Shapefile",
           "dcat:mediaType": "application/zip",
           "dcat:byteSize": 1154099,
@@ -157,7 +157,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Geomorfología submarina y macro-unidades de relieve oceánico (GEBCO) (CSV UTF-8)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Geomorfologia_Submarina_GEBCO.csv",
+          "dcat:accessURL": "/download/PEM_Geomorfologia_Submarina_GEBCO.csv",
           "dct:format": "CSV",
           "dcat:mediaType": "text/csv; charset=utf-8",
           "dcat:byteSize": 2189,
@@ -180,7 +180,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP) (GeoParquet)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.parquet",
+          "dcat:accessURL": "/download/PEM_Montes_Submarinos_Toponimia.parquet",
           "dct:format": "GeoParquet",
           "dcat:mediaType": "application/vnd.apache.parquet",
           "dcat:byteSize": 61134,
@@ -189,7 +189,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP) (GeoPackage OGC)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.gpkg",
+          "dcat:accessURL": "/download/PEM_Montes_Submarinos_Toponimia.gpkg",
           "dct:format": "GeoPackage",
           "dcat:mediaType": "application/geopackage+sqlite3",
           "dcat:byteSize": 430080,
@@ -198,7 +198,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP) (Shapefile ZIP)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia_SHP.zip",
+          "dcat:accessURL": "/download/PEM_Montes_Submarinos_Toponimia_SHP.zip",
           "dct:format": "Shapefile",
           "dcat:mediaType": "application/zip",
           "dcat:byteSize": 54878,
@@ -207,7 +207,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Montes submarinos y toponimia oceánica oficial (SCUFN / SHOA / FAO / SBAP) (CSV UTF-8)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Montes_Submarinos_Toponimia.csv",
+          "dcat:accessURL": "/download/PEM_Montes_Submarinos_Toponimia.csv",
           "dct:format": "CSV",
           "dcat:mediaType": "text/csv; charset=utf-8",
           "dcat:byteSize": 211745,
@@ -230,7 +230,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP) (GeoParquet)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.parquet",
+          "dcat:accessURL": "/download/PEM_Cuencas_Oceanicas_Submarinas.parquet",
           "dct:format": "GeoParquet",
           "dcat:mediaType": "application/vnd.apache.parquet",
           "dcat:byteSize": 5079409,
@@ -239,7 +239,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP) (GeoPackage OGC)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.gpkg",
+          "dcat:accessURL": "/download/PEM_Cuencas_Oceanicas_Submarinas.gpkg",
           "dct:format": "GeoPackage",
           "dcat:mediaType": "application/geopackage+sqlite3",
           "dcat:byteSize": 21479424,
@@ -248,7 +248,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP) (Shapefile ZIP)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas_SHP.zip",
+          "dcat:accessURL": "/download/PEM_Cuencas_Oceanicas_Submarinas_SHP.zip",
           "dct:format": "Shapefile",
           "dcat:mediaType": "application/zip",
           "dcat:byteSize": 3333641,
@@ -257,7 +257,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Cuencas oceanográficas y morfología del lecho submarino (FAO / SBAP) (CSV UTF-8)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/PEM_Cuencas_Oceanicas_Submarinas.csv",
+          "dcat:accessURL": "/download/PEM_Cuencas_Oceanicas_Submarinas.csv",
           "dct:format": "CSV",
           "dcat:mediaType": "text/csv; charset=utf-8",
           "dcat:byteSize": 1467002,
@@ -293,7 +293,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Censo 2024 — Imputaciones demográficas por cohortes y sexo (GeoParquet)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.parquet",
+          "dcat:accessURL": "/download/Censo_Imputaciones_2024_Nacional.parquet",
           "dct:format": "GeoParquet",
           "dcat:mediaType": "application/vnd.apache.parquet",
           "dcat:byteSize": 284484592,
@@ -302,7 +302,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Censo 2024 — Imputaciones demográficas por cohortes y sexo (GeoPackage OGC)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.gpkg",
+          "dcat:accessURL": "/download/Censo_Imputaciones_2024_Nacional.gpkg",
           "dct:format": "GeoPackage",
           "dcat:mediaType": "application/geopackage+sqlite3",
           "dcat:byteSize": 426635264,
@@ -311,7 +311,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Censo 2024 — Imputaciones demográficas por cohortes y sexo (Shapefile ZIP)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional_SHP.zip",
+          "dcat:accessURL": "/download/Censo_Imputaciones_2024_Nacional_SHP.zip",
           "dct:format": "Shapefile",
           "dcat:mediaType": "application/zip",
           "dcat:byteSize": 239654071,
@@ -320,7 +320,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Censo 2024 — Imputaciones demográficas por cohortes y sexo (CSV UTF-8)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Censo_Imputaciones_2024_Nacional.csv",
+          "dcat:accessURL": "/download/Censo_Imputaciones_2024_Nacional.csv",
           "dct:format": "CSV",
           "dcat:mediaType": "text/csv; charset=utf-8",
           "dcat:byteSize": 56300717,
@@ -343,7 +343,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024 (GeoParquet)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.parquet",
+          "dcat:accessURL": "/download/INSE_Socioeconomico_Nacional_2024.parquet",
           "dct:format": "GeoParquet",
           "dcat:mediaType": "application/vnd.apache.parquet",
           "dcat:byteSize": 279535131,
@@ -352,7 +352,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024 (GeoPackage OGC)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.gpkg",
+          "dcat:accessURL": "/download/INSE_Socioeconomico_Nacional_2024.gpkg",
           "dct:format": "GeoPackage",
           "dcat:mediaType": "application/geopackage+sqlite3",
           "dcat:byteSize": 487309312,
@@ -361,7 +361,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024 (Shapefile ZIP)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024_SHP.zip",
+          "dcat:accessURL": "/download/INSE_Socioeconomico_Nacional_2024_SHP.zip",
           "dct:format": "Shapefile",
           "dcat:mediaType": "application/zip",
           "dcat:byteSize": 232586385,
@@ -370,7 +370,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Índice de Nivel Socioeconómico (INSE) — Manzanas censales 2024 (CSV UTF-8)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/INSE_Socioeconomico_Nacional_2024.csv",
+          "dcat:accessURL": "/download/INSE_Socioeconomico_Nacional_2024.csv",
           "dct:format": "CSV",
           "dcat:mediaType": "text/csv; charset=utf-8",
           "dcat:byteSize": 29972846,
@@ -406,7 +406,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Equipamientos urbanos y servicios esenciales 2017 (GeoParquet)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.parquet",
+          "dcat:accessURL": "/download/Equipamientos_2017_Nacional_Consolidado.parquet",
           "dct:format": "GeoParquet",
           "dcat:mediaType": "application/vnd.apache.parquet",
           "dcat:byteSize": 8589840,
@@ -415,7 +415,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Equipamientos urbanos y servicios esenciales 2017 (GeoPackage OGC)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.gpkg",
+          "dcat:accessURL": "/download/Equipamientos_2017_Nacional_Consolidado.gpkg",
           "dct:format": "GeoPackage",
           "dcat:mediaType": "application/geopackage+sqlite3",
           "dcat:byteSize": 23638016,
@@ -424,7 +424,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Equipamientos urbanos y servicios esenciales 2017 (Shapefile ZIP)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado_SHP.zip",
+          "dcat:accessURL": "/download/Equipamientos_2017_Nacional_Consolidado_SHP.zip",
           "dct:format": "Shapefile",
           "dcat:mediaType": "application/zip",
           "dcat:byteSize": 4188174,
@@ -433,7 +433,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Equipamientos urbanos y servicios esenciales 2017 (CSV UTF-8)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Equipamientos_2017_Nacional_Consolidado.csv",
+          "dcat:accessURL": "/download/Equipamientos_2017_Nacional_Consolidado.csv",
           "dct:format": "CSV",
           "dcat:mediaType": "text/csv; charset=utf-8",
           "dcat:byteSize": 11734366,
@@ -456,7 +456,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Red vial urbana caminable y tiempos Tobler 2017 (GeoParquet)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.parquet",
+          "dcat:accessURL": "/download/Red_Vial_Ejes_2017_Nacional.parquet",
           "dct:format": "GeoParquet",
           "dcat:mediaType": "application/vnd.apache.parquet",
           "dcat:byteSize": 225592155,
@@ -465,7 +465,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Red vial urbana caminable y tiempos Tobler 2017 (GeoPackage OGC)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.gpkg",
+          "dcat:accessURL": "/download/Red_Vial_Ejes_2017_Nacional.gpkg",
           "dct:format": "GeoPackage",
           "dcat:mediaType": "application/geopackage+sqlite3",
           "dcat:byteSize": 500346880,
@@ -474,7 +474,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Red vial urbana caminable y tiempos Tobler 2017 (Shapefile ZIP)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional_SHP.zip",
+          "dcat:accessURL": "/download/Red_Vial_Ejes_2017_Nacional_SHP.zip",
           "dct:format": "Shapefile",
           "dcat:mediaType": "application/zip",
           "dcat:byteSize": 224455797,
@@ -483,7 +483,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Red vial urbana caminable y tiempos Tobler 2017 (CSV UTF-8)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Red_Vial_Ejes_2017_Nacional.csv",
+          "dcat:accessURL": "/download/Red_Vial_Ejes_2017_Nacional.csv",
           "dct:format": "CSV",
           "dcat:mediaType": "text/csv; charset=utf-8",
           "dcat:byteSize": 106161078,
@@ -506,7 +506,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Educación inicial — Catastro nacional de jardines infantiles y salas cuna (GeoParquet)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
+          "dcat:accessURL": "/download/Educacion_Inicial_Jardines_SalasCuna_2024.parquet",
           "dct:format": "GeoParquet",
           "dcat:mediaType": "application/vnd.apache.parquet",
           "dcat:byteSize": 364944,
@@ -515,7 +515,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Educación inicial — Catastro nacional de jardines infantiles y salas cuna (GeoPackage OGC)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.gpkg",
+          "dcat:accessURL": "/download/Educacion_Inicial_Jardines_SalasCuna_2024.gpkg",
           "dct:format": "GeoPackage",
           "dcat:mediaType": "application/geopackage+sqlite3",
           "dcat:byteSize": 2965504,
@@ -524,7 +524,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Educación inicial — Catastro nacional de jardines infantiles y salas cuna (Shapefile ZIP)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024_SHP.zip",
+          "dcat:accessURL": "/download/Educacion_Inicial_Jardines_SalasCuna_2024_SHP.zip",
           "dct:format": "Shapefile",
           "dcat:mediaType": "application/zip",
           "dcat:byteSize": 386413,
@@ -533,7 +533,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Educación inicial — Catastro nacional de jardines infantiles y salas cuna (CSV UTF-8)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Educacion_Inicial_Jardines_SalasCuna_2024.csv",
+          "dcat:accessURL": "/download/Educacion_Inicial_Jardines_SalasCuna_2024.csv",
           "dct:format": "CSV",
           "dcat:mediaType": "text/csv; charset=utf-8",
           "dcat:byteSize": 2489732,
@@ -556,7 +556,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Huella de edificaciones urbanas — Presencia construida nacional (GeoParquet)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.parquet",
+          "dcat:accessURL": "/download/Huella_Edificaciones_Urbanas_2024.parquet",
           "dct:format": "GeoParquet",
           "dcat:mediaType": "application/vnd.apache.parquet",
           "dcat:byteSize": 38964900,
@@ -565,7 +565,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Huella de edificaciones urbanas — Presencia construida nacional (GeoPackage OGC)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.gpkg",
+          "dcat:accessURL": "/download/Huella_Edificaciones_Urbanas_2024.gpkg",
           "dct:format": "GeoPackage",
           "dcat:mediaType": "application/geopackage+sqlite3",
           "dcat:byteSize": 96378880,
@@ -574,7 +574,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Huella de edificaciones urbanas — Presencia construida nacional (Shapefile ZIP)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024_SHP.zip",
+          "dcat:accessURL": "/download/Huella_Edificaciones_Urbanas_2024_SHP.zip",
           "dct:format": "Shapefile",
           "dcat:mediaType": "application/zip",
           "dcat:byteSize": 18106961,
@@ -583,7 +583,7 @@
         {
           "@type": "dcat:Distribution",
           "dct:title": "Huella de edificaciones urbanas — Presencia construida nacional (CSV UTF-8)",
-          "dcat:accessURL": "https://ide.cit.uai.cl/download/Huella_Edificaciones_Urbanas_2024.csv",
+          "dcat:accessURL": "/download/Huella_Edificaciones_Urbanas_2024.csv",
           "dct:format": "CSV",
           "dcat:mediaType": "text/csv; charset=utf-8",
           "dcat:byteSize": 28438098,

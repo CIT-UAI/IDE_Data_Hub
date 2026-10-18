@@ -1,0 +1,12 @@
+# Requerimientos de dependencias para verificación independiente reproducible
+# Infraestructura de Datos Espaciales (IDE CIT) — Universidad Adolfo Ibáñez
+# Compatible con Python 3.8+ en Linux, macOS y Windows
+
+# Paquetes recomendados para validación de datos Parquet y análisis en memoria:
+pyarrow>=14.0.0
+duckdb>=0.9.0
+pandas>=2.0.0
+
+# Paquetes opcionales para clientes HTTP avanzados:
+requests>=2.31.0
+urllib3>=2.0.0

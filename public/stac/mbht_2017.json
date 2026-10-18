@@ -102,17 +102,17 @@
     {
       "rel": "root",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "self",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/mbht_2017.json"
+      "href": "/stac/mbht_2017.json"
     }
   ],
   "assets": {
@@ -122,7 +122,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.parquet",
+      "href": "/download/MBHT_2017_Nacional_Manzanas.parquet",
       "proj:epsg": 4326,
       "file:size": 252572936,
       "file:checksum": "4a123b83ea1cefa18661c25ea40b9c3fc2a319cf6a45abbbd72a2cb30c069f2a"
@@ -133,7 +133,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.gpkg",
+      "href": "/download/MBHT_2017_Nacional_Manzanas.gpkg",
       "proj:epsg": 4326,
       "file:size": 360656896,
       "file:checksum": "3db07960a5d2ac94d4443c5ba59a3715655db8aabf040e01993180c316e1d230"
@@ -144,7 +144,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas_SHP.zip",
+      "href": "/download/MBHT_2017_Nacional_Manzanas_SHP.zip",
       "proj:epsg": 4326,
       "file:size": 214822331,
       "file:checksum": "9899f31ae5aa104b40e9c4bbfd4030eb1b8e2b3fb431544b1d103fc720f8cb32"
@@ -155,7 +155,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/MBHT_2017_Nacional_Manzanas.csv",
+      "href": "/download/MBHT_2017_Nacional_Manzanas.csv",
       "file:size": 100911556,
       "file:checksum": "ebea6ee15f32639345b0f7ce1b3211f808d17b55b3b7d7283d180c48721d5cf5"
     },
@@ -165,7 +165,7 @@
       "roles": [
         "metadata"
       ],
-      "href": "https://ide.cit.uai.cl/download/iso_xml/kpi_mud_2017_iso19139.xml"
+      "href": "/download/iso_xml/kpi_mud_2017_iso19139.xml"
     },
     "geoparquet_muestra_r15": {
       "title": "Muestra Ligera Reproducible GeoParquet — Región de Arica y Parinacota R15 (3.304 manzanas, 42 columnas, 2,37 MB)",
@@ -173,7 +173,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/download/MBHT_2017_R15_Manzanas.parquet",
+      "href": "/download/MBHT_2017_R15_Manzanas.parquet",
       "file:size": 2482961,
       "file:checksum": "712d1d16193a4dee8bab6d88f4c3eed04530e6f1b11a1936349ea6132d134505",
       "proj:epsg": 4326,

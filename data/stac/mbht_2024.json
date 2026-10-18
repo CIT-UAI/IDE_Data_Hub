@@ -43,29 +43,29 @@
     {
       "rel": "root",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "self",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/mbht_2024.json"
+      "href": "/stac/mbht_2024.json"
     },
     {
       "rel": "related",
       "type": "application/json",
       "title": "Censo 2024 — Imputaciones Demográficas por Cohortes y Sexo (Disponible)",
-      "href": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
+      "href": "/stac/censo_imputaciones_2024.json"
     },
     {
       "rel": "related",
       "type": "application/json",
       "title": "Matriz MBHT 2017 — Línea Base Oficial Vigente (42 Columnas Físicas)",
-      "href": "https://ide.cit.uai.cl/stac/mbht_2017.json"
+      "href": "/stac/mbht_2017.json"
     },
     {
       "rel": "via",
@@ -81,7 +81,7 @@
       "roles": [
         "metadata"
       ],
-      "href": "https://ide.cit.uai.cl/guia-tecnica"
+      "href": "/guia-tecnica"
     },
     "ficha_mbht_2017": {
       "title": "Ficha Técnica Maestra MBHT 2017 (Línea Base Oficial)",
@@ -89,7 +89,7 @@
       "roles": [
         "metadata"
       ],
-      "href": "https://ide.cit.uai.cl/ficha-mbht-2017"
+      "href": "/ficha-mbht-2017"
     },
     "insumos_censo_2024": {
       "title": "Colección STAC Censo 2024 Imputaciones Demográficas (Datos Preparatorios Disponibles)",
@@ -97,7 +97,7 @@
       "roles": [
         "data"
       ],
-      "href": "https://ide.cit.uai.cl/stac/censo_imputaciones_2024.json"
+      "href": "/stac/censo_imputaciones_2024.json"
     }
   }
 }

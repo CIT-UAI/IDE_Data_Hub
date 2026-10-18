@@ -1,5 +1,9 @@
 {
   "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
   "type": "Feature",
   "id": "mbht-2024-aviso-nacional",
   "collection": "mbht-2024-aviso",
@@ -37,33 +41,31 @@
     ]
   },
   "properties": {
-    "title": "Aviso Oficial de Lanzamiento MBHT 2024 (Noviembre 2026)",
-    "datetime": "2026-10-01T00:00:00Z",
-    "start_datetime": "2024-01-01T00:00:00Z",
-    "end_datetime": "2026-12-31T23:59:59Z",
-    "proj:epsg": 4326,
-    "license": "CC-BY-4.0"
+    "title": "STAC Item Nacional — Matriz de Bienestar Humano Territorial MBHT 2024 — Publicación Oficial Programada para Noviembre 2026",
+    "description": "Aviso oficial del Centro de Inteligencia Territorial (CIT-UAI): La síntesis multidimensional de la Matriz de Bienestar Humano Territorial MBHT 2024 se encuentra en fase final de calibración metodológica y contrastación empírica con los microdatos definitivos del INE, con lanzamiento oficial y publicación de matrices abierta programada para noviembre de 2026. Los insumos demográficos preparatorios de base (254.395 manzanas urbanas y entidades rurales con imputaciones de Sprague y desagregación por sexo) se encuentran 100% disponibles para descarga abierta inmediata en la colección 'censo_imputaciones_2024'. Para análisis retrospectivos y modelos vigentes en producción, consulte la línea base oficial en 'mbht_2017'.",
+    "datetime": "2026-10-17T00:00:00Z",
+    "proj:epsg": 4326
   },
   "links": [
     {
-      "rel": "self",
-      "type": "application/geo+json",
-      "href": "https://ide.cit.uai.cl/stac/items/mbht-2024-aviso-nacional.json"
+      "rel": "root",
+      "type": "application/json",
+      "href": "/stac/catalog.json"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/mbht_2024.json"
+      "href": "/stac/mbht_2024_aviso.json"
     },
     {
       "rel": "collection",
       "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/mbht_2024.json"
+      "href": "/stac/mbht_2024_aviso.json"
     },
     {
-      "rel": "root",
-      "type": "application/json",
-      "href": "https://ide.cit.uai.cl/stac/catalog.json"
+      "rel": "self",
+      "type": "application/geo+json",
+      "href": "/stac/items/mbht-2024-aviso-nacional.json"
     }
   ],
   "assets": {
@@ -73,7 +75,23 @@
       "roles": [
         "metadata"
       ],
-      "href": "https://ide.cit.uai.cl/guia-tecnica"
+      "href": "/guia-tecnica"
+    },
+    "ficha_mbht_2017": {
+      "title": "Ficha Técnica Maestra MBHT 2017 (Línea Base Oficial)",
+      "type": "text/html",
+      "roles": [
+        "metadata"
+      ],
+      "href": "/ficha-mbht-2017"
+    },
+    "insumos_censo_2024": {
+      "title": "Colección STAC Censo 2024 Imputaciones Demográficas (Datos Preparatorios Disponibles)",
+      "type": "application/json",
+      "roles": [
+        "data"
+      ],
+      "href": "/stac/censo_imputaciones_2024.json"
     }
   }
 }
