@@ -1638,11 +1638,12 @@ print(f"Total Regional R15 -> Manzanas: {{len(df)}} | Población: {{int(df['pers
             const userText = input.value.trim();
             input.value = '';
 
-            // User msg
+            // User msg (sanitizado contra DOM XSS)
+            const safeUserText = String(userText).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
             messages.innerHTML += `
                 <div class="flex items-start justify-end space-x-2">
                     <div class="bg-slate-900 text-white p-3 rounded-2xl rounded-tr-none text-xs max-w-[85%]">
-                        <p>${{userText}}</p>
+                        <p>${{safeUserText}}</p>
                     </div>
                 </div>
             `;
